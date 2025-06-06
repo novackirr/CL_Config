@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Загрузка из ЕИС" Type="0">
+  <Items>
+    <Dictionary Name="Загрузка из ЕИС">
+      <Attributes>
+        <Attribute Name="Дата последней загрузки" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="Организации заказчики" ParentGuid="" Guid="f0154b21-198e-41f4-87c7-4dd1065a5876">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2010-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Валюта" ParentGuid="" Guid="b1ba9aee-0199-4979-a156-27821af649d7">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Документы расторжения контракта" ParentGuid="" Guid="34584757-fc8e-47c7-a171-54329827c99d">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2015-05-24 00:00:02</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Коды видов расходов" ParentGuid="" Guid="bb138156-c7fe-46c9-8242-2b5344f638d8">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКЕИ" ParentGuid="" Guid="5bdb4dfe-b321-4ff8-b246-af7c3d038628">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКПД2" ParentGuid="" Guid="a0b9bfbb-36bb-44e3-a164-4ae28ef9210d">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКСМ" ParentGuid="" Guid="50e395fa-6dc9-4a47-8db4-4d3475843e5b">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Основание расторжения контракта" ParentGuid="" Guid="2867166f-c5a8-406f-98b2-e1d4bd65f95f">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Тип документа об исполнении" ParentGuid="" Guid="dee34ba3-512c-47ef-96c2-1eddb8fede19">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Типы особых закупок" ParentGuid="" Guid="c1256e28-7c78-4a4c-b4a2-5080c50d1d34">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Коды бюджетной классификации" ParentGuid="" Guid="616354bd-38f3-44c6-84b3-51c7cfa83d3a">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Лекарственные препараты" ParentGuid="" Guid="d8283ca1-fca4-4531-b6cd-95a2eb319ae7">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2010-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Обоснование изменения ППЗ" ParentGuid="" Guid="14e2ecb9-2414-4421-b411-57af0aeab191">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Причины признания участника уклонившимся от заключения контракта" ParentGuid="" Guid="388c2058-c83e-4a83-993a-1f58bb4b77db">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="КОСГУ" ParentGuid="" Guid="9766f4a5-039c-465f-a50e-69206677597f">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Случаи заключения контракта жизненного цикла" ParentGuid="" Guid="cc7534e0-2c54-421d-b889-2f35da09af83">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Причины изменений контракта" ParentGuid="" Guid="67fde19e-13e2-457a-b809-db74eadcbd2d">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Причины начисления неустоек" ParentGuid="" Guid="3b657640-97e9-4a8a-a7bc-be91284b3d4d">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Роль участника комиссии" ParentGuid="" Guid="521be685-afe6-48c5-b181-eff1c8a93ffa">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Основание изменения цены контракта" ParentGuid="" Guid="a27e768d-a47a-4a37-8658-01ec404f1efa">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2014-12-28 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Причина отказа от заключения контракта" ParentGuid="" Guid="a632b48a-4609-47c5-a273-ed342577bc3f">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Виды внебюджетных средств" ParentGuid="" Guid="557bf1d1-8634-423f-be1d-292f81c3d322">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Документы основание единственный поставщик" ParentGuid="" Guid="378a1b30-50ca-4472-8a34-848ed868a979">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:01</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Справочник бюджетов" ParentGuid="" Guid="431ffc4c-8206-4e52-882c-411875c75f99">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКОПФ" ParentGuid="" Guid="cb22689a-ba66-4080-9f9d-cae7330e0d18">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:02</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Обоснование изменения ППГ" ParentGuid="" Guid="217de6a0-29f4-4f82-b162-84f2053e55a1">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКАТО" ParentGuid="" Guid="">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-12-02 02:09:06</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКЕИ ЛП" ParentGuid="" Guid="">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="КТРУ" ParentGuid="" Guid="">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2010-04-10 23:59:59</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Основание изменений ПГ" ParentGuid="" Guid="">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-04-08 00:00:03</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ОКТМО" ParentGuid="" Guid="36c89737-fd78-4747-a188-20b6c9c96cbc">
+          <DataAttributes>
+            <DataAttribute Name="Дата последней загрузки">2018-12-02 02:16:42</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

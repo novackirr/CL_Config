@@ -1,0 +1,955 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Электронные площадки" Type="0">
+  <Items>
+    <Dictionary Name="Электронные площадки">
+      <Attributes>
+        <Attribute Name="Адрес" />
+        <Attribute Name="Идентификатор" />
+        <Attribute Name="Реквизит" />
+        <Attribute Name="Профиль" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="АО &quot;ЕЭТП&quot;" ParentGuid="" Guid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8">
+          <DataAttributes>
+            <DataAttribute Name="Адрес">http://com.roseltorg.ru</DataAttribute>
+            <DataAttribute Name="Идентификатор">113</DataAttribute>
+            <DataAttribute Name="Реквизит">|Document|Организатор_закупки|Организатор_закупки_ЕИС</DataAttribute>
+            <DataAttribute Name="Профиль">etp</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="АО &quot;МСП-ЕЭТП&quot;" ParentGuid="" Guid="42ceb889-3948-4131-a07a-8297bad5ad18">
+          <DataAttributes>
+            <DataAttribute Name="Адрес">http://msp.roseltorg.ru</DataAttribute>
+            <DataAttribute Name="Идентификатор">1</DataAttribute>
+            <DataAttribute Name="Реквизит">|Document|Организатор_закупки|Организатор_закупки_ЕИС</DataAttribute>
+            <DataAttribute Name="Профиль">msp</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="АО &quot;РТ-ЕЭТП&quot;" ParentGuid="" Guid="d51b26c6-f6a0-4032-b282-113643554855">
+          <DataAttributes>
+            <DataAttribute Name="Адрес">http://rt.roseltorg.ru</DataAttribute>
+            <DataAttribute Name="Идентификатор">999</DataAttribute>
+            <DataAttribute Name="Реквизит">|Document|Организатор_закупки|Организатор_закупки_ЕИС</DataAttribute>
+            <DataAttribute Name="Профиль">etp-rt</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="АО &quot;Сбербанк - АСТ&quot;" ParentGuid="" Guid="dbb66d46-378d-4271-94e3-90882522fc1e">
+          <DataAttributes>
+            <DataAttribute Name="Адрес">https://utp.sberbank-ast.ru/</DataAttribute>
+            <DataAttribute Name="Идентификатор">2</DataAttribute>
+            <DataAttribute Name="Реквизит">|Document|Организатор_закупки|Организатор_закупки_ЕИС</DataAttribute>
+            <DataAttribute Name="Профиль">sber</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+      <Items>
+        <Dictionary Name="Форма торгов">
+          <Attributes>
+            <Attribute Name="Наименование" />
+            <Attribute Name="Обязательность этапов" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="20" ParentGuid="" Guid="">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Открытый конкурс</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a803dd9e-4265-4c39-82d0-9363c656f09a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион на повышение</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="3a63c2d0-efb1-4ff1-a575-7a2ef6980ae0">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="2a5238fc-47d7-4ef0-9261-8656219894a2">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">3</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a1e78e79-17e9-42e7-91da-838591896259">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="82e50bfe-6f75-499e-aa77-6066860c9702">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="303d9a4b-1bcc-4475-b58d-130ddd141557">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Квалификационный отбор</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="11" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="3e58b314-48d1-416c-bd1a-0a4aee117b7f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион на повышение в бумажной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="da4030c3-92cf-42bf-a247-c3a26646d4e3">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион на понижение в бумажной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="13" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="23e533b9-5e3f-48e9-a060-e4df0bee8120">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс в бумажной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="14" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="e064387e-6445-42f0-9828-5642a40090be">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений в бумажной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="15" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="e3178f74-02fa-48ad-8d7e-f76c1d6af9a8">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок в бумажной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="17" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="995c9e20-fb3e-4242-88ab-9dae0eb176aa">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Попозиционная закупка</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="19" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="bf2eaf8f-9fda-404a-8e64-ec0e4d2c810f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурентные переговоры</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="20" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="033535c9-c4ec-4627-8144-ee62c5d261a7">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион по размещению нестационарных торговых объектов</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="21" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a2a87293-36ad-4765-8afb-7ac1917ad05c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Продажа посредством публичного предложения</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="42ceb889-3948-4131-a07a-8297bad5ad18" Guid="3a46b899-5648-4623-91cc-b7c6a0778ae9">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="42ceb889-3948-4131-a07a-8297bad5ad18" Guid="55576f23-34be-4b6a-93ee-7353bce37609">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="42ceb889-3948-4131-a07a-8297bad5ad18" Guid="5c8927fd-23ee-421f-8826-5748a428035c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">3</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="42ceb889-3948-4131-a07a-8297bad5ad18" Guid="4b5e54e9-e260-4069-a42e-de30db230a4d">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="959261a6-398d-42e5-a6f8-4d06e2a57be3">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион на повышение (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="62ec510b-8ddf-4a1d-ad3f-eac66a7a1c7f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Открытый аукцион (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="f13c4200-e45c-497c-a5d9-add2aab63f2c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Открытый конкурс (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="1887e49e-871c-4da4-844f-a8e805cef84c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Открытый запрос предложений (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="c67d6033-1f02-48e4-8fac-c04ca2c389df">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Открытый запрос котировок (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="67093a20-1c87-41d7-8695-2af3dfdadfd1">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос RFI (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="10" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="979ba3fa-65a5-4546-a01f-ec252102f151">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Квалификационный отбор (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="32" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="e081fe99-341a-4838-af1b-f3cdb709cfff">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурентный отбор со стартовой ценой (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="60" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="08f95095-5585-45f1-89b0-535e17e22245">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Предквалификационный отбор (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="61" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="52c4fa47-db2b-4b91-86fb-702fdcc5a99d">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аккредитационный отбор (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="62" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="bc9d6bcd-db50-4c4e-aeca-8dba39228c81">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Подтверждение стандартных условий (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="51" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="8a8c65e1-5296-46aa-aa80-3d3cd6067b61">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос цен (РТ)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="20" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="dc5a6717-5eda-4031-a70f-0f2c6416496e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">3</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="21" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="911dafe4-54f5-4615-b2a8-a97b3ed0ca04">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="22" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="e03c5e4c-7ca0-4533-8b60-8e4c596cda57">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="25" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="5ef3fda8-b66d-4000-916c-f0ba5388d08f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="11" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="ddff80d8-4029-4791-a5ac-904613e09ee0">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="c39f0101-231a-4859-ba80-b619626d271a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="13" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="29393c4a-ba42-496e-9522-7719ff873d71">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="14" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="595a190f-e032-412b-be5c-929c05008c04">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="15" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="5248d766-e549-4df9-a0af-6158c098595d">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурс (заявка из 2-х частей)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="16" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="4f8c998a-079f-44da-b240-044fa75baa7a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион (заявка из 2-х частей)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="17" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="96d8b2fe-d0f4-4558-b1c5-4c10d2d09d37">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос котировок (заявка из 2-х частей)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="18" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="879caa3d-1b41-4b7a-b1fa-914221b2a302">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос предложений (заявка из 2-х частей)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="26" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="77afb6a4-6720-4223-ad03-d61dde4b64fd">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос цен (коммерческих предложений)</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="63" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="ace4939f-dfaa-4cb2-8148-fd51408121d9">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион с двумя частями заявок</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="68" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="f94dd6df-82b6-4667-be89-18277ed944d7">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Аукцион в электронной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="59" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="732acd17-390c-48de-a5fd-3ae3d36070d7">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Квалификационный отбор в электронной форме</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="61" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="fec7df49-35d2-4dd6-b54c-e4811f14c692">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Конкурентные переговоры</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="62" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="4711503b-a955-4dd6-95de-748de98972a3">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Закупка у единственного поставщика</DataAttribute>
+                <DataAttribute Name="Обязательность этапов" />
+              </DataAttributes>
+            </Data>
+            <Data Name="33" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="9b537fec-8124-462d-88d5-c2d4b068cf74">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Запрос о предоставлении ценовой информации</DataAttribute>
+                <DataAttribute Name="Обязательность этапов">5</DataAttribute>
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+          <Items>
+            <Dictionary Name="Этапы">
+              <Attributes>
+                <Attribute Name="Признак обязательности" />
+              </Attributes>
+              <DataCollection>
+                <Data Name="Прием заявок" ParentGuid="2a5238fc-47d7-4ef0-9261-8656219894a2" Guid="d943b016-157e-444c-afb7-670f5f1e62f3">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вкрытие конвертов" ParentGuid="2a5238fc-47d7-4ef0-9261-8656219894a2" Guid="cfde13f4-40af-4be6-80e6-cd3567aba255">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="2a5238fc-47d7-4ef0-9261-8656219894a2" Guid="b9bc1d63-1a97-4183-94e7-f774d0035de7">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="2a5238fc-47d7-4ef0-9261-8656219894a2" Guid="8cbbe54b-2c23-473a-a4b3-4e963a364b76">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Прием заявок" ParentGuid="a803dd9e-4265-4c39-82d0-9363c656f09a" Guid="e7f98a84-fc96-473a-bc85-2f98c483b9a5">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вскрытие конвертов" ParentGuid="a803dd9e-4265-4c39-82d0-9363c656f09a" Guid="87fb24f0-0531-4ae9-bc47-86a498a698c1">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="a803dd9e-4265-4c39-82d0-9363c656f09a" Guid="ce451765-4c54-458e-918a-f35cbaa6f312">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Проведение торгов" ParentGuid="a803dd9e-4265-4c39-82d0-9363c656f09a" Guid="196120be-b81b-4631-bd48-03747b1947a1">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="a803dd9e-4265-4c39-82d0-9363c656f09a" Guid="3def73c9-8586-499c-8bcd-72f0f5e81d76">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Прием заявок" ParentGuid="a1e78e79-17e9-42e7-91da-838591896259" Guid="95628584-88db-43ab-8578-9f7ec939c9a7">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вскрытие конвертов" ParentGuid="a1e78e79-17e9-42e7-91da-838591896259" Guid="2a7c3d55-11ee-451b-a41c-b4303a693228">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="a1e78e79-17e9-42e7-91da-838591896259" Guid="8b05f569-77a7-4629-901e-0abf22dcabce">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="a1e78e79-17e9-42e7-91da-838591896259" Guid="1b4f22aa-08fb-4007-b111-e338ba87c7ec">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Прием заявок" ParentGuid="82e50bfe-6f75-499e-aa77-6066860c9702" Guid="2a8bdcd2-c021-4d4d-9483-84b83d828d7d">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вскрытие конвертов" ParentGuid="82e50bfe-6f75-499e-aa77-6066860c9702" Guid="c0b061c4-446b-4366-aa5e-cb58addd491f">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="82e50bfe-6f75-499e-aa77-6066860c9702" Guid="263823a8-46a7-41e7-bc06-b55c2c5fe1fc">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="82e50bfe-6f75-499e-aa77-6066860c9702" Guid="e6b419b0-eccb-4002-903a-dfbab26e65d0">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Прием заявок" ParentGuid="303d9a4b-1bcc-4475-b58d-130ddd141557" Guid="275c8b39-1a67-43d5-a794-4c06f5c08723">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вскрытие конвертов" ParentGuid="303d9a4b-1bcc-4475-b58d-130ddd141557" Guid="c2075e3e-386d-432a-aa8d-ec6f1f5ff514">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="303d9a4b-1bcc-4475-b58d-130ddd141557" Guid="a1808e32-3d45-4a4c-a35c-8474bb943817">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="303d9a4b-1bcc-4475-b58d-130ddd141557" Guid="57a67bec-1613-4ae9-81b6-8afd8e74ce60">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Прием заявок" ParentGuid="bf2eaf8f-9fda-404a-8e64-ec0e4d2c810f" Guid="f21a3564-c558-4400-9e46-d5ccacff4342">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Вскрытие конвертов" ParentGuid="bf2eaf8f-9fda-404a-8e64-ec0e4d2c810f" Guid="cf34ba13-801d-454a-9102-6eb43e32028b">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">0</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Рассмотрение заявок" ParentGuid="bf2eaf8f-9fda-404a-8e64-ec0e4d2c810f" Guid="88d3adb0-5c89-4355-9284-c6e027816447">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="Подведение итогов" ParentGuid="bf2eaf8f-9fda-404a-8e64-ec0e4d2c810f" Guid="eee74f97-4cc6-4ddb-be98-89f627d0322b">
+                  <DataAttributes>
+                    <DataAttribute Name="Признак обязательности">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+              </DataCollection>
+            </Dictionary>
+          </Items>
+        </Dictionary>
+        <Dictionary Name="Протоколы">
+          <Attributes>
+            <Attribute Name="Наименование" />
+            <Attribute Name="Код протокола" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="1" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="d303a6fb-9d52-48e8-bb86-c9c55dc8ca8e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол рассмотрения заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="d29c2458-f472-44cc-ae26-5bdc9795e325">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол подведения итогов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="79261939-b957-40c5-91fc-c511b9d28c1f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол вскрытия конвертов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="9" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="78f8c4a3-2379-48af-a045-edf3b6d011b0">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол рассмотрения заявок заочной переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="10" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="f8a119f4-75d7-4145-a3f3-4e4a55f0cac5">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол вскрытия конвертов заочной переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="11" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="e0d6e625-7589-4e88-a981-80de90b4222f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу рассмотрения заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="50a1f372-eb65-4eee-ae7c-a5b774e3c564">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу подведения итогов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="13" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="a0cf196e-4bf4-4c39-8a38-d061fee5daa2">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол оглашения наименования предквалификационных заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="15" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="981cb107-7f71-435f-a7a3-14ec83008261">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу вскрытия конвертов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="16" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="39b11688-e6bb-43d4-af61-73e8e588e49c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу оглашения наименования предквалификационных заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="44" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="bd24475b-9cb5-4047-bc74-7b4ad527860e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол проведения торгов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="45" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="e0953cfe-35d2-4017-9b42-a25e2a4f17b5">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол неуспешного проведения торгов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="46" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="7c2f11b5-dfa7-462d-830a-6f7a32c5d39e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол проведения торгов переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="47" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="829dc911-9fec-4785-82ca-5026bfbacd84">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол неуспешного проведения торгов переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="48" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="674c5d26-04b8-4a71-ae90-3e71f9fa702c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол отмены переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="f4535c3c-86c3-4547-9fba-12dc872329fa">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол рассмотрения заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a44e072a-2229-4435-9316-c051d70afbf5">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол подведения итогов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="7c710a07-1462-4f53-b9fe-967705cc6e45">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол вскрытия конвертов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="9" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="2e5139e2-9db1-4c11-b0c0-3fe3036ef6cf">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол рассмотрения заявок заочной переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="10" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="749b970e-b14f-4e90-aa64-47c6de3bcc7b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол вскрытия конвертов заочной переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="11" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="c5ae3f2c-28f5-4c23-95ae-b06dcfc3e129">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу рассмотрения заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="0ae31074-5b97-46ab-a000-778c8215228c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу подведения итогов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="13" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="af8920b9-581a-4e9c-9fe6-26a17a76d346">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол оглашения наименования предквалификационных заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="15" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="de3d21c1-ae58-4567-b6d0-6dafd5a78225">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу вскрытия конвертов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="16" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="2191cea2-51a6-491c-8748-f2cb6fb0e00a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">дополнительные документы к протоколу оглашения наименования предквалификационных заявок</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="44" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a650cbd3-5e2c-46c2-9c5f-d1b6e50b3c4b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол проведения торгов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="45" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a5387933-6c00-406f-9276-aa33c33b296b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол неуспешного проведения торгов</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="46" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="1eaff120-8ac8-4941-9315-5f429e6d5179">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол проведения торгов переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="47" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="9e531400-9034-4e6d-b3a2-7d90a63c9f43">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол неуспешного проведения торгов переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="48" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="7331f9d1-574d-4f1a-b177-a69c4e63729b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол отмены переторжки</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="bcd0d604-cde6-4073-96ec-f5bc9ee94278">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол подведения итогов предквалификационного отбора</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="7" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="c47e35cf-ff3d-4246-9484-f71c83df29c5">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">протокол допуска к переторжке</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="BidStageProtocol" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="394feae7-e97b-47f9-8714-c87db16970f9">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол этапа/стадии</DataAttribute>
+                <DataAttribute Name="Код протокола">4</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorOpenEnvelopeProtocol" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="68475d7b-0154-4f30-b822-f809154fbf10">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол открытия доступа к заявкам</DataAttribute>
+                <DataAttribute Name="Код протокола">5</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorProtocolRZ1" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="750b01b4-feba-4ea1-82b2-f8000fdbdb74">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол рассмотрения 1-х частей заявок</DataAttribute>
+                <DataAttribute Name="Код протокола">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorProtocolRZ2" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="a9d3fa9b-f122-456b-9f2c-1f8b764c804b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол рассмотрения 2-х частей заявок</DataAttribute>
+                <DataAttribute Name="Код протокола">17</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorReviewProtocol" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="045f1268-9688-4536-a59b-00bab0888482">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол рассмотрения заявок</DataAttribute>
+                <DataAttribute Name="Код протокола">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorResultProtocol" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="720d39a6-c484-48c9-aea7-011b897a5798">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол подведения итогов</DataAttribute>
+                <DataAttribute Name="Код протокола">3</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorProtocolContractConditionChange" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="7b2e0675-fda2-45ae-92df-28eb6e5920a9">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол изменений условий договора</DataAttribute>
+                <DataAttribute Name="Код протокола">41</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorFreeProtocol" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="88907160-7685-4db0-81b3-6ea8180ed3ae">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол в свободной форме</DataAttribute>
+                <DataAttribute Name="Код протокола">30</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="ancorProtocolQualification" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="84dac701-f845-4d5f-bf72-ae8d23704f9b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Протокол квалификации</DataAttribute>
+                <DataAttribute Name="Код протокола">11</DataAttribute>
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+        </Dictionary>
+        <Dictionary Name="Организации">
+          <Attributes>
+            <Attribute Name="Наименование" />
+            <Attribute Name="Код на ЭТП" />
+            <Attribute Name="Логин" />
+            <Attribute Name="Пароль" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="57736046991770201001" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="6ef7927e-44fc-4a5d-88d1-a9bb53891dff">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">АКБ "АБСОЛЮТ БАНК" (ПАО)</DataAttribute>
+                <DataAttribute Name="Код на ЭТП">1</DataAttribute>
+                <DataAttribute Name="Логин">admin@@@qwerty123</DataAttribute>
+                <DataAttribute Name="Пароль">12345678</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="57736046991770201001" ParentGuid="42ceb889-3948-4131-a07a-8297bad5ad18" Guid="79fd66d6-ffd4-4cef-ba74-9fbef391df21">
+              <DataAttributes>
+                <DataAttribute Name="Код на ЭТП" />
+                <DataAttribute Name="Логин" />
+                <DataAttribute Name="Пароль" />
+                <DataAttribute Name="Наименование">АКБ "АБСОЛЮТ БАНК" (ПАО)</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="57736046991770201001" ParentGuid="dbb66d46-378d-4271-94e3-90882522fc1e" Guid="5c539792-48e5-4c53-b7bd-219b711840fd">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">АКБ "АБСОЛЮТ БАНК" (ПАО)</DataAttribute>
+                <DataAttribute Name="Код на ЭТП" />
+                <DataAttribute Name="Логин" />
+                <DataAttribute Name="Пароль" />
+              </DataAttributes>
+            </Data>
+            <Data Name="57736046991770201001" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="e8b2d0ee-3aff-4ab9-998b-309a35af61fa">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">АКБ "АБСОЛЮТ БАНК" (ПАО)</DataAttribute>
+                <DataAttribute Name="Код на ЭТП" />
+                <DataAttribute Name="Логин" />
+                <DataAttribute Name="Пароль" />
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+        </Dictionary>
+        <Dictionary Name="Статусы">
+          <Attributes>
+            <Attribute Name="Наименование статуса" />
+            <Attribute Name="Этап" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="0" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="d4a6a4d3-921a-4b5f-952b-55351c47cd31">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Не подписана</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="974675f5-12b4-45d0-bc82-e70d86688644">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Не опубликована</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="3c27c6a3-e352-4077-b320-82e9426a2e1d">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Прием заявок</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="caa0a961-66e8-4287-be92-b10ded3456aa">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Вскрытие конвертов</DataAttribute>
+                <DataAttribute Name="Этап">5</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="7f19f4ff-88bc-4e01-8e25-268e2f59dc2b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Рассмотрение  заявок</DataAttribute>
+                <DataAttribute Name="Этап">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="76d1f2c7-a255-48c4-b714-c34ca7052365">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Проведение торгов</DataAttribute>
+                <DataAttribute Name="Этап">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="9ff69494-e8f6-4b15-b22e-ef5a97214062">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Подведение итогов</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="7" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="00def3ad-8b7f-4855-948b-23ef69976ed3">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Заключение договора</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="8" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="629d7ada-2cbe-46fe-943b-1ef4ded13659">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Архив</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="9" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="05c57109-306a-4e88-91ba-d8038bef6d2a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Процедура приостановлена</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="10" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="18f44205-c2ef-4bf4-8c02-6c5c309d51dc">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Процедура отменена</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="d51b26c6-f6a0-4032-b282-113643554855" Guid="eb41e31c-dc43-4f1e-865f-b98a7474554d">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Преддоговорные переговоры</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="0" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="66058df5-634e-4ffd-85c0-fe47f9a9aad1">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Не подписана</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="eb02f107-5df3-42df-ae70-88a7395c2a25">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Не опубликована</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="d9ce2f63-3c10-4309-b063-d5af3b707701">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Прием заявок</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="8fc134e7-812c-4d04-bdbf-5428a974630f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Вскрытие конвертов</DataAttribute>
+                <DataAttribute Name="Этап">5</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="01edef9c-b5f9-4e39-ba92-c684f74fe258">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Рассмотрение  заявок</DataAttribute>
+                <DataAttribute Name="Этап">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="5c7c7284-3b35-4ccc-9111-b15bccd25dcf">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Проведение торгов</DataAttribute>
+                <DataAttribute Name="Этап">1</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="3fe51f99-ddd0-4094-b128-5c4c456218f0">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Подведение итогов</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="7" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="1e92a721-2376-49f6-b274-8b5d1778fa3f">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Заключение договора</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="8" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="b210422c-34f5-49d0-9d20-abf6efb0917a">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Архив</DataAttribute>
+                <DataAttribute Name="Этап">2</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="9" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="ceeba9c8-2f3b-453b-b7ba-ef8eae3ba726">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Процедура приостановлена</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="10" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="c70d26c4-4cfa-450c-baa1-04bbca5d5620">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Процедура отменена</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+            <Data Name="12" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="af3026c6-e6b9-48b9-8158-3c348efc70c9">
+              <DataAttributes>
+                <DataAttribute Name="Наименование статуса">Преддоговорные переговоры</DataAttribute>
+                <DataAttribute Name="Этап" />
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+        </Dictionary>
+        <Dictionary Name="Статус заявки">
+          <Attributes>
+            <Attribute Name="Наименование" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="0" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="a88fea39-c69a-4ba5-9db0-07ee96ae5b4e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Черновик</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="77b719de-484a-474b-b349-9869267fe385">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Подана, не рассмотрена</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="2" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="20d5459d-d888-49d3-8c1d-54de7a50d63b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Отозвана до рассмотрения</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="3" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="ce1572ed-384e-44ff-9344-494a490aff7e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Рассмотрена заказчиком и принята</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="4" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="161281cd-b1b5-4c35-a971-0970c39fe235">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Рассмотрена и отклонена заказчиком</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="5" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="1ee567f1-8a19-4fba-8f39-b144a2c8ffcd">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Исполнитель уклонился от заключения ГК</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="6" ParentGuid="3023231c-1b0a-4839-8a24-7ecb2fb32cf8" Guid="c58f14a0-3925-480f-9e0a-0ede75e5a013">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Рассмотрена и принята на предыдущем этапе</DataAttribute>
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+        </Dictionary>
+      </Items>
+    </Dictionary>
+  </Items>
+</Dictionary>

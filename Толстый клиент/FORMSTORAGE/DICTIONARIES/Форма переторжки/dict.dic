@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Форма переторжки" Type="0">
+  <Items>
+    <Dictionary Name="Форма переторжки">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="19753e2b-b021-409e-8738-840d8a9879d6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Переторжка в очной форме</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="23be15bd-7c5a-4335-8e6b-600faf20f3ad">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Переторжка в заочной форме</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

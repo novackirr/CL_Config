@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Вид обеспечения заявки на участие" Type="1">
+  <Items>
+    <Dictionary Name="Вид обеспечения заявки на участие">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="39732370-e623-4bb7-b7cc-3af9eae82322">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Денежные средства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="cfcc1504-3a5e-40b2-8453-8b5f9f7d9a2f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Банковская гарантия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="77c29f3b-f945-406f-a520-97029404eecd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иной способ, предусмотренный ГК</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="484ae0fe-d749-47a1-864e-fb05dd4e564d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Денежные средства; независимая (для закупок СМСП, размещенных после 01.07.2022 г.) / банковская гарантия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="20c6ffe5-9831-4287-ae14-2da4638a7377">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Денежные средства; банковская гарантия; иной способ, предусмотренный ГК</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="17a1b6f8-cb08-453a-9bc1-ae7f04d01f4d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Денежные средства; иной способ, предусмотренный ГК</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="9d0e51aa-c407-4e31-8098-1289a6b5cea9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Банковская гарантия; иной способ, предусмотренный ГК</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="8" ParentGuid="" Guid="01479bba-4636-45e7-a489-118a41b966bd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не установлено</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

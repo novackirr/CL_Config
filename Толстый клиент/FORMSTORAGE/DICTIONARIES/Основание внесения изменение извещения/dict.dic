@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Основание внесения изменение извещения" Type="0">
+  <Items>
+    <Dictionary Name="Основание внесения изменение извещения">
+      <DataCollection>
+        <Data Name="По решению заказчика" ParentGuid="" Guid="08759de1-ea10-4e83-8387-3e0b5b53249a" />
+        <Data Name="Предписание органа, уполномоченного на осуществление контроля" ParentGuid="" Guid="0e65662d-6564-48d2-ae49-df44eb600118" />
+        <Data Name="Решение судебного органа" ParentGuid="" Guid="cd7af6b3-8368-4876-bfc1-6006bccebe5c" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

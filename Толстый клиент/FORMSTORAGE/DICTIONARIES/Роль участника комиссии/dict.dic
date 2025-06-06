@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Роль участника комиссии" Type="0">
+  <Items>
+    <Dictionary Name="Роль участника комиссии">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="Статус записи" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="12" ParentGuid="" Guid="66df781e-eaf1-4013-8aad-5a4abdc35905">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Член комиссии без права совещательного голоса</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="a94b216f-09ba-4df9-954c-33bf1bd770e3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Председатель комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="8" ParentGuid="" Guid="d1a96e2c-bf78-4ae3-b422-015bb8b2ad7b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Зам. председателя комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="76eeb372-436d-4803-8d0d-64953f64a377">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">И.О.  председателя комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="9" ParentGuid="" Guid="488a6649-78b9-4c52-ac3b-6cd3d53cb14c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Секретарь</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="9c2e82de-7053-47ec-85a1-7f97ab97142e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Член комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="10" ParentGuid="" Guid="26d708d6-6d51-4917-b3a7-3549abcdbc9b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Зам. уполномоченного</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="11" ParentGuid="" Guid="97d533eb-2965-45aa-b9b5-5fc2695ffe16">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Уполномоченный член комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="4d69d9e7-7d36-420c-a432-dcd436717762">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Секретарь комиссии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="5fb14227-eb5c-4372-9700-e17b6ab20ae2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Эксперт</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="d168a2fd-13ec-4605-96bb-1f6cd80c664b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Независимый эксперт</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

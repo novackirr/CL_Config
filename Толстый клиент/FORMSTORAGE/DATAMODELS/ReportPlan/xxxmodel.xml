@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportPlan">
+	<CONTENT_MODEL use="ReportPlan" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible"/>
+		<E name="Составитель" datatype="text" index="true" displayname="Составитель" required=""/>
+		<E name="Год" datatype="integer" index="false" default="year(nowdate())" required="true"/>
+		<E name="Год2" datatype="integer" index="false" value="Год + 2"/>
+		<S name="S1">
+			<E name="Организация_заказчик_наименование" datatype="longtext" index="false" dictpath="" edit="textbox,tool(CallTools.AddressBookTool)" required="false" displayname="" absettings="&lt;ROOT title=&quot;Организация заказчик&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" abdata="Name"/>
+			<E name="Организация_заказчик" datatype="integer" index="true" displayname="" view="invisible" required="false" dictpath="" extype="addressbook" abdata="Id"/>
+		</S>
+		<E name="Организация_заказчик" datatype="integer" index="false" displayname="" required="false" dictpath="" value=" S1|Организация_заказчик "/>
+		<E name="Организация_заказчик_наименование" datatype="longtext" index="false" value=" S1|Организация_заказчик_наименование "/>
+		<E name="Ключ_документа" datatype="text" index="true" displayname="Ключ_документа"/>
+		<E name="Организация_заказчик_ИНН" datatype="text" index="true" displayname="Организация_заказчик_ИНН"/>
+		<E name="Организация_заказчик_КПП" datatype="text" index="true" displayname="Организация_заказчик_КПП"/>
+		<E name="Организация_заказчик_ОКОПФ" datatype="text" index="true" displayname="Организация_заказчик_ОКОПФ"/>
+		<E name="Организация_заказчик_ОКПО" datatype="text" index="true" displayname="Организация_заказчик_ОКПО"/>
+		<E name="Организация_заказчик_ОКТМО" datatype="text" index="true" displayname="Организация_заказчик_ОКТМО"/>
+		<E name="Организация_заказчик_адрес" datatype="text" index="true" displayname="Организация_заказчик_адрес"/>
+		<E name="Организация_заказчик_телефон" datatype="text" index="true" displayname="Организация_заказчик_телефон"/>
+		<E name="Организация_заказчик_эл_почта" datatype="text" index="true" displayname="Организация_заказчик_эл_почта"/>
+		<E name="Организация_заказчик_орг_форма" datatype="text" index="true" displayname="Организация_заказчик_орг_форма"/>
+		<E name="Внутренний_номер" datatype="text" index="true" displayname="Внутренний номер"/></CONTENT_MODEL>
+	<plugins>
+		<dictionary name="Организации" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации"/>
+	</plugins>
+	<SCRIPT language="VBScript">sub form_load
+	Set ctx = CreateObject("Form.ExecutionContext")
+	Data("Составитель").Value = ctx.CurrentUser.Name
+end sub</SCRIPT>
+</FORM_DESCRIPTION>

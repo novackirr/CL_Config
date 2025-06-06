@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Обязательность" Type="0">
+  <Items>
+    <Dictionary Name="Обязательность">
+      <DataCollection>
+        <Data Name="Обязательно" ParentGuid="" Guid="0c553427-76e7-4109-88db-693a22801990" />
+        <Data Name="Не обязательно" ParentGuid="" Guid="2704568d-7ce1-4841-925e-426f1b09af95" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

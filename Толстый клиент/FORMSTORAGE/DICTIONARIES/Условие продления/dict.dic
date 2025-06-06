@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Условие продления" Type="0">
+  <Items>
+    <Dictionary Name="Условие продления">
+      <DataCollection>
+        <Data Name="Подано 0 заявок" ParentGuid="" Guid="50140449-c4df-4d5d-b0c2-ec2462ccb7dd" />
+        <Data Name="Подано 0 или 1 заявок" ParentGuid="" Guid="4630a1b1-8555-4296-93fc-f0d84f184686" />
+        <Data Name="Подана 1 заявка" ParentGuid="" Guid="37196aa7-7830-4e84-91eb-6ae65f3169c6" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

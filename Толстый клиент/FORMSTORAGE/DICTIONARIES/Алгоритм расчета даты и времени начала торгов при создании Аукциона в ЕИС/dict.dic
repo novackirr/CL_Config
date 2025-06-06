@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Алгоритм расчета даты и времени начала торгов при создании Аукциона в ЕИС" Type="1">
+  <Items>
+    <Dictionary Name="Алгоритм расчета даты и времени начала торгов при создании Аукциона в ЕИС">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="FirstWorkDay900" ParentGuid="" Guid="caaf66f1-a06c-499c-856b-f657e2edf10c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">1-ый рабочий день после окончания подачи заявок время 9-00 по времени заказчика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ThirdWorkDay" ParentGuid="" Guid="0b5f6410-f05f-43c3-a9cb-b7de1aa82c30">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">3-ий рабочий день после окончания подачи заявок время 9-00 по времени заказчика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ThirdWorkDay1400" ParentGuid="" Guid="c1d26b1f-7c08-448b-b365-9ca05334e82f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">3-ий рабочий день после окончания подачи заявок время 14-00 по времени заказчика</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

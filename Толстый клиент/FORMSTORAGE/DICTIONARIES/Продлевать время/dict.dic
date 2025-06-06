@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Продлевать время" Type="0">
+  <Items>
+    <Dictionary Name="Продлевать время">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="950be064-de81-4931-8dfa-2258dd1729ec">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">После лучшего ценового предложения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="462dee57-b4c4-4dea-a6a5-fd8dfb349048">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">После каждого ценового предложения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="bab3db64-ba1e-4cc4-9e27-7d3af1c68df7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">После n+1 лучших ценовых предложений, где n = максимальное количество победителей</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportMonitoring">
+	<CONTENT_MODEL use="ReportSchedule" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible"/>
+		<E name="Способ_определения_поставщика" datatype="dictionary(Способ определения поставщика(Наименование),text)@Наименование" index="false" displayname="" required="false" dictpath="" edit="textbox"/>
+		<E name="Способ_определения_поставщика_код" datatype="dictionary(Способ определения поставщика,text)@Способ определения поставщика" index="false" displayname="Способ_определения_поставщика_код" dictpath=""/>
+		<E name="По_всем_Способ_определения_поставщика" datatype="boolean" index="false" displayname="" value="iif(  Способ_определения_поставщика  &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="Организация_заказчик_наименование" datatype="longtext" index="false" dictpath="" required="false" displayname="" absettings="&lt;ROOT title=&quot;Организация заказчик наименование&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/>
+		<E name="Организация_заказчик" datatype="dictionary(Организации заказчики,integer)" index="false" displayname="" required="false" dictpath=""/>
+		<E name="По_всем_Организация_заказчик" datatype="boolean" index="false" value="iif(  Организация_заказчик_наименование &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="Статус" datatype="dictionary(Статусы заявки,text)" index="true" displayname="Статус" edit="textbox"/>
+		<E name="По_всем_Статус" datatype="boolean" index="true" displayname="" default="1" value="iif(   Статус  &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E displayname="" name="Регистрационный_номер" datatype="text" index="false"/>
+		<E name="По_всем_рег_номер" datatype="boolean" index="true" displayname="" default="1" value="iif(   Регистрационный_номер   &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="По_всем_дата_регистрации" datatype="boolean" index="true" displayname="" default="1" value="iif(     От     &lt;&gt;&quot;&quot; || До    &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="Исполнитель_Министерства_ФИО" datatype="text" index="false" displayname="" dictpath="" edit="textbox,tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Исполнитель Министерства ФИО&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Persons&quot; DisplayName=&quot;Пользователи&quot; /&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" required="false"/>
+		<E name="Исполнитель_Министерства" datatype="integer" index="true" displayname="" extype="addressbook" abdata="Id" view="invisible"/>
+		<E name="По_всем_Исполнитель" datatype="boolean" index="true" displayname="" default="1" value="iif( Исполнитель_Министерства_ФИО   &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="РН_извещения" datatype="text" index="true" displayname="РН_извещения"/>
+		<E name="РН_ППГ" datatype="text" index="true" displayname="РН_ППГ"/>
+		<E name="Год_закупки" datatype="integer" index="true" displayname="Год_закупки"/>
+		<E name="Статус_закупки" datatype="text" index="true" displayname="Статус закупки"/>
+		<E name="НМЦК_от" datatype="money" index="true" displayname="НМЦК_от"/>
+		<E name="НМЦК_до" datatype="money" index="true" displayname="НМЦК_до"/>
+		<E name="ДатаПубликацииОт" datatype="date" index="true" displayname="ДатаПубликацииОт"/>
+		<E name="ДатаПубликацииДо" datatype="date" index="true" displayname="ДатаПубликацииДо"/>
+		<E name="ДатаПубликацииОт_tmp" datatype="text" index="true" displayname="ДатаПубликацииОт_tmp"/>
+		<E name="ДатаПубликацииДо_tmp" datatype="text" index="true" displayname="ДатаПубликацииДо_tmp"/>
+		<E name="ОКПД2" datatype="text" index="true" displayname="ОКПД2"/>
+		<E name="ДатаОкончания1" datatype="date" index="true" displayname="ДатаОкончания1"/>
+		<E name="ДатаОкончания2" datatype="date" index="true" displayname="ДатаОкончания2"/>
+		<E name="ДатаОкончания1_tmp" datatype="text" index="true" displayname="ДатаОкончания1_tmp"/>
+		<E name="ДатаОкончания2_tmp" datatype="text" index="true" displayname="ДатаОкончания2_tmp"/>
+		<E name="ГРБС" datatype="integer" index="false" displayname="ГРБС"/><E name="ГРБС_наименование" datatype="longtext" index="false" displayname="ГРБС_наименование"/><E name="НМЦК_от_tmp" datatype="text" index="true"/><E name="НМЦК_до_tmp" datatype="text" index="true"/></CONTENT_MODEL>
+	<plugins>
+		<dictionary displayname="Потоки" name="Потоки" progid="FRMITools.FlowsDictionary" initstring="" inittime="once"/>
+	</plugins>
+</FORM_DESCRIPTION>

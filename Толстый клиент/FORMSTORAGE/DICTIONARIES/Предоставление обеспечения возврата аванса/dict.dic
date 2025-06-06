@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Предоставление обеспечения возврата аванса" Type="0">
+  <Items>
+    <Dictionary Name="Предоставление обеспечения возврата аванса">
+      <Attributes>
+        <Attribute Name="Код" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="До заключения договора" ParentGuid="" Guid="2016d38a-7e2a-4476-bd55-2a9426684ec0">
+          <DataAttributes>
+            <DataAttribute Name="Код">1</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="C момента заключения договора" ParentGuid="" Guid="0ae59670-cff1-4f23-97f9-20001a1ec32b">
+          <DataAttributes>
+            <DataAttribute Name="Код">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

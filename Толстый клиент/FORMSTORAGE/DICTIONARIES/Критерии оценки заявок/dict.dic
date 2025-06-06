@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Критерии оценки заявок" Type="0">
+  <Items>
+    <Dictionary Name="Критерии оценки заявок">
+      <DataCollection>
+        <Data Name="Цена договора, цена единицы продукции" ParentGuid="" Guid="1578cf6d-4675-472c-93f9-dada8fcad292" />
+        <Data Name="Срок поставки товара, выполнения работ, оказания услуг" ParentGuid="" Guid="56156470-e5c4-4819-b994-c81e36f1e1ec" />
+        <Data Name="Условия оплаты товара, работ, услуг" ParentGuid="" Guid="ad4fc89e-d1d0-49d4-a5a7-6d8e41da6ea5" />
+        <Data Name="Функциональные характеристики (потребительские свойства) или качественные характеристики товара" ParentGuid="" Guid="01b7a4ce-0ba6-4bde-becd-4b8f62256d6d" />
+        <Data Name="Качество технического предложения участника процедуры закупки" ParentGuid="" Guid="cdcbfeab-921c-46f0-9afc-813789a290ac" />
+        <Data Name="Квалификация участника процедуры закупки при закупке работ, услуг" ParentGuid="" Guid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" />
+        <Data Name="Срок представляемых гарантий качества товара, работ, услуг" ParentGuid="" Guid="9548d1b1-bc86-463e-8686-25698910a194" />
+        <Data Name="Стоимость жизненного цикла продукции, результат работ" ParentGuid="" Guid="3d8c6d70-937b-4b03-b0e5-c1afa45551f0" />
+      </DataCollection>
+      <Items>
+        <Dictionary Name="а в том числе">
+          <DataCollection>
+            <Data Name="Обеспеченность материально-техническими ресурсами" ParentGuid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" Guid="b8588073-4653-4f7f-9eed-b67c29c09636" />
+            <Data Name="Опыт и репутация участника процедуры закупки" ParentGuid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" Guid="34229ecb-bff6-41f2-befa-d7f425a40e0e" />
+            <Data Name="Наличие, степень внедрения действующей системы менеджмента качества (управление, обеспечения и контроля)" ParentGuid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" Guid="71002993-fc90-40d4-8e10-26901d40f0bf" />
+            <Data Name="Дополнительные подкритерии, установленные при закупке товара, работ, услуг" ParentGuid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" Guid="f8f70730-e5a7-4a7a-a460-09244e6d1c3d" />
+            <Data Name="Обеспеченность кадровыми ресурсами" ParentGuid="fbdb3f65-c9db-4b78-a814-565cfa8fccf7" Guid="df944666-6dc7-4d33-90f3-b94c6b4c9910" />
+          </DataCollection>
+        </Dictionary>
+      </Items>
+    </Dictionary>
+  </Items>
+</Dictionary>

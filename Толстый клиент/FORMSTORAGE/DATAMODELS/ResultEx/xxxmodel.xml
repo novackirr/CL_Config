@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform  ctform.xsd" name="ResultEx">
+  <CONTENT_MODEL dfattchfiles="|Document|files" dfnumberdoc="|Document|Число_регномера" key="Key">
+    <E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible" />
+    <E displayname="Регистрационный номер" name="Регистрационный_номер" datatype="text(249)" index="true" />
+    <E displayname="Дата создания" name="Дата_создания" datatype="date" edit="" index="true" default="nowdate()" />
+    <E name="Редакция" datatype="integer" index="true" />
+    <E name="Статус" datatype="text" index="true" />
+    <E displayname="ФИО ответственного" name="ФИО_ответственного" datatype="text" index="true" />
+    <!-- <E name="Группа" datatype="dictionary(Groups,text)" index="true" edit="combobox" value="&quot;DEFAULT&quot;" /> -->
+    <E displayname="Дополнительная информация" name="Дополнительная_информация" datatype="longtext" index="true" />
+    <E displayname="Логическое поле 1" name="Логическое_поле_1" datatype="boolean" index="true" default="0" />
+    <E name="Стоимость" datatype="integer" index="true" />
+    <E displayname="Налог, %" name="Налог" datatype="integer" index="true" />
+    <E displayname="Числовое поле 4" name="Числовое_поле_4" datatype="integer" index="true" />
+    <E displayname="Логическое поле 2" name="Логическое_поле_2" datatype="boolean" index="true" default="0" />
+    <E displayname="Логическое поле 3" name="Логическое_поле_3" datatype="boolean" index="true" default="0" />
+    <!-- <E name="Согласующий" datatype="dictionary(Groups,text)" index="true" edit="combobox" value="&quot;DEFAULT&quot;" /> -->
+    <E displayname="Текстовое поле 5" name="Текстовое_поле_5" datatype="text" index="true" />
+    <E displayname="Дата 3" name="Дата_3" datatype="date" edit="" index="true" />
+    <E name="Категория" datatype="text" index="true" />
+    <E name="Комментарий" datatype="longtext" index="true" />
+  </CONTENT_MODEL>
+  <plugins>
+    <!-- Отличия в объявлении словарей в атрибутах, два возможных варианта inittime: -->
+    <!-- inittime="once" -->
+    <!-- inittime="field" -->
+    <!-- <dictionary name="Группа" progid="FrmTools.DictSource" inittime="field" initstring="stored:Группа" /> -->
+    <!-- <dictionary name="Согласующий" progid="FrmTools.DictSource" inittime="field" initstring="stored:Согласующий" /> -->
+  </plugins>
+</FORM_DESCRIPTION>

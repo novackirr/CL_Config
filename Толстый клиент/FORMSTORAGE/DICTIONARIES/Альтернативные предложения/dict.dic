@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Альтернативные предложения" Type="0">
+  <Items>
+    <Dictionary Name="Альтернативные предложения">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="b947639d-b2e5-4dbc-9898-5f867d8b396a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не принимать</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="b970a124-275a-4308-ba78-feb0a47599e0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 1 предложения от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="bb2f6616-d378-4b74-ab0a-205123fde331">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 2 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="a34749fb-d215-43e1-8ca4-afaa7c76b5a6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 3 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="e4093bac-3ec5-4832-9836-ff91d09bfa86">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 4 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="54351f2d-f6e6-4821-b824-d4dd7bd62080">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 5 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="023f9d27-f101-40e1-8025-378762cb9c90">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 6 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="e3b5a432-9d02-4649-bdeb-c70a0f02fefc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 7 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="8" ParentGuid="" Guid="bf6f8607-0d9c-467c-a21c-5b31b041334b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 8 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="9" ParentGuid="" Guid="77d2b92d-ddb6-4625-bf15-e96d98a0c919">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 9 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="10" ParentGuid="" Guid="bdd7a70b-7688-4c44-8c39-7d81a1c5ddb0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 10 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="11" ParentGuid="" Guid="7deeedae-31c7-4f8e-a07a-85e8e3bb3aa3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 11 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="12" ParentGuid="" Guid="8df32e94-79b3-4fac-9c78-05652a534cf9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 12 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="13" ParentGuid="" Guid="c3b85c34-5345-480e-83b5-21c860daac9e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 13 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="14" ParentGuid="" Guid="63320579-20c3-4890-8a26-81a2ba25d14c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 14 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="15" ParentGuid="" Guid="f9b998f6-ff98-4f2c-af1e-c64088c1cdaa">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 15 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="16" ParentGuid="" Guid="716ab105-fee9-4f96-9e4c-03fa94979ae7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 16 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="17" ParentGuid="" Guid="6a89f066-fa58-41cf-8ce1-1a295d9c52e7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 17 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="18" ParentGuid="" Guid="cdf079a0-f022-4ba2-84e4-e4d190937bff">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 18 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="19" ParentGuid="" Guid="49982d3a-0d1b-4128-8fc5-91a269cccee5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 19 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="20" ParentGuid="" Guid="54b20a93-6a23-4b9b-a49d-56f57abf38dd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не более 20 предложений от одного участника</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

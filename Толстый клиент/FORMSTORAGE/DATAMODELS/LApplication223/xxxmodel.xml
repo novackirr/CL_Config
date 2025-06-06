@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform  ctform.xsd" name="LApplication223">
+  <CONTENT_MODEL dfattchfiles="|Document|files" dfnumberdoc="|Document|Число_регномера" key="Key">
+    <E name="Key" datatype="integer" index="false" default="&quot;1&quot;" view="invisible" displayname="Ключ" dfprotected="true" />
+    <E name="ИД_последний_редактор" datatype="text" index="true" displayname="ИД последний редактор" dfhidden="true" view="invisible" />
+    <E name="Имя_последний_редактор" datatype="text" index="true" displayname="Имя последний редактор" dfhidden="true" view="invisible" />
+    <S name="Document" displayname="Документ" use="LApplication">
+      <E displayname="Регистрационный номер" name="Регистрационный_номер" datatype="text(249)" index="true" dfprotected="true" dfhidden="true" />
+      <E displayname="Префикс рег. номера" name="Префикс_регномера" datatype="dictionary(Prefix,text)" edit="combobox(Prefix)" index="true" view="invisible" dfprotected="false" />
+      <E displayname="Порядковый рег. номер" name="Число_регномера" datatype="integer(+1..)" index="true" view="invisible" dfprotected="true" required="true" />
+      <E displayname="Суффикс рег. номера" name="Суффикс_регномера" datatype="dictionary(Suffix,text)" edit="combobox(Suffix)" dfprotected="false" index="true" view="invisible" />
+      <E displayname="Дата регистрации" name="Дата_регистрации" datatype="date" edit="" index="true" dfprotected="true" required="true" esp="false" default="nowdate()" />
+      <E displayname="Вид документа" name="Вид_документа" datatype="dictionary(VidDocNames,text)" index="true" dfprotected="true" required="false" edit="combobox" value="&quot;Заявка участника&quot;" view="invisible" />
+      <E displayname="Краткое содержание" name="Краткое_содержание" datatype="longtext" euflag="7" index="true" dfprotected="true" required="false" edit="multiline" awindex="true" view="invisible" default="&quot;Заявка участника&quot;" value="&quot;Заявка учатсника № &quot; + Номер_заявки + &quot; от &quot; +  Дата_подачи_заявки  + &quot; , номер извещения в ЕИС: &quot; +  Номер_извещения_в_ЕИС  + &quot; , номер извещения на ЭТП &quot; +  Номер_извещения_на_ЭТП + &quot; наименование лота : &quot; +   Наименование_лота + &quot; , способ закупки: &quot; + Способ_закупки " />
+      <E displayname="Имя потока" name="Имя_потока" datatype="text" index="false" view="invisible" dfprotected="true" dfhidden="true" esp="false" />
+      <E displayname="ИД потока" name="ИД_потока" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible" />
+      <E displayname="ИД регистратора" name="ИД_регистратора" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible" />
+      <E name="header" datatype="text" index="false" value="&quot;Заявка участника&quot; " />
+      <E name="subheader" datatype="text" index="false" view="invisible" />
+      <E name="Статус" datatype="text" index="true" edit="textbox" required="false" />
+      <E name="Номер_заявки" datatype="text" index="true" displayname="Номер заявки" />
+      <E name="Участник_заявки_наименование" datatype="longtext" index="true" displayname="Участник заявки наименование" required="false" dictpath="" edit="textbox" />
+      <E name="Участник_заявки" datatype="longtext" index="true" displayname="Участник заявки" dictpath="" view="invisible" />
+      <E name="Участник_заявки_ИНН" datatype="dictionary(Контрагенты,text)@ИНН" index="true" displayname="Участник заявки ИНН" dictpath="" />
+      <E name="Участник_заявки_КПП" datatype="dictionary(Контрагенты,text)@КПП" index="true" displayname="Участник заявки КПП" dictpath="" />
+      <E name="Участник_заявки_СМП" datatype="boolean" index="true" displayname="Участник заявки СМП" dictpath="" default="0" helpstring="Участник относится к субъектам малого и среднего предпринимательства" />
+      <E name="Цена_участника_без_НДС" datatype="money" index="true" displayname="Цена_участника_без_НДС" />
+      <E name="Альтернативное_предложение" datatype="boolean" index="true" displayname="Альтернативное предложение" default="0" />
+      <E name="Валюта" datatype="dictionary(Валюта(Наименование),text)@Наименование" index="true" dictpath="" required="false" edit="droplist" default="&quot;Российский рубль&quot;" view="invisible" />
+      <E name="Цифровой_код_валюты" datatype="dictionary(Валюта,text)@Цифровой код" index="true" displayname="Цифровой код валюты" dictpath="" required="false" edit="textbox" default="&quot;643&quot;" view="invisible" />
+      <E name="Код_валюты" datatype="dictionary(Валюта,text)" index="true" displayname="Код валюты" dictpath="" required="false" default="&quot;RUB&quot;" view="invisible" />
+      <E name="ИД_лота" datatype="integer" index="true" displayname="ИД лота" view="invisible" />
+      <E name="Участник_закупки_ОГРН" datatype="dictionary(Контрагенты,text)@ОГРН" index="true" displayname="Участник закупки ОГРН" dictpath="" />
+      <E name="Участник_заявки_тип" datatype="dictionary(Контрагенты,text)@Тип" index="true" displayname="Участник заявки тип" dictpath="" edit="textbox" />
+      <E name="Участник_заявки_нерезидент" datatype="dictionary(Контрагенты,boolean)@Нерезидент" index="true" displayname="Участник заявки нерезидент" default="0" dictpath="" />
+      <E name="Участник_заявки_тип_код" datatype="dictionary(Контрагенты,text)@Тип код" index="true" displayname="Участник заявки тип код" dictpath="" view="invisible" />
+      <E name="Способ_закупки_код" datatype="dictionary(Способ закупки,text)" index="true" displayname="Способ закупки код" dictpath="" view="invisible" />
+      <E name="Способ_закупки" datatype="dictionary(Способ закупки,text)@Наименование" index="true" displayname="Способ закупки" required="false" edit="textbox" />
+      <E name="Номер_извещения_в_ЕИС" datatype="text" index="true" displayname="Номер извещения в ЕИС" />
+      <E name="Номер_лота_в_извещении" datatype="integer" index="true" displayname="Номер лота в извещении" />
+      <E name="Участник_заявки_отсутствует_в_РНП" datatype="boolean" index="true" displayname="Участник заявки отсутствует в РНП" default="0" />
+      <E name="Результат_допуска_код" datatype="dictionary(Результат допуска,text)" index="true" displayname="Результат допуска код" dictpath="" />
+      <E name="Результат_допуска" datatype="dictionary(Результат допуска,text)@Наименование" index="true" displayname="Результат допуска" dictpath="" />
+      <S name="Организация_заказчик" displayname="Организация заказчик">
+        <E name="Организация_заказчик_наименование" datatype="longtext" index="true" dictpath="" required="true" displayname="Организация заказчик наименование" absettings="&lt;ROOT title=&quot;&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;/ROOT&gt;" edit="textbox" extype="addressbook" abdata="Name" />
+        <E name="Организация_заказчик" datatype="integer" index="true" displayname="Организация заказчик" required="false" dictpath="" extype="addressbook" abdata="Id" />
+      </S>
+      <E name="Причина_отказа_в_допуске" datatype="longtext" index="true" displayname="Причина отказа в допуске" />
+      <E name="Причина_отказа_в_допуске_код" datatype="text" index="true" displayname="Причина отказа в допуске код" />
+      <E name="Сведения_о_ценовом_предложении" datatype="longtext" index="true" displayname="Сведения о ценовом предложении" />
+      <E name="Результат_код" datatype="dictionary(Результат,text)" index="true" displayname="Результат код" dictpath="" />
+      <E name="Результат" datatype="dictionary(Результат,text)@Наименование" index="true" displayname="Результат" dictpath="" />
+      <E name="ИД_на_ЭТП" datatype="text" index="true" displayname="ИД на ЭТП" />
+      <E name="Наименование_ЭТП" datatype="text" index="true" displayname="Наименование ЭТП" />
+      <E name="ИД_ЭТП" datatype="text" index="true" displayname="ИД ЭТП" />
+      <E name="Этап_отклонения_заявки" datatype="integer" index="true" displayname="Этап отклонения заявки" />
+      <E name="Цена_участника_с_НДС" datatype="money" index="true" displayname="Цена_участника_с_НДС" required="false" />
+      <E name="ИД_извещения_на_ЭТП" datatype="text" index="true" displayname="ИД извещения на ЭТП" />
+      <E name="Предмет_договора" datatype="longtext" index="true" required="true" displayname="Предмет договора" awindex="true" euflag="7" />
+      <S name="Организатор_закупки" displayname="Организатор закупки">
+        <E name="Организатор_закупки_наименование" datatype="longtext" index="true" displayname="Организатор закупки наименование" required="true" dictpath="" edit="textbox" absettings="&lt;ROOT title=&quot;Организатор закупки&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;True&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;True&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" extype="addressbook" abdata="Name" />
+        <E name="Организатор_закупки" datatype="integer" index="true" displayname="Организатор закупки" required="false" dictpath="" view="invisible" extype="addressbook" abdata="Id" />
+        <E name="Организатор_закупки_ЕИС" datatype="text" index="true" displayname="Организатор закупки ЕИС" extype="addressbook" abdata="EISCode223" />
+      </S>
+      <A name="Переторжки">
+        <S name="S1">
+          <E name="Номер_переторжки" datatype="integer" index="true" displayname="Номер переторжки" />
+          <E name="Участник_заявки_ФИО" datatype="text" index="true" displayname="Участник заявки ФИО" />
+          <E name="Количество_заявок" datatype="integer" index="true" displayname="Количество заявок" />
+          <E name="Тип_протокола" datatype="text" index="true" displayname="Тип протокола" />
+          <E name="Цена_переторжки_с_НДС" datatype="money" index="true" />
+          <E name="Цена_переторжки_без_НДС" datatype="money" index="true" />
+        </S>
+      </A>
+      <E name="Окончательная_цена_с_НДС" datatype="money" index="true" displayname="Окончательная цена с НДС" />
+      <E name="Окончательная_цена_без_НДС" datatype="money" index="true" displayname="Окончательная цена без НДС" />
+      <E name="Способ_закупки_положение" datatype="dictionary(Организации заказчики,text)@Способ по положению" index="true" displayname="Способ закупки положение" dictpath="|[|Document|Организация_заказчик|Организация_заказчик]|Способ закупки" />
+      <E name="Участник_заявки_ОКОПФ" datatype="text" index="true" displayname="Участник заявки ОКОПФ" />
+      <E name="Участник_заявки_ОКПО" datatype="text" index="true" displayname="Участник заявки ОКПО" />
+      <E name="Участник_заявки_страна" datatype="text" index="true" displayname="Участник заявки страна" />
+      <E name="Участник_заявки_страна_код" datatype="text" index="true" displayname="Участник заявки страна код" />
+      <E name="Участник_заявки_индекс" datatype="text" index="true" displayname="Участник заявки индекс" />
+      <E name="Участник_заявки_регион" datatype="text" index="true" displayname="Участник заявки регион" />
+      <E name="Участник_заявки_регион_код" datatype="text" index="true" displayname="Участник заявки регион код" />
+      <E name="Участник_заявки_состоит_на_учете" datatype="boolean" index="true" displayname="Участник заявки состоит на учете" />
+      <E name="Участник_заявки_дата_постановки" datatype="date" index="true" displayname="Участник заявки дата постановки" />
+      <E name="Участник_заявки_район" datatype="text" index="true" displayname="Участник заявки район" />
+      <E name="Участник_заявки_город" datatype="text" index="true" displayname="Участник заявки город" />
+      <E name="Участник_заявки_населенный_пункт" datatype="text" index="true" displayname="Участник заявки населенный пункт" />
+      <E name="Участник_заявки_улица" datatype="text" index="true" displayname="Участник заявки улица" />
+      <E name="Участник_заявки_дом" datatype="text" index="true" displayname="Участник заявки дом" />
+      <E name="Участник_заявки_корпус" datatype="text" index="true" displayname="Участник заявки корпус" />
+      <E name="Участник_заявки_офис" datatype="text" index="true" displayname="Участник заявки офис" />
+      <E name="Участник_заявки_email" datatype="text" index="true" displayname="Участник заявки email" />
+      <E name="Участник_заявки_телефон" datatype="text" index="true" displayname="Участник заявки телефон" />
+      <E name="Участник_заявки_идентификационный_номер" datatype="text" index="true" displayname="Участник заявки идентификационный номер" />
+      <E name="Участник_заявки_доп_идентификационный_номер" datatype="text" index="true" displayname="Участник заявки доп идентификационный номер" />
+      <E name="Категория_СМП_код" datatype="text" index="true" displayname="Категория СМП код" view="invisible" />
+      <E name="Категория_СМП" datatype="text" index="true" displayname="Категория СМП" />
+      <E name="Год_закупки" datatype="integer" index="true" displayname="Год закупки" view="invisible" />
+      <E name="Номер_лота" datatype="text" index="true" displayname="Номер лота" />
+      <E name="Номер_закупки" datatype="text" index="true" displayname="Номер закупки" />
+      <E name="Расширенный_план" datatype="boolean" index="true" displayname="Расширенный план" default="0" />
+      <E name="Дата_отзыва_заявки" datatype="date" index="true" displayname="Дата_отзыва заявки" />
+      <E name="Место_заявки_по_цене" datatype="text" index="true" displayname="Место заявки по цене" />
+      <E name="Статус_заявки_код" datatype="text" index="true" displayname="Статус заявки код" />
+      <E name="Статус_заявки" datatype="text" index="true" displayname="Статус заявки" />
+      <E name="Этап_предложение" datatype="text" index="true" displayname="Этап предложение" />
+      <E name="Отклонение_заявки_этап" datatype="boolean" index="true" displayname="Отклонение заявки этап" />
+      <E name="Дата_принятия_отклонения_заявки" datatype="date" index="true" displayname="Дата принятия отклонения заявки" />
+      <E name="НДС" datatype="text" index="true" displayname="НДС" />
+      <E name="Оценка_заявки" datatype="integer" index="true" displayname="Оценка заявки" />
+      <E name="Тип_обеспечения" datatype="integer" index="true" displayname="Тип обеспечения" />
+      <E name="Наименование_гаранта" datatype="text" index="true" displayname="Наименование гаранта" />
+      <E name="Сумма_банковской_гарантии" datatype="money" index="true" displayname="Сумма банковской гарантии" />
+      <A name="Выбор_комиссии" displayname="Выбор комиссии" use="table">
+        <S name="S1">
+          <E name="Присутствие" datatype="boolean" index="true" displayname="Присутствие" />
+          <E name="ИД_члена_комиссии" datatype="text" index="true" displayname="ИД члена комиссии" />
+          <E name="Номер_места_заявки" datatype="text" index="true" displayname="Номер места заявки" />
+          <E name="Фамилия" datatype="text" index="true" />
+          <E name="Имя" datatype="text" index="true" displayname="Имя" />
+          <E name="Отчество" datatype="text" index="true" displayname="Отчество" />
+          <E name="Код_отклонения_комиссия" datatype="text" index="true" displayname="Код отклонения комиссия" />
+          <E name="Отклонение_комиссия" datatype="text" index="true" displayname="Отклонение комиссия" />
+          <E name="Обоснование_решения" datatype="longtext" index="true" displayname="Обоснование решения" />
+          <E name="Присвоенное_место_заявки" datatype="text" index="true" />
+          <E name="Участники_комиссии_роль" datatype="dictionary(Роль участника комиссии,text)@Наименование" index="true" displayname="Участники комиссии роль" required="true" />
+          <S name="ФИО_комиссии" displayname="ФИО комиссии">
+            <E name="ФИО_комиссии" datatype="text" index="true" displayname="ФИО комиссии" abdata="Id" extype="addressbook" />
+            <E name="Фамилия_комиссии" datatype="text" index="true" displayname="Фамилия комиссии" extype="addressbook" />
+            <E name="Имя_комиссии" datatype="text" index="true" displayname="Имя комиссии" extype="addressbook" />
+            <E name="Отчество_комиссии" datatype="text" index="true" displayname="Отчество комиссии" extype="addressbook" />
+          </S>
+          <E name="Участники_комиссии_роль_код" datatype="dictionary(Роль участника комиссии,text)" index="true" dictpath="" />
+        </S>
+      </A>
+      <E name="Ид_лота_на_ЭТП" datatype="text" index="true" displayname="Ид лота на ЭТП" />
+      <E name="Номер_извещения_на_ЭТП" datatype="text" index="true" displayname="Номер извещения на ЭТП" />
+      <A name="Заказчик_права_таблица" displayname="Заказчик права таблица">
+        <S name="S1">
+          <E name="Заказчик_код_права" datatype="integer" index="true" displayname="Заказчик код права" />
+          <E name="Заказчик_наименование_права" datatype="text" index="true" displayname="Заказчик наименование права" />
+        </S>
+      </A>
+      <E name="Квалификационный_отбор" datatype="boolean" index="true" displayname="Квалификационный отбор" />
+      <E name="Участник_код_на_ЭТП" datatype="text" index="true" displayname="Участник код на ЭТП" view="invisible" />
+      <E name="Дата_подачи_заявки" datatype="datetime" index="true" />
+      <E name="Код_протокола" datatype="dictionary(Организации заказчики,text)" index="true" displayname="Код протокола" dictpath="|[|Document|Организация_заказчик|Организация_заказчик]|Способ закупки|[|Document|Способ_закупки_код]|Протоколы" />
+      <E name="Наименование_протокола" datatype="dictionary(Организации заказчики,text)" index="true" displayname="Наименование протокола" dictpath="" required="true" />
+      <E name="Основание_для_решения" datatype="longtext" index="true" displayname="Основание для решения" />
+      <E name="Торги_на_процент_снижения" datatype="boolean" index="true" displayname="Торги на процент снижения" view="invisible" />
+      <E name="Процент_снижения" datatype="real" index="true" displayname="Процент снижения" />
+      <E name="Проведена_переторжка" datatype="boolean" index="true" displayname="Проведена переторжка" view="invisible" />
+      <E name="Применить_для_всех_членов_комиссии" datatype="boolean" index="true" displayname="Применить для всех членов комиссии" />
+      <A name="Критерии_оценки" displayname="Критерии оценки">
+        <S name="S1">
+          <E name="Наименование_критерия" datatype="longtext" index="true" displayname="Наименование критерия" />
+          <E name="Сведения_о_предложении_участника" datatype="longtext" index="true" displayname="Сведения о предложении участника" />
+          <E name="Макс_критерий" datatype="real" index="true" displayname="Макс критерий" />
+          <E name="Оценка_заявки" datatype="real" index="true" displayname="Оценка заявки" />
+          <E name="Номер" datatype="integer" index="true" displayname="Номер" />
+          <E name="Описание_критерия" datatype="longtext" index="true" displayname="Описание критерия" />
+          <E name="Вес_критерий" datatype="real" index="true" displayname="Вес критерий" />
+          <E name="ИД_критерия" datatype="text" index="true" displayname="ИД критерия" />
+          <A name="Подкритерии">
+            <S name="S1">
+              <E name="Ид_подкритерия" datatype="text" index="true" displayname="Ид подкритерия" />
+              <E name="Наименование_подкритерия" datatype="longtext" index="true" displayname="Наименование подкритерия" />
+              <E name="Описание_подкритерия" datatype="longtext" index="true" displayname="Описание подкритерия" />
+              <E name="Макс_подкритерий" datatype="real" index="true" displayname="Макс подкритерий" />
+              <E name="Вес_подкритерия" datatype="real" index="true" displayname="Вес подкритерия" />
+              <E name="Мин_подкритерий" datatype="text" index="true" displayname="Мин подкритерий" />
+            </S>
+          </A>
+          <E name="Мин_критерий" datatype="text" index="true" displayname="Мин критерий" />
+        </S>
+      </A>
+      <E name="Форма_торгов" datatype="text" index="true" displayname="Форма торгов" />
+      <E name="Форма_торгов_код" datatype="text" index="true" displayname="Форма торгов код" />
+      <E name="Участник_заявки_фирменное_наименование" datatype="longtext" index="true" displayname="Участник заявки фирменное наименование" />
+      <E name="Участник_заявки_ОКТМО" datatype="text" index="true" displayname="Участник заявки ОКТМО" />
+      <E name="Участник_заявки_дополнительная_информация" datatype="longtext" index="true" displayname="Участник заявки дополнительная информация" />
+      <E name="Участник_заявки_ОКОПФ_наименование" datatype="longtext" index="true" displayname="Участник заявки ОКОПФ наименование" />
+      <E name="Итоговая_оценка_заявки" datatype="real" index="true" displayname="Итоговая оценка заявки" />
+      <E name="Номер_переторжки" datatype="integer" index="true" displayname="Номер переторжки" />
+      <E name="ИД_протокола_на_ЭТП" datatype="integer" index="true" displayname="ИД протокола на ЭТП" />
+      <E name="Результат_допуска_1х_частей" datatype="text" index="true" displayname="Результат допуска 1х частей" />
+      <E name="Результат_допуска_1х_частей_код" datatype="text" index="true" displayname="Результат допуска 1х частей код" />
+      <E name="Результат_допуска_2х_частей" datatype="text" index="true" displayname="Результат допуска 2х частей" />
+      <E name="Результат_допуска_2х_частей_код" datatype="text" index="true" displayname="Результат допуска 2х частей код" />
+      <E name="Рассчитать_автоматически" datatype="boolean" index="true" displayname="Рассчитать автоматически" />
+      <S name="Инициатор" displayname="Инициатор">
+        <E name="ФИО_инициатора" datatype="text" index="true" absettings="&lt;ROOT title=&quot;Выбор сотрудника&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" edit="textbox" displayname="ФИО инициатора" abdata="Name" />
+        <E name="ИД_Инициатора" datatype="integer" index="true" extype="addressbook" displayname="ИД Инициатора" abdata="Id" view="invisible" />
+        <E name="Должность_инициатора" datatype="text" index="true" displayname="Должность инициатора" abdata="Post" />
+        <E name="Табельный_номер_инициатора" datatype="integer" index="true" displayname="Табельный номер инициатора" />
+      </S>
+      <A name="Требования_к_документации_новые" displayname="Требования к документации новые">
+        <S name="S1">
+          <E name="ИД_требования" datatype="text" index="true" displayname="ИД требования" />
+          <E name="Требование" datatype="longtext" index="true" />
+          <E name="Вид_документа" datatype="longtext" index="true" displayname="Вид документа" />
+          <E name="Документы_для_подтверждения" datatype="longtext" index="true" displayname="Документы для подтверждения" />
+          <E name="Наличие" datatype="boolean" index="true" />
+          <E name="Неприменимо" datatype="boolean" index="true" />
+          <E name="Наличие_документа" datatype="text" index="true" displayname="Наличие документа" />
+        </S>
+      </A>
+      <E name="Результат_допуска_квал" datatype="text" index="true" displayname="Результат допуска квал" />
+      <E name="Результат_допуска_квал_код" datatype="text" index="true" displayname="Результат допуска квал код" />
+      <E name="Дата_создания" datatype="datetime" index="true" displayname="Дата создания" />
+      <E name="Загружена_документация_1х_частей" datatype="boolean" index="true" displayname="Загружена документация 1х частей" />
+      <E name="Загружена_документация_2х_частей" datatype="boolean" index="true" displayname="Загружена документация 2х частей" />
+      <E name="Загружена_документация_итоги" datatype="boolean" index="true" displayname="Загружена документация итоги" />
+      <E name="Не_облагается_НДС" datatype="boolean" index="true" displayname="Не облагается НДС" />
+      <E name="Наименование_контрагента" datatype="longtext" index="true" displayname="Наименование контрагента" />
+      <E name="Техническое_предложение" datatype="text" index="true" displayname="Техническое_предложение" />
+      <E name="Наличие_документа_тех" datatype="text" index="true" displayname="Наличие_документа_тех" />
+      <A name="Аккредитационные_пулы" displayname="Аккредитационные пулы">
+        <S name="S1">
+          <E name="ИД_пула" datatype="text" index="true" displayname="ИД пула" />
+          <E name="Наименование_пула" datatype="longtext" index="true" displayname="Наименование пула" />
+          <E name="Активен" datatype="boolean" index="true" />
+          <E name="Аккредитация" datatype="longtext" index="true" />
+        </S>
+      </A>
+      <E name="Расчет_не_применим" datatype="boolean" index="true" displayname="Расчет не применим" />
+      <E name="Не_подано_ценовое_предложение" datatype="boolean" index="true" displayname="Не подано ценовое предложение" />
+      <E name="Установлены_квалификационные_требования" datatype="boolean" index="true" displayname="Установлены квалификационные требования" />
+      <E name="Установлены_мат_требования" datatype="boolean" index="true" displayname="Установлены мат требования" />
+      <A name="Требования_квалификационные" displayname="Требования квалификационные">
+        <S name="S1">
+          <E name="ИД_требования" datatype="text" index="true" displayname="ИД требования" />
+          <E name="Требование" datatype="longtext" index="true" />
+          <E name="Вид_документа" datatype="longtext" index="true" displayname="Вид документа" />
+          <E name="Документы_для_подтверждения" datatype="longtext" index="true" displayname="Документы для подтверждения" />
+          <E name="Требование_по_умолчанию" datatype="boolean" index="true" displayname="Требование по умолчанию" />
+          <E name="Наличие_документа" datatype="text" index="true" displayname="Наличие документа" />
+        </S>
+      </A>
+      <A name="Требования_материально_технические" displayname="Требования мат тех">
+        <S name="S1">
+          <E name="ИД_требования" datatype="text" index="true" displayname="ИД требования" />
+          <E name="Требование" datatype="longtext" index="true" />
+          <E name="Вид_документа" datatype="longtext" index="true" displayname="Вид документа" />
+          <E name="Документы_для_подтверждения" datatype="longtext" index="true" displayname="Документы для подтверждения" />
+          <E name="Требование_по_умолчанию" datatype="boolean" index="true" displayname="Требование по умолчанию" />
+          <E name="Наличие_документа" datatype="text" index="true" displayname="Наличие документа" />
+        </S>
+      </A>
+      <S name="Подразделение_инициатор" displayname="Подразделение инициатор">
+        <E name="Подразделение_инициатор_наименование" datatype="text" index="true" displayname="Подразделение инициатор наименование" required="true" dictpath="" edit="tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Организатор закупки&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" abdata="Name" />
+        <E name="Подразделение_инициатор" datatype="integer" index="true" displayname="Подразделение инициатор" required="false" dictpath="" edit="textbox" abdata="Id" extype="addressbook" view="invisible" />
+      </S>
+      <E name="Юридический_адрес" datatype="longtext" index="true" displayname="Юридический адрес" />
+      <E name="Почтовый_адрес" datatype="longtext" index="true" displayname="Почтовый адрес" />
+      <E name="Название_комиссии_код" datatype="text" index="true" displayname="Название_комиссии_код" />
+      <E name="Название_комиссии" datatype="longtext" index="true" displayname="Название комиссии" />
+      <E name="RFI" datatype="boolean" index="true" displayname="RFI" />
+      <E name="Наименование_товара" datatype="text" index="true" displayname="Наименование товара" />
+      <E name="Тип_объекта_закупки" datatype="text" index="true" displayname="Тип объекта закупки" />
+      <E name="Производитель" datatype="text" index="true" displayname="Производитель" />
+      <E name="Страна_происхождения_товара" datatype="text" index="true" displayname="Страна происхождения товара" />
+      <E name="Торговая_марка" datatype="text" index="true" displayname="Торговая марка" />
+      <E name="ид_заявки_участника" datatype="integer" index="true" displayname="ид_заявки_участника" />
+      <E name="Участник_заявки_Фамилия" datatype="text" index="true" displayname="Участник заявки Фамилия" />
+      <E name="Участник_заявки_Имя" datatype="text" index="true" displayname="Участник заявки Имя" />
+      <E name="Участник_заявки_Отчество" datatype="text" index="true" displayname="Участник заявки Отчество" />
+      <E name="Участник_заявки_ФИО" datatype="text" index="true" displayname="Участник заявки ФИО" />
+      <S name="ГРБС" displayname="ГРБС">
+        <E name="ГРБС_наименование" datatype="longtext" index="true" dictpath="" required="false" displayname="ГРБС_наименование" extype="addressbook" abdata="Name" />
+        <E name="ГРБС" datatype="integer" index="true" displayname="ГРБС" required="false" dictpath="" extype="addressbook" abdata="Id" />
+      </S>
+      <A name="Характеристики_товара" displayname="Характеристики товара" use="table">
+        <S name="S1">
+          <E name="unit_id" datatype="text" index="true" displayname="unit_id" />
+          <E name="Наименование_товара" datatype="longtext" index="true" displayname="Наименование товара" />
+          <E name="Производитель" datatype="text" index="true" displayname="Производитель" />
+          <E name="Страна_происхождения_товара_код" datatype="text" index="true" displayname="Страна происхождения товара код" />
+          <E name="Страна_происхождения_товара" datatype="text" index="true" displayname="Страна происхождения товара" />
+          <E name="Торговая_марка" datatype="text" displayname="Торговая марка" index="true" />
+          <E name="Соответствующее_наименование_ТУ" datatype="longtext" index="true" displayname="Соответствующее наименование ТУ" />
+          <E name="Цена_за_единицу_без_НДС" datatype="money" index="true" displayname="Цена за единицу без НДС" />
+          <E name="Ставка_НДС_за_единицу" datatype="text" index="true" displayname="Ставка НДС за единицу" />
+          <E name="Цена_за_единицу_с_НДС" datatype="money" index="true" displayname="Цена за единицу с НДС" />
+          <E name="Комментарий_поставщика" datatype="longtext" index="true" displayname="Комментарий поставщика" />
+          <E name="ХТ_ИД_на_ЭТП" datatype="text" index="true" displayname="ХТ ИД на ЭТП" />
+          <E name="ХТ_ид_заявки_участника" datatype="text" index="true" displayname="ХТ ид заявки участника" />
+          <E name="ХТ_Участник_заявки_наименование" datatype="text" index="true" displayname="ХТ Участник заявки наименование" />
+          <E name="ХТ_Участник_код_на_ЭТП" datatype="text" index="true" displayname="ХТ Участник код на ЭТП" />
+          <E name="ИД_строки" datatype="text" index="true" displayname="ИД строки" />
+          <E name="Производитель_код" datatype="text" index="true" displayname="Производитель код" />
+          <S name="СберАст" displayname="СберАст">
+            <E name="Предложение_о_цене" datatype="money" index="true" displayname="Предложение о цене" />
+            <E name="Лучшее_предложение" datatype="money" index="true" displayname="Лучшее предложение" />
+            <E name="Дата_лучшего_предложения" datatype="datetime" index="true" displayname="Дата лучшего предложения" />
+            <E name="Аналог" datatype="longtext" index="true" displayname="Аналог" />
+          </S>
+          <S name="ТРУ" displayname="ТРУ">
+            <E name="ТРУ_код" datatype="text" index="true" displayname="ТРУ код" />
+            <E name="ТРУ_наименование" datatype="text" index="true" displayname="ТРУ наименование" />
+          </S>
+          <E name="Цена_позиции_без_НДС" datatype="money" index="true" displayname="Цена позиции без НДС" />
+          <E name="Ставка_НДС_позиции" datatype="text" index="true" displayname="Ставка НДС позиции" />
+          <E name="Цена_позиции_с_НДС" datatype="money" index="true" displayname="Цена позиции с НДС" />
+          <E name="Дата_поставки" datatype="date" index="true" displayname="Дата_поставки" />
+          <E name="Реестровый_номер" datatype="text" index="true" displayname="Реестровый номер" />
+        </S>
+      </A>
+      <E name="ЦП_вне_шага_с_НДС" datatype="money" index="true" displayname="ЦП вне шага с НДС" />
+      <E name="ЦП_вне_шага_без_НДС" datatype="money" index="true" displayname="ЦП вне шага без НДС" />
+      <E name="ЦП_с_НДС" datatype="money" index="true" displayname="ЦП с НДС" />
+      <E name="ЦП_без_НДС" datatype="money" index="true" displayname="ЦП без НДС" />
+      <E name="Процент_снижения_от_НМЦ" datatype="real" index="true" displayname="% снижения от НМЦ" />
+      <E name="Попозиционная_закупка" datatype="boolean" index="true" displayname="Попозиционная закупка" />
+      <E name="order_number_added" datatype="integer" index="true" displayname="order_number_added" />
+      <E name="Коэффициент_снижения" datatype="boolean" index="true" displayname="Коэффициент снижения" />
+      <E name="Дата_подачи_ЦП" datatype="datetime" index="true" displayname="Дата подачи ЦП" />
+      <E name="Дата_подачи_ЦП_записана" datatype="boolean" index="true" displayname="Дата подачи ЦП записана" />
+      <E name="Коэффициент_снижения_цен_без_НДС" datatype="real" index="true" displayname="Коэффициент снижения цен без НДС" />
+      <S name="Сбербанк_АСТ" displayname="Сбербанк АСТ">
+        <E name="ИД_документа_на_ЭТП" datatype="integer" index="true" displayname="ИД документа на ЭТП" />
+        <E name="Заключить_договор" datatype="text" index="true" displayname="Заключить договор" />
+        <S name="Предложение_о_цене" displayname="Предложение о цене">
+          <E name="Предложение_о_цене" datatype="money" index="true" displayname="Предложение о цене" />
+          <E name="Лучшее_предложение_о_цене" datatype="money" index="true" displayname="Лучшее предложение о цене" />
+          <E name="Дата_подачи_лучшего_предложения" datatype="datetime" index="true" displayname="Дата подачи лучшего предложения" />
+        </S>
+      </S>
+      <E name="Цена_участника" datatype="money" index="true" displayname="Цена участника" />
+      <E name="ИД_договора_на_ЭТП" datatype="integer" index="true" displayname="ИД договора на ЭТП" />
+      <E name="Ссылка_на_ЭТП_Договор" datatype="url" index="true" displayname="Ссылка на ЭТП Договор" />
+      <E name="Наименование_договора_на_ЭТП" datatype="text" index="true" displayname="Наименование договора на ЭТП" />
+      <E name="ИД_для_подстановки" datatype="text" index="true" displayname="ИД для подстановки" />
+      <E name="Подана_в_отличной_от_лота_валюте" datatype="boolean" index="true" displayname="Подана в отличной от лота валюте" />
+      <E name="Размер_обеспечения" datatype="money" index="true" displayname="Размер обеспечения" />
+      <E name="Предоставляется_банковская_гарантия" datatype="boolean" index="true" displayname="Предоставляется банковская гарантия" />
+      <E name="Номер_банковской_гарантии" datatype="text" index="true" displayname="Номер банковской гарантии" />
+      <E name="Вид_обеспечения_заявки" datatype="longtext" index="true" displayname="Вид обеспечения заявки" />
+      <E name="Дополнительная_информация_о_цене_договора" datatype="longtext" index="true" displayname="Дополнительная информация о цене догоовора" />
+    </S>
+    <S name="Files" use="Files" displayname="Документация">
+      <E name="header" datatype="text" index="false" value="&quot;Документация&quot;" />
+      <E name="subheader" datatype="text" index="false" />
+    </S>
+  </CONTENT_MODEL>
+  <SCRIPT language="VBScript">Dim oTrace
+
+Dim saveCheck
+saveCheck=0
+
+Sub generate_num
+
+'oTrace.Trace " VBCRPT generate_num..."
+
+  Dim rn
+  pref = Data("|Document|Префикс_регномера").Value
+  num = Data("|Document|Число_регномера").Value
+  suf = Data("|Document|Суффикс_регномера").Value
+
+ if Len(num) = 0 then
+'	oTrace.Trace " VBCRPT End generate_num(Нет номера)"
+	Exit Sub
+ end if
+
+  if Len(pref)&gt;0 then
+	rn = CStr(rn) + pref + "-"
+  end if
+  rn = CStr(rn) + CStr(num)
+  if Len(suf)&gt;0 then
+     rn = CStr(rn) + "-" + CStr(suf)
+  end if
+
+    Data("|Document|Регистрационный_номер")=CStr(rn)
+    Exit Sub
+
+'  oTrace.Trace " VBCRPT End generate_num"
+  err_exit:
+  Form.MsgBox err.Description
+End Sub
+    
+
+Sub clear_all_readonly
+'   oTrace.Trace " VBCRPT clear_all_readonly..."
+    Data("|Document|Число_регномера").Attribute("readonly")=""
+'      oTrace.Trace " VBCRPT end clear_all_readonly"
+End Sub
+
+ Sub prepare_completed
+'   oTrace.Trace " VBCRPT prepare_completed..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'   oTrace.Trace " VBCRPT End prepare_completed"
+    End Sub
+
+    Sub prepare_wfclosed
+'    oTrace.Trace " VBCRPT prepare_wfclosed..."
+'    oTrace.Trace " VBCRPT End prepare_wfclosed"
+    End Sub
+
+    Sub prepare_finder
+'    oTrace.Trace " VBCRPT prepare_finder..."
+    clear_all_readonly
+'    oTrace.Trace " VBCRPT End prepare_finder"
+    End Sub
+
+    Sub prepare_registration
+'    oTrace.Trace " VBCRPT prepare_registration..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'    oTrace.Trace " VBCRPT End prepare_registration"
+    End Sub
+
+    Sub Form_NamedEvent( evt )
+'    oTrace.Trace " VBCRPT Form_NamedEvent..."
+    if evt = "dfmakestrregnum" then
+    generate_num
+    End If
+    if evt = "dfrgmregistration" then
+    prepare_registration
+    End If
+    if evt = "dfrgmfinder" then
+    prepare_finder
+    End If
+    if evt = "dfrgmcompleted" then
+    prepare_completed
+    End If
+    if evt = "dfrgmwfclosed" then
+    prepare_wfclosed
+    End if
+
+
+    if evt="dfpreparestrregnum" then 'началось сохранение документа
+       saveCheck=1
+    end if
+
+    if evt="dfmakestrregnum" then 'закончилось сохранение документа
+       saveCheck=0
+    end if
+
+'   oTrace.Trace " VBCRPT End Form_NamedEvent"
+    End Sub
+
+Set ctx = CreateObject("Form.ExecutionContext")
+
+    Sub Form_Load
+'    Set oTrace = CreateObject("TRACE.VBTracer")
+'    oTrace.Trace " VBCRPT End Form_Load"
+
+    End Sub
+
+    Sub Form_Unload
+'    oTrace.Trace " VBCRPT Form_Unload..."
+'    Set oTrace = Nothing
+    End Sub
+
+    sub form_FieldDataChanged(field)
+    s = field.Attribute("frm.abstoredata")
+    if s &lt;&gt; "" and field.Value = "" then
+    Set arr = field.Parent(s)
+    if not arr is nothing then
+    arr.RemoveAll
+    end if
+    end if
+
+   ' Документ не сохраняется
+   if saveCheck=0 then
+
+          ' Очистили поле Подразделение
+          if field.name = "Подразделение_инициатор" and Len(field.value)=0 then
+                  Data("|Document|Подразделение_инициатор|Подразделение_инициатор_код")= ""
+          end if
+
+          ' Очистили поле Валюта
+          if field.name = "Валюта" and Len(field.value)=0 then
+                  Data("|Document|Цифровой_код_валюты")= ""
+                  Data("|Document|Код_валюты")= ""
+          end if
+
+    end if
+
+end sub</SCRIPT>
+  <plugins>
+    <restriction displayname="Генерация номера" progid="Euphfrm.RegNumGenerator" root="" initstring="">
+      <arg role="numberdoc" path="|S|Число_регномера" />
+      <arg role="flow" path="|S|ИД_потока" />
+      <arg role="regnum" path="|S|Регистрационный_номер" />
+      <checkentry type="onevent" param="dfgenerateregnum" action="error" />
+    </restriction>
+    <dictionary name="Валюта" progid="FrmTools.DictSource" inittime="field" initstring="stored:Валюта" />
+    <dictionary name="Результат допуска" progid="FrmTools.DictSource" inittime="field" initstring="stored:Результат допуска" />
+    <dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики" />
+    <dictionary name="Результат" progid="FrmTools.DictSource" inittime="field" initstring="stored:Результат" />
+    <dictionary name="Результат запроса котировок" progid="FrmTools.DictSource" inittime="field" initstring="stored:Результат запроса котировок" />
+  </plugins>
+</FORM_DESCRIPTION>

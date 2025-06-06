@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportExecution">
+	<CONTENT_MODEL use="ReportExecution" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible"/>
+		<E name="Составитель" datatype="text" index="true" displayname="Составитель" required=""/>
+		<E name="Год" datatype="text" index="false" default="year(nowdate())" required="true"/>
+		<E name="Организация_заказчик" datatype="dictionary(Организации заказчики,integer)" index="false" displayname="" view="invisible" required="false" dictpath=""/>
+		<E name="Организация_заказчик_наименование" datatype="longtext" index="false" dictpath="" required="false" displayname="" absettings="&lt;ROOT title=&quot;Организация заказчик наименование&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/>
+		<E name="По_всем_Организация_заказчик" datatype="boolean" index="false" displayname=""/>
+		<E name="ОКПД2" datatype="dictionary(ОКПД2,text)" index="false" dictpath="" edit="textbox"/>
+		<E name="ОКПД2_наименование" datatype="dictionary(ОКПД2,text)@Наименование" index="false" displayname="" dictpath="" edit="textbox"/>
+		<E name="По_Всем_ОКПД2" datatype="boolean" index="false"/>
+		<E name="Организация_поставщик_наименование" datatype="dictionary(Контрагенты,longtext)@Наименование" index="false" displayname="" required="false" dictpath="" edit="textbox"/>
+		<E name="Организация_поставщик" datatype="dictionary(Контрагенты,text)" index="false" displayname="" dictpath=""/>
+		<E name="По_всем_Поставщики" datatype="boolean" index="false" default="1" value="iif(   Поставщики_наименование &lt;&gt;&quot;&quot; ,0,1)"/>
+		<E name="ГРБС_наименование" datatype="longtext" index="false" displayname="" edit="tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Адресная книга&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/>
+		<E name="ГРБС" datatype="integer" index="true" displayname="ГРБС" view="invisible" extype="addressbook" abdata="Id"/>
+		<E name="По_всем_ГРБС" datatype="boolean" index="true"/>
+	</CONTENT_MODEL>
+	<plugins>
+		<dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики"/>
+	</plugins>
+	<SCRIPT language="VBScript">sub form_load
+	Set ctx = CreateObject("Form.ExecutionContext")
+	Data("Составитель").Value = ctx.CurrentUser.Name
+end sub</SCRIPT>
+</FORM_DESCRIPTION>

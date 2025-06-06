@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Дополнительные этапы процедур" Type="0">
+  <Items>
+    <Dictionary Name="Дополнительные этапы процедур">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="ИД в Сбер АСТ" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="10" ParentGuid="" Guid="e1ba9185-01b3-48ab-8e2a-5e3df3841b2e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Обсуждение функциональных характеристик</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455695</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="15" ParentGuid="" Guid="4920b3fb-c31e-44d6-b063-9d8b7764abf1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Подача окончательных предложений (после обсуждения функциональных характеристик)</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455696</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="20" ParentGuid="" Guid="2af995e2-56ac-463f-b775-878aa0e25f5a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Обсуждение предложений по функциональным характеристикам</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455697</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="25" ParentGuid="" Guid="800ad5cd-f027-4693-acbf-5c8b7fa4a183">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Подача окончательных предложений (после обсуждения предложений функциональных характеристик)</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455698</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="30" ParentGuid="" Guid="b413a2e1-af19-471d-a6f9-f667ddac7ae5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Рассмотрение и оценка (после обсуждения)</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455699</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="40" ParentGuid="" Guid="f05ccab9-dc1e-40cc-9a13-4ad1e332b540">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Квалификационный отбор</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455700</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="50" ParentGuid="" Guid="401f2361-62c5-412b-895c-efe21a3625bd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Подача дополнительных ценовых предложений</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">455701</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="60" ParentGuid="" Guid="17b9ac02-efc6-4a9f-89d8-842b9ad63b78">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сопоставление дополнительных ценовых предложений</DataAttribute>
+            <DataAttribute Name="ИД в Сбер АСТ">544924</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

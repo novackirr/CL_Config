@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Требуемые документы" Type="0">
+  <Items>
+    <Dictionary Name="Требуемые документы">
+      <Attributes>
+        <Attribute Name="Группа" />
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="16" ParentGuid="" Guid="2a1373b7-3329-43d3-9e8c-60a36c63e727">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">СНИЛС</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="15" ParentGuid="" Guid="44af109f-4d04-4065-96bb-ceb1fc67e5d7">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">ИНН физического лица</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="14" ParentGuid="" Guid="082dc34c-c071-4d1d-b31b-369d9796f2c4">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Копия паспорта</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="13" ParentGuid="" Guid="c5c82040-778b-499d-b09d-b6d88433d3d3">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Одобрение сделки с заинтересованностью</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="12" ParentGuid="" Guid="36e424cc-d0ce-4cd2-a3ce-61691afabcfe">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Одобрение крупной сделки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="11" ParentGuid="" Guid="f23fba65-5e6e-4866-9aea-5d9706b47517">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Справка из налоговой</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="10" ParentGuid="" Guid="cc3de4b5-8107-4e4e-a7d3-255fc94ae35b">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документы на юридический адрес</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="9" ParentGuid="" Guid="78b5a280-2727-4237-98da-feeb357af275">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документы на осуществление видов деятельности</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="8" ParentGuid="" Guid="9ac0ba75-1d22-4dbe-babf-353bb8d18d3b">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документы, подтверждающие право подписания заявки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="99aea44e-7ae7-401b-aae4-f879169e053f">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Разрешение миграционной службы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="771cbe0a-7657-4065-a8f1-802aa917c55c">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Устав</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="35ce3606-06d7-48c3-a5f4-84b6bfa6db89">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документ о регистрации юридического лица/ИП</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="a9fbf405-0721-4ad4-9646-163f245085b8">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Свидетельство ИНН</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="c0ccd130-a74e-457a-adcf-0300f7799c50">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Свидетельство о регистрации юридического лица, зарегистрированном до 01.07.2002г.</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="4398c8f4-5d6a-484d-b11a-1adb55b83d9d">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Выписка из ЕГРЮЛ/ЕГРИП</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="b89266af-d1b9-4795-9b5c-3523581474f8">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Правоустанавливающие документы</DataAttribute>
+            <DataAttribute Name="Наименование">Декларация СМСП/Сведения из Единого реестра СМСП</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="17" ParentGuid="" Guid="1b756b2f-f789-44ed-8073-aedfde6b7e2b">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Финансовые документы</DataAttribute>
+            <DataAttribute Name="Наименование">Бухгалтерские документы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="27" ParentGuid="" Guid="230e7abc-edaf-4b69-8391-6250940c2cda">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Декларация страны происхождения товаров/работ/услуг</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="26" ParentGuid="" Guid="ba46dd89-f1f1-4054-9e9e-46aeb56e7013">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Справка о кадрах</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="25" ParentGuid="" Guid="92e8708b-492c-4443-a4b1-ad189cce59a2">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Справка МТР</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="24" ParentGuid="" Guid="42423655-76b9-400e-9e44-128c74a2d591">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Справка о договорах</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="23" ParentGuid="" Guid="51daef8b-d65f-43b3-9c95-0b223a91a21e">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">График оплаты</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="22" ParentGuid="" Guid="c034f5a3-6c37-4a37-8ef4-1980b01e9255">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Коммерческое предложение</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="21" ParentGuid="" Guid="cefd9853-6a8b-43e3-b6bf-ca2a810220a2">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Календарный план</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="20" ParentGuid="" Guid="881246b5-6487-4617-8201-cb9d25720a4a">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Протокол разногласий</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="19" ParentGuid="" Guid="719a1bab-f8bc-455b-82be-a5536a839456">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Техническое предложение</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="18" ParentGuid="" Guid="a88d6c18-4db3-4d4c-a34b-f7e690bd1c05">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Технико-коммерческое предложение</DataAttribute>
+            <DataAttribute Name="Наименование">Оферта</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="28" ParentGuid="" Guid="d3b7f5e1-e1c6-4f22-b73b-7feae172aac9">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Лицензии, Свидетельства, удостоверения</DataAttribute>
+            <DataAttribute Name="Наименование">Документы на осуществление видов деятельности</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="35" ParentGuid="" Guid="3b3b48fc-7901-4e76-ae2e-81dfe2f4aa6a">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документы, предусмотренные ТЗ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="34" ParentGuid="" Guid="7bb1b7e2-4e65-4791-ba17-fad89060749a">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Согласие на обработку персональных данных</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="33" ParentGuid="" Guid="879a8f88-edf6-48d1-8931-0e06a2e59813">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Документы на юридический адрес</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="32" ParentGuid="" Guid="374360f1-2095-4a09-8847-806f3ad08255">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Гарантийное письмо</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="31" ParentGuid="" Guid="8c6e21cc-afd9-4d9e-b230-be4c6efff941">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Справка о судах</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="30" ParentGuid="" Guid="f04c34a2-d2cb-40b4-bfe1-148d9298ea11">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Письмо об аффилированности</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="29" ParentGuid="" Guid="67f05982-41b5-4d9b-9f69-917eaae70c20">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+            <DataAttribute Name="Наименование">Анкета</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="36" ParentGuid="" Guid="e238eb37-2d3f-4781-b524-8a42809e0107">
+          <DataAttributes>
+            <DataAttribute Name="Группа">Субподрядчики</DataAttribute>
+            <DataAttribute Name="Наименование">Документы субподрядчиков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="37" ParentGuid="" Guid="e7ff24fb-deea-4478-b43f-3474cd689c64">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Документ для СМП</DataAttribute>
+            <DataAttribute Name="Группа">Иные документы</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

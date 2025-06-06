@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Булевы варианты" Type="0">
+  <Items>
+    <Dictionary Name="Булевы варианты">
+      <Attributes>
+        <Attribute Name="Значение" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="Да" ParentGuid="" Guid="b809ed4b-f230-4000-88c4-9ca074fcb8ad">
+          <DataAttributes>
+            <DataAttribute Name="Значение">on</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Нет" ParentGuid="" Guid="40625e88-67f7-4a9f-bdf3-8062f1f98788">
+          <DataAttributes>
+            <DataAttribute Name="Значение">off</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

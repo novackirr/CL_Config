@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform  ctform.xsd" name="LPlan">
+	<CONTENT_MODEL dfattchfiles="|Document|files" dfnumberdoc="|Document|Число_регномера" key="Key">
+		<E name="Key" datatype="integer" index="false" default="&quot;1&quot;" view="invisible" displayname="Ключ" dfprotected="true"/>
+		<E name="ИД_последний_редактор" datatype="text" index="true" displayname="ИД последний редактор" dfhidden="true" view="invisible"/>
+		<E name="Имя_последний_редактор" datatype="text" index="true" displayname="Имя последний редактор" dfhidden="true" view="invisible"/>
+		<S name="Document" displayname="Документ" use="LPlan"><E displayname="Регистрационный номер" name="Регистрационный_номер" datatype="text(249)" index="true" dfprotected="true" dfhidden="true"/>
+			<E displayname="Префикс рег. номера" name="Префикс_регномера" datatype="dictionary(Prefix,text)" edit="combobox(Prefix)" index="true" view="invisible" dfprotected="false"/>
+			<E displayname="Порядковый рег. номер" name="Число_регномера" datatype="integer(+1..)" index="true" view="invisible" dfprotected="true" required="true"/>
+			<E displayname="Суффикс рег. номера" name="Суффикс_регномера" datatype="dictionary(Suffix,text)" edit="combobox(Suffix)" dfprotected="false" index="true" view="invisible"/>
+			<E displayname="Дата регистрации" name="Дата_регистрации" datatype="date" edit="" index="true" dfprotected="true" required="true" esp="false" default="nowdate()"/>
+			<E displayname="Вид документа" name="Вид_документа" datatype="dictionary(VidDocNames,text)" index="true" dfprotected="true" required="false" edit="combobox" value="&quot;План закупок&quot;" view="invisible"/>
+			<E displayname="Краткое содержание" name="Краткое_содержание" datatype="longtext" euflag="7" index="true" dfprotected="true" required="false" edit="multiline" awindex="true" value=" Наименование_плана_закупки " view="invisible"/>
+			<E displayname="Имя потока" name="Имя_потока" datatype="text" index="false" view="invisible" dfprotected="true" dfhidden="true" esp="false"/>
+			<E displayname="ИД потока" name="ИД_потока" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible"/>
+			<E displayname="ИД регистратора" name="ИД_регистратора" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible"/>
+			<E name="header" datatype="text" index="false" value="&quot;План закупок&quot;
+" view="invisible"/><E name="subheader" datatype="text" index="false" view="invisible"/><E name="Номер_редакции" datatype="integer" index="true" displayname="Номер редакции"/><E name="Дата_утверждения" datatype="date" index="true" displayname="Дата утверждения" required="true"/><E name="Статус" datatype="text" index="true" default="&quot;Проект&quot;"/><E name="ИД_в_ЕИС" datatype="text" index="true" displayname="ИД в ЕИС" view="invisible"/><E name="Обоснование_внесения_изменений" datatype="longtext" index="true" displayname="Обоснование внесения изменений" required="false" awindex="true" euflag="7"/><E name="Наименование_плана_закупки" datatype="longtext" index="true" displayname="Наименование плана закупки" required="true" value="&quot;План закупок организации &quot; +  Организация_заказчик|Организация_заказчик + &quot; на &quot; +   Текущий_финансовый_год +&quot;-&quot; +  Второй_плановый_год  + &quot;гг., номер редакции &quot; +  Номер_редакции "/><E name="Дата_публикации" datatype="datetime" index="true" displayname="Дата публикации" required="false"/><E name="Текущий_финансовый_год" datatype="integer" index="true" displayname="Текущий финансовый год" required="true"/><E name="Первый_плановый_год" datatype="integer" index="true" displayname="Первый плановый год" required="true"/><E name="Второй_плановый_год" datatype="integer" index="true" displayname="Второй плановый год" required="true"/><E name="Дата_создания" datatype="datetime" index="true" displayname="Дата создания" default="nowdate()"/><E name="Нормативная_база" datatype="dictionary(Нормативная база ПЗ,text)@Наименование" index="true" displayname="Нормативная база" required="true" edit="textbox" dictpath="" value="iif( Организация_заказчик|ОКОПФ =&quot;65141&quot; ||Организация_заказчик|ОКОПФ =&quot;65241&quot; ||Организация_заказчик|ОКОПФ =&quot;75101&quot;  ||Организация_заказчик|ОКОПФ =&quot;75103&quot;  ||Организация_заказчик|ОКОПФ =&quot;75104&quot;, &quot;Постановление Правительства РФ №552 от 05.06.2015 (федеральное)&quot;, &quot;Постановление Правительства РФ №1043 от 21.11.2013 (региональное и муниципальное)&quot;)"/><E name="Нормативная_база_код" datatype="dictionary(Нормативная база ПЗ,text)@Код" index="true" displayname="Нормативная база код" view="invisible" dictpath="" value="iif( Организация_заказчик|ОКОПФ =&quot;65141&quot; ||Организация_заказчик|ОКОПФ =&quot;65241&quot; ||Организация_заказчик|ОКОПФ =&quot;75101&quot;  ||Организация_заказчик|ОКОПФ =&quot;75103&quot;  ||Организация_заказчик|ОКОПФ =&quot;75104&quot;, &quot;PPF552&quot;, &quot;PPF1043&quot;)"/><E name="Реестровый_номер_в_ЕИС" datatype="text" index="true" displayname="Реестровый номер в ЕИС"/><E name="Основание_внесения_изменений" datatype="longtext" index="true" displayname="Основание внесения изменений" edit="multiline"/><E name="Роль_организатора_закупки" datatype="dictionary(Роль организатора закупки,text)@Наименование" index="true" displayname="Роль организатора закупки" required="true" dictpath="" edit="textbox" value="&quot;Заказчик&quot;"/><E name="Роль_организатора_закупки_код" datatype="dictionary(Роль организатора закупки,text)" index="true" displayname="Роль организатора закупки код" dictpath="" view="invisible" value="&quot;CU&quot;"/><S name="Ответственный" displayname=""><E name="Ответственный" datatype="text" index="true" displayname="" extype="addressbook" abdata="Id" view="invisible"/><E name="Ответственный_ФИО" datatype="text" index="true" displayname="Ответственный ФИО" dictpath="" edit="textbox,tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Ответственный ФИО&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Persons&quot; DisplayName=&quot;Пользователи&quot; /&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" required="true"/><E name="Ответственный_фамилия" datatype="text" index="true" required="false" displayname="Ответственный фамилия" edit="textbox" dictpath="" extype="addressbook" abdata="SurName" view="invisible"/><E name="Ответственный_имя" datatype="text" index="true" required="false" displayname="Ответственный имя" dictpath="" extype="addressbook" abdata="FirstName" view="invisible"/><E name="Ответственный_отчество" datatype="text" index="true" required="false" displayname="Ответственный отчество" dictpath="" extype="addressbook" abdata="Patronymic" view="invisible"/><E name="Ответственный_должность" datatype="text" index="true" abdata="Post" displayname="Ответственный должность" extype="addressbook"/></S><S name="Утвердивший" displayname=""><E name="Утвердивший" datatype="text" index="true" displayname="" extype="addressbook" abdata="Id" required="" view="invisible"/><E name="Утвердивший_ФИО" datatype="text" index="true" displayname="Утвердивший ФИО" dictpath="" edit="textbox,tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Утвердивший ФИО&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Persons&quot; DisplayName=&quot;Пользователи&quot; /&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" required="true"/><E name="Утвердивший_фамилия" datatype="text" index="true" required="false" displayname="Утвердивший фамилия" edit="textbox" dictpath="" extype="addressbook" abdata="SurName" view="invisible"/><E name="Утвердивший_имя" datatype="text" index="true" required="false" displayname="Утвердивший имя" dictpath="" extype="addressbook" abdata="FirstName" view="invisible"/><E name="Утвердивший_отчество" datatype="text" index="true" required="false" displayname="Утвердивший отчество" dictpath="" extype="addressbook" abdata="Patronymic" view="invisible"/><E name="Утвердивший_должность" datatype="text" index="true" displayname="Утвердивший должность" required="true" dictpath="" extype="addressbook" abdata="Post"/></S><E name="Дополнительные_сведения" datatype="longtext" index="true" displayname="Дополнительные сведения"/><S name="Организация_заказчик" displayname="Организация заказчик"><E name="Организация_заказчик_наименование" datatype="dictionary(Организации заказчики(Наименование),text)@Наименование" index="true" dictpath="" required="true" displayname="Организация заказчик наименование" absettings="&lt;ROOT title=&quot;Организация заказчик наименование&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/><E name="Организация_заказчик" datatype="dictionary(Организации заказчики,text)" index="true" displayname="Организация заказчик" view="invisible" required="false" dictpath=""/><E name="Организация_заказчик_код_по_СПЗ" datatype="dictionary(Организации заказчики,text)@Код по СПЗ" index="true" displayname="Организация заказчик код по СПЗ" view="invisible" dictpath=""/><E name="Организация_заказчик_код_по_СР" datatype="dictionary(Организации заказчики,text)@Код по Сводному реестру" index="true" displayname="Организация заказчик код по СР" view="invisible" dictpath=""/><E name="Организация_заказчик_ОКТМО" datatype="dictionary(Организации заказчики,text)@ОКТМО" index="true" displayname="Организация заказчик ОКТМО" dictpath=""/><E name="Организация_заказчик_ОКТМОППО" datatype="dictionary(Организации заказчики,text)@ОКТМОППО" index="true" displayname="Организация заказчик ОКТМОППО" dictpath=""/><E name="Организация_заказчик_ОКПО" datatype="dictionary(Организации заказчики,text)@ОКПО" index="true" displayname="Организация заказчик ОКПО" dictpath=""/><E name="Организация_заказчик_ОКОПФ" datatype="dictionary(Организации заказчики,text)@ОКОПФ" index="true" displayname="Организация заказчик ОКОПФ"/></S><S name="Организатор_закупки" displayname="Организатор закупки"><E name="Организатор_закупки_наименование" datatype="dictionary(Организации заказчики(Наименование),text)@Наименование" index="true" displayname="Организатор закупки наименование" required="true" dictpath="" absettings="&lt;ROOT title=&quot;Организатор закупки&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/><E name="Организатор_закупки" datatype="dictionary(Организации заказчики,text)" index="true" displayname="Организатор закупки" required="false" dictpath="" edit="textbox" view="invisible"/><E name="Организатор_закупки_код_по_СПЗ" datatype="dictionary(Организации заказчики,text)@Код по СПЗ" index="true" displayname="Организатор закупки код по СПЗ" dictpath="" view="invisible"/><E name="Организатор_закупки_код_по_СР" datatype="dictionary(Организации заказчики,text)@Код по Сводному реестру" index="true" displayname="Организатор закупки код по СР" dictpath="" view="invisible"/><E name="Организатор_закупки_ОКТМО" datatype="dictionary(Организации заказчики,text)@ОКТМО" index="true" displayname="Организатор закупки ОКТМО" dictpath=""/><E name="Организатор_закупки_ОКПО" datatype="dictionary(Организации заказчики,text)@ОКПО" index="true" displayname="Организатор закупки ОКПО" dictpath=""/></S><E name="ИД_пакета_в_ЕИС" datatype="text" index="true" displayname="ИД пакета в ЕИС" view="invisible"/><E name="Статус_в_ЕИС" datatype="text" index="true" displayname="Статус в ЕИС"/></S>
+		<S name="Files" use="Files" displayname="Файлы">
+			<E name="header" datatype="text" index="false" value="&quot;Файлы&quot;" view="invisible"/><E name="subheader" datatype="text" index="false" view="invisible"/></S>
+		<S name="LinkItem" displayname="Позиции ПЗ" use="LinkItem"><E name="header" datatype="text" index="false" value="&quot;Позиции плана закупок&quot;" view="invisible"/><E name="subheader" datatype="text" index="false" view="invisible"/></S><S name="FilesIntegration" use="FilesIntegration" displayname="Файлы интеграции">
+			<E name="header" datatype="text" index="false" value="&quot;Файлы интеграции&quot;"/><E name="subheader" datatype="text" index="false"/></S>
+	</CONTENT_MODEL>
+	<SCRIPT language="VBScript">Dim oTrace
+
+Dim saveCheck
+saveCheck=0
+
+Sub generate_num
+
+'oTrace.Trace " VBCRPT generate_num..."
+
+  Dim rn
+  pref = Data("|Document|Префикс_регномера").Value
+  num = Data("|Document|Число_регномера").Value
+  suf = Data("|Document|Суффикс_регномера").Value
+
+ if Len(num) = 0 then
+'	oTrace.Trace " VBCRPT End generate_num(Нет номера)"
+	Exit Sub
+ end if
+
+  if Len(pref)&gt;0 then
+	rn = CStr(rn) + pref + "-"
+  end if
+  rn = CStr(rn) + CStr(num)
+  if Len(suf)&gt;0 then
+     rn = CStr(rn) + "-" + CStr(suf)
+  end if
+
+    Data("|Document|Регистрационный_номер")=CStr(rn)
+    Exit Sub
+
+'  oTrace.Trace " VBCRPT End generate_num"
+  err_exit:
+  Form.MsgBox err.Description
+End Sub
+    
+
+Sub clear_all_readonly
+'   oTrace.Trace " VBCRPT clear_all_readonly..."
+    Data("|Document|Число_регномера").Attribute("readonly")=""
+'      oTrace.Trace " VBCRPT end clear_all_readonly"
+End Sub
+
+ Sub prepare_completed
+'   oTrace.Trace " VBCRPT prepare_completed..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'   oTrace.Trace " VBCRPT End prepare_completed"
+    End Sub
+
+    Sub prepare_wfclosed
+'    oTrace.Trace " VBCRPT prepare_wfclosed..."
+'    oTrace.Trace " VBCRPT End prepare_wfclosed"
+    End Sub
+
+    Sub prepare_finder
+'    oTrace.Trace " VBCRPT prepare_finder..."
+    clear_all_readonly
+'    oTrace.Trace " VBCRPT End prepare_finder"
+    End Sub
+
+    Sub prepare_registration
+'    oTrace.Trace " VBCRPT prepare_registration..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'    oTrace.Trace " VBCRPT End prepare_registration"
+    End Sub
+
+    Sub Form_NamedEvent( evt )
+'    oTrace.Trace " VBCRPT Form_NamedEvent..."
+    if evt = "dfmakestrregnum" then
+    generate_num
+    End If
+    if evt = "dfrgmregistration" then
+    prepare_registration
+    End If
+    if evt = "dfrgmfinder" then
+    prepare_finder
+    End If
+    if evt = "dfrgmcompleted" then
+    prepare_completed
+    End If
+    if evt = "dfrgmwfclosed" then
+    prepare_wfclosed
+    End if
+
+
+    if evt="dfpreparestrregnum" then 'началось сохранение документа
+       saveCheck=1
+    end if
+
+    if evt="dfmakestrregnum" then 'закончилось сохранение документа
+       saveCheck=0
+    end if
+
+'   oTrace.Trace " VBCRPT End Form_NamedEvent"
+    End Sub
+
+Set ctx = CreateObject("Form.ExecutionContext")
+
+    Sub Form_Load
+'    Set oTrace = CreateObject("TRACE.VBTracer")
+'    oTrace.Trace " VBCRPT End Form_Load"
+
+
+    End Sub
+
+    Sub Form_Unload
+'    oTrace.Trace " VBCRPT Form_Unload..."
+'    Set oTrace = Nothing
+    End Sub
+
+    sub form_FieldDataChanged(field)
+    s = field.Attribute("frm.abstoredata")
+    if s &lt;&gt; "" and field.Value = "" then
+    Set arr = field.Parent(s)
+    if not arr is nothing then
+    arr.RemoveAll
+    end if
+    end if
+
+   ' Документ не сохраняется
+   if saveCheck=0 then
+
+          ' Очистили поле Организация_заказчик
+          if field.name = "Организация_заказчик_наименование" and Len(field.value)=0 then
+                  Data("|Document|Организация_заказчик|Организация_заказчик")= ""
+          end if
+
+          ' Очистили поле  Организатор закупки
+          if field.name = "Организатор_закупки_наименование" and Len(field.value)=0 then
+                  Data("|Document|Организатор_закупки|Организатор_закупки")= ""
+          end if
+
+
+    end if
+
+end sub</SCRIPT>
+	<plugins>
+		<restriction displayname="Генерация номера" progid="Euphfrm.RegNumGenerator" root="" initstring="">
+			<arg role="numberdoc" path="|S|Число_регномера"/>
+			<arg role="flow" path="|S|ИД_потока"/>
+			<arg role="regnum" path="|S|Регистрационный_номер"/>
+			<checkentry type="onevent" param="dfgenerateregnum" action="error"/>
+		</restriction>
+		<dictionary name="Тип связки" progid="FrmTools.DictSource" inittime="once" initstring="stored:Тип связки"/><dictionary name="Статусы плана" progid="FrmTools.DictSource" inittime="once" initstring="stored:Статусы плана"/><dictionary name="Основание внесения изменений" progid="FrmTools.DictSource" inittime="once" initstring="stored:Основание внесения изменений"/><dictionary name="Роль организатора закупки" progid="FrmTools.DictSource" inittime="field" initstring="stored:Роль организатора закупки"/><dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики"/><dictionary name="Нормативная база ПЗ" progid="FrmTools.DictSource" inittime="field" initstring="stored:Нормативная база ПЗ"/></plugins>
+</FORM_DESCRIPTION>

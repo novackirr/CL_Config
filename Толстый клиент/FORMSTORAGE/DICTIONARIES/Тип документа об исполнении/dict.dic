@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип документа об исполнении" Type="0">
+  <Items>
+    <Dictionary Name="Тип документа об исполнении">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="Статус записи" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="01" ParentGuid="" Guid="8cdee0b0-8b42-44b9-a551-c0a790e4a906">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Товарная накладная</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="02" ParentGuid="" Guid="1c20dd50-d8dc-4a61-a491-93d076342368">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Товарно-транспортная накладная</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="03" ParentGuid="" Guid="fc6b2cf4-7d74-426f-9e00-a4ece34990cc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Железнодорожная накладная</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="04" ParentGuid="" Guid="fc9ee3db-d038-44d6-9193-acccca88d569">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Авианакладная</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="05" ParentGuid="" Guid="c1669362-8aca-4f22-8585-e240e5351369">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Коносамент</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="06" ParentGuid="" Guid="3bf55874-fb65-46df-9fd6-cbef704f02fe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приемке товаров</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="07" ParentGuid="" Guid="07a371ab-73da-4b28-90e8-5ce2c4678441">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приемке товара, поступившего без счета поставщика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="08" ParentGuid="" Guid="2f402046-9a9a-4269-a97f-66dae2387385">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приеме-передаче объекта основных средств (кроме зданий, сооружений)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="09" ParentGuid="" Guid="9a4b44b4-3e9f-4679-911e-8a3e5825c8fe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приеме-передаче здания (сооружения)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="10" ParentGuid="" Guid="fcc4cccb-e8de-4b75-bc81-282336ef1ab6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приеме-передаче групп объектов основных средств (кроме зданий, сооружений)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="11" ParentGuid="" Guid="5294e7f0-4ea7-4711-a7a8-7067398cdb61">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приеме-сдаче отремонтированных, реконструированных, модернизированных объектов основных средств</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="12" ParentGuid="" Guid="0d06c6cc-efbc-4472-8503-310b69c1fd87">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приемке выполненных работ</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="13" ParentGuid="" Guid="bcdbe5b0-c31c-4a36-aee9-fc5ef347e20a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт приемки законченного строительством объекта</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="18" ParentGuid="" Guid="b2241502-4aec-4865-9a1e-663089fad61d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Счет на оплату</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="19" ParentGuid="" Guid="07f1eeae-f9dd-4a25-81fb-f1bda7b5b0f5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Счет-фактура</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="20" ParentGuid="" Guid="455ff0c4-a4a1-4a77-ba86-5f853d9e3ab7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт выполненных работ</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="21" ParentGuid="" Guid="c464d283-a7de-456c-8187-33d617bd12f0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приемке материалов</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="22" ParentGuid="" Guid="3b01a109-93f4-45f0-add4-15469f8021dd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о завесе тары</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="23" ParentGuid="" Guid="018f4cff-cafa-43f9-a261-131fb68a6fa7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт об оприходовании тары, не указанной в счете поставщика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="24" ParentGuid="" Guid="93a588ef-b85c-4016-9e1e-ab83d07f3916">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о выявлении недостатков выполненных работ (оказанных услуг)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="25" ParentGuid="" Guid="e5406915-2f6f-4d2e-bc7a-bb31e1326bae">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о невыполнении работ (оказании услуг)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="26" ParentGuid="" Guid="21d18df1-3bff-429f-b849-21484de4b71f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт-рекламация</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="31" ParentGuid="" Guid="6ad684e5-166c-4f2f-9df6-20a763bf7917">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Акт о приеме (поступлении) оборудования</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="37" ParentGuid="" Guid="efa42756-cb4f-4482-9833-3ed15a21239e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Прочие документы о приемке</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

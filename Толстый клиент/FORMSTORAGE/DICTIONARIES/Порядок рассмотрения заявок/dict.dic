@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Порядок рассмотрения заявок" Type="0">
+  <Items>
+    <Dictionary Name="Порядок рассмотрения заявок">
+      <DataCollection>
+        <Data Name="Заявки в одной части" ParentGuid="" Guid="2f04c51d-6ed4-434d-88ae-2747b1135bff" />
+        <Data Name="Заявки в двух частях (аналогично 94-ФЗ)" ParentGuid="" Guid="576ab652-5542-459a-a2be-49f9992b2a0a" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

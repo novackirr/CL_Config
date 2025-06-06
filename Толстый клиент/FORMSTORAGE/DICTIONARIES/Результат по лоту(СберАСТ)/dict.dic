@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Результат по лоту(СберАСТ)" Type="1">
+  <Items>
+    <Dictionary Name="Результат по лоту(СберАСТ)">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="8" ParentGuid="" Guid="215270d2-d38a-4d4e-90f0-30fbd387cc00">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Завершен</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="40" ParentGuid="" Guid="f54164d9-74ab-46bc-868c-a68acf23b328">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Состоялся</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="9" ParentGuid="" Guid="d6896ae7-ef0f-480f-8497-6b1ae5d3b2e0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не состоялся</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

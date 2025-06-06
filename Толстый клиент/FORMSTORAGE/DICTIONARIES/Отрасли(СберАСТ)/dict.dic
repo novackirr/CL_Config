@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Отрасли(СберАСТ)" Type="1">
+  <Items>
+    <Dictionary Name="Отрасли(СберАСТ)">
+      <Attributes>
+        <Attribute Name="Код" />
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="63" ParentGuid="" Guid="4ad1802c-90e0-4fd6-9831-a3055b09f150">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.002</DataAttribute>
+            <DataAttribute Name="Наименование">Горюче-смазочные материалы, энергоносители</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="64" ParentGuid="" Guid="270eaf2d-de54-4319-b462-31144d99c770">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.003</DataAttribute>
+            <DataAttribute Name="Наименование">Древесина и продукция деревообработки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="65" ParentGuid="" Guid="8e12e20e-6e80-4fe9-818d-9c618a534bbb">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.004</DataAttribute>
+            <DataAttribute Name="Наименование">Компьютерное, офисное оборудование, офисная мебель, телекоммуникации, информационные технологии</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="66" ParentGuid="" Guid="4f9e91fd-9a70-47e8-988c-d0056c0ced8b">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.005</DataAttribute>
+            <DataAttribute Name="Наименование">Мебель</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="67" ParentGuid="" Guid="f5df12cb-bd79-4d55-8be4-727e43d871e8">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.006</DataAttribute>
+            <DataAttribute Name="Наименование">Медикаменты, медицинские материалы, оборудование, инструмент</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="68" ParentGuid="" Guid="3f088e64-abfc-4f06-975c-45f06d8c6e56">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.007</DataAttribute>
+            <DataAttribute Name="Наименование">Металлы и продукция металлообработки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="69" ParentGuid="" Guid="2af12f36-202b-4d8c-9449-61232ee36904">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.008</DataAttribute>
+            <DataAttribute Name="Наименование">Научно-исследовательские и опытно-конструкторские работы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="70" ParentGuid="" Guid="de3da055-d1c4-4257-8f8a-23ffa5c81dcf">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.009</DataAttribute>
+            <DataAttribute Name="Наименование">Оборудование, машины, механизмы и механические приспособления</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="71" ParentGuid="" Guid="dc6ba863-7d67-46da-85a4-b9be4dec028f">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.010</DataAttribute>
+            <DataAttribute Name="Наименование">Пищевые продукты, напитки, табачные изделия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="83" ParentGuid="" Guid="7aea1687-693d-4087-b8f1-5b279b116dca">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.011</DataAttribute>
+            <DataAttribute Name="Наименование">Продукты и услуги горнодобывающей промышленности</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="84" ParentGuid="" Guid="40c0da84-7ed4-4985-9099-4fbf016b6ba9">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.012</DataAttribute>
+            <DataAttribute Name="Наименование">Продукция химических производств</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="72" ParentGuid="" Guid="be032e08-cac2-4aa9-9a16-4f98909286b1">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.013</DataAttribute>
+            <DataAttribute Name="Наименование">Разные промышленные и потребительские товары</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="73" ParentGuid="" Guid="fcd11135-5ee5-423f-a3e0-18e8bbde4ec9">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.014</DataAttribute>
+            <DataAttribute Name="Наименование">Сельское хозяйство</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="74" ParentGuid="" Guid="2ce14196-d457-47e7-b804-9754c94f6b62">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.015</DataAttribute>
+            <DataAttribute Name="Наименование">Средства наземного, воздушного и водного транспорта. Услуги транспорта и связи</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="75" ParentGuid="" Guid="8bcf030d-b70b-4c63-95b9-4028b7b9ab21">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.016</DataAttribute>
+            <DataAttribute Name="Наименование">Строительные материалы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="76" ParentGuid="" Guid="6462f2c5-eb75-441f-a42b-f29feaf44540">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.017</DataAttribute>
+            <DataAttribute Name="Наименование">Строительные работы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="77" ParentGuid="" Guid="648d5e85-6ee8-4f11-b847-e20a5336b932">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.018</DataAttribute>
+            <DataAttribute Name="Наименование">Текстиль, текстильные изделия, одежда, обувь, головные уборы, изделия из кожи и ее заменителей, меха</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="78" ParentGuid="" Guid="aae932c5-3b4d-4dd6-ad42-bf8db2b181ce">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.019</DataAttribute>
+            <DataAttribute Name="Наименование">Услуги в непроизводственной сфере</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="79" ParentGuid="" Guid="a1e8271f-a7fd-446a-b5f7-81a2d316e25a">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.020</DataAttribute>
+            <DataAttribute Name="Наименование">Услуги в производственной сфере, не вошедшие в другие разделы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="80" ParentGuid="" Guid="7abffa54-a2d7-4461-bbba-39d8389bf867">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.021</DataAttribute>
+            <DataAttribute Name="Наименование">Электрические машины, оборудование, материалы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="81" ParentGuid="" Guid="cf134c53-da95-4495-aac9-af3b9c85bb1f">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.022</DataAttribute>
+            <DataAttribute Name="Наименование">Электронное, оптическое и радиооборудование. Аппаратура для записи и воспроизведения изображения и звука</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="82" ParentGuid="" Guid="9a18b67e-fffe-4af8-b1bb-38266c86e72b">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.023</DataAttribute>
+            <DataAttribute Name="Наименование">Прочие</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136521" ParentGuid="" Guid="a84ad276-531f-4fdd-a9b0-9495ea735a41">
+          <DataAttributes>
+            <DataAttribute Name="Код">Branch.024</DataAttribute>
+            <DataAttribute Name="Наименование">Инновационная продукция</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

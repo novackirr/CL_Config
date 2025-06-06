@@ -1,0 +1,1531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="ОКСМ" Type="1">
+  <Items>
+    <Dictionary Name="ОКСМ">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="Статус записи" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="232" ParentGuid="" Guid="2aacf85a-db0b-4074-a852-9fc3f611d00e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Государство Эритрея</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="031" ParentGuid="" Guid="2058e0fa-e810-498b-88e7-febad1688e51">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Азербайджан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="074" ParentGuid="" Guid="7c2c6cb6-9f30-4473-9ff3-2c73ca172d96">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВ БУВЕ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="316" ParentGuid="" Guid="6b440f13-6709-4426-9aa4-ccdbd6905344">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГУАМ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="233" ParentGuid="" Guid="ffbcc0c1-e148-4570-b1c7-aa04649139a8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Эстонская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="591" ParentGuid="" Guid="e64a58b2-4e0e-4918-bb91-25df1c309905">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Панама</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="643" ParentGuid="" Guid="1700aebf-5332-49ab-9be2-9a73361e3975">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Российская Федерация</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="858" ParentGuid="" Guid="32d5ec1d-2513-44dd-9c3c-a4b18041d865">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Восточная Республика Уругвай</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="581" ParentGuid="" Guid="5fb7e983-e49d-48d3-a472-318c4f639255">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МАЛЫЕ ТИХООКЕАНСКИЕ ОТДАЛЕННЫЕ ОСТРОВА СОЕДИНЕННЫХ ШТАТОВ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="562" ParentGuid="" Guid="6724c81c-7633-4d25-9eab-75fa00a00829">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Нигер</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="158" ParentGuid="" Guid="f3f24f5a-6a6a-401d-97af-5cf55a503971">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ТАЙВАНЬ (КИТАЙ)</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="060" ParentGuid="" Guid="fc3f4be1-10a0-4c1a-9b92-15034d048742">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БЕРМУДЫ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="833" ParentGuid="" Guid="96644ca2-3467-49d6-8115-6508f1137cc6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВ МЭН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="530" ParentGuid="" Guid="6656c230-9243-4fb1-8017-c4f0690e6ff9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">НИДЕРЛАНДСКИЕ АНТИЛЫ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="470" ParentGuid="" Guid="6f47f445-d602-49b1-a540-bb9279cfc5c7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Мальта</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="320" ParentGuid="" Guid="f6a044f8-50d4-4d3a-a72b-d20df139f211">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гватемала</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="740" ParentGuid="" Guid="e69292f5-c6f0-4ba5-aaf1-4c99426a538f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Суринам</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="663" ParentGuid="" Guid="20b82429-9089-4484-92d3-9bda65abfd19">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕН-МАРТЕН (ФРАНЦУЗСКАЯ ЧАСТЬ)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="218" ParentGuid="" Guid="538f5197-6532-4296-a61a-7061c63c1072">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Эквадор</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="534" ParentGuid="" Guid="a1bb9577-778a-4193-8628-8c9d8c9f1409">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕН-МАРТЕН (нидерландская часть)</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="554" ParentGuid="" Guid="14d13537-7cfa-4efd-a5b8-674c30a48d82">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">НОВАЯ ЗЕЛАНДИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="804" ParentGuid="" Guid="fb79af68-3697-4118-a755-0f3aa2da8cfc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">УКРАИНА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="090" ParentGuid="" Guid="2c5ed831-fae9-4bb7-acbe-38509fd14e87">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СОЛОМОНОВЫ ОСТРОВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="258" ParentGuid="" Guid="70a9fb78-0f65-44d3-a02e-3e0e95829af2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ФРАНЦУЗСКАЯ ПОЛИНЕЗИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="214" ParentGuid="" Guid="4b3bd947-9365-4fd7-a8ac-ad175e8fd2a0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ДОМИНИКАНСКАЯ РЕСПУБЛИКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="070" ParentGuid="" Guid="db9696d8-de97-4fbf-b800-0725650427c1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БОСНИЯ И ГЕРЦЕГОВИНА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="724" ParentGuid="" Guid="3a829a78-61a8-4115-a069-b013b3a1cda2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Испания</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="520" ParentGuid="" Guid="d53685d5-1857-4c5e-b1bb-ba8ea1fc080a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Науру</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="050" ParentGuid="" Guid="088e6d89-a05a-4cbe-8d55-ec8e53a8640f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Народная Республика Бангладеш</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="710" ParentGuid="" Guid="dfbd6b99-42ba-4f52-96c3-43da84749b28">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Южно-Африканская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="535" ParentGuid="" Guid="4c065600-d47c-4310-a54d-6152667db9fe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БОНЭЙР, СИНТ-ЭСТАТИУС И САБА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="024" ParentGuid="" Guid="15f7dc86-3334-422a-9543-e9ddd4644932">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Ангола</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="776" ParentGuid="" Guid="bd614484-e767-4f1b-9ced-0afbc6ae1c5b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Тонга</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="344" ParentGuid="" Guid="31666c98-aa0e-4023-846e-d52f6b697aea">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Специальный административный регион Китая Гонконг</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="834" ParentGuid="" Guid="3e5ce7ac-b745-441f-872f-83c6e97a2ea2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Объединенная Республика Танзания</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="670" ParentGuid="" Guid="0fd4778c-2f9f-427b-85c9-a1accded5c3b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕНТ-ВИНСЕНТ И ГРЕНАДИНЫ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="388" ParentGuid="" Guid="548abeaa-d911-4d95-a5ff-9375f157b541">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЯМАЙКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="882" ParentGuid="" Guid="98f77840-04a4-4566-8bb0-aa71526cd147">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Независимое Государство Самоа</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="624" ParentGuid="" Guid="c4161d9a-a9ad-4d8d-bf29-8b3eb753b85a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гвинея-Бисау</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="152" ParentGuid="" Guid="e02ab808-02c1-4942-836b-44f72b5140c5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Чили</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="768" ParentGuid="" Guid="c713ee75-f39f-4e9c-afde-a6e412f371fb">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тоголезская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="744" ParentGuid="" Guid="00de2fec-6b57-4276-b5d1-0ad0ba413ad5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ШПИЦБЕРГЕН И ЯН МАЙЕН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="288" ParentGuid="" Guid="6729ca02-5d3a-4649-948f-b057f8922b83">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гана</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="454" ParentGuid="" Guid="544362c6-e13c-408d-8bd5-8da14140c7f7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Малави</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="051" ParentGuid="" Guid="d872c774-5bff-4231-8f0f-735c9bab1c9f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Армения</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="148" ParentGuid="" Guid="37c3c6cc-3452-4a5d-a858-a5fd83198dd7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Чад</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="566" ParentGuid="" Guid="cf561eab-a865-4b68-a753-d2e6bf3bcda8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Республика Нигерия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="760" ParentGuid="" Guid="cf340c3c-5efb-4950-bcdc-15b69e686bd9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СИРИЙСКАЯ АРАБСКАЯ РЕСПУБЛИКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="414" ParentGuid="" Guid="cc8a3beb-b2c9-4f8b-82f6-853d7ae3e86c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Государство Кувейт</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="728" ParentGuid="" Guid="4b07a0fe-5c33-4124-aae1-c595f4ef819f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Южный Судан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="040" ParentGuid="" Guid="5a16db17-8ce7-4dee-96e1-ca20139ce9a7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Австрийская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="360" ParentGuid="" Guid="90ed34d1-374a-4365-a598-b686a7cc17e5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Индонезия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="203" ParentGuid="" Guid="757f306c-572c-450f-9aa4-adde93d08a94">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Чешская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="876" ParentGuid="" Guid="08283bf6-9f6a-4ba6-a7fc-3c307ce43796">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">УОЛЛИС И ФУТУНА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="226" ParentGuid="" Guid="91db3956-ebcc-4f00-b257-38aac7a25d28">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Экваториальная Гвинея</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="422" ParentGuid="" Guid="c6850c5d-f8cf-4fba-920e-fa6c000a7429">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ливанская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="324" ParentGuid="" Guid="cd609df6-0f5a-4e0a-a4bb-99e46e4538e1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гвинейская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="850" ParentGuid="" Guid="81d5062e-8d9b-4ae8-a9b1-194b32d6d660">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Виргинские острова Соединенных Штатов</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="498" ParentGuid="" Guid="ffc5e249-9306-4945-a358-7f8e61d272de">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Молдова</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="604" ParentGuid="" Guid="8efa7824-9d33-44e9-830c-0c184ffce074">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Перу</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="304" ParentGuid="" Guid="c562f77a-b676-4477-b84c-05e08d1b1fba">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГРЕНЛАНДИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="356" ParentGuid="" Guid="ce97a927-9101-4566-91a0-c3c27adb41a4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Индия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="458" ParentGuid="" Guid="abec9b8e-64e1-48dd-8db5-e3cdd85a47ae">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МАЛАЙЗИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="508" ParentGuid="" Guid="3145ff00-478e-4b4c-8741-bcd3ba896b03">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Мозамбик</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="862" ParentGuid="" Guid="a6f912c0-eb24-40fe-83b5-7c25f23f997d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Боливарианская Республика Венесуэла</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="531" ParentGuid="" Guid="e897ad46-8294-400d-8ee9-46b61a54a909">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">КЮРАСАО</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="533" ParentGuid="" Guid="34e862ca-4dce-47f8-899f-496d60bdc770">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АРУБА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="756" ParentGuid="" Guid="783d3d40-b2a4-4513-8fd7-e782ed415fa5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Швейцарская Конфедерация</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="086" ParentGuid="" Guid="0fc0221f-f30e-40ab-b876-7bc2bc3780ca">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БРИТАНСКАЯ ТЕРРИТОРИЯ В ИНДИЙСКОМ ОКЕАНЕ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="092" ParentGuid="" Guid="4fd83491-700c-4d3d-901c-60ede2cd4e6e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Британские Виргинские острова</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="239" ParentGuid="" Guid="fcd27b81-387d-4903-8b3f-a5b19ec55223">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЮЖНАЯ ДЖОРДЖИЯ И ЮЖНЫЕ САНДВИЧЕВЫ ОСТРОВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="558" ParentGuid="" Guid="3bf7b2b8-2244-4976-8207-245072b07a9e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Никарагуа</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="012" ParentGuid="" Guid="b27ff070-e704-4991-8aad-9a4dd795e93a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Алжирская Народная Демократическая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="156" ParentGuid="" Guid="12964c68-a794-4c8a-aa8a-b4fade9c0368">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Китайская Народная Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="250" ParentGuid="" Guid="42b37600-6553-46f2-9da0-029a00407ec3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Французская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="308" ParentGuid="" Guid="7748aa5d-2b5d-46aa-b5f8-e5b40c9974fd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГРЕНАДА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="384" ParentGuid="" Guid="bdeb6bf3-9739-4e5a-ba77-97ee52bab6bd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Кот д`Ивуар</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="372" ParentGuid="" Guid="f30d3d43-117f-4c0b-a899-974227e0c33e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ИРЛАНДИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="578" ParentGuid="" Guid="280a48f4-1ca5-40df-91f2-33ddd303e285">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Норвегия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="480" ParentGuid="" Guid="698229c3-bc19-4145-ac84-aba4c03ee663">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Маврикий</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="032" ParentGuid="" Guid="1c19cd26-ae88-4a30-ada0-e9e0612a72c7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Аргентинская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="266" ParentGuid="" Guid="9e12e4c6-8fa0-4310-9559-717c1b0366fc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Габонская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="792" ParentGuid="" Guid="1fbe5a29-c2ac-4b93-843d-6cd3a73dcc1f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Турецкая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="196" ParentGuid="" Guid="59a23c00-2493-4358-94f0-292fd02879fd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Кипр</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="108" ParentGuid="" Guid="4a3a064e-55df-460c-a04c-3d376a1d08b4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Бурунди</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="474" ParentGuid="" Guid="f307f25d-011a-4872-adeb-e3a142786dca">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МАРТИНИКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="524" ParentGuid="" Guid="84d88772-a3bc-4883-83a9-0155bc556507">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Демократическая Республика Непал</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="352" ParentGuid="" Guid="57ee1b41-ad0c-454b-b75e-a9c0793e317a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Исландия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="076" ParentGuid="" Guid="1b460c31-1a2a-4580-946e-df9a651e7995">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Республика Бразилия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="292" ParentGuid="" Guid="51b0f5fc-50c3-4e83-845c-26a62c6a3404">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГИБРАЛТАР</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="440" ParentGuid="" Guid="7c77b856-b8a4-4239-85c9-845e717e50c1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Литовская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="084" ParentGuid="" Guid="6ead1c09-f946-4802-a2c4-599ca08babc3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БЕЛИЗ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="570" ParentGuid="" Guid="f82b83a6-b586-4cba-ab57-ee5c6663f7f7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ниуэ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="706" ParentGuid="" Guid="4a853b3a-90c0-4436-8df0-483bd3bd5d17">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Республика Сомали</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="044" ParentGuid="" Guid="2ec46af4-a584-4360-8307-03cc99f9f6e6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Содружество Багамы</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="512" ParentGuid="" Guid="b5ec4a7c-9748-4734-a0c1-8e408351b790">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Султанат Оман</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="410" ParentGuid="" Guid="5e14a994-604a-46a9-9ad7-a7fcec2b0b13">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Корея</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="332" ParentGuid="" Guid="3d3de45b-acd5-40ef-9648-48c2b5f6e9ad">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гаити</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="312" ParentGuid="" Guid="d9bfd42c-9f61-459b-963d-86c518a3f8f2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГВАДЕЛУПА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="231" ParentGuid="" Guid="0c8aa583-63f1-4fb0-ba40-07b5ca61b4a2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Демократическая Республика Эфиопия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="826" ParentGuid="" Guid="d77c53f2-1c36-4128-8bf5-a5c88f349bfe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Соединенное Королевство Великобритании и Северной Ирландии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="620" ParentGuid="" Guid="d99b3074-0bbc-4d3e-b813-42f4905cc7a3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Португальская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="528" ParentGuid="" Guid="97e0618c-e537-490b-9c79-f10c04b150f2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Нидерландов</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="659" ParentGuid="" Guid="f2522534-9d93-439a-9700-4324b06c464d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕНТ-КИТС И НЕВИС</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="248" ParentGuid="" Guid="afb4856b-f604-4fef-9822-3c3704ef2eb8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЭЛАНДСКИЕ ОСТРОВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="268" ParentGuid="" Guid="53a6eb49-aa25-4261-ab5a-d9911e9a3379">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГРУЗИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="056" ParentGuid="" Guid="a29cfdaf-c104-4557-b847-81ff369a5b63">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Бельгии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="162" ParentGuid="" Guid="9d98977a-7811-4ab8-b82a-4cc1c7b2f81e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВ РОЖДЕСТВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="583" ParentGuid="" Guid="2177b6aa-0f99-4274-8460-c9d1dba710db">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративные Штаты Микронезии</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="166" ParentGuid="" Guid="cf25d94d-4272-4f54-8442-8cc48e1741fc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">КОКОСОВЫЕ (КИЛИНГ) ОСТРОВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="442" ParentGuid="" Guid="553bc408-83aa-4a46-8d3a-8fb01781a19e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Великое Герцогство Люксембург</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="702" ParentGuid="" Guid="02c61e5f-01bd-4a5a-beee-1cd9a68d9d89">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сингапур</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="887" ParentGuid="" Guid="d23401d5-b7fb-481b-a6b8-705914582c83">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Йеменская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="780" ParentGuid="" Guid="9e74dea6-9b2b-4664-9ad2-cde642ae5c3b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Тринидад и Тобаго</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="484" ParentGuid="" Guid="e87ea011-f1ee-47c1-b2dd-c1bd12dbbcff">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Мексиканские Соединенные Штаты</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="175" ParentGuid="" Guid="1bd8c3c6-d726-440b-bf1c-ec1344947922">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МАЙОТТА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="660" ParentGuid="" Guid="d8507879-7929-49bd-abb0-07ddfbe6b753">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АНГИЛЬЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="400" ParentGuid="" Guid="de7f9a70-2992-4a6d-a462-7a53a07f94e9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иорданское Хашимитское Королевство</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="748" ParentGuid="" Guid="2fa0c552-46b9-41bd-91eb-0a5760ed6309">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Свазиленд</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="016" ParentGuid="" Guid="a14af32d-d8b7-4d5a-98f5-18b02a206ac1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АМЕРИКАНСКОЕ САМОА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="204" ParentGuid="" Guid="997effcd-6943-4c34-98f7-41a3b4a2c4f6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Бенин</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="180" ParentGuid="" Guid="f3878540-b0e5-4a9f-8212-de855e35d3cd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Демократическая Республика Конго</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="608" ParentGuid="" Guid="c133b063-56aa-45a2-97d5-1744de084dbe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Филиппины</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="184" ParentGuid="" Guid="4d73194d-ac55-4cd4-a2f9-55b32938c59d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВА КУКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="010" ParentGuid="" Guid="e27a6809-8fb6-411e-a631-0ed487861e2c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АНТАРКТИДА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="222" ParentGuid="" Guid="2b92dee6-22dd-427d-9c54-26b007cb91e5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Эль-Сальвадор</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="688" ParentGuid="" Guid="846ee64b-ea3a-4f2d-8321-c5b3f70954be">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сербия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="630" ParentGuid="" Guid="fd64edba-88ca-4c5b-a9dd-da027fe63069">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ПУЭРТО-РИКО</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="752" ParentGuid="" Guid="ea0865d3-fe16-4a01-8ad3-9784e377f0c3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Швеция</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="586" ParentGuid="" Guid="eaae3aba-f720-4f6d-a89e-cd2138db6d84">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Исламская Республика Пакистан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="124" ParentGuid="" Guid="64396ebe-48fc-41f0-805d-569d122cbdf7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">КАНАДА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="612" ParentGuid="" Guid="2cf9650d-f762-4fba-8460-280b431cc41e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ПИТКЕРН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="340" ParentGuid="" Guid="5ab2ff72-6172-4f67-a936-1830215ad83c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гондурас</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="004" ParentGuid="" Guid="baf36d53-cdeb-4162-86d4-ea1cfaa18d08">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Переходное Исламское Государство Афганистан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="492" ParentGuid="" Guid="8f667763-3dd2-4198-a43d-4128a6769b74">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Княжество Монако</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="499" ParentGuid="" Guid="c4780206-987c-4640-91c1-fe51ea1af9db">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЧЕРНОГОРИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="736" ParentGuid="" Guid="b459ec00-8224-412f-ac14-05b0e9c18fe3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Судан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="662" ParentGuid="" Guid="435f77ea-8232-4ee0-b5d2-e3790babf46d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕНТ-ЛЮСИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="334" ParentGuid="" Guid="0827d645-0525-4089-84b7-c5c9b8e0c671">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВ ХЕРД И ОСТРОВА МАКДОНАЛЬД</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="500" ParentGuid="" Guid="f7d8cbb8-9de3-45c3-9143-a702f0c9f4c3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МОНТСЕРРАТ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="262" ParentGuid="" Guid="299c4772-490b-42fd-a6e1-717e91ec249b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Джибути</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="120" ParentGuid="" Guid="0b6efa37-42bc-474c-ae26-cf5978d9a3e4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Камерун</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="104" ParentGuid="" Guid="ce883495-d1cb-4129-95ba-13bc1d32c1c5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Союза Мьянма</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="795" ParentGuid="" Guid="6187bca3-9e86-48f5-914f-74a560add7ad">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ТУРКМЕНИСТАН</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="191" ParentGuid="" Guid="5ee1e50b-1d09-4ccd-8e97-2cd50b4da15d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Хорватия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="048" ParentGuid="" Guid="599ae89c-a07b-4103-bc28-41df05834f4c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Бахрейн</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="729" ParentGuid="" Guid="c645981c-6f00-4b0b-8003-e01159b80e03">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Судан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="626" ParentGuid="" Guid="90d199ea-bda3-44dd-9e47-90de08c4275d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Демократическая Республика Тимор-Лесте</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="438" ParentGuid="" Guid="ba46a6fe-61aa-4412-8a0c-4be400c6333f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Княжество Лихтенштейн</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="238" ParentGuid="" Guid="f53281bc-a361-465e-8722-1b6868509129">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ФОЛКЛЕНДСКИЕ ОСТРОВА (МАЛЬВИНСКИЕ)</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="140" ParentGuid="" Guid="4c9b95c5-fd0d-4a97-8937-569d54d084b5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЦЕНТРАЛЬНО-АФРИКАНСКАЯ РЕСПУБЛИКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="234" ParentGuid="" Guid="68a60cd1-d315-4f8c-89ee-098d06b4b4a5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ФАРЕРСКИЕ ОСТРОВА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="496" ParentGuid="" Guid="9211c6a6-3672-42ad-8e36-f52b38166aa3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">МОНГОЛИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="008" ParentGuid="" Guid="323339ce-3457-45e6-a706-59a75e5a6d6b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Албания</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="860" ParentGuid="" Guid="137a6717-19e9-48ba-9843-a904d751b54b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Узбекистан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="100" ParentGuid="" Guid="89d674c4-eaa5-46fa-bb39-5f8036b72593">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Болгария</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="478" ParentGuid="" Guid="4ff793c0-4471-4c80-a0b3-230ecbe41144">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Исламская Республика Мавритания</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="426" ParentGuid="" Guid="0538880d-e2c1-4648-bea3-95172e72126e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Лесото</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="348" ParentGuid="" Guid="5763cdd6-d1eb-4e87-b262-cd0641680738">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Венгрия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="328" ParentGuid="" Guid="d8eed4c2-5e2d-43a9-b816-f53c281f77e8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Гайана</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="634" ParentGuid="" Guid="7ee9c423-65d4-4e5f-bc33-a7fda423c4aa">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Государство Катар</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="682" ParentGuid="" Guid="e9ceaf56-2c95-4819-b673-4e15105ce288">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Саудовская Аравия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="772" ParentGuid="" Guid="ece71356-b912-4f13-9551-92dcf8b3b0f0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ТОКЕЛАУ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="368" ParentGuid="" Guid="2de568c2-2bc7-4e82-84cb-4439b9dd2bb2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Ирак</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="854" ParentGuid="" Guid="22ccbd6f-705a-406a-b665-ca0d7fe64e49">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БУРКИНА-ФАСО</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="584" ParentGuid="" Guid="adde8ca7-ead2-406e-bd87-9159a12822d2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Маршалловы Острова</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="540" ParentGuid="" Guid="4d0d3ea0-edda-4c57-ac97-fcceea58ce1a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">НОВАЯ КАЛЕДОНИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="380" ParentGuid="" Guid="7758ef0f-c8d4-497c-bc07-413874f73eee">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Итальянская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="275" ParentGuid="" Guid="7f165b15-1c1b-4d14-bbee-114faf7bac50">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Государство Палестина</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="212" ParentGuid="" Guid="bdab8620-43bb-4bef-a636-2bd628b1a973">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Содружество Доминики</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="188" ParentGuid="" Guid="64070604-9df8-4805-9fe9-f15c453c2469">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Коста-Рика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="694" ParentGuid="" Guid="75018741-e231-4dea-b367-c3384faf281e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сьерра-Леоне</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="716" ParentGuid="" Guid="2a4aa9a0-3a63-49b5-be43-0bb77df2cc3e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Зимбабве</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="430" ParentGuid="" Guid="9ba9c80d-b003-46f5-b047-b87cf425b65f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Либерия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="831" ParentGuid="" Guid="6d1057a4-9901-4b8c-993e-76a6cd594b0c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ГЕРНСИ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="392" ParentGuid="" Guid="c9a7d541-514c-48dd-b55c-6874b52ed6e9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЯПОНИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="417" ParentGuid="" Guid="e59823b5-f8e6-465f-9754-16718334e025">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Киргизская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="585" ParentGuid="" Guid="7a9ece2d-c233-4683-8910-13bee8eb0938">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Палау</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="192" ParentGuid="" Guid="8207b946-6b55-47d1-8f54-3b7e0a4e7aa7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Куба</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="574" ParentGuid="" Guid="d7a23f20-bc4c-416c-a19d-91f4befd8bc7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВ НОРФОЛК</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="174" ParentGuid="" Guid="dbdb4c2a-66df-4a94-beee-cc66f940157a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Союз Коморы</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="136" ParentGuid="" Guid="998481c5-6dc2-4ed3-a2cd-fdb13279c957">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВА КАЙМАН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="028" ParentGuid="" Guid="3d190907-c357-437c-a0ed-03bacdbb1ace">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АНТИГУА И БАРБУДА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="832" ParentGuid="" Guid="5a74b0bf-b33e-4478-8992-4104359e3be0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ДЖЕРСИ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="254" ParentGuid="" Guid="2232e7fc-26e1-4e54-be51-a8dae2acb98f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ФРАНЦУЗСКАЯ ГВИАНА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="580" ParentGuid="" Guid="cadeb489-2ac3-43ee-b25a-b428e05a3e93">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Содружество Северных Марианских островов</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="276" ParentGuid="" Guid="24a773c8-a93f-4198-bbc5-690def0d8dbf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Федеративная Республика Германия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="548" ParentGuid="" Guid="aeb11570-abb3-4255-9b3c-b4401b83d1a0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Вануату</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="408" ParentGuid="" Guid="bede8b59-1457-4ab2-8376-e7bb259053f8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Корейская Народно-Демократическая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="818" ParentGuid="" Guid="f705fc16-81dc-4b3b-9a11-08dcaa4a2d19">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Арабская Республика Египет</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="638" ParentGuid="" Guid="7a7cd19b-8d26-4a14-a3fd-2f9a63058257">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">РЕЮНЬОН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="260" ParentGuid="" Guid="87337fa4-d750-45db-8583-8fe23276e32e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ФРАНЦУЗСКИЕ ЮЖНЫЕ ТЕРРИТОРИИ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="398" ParentGuid="" Guid="06f4178e-7a59-4d22-82f0-acfd37533007">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Казахстан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="896" ParentGuid="" Guid="8a1427e6-b72e-4ada-9f11-0d4d4d002532">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Южная Осетия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="703" ParentGuid="" Guid="4d21c0d4-c5e5-477a-83d2-4cacd13b033b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Словацкая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="404" ParentGuid="" Guid="b866858d-6cf4-4082-a54e-771da6063bca">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Кения</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="788" ParentGuid="" Guid="cf86bcc0-dfe1-4bdc-8c6d-88980801d5b6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тунисская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="764" ParentGuid="" Guid="b3321ff6-b7ae-4bf8-9787-99b16a45ebf7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Таиланд</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="652" ParentGuid="" Guid="194d6828-d42f-419c-8f26-0450691be009">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕН-БАРТЕЛЕМИ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="732" ParentGuid="" Guid="f24e04d4-cb13-440e-ba50-bea1a9bb10a5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЗАПАДНАЯ САХАРА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="762" ParentGuid="" Guid="2e97f947-5e10-489b-9ad0-4cbe6c6bea6a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Таджикистан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="364" ParentGuid="" Guid="2788da06-3aa1-475e-8059-d828b05dd33b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Исламская Республика Иран</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="144" ParentGuid="" Guid="d76c55c1-6ab7-481b-9b21-bd1a004ffecf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Демократическая Социалистическая Республика Шри-Ланка</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="616" ParentGuid="" Guid="cffde66d-9de6-469f-89e5-35f55803d2cc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Польша</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="270" ParentGuid="" Guid="29ae815f-b0fc-415d-910f-eac465a75588">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Исламская Республика Гамбия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="840" ParentGuid="" Guid="5da928bb-1a62-4677-874e-d06eb4085533">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Соединенные Штаты Америки</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="376" ParentGuid="" Guid="e6c53284-c41c-4f83-a6d6-6406f03f602d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Государство Израиль</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="446" ParentGuid="" Guid="a6913bab-ddfa-4f86-aeb3-d0391b69d958">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Специальный административный регион Китая Макао</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="796" ParentGuid="" Guid="a5b792d7-0644-492c-a550-18c4ce5e9868">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОСТРОВА ТЕРКС И КАЙКОС</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="894" ParentGuid="" Guid="c232b34d-d014-4975-a430-30b0aee6ae69">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Замбия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="170" ParentGuid="" Guid="40f677a4-dea1-470e-9c6e-aedef34f80f7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Колумбия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="784" ParentGuid="" Guid="e9537769-0442-4f06-8e4e-1ea11eea45d4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="112" ParentGuid="" Guid="4cc2f4a5-5055-4cea-bc3a-cfe3029ba010">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Беларусь</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="242" ParentGuid="" Guid="d881c544-86a2-40c8-bf68-84166f2c983f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Фиджи</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="116" ParentGuid="" Guid="c3c0fb75-85ae-42e8-9fb6-05db7f9a9ce5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Камбоджа</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="052" ParentGuid="" Guid="2a5d3056-5579-400e-8c11-ea3ddc0b6547">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БАРБАДОС</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="208" ParentGuid="" Guid="ae0443fa-5976-42d7-892f-16f08dbe8ea6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Дания</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="036" ParentGuid="" Guid="b0495efc-8dab-4ab6-a44a-60143272a636">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">АВСТРАЛИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="800" ParentGuid="" Guid="4b8a0731-1663-4de1-9b5f-e8bed942c7b1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Уганда</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="516" ParentGuid="" Guid="964d66c3-fefc-43cf-a2b9-416829cf161e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Намибия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="690" ParentGuid="" Guid="708e2c9d-e1c9-4938-806b-dee4e8a223df">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сейшелы</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="418" ParentGuid="" Guid="cbdf9021-f8ba-411e-b73f-7e1800329818">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ЛАОССКАЯ НАРОДНО-ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="068" ParentGuid="" Guid="b9d3cadf-81d0-44c7-8fe2-a04507ac2b88">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Многонациональное Государство Боливия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="466" ParentGuid="" Guid="f3c8f151-476f-45fb-ac51-ae17aeaebd36">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Мали</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="895" ParentGuid="" Guid="e990411a-4008-4f4a-9011-7f9a72abdc51">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Абхазия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="132" ParentGuid="" Guid="c6542481-2ea8-4327-82dd-5e6e960d1296">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Кабо-Верде</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="178" ParentGuid="" Guid="83b8cabe-c330-4000-ad60-014846ada3c7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Конго</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="504" ParentGuid="" Guid="bba8498b-1a06-4db6-8bbf-4505b58987fd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Марокко</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="300" ParentGuid="" Guid="0e116fac-7ff4-4430-92ee-286f8157056a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Греческая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="798" ParentGuid="" Guid="c54e9d2d-d33c-41b7-af30-c47edbab3b5c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ТУВАЛУ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="678" ParentGuid="" Guid="f5952728-e06e-4d64-bf13-1e3e99d27b52">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Демократическая Республика Сан-Томе и Принсипи</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="704" ParentGuid="" Guid="bfc97a7d-e5ae-434e-a332-5be11ac3c794">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Социалистическая Республика Вьетнам</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="598" ParentGuid="" Guid="a588a4b6-6e72-4690-aa16-ac6c2e74a97d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Независимое Государство Папуа Новая Гвинея</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="434" ParentGuid="" Guid="052694bc-3d33-455f-a685-5e31b28fd614">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ливия</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="450" ParentGuid="" Guid="6c7f131d-c8d2-47d5-bf82-7322c56064e2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Мадагаскар</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="246" ParentGuid="" Guid="149017a8-2749-4729-8250-10fe8e30f946">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Финляндская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="600" ParentGuid="" Guid="cc007351-b522-4a2c-8932-df1ba92d042c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Парагвай</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="020" ParentGuid="" Guid="672db9aa-da3a-4872-918b-62c1000a1798">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Княжество Андорра</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="336" ParentGuid="" Guid="fdd4ae17-b11a-4595-826d-58a4f2b82b6b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">ПАПСКИЙ ПРЕСТОЛ (ГОСУДАРСТВО-ГОРОД ВАТИКАН)</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="064" ParentGuid="" Guid="f27b833e-2b9f-4dbd-897b-cfe5a955ac5e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Королевство Бутан</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="072" ParentGuid="" Guid="9ce69cc8-b8d9-46d8-bf90-7507ed9d4709">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Ботсвана</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="428" ParentGuid="" Guid="52ef7081-8a54-43fb-9098-0ba5439d9c85">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Латвийская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="666" ParentGuid="" Guid="78f4df53-73e0-44e1-8fde-a0ecbd6478cc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СЕНТ-ПЬЕР И МИКЕЛОН</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="686" ParentGuid="" Guid="6458c17f-3d48-4758-bf1e-22e1a9e4c6c5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сенегал</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="646" ParentGuid="" Guid="7452b028-cc6a-4b95-a675-2cb24b730931">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Руандийская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="642" ParentGuid="" Guid="75dbf100-4bff-46da-a170-07fbdb283178">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">РУМЫНИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="807" ParentGuid="" Guid="0c3f770a-0573-425a-bd39-72c0d0352e72">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">РЕСПУБЛИКА МАКЕДОНИЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="096" ParentGuid="" Guid="5fc1904c-e72f-4563-8153-45879c9c9eeb">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">БРУНЕЙ-ДАРУССАЛАМ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="654" ParentGuid="" Guid="ab3a0bfd-30d7-4001-a47f-2aac07815475">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СВЯТАЯ ЕЛЕНА, ОСТРОВ ВОЗНЕСЕНИЯ, ТРИСТАН-ДА-КУНЬЯ</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="296" ParentGuid="" Guid="830c98f9-9095-4016-b857-cbbe466df1d8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Кирибати</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="674" ParentGuid="" Guid="4ba16782-06ee-40db-854d-7874ccd3e785">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Сан-Марино</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="705" ParentGuid="" Guid="cc98fa13-1c3a-43d7-af2d-e834686ad15a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Республика Словения</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="462" ParentGuid="" Guid="41c6f72b-5817-41d7-9b27-aebccd398131">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Мальдивская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

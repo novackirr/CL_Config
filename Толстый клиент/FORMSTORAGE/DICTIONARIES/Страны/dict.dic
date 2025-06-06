@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Страны" Type="0">
+  <Items>
+    <Dictionary Name="Страны">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="643" ParentGuid="" Guid="3de52dbb-3ede-476c-9985-cc6d0c710dc5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Россия</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

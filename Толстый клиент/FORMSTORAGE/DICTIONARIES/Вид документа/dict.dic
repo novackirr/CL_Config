@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Вид документа" Type="0">
+  <Items>
+    <Dictionary Name="Вид документа">
+      <DataCollection>
+        <Data Name="Не подписанный" ParentGuid="" Guid="4a873d2b-be2d-412a-ad5c-27cc4ccb57a1" />
+        <Data Name="Подписанный" ParentGuid="" Guid="41c8f7e7-b7a3-460f-bbf2-0717885eca37" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

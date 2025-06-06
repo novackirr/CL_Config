@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Результат" Type="0">
+  <Items>
+    <Dictionary Name="Результат">
+      <Attributes>
+        <Attribute Name="Код" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="Победитель" ParentGuid="" Guid="24c2af94-1404-4afe-80ff-9d9122e43ea9">
+          <DataAttributes>
+            <DataAttribute Name="Код">F</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Второе" ParentGuid="" Guid="ef4bdfde-5d4b-4c5c-b34e-17a00c992477">
+          <DataAttributes>
+            <DataAttribute Name="Код">S</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Третье место" ParentGuid="" Guid="7f799fad-a625-4632-ba3f-9ca320d6ad8b">
+          <DataAttributes>
+            <DataAttribute Name="Код">T</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Ниже третьего" ParentGuid="" Guid="290e7db6-8abb-48d5-8e5b-1d2ffbd9b945">
+          <DataAttributes>
+            <DataAttribute Name="Код">B</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Не указывается в данном протоколе" ParentGuid="" Guid="c28ecb4f-3d6e-4225-9c44-4070c6620ebd">
+          <DataAttributes>
+            <DataAttribute Name="Код">N</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

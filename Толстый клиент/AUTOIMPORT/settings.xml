@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfImportTaskInformation Version="2.0">
+  <ImportTaskInformation Name="Box223orderClauseAll">
+    <Autorun>ManualOnly</Autorun>
+    <ImportConfigSource xsi:type="EISDocsLoaderServerPluginCfg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ImportConfig xsi:type="ServerPluginConfigParms">
+        <Profile>Box223orderClauseAll</Profile>
+        <CompareMode>False</CompareMode>
+      </ImportConfig>
+    </ImportConfigSource>
+  </ImportTaskInformation>
+  <ImportTaskInformation Name="BoxTRUMSP">
+    <Autorun>ManualOnly</Autorun>
+    <ImportConfigSource xsi:type="EISDocsLoaderServerPluginCfg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ImportConfig xsi:type="ServerPluginConfigParms">
+        <Profile>Box223ListGWS</Profile>
+        <CompareMode>False</CompareMode>
+      </ImportConfig>
+    </ImportConfigSource>
+  </ImportTaskInformation>
+  <ImportTaskInformation Name="ЕЭТП обновление по одной процедуре">
+    <Autorun>ManualOnly</Autorun>
+    <ImportConfigSource xsi:type="EETPServerImportPluginCfg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ImportConfig xsi:type="EETPConfig">
+        <ConfigPath>C:\Program Files (x86)\Cognitive\Euphrat\Server\AutoImport\EETPServerPluginSingleProcedure.config</ConfigPath>
+        <ProfileName>default</ProfileName>
+        <AuthType>DictCredentials</AuthType>
+      </ImportConfig>
+      <Query>(key()val())</Query>
+    </ImportConfigSource>
+  </ImportTaskInformation>
+</ArrayOfImportTaskInformation>

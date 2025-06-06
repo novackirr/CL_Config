@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Результат допуска" Type="0">
+  <Items>
+    <Dictionary Name="Результат допуска">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="T" ParentGuid="" Guid="704eb71c-3167-459d-8bf2-033e52de7ae6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Допущен</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="F" ParentGuid="" Guid="50ba3c29-4bc8-44da-8b50-f083fe859b00">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не допущен</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="N" ParentGuid="" Guid="a220b968-a507-462f-b3fb-875784117987">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Место не присвоено</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="K" ParentGuid="" Guid="d2772d20-41dd-43c1-a051-b2334addae1d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не рассматривается</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

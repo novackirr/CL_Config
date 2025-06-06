@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Получатель обеспечсения" Type="0">
+  <Items>
+    <Dictionary Name="Получатель обеспечсения">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="07b1af81-9ded-449a-9f2a-d5edc287102b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование" />
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="5ae36b0d-1bba-4de8-adb5-fed05c954a25">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бюджетное учреждение (перевод средств осуществляется в одно из подразделений Центрального банка РФ)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="87feb6df-f23a-4904-b70b-703594323ab6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Небюджетное учреждение (перевод средств осуществляется на счет кредитной организации)</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

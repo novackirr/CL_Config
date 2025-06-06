@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExportTaskInformation Version="2.0">
+  <ExportTaskInformation Name="ЕЭТП">
+    <Flow>[DocumentFlow] Извещения о закупочной процедуре 223ФЗ</Flow>
+    <ExportConfigSource xsi:type="EETPServerPluginCfg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <ExportConfig xsi:type="EETPConfig">
+        <ConfigPath>C:\Program Files (x86)\Cognitive\Euphrat\Server\AutoExport\EETPServerPlugin.config</ConfigPath>
+        <ProfileName>default</ProfileName>
+        <Login>zak30</Login>
+        <Password>12345678</Password>
+        <AuthType>Credentials</AuthType>
+      </ExportConfig>
+    </ExportConfigSource>
+  </ExportTaskInformation>
+</ArrayOfExportTaskInformation>

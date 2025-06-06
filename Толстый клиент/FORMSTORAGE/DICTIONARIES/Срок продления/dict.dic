@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Срок продления" Type="0">
+  <Items>
+    <Dictionary Name="Срок продления">
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="8cbf2967-7ecc-4a2b-8ff7-650348fcbc1d" />
+        <Data Name="2" ParentGuid="" Guid="2e5dd175-c03b-4755-87fd-ce7097b736fd" />
+        <Data Name="3" ParentGuid="" Guid="0a2f950b-fbb8-4b59-a3ed-718ea306c686" />
+        <Data Name="4" ParentGuid="" Guid="32f8ac28-da57-4d6e-82c0-27c72539ef59" />
+        <Data Name="5" ParentGuid="" Guid="5f382953-15bb-4b5b-94cf-2651033c8992" />
+        <Data Name="6" ParentGuid="" Guid="bba7c2da-47b8-4170-a5fc-67c8b5d80d53" />
+        <Data Name="7" ParentGuid="" Guid="6af2303b-fa0a-4bda-909a-264b8e40685d" />
+        <Data Name="8" ParentGuid="" Guid="f14562d5-51f7-4936-ae30-4c4a9c3c4b68" />
+        <Data Name="9" ParentGuid="" Guid="6cce9c8c-ef47-4aca-9309-fc00d5be9ff7" />
+        <Data Name="10" ParentGuid="" Guid="93f3eb7b-52e7-4b26-b720-9075ab0a22ed" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

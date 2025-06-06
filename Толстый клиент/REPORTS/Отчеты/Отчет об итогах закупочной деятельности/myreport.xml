@@ -1,0 +1,2448 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <ЕВФРАТ Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>EDO</Alias>
+        <ConnectionStringEncrypted>4yBpSFZMotl7GF2NY/BkZ8LQ9ctPVTF16Vyc3HfYtA/5NGnCSmzTeeZ4fQTlRHV/gGTzAlxoGvX8E+G9/ty1Y/lqzQhhAwGBaxylpUkBpD/fVrOjS3RJzWxdpdxN7KNq4FSN62JNq3VtZblc6hHg+9zyjctmUbq8aRPtiE6cInvVbI2JRk0BgeFN9djpPeDr3wb3aw==</ConnectionStringEncrypted>
+        <Name>ЕВФРАТ</Name>
+      </ЕВФРАТ>
+    </Databases>
+    <DataSources isList="true" count="22">
+      <Договора Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Договора</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДог,System.Int64</value>
+          <value>СуммаЗаклДог,System.Double</value>
+          <value>НМЦЗаклДог,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Договора</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦЗаклДог
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+Where (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </Договора>
+      <Извещения Ref="4" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Извещения</Alias>
+        <Columns isList="true" count="2">
+          <value>КоличествоИзв,System.Int64</value>
+          <value>СуммаИзв,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Извещения</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as КоличествоИзв,
+  SUM ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as СуммаИзв
+FROM 
+  public."__FlowCollection_{flowName:Заявки участников ПКО}"
+WHERE "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Статус"= 'Закупка не состоялась' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") ='{Год}') AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Актуальность" = '1';</SqlCommand>
+      </Извещения>
+      <ДоговораСЕдУч Ref="5" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораСЕдУч</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДогСЕдУч,System.Int64</value>
+          <value>СуммаЗаклДогсЕдУч,System.Double</value>
+          <value>НМЦЗаклДогсЕдУч,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораСЕдУч</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДогСЕдУч,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДогсЕдУч,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦЗаклДогсЕдУч
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Один_участник"= '1' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1';</SqlCommand>
+      </ДоговораСЕдУч>
+      <ДоговораСЕдПоставщиком Ref="6" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораСЕдПоставщиком</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДог,System.Int64</value>
+          <value>СуммаЗаклДог,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораСЕдПоставщиком</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДог,
+ SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('202498', '3363') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1';</SqlCommand>
+      </ДоговораСЕдПоставщиком>
+      <ДоговораСЕдПоставщикомПоНесост Ref="7" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораСЕдПоставщикомПоНесост</Alias>
+        <Columns isList="true" count="2">
+          <value>Сумма,System.Double</value>
+          <value>Число,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораСЕдПоставщикомПоНесост</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Число,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Основание_закупки__000" = '4' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораСЕдПоставщикомПоНесост>
+      <ДоговораЗапПредложении Ref="8" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораЗапПредложении</Alias>
+        <Columns isList="true" count="3">
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+          <value>Число,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораЗапПредложении</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Число,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('200611', '202491', '5056', '202496', '5112') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораЗапПредложении>
+      <ДоговораЗапКотировок Ref="9" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораЗапКотировок</Alias>
+        <Columns isList="true" count="3">
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+          <value>Число,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораЗапКотировок</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Число,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('200610', '202488', '202490', '5053', '5098') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораЗапКотировок>
+      <ДоговораБезальтернативная Ref="10" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораБезальтернативная</Alias>
+        <Columns isList="true" count="3">
+          <value>Чиcло,System.Int64</value>
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораБезальтернативная</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Чиcло,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('202506') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораБезальтернативная>
+      <ДоговораМелкаяЗакупка Ref="11" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораМелкаяЗакупка</Alias>
+        <Columns isList="true" count="3">
+          <value>Чиcло,System.Int64</value>
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораМелкаяЗакупка</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Чиcло,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('202507') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораМелкаяЗакупка>
+      <ДоговораКонкурс Ref="12" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораКонкурс</Alias>
+        <Columns isList="true" count="3">
+          <value>Чиcло,System.Int64</value>
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораКонкурс</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Чиcло,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('200608', '202467', '202476', '202471') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораКонкурс>
+      <ДоговорыЗапросЦен Ref="13" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговорыЗапросЦен</Alias>
+        <Columns isList="true" count="3">
+          <value>Чиcло,System.Int64</value>
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговорыЗапросЦен</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Чиcло,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('202509') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговорыЗапросЦен>
+      <ДоговораАукцион Ref="14" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораАукцион</Alias>
+        <Columns isList="true" count="3">
+          <value>Чиcло,System.Int64</value>
+          <value>Сумма,System.Double</value>
+          <value>НМЦ,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораАукцион</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT  
+  COUNT("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as Чиcло,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as Сумма,
+  SUM("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦ
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('202477', '200609', '3361', '202484') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ДоговораАукцион>
+      <ИзвещенияАукционНеСост Ref="15" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИзвещенияАукционНеСост</Alias>
+        <Columns isList="true" count="2">
+          <value>КоличествоИзв,System.Int64</value>
+          <value>СуммаИзв,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИзвещенияАукционНеСост</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as КоличествоИзв,
+  SUM ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as СуммаИзв
+FROM 
+  public."__FlowCollection_{flowName:Заявки участников ПКО}"
+WHERE "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Статус"= 'Закупка не состоялась' AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Способ_закупки_код" IN ('202477', '200609', '3361') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") ='{Год}') AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Актуальность" = '1'</SqlCommand>
+      </ИзвещенияАукционНеСост>
+      <ДоговораВЭлФорме Ref="16" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораВЭлФорме</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДог,System.Int64</value>
+          <value>СуммаЗаклДог,System.Double</value>
+          <value>НМЦЗаклДог,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораВЭлФорме</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦЗаклДог
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Закупка_в_электрон_000" = '1' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1';</SqlCommand>
+      </ДоговораВЭлФорме>
+      <ИзвещенияВЭлФломе Ref="17" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИзвещенияВЭлФломе</Alias>
+        <Columns isList="true" count="2">
+          <value>КоличествоИзв,System.Int64</value>
+          <value>СуммаИзв,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИзвещенияВЭлФломе</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as КоличествоИзв,
+  SUM ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as СуммаИзв
+FROM 
+  public."__FlowCollection_{flowName:Заявки участников ПКО}"
+WHERE "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Статус"= 'Закупка не состоялась' AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Закупка_в_электрон_000" = '1' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") ='{Год}') AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Актуальность" = '1';</SqlCommand>
+      </ИзвещенияВЭлФломе>
+      <ИзвещенияКонкурентныеВЭлФорме Ref="18" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИзвещенияКонкурентныеВЭлФорме</Alias>
+        <Columns isList="true" count="2">
+          <value>КоличествоИзв,System.Int64</value>
+          <value>СуммаИзв,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИзвещенияКонкурентныеВЭлФорме</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as КоличествоИзв,
+  SUM ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as СуммаИзв
+FROM 
+  public."__FlowCollection_{flowName:Заявки участников ПКО}"
+WHERE "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Статус"= 'Закупка не состоялась' AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Закупка_в_электрон_000" = '1' AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Способ_закупки_код" IN ('200610', '202488', '202490', '5053', '5098', '200611', '202491', '5056', '5112', '202496', '200608', '202471', '202467', '202476', '202509', '202477', '200609', '3361', '202484') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") ='{Год}') AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Актуальность" = '1';</SqlCommand>
+      </ИзвещенияКонкурентныеВЭлФорме>
+      <ДоговораКонкурентныеВЭлФорме Ref="19" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораКонкурентныеВЭлФорме</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДог,System.Int64</value>
+          <value>СуммаЗаклДог,System.Double</value>
+          <value>НМЦЗаклДог,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораКонкурентныеВЭлФорме</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦЗаклДог
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Закупка_в_электрон_000" = '1' AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('200610', '202488', '202490', '5053', '5098', '200611', '202491', '5056', '5112', '202496', '200608', '202471', '202467', '202476', '202509', '202477', '200609', '3361', '202484') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1';
+</SqlCommand>
+      </ДоговораКонкурентныеВЭлФорме>
+      <ДоговораКонкурентные Ref="20" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ДоговораКонкурентные</Alias>
+        <Columns isList="true" count="3">
+          <value>ЧислоЗаклДог,System.Int64</value>
+          <value>СуммаЗаклДог,System.Double</value>
+          <value>НМЦЗаклДог,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ДоговораКонкурентные</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_с_НДС") as ЧислоЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Цена_в_рублях") as СуммаЗаклДог,
+  SUM ("__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_НМЦД_в_рублях") as НМЦЗаклДог
+FROM 
+  public."__FlowCollection_{flowName:Договоры 223ФЗ}"
+WHERE "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Способ_закупки_код" IN ('200610', '202488', '202490', '5053', '5098', '200611', '202491', '5056', '5112', '202496', '200608', '202471', '202467', '202476', '202509', '202477', '200609', '3361', '202484') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Дата_заключения") ='{Год}') AND "__FlowCollection_{flowName:Договоры 223ФЗ}"."Document_Актуальность" = '1';
+</SqlCommand>
+      </ДоговораКонкурентные>
+      <ИзвещенияКонкурентные Ref="21" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИзвещенияКонкурентные</Alias>
+        <Columns isList="true" count="2">
+          <value>КоличествоИзв,System.Int64</value>
+          <value>СуммаИзв,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИзвещенияКонкурентные</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  COUNT ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as КоличествоИзв,
+  SUM ("__FlowCollection_{flowName:Заявки участников ПКО}"."Document_НМЦ_с_НДС") as СуммаИзв
+FROM 
+  public."__FlowCollection_{flowName:Заявки участников ПКО}"
+WHERE "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Статус"= 'Закупка не состоялась' AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Способ_закупки_код" IN ('200610', '202488', '202490', '5053', '5098', '200611', '202491', '5056', '5112', '202496', '200608', '202471', '202467', '202476', '202509', '202477', '200609', '3361', '202484') AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Дата_признания_нес_000") ='{Год}') AND "__FlowCollection_{flowName:Заявки участников ПКО}"."Document_Актуальность" = '1';</SqlCommand>
+      </ИзвещенияКонкурентные>
+      <ИсполненияТолькоССМП Ref="22" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсполненияТолькоССМП</Alias>
+        <Columns isList="true" count="1">
+          <value>Итого,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсполненияТолькоССМП</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  SUM("__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Итого") as Итого
+FROM 
+  public."__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Участник_закупки_СМП" = '1' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") ='{Год}') AND "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ИсполненияТолькоССМП>
+      <ИспДоговораНеТолькоУСМП Ref="23" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИспДоговораНеТолькоУСМП</Alias>
+        <Columns isList="true" count="1">
+          <value>Итого,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИспДоговораНеТолькоУСМП</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  SUM("__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Итого") as Итого
+FROM 
+  public."__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"
+  WHERE "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Участник_закупки_СМП" = '0' AND "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Организация_постав_002"='1' AND (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") ='{Год}') AND "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ИспДоговораНеТолькоУСМП>
+      <ИсполнениеДоговора Ref="24" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ИсполнениеДоговора</Alias>
+        <Columns isList="true" count="1">
+          <value>Итого,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ИсполнениеДоговора</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+  SUM("__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Итого") as Итого
+FROM 
+  public."__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"
+WHERE (EXTRACT ( QUARTER FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") between cast('{Квартал_с}' as integer) and cast('{Квартал_по}' as integer)) AND (EXTRACT ( YEAR FROM "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Дата_регистрации") ='{Год}') AND "__FlowCollection_{flowName:Извещения о закупочной процедуре 223ФЗ}"."Document_Актуальность" = '1'</SqlCommand>
+      </ИсполнениеДоговора>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="3">
+      <value>,Квартал_с,Квартал_с,System.String,,False,False</value>
+      <value>,Квартал_по,Квартал_по,System.String,,False,False</value>
+      <value>,Год,Год,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="25" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="111">
+        <Text2 Ref="26" type="Text" isKey="true">
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,24.4,4.4,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text2</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Генеральный директор
+АО "Росспиртпром"</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text2>
+        <Text3 Ref="27" type="Text" isKey="true">
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>7.6,25.6,2,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,8</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text3</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>(подпись)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text3>
+        <Text4 Ref="28" type="Text" isKey="true">
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>11.2,24.4,4.8,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,12</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text4</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>____________________
+ФИО</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text4>
+        <Text22 Ref="29" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,7.6,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text22</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем договоров, заключенных по результатам закупки у единственного поставщика (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+        </Text22>
+        <Text23 Ref="30" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,7.6,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text23</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>7.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text23>
+        <Text24 Ref="31" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,8.4,0.8,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text24</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>8.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text24>
+        <Text25 Ref="32" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,8.4,14.4,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text25</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество договоров, заключенных заказчиком с единственным поставщиком (исполнителем, подрядчиком) по результатам конкурентной закупки, признанной несостоявшейся (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text25>
+        <Text26 Ref="33" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,9.6,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text26</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>9.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text26>
+        <Text27 Ref="34" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,9.6,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text27</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем договоров, заключенных заказчиком с единственным поставщиком (исполнителем, подрядчиком) по результатам конкурентной закупки, признанной несостоявшейся (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text27>
+        <Text28 Ref="35" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,10.4,0.8,10.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text28</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>10.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text28>
+        <Text29 Ref="36" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,10.4,0.8,10.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text29</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Из общего объема проведенных процедур закупок</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=False, Angle=90, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text29>
+        <Text30 Ref="37" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,10.4,3.2,2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text30</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Аукцион</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text30>
+        <Text31 Ref="38" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,10.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text31</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных аукционов (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text31>
+        <Text32 Ref="39" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,10.8,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text32</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Количество проведенных аукционов в электронной форме (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text32>
+        <Text33 Ref="40" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,11.2,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text33</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Объем проведенных аукционов, в электронной форме, (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+        </Text33>
+        <Text34 Ref="41" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,11.6,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text34</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии аукционов, в электронной форме (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text34>
+        <Text35 Ref="42" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,12,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text35</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент несостоявшихся аукционов, в электронной форме (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+        </Text35>
+        <Text36 Ref="43" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,12.4,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text36</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Конкурс</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text36>
+        <Text37 Ref="44" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,13.6,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>87575554adb841b78ab36e64123ffb7c</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text37</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Запрос котировок</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text37>
+        <Text38 Ref="45" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,14.8,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>21bc6f830e1b4711a839819920dff860</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text38</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Запрос предложений</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text38>
+        <Text39 Ref="46" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,16,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>3f2b6eded21a4b088377c576a8d050c5</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text39</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Закупка у единственного поставщика</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text39>
+        <Text40 Ref="47" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,17.2,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>3f892ea990d8410ab52365ce2e112e20</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text40</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Прямая (безальтернативная) закупка</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text40>
+        <Text41 Ref="48" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,18.4,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>8467c5e757384688bba757d72788d61e</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text41</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Мелкая закупка</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text41>
+        <Text42 Ref="49" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>1.6,19.6,3.2,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>85b1bc353d904c378b81fa2155e784c0</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text42</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Запрос цен в электронной форме</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text42>
+        <Text43 Ref="50" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,12.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text43</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text43>
+        <Text44 Ref="51" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,12.8,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text44</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text44>
+        <Text45 Ref="52" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,13.2,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text45</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text45>
+        <Text46 Ref="53" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,13.6,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>bcb78c756cc045bea1335792bfcbb1cb</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text46</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text46>
+        <Text47 Ref="54" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,14,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4446aa193861461bb4ad87190fad2722</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text47</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text47>
+        <Text48 Ref="55" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,14.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>ee5d57180f5842ee92e244fa5da4e01e</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text48</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text48>
+        <Text49 Ref="56" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,14.8,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>128186e1f4834bc59c5b1a82dee55c3f</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text49</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text49>
+        <Text50 Ref="57" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,15.2,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>80c11cb41eed409dba5ad6848724b33f</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text50</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text50>
+        <Text51 Ref="58" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,15.6,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>a6aab9423a1d4708a01927e3d077a27d</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text51</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text51>
+        <Text52 Ref="59" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,16,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>598759f38be94df0aeaeaa0c052dd18a</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text52</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text52>
+        <Text53 Ref="60" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,16.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>db9b02cb92fc41b3b3f21eaeb5af3e82</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text53</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text53>
+        <Text54 Ref="61" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,16.8,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>faf9804fba0949098bf83cc84cd8a79d</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text54</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text54>
+        <Text55 Ref="62" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,17.2,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>83badbe5eca64be7abb303b4deab8c86</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text55</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text55>
+        <Text56 Ref="63" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,17.6,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>d8c7594797ac423b93543a0d4bef125b</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text56</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text56>
+        <Text57 Ref="64" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,18,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>e33543ee01044e8c8abeb8a235a6bfc7</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text57</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text57>
+        <Text58 Ref="65" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,18.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4d5498a1742e4339a0f6388402637a04</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text58</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text58>
+        <Text59 Ref="66" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,18.8,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>c25b6f0e97754556aa3203b2316edd6d</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text59</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text59>
+        <Text60 Ref="67" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,19.2,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>9a9413ab86674715b3cd5bb5a19db399</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text60</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text60>
+        <Text61 Ref="68" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,19.6,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>eb68ad61b96c47a69af228841464cba0</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text61</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text61>
+        <Text62 Ref="69" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,20,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>cd3806028c674137bef1427656adf6ce</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text62</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text62>
+        <Text63 Ref="70" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,20.4,10.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>c945111159f84d3abba10f39634771b3</Guid>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text63</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text63>
+        <Text64 Ref="71" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,20.8,0.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>b8c75919afe349aab18ca45b91b6b1d7</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text64</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>11.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text64>
+        <Text65 Ref="72" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,21.2,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>9bff09cef01a45d18d94d40418d952f5</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text65</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>12.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text65>
+        <Text66 Ref="73" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,22,0.8,1.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>a4b0a3f71769463c9b16acfa05716ece</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text66</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>13.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text66>
+        <Text67 Ref="74" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,20.8,14.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text67</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Доля процедур закупок в электронной форме в общем объеме, проведенных закупок, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text67>
+        <Text68 Ref="75" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,21.2,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text68</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Доля процедур закупок в электронной форме в общем объеме проведенных конкурентных закупок, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+        </Text68>
+        <Text69 Ref="76" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,22,4,1.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text69</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Доля закупок у СМП</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text69>
+        <Text70 Ref="77" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,22,10.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text70</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Объем закупок у СМП, по результатам закупок, участниками которых являются любые лица, в том числе СМП, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text70>
+        <Text71 Ref="78" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>4.8,22.8,10.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text71</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Объем закупок у СМП, по результатам закупок, участниками которых являются только СМП, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text71>
+        <Text79 Ref="79" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,7.6,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>6daf27ca0ce24fd08085aeb4a930229c</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text79</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщиком.СуммаЗаклДог}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="80" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text79>
+        <Text80 Ref="81" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,8.4,3.8,1.2</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>680bc9c69f5f4369884826702c4dde84</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text80</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщикомПоНесост.Число}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text80>
+        <Text81 Ref="82" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,9.6,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>45ff804791c1429fbe46576de8799ba5</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text81</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщикомПоНесост.Сумма}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="83" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text81>
+        <Text82 Ref="84" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,10.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>586791a285654383964b07d4f7914a76</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text82</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораАукцион.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text82>
+        <Text83 Ref="85" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,10.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4622a6a27666421689cec29e77b9b8f0</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text83</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораАукцион.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text83>
+        <Text84 Ref="86" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,11.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>30169e99b310454a821338fcc72b341d</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text84</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораАукцион.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="87" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text84>
+        <Text85 Ref="88" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,11.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>f5f620b9bb6545ac8dcc55143ef18af7</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text85</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговораАукцион.НМЦ == 0 , 0, ((ДоговораАукцион.НМЦ-ДоговораАукцион.Сумма)/ДоговораАукцион.НМЦ)*100) }</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="89" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text85>
+        <Text86 Ref="90" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,12,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>60970050318d40889f81bc5b20c894d5</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text86</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ИзвещенияАукционНеСост.КоличествоИзв}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="91" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text86>
+        <Text87 Ref="92" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,12.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>61b24af5f7904edca69d3642e26e5eb3</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text87</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораКонкурс.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text87>
+        <Text88 Ref="93" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,12.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>e9f20c2d11d84f4498d4de27127fcf20</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text88</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораКонкурс.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="94" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text88>
+        <Text89 Ref="95" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,13.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>e1d2b469fcf74a98be457638493d0a23</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text89</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговораКонкурс.НМЦ == 0 , 0, ((ДоговораКонкурс.НМЦ-ДоговораКонкурс.Сумма)/ДоговораКонкурс.НМЦ)*100) }</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="96" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text89>
+        <Text90 Ref="97" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,13.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>02cd1524a8d742c0a3f381c9336e098e</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text90</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораЗапКотировок.Число}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text90>
+        <Text91 Ref="98" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,14,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>51697c138e4149c5893a02f19eb99464</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text91</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораЗапКотировок.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="99" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text91>
+        <Text92 Ref="100" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,14.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>cc1b8bc8d9274a789a8870d83f38c8a0</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text92</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговораЗапКотировок.НМЦ == 0 , 0, ((ДоговораЗапКотировок.НМЦ-ДоговораЗапКотировок.Сумма)/ДоговораЗапКотировок.НМЦ)*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="101" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text92>
+        <Text93 Ref="102" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,14.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>187fcb82484b43279f1a569961e781cb</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text93</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораЗапПредложении.Число}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text93>
+        <Text94 Ref="103" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,15.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>8505c63b41c646c883e247827f35dae2</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text94</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораЗапПредложении.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="104" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text94>
+        <Text95 Ref="105" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,15.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>aaa91954061f481ca1a5839487de0132</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text95</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговораЗапПредложении.НМЦ == 0 , 0, ((ДоговораЗапПредложении.НМЦ-ДоговораЗапПредложении.Сумма)/ДоговораЗапПредложении.НМЦ)*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="106" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text95>
+        <Text96 Ref="107" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,16,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>f324b8bbdeb044c1a01cfa8ffd55896b</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text96</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщиком.ЧислоЗаклДог}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text96>
+        <Text97 Ref="108" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,16.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>29a1c5d340024f0db5c01575cba2b383</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text97</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщиком.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="109" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text97>
+        <Text98 Ref="110" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,16.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>92aca42c9db94d7a908b5ebbdbe8d993</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text98</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>0</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text98>
+        <Text99 Ref="111" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,17.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>a95b7921f41341fcb230e5e7f85a4429</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text99</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораБезальтернативная.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text99>
+        <Text100 Ref="112" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,17.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>a91871b84c6d4430a2e52b2ba75b842b</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text100</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораБезальтернативная.Сумма}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="113" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text100>
+        <Text101 Ref="114" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,18,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>c13e6188adb04501ab51b6b829ce3ff5</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text101</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>0</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text101>
+        <Text102 Ref="115" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,18.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4c915f85351448f78bba033d6f087937</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text102</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораМелкаяЗакупка.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text102>
+        <Text103 Ref="116" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,18.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>7a841bbb8ea54ed09a504d7e34c150be</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text103</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораМелкаяЗакупка.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="117" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text103>
+        <Text104 Ref="118" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,19.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>edd7140567d6448a8a018b5dbdd492c1</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text104</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговораМелкаяЗакупка.НМЦ == 0 , 0, ((ДоговораМелкаяЗакупка.НМЦ-ДоговораМелкаяЗакупка.Сумма)/ДоговораМелкаяЗакупка.НМЦ)*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="119" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text104>
+        <Text105 Ref="120" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,19.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>73afe204e05641e49ca264dea541f9bf</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text105</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговорыЗапросЦен.Чиcло}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text105>
+        <Text106 Ref="121" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,20,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>cfc1798ef5ba473eb2c7a462ffc66b52</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text106</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговорыЗапросЦен.НМЦ}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="122" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text106>
+        <Text107 Ref="123" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,20.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>236f717e21814852af49eb3321b8eaf1</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text107</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ДоговорыЗапросЦен.НМЦ == 0 , 0, ((ДоговорыЗапросЦен.НМЦ-ДоговорыЗапросЦен.Сумма)/ДоговорыЗапросЦен.НМЦ)*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="124" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text107>
+        <Text108 Ref="125" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,20.8,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>639bfe74b7654a4baef8734513876158</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text108</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF((ДоговораВЭлФорме.НМЦЗаклДог+ИзвещенияВЭлФломе.СуммаИзв) == 0 , 0, ((ДоговораВЭлФорме.НМЦЗаклДог+ИзвещенияВЭлФломе.СуммаИзв)/(Извещения.СуммаИзв+Договора.НМЦЗаклДог)*100))}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="126" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text108>
+        <Text109 Ref="127" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,21.2,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>6c426dc06a974dc096c07cb489421210</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text109</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF((ДоговораКонкурентныеВЭлФорме.НМЦЗаклДог+ИзвещенияКонкурентныеВЭлФорме.СуммаИзв) == 0 , 0, ((ДоговораКонкурентныеВЭлФорме.НМЦЗаклДог+ИзвещенияКонкурентныеВЭлФорме.СуммаИзв)/(ИзвещенияКонкурентные.СуммаИзв+ДоговораКонкурентные.НМЦЗаклДог)*100))}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="128" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text109>
+        <Text110 Ref="129" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,22,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>5d0b6c4bc0304cf3b71cac6a882eb72e</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text110</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ИспДоговораНеТолькоУСМП.Итого == 0 , 0, ИспДоговораНеТолькоУСМП.Итого/ИсполнениеДоговора.Итого*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="130" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text110>
+        <Text111 Ref="131" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,22.8,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>5ec9e969eea14768a37fe921f20f9aeb</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text111</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(ИсполненияТолькоССМП.Итого == 0 , 0, ИсполненияТолькоССМП.Итого/ИсполнениеДоговора.Итого*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="132" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text111>
+        <Text5 Ref="133" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,2.8,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10,Bold</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text5</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>№
+п/п</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text5>
+        <Text6 Ref="134" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,2.8,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10,Bold</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text6</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Значение</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text6>
+        <Text7 Ref="135" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,2.8,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10,Bold</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text7</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Показатель</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text7>
+        <Text8 Ref="136" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,3.6,0.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text8</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>1.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text8>
+        <Text9 Ref="137" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,4,0.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>81d00826daa54bdf861a237cae36dc10</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text9</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>2.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text9>
+        <Text10 Ref="138" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,4.4,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>9f21cf424dc5415f808a6c12a74aee4b</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text10</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>2.1.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text10>
+        <Text11 Ref="139" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,5.2,0.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>3e671cab442e4ee0bdb0228535568f04</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text11</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>3.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text11>
+        <Text12 Ref="140" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,5.6,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>197c925603774929ae115348377cb603</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text12</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>4.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text12>
+        <Text13 Ref="141" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,3.6,14.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text13</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество проведенных процедур закупок (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text13>
+        <Text14 Ref="142" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,4,14.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text14</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных процедур закупок (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text14>
+        <Text15 Ref="143" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,4.4,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text15</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем проведенных (несостоявшихся) конкурентных процедур закупки, по результатам которых был заключен договор с единственным участником (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text15>
+        <Text16 Ref="144" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,5.2,14.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text16</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий процент достигнутой экономии, (%)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text16>
+        <Text17 Ref="145" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,5.6,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text17</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество договоров, заключенных по результатам проведенных закупочных процедур (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text17>
+        <Text18 Ref="146" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,6.4,0.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text18</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>5.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text18>
+        <Text19 Ref="147" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,6.4,14.4,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text19</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общий объем договоров, заключенных по результатам проведенных закупочных процедур (руб.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text19>
+        <Text20 Ref="148" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0,6.8,0.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text20</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>6.</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text20>
+        <Text21 Ref="149" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>0.8,6.8,14.4,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text21</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>Общее количество договоров, заключенных по результатам закупки у единственного поставщика (шт.)</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+          <Type>Expression</Type>
+        </Text21>
+        <Text72 Ref="150" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,3.6,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text72</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{Договора.ЧислоЗаклДог+Извещения.КоличествоИзв}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text72>
+        <Text73 Ref="151" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text73</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{Договора.НМЦЗаклДог+Извещения.СуммаИзв}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="152" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text73>
+        <Text74 Ref="153" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,4.4,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>7290b567660546849e249a6d1ca815dd</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text74</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдУч.НМЦЗаклДогсЕдУч}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="154" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text74>
+        <Text75 Ref="155" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,5.2,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4ce8cf826c01476598da1660671917a8</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text75</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ IIF(Договора.НМЦЗаклДог == 0 , 0, ((Договора.НМЦЗаклДог - Договора.СуммаЗаклДог)/Договора.НМЦЗаклДог)*100)}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="156" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text75>
+        <Text76 Ref="157" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,5.6,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>4f3ba3feeaa64aafbeb0b0f9da5afaf7</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text76</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{Договора.ЧислоЗаклДог}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text76>
+        <Text77 Ref="158" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,6.4,3.8,0.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>bace24a8b0b1423db1fee01c03f0e109</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text77</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{Договора.СуммаЗаклДог}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <TextFormat Ref="159" type="NumberFormat" isKey="true">
+            <DecimalSeparator>,</DecimalSeparator>
+            <GroupSeparator> </GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+          </TextFormat>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text77>
+        <Text78 Ref="160" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>15.2,6.8,3.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Times New Roman,10</Font>
+          <Guid>96b056ead9e2470397a759f1c434f138</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>5,0,0,0</Margins>
+          <Name>Text78</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+          <Text>{ДоговораСЕдПоставщиком.ЧислоЗаклДог}</Text>
+          <TextBrush>[0:0:0]</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text78>
+        <ReportTitleBand1 Ref="161" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,2</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="162" type="Text" isKey="true">
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>0,0,19,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="25" />
+              <Parent isRef="161" />
+              <Text>ОТЧЕТ
+ОБ ИТОГАХ ЗАКУПОЧНОЙ ДЕЯТЕЛЬНОСТИ
+АКЦИОНЕРНОГО ОБЩЕСТВА "РОССПИРТПРОМ"
+ЗА __________________ КВАРТАЛ (ПОЛУГОДИЕ) {Год} ГОДА</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="25" />
+          <Parent isRef="25" />
+        </ReportTitleBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>ce0cf5d1b2694e6ebe4940610ecf6aa3</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="163" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="164" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/18/2019 9:10:48 AM</ReportChanged>
+  <ReportCreated>11/6/2018 4:12:41 PM</ReportCreated>
+  <ReportFile>C:\Users\admin\AppData\Local\Temp\Cognitive\0A01C94E0\myreport.xml</ReportFile>
+  <ReportGuid>060d2d3f0e934f2685014f443f77985f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.1.1600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

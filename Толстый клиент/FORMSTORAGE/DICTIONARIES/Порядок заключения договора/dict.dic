@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Порядок заключения договора" Type="0">
+  <Items>
+    <Dictionary Name="Порядок заключения договора">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="forward" ParentGuid="" Guid="686988fb-bddf-46c7-ae16-090f99cb13df">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Направление проекта договора победителю для согласования и подписания с последующим подписанием договора заказчиком</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="backward" ParentGuid="" Guid="a2215c9a-b2e3-4971-8603-fef1727b7e6c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Публикация договора и его одновременное подписание заказчиком с последующим подписанием договора победителем</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

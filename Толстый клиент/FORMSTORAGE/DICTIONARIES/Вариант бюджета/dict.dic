@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Вариант бюджета" Type="0">
+  <Items>
+    <Dictionary Name="Вариант бюджета">
+      <DataCollection>
+        <Data Name="Да" ParentGuid="" Guid="6d409683-8716-4cb3-9631-0c4fd1de924d" />
+        <Data Name="Нет" ParentGuid="" Guid="c16b7b56-4fa4-4296-861a-b88152a0b819" />
+        <Data Name="Частично" ParentGuid="" Guid="766cb910-a687-4070-8686-e6f28f9735a2" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

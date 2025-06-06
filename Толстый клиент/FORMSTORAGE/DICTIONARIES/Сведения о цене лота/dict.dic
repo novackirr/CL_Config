@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Сведения о цене лота" Type="0">
+  <Items>
+    <Dictionary Name="Сведения о цене лота">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="7508c9bc-38f9-41ff-aa15-153de0b2f4a7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сведения о начальной (максимальной) цене договора (цене лота)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="c91d023a-02be-4728-b620-749c19d4da23">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Формула цены и максимальное значение цены договора (цены лота)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="2f11c46f-ae01-4afb-81ea-b09e0b2e73bc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Цена единицы товара, работы, услуги и максимальное значение цены договора (цены лота)</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

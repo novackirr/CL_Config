@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип отчетности о договорах" Type="0">
+  <Items>
+    <Dictionary Name="Тип отчетности о договорах">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="5" ParentGuid="" Guid="e2186c38-5d5a-4606-892e-f3715bfdd623">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Годовой отчет о закупке товаров, работ, услуг у субъектов малого и среднего предпринимательства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="c1928c62-b357-478d-b985-051e4267abbd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Годовой отчет о закупке инновационной продукции, высокотехнологичной продукции</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="9bf6bece-58bc-4db0-a6cf-d74377b260bf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Договоры по результатам закупок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="4fd81afb-e185-406e-b626-ed13e24bf3c7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Договоры, заключенные заказчиком по результатам закупки у единственного поставщика (исполнителя, подрядчика)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="3c6fa48a-7c67-4658-9d55-fa269980dcce">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Договоры, заключенные заказчиком с единственным поставщиком (исполнителем, подрядчиком) по результатам несостоявшейся конкурентной закупки</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

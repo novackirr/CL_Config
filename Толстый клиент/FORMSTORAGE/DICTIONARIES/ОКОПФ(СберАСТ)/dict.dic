@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="ОКОПФ(СберАСТ)" Type="1">
+  <Items>
+    <Dictionary Name="ОКОПФ(СберАСТ)">
+      <Attributes>
+        <Attribute Name="Код" />
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="136270" ParentGuid="" Guid="8d54207a-1c99-4300-8271-0938df14f847">
+          <DataAttributes>
+            <DataAttribute Name="Код">10000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ЮРИДИЧЕСКИХ ЛИЦ, ЯВЛЯЮЩИХСЯ КОММЕРЧЕСКИМИ КОРПОРАТИВНЫМИ  ОРГАНИЗАЦИЯМИ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136271" ParentGuid="" Guid="033460bf-a951-4fca-b959-b6ab4c9f0d4e">
+          <DataAttributes>
+            <DataAttribute Name="Код">11000</DataAttribute>
+            <DataAttribute Name="Наименование">Хозяйственные товарищества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136374" ParentGuid="" Guid="d9389ca8-63a8-4dfb-aa12-5fa65224db23">
+          <DataAttributes>
+            <DataAttribute Name="Код">40000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ МЕЖДУНАРОДНЫХ ОРГАНИЗАЦИЙ, ОСУЩЕСТВЛЯЮЩИХ ДЕЯТЕЛЬНОСТЬ НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185724" ParentGuid="" Guid="8954f545-b022-4179-93c0-94aa1b9a8060">
+          <DataAttributes>
+            <DataAttribute Name="Код">70401</DataAttribute>
+            <DataAttribute Name="Наименование">Благотворительные фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136272" ParentGuid="" Guid="ddf3e76f-7b4e-4b3d-9703-38fa6f4e5d37">
+          <DataAttributes>
+            <DataAttribute Name="Код">11051</DataAttribute>
+            <DataAttribute Name="Наименование">Полные товарищества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136375" ParentGuid="" Guid="7419e5cd-e4a6-4401-b0ad-5d671db700d9">
+          <DataAttributes>
+            <DataAttribute Name="Код">40001</DataAttribute>
+            <DataAttribute Name="Наименование">Межправительственные международные организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185748" ParentGuid="" Guid="ff8b1a41-c04e-44e9-9909-d34c950809ae">
+          <DataAttributes>
+            <DataAttribute Name="Код">75500</DataAttribute>
+            <DataAttribute Name="Наименование">Частные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136376" ParentGuid="" Guid="30c31ec0-0520-4c68-8dc6-78a7158fa8da">
+          <DataAttributes>
+            <DataAttribute Name="Код">40002</DataAttribute>
+            <DataAttribute Name="Наименование">Неправительственные международные организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185725" ParentGuid="" Guid="52215f0d-859c-45c4-a43b-4930381b978b">
+          <DataAttributes>
+            <DataAttribute Name="Код">70402</DataAttribute>
+            <DataAttribute Name="Наименование">Негосударственные пенсионные фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136377" ParentGuid="" Guid="8a76032b-2bcf-4788-b59e-a034783bb45e">
+          <DataAttributes>
+            <DataAttribute Name="Код">50000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ДЛЯ ДЕЯТЕЛЬНОСТИ ГРАЖДАН (ФИЗИЧЕСКИХ ЛИЦ)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136273" ParentGuid="" Guid="14d56bb4-7721-4cf1-adf7-b9be61f87062">
+          <DataAttributes>
+            <DataAttribute Name="Код">11064</DataAttribute>
+            <DataAttribute Name="Наименование">Товарищества на вере (коммандитные товарищества)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136378" ParentGuid="" Guid="01e959f6-57a1-4d08-8121-f3c86430ddf0">
+          <DataAttributes>
+            <DataAttribute Name="Код">50100</DataAttribute>
+            <DataAttribute Name="Наименование">Организационно-правовые формы для коммерческой деятельности граждан</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185726" ParentGuid="" Guid="5de2eaac-e100-46a2-9c72-7cae5dcf3507">
+          <DataAttributes>
+            <DataAttribute Name="Код">70403</DataAttribute>
+            <DataAttribute Name="Наименование">Общественные фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185749" ParentGuid="" Guid="8c81a4ab-cfbb-4103-a7c0-dc47fa3e70a7">
+          <DataAttributes>
+            <DataAttribute Name="Код">75502</DataAttribute>
+            <DataAttribute Name="Наименование">Благотворительные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136379" ParentGuid="" Guid="cc793c9e-6527-4844-96a6-28c07bcfe6be">
+          <DataAttributes>
+            <DataAttribute Name="Код">50101</DataAttribute>
+            <DataAttribute Name="Наименование">Главы крестьянских (фермерских) хозяйств</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185727" ParentGuid="" Guid="d76efe51-8767-4722-8aee-5c08dc6463e9">
+          <DataAttributes>
+            <DataAttribute Name="Код">70404</DataAttribute>
+            <DataAttribute Name="Наименование">Экологические фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136380" ParentGuid="" Guid="572c9e53-8f92-4005-99ce-d040e19696f3">
+          <DataAttributes>
+            <DataAttribute Name="Код">50102</DataAttribute>
+            <DataAttribute Name="Наименование">Индивидуальные предприниматели</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136274" ParentGuid="" Guid="78bdc13e-f9df-40b5-b7d6-2910678ded5a">
+          <DataAttributes>
+            <DataAttribute Name="Код">12000</DataAttribute>
+            <DataAttribute Name="Наименование">Хозяйственные общества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136381" ParentGuid="" Guid="c71f16d0-82fc-4d02-89e5-ef6f8c83517a">
+          <DataAttributes>
+            <DataAttribute Name="Код">50200</DataAttribute>
+            <DataAttribute Name="Наименование">Организационно-правовые формы для деятельности граждан, не отнесенной  к предпринимательству</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185728" ParentGuid="" Guid="651faaae-b1e9-4dd4-9c0d-311f3f8c4672">
+          <DataAttributes>
+            <DataAttribute Name="Код">71400</DataAttribute>
+            <DataAttribute Name="Наименование">Автономные некоммерческие организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136382" ParentGuid="" Guid="81b33fde-88ab-452a-89d8-a0b7cebf859a">
+          <DataAttributes>
+            <DataAttribute Name="Код">50201</DataAttribute>
+            <DataAttribute Name="Наименование">Адвокаты, учредившие адвокатский кабинет</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185750" ParentGuid="" Guid="9ec94d71-c402-4672-b2d0-d8d843a298bc">
+          <DataAttributes>
+            <DataAttribute Name="Код">75505</DataAttribute>
+            <DataAttribute Name="Наименование">Общественные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136383" ParentGuid="" Guid="acd252a5-0b23-42ed-aa13-1426f38ecaaf">
+          <DataAttributes>
+            <DataAttribute Name="Код">50202</DataAttribute>
+            <DataAttribute Name="Наименование">Нотариусы, занимающиеся частной практикой</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185729" ParentGuid="" Guid="2a8533c9-5a7b-40f1-bc20-c9d245b73a21">
+          <DataAttributes>
+            <DataAttribute Name="Код">71500</DataAttribute>
+            <DataAttribute Name="Наименование">Религиозные организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136384" ParentGuid="" Guid="fd8720a3-2ab7-446a-80f3-7757bce11e3e">
+          <DataAttributes>
+            <DataAttribute Name="Код">15300</DataAttribute>
+            <DataAttribute Name="Наименование">Крестьянские (фермерские) хозяйства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136278" ParentGuid="" Guid="2b308bbb-a793-4cc3-a0cb-7aa45a54eeca">
+          <DataAttributes>
+            <DataAttribute Name="Код">12200</DataAttribute>
+            <DataAttribute Name="Наименование">Акционерные общества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185730" ParentGuid="" Guid="d1406466-bd7d-48bf-8aba-a2d3d41c587c">
+          <DataAttributes>
+            <DataAttribute Name="Код">71600</DataAttribute>
+            <DataAttribute Name="Наименование">Публично-правовые компании</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136385" ParentGuid="" Guid="5d3bf9f2-9d73-48d5-8c71-49e9970c79fa">
+          <DataAttributes>
+            <DataAttribute Name="Код">30008</DataAttribute>
+            <DataAttribute Name="Наименование">Районные суды, городские суды, межрайонные суды (районные суды)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185751" ParentGuid="" Guid="ba973120-5ad9-4779-a035-1f42039fa339">
+          <DataAttributes>
+            <DataAttribute Name="Код">12300</DataAttribute>
+            <DataAttribute Name="Наименование">Общества с ограниченной ответственностью</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185712" ParentGuid="" Guid="363d3270-b650-4605-9b98-ca98f27736d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">60000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ЮРИДИЧЕСКИХ ЛИЦ, ЯВЛЯЮЩИХСЯ КОММЕРЧЕСКИМИ УНИТАРНЫМИ ОРГАНИЗАЦИЯМИ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185731" ParentGuid="" Guid="37568666-e1ea-49ba-a9ea-346be0aa580b">
+          <DataAttributes>
+            <DataAttribute Name="Код">71601</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные корпорации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185713" ParentGuid="" Guid="cc2cfe7e-4dce-4608-8db2-576dc3a6b254">
+          <DataAttributes>
+            <DataAttribute Name="Код">65000</DataAttribute>
+            <DataAttribute Name="Наименование">Унитарные предприятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136279" ParentGuid="" Guid="81f325f4-4443-4ccd-8cf6-c5ca1dafccde">
+          <DataAttributes>
+            <DataAttribute Name="Код">12247</DataAttribute>
+            <DataAttribute Name="Наименование">Публичные акционерные общества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185714" ParentGuid="" Guid="eb22fc5d-8317-4ffd-a9c7-4b034ce3dd26">
+          <DataAttributes>
+            <DataAttribute Name="Код">65100</DataAttribute>
+            <DataAttribute Name="Наименование">Унитарные предприятия, основанные на праве оперативного управления (казенные предприятия)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185732" ParentGuid="" Guid="5c27d371-7341-4df8-9f32-903cf74a5a7a">
+          <DataAttributes>
+            <DataAttribute Name="Код">71602</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные компании</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185752" ParentGuid="" Guid="b6ce622a-e58c-4779-82d0-fd4639c3098f">
+          <DataAttributes>
+            <DataAttribute Name="Код">20108</DataAttribute>
+            <DataAttribute Name="Наименование">Общества взаимного страхования</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185715" ParentGuid="" Guid="0ec86a34-633f-4722-8f5f-3b66db3a9a06">
+          <DataAttributes>
+            <DataAttribute Name="Код">65141</DataAttribute>
+            <DataAttribute Name="Наименование">Федеральные казенные предприятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185733" ParentGuid="" Guid="289f48e4-22e6-4c3e-a8f0-5dea7d500764">
+          <DataAttributes>
+            <DataAttribute Name="Код">71610</DataAttribute>
+            <DataAttribute Name="Наименование">Отделения иностранных некоммерческих неправительственных организаций</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185716" ParentGuid="" Guid="f8b912d1-1c61-491e-800e-4d5a4c5a38a2">
+          <DataAttributes>
+            <DataAttribute Name="Код">65142</DataAttribute>
+            <DataAttribute Name="Наименование">Казенные предприятия субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136280" ParentGuid="" Guid="afcedc14-4956-4e24-bbba-7ce10048187f">
+          <DataAttributes>
+            <DataAttribute Name="Код">12267</DataAttribute>
+            <DataAttribute Name="Наименование">Непубличные акционерные общества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185717" ParentGuid="" Guid="7a7a69ca-cbf7-4a8f-b7d2-1501c324054d">
+          <DataAttributes>
+            <DataAttribute Name="Код">65143</DataAttribute>
+            <DataAttribute Name="Наименование">Муниципальные казенные предприятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185734" ParentGuid="" Guid="5ed20060-5fa3-476a-91f0-35a3aea72fdd">
+          <DataAttributes>
+            <DataAttribute Name="Код">75000</DataAttribute>
+            <DataAttribute Name="Наименование">Учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185718" ParentGuid="" Guid="3181d939-1f6a-49d0-9693-791abcb4c495">
+          <DataAttributes>
+            <DataAttribute Name="Код">65200</DataAttribute>
+            <DataAttribute Name="Наименование">Унитарные предприятия, основанные на праве хозяйственного ведения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185754" ParentGuid="" Guid="2befd178-8c3e-487d-a67b-355e15c4cc21">
+          <DataAttributes>
+            <DataAttribute Name="Код">20121</DataAttribute>
+            <DataAttribute Name="Наименование">Фонды проката</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185719" ParentGuid="" Guid="cd986cc4-9765-4cb9-bf9b-c289fbdb1af0">
+          <DataAttributes>
+            <DataAttribute Name="Код">65241</DataAttribute>
+            <DataAttribute Name="Наименование">Федеральные государственные унитарные предприятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185735" ParentGuid="" Guid="0a16870f-7efc-4a1b-9117-73dcdffd6d7a">
+          <DataAttributes>
+            <DataAttribute Name="Код">75100</DataAttribute>
+            <DataAttribute Name="Наименование">Учреждения, созданные Российской Федерацией</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185720" ParentGuid="" Guid="1a8cba1b-f458-484b-983b-23f266952862">
+          <DataAttributes>
+            <DataAttribute Name="Код">65242</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные унитарные предприятия субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136281" ParentGuid="" Guid="a47e039e-af99-4e2e-8366-4d669182b68d">
+          <DataAttributes>
+            <DataAttribute Name="Код">13000</DataAttribute>
+            <DataAttribute Name="Наименование">Хозяйственные партнерства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185721" ParentGuid="" Guid="c71c58b6-f548-47b8-a52e-2025d2f036f2">
+          <DataAttributes>
+            <DataAttribute Name="Код">65243</DataAttribute>
+            <DataAttribute Name="Наименование">Муниципальные унитарные предприятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185736" ParentGuid="" Guid="9cf31e5f-0371-430c-b140-821d91d4ed63">
+          <DataAttributes>
+            <DataAttribute Name="Код">75101</DataAttribute>
+            <DataAttribute Name="Наименование">Федеральные государственные автономные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185755" ParentGuid="" Guid="19744909-0ecf-44cb-9342-57eeda673685">
+          <DataAttributes>
+            <DataAttribute Name="Код">20217</DataAttribute>
+            <DataAttribute Name="Наименование">Территориальные общественные самоуправления</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185722" ParentGuid="" Guid="8bb7c0bb-e346-42ab-b865-94c16fecdbbc">
+          <DataAttributes>
+            <DataAttribute Name="Код">70000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ЮРИДИЧЕСКИХ ЛИЦ, ЯВЛЯЮЩИХСЯ НЕКОММЕРЧЕСКИМИ УНИТАРНЫМИ ОРГАНИЗАЦИЯМИ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185737" ParentGuid="" Guid="bd5b7d14-316e-4dbb-ac03-606d4e67ec6c">
+          <DataAttributes>
+            <DataAttribute Name="Код">75103</DataAttribute>
+            <DataAttribute Name="Наименование">Федеральные государственные бюджетные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185723" ParentGuid="" Guid="b6ffcc22-39f5-47b9-9b84-84c1bc20c3d2">
+          <DataAttributes>
+            <DataAttribute Name="Код">70400</DataAttribute>
+            <DataAttribute Name="Наименование">Фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136282" ParentGuid="" Guid="a9569c0b-fd7b-461f-9d52-3583c61dd9d7">
+          <DataAttributes>
+            <DataAttribute Name="Код">14000</DataAttribute>
+            <DataAttribute Name="Наименование">Производственные кооперативы (артели)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185738" ParentGuid="" Guid="1e8bb008-5a92-406b-ad6d-85e735dc52a0">
+          <DataAttributes>
+            <DataAttribute Name="Код">75104</DataAttribute>
+            <DataAttribute Name="Наименование">Федеральные государственные казенные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185756" ParentGuid="" Guid="fc288300-1413-4383-99c8-a5528da16cb5">
+          <DataAttributes>
+            <DataAttribute Name="Код">20609</DataAttribute>
+            <DataAttribute Name="Наименование">Адвокатские палаты</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185739" ParentGuid="" Guid="52b8b9b0-963d-4f4f-920f-998fa33ccc43">
+          <DataAttributes>
+            <DataAttribute Name="Код">75200</DataAttribute>
+            <DataAttribute Name="Наименование">Учреждения, созданные субъектом Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136283" ParentGuid="" Guid="a2d35d61-f2bd-42ba-9f82-c8081aa39f40">
+          <DataAttributes>
+            <DataAttribute Name="Код">14100</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные производственные кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185740" ParentGuid="" Guid="6427ff12-3452-4d6e-a620-02247b99010d">
+          <DataAttributes>
+            <DataAttribute Name="Код">75201</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные автономные учреждения субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185757" ParentGuid="" Guid="0b246b7d-fbc7-458e-94ac-e87b9fce9e44">
+          <DataAttributes>
+            <DataAttribute Name="Код">20610</DataAttribute>
+            <DataAttribute Name="Наименование">Нотариальные палаты</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185741" ParentGuid="" Guid="f02eac3c-28f4-4431-a60d-97c0ad700c0f">
+          <DataAttributes>
+            <DataAttribute Name="Код">75203</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные бюджетные учреждения субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136284" ParentGuid="" Guid="3b5fa8b5-4e23-4288-a057-243f6dee620a">
+          <DataAttributes>
+            <DataAttribute Name="Код">14153</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные артели (колхозы)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185742" ParentGuid="" Guid="acf39fd8-5c74-4da0-9782-537437922db5">
+          <DataAttributes>
+            <DataAttribute Name="Код">75204</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные казенные учреждения субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185758" ParentGuid="" Guid="566578ab-2f50-4c0a-b708-c0ec9ca2fabd">
+          <DataAttributes>
+            <DataAttribute Name="Код">20611</DataAttribute>
+            <DataAttribute Name="Наименование">Торгово-промышленные палаты</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185743" ParentGuid="" Guid="2ec58ba5-0f28-4811-9185-1d92a0dc8785">
+          <DataAttributes>
+            <DataAttribute Name="Код">75300</DataAttribute>
+            <DataAttribute Name="Наименование">Государственные академии наук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136285" ParentGuid="" Guid="c19ca382-cb1e-40a2-b0c1-a6b9f84356f2">
+          <DataAttributes>
+            <DataAttribute Name="Код">14154</DataAttribute>
+            <DataAttribute Name="Наименование">Рыболовецкие артели (колхозы)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136286" ParentGuid="" Guid="5a727e59-5a09-40a5-b1a0-2f81a375df1a">
+          <DataAttributes>
+            <DataAttribute Name="Код">14155</DataAttribute>
+            <DataAttribute Name="Наименование">Кооперативные хозяйства (коопхозы)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185744" ParentGuid="" Guid="19603e88-a281-41b7-bc90-95e75362aac0">
+          <DataAttributes>
+            <DataAttribute Name="Код">75400</DataAttribute>
+            <DataAttribute Name="Наименование">Учреждения, созданные муниципальным образованием (муниципальные учреждения)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185759" ParentGuid="" Guid="18d73336-e8c5-41b2-af84-cfc3c0e8f3a8">
+          <DataAttributes>
+            <DataAttribute Name="Код">20612</DataAttribute>
+            <DataAttribute Name="Наименование">Объединения работодателей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185745" ParentGuid="" Guid="ab02724c-520a-4bdb-89a2-3a51d8382b5e">
+          <DataAttributes>
+            <DataAttribute Name="Код">75401</DataAttribute>
+            <DataAttribute Name="Наименование">Муниципальные автономные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136287" ParentGuid="" Guid="b65d61ae-007c-4643-b04c-972a36f51714">
+          <DataAttributes>
+            <DataAttribute Name="Код">14200</DataAttribute>
+            <DataAttribute Name="Наименование">Производственные кооперативы (кроме сельскохозяйственных производственных кооперативов)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185746" ParentGuid="" Guid="7d34e991-5974-4d8d-9ea6-b74c6624a6fc">
+          <DataAttributes>
+            <DataAttribute Name="Код">75403</DataAttribute>
+            <DataAttribute Name="Наименование">Муниципальные бюджетные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185760" ParentGuid="" Guid="cb833f9b-f2fc-499c-8d7a-4e41a1506052">
+          <DataAttributes>
+            <DataAttribute Name="Код">20613</DataAttribute>
+            <DataAttribute Name="Наименование">Объединения фермерских хозяйств</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185747" ParentGuid="" Guid="bc8a63b5-e3df-4c68-b1c8-3c1128aadb5b">
+          <DataAttributes>
+            <DataAttribute Name="Код">75404</DataAttribute>
+            <DataAttribute Name="Наименование">Муниципальные казенные учреждения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136297" ParentGuid="" Guid="03d7076c-604c-4eb3-8ea9-e8f1b770c6c5">
+          <DataAttributes>
+            <DataAttribute Name="Код">19000</DataAttribute>
+            <DataAttribute Name="Наименование">Прочие юридические лица, являющиеся коммерческими организациями</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185761" ParentGuid="" Guid="17a137bc-44af-46ac-8cb4-f6fb5be98c07">
+          <DataAttributes>
+            <DataAttribute Name="Код">20614</DataAttribute>
+            <DataAttribute Name="Наименование">Некоммерческие партнерства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136298" ParentGuid="" Guid="f8c24d6a-7d41-497c-a19c-41534053db0e">
+          <DataAttributes>
+            <DataAttribute Name="Код">20000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ЮРИДИЧЕСКИХ ЛИЦ, ЯВЛЯЮЩИХСЯ НЕКОММЕРЧЕСКИМИ КОРПОРАТИВНЫМИ ОРГАНИЗАЦИЯМИ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185762" ParentGuid="" Guid="09eeebb4-c670-4881-8f83-32df06d56c52">
+          <DataAttributes>
+            <DataAttribute Name="Код">20615</DataAttribute>
+            <DataAttribute Name="Наименование">Адвокатские бюро</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136299" ParentGuid="" Guid="28d28124-0fe6-4059-8ceb-c344ab943970">
+          <DataAttributes>
+            <DataAttribute Name="Код">20100</DataAttribute>
+            <DataAttribute Name="Наименование">Потребительские кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185763" ParentGuid="" Guid="ae298f7f-eff2-49ad-845c-eb6b3539cabc">
+          <DataAttributes>
+            <DataAttribute Name="Код">20616</DataAttribute>
+            <DataAttribute Name="Наименование">Коллегии адвокатов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136300" ParentGuid="" Guid="39d3a247-a9f8-4507-be56-1b1b0359fb8c">
+          <DataAttributes>
+            <DataAttribute Name="Код">20101</DataAttribute>
+            <DataAttribute Name="Наименование">Гаражные и гаражно-строительные кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185764" ParentGuid="" Guid="153af10b-f28a-432c-a5a5-e933ff235279">
+          <DataAttributes>
+            <DataAttribute Name="Код">20617</DataAttribute>
+            <DataAttribute Name="Наименование">Садоводческие, огороднические или дачные некоммерческие партнерства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136301" ParentGuid="" Guid="4386ae16-35e5-4c8c-ad31-d9b3a9111943">
+          <DataAttributes>
+            <DataAttribute Name="Код">20102</DataAttribute>
+            <DataAttribute Name="Наименование">Жилищные или жилищно-строительные кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185765" ParentGuid="" Guid="01afaede-ca68-4c6b-87a7-0279026d7ada">
+          <DataAttributes>
+            <DataAttribute Name="Код">20618</DataAttribute>
+            <DataAttribute Name="Наименование">Ассоциации (союзы) садоводческих, огороднических и дачных некоммерческих объединений</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136302" ParentGuid="" Guid="21dde2c1-9e2c-4278-abcd-b423e434041b">
+          <DataAttributes>
+            <DataAttribute Name="Код">20103</DataAttribute>
+            <DataAttribute Name="Наименование">Жилищные накопительные кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185766" ParentGuid="" Guid="ccf5a267-f831-4ecc-9c80-cd02f776a4c5">
+          <DataAttributes>
+            <DataAttribute Name="Код">20619</DataAttribute>
+            <DataAttribute Name="Наименование">Саморегулируемые организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136303" ParentGuid="" Guid="27ee1eae-6e15-4f1b-8d82-1f778a59b185">
+          <DataAttributes>
+            <DataAttribute Name="Код">20104</DataAttribute>
+            <DataAttribute Name="Наименование">Кредитные потребительские кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185767" ParentGuid="" Guid="c480783c-bf34-45d9-9f80-98b649dc6362">
+          <DataAttributes>
+            <DataAttribute Name="Код">20620</DataAttribute>
+            <DataAttribute Name="Наименование">Объединения (ассоциации и союзы) благотворительных организаций</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136304" ParentGuid="" Guid="b03a2b82-f91a-41c5-8432-b947b9a39237">
+          <DataAttributes>
+            <DataAttribute Name="Код">20105</DataAttribute>
+            <DataAttribute Name="Наименование">Кредитные потребительские  кооперативы граждан</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185768" ParentGuid="" Guid="e52132cd-2ea3-48a7-abbb-e3ba27e03bc7">
+          <DataAttributes>
+            <DataAttribute Name="Код">20700</DataAttribute>
+            <DataAttribute Name="Наименование">Товарищества собственников недвижимости</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136305" ParentGuid="" Guid="5b3e664c-a04c-4ee8-850e-acd2afe1d7f9">
+          <DataAttributes>
+            <DataAttribute Name="Код">20106</DataAttribute>
+            <DataAttribute Name="Наименование">Кредитные кооперативы второго уровня</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185769" ParentGuid="" Guid="d45fa8eb-18a3-4210-b4bd-22ff9eda8957">
+          <DataAttributes>
+            <DataAttribute Name="Код">20701</DataAttribute>
+            <DataAttribute Name="Наименование">Садоводческие, огороднические или дачные некоммерческие товарищества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136306" ParentGuid="" Guid="49f2a857-26f3-4e57-9221-7b00fcfc42ac">
+          <DataAttributes>
+            <DataAttribute Name="Код">20107</DataAttribute>
+            <DataAttribute Name="Наименование">Потребительские общества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185770" ParentGuid="" Guid="a42e16da-5b87-4566-9214-aa60d4cb6b9b">
+          <DataAttributes>
+            <DataAttribute Name="Код">20716</DataAttribute>
+            <DataAttribute Name="Наименование">Товарищества собственников жилья</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136307" ParentGuid="" Guid="85ea7bd8-c72d-45bf-a224-8ba82a4416b6">
+          <DataAttributes>
+            <DataAttribute Name="Код">20109</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские перерабатывающие  кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185771" ParentGuid="" Guid="3d7f290c-31cb-41b4-a73e-115dc3aecf58">
+          <DataAttributes>
+            <DataAttribute Name="Код">21100</DataAttribute>
+            <DataAttribute Name="Наименование">Казачьи общества, внесенные в государственный реестр казачьих обществ в Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136308" ParentGuid="" Guid="9783c109-fe1b-42eb-9aae-273d0ceb3251">
+          <DataAttributes>
+            <DataAttribute Name="Код">20110</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские сбытовые (торговые) кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="185772" ParentGuid="" Guid="b8a4c058-bb68-47bf-9395-a043365109c1">
+          <DataAttributes>
+            <DataAttribute Name="Код">21200</DataAttribute>
+            <DataAttribute Name="Наименование">Общины коренных малочисленных народов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136309" ParentGuid="" Guid="dd538e82-54a9-4812-837d-f1105fd599e6">
+          <DataAttributes>
+            <DataAttribute Name="Код">20111</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские обслуживающие кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136310" ParentGuid="" Guid="3772db42-681b-4734-a37d-70d6826fee2c">
+          <DataAttributes>
+            <DataAttribute Name="Код">20112</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские снабженческие кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136311" ParentGuid="" Guid="adc9336f-e2c8-4768-a466-b1de5c65abb4">
+          <DataAttributes>
+            <DataAttribute Name="Код">20113</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские садоводческие кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136312" ParentGuid="" Guid="06200b42-d4e0-4533-b08e-778f22ac997b">
+          <DataAttributes>
+            <DataAttribute Name="Код">20114</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские огороднические кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136313" ParentGuid="" Guid="fc4000b9-c72a-4e46-a016-52602b0f1c81">
+          <DataAttributes>
+            <DataAttribute Name="Код">20115</DataAttribute>
+            <DataAttribute Name="Наименование">Сельскохозяйственные потребительские животноводческие кооперативы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136314" ParentGuid="" Guid="92536af5-4ee7-4933-8f09-01be9cd1a27a">
+          <DataAttributes>
+            <DataAttribute Name="Код">20200</DataAttribute>
+            <DataAttribute Name="Наименование">Общественные организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136315" ParentGuid="" Guid="066776ef-6f74-44fe-ac99-f1695c79b644">
+          <DataAttributes>
+            <DataAttribute Name="Код">20201</DataAttribute>
+            <DataAttribute Name="Наименование">Политические партии</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136316" ParentGuid="" Guid="8b2fa2f6-861d-4223-bc68-6259bda414ce">
+          <DataAttributes>
+            <DataAttribute Name="Код">20202</DataAttribute>
+            <DataAttribute Name="Наименование">Профсоюзные организации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136317" ParentGuid="" Guid="c435e1da-d503-44ff-bcb2-f468b26ad61f">
+          <DataAttributes>
+            <DataAttribute Name="Код">20210</DataAttribute>
+            <DataAttribute Name="Наименование">Общественные движения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136318" ParentGuid="" Guid="858563ff-f150-4e9e-b8a2-4c8bc652f878">
+          <DataAttributes>
+            <DataAttribute Name="Код">20211</DataAttribute>
+            <DataAttribute Name="Наименование">Органы общественной самодеятельности</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136326" ParentGuid="" Guid="9462f422-3704-411c-8e93-153448c1d3c0">
+          <DataAttributes>
+            <DataAttribute Name="Код">20600</DataAttribute>
+            <DataAttribute Name="Наименование">Ассоциации (союзы)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136327" ParentGuid="" Guid="0e4915bc-9f70-4a7f-aa72-ea0fd4595728">
+          <DataAttributes>
+            <DataAttribute Name="Код">20601</DataAttribute>
+            <DataAttribute Name="Наименование">Ассоциации (союзы) экономического взаимодействия субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136328" ParentGuid="" Guid="2c43d1f3-ee26-457f-8b98-69be8999f5d3">
+          <DataAttributes>
+            <DataAttribute Name="Код">20603</DataAttribute>
+            <DataAttribute Name="Наименование">Советы муниципальных образований субъектов Российской Федерации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136329" ParentGuid="" Guid="7fec169d-d047-4d96-b5af-75df3c3ed268">
+          <DataAttributes>
+            <DataAttribute Name="Код">20604</DataAttribute>
+            <DataAttribute Name="Наименование">Союзы (ассоциации) кредитных кооперативов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136330" ParentGuid="" Guid="533a8ca1-f039-41a5-af4a-a4ac8116aed4">
+          <DataAttributes>
+            <DataAttribute Name="Код">20605</DataAttribute>
+            <DataAttribute Name="Наименование">Союзы (ассоциации) кооперативов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136331" ParentGuid="" Guid="d087e215-bb32-4b91-9d31-21d08368f7f7">
+          <DataAttributes>
+            <DataAttribute Name="Код">20606</DataAttribute>
+            <DataAttribute Name="Наименование">Союзы (ассоциации) общественных объединений</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136332" ParentGuid="" Guid="27cf47c1-f8b3-4afe-bde8-701a59674a19">
+          <DataAttributes>
+            <DataAttribute Name="Код">20607</DataAttribute>
+            <DataAttribute Name="Наименование">Союзы (ассоциации) общин малочисленных народов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136333" ParentGuid="" Guid="bab9e9e8-36c1-4db2-b1c5-6354d3903310">
+          <DataAttributes>
+            <DataAttribute Name="Код">20608</DataAttribute>
+            <DataAttribute Name="Наименование">Союзы потребительских обществ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136367" ParentGuid="" Guid="cdfb8641-47b8-4d70-8a5f-ea3fc68849b8">
+          <DataAttributes>
+            <DataAttribute Name="Код">30000</DataAttribute>
+            <DataAttribute Name="Наименование">ОРГАНИЗАЦИОННО-ПРАВОВЫЕ ФОРМЫ ОРГАНИЗАЦИЙ, СОЗДАННЫХ  БЕЗ ПРАВ ЮРИДИЧЕСКОГО ЛИЦА</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136368" ParentGuid="" Guid="5c0e63b2-49b2-46a2-b453-9eda07a28de7">
+          <DataAttributes>
+            <DataAttribute Name="Код">30001</DataAttribute>
+            <DataAttribute Name="Наименование">Представительства юридических лиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136369" ParentGuid="" Guid="e396b639-3ebe-4474-9b49-5260e4d608f3">
+          <DataAttributes>
+            <DataAttribute Name="Код">30002</DataAttribute>
+            <DataAttribute Name="Наименование">Филиалы юридических лиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136370" ParentGuid="" Guid="a65e2cbf-2e64-4d0b-adaf-23b220174028">
+          <DataAttributes>
+            <DataAttribute Name="Код">30003</DataAttribute>
+            <DataAttribute Name="Наименование">Обособленные подразделения юридических лиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136371" ParentGuid="" Guid="0d6c6975-0a08-4634-b496-d980f33e7877">
+          <DataAttributes>
+            <DataAttribute Name="Код">30004</DataAttribute>
+            <DataAttribute Name="Наименование">Структурные подразделения обособленных подразделений юридических лиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136372" ParentGuid="" Guid="40ad1c4f-0e32-4527-a817-f9e997334c8b">
+          <DataAttributes>
+            <DataAttribute Name="Код">30005</DataAttribute>
+            <DataAttribute Name="Наименование">Паевые инвестиционные фонды</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="136373" ParentGuid="" Guid="0d1b3e59-2cb8-4261-9c2c-1722a8b51344">
+          <DataAttributes>
+            <DataAttribute Name="Код">30006</DataAttribute>
+            <DataAttribute Name="Наименование">Простые товарищества</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

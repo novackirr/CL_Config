@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Завершить проведение процедуры(СберАСТ)" Type="1">
+  <Items>
+    <Dictionary Name="Завершить проведение процедуры(СберАСТ)">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="617f1602-1cf0-4260-bcea-e624caacb163">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Да, процедура закупки завершена, формирование последующих протоколов не требуется</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="0" ParentGuid="" Guid="5b5bf11c-37ea-4324-8dcb-6b791ddc231e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Нет, процедура не завершена, требуется формирование последующих протоколов</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

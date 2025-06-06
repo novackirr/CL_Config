@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Вид обеспечения договора" Type="0">
+  <Items>
+    <Dictionary Name="Вид обеспечения договора">
+      <Attributes>
+        <Attribute Name="Наименование вида обеспечения договора" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="2eb10cc1-cb9b-44f9-8602-e347e445e960">
+          <DataAttributes>
+            <DataAttribute Name="Наименование вида обеспечения договора">Банковская гарантия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="ec6cc2be-ae02-4424-a340-c71b8fe2ef57">
+          <DataAttributes>
+            <DataAttribute Name="Наименование вида обеспечения договора">Денежные средства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="d6fc6855-4fb3-4e2c-bfa6-298289e4990d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование вида обеспечения договора">Банковская гарантия / денежные средства</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

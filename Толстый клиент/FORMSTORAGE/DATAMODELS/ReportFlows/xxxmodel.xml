@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportFlows">
+	<CONTENT_MODEL use="ReportFlows" key="key">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" view="invisible" default="&quot;1&quot;"/>
+		<E name="ИД_последний_редактор" datatype="text" index="true" displayname="ИД последний редактор" dfhidden="true" view="invisible"/>
+		<E name="Имя_последний_редактор" datatype="text" index="true" displayname="Имя последний редактор" dfhidden="true" view="invisible"/>
+		<E name="От" datatype="text" index="true" valid="От &lt;= До" displayname="От" default="nowdate() - 1" errmessage="Дата начала не может превышать дату окончания" required="true" edit="textbox,tool(CallTools.DateTimeEdit)"/>
+		<E name="До" datatype="text" index="true" valid="От &lt;= До" displayname="До" errmessage="Дата начала не может превышать дату окончания" required="true" edit="textbox,tool(CallTools.DateTimeEdit)" default="nowdate()"/>
+		<E name="Список_потоков" datatype="text" index="true" value="sum ( flows|flow|realid )" displayname="Список_потоков" required="false"/>
+		<E name="Список_имён_потоков" datatype="longtext" index="true" displayname="Список имён потоков" view="invisible" required="false" value="sum (  flows|flow|realname  )"/>
+		<E name="Список_ИД_исполнителей" datatype="longtext" index="true" value="concat(&quot;', '&quot;, userStruct|users|user|user_id  )" displayname="Список_ИД_исполнителей" view="invisible"/>
+		<S name="userStruct">
+			<E name="Исполнители" datatype="text" index="true" displayname="Исполнители" required="false" edit="textbox,tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Исполнители&quot; IsMultiple=&quot;True&quot; CanSelectNobody=&quot;True&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;True&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Persons&quot; DisplayName=&quot;Пользователи&quot; /&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;DateDictionary Name=&quot;Roles&quot; DisplayName=&quot;Роли&quot; /&gt;&lt;DateDictionary Name=&quot;WorkGroups&quot; DisplayName=&quot;Рабочие группы&quot; /&gt;&lt;/ROOT&gt;"/>
+			<A name="users" use="table">
+				<S name="user" displayname="">
+					<E name="user_id" datatype="integer" index="true" abdata="Id" extype="addressbook" displayname=""/>
+				</S>
+			</A>
+		</S>
+		<A name="flows" use="table" autogrow="false" autodelete="false">
+			<S name="flow" key="flow_id">
+				<E name="flow_id" datatype="dictionary(Потоки(Название),text)" index="true" view="invisible"/>
+				<E name="Выбран" datatype="boolean" index="true"/>
+				<E name="Название" datatype="text" index="true"/>
+				<E name="realid" datatype="text" index="true" value="iif( Выбран = 1,  flow_id + iif( selnum &lt;&gt; ..|..|maxselflow, &quot;', '&quot;, &quot;&quot;) , &quot;&quot;)"/>
+				<E name="selnum" datatype="integer" index="true" value="iif ( Выбран = 1, number( selnum ), 0)"/>
+				<E name="realname" datatype="text" index="true" value="iif( Выбран = 1, Название + iif( selnum &lt;&gt; ..|..|maxselflow, &quot;, &quot;, &quot;&quot;) , &quot;&quot;)"/>
+			</S>
+		</A>
+		<E name="Составитель" datatype="text" index="false" displayname="Составитель" view="invisible"/>
+		<E name="maxselflow" datatype="text" index="true" value="Max( flows|flow|selnum )"/>
+		<E name="Do" datatype="date" index="true" value=" До +1"/>
+		<E name="flow_id" datatype="dictionary(Потоки,text)" index="true" view="text" edit="textbox" displayname="flow_id"/>
+		<E name="Название" datatype="dictionary(Потоки,text)" index="true" displayname="Название"/>
+		<E name="ОКПД" datatype="text" index="true" displayname="ОКПД" dictpath="" edit="textbox" required="false"/>
+		<E name="ОКПД2_наименование" datatype="text" index="true" displayname="ОКПД2_наименование"/>
+		<E name="От_tmp" datatype="date" index="true" displayname="От_tmp"/>
+		<E name="До_tmp" datatype="date" index="true" displayname="До_tmp"/>
+		<E name="Название_tmp" datatype="text" index="true" displayname="Название_tmp"/>
+		<E name="Организация_заказчик_наименование" datatype="longtext" index="true" displayname="Организация_заказчик_наименование"/>
+	</CONTENT_MODEL>
+	<plugins>
+		<dictionary displayname="Потоки" name="Потоки" progid="FRMITools.FlowsDictionary" initstring="" inittime="once"/>
+		<dictionary name="ОКПД2" progid="FrmTools.DictSource" inittime="field" initstring="stored:ОКПД2"/>
+	</plugins>
+	<SCRIPT language="VBScript">sub form_load
+	Set ctx = CreateObject("Form.ExecutionContext")
+	Data("Составитель").Value = ctx.CurrentUser.Name
+	for each d in Form.Dictionary("Потоки")
+		Set newFlow = Data("flows").Insert(d("Идентификатор").Value, 0)
+		newFlow("Название").Value = d("Название").Value
+		newFlow("Название").Attribute("readonly") = "true"
+	next 
+end sub
+
+	</SCRIPT>
+</FORM_DESCRIPTION>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип стадии по лоту" Type="0">
+  <Items>
+    <Dictionary Name="Тип стадии по лоту">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="auction" ParentGuid="" Guid="81b5e20b-9e61-4fe3-a08d-5f7154ce18e1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Торги</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="request" ParentGuid="" Guid="8a651ba7-d241-48b1-96ab-279b7e50374b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Запрос сведений (документы и цена)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="oneprice" ParentGuid="" Guid="04fe288d-6268-4b3c-bc81-3aaa41f05c7b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Запрос цены</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

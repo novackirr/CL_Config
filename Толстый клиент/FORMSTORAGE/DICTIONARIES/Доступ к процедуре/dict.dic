@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Доступ к процедуре" Type="0">
+  <Items>
+    <Dictionary Name="Доступ к процедуре">
+      <DataCollection>
+        <Data Name="Для всех" ParentGuid="" Guid="f9708e2b-c163-4ec5-999e-32f67aea1cf8" />
+        <Data Name="Для всех, с возможностью пригласить заявителей" ParentGuid="" Guid="ce038759-7845-44ca-adfd-963e25182813" />
+        <Data Name="Для ограниченного круга заявителей" ParentGuid="" Guid="a8b602cd-8d74-4be0-a11a-70962526138a" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

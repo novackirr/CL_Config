@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportPeriod">
+	<CONTENT_MODEL use="ReportPeriodForm" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible"/>
+		<E name="От" datatype="date" index="false" valid="От &lt;= До" displayname="От" default="nowdate()-7" errmessage="Дата начала не может превышать дату окончания" required="true" edit="textbox,tool(CallTools.DateTimeEdit)"/>
+		<E name="До" datatype="date" index="false" valid="От &lt;= До" displayname="До" default="nowdate()" errmessage="Дата начала не может превышать дату окончания" required="true" edit="textbox,tool(CallTools.DateTimeEdit)"/>
+		<E name="Составитель" datatype="text" index="true" displayname="Составитель" required=""/>
+		<E name="Название_потока" datatype="text" index="true" value="iif( Поток = &quot;&quot;, &quot;&quot;, DictValue( &quot;Потоки&quot;, Поток, &quot;Название&quot; ))" displayname="Название потока" view="invisible"/>
+		<E name="Организация_заказчик" datatype="integer" index="true" displayname="Организация_заказчик" extype="addressbook" abdata="Id"/><E name="Организация_заказчик_наименование" datatype="longtext" index="true" displayname="Организация_заказчик_наименование" extype="addressbook" abdata="Name"/><E name="От_tmp" datatype="text" index="true" displayname="От_tmp"/><E name="До_tmp" datatype="text" index="true" displayname="До_tmp"/></CONTENT_MODEL>
+	<plugins>
+		<dictionary displayname="Потоки" name="Потоки" progid="FRMITools.FlowsDictionary" initstring="" inittime="once"/>
+	</plugins>
+	<SCRIPT language="VBScript">sub form_load
+	Set ctx = CreateObject("Form.ExecutionContext")
+	Data("Составитель").Value = ctx.CurrentUser.Name
+end sub</SCRIPT>
+</FORM_DESCRIPTION>

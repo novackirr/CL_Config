@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Статус_поиск223" Type="0">
+  <Items>
+    <Dictionary Name="Статус_поиск223">
+      <DataCollection>
+        <Data Name="Все" ParentGuid="" Guid="c715c8fe-2ebb-416b-bc9c-57df2736b7d3" />
+        <Data Name="Да" ParentGuid="" Guid="4e93eec7-5796-4191-87c2-dfdd6faf35af" />
+        <Data Name="Нет" ParentGuid="" Guid="57cbe5f0-20de-4ff1-a401-9ed9791793b6" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

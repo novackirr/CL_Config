@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Организации заказчики223" Type="0">
+  <Items>
+    <Dictionary Name="Организации заказчики223">
+      <Attributes>
+        <Attribute Name="ИНН" />
+        <Attribute Name="EISCode223" />
+        <Attribute Name="Краткое наименование" />
+        <Attribute Name="Наименование" />
+        <Attribute Name="КПП" />
+        <Attribute Name="Регион" />
+        <Attribute Name="Положение Наименование" />
+        <Attribute Name="Положение ИНН" />
+        <Attribute Name="Положение КПП" />
+        <Attribute Name="Положение Регион" />
+        <Attribute Name="Дата размещения" />
+        <Attribute Name="Почтовый адрес" />
+        <Attribute Name="Статус записи" />
+        <Attribute Name="ОГРН" />
+        <Attribute Name="Юр адрес" />
+        <Attribute Name="Логин ЕИС" />
+        <Attribute Name="Пароль ЕИС" />
+        <Attribute Name="ОКАТО код" />
+        <Attribute Name="ОКАТО Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="17717043113771701001" ParentGuid="" Guid="a16ab125-0a1e-45a6-a8b0-1c101195a5ba">
+          <DataAttributes>
+            <DataAttribute Name="ИНН" />
+            <DataAttribute Name="EISCode223">17717043113771701001</DataAttribute>
+            <DataAttribute Name="Краткое наименование">ФГУП ГЦСС</DataAttribute>
+            <DataAttribute Name="Наименование" />
+            <DataAttribute Name="КПП" />
+            <DataAttribute Name="Регион" />
+            <DataAttribute Name="Положение Наименование" />
+            <DataAttribute Name="Положение ИНН" />
+            <DataAttribute Name="Положение КПП" />
+            <DataAttribute Name="Положение Регион" />
+            <DataAttribute Name="Дата размещения" />
+            <DataAttribute Name="Почтовый адрес" />
+            <DataAttribute Name="Статус записи" />
+            <DataAttribute Name="ОГРН" />
+            <DataAttribute Name="Юр адрес">1</DataAttribute>
+            <DataAttribute Name="Логин ЕИС">E1CCCB</DataAttribute>
+            <DataAttribute Name="Пароль ЕИС">Zxc12345!</DataAttribute>
+            <DataAttribute Name="ОКАТО код">50000000000</DataAttribute>
+            <DataAttribute Name="ОКАТО Наименование">Новосибирская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+      <Items>
+        <Dictionary Name="Способ закупки">
+          <Attributes>
+            <Attribute Name="Наименование" />
+            <Attribute Name="Электронная форма" />
+            <Attribute Name="Многоэтапная" />
+            <Attribute Name="Количество этапов" />
+            <Attribute Name="Вид закупки" />
+            <Attribute Name="Способ по положению" />
+            <Attribute Name="Квалификационный отбор" />
+          </Attributes>
+          <DataCollection />
+          <Items>
+            <Dictionary Name="Протоколы">
+              <Attributes>
+                <Attribute Name="Наименование" />
+              </Attributes>
+              <DataCollection />
+            </Dictionary>
+          </Items>
+        </Dictionary>
+        <Dictionary Name="Комиссия">
+          <Attributes>
+            <Attribute Name="Наименование" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="101" ParentGuid="" Guid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Стандартная ЗК</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="101" ParentGuid="" Guid="977581a6-94b5-4ee0-8860-7beb4f933d44">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Стандартная ЗК</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="102" ParentGuid="" Guid="3ed21f49-9bf4-4ecb-a080-def078388793">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Стройка ЦОД</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="103" ParentGuid="" Guid="c4d59c2e-0345-48f6-a543-454bab4cb45c">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Эксплуатация ЦОД</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="104" ParentGuid="" Guid="4e4d8f0d-236e-4926-8458-e9b1e063cd29">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">ИТ инфраструктура</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="105" ParentGuid="" Guid="03c138e4-0ea7-4c16-aecd-477b24850f7b">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Тионикс</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="101" ParentGuid="" Guid="89b532d5-dfea-446e-bb78-8c61c699785e">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Стандартная ЗК</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="1" ParentGuid="" Guid="bf32ec56-9129-4f65-bfba-023b3296db73">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">ЗК Даталайн</DataAttribute>
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+          <Items>
+            <Dictionary Name="Члены комиссии">
+              <Attributes>
+                <Attribute Name="Фамилия" />
+                <Attribute Name="Имя" />
+                <Attribute Name="Отчество" />
+                <Attribute Name="Код роли" />
+                <Attribute Name="Роль" />
+                <Attribute Name="Присутствует" />
+              </Attributes>
+              <DataCollection>
+                <Data Name="101" ParentGuid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed" Guid="d20f3022-dfbb-44bd-93bc-9856a8def31e">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="102" ParentGuid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed" Guid="b8026703-e8a0-4f65-abdf-8007e834f2b8">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="103" ParentGuid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed" Guid="c3a13dfe-94ad-44e0-bc77-3fa9c4f39328">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="104" ParentGuid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed" Guid="c73335b3-4b1c-4c33-989a-76ef491faf7c">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="105" ParentGuid="9a8299d0-9446-4fc8-97d0-8b493e6eb4ed" Guid="df2988a1-86b7-4065-bae5-08b6b1c8c141">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="299" ParentGuid="" Guid="dbae2a8c-1cca-4036-84e0-29fb9edd19fd">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Минин Алексей Игоревич</DataAttribute>
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="300" ParentGuid="" Guid="c4dd54b1-34c0-4b4c-972c-a86ed6877035">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гребнев Александр Вадимович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="301" ParentGuid="" Guid="f0781dfd-4b4c-401f-874c-9716ce553378">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Каплунова Анна Юрьевна</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="302" ParentGuid="" Guid="014eb418-b692-4fcd-a3ba-7c9fbe5d961f">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Тярина Ольга Владимировна</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="280" ParentGuid="" Guid="2edf2bc7-0bc3-47f0-9729-47fb9f447f48">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Солдатов Александр Анатольевич</DataAttribute>
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="281" ParentGuid="" Guid="ad2c349f-fedf-46e2-8063-30c57c107c7c">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Кузьмин Сергей Николаевич</DataAttribute>
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="282" ParentGuid="" Guid="527345fb-71a8-462e-b9bf-b6c9cafb61fa">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гальчич Максим Александрович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="283" ParentGuid="" Guid="d9c65713-e479-4f8f-b024-0ab85a804bae">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванов Александр Кузьмич</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="284" ParentGuid="" Guid="c572cd13-2aae-482c-b2e6-afcc0fd7fa68">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Кравцова Елена Валерьевна</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="285" ParentGuid="" Guid="c10cc883-0584-4ec5-836e-9336bd66398c">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Ларин Герман Владимирович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="286" ParentGuid="" Guid="6e38388f-9f0a-4dcf-abea-0698ca76ccfb">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Назарова Юлия Сергеевна</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="287" ParentGuid="" Guid="84f0e3ee-a0b8-4d01-90ce-8615d67f5279">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Шмонова Вера Александровна</DataAttribute>
+                    <DataAttribute Name="Код роли">6</DataAttribute>
+                    <DataAttribute Name="Роль">Секретарь комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="253" ParentGuid="" Guid="e0bad9b3-c46e-49b6-ad00-48f9cd1d021a">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванов Иван Иванович</DataAttribute>
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="254" ParentGuid="" Guid="4fa0ea49-c56b-4e4f-9375-3e327d4498d9">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Петров Петр Петрович</DataAttribute>
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="255" ParentGuid="" Guid="a8198352-1c09-4bae-9de0-08b6a394fa2a">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Сергеев Сергей Сергеивич</DataAttribute>
+                    <DataAttribute Name="Код роли">9</DataAttribute>
+                    <DataAttribute Name="Роль">Секретарь</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="256" ParentGuid="" Guid="48de0026-ea0a-4008-9694-c1c1553ce845">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Павлов Павел Павлович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="306" ParentGuid="" Guid="7ee02fa2-76ea-493d-8d54-80a0bfeaa179">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Сотник Вячеслав Анатольевич</DataAttribute>
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="309" ParentGuid="" Guid="f776e92c-308d-49f2-bbcc-96477b8c6323">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Ахундов Валег Айдынович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="312" ParentGuid="" Guid="a6bdb23d-8112-4d28-b736-1a9226513a8f">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Калмыков Вадим Владимирович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="308" ParentGuid="" Guid="8a9fdca7-71ea-45aa-8adf-0b3fdeed8c19">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Лазовская Анна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="311" ParentGuid="" Guid="cd154984-6639-429c-8234-bfe2b8a6f7e4">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Лысенко Степан Владимирович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="307" ParentGuid="" Guid="601a726c-c5bd-42a6-b254-f2a7f8a5a40d">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Потехин Владислав Петрович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="310" ParentGuid="" Guid="0002cef2-e6b9-4361-aa08-ba4b195c1a99">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Яблоков Сергей Александрович</DataAttribute>
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="313" ParentGuid="" Guid="73d598a9-a58f-49ca-9b0e-b46663d47e89">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Юдин Сергей Константинович</DataAttribute>
+                    <DataAttribute Name="Код роли">11</DataAttribute>
+                    <DataAttribute Name="Роль">Уполномоченный член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="101" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="b0c759e0-e69f-477c-b81e-304fa2c77788">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="102" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="7517fd66-5c88-4ad3-8dfe-30ea3f720e5e">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="103" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="3a091933-2b36-4033-a75d-6de094a0a487">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="104" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="ade77aa2-59e9-400e-92ec-4c375b1d3f31">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="105" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="dcf10bf7-ba8b-4088-8304-b03630ba185b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="201" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="29996971-24cc-499c-b77d-dce88477115d">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="202" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="1d2d0dea-bddc-45ad-95da-6b23fa2c6eb4">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="203" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="a64735af-5db2-4edf-b322-5a64571e5a9f">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="204" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="2968e187-c6f9-4315-9422-96823bc1f9a1">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="205" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="57564db5-5bc5-4dce-83c4-2ea63b4a86ac">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="206" ParentGuid="3ed21f49-9bf4-4ecb-a080-def078388793" Guid="3a47b8c0-d085-40c5-9d08-22098d051217">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Афанасьев Денис Николаевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="301" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="fb6287b2-dad5-4635-b26f-768b9de7b24d">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="302" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="608f2153-fe96-4556-ad74-4706a6117671">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="303" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="29af4664-5a0e-4108-b084-5f22e6769004">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="304" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="d8bc34aa-1aee-4842-a6a1-ae8fa981955b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="305" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="660358b6-8cd7-4809-a2e1-a2f948b20389">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="306" ParentGuid="c4d59c2e-0345-48f6-a543-454bab4cb45c" Guid="82a509b4-1f26-4060-b37e-0294c8b4201b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Паршин Николай Сергеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="401" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="e8aa467b-520a-49a0-8fff-778bc8d40564">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="402" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="17003abf-961a-4466-80f5-d7433f99235b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="403" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="c4470183-e6d5-4d28-b99f-48c1d95320d3">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="404" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="b7bfc78e-25ed-48d7-9b9d-55cf93e4b5d0">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="405" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="361f44ff-c614-4f6e-b3d1-7cf356878710">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="406" ParentGuid="4e4d8f0d-236e-4926-8458-e9b1e063cd29" Guid="35282333-9714-49cf-8582-d2b477c06a2c">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Мартиросов Давид Игоревич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="101" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="a25033a4-9243-4b1a-bcfe-c5d82689203b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Петров Антон Валериевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="102" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="10c68bb5-9b4c-4095-a598-b4379bd28181">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="103" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="cdc8851e-7649-4e55-94bb-64ee7f582038">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Мартиросов Давид Игоревич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="104" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="f18cb86f-bf51-49bd-b039-241c0fcf1664">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="105" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="96525b85-08a8-4e71-a19c-9065de66554a">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="106" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="63a642ae-7dd3-406b-82ec-904885884d9b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Герасимова Евгения Дмитриевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="107" ParentGuid="03c138e4-0ea7-4c16-aecd-477b24850f7b" Guid="ce955d7b-1426-4579-b568-4353b2829de2">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Савельева Мария Дмитриевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">3</DataAttribute>
+                    <DataAttribute Name="Роль">Секретарь</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="201" ParentGuid="977581a6-94b5-4ee0-8860-7beb4f933d44" Guid="f5cf7699-932a-4a55-be42-5a77a7b4c764">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Сухарин Максим Сергеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">13</DataAttribute>
+                    <DataAttribute Name="Роль">Аудитор (без права голоса)</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="101" ParentGuid="89b532d5-dfea-446e-bb78-8c61c699785e" Guid="34a2713c-4419-4713-996d-be0db53f6367">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Гайдук Андрей Алексеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="102" ParentGuid="89b532d5-dfea-446e-bb78-8c61c699785e" Guid="2362e0b1-508a-4c05-8d87-d806402a2aee">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Масчан Ксения Владимировна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам. председателя комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="103" ParentGuid="89b532d5-dfea-446e-bb78-8c61c699785e" Guid="ab21c535-7e50-44ce-b3b9-a785ea604460">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Писарев Роман Александрович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="104" ParentGuid="89b532d5-dfea-446e-bb78-8c61c699785e" Guid="65510689-7112-4cf0-bd24-68bfa4a7978d">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванова Инна Сергеевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="105" ParentGuid="89b532d5-dfea-446e-bb78-8c61c699785e" Guid="17d46ca0-9885-4a68-b8ab-71ddf4b20425">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Марголин Михаил Шепович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует" />
+                  </DataAttributes>
+                </Data>
+                <Data Name="1" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="821cbf01-db94-4267-a71a-70eb201b086d">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Самойлов Юрий Владимирович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">4</DataAttribute>
+                    <DataAttribute Name="Роль">Председатель ЗК</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="2" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="8660a631-d418-422c-91a8-1f6a02525937">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Севастьянов Алексей Валентинович</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">8</DataAttribute>
+                    <DataAttribute Name="Роль">Зам.председателя ЗК</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="3" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="fd948ee0-625c-4fb6-ae80-e678d62eca0a">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Мищук Сергей Юрьевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="4" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="5e364400-946a-4a5f-a767-33dfa8fc6553">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Астафьева Юлия Олеговна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="5" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="9cd459a5-3928-44d6-93be-7ac4a008c997">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Степаненко Василий Сергеевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="6" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="ae2ed53c-bb49-4b10-bea6-f18ed834ddca">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Емельяненко Юрий Дмитриевич</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="7" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="ca7a670e-6d42-4d60-b782-4877ba42afdd">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Верина Валентина Львовна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="8" ParentGuid="bf32ec56-9129-4f65-bfba-023b3296db73" Guid="78bf5e9b-bd7b-430b-adae-c831b80c3f0f">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Крылова Марина Николаевна</DataAttribute>
+                    <DataAttribute Name="Имя" />
+                    <DataAttribute Name="Отчество" />
+                    <DataAttribute Name="Код роли">5</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                    <DataAttribute Name="Присутствует">1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+              </DataCollection>
+            </Dictionary>
+          </Items>
+        </Dictionary>
+        <Dictionary Name="Комиссия МСП">
+          <Attributes>
+            <Attribute Name="Наименование" />
+          </Attributes>
+          <DataCollection>
+            <Data Name="120" ParentGuid="" Guid="36917d87-6d02-422c-81f3-133fe70ed5f6">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Закупочная комиссия</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="168" ParentGuid="" Guid="bb4a8746-b0b4-44f2-94e4-b54121c8e4c2">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Комисиия</DataAttribute>
+              </DataAttributes>
+            </Data>
+            <Data Name="169" ParentGuid="" Guid="5a36c9e3-cc74-46b7-86e5-e417de7920a6">
+              <DataAttributes>
+                <DataAttribute Name="Наименование">Cognitive</DataAttribute>
+              </DataAttributes>
+            </Data>
+          </DataCollection>
+          <Items>
+            <Dictionary Name="Члены комиссии">
+              <Attributes>
+                <Attribute Name="Фамилия" />
+                <Attribute Name="Роль" />
+              </Attributes>
+              <DataCollection>
+                <Data Name="148" ParentGuid="bb4a8746-b0b4-44f2-94e4-b54121c8e4c2" Guid="5f639391-80fa-4234-a72a-7254c2842cd6">
+                  <DataAttributes>
+                    <DataAttribute Name="Роль">1</DataAttribute>
+                    <DataAttribute Name="Фамилия">1 1 1</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="149" ParentGuid="bb4a8746-b0b4-44f2-94e4-b54121c8e4c2" Guid="84e9230c-7b5b-4839-a374-b050d4933211">
+                  <DataAttributes>
+                    <DataAttribute Name="Роль">2</DataAttribute>
+                    <DataAttribute Name="Фамилия">2 2 2</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="150" ParentGuid="bb4a8746-b0b4-44f2-94e4-b54121c8e4c2" Guid="0270c36e-1338-47d6-ab30-ef0b0edbaf28">
+                  <DataAttributes>
+                    <DataAttribute Name="Роль">3</DataAttribute>
+                    <DataAttribute Name="Фамилия">3 3 3</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="151" ParentGuid="5a36c9e3-cc74-46b7-86e5-e417de7920a6" Guid="495b5d28-ae30-4c00-aaf4-3e253669bbe9">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Иванов Иван Иванович</DataAttribute>
+                    <DataAttribute Name="Роль">Секретарь</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="152" ParentGuid="5a36c9e3-cc74-46b7-86e5-e417de7920a6" Guid="0e555fb9-1d94-4528-9cc7-e9cc2d3429fc">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Смирнов Петр Сергеевич</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="153" ParentGuid="5a36c9e3-cc74-46b7-86e5-e417de7920a6" Guid="878d8c30-280a-45b8-941a-e44ad661f2ac">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Петров Петр Петрович</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+                <Data Name="154" ParentGuid="5a36c9e3-cc74-46b7-86e5-e417de7920a6" Guid="21e54981-f616-4d27-945d-49cf81baf22b">
+                  <DataAttributes>
+                    <DataAttribute Name="Фамилия">Сергеев Сергей Сергеевич</DataAttribute>
+                    <DataAttribute Name="Роль">Член комиссии</DataAttribute>
+                  </DataAttributes>
+                </Data>
+              </DataCollection>
+            </Dictionary>
+          </Items>
+        </Dictionary>
+      </Items>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform&#xD;&#xA;&#xD;&#xA;ctform.xsd" name="ReportDictionaries">
+  <CONTENT_MODEL use="ReportZak" datafilename="">
+    <E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible" />
+    <E name="Составитель" datatype="text" index="true" displayname="Составитель" required="" />
+    <E name="Справочники" datatype="text" index="false" displayname="" required="true" dictpath="" />
+  </CONTENT_MODEL>
+  <plugins>
+    <dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики" />
+  </plugins>
+  <SCRIPT language="VBScript">sub form_load
+	Set ctx = CreateObject("Form.ExecutionContext")
+	Data("Составитель").Value = ctx.CurrentUser.Name
+end sub</SCRIPT>
+</FORM_DESCRIPTION>

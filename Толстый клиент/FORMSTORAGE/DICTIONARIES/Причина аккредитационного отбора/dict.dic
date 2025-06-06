@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Причина аккредитационного отбора" Type="0">
+  <Items>
+    <Dictionary Name="Причина аккредитационного отбора">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="0fc417f9-9d03-43b3-9e42-c7bcb7750f1f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Формирование нового списка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="ac54db92-ea42-46c1-b2ba-bedce981ed81">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Обновление существующего списка</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип СМП" Type="0">
+  <Items>
+    <Dictionary Name="Тип СМП">
+      <DataCollection>
+        <Data Name="Микропредприятие" ParentGuid="" Guid="9ab7aad0-0814-492e-828e-638b4a0d7899" />
+        <Data Name="Малое предприятие" ParentGuid="" Guid="1ad9af56-28fe-4aa8-9d6c-b82a441453e7" />
+        <Data Name="Среднее предприятие" ParentGuid="" Guid="903a7cc3-4caf-4931-812f-bdd20c50218d" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

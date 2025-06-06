@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Признак публикации" Type="0">
+  <Items>
+    <Dictionary Name="Признак публикации">
+      <DataCollection>
+        <Data Name="Не публикуется" ParentGuid="" Guid="21458986-4461-44a2-bb54-16a0cddaced9" />
+        <Data Name="Публикуется" ParentGuid="" Guid="cb59672f-11a4-4816-83ec-c8bafd5caee1" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

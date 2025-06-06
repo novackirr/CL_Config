@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Направить в ЕИС" Type="0">
+  <Items>
+    <Dictionary Name="Направить в ЕИС">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="NotSend" ParentGuid="" Guid="391f721e-d2d3-49c8-8e0e-be53813a60fc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не направлять</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Operator" ParentGuid="" Guid="1313bd48-6c11-4ba8-9768-9d458c85bd47">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Оператор</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Org" ParentGuid="" Guid="903910e1-e74c-42c1-84de-735c757c3ddb">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Организатор</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MainCustomer" ParentGuid="" Guid="e3ff7826-94f9-4d2a-a920-aeda2a939498">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Главный заказчик</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

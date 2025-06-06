@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Причина аннулирования" Type="0">
+  <Items>
+    <Dictionary Name="Причина аннулирования">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="REJECT" ParentGuid="" Guid="6b576c57-6155-49e3-85e0-bc059accdc28">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Отказ от проведения закупки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="INVALID" ParentGuid="" Guid="61dcb247-982c-4552-ba1e-d6e1b4a81485">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Признание торгов недействительными</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NOT_PERFORMED" ParentGuid="" Guid="2e93528e-c8ed-41b9-beea-e32eb3940c9d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Торги не состоялись</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform  ctform.xsd" name="LDogRep223">
+	<CONTENT_MODEL dfattchfiles="|Document|files" dfnumberdoc="|Document|Число_регномера" key="Key">
+		<E name="Key" datatype="integer" index="false" default="&quot;1&quot;" view="invisible" displayname="Ключ" dfprotected="true"/>
+		<E name="ИД_последний_редактор" datatype="text" index="true" displayname="ИД последний редактор" dfhidden="true" view="invisible"/>
+		<E name="Имя_последний_редактор" datatype="text" index="true" displayname="Имя последний редактор" dfhidden="true" view="invisible"/>
+		<S name="Document" displayname="Документ" use="LDogPerf"><E displayname="Регистрационный номер" name="Регистрационный_номер" datatype="text(249)" index="true" dfprotected="true" dfhidden="true" required="true"/>
+			<E displayname="Префикс рег. номера" name="Префикс_регномера" datatype="dictionary(Prefix,text)" edit="combobox(Prefix)" index="true" view="invisible" dfprotected="false"/>
+			<E displayname="Порядковый рег. номер" name="Число_регномера" datatype="integer(+1..)" index="true" view="invisible" dfprotected="true" required="false"/>
+			<E displayname="Суффикс рег. номера" name="Суффикс_регномера" datatype="dictionary(Suffix,text)" edit="combobox(Suffix)" dfprotected="false" index="true" view="invisible"/>
+			<E displayname="Дата регистрации" name="Дата_регистрации" datatype="date" edit="" index="true" dfprotected="true" required="false" esp="false" default="nowdate()"/>
+			<E displayname="Вид документа" name="Вид_документа" datatype="dictionary(VidDocNames,text)" index="true" dfprotected="true" required="false" edit="combobox" value="&quot;Отчетность о договорах&quot;" view="invisible"/>
+			<E displayname="Краткое содержание" name="Краткое_содержание" datatype="longtext" euflag="7" index="true" dfprotected="true" required="false" edit="multiline" awindex="true" view="invisible" default="&quot;Договор&quot;"/>
+			<E displayname="Имя потока" name="Имя_потока" datatype="text" index="false" view="invisible" dfprotected="true" dfhidden="true" esp="false"/>
+			<E displayname="ИД потока" name="ИД_потока" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible"/>
+			<E displayname="ИД регистратора" name="ИД_регистратора" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false" view="invisible"/>
+			<E name="header" datatype="text" index="false" value="&quot;Отчетность о договорах&quot;
+"/><E name="subheader" datatype="text" index="false" view="invisible"/><E name="ИД_в_ЕИС" datatype="text" index="true" displayname="ИД в ЕИС" view="invisible"/><E name="Изменение" datatype="boolean" index="true" default="0" view="invisible"/><E name="ИД_в_ЕИС_ParentRK" datatype="text" index="true" displayname="ИД_в_ЕИС_ParentRK" view="invisible"/><E name="Фактическая_дата_размещения" datatype="datetime" index="true" displayname="Фактическая дата размещения" required="false" view="invisible"/><E name="Статус" datatype="dictionary(Статусы исполнения,text)" index="true" default="&quot;Подготовка&quot;" edit="textbox"/><S name="Организация_заказчик" displayname="Организация заказчик"><E name="Организация_заказчик_наименование" datatype="longtext" index="true" dictpath="" required="true" displayname="Организация_заказчик_наименование" absettings="&lt;ROOT title=&quot;Организация заказчик&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;False&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" edit="textbox" extype="addressbook" abdata="Name"/><E name="Организация_заказчик" datatype="integer" index="true" displayname="Организация заказчик" required="false" dictpath="" view="invisible" extype="addressbook" abdata="Id"/><E name="Организация_заказчик_ИНН" datatype="text" index="true" displayname="Организация_заказчик_ИНН" extype="addressbook" abdata="INN"/><E name="Организация_заказчик_КПП" datatype="text" index="true" displayname="Организация_заказчик_КПП" extype="addressbook" abdata="KPP"/><E name="Организация_заказчик_ОГРН" datatype="text" index="true" displayname="Организация_заказчик_ОГРН" extype="addressbook" abdata="OGRN"/><E name="Организация_заказчик_адрес" datatype="longtext" index="true" displayname="Организация заказчик адрес"/><E name="Организация_заказчик_ОКОПФ" datatype="text" index="true" displayname="Организация_заказчик_ОКОПФ" extype="addressbook" abdata="OKOPF"/><E name="Организация_заказчик_Телефон" datatype="text" index="true" displayname="Организация_заказчик_Телефон" extype="addressbook" abdata="Телефоны"/><E name="Организация_заказчик_Электронная_почта" datatype="text" index="true" displayname="Организация_заказчик_Электронная_почта" extype="addressbook" abdata="E-mail"/><E name="Организация_заказчик_ОКОПФ_наименование" datatype="text" index="true" displayname="Организация_заказчик_ОКОПФ_наименование" extype="addressbook" abdata="OKOPFName"/><E name="Организация_заказчик_ЕИС" datatype="text" index="true" extype="addressbook" abdata="EISCode223"/></S><S name="Организация_создавшая_отчетность" displayname="Организация_создавшая отчетность"><E name="Организация_создавшая_отчетность_наименование" datatype="longtext" index="true" displayname="Организация_создавшая_отчетность наименование" required="true" dictpath="" edit="textbox" absettings="&lt;ROOT title=&quot;Организатор закупки&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;True&quot; SelectedUser=&quot;True&quot; SelectedGroup=&quot;True&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" extype="addressbook" abdata="Name"/><E name="Организация_создавшая_отчетность" datatype="integer" index="true" displayname="Организация_создавшая_отчетность" required="false" dictpath="" view="invisible" extype="addressbook" abdata="Id"/><E name="Организация_создавшая_отчетность_ИНН" datatype="text" index="true" displayname="Организация_создавшая_отчетность ИНН" extype="addressbook" abdata="INN"/><E name="Организация_создавшая_отчетность_КПП" datatype="text" index="true" displayname="Организация_создавшая_отчетность КПП" extype="addressbook" abdata="KPP"/><E name="Организация_создавшая_отчетность_ОГРН" datatype="text" index="true" displayname="Организация_создавшая_отчетность ОГРН" extype="addressbook" abdata="OGRN"/></S><E name="Тип_отчетности_код" datatype="text" index="true" displayname="Тип отчетности код"/><E name="Тип_отчетности" datatype="text" index="true" displayname="Тип отчетности"/><E name="Период_сведений_с" datatype="date" index="true" displayname="Период_сведений с"/><E name="Период_сведений_по" datatype="date" index="true" displayname="Период сведений по"/><E name="Номер_редакции" datatype="integer" index="true" displayname="Номер редакции" default="1" required="false"/><E name="Количество_договоров" datatype="integer" index="true" displayname="Количество договоров" required="true"/><E name="Стоимость_договоров" datatype="money" index="true" displayname="Стоимость договоров" required="true"/><E name="Количество_договоров_инновационные" datatype="integer" index="true" displayname="Количество договоров инновационные"/><E name="Стоимость_договоров_инновационные" datatype="money" index="true" displayname="Стоимость договоров инновационные"/><E name="Валюта" datatype="dictionary(Валюта(Наименование),text)@Наименование" index="true" dictpath="" required="false" edit="droplist" default="&quot;Российский рубль&quot;"/><E name="Цифровой_код_валюты" datatype="dictionary(Валюта,text)@Цифровой код" index="true" displayname="Цифровой код валюты" dictpath="" required="false" edit="textbox" default="&quot;643&quot;" view="invisible"/><E name="Код_валюты" datatype="dictionary(Валюта,text)" index="true" displayname="Код валюты" dictpath="" required="false" default="&quot;RUB&quot;" view="invisible"/><E name="Обоснование_внесения_изменений" datatype="longtext" index="true" displayname="Обоснование внесения изменений" awindex="true" euflag="7"/><S name="Заказчик_подразделение"><E name="Заказчик_подразделение" datatype="integer" index="true" extype="addressbook" abdata="Id"/><E name="Заказчик_подразделение_наименование" datatype="text" index="true" edit="tool(CallTools.AddressBookTool)" absettings="&lt;ROOT title=&quot;Адресная книга&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/></S><E name="ParentRK" datatype="text" index="true" displayname="ParentRK"/><E name="Актуальность" datatype="boolean" index="true" displayname="Актуальность"/><E name="Год_сведений" datatype="integer" index="true" displayname="Год сведений"/><E name="Месяц_сведений" datatype="text" index="true" displayname="Месяц сведений"/><E name="Месяц_сведений_код" datatype="text" index="true" displayname="Месяц_сведений код"/><E name="Заполнить_автоматически" datatype="boolean" index="true" displayname="Заполнить автоматически"/><A name="Показатели" displayname="Показатели"><S name="S1"><E name="Код_показателя" datatype="text" index="true" displayname="Код показателя"/><E name="Показатель_отчетности" datatype="longtext" index="true" displayname="Показатель отчетности"/><E name="Номер_в_списке" datatype="text" index="true" displayname="Номер в списке"/><E name="Стоимостной_объем" datatype="money" index="true" displayname="Стоимостной объем"/><E name="Количество_договоров" datatype="integer" index="true" displayname="Количество договоров"/><E name="Стоимостной_объем_за_отчетный_год" datatype="real" index="true" displayname="Стоимостной объем за отчетный год"/><E name="Количество_договоров_за_предыдущие_отчетные_периоды" datatype="integer" index="true" displayname="Количество договоров за предыдущие отчетные периоды"/></S></A><A name="Показатели_проценты" displayname="Показатели проценты"><S name="S1"><E name="Показатель_отчетности" datatype="longtext" index="true" displayname="Показатель отчетности"/><E name="Код_показателя" datatype="text" index="true" displayname="Код показателя"/><E name="Номер_в_списке" datatype="text" index="true" displayname="Номер в списке"/><E name="Доля_в_процентах" datatype="real" index="true" displayname="Доля в процентах"/></S></A><A name="Показатели_инновационные" displayname="Показатели инновационные"><S name="S1"><E name="Номер_в_списке" datatype="text" index="true" displayname="Номер_в_списке"/><E name="Показатель_отчетности" datatype="longtext" index="true" displayname="Показатель_отчетности"/><E name="Стоимостной_объем" datatype="money" index="true" displayname="Стоимостной объем"/><E name="Количество_договоров" datatype="integer" index="true" displayname="Количество договоров"/><E name="Доля_закупки" datatype="real" index="true" displayname="Доля закупки"/><E name="Код_показателя" datatype="text" index="true" displayname="Код показателя"/></S></A><A name="Показатели_инновационные_смп" displayname="Показатели инновационные смп"><S name="S1"><E name="Номер_в_списке" datatype="text" index="true" displayname="Номер_в_списке"/><E name="Показатель_отчетности" datatype="longtext" index="true" displayname="Показатель отчетности"/><E name="Стоимостной_объем" datatype="money" index="true" displayname="Стоимостной объем"/><E name="Количество_договоров" datatype="integer" index="true" displayname="Количество договоров"/><E name="Доля_закупки" datatype="real" index="true" displayname="Доля_закупки"/><E name="Код_показателя" datatype="text" index="true" displayname="Код показателя"/></S></A><E name="Предшествующий_период_с" datatype="date" index="true" displayname="Предшествующий период с"/><E name="Предшествующий_период_по" datatype="date" index="true" displayname="Предшествующий_период_по"/><E name="url" datatype="longtext" index="true" displayname="url"/><S name="ГРБС" displayname="ГРБС"><E name="ГРБС_наименование" datatype="longtext" index="true" dictpath="" required="false" displayname="ГРБС_наименование" extype="addressbook" abdata="Name"/><E name="ГРБС" datatype="integer" index="true" displayname="ГРБС" required="false" dictpath="" extype="addressbook" abdata="Id"/></S></S>
+		<S name="Files" use="Files" displayname="Документация">
+			<E name="header" datatype="text" index="false" value="&quot;Документация&quot;"/><E name="subheader" datatype="text" index="false"/></S>
+	</CONTENT_MODEL>
+	<SCRIPT language="VBScript">Dim oTrace
+
+Dim saveCheck
+saveCheck=0
+
+Sub generate_num
+
+'oTrace.Trace " VBCRPT generate_num..."
+
+  Dim rn
+  pref = Data("|Document|Префикс_регномера").Value
+  num = Data("|Document|Число_регномера").Value
+  suf = Data("|Document|Суффикс_регномера").Value
+
+ if Len(num) = 0 then
+'	oTrace.Trace " VBCRPT End generate_num(Нет номера)"
+	Exit Sub
+ end if
+
+  if Len(pref)&gt;0 then
+	rn = CStr(rn) + pref + "-"
+  end if
+  rn = CStr(rn) + CStr(num)
+  if Len(suf)&gt;0 then
+     rn = CStr(rn) + "-" + CStr(suf)
+  end if
+
+    Data("|Document|Регистрационный_номер")=CStr(rn)
+    Exit Sub
+
+'  oTrace.Trace " VBCRPT End generate_num"
+  err_exit:
+  Form.MsgBox err.Description
+End Sub
+    
+
+Sub clear_all_readonly
+'   oTrace.Trace " VBCRPT clear_all_readonly..."
+    Data("|Document|Число_регномера").Attribute("readonly")=""
+'      oTrace.Trace " VBCRPT end clear_all_readonly"
+End Sub
+
+ Sub prepare_completed
+'   oTrace.Trace " VBCRPT prepare_completed..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'   oTrace.Trace " VBCRPT End prepare_completed"
+    End Sub
+
+    Sub prepare_wfclosed
+'    oTrace.Trace " VBCRPT prepare_wfclosed..."
+'    oTrace.Trace " VBCRPT End prepare_wfclosed"
+    End Sub
+
+    Sub prepare_finder
+'    oTrace.Trace " VBCRPT prepare_finder..."
+    clear_all_readonly
+'    oTrace.Trace " VBCRPT End prepare_finder"
+    End Sub
+
+    Sub prepare_registration
+'    oTrace.Trace " VBCRPT prepare_registration..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+'    oTrace.Trace " VBCRPT End prepare_registration"
+    End Sub
+
+    Sub Form_NamedEvent( evt )
+'    oTrace.Trace " VBCRPT Form_NamedEvent..."
+    if evt = "dfmakestrregnum" then
+    generate_num
+    End If
+    if evt = "dfrgmregistration" then
+    prepare_registration
+    End If
+    if evt = "dfrgmfinder" then
+    prepare_finder
+    End If
+    if evt = "dfrgmcompleted" then
+    prepare_completed
+    End If
+    if evt = "dfrgmwfclosed" then
+    prepare_wfclosed
+    End if
+
+
+    if evt="dfpreparestrregnum" then 'началось сохранение документа
+       saveCheck=1
+    end if
+
+    if evt="dfmakestrregnum" then 'закончилось сохранение документа
+       saveCheck=0
+    end if
+
+'   oTrace.Trace " VBCRPT End Form_NamedEvent"
+    End Sub
+
+    if evt="recalculateall" then 'началось сохранение документа
+           Data("|Document|Субподрядчики_из_СМП").Attribute("readonly")="true"
+         Data("|Document|Закупка_в_электронной_форме").Attribute("readonly")="true"
+         Data("|Document|Участник_закупки_СМП").Attribute("readonly")="true"
+    end if
+
+Set ctx = CreateObject("Form.ExecutionContext")
+
+    Sub Form_Load
+'    Set oTrace = CreateObject("TRACE.VBTracer")
+'    oTrace.Trace " VBCRPT End Form_Load" 
+
+    Data("|Document|Субподрядчики_из_СМП").Attribute("readonly")="true"
+    Data("|Document|Закупка_в_электронной_форме").Attribute("readonly")="true"
+    Data("|Document|Участник_закупки_СМП").Attribute("readonly")="true"
+
+    End Sub 
+
+    Sub Form_Unload
+'    oTrace.Trace " VBCRPT Form_Unload..."
+'    Set oTrace = Nothing
+    End Sub
+
+    sub form_FieldDataChanged(field)
+    s = field.Attribute("frm.abstoredata")
+    if s &lt;&gt; "" and field.Value = "" then
+    Set arr = field.Parent(s)
+    if not arr is nothing then
+    arr.RemoveAll
+    end if
+    end if
+
+   ' Документ не сохраняется
+   if saveCheck=0 then
+
+          ' Очистили поле Валюта
+          if field.name = "Валюта" and Len(field.value)=0 then
+                  Data("|Document|Цифровой_код_валюты")= ""
+                  Data("|Document|Код_валюты")= ""
+          end if
+
+          ' Очистили поле Организация_заказчик
+          if field.name = "Организация_заказчик_наименование" and Len(field.value)=0 then
+                  Data("|Document|Организация_заказчик|Организация_заказчик")= ""
+          end if
+
+          ' Очистили поле Организатор_закупки
+          if field.name = "Организатор_закупки_наименование" and Len(field.value)=0 then
+                  Data("|Document|Организатор_закупки|Организатор_закупки")= ""
+          end if
+
+          ' Очистили поле Организация_поставщик
+          if field.name = "Организация_поставщик" and Len(field.value)=0 then
+                  Data("|Document|Организация_поставщик|Организация_поставщик_код")= ""
+                 
+          end if
+
+          if field.name = "Основание_расторжения" and Len(field.value)=0 then
+                  Data("|Document|Расторжение_договора|Основание_расторжения_код")= ""
+          end if
+
+    end if
+
+end sub</SCRIPT>
+	<plugins>
+		<restriction displayname="Генерация номера" progid="Euphfrm.RegNumGenerator" root="" initstring="">
+			<arg role="numberdoc" path="|S|Число_регномера"/>
+			<arg role="flow" path="|S|ИД_потока"/>
+			<arg role="regnum" path="|S|Регистрационный_номер"/>
+			<checkentry type="onevent" param="dfgenerateregnum" action="error"/>
+		</restriction>
+		<dictionary name="Тип связки" progid="FrmTools.DictSource" inittime="once" initstring="stored:Тип связки"/><dictionary name="Организации" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации" view=""/><dictionary name="Статусы договора" progid="FrmTools.DictSource" inittime="once" initstring="stored:Статусы договора"/><dictionary name="Основания расторжения договора" progid="FrmTools.DictSource" inittime="field" initstring="stored:Основания расторжения договора"/><dictionary name="Валюта" progid="FrmTools.DictSource" inittime="field" initstring="stored:Валюта" view=""/><dictionary name="Контрагенты" progid="FrmTools.DictSource" inittime="field" initstring="stored:Контрагенты"/><dictionary name="ОКЕИ" progid="FrmTools.DictSource" inittime="field" initstring="stored:ОКЕИ"/><dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики"/><dictionary name="Статусы исполнения" progid="FrmTools.DictSource" inittime="once" initstring="stored:Статусы исполнения"/><dictionary name="Тип документа об исполнении" progid="FrmTools.DictSource" inittime="field" initstring="stored:Тип документа об исполнении"/></plugins>
+</FORM_DESCRIPTION>

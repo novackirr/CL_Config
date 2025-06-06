@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Коды регионов(СберАСТ)" Type="1">
+  <Items>
+    <Dictionary Name="Коды регионов(СберАСТ)">
+      <Attributes>
+        <Attribute Name="Код" />
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1166" ParentGuid="" Guid="7ce0e100-6e0c-4b3a-b0b5-c24e18642c86">
+          <DataAttributes>
+            <DataAttribute Name="Код">22</DataAttribute>
+            <DataAttribute Name="Наименование">Алтайский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1172" ParentGuid="" Guid="3d88def4-c6ff-41cd-9e44-69dd88370540">
+          <DataAttributes>
+            <DataAttribute Name="Код">28</DataAttribute>
+            <DataAttribute Name="Наименование">Амурская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1173" ParentGuid="" Guid="eebe0f80-840d-41b2-93d0-20f87236e40a">
+          <DataAttributes>
+            <DataAttribute Name="Код">29</DataAttribute>
+            <DataAttribute Name="Наименование">Архангельская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1174" ParentGuid="" Guid="33c4bb14-5e53-41cd-a968-a84e15110d43">
+          <DataAttributes>
+            <DataAttribute Name="Код">30</DataAttribute>
+            <DataAttribute Name="Наименование">Астраханская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="68319" ParentGuid="" Guid="707ed497-f155-4599-a306-b1151b4709b2">
+          <DataAttributes>
+            <DataAttribute Name="Код">99</DataAttribute>
+            <DataAttribute Name="Наименование">Байконур</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1175" ParentGuid="" Guid="edc47812-f4ab-4e80-80b5-624abc93136b">
+          <DataAttributes>
+            <DataAttribute Name="Код">31</DataAttribute>
+            <DataAttribute Name="Наименование">Белгородская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1176" ParentGuid="" Guid="6f70c597-1b82-4c4b-a22b-0995d8d4cdef">
+          <DataAttributes>
+            <DataAttribute Name="Код">32</DataAttribute>
+            <DataAttribute Name="Наименование">Брянская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1177" ParentGuid="" Guid="6a6b5ea0-3298-4e24-924b-3879a6265659">
+          <DataAttributes>
+            <DataAttribute Name="Код">33</DataAttribute>
+            <DataAttribute Name="Наименование">Владимирская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1178" ParentGuid="" Guid="a34be402-cc95-4f4a-addf-00e816bf1353">
+          <DataAttributes>
+            <DataAttribute Name="Код">34</DataAttribute>
+            <DataAttribute Name="Наименование">Волгоградская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1179" ParentGuid="" Guid="6749c582-519d-4201-bbf7-687e7712f1af">
+          <DataAttributes>
+            <DataAttribute Name="Код">35</DataAttribute>
+            <DataAttribute Name="Наименование">Вологодская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1180" ParentGuid="" Guid="79ef5ac1-ea6c-44d6-b8fa-da61c96bd5b8">
+          <DataAttributes>
+            <DataAttribute Name="Код">36</DataAttribute>
+            <DataAttribute Name="Наименование">Воронежская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1223" ParentGuid="" Guid="0d675145-94bc-42f9-a679-4bf4190d0157">
+          <DataAttributes>
+            <DataAttribute Name="Код">79</DataAttribute>
+            <DataAttribute Name="Наименование">Еврейская автономная область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1219" ParentGuid="" Guid="d10b98f2-a733-4a50-a436-7b20264401e7">
+          <DataAttributes>
+            <DataAttribute Name="Код">75</DataAttribute>
+            <DataAttribute Name="Наименование">Забайкальский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1181" ParentGuid="" Guid="8ca18833-1bdc-4940-9a03-bf66b0a080ed">
+          <DataAttributes>
+            <DataAttribute Name="Код">37</DataAttribute>
+            <DataAttribute Name="Наименование">Ивановская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1182" ParentGuid="" Guid="c28329a7-6555-4c4e-aeaa-9c1fc52d51ce">
+          <DataAttributes>
+            <DataAttribute Name="Код">38</DataAttribute>
+            <DataAttribute Name="Наименование">Иркутская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1151" ParentGuid="" Guid="52ea3da9-b5d2-43fa-a5e6-4c614649516a">
+          <DataAttributes>
+            <DataAttribute Name="Код">7</DataAttribute>
+            <DataAttribute Name="Наименование">Кабардино-Балкарская Республика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1183" ParentGuid="" Guid="b6705893-b404-4459-a230-f11a68e47ff6">
+          <DataAttributes>
+            <DataAttribute Name="Код">39</DataAttribute>
+            <DataAttribute Name="Наименование">Калининградская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1184" ParentGuid="" Guid="8b409482-39ca-42b2-9999-ec62ac1c10d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">40</DataAttribute>
+            <DataAttribute Name="Наименование">Калужская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1185" ParentGuid="" Guid="f070591a-7ffd-4b85-bfaa-3dd0b715b16b">
+          <DataAttributes>
+            <DataAttribute Name="Код">41</DataAttribute>
+            <DataAttribute Name="Наименование">Камчатский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1153" ParentGuid="" Guid="b775b759-971c-488d-ae1d-b03ba0f348e8">
+          <DataAttributes>
+            <DataAttribute Name="Код">9</DataAttribute>
+            <DataAttribute Name="Наименование">Карачаево-Черкесская Республика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1186" ParentGuid="" Guid="9923ae74-62e4-4fa9-a906-336a3173b185">
+          <DataAttributes>
+            <DataAttribute Name="Код">42</DataAttribute>
+            <DataAttribute Name="Наименование">Кемеровская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1187" ParentGuid="" Guid="a0a36994-4cb3-427a-a90c-b161b61a88bf">
+          <DataAttributes>
+            <DataAttribute Name="Код">43</DataAttribute>
+            <DataAttribute Name="Наименование">Кировская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1188" ParentGuid="" Guid="c56746b4-28e4-489f-9ac5-76557375029a">
+          <DataAttributes>
+            <DataAttribute Name="Код">44</DataAttribute>
+            <DataAttribute Name="Наименование">Костромская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1167" ParentGuid="" Guid="f3df6e33-8f3d-4c78-b468-7d74b091c722">
+          <DataAttributes>
+            <DataAttribute Name="Код">23</DataAttribute>
+            <DataAttribute Name="Наименование">Краснодарский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1168" ParentGuid="" Guid="2c60128a-88c5-4077-810c-0f2a81aa8901">
+          <DataAttributes>
+            <DataAttribute Name="Код">24</DataAttribute>
+            <DataAttribute Name="Наименование">Красноярский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1189" ParentGuid="" Guid="ecaa5e1d-8a24-46e6-a64e-ce8adb0b3954">
+          <DataAttributes>
+            <DataAttribute Name="Код">45</DataAttribute>
+            <DataAttribute Name="Наименование">Курганская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1190" ParentGuid="" Guid="182bd1cd-f27a-45a2-9c9e-0d6f0d78f9d2">
+          <DataAttributes>
+            <DataAttribute Name="Код">46</DataAttribute>
+            <DataAttribute Name="Наименование">Курская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1191" ParentGuid="" Guid="3c275e0c-b46d-46cb-bc5a-bac850798ed1">
+          <DataAttributes>
+            <DataAttribute Name="Код">47</DataAttribute>
+            <DataAttribute Name="Наименование">Ленинградская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1192" ParentGuid="" Guid="7310a75a-644c-4630-a0f3-94d6561073aa">
+          <DataAttributes>
+            <DataAttribute Name="Код">48</DataAttribute>
+            <DataAttribute Name="Наименование">Липецкая область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1193" ParentGuid="" Guid="14b114e4-d9c5-4922-b821-0e732416ea36">
+          <DataAttributes>
+            <DataAttribute Name="Код">49</DataAttribute>
+            <DataAttribute Name="Наименование">Магаданская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1221" ParentGuid="" Guid="f9acb20b-6cc1-48a6-8c41-c1fe95712699">
+          <DataAttributes>
+            <DataAttribute Name="Код">77</DataAttribute>
+            <DataAttribute Name="Наименование">Москва</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1194" ParentGuid="" Guid="13319e5b-e6fb-4c3b-a702-62e7b2bd0542">
+          <DataAttributes>
+            <DataAttribute Name="Код">50</DataAttribute>
+            <DataAttribute Name="Наименование">Московская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1195" ParentGuid="" Guid="5c9e6b8e-848a-47f9-b54b-be4140531e40">
+          <DataAttributes>
+            <DataAttribute Name="Код">51</DataAttribute>
+            <DataAttribute Name="Наименование">Мурманская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1226" ParentGuid="" Guid="6110f7d0-fbd4-49a0-b14d-d07810c8b278">
+          <DataAttributes>
+            <DataAttribute Name="Код">83</DataAttribute>
+            <DataAttribute Name="Наименование">Ненецкий автономный округ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1196" ParentGuid="" Guid="9fdb62ad-734c-47a9-86d5-a5b121d4b290">
+          <DataAttributes>
+            <DataAttribute Name="Код">52</DataAttribute>
+            <DataAttribute Name="Наименование">Нижегородская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1197" ParentGuid="" Guid="fbf39331-cf35-49b3-b40d-db182cf632de">
+          <DataAttributes>
+            <DataAttribute Name="Код">53</DataAttribute>
+            <DataAttribute Name="Наименование">Новгородская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1198" ParentGuid="" Guid="18669f5f-40f0-4026-aa0d-e803247ba4ef">
+          <DataAttributes>
+            <DataAttribute Name="Код">54</DataAttribute>
+            <DataAttribute Name="Наименование">Новосибирская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1199" ParentGuid="" Guid="34d77057-ea5c-419d-bccb-67a44fdb27d5">
+          <DataAttributes>
+            <DataAttribute Name="Код">55</DataAttribute>
+            <DataAttribute Name="Наименование">Омская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1200" ParentGuid="" Guid="80078c96-7909-4be9-9ff5-bf0db027bc26">
+          <DataAttributes>
+            <DataAttribute Name="Код">56</DataAttribute>
+            <DataAttribute Name="Наименование">Оренбургская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1201" ParentGuid="" Guid="c06a3086-0ca3-4da3-b02c-779fd80da71c">
+          <DataAttributes>
+            <DataAttribute Name="Код">57</DataAttribute>
+            <DataAttribute Name="Наименование">Орловская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1202" ParentGuid="" Guid="51b73153-b0c0-47f4-84bc-7243992bd920">
+          <DataAttributes>
+            <DataAttribute Name="Код">58</DataAttribute>
+            <DataAttribute Name="Наименование">Пензенская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1203" ParentGuid="" Guid="73a466e0-7d8e-4c68-af64-bd564d70fffc">
+          <DataAttributes>
+            <DataAttribute Name="Код">59</DataAttribute>
+            <DataAttribute Name="Наименование">Пермский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1169" ParentGuid="" Guid="40c14da5-1ebb-44ce-991e-a79e69cc4ff5">
+          <DataAttributes>
+            <DataAttribute Name="Код">25</DataAttribute>
+            <DataAttribute Name="Наименование">Приморский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1204" ParentGuid="" Guid="9bb38142-e207-47bd-8ec4-c308d46ad8c8">
+          <DataAttributes>
+            <DataAttribute Name="Код">60</DataAttribute>
+            <DataAttribute Name="Наименование">Псковская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1145" ParentGuid="" Guid="bf5b75ee-4a7d-4e09-96df-7a017beea341">
+          <DataAttributes>
+            <DataAttribute Name="Код">1</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Адыгея (Адыгея)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1148" ParentGuid="" Guid="a5c0f426-bf4c-43ab-aa15-65c6be45fa3d">
+          <DataAttributes>
+            <DataAttribute Name="Код">4</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Алтай</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1146" ParentGuid="" Guid="8fe1b689-5e08-46fb-a91b-f1e4c988264e">
+          <DataAttributes>
+            <DataAttribute Name="Код">2</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Башкортостан</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1147" ParentGuid="" Guid="d97b14c1-f072-4792-b57d-94b2e07c67b5">
+          <DataAttributes>
+            <DataAttribute Name="Код">3</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Бурятия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1149" ParentGuid="" Guid="bf79838f-8a5a-4e7d-8595-1c7a52fbc23e">
+          <DataAttributes>
+            <DataAttribute Name="Код">5</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Дагестан</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1150" ParentGuid="" Guid="1e9ffddd-ab0d-45b6-b73e-5425c81aa0d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">6</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Ингушетия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1152" ParentGuid="" Guid="ffb5371d-b6da-4515-95ec-9cb03fa0be2e">
+          <DataAttributes>
+            <DataAttribute Name="Код">8</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Калмыкия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1154" ParentGuid="" Guid="f1e2f8e7-820a-4f1d-a9f0-ee1b8d328bfa">
+          <DataAttributes>
+            <DataAttribute Name="Код">10</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Карелия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1155" ParentGuid="" Guid="c33447d3-139d-48ed-8ea6-638bd56da723">
+          <DataAttributes>
+            <DataAttribute Name="Код">11</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Коми</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="73305" ParentGuid="" Guid="159566d8-a70d-492d-baea-d8b50f07d118">
+          <DataAttributes>
+            <DataAttribute Name="Код">91</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Крым</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1156" ParentGuid="" Guid="ec6d6716-c3b2-4d5a-aecd-cabddbdb4ca8">
+          <DataAttributes>
+            <DataAttribute Name="Код">12</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Марий Эл</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1157" ParentGuid="" Guid="810716f1-d3f0-4bb6-819f-bfd27a096631">
+          <DataAttributes>
+            <DataAttribute Name="Код">13</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Мордовия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1158" ParentGuid="" Guid="3f4b3b23-b0c8-4ff9-a23e-a3cd2d268dee">
+          <DataAttributes>
+            <DataAttribute Name="Код">14</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Саха (Якутия)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1159" ParentGuid="" Guid="d94e93e0-434f-4f78-affa-85235967edf4">
+          <DataAttributes>
+            <DataAttribute Name="Код">15</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Северная Осетия - Алания</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1160" ParentGuid="" Guid="b0e0b9b2-3048-40d5-9334-2f0ea2b011e8">
+          <DataAttributes>
+            <DataAttribute Name="Код">16</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Татарстан (Татарстан)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1161" ParentGuid="" Guid="72493c7c-6cff-417d-a931-137a9d2907b1">
+          <DataAttributes>
+            <DataAttribute Name="Код">17</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Тыва</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1163" ParentGuid="" Guid="aaba95ab-e121-4a91-975b-a8d2174f3caf">
+          <DataAttributes>
+            <DataAttribute Name="Код">19</DataAttribute>
+            <DataAttribute Name="Наименование">Республика Хакасия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1205" ParentGuid="" Guid="b752e46b-4cf5-4966-af70-a43c96428a96">
+          <DataAttributes>
+            <DataAttribute Name="Код">61</DataAttribute>
+            <DataAttribute Name="Наименование">Ростовская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1206" ParentGuid="" Guid="d7d7bd10-5a3b-493c-99cd-37e9d6d94d18">
+          <DataAttributes>
+            <DataAttribute Name="Код">62</DataAttribute>
+            <DataAttribute Name="Наименование">Рязанская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1207" ParentGuid="" Guid="806c8609-72ad-48de-aaeb-3cfe99096cb2">
+          <DataAttributes>
+            <DataAttribute Name="Код">63</DataAttribute>
+            <DataAttribute Name="Наименование">Самарская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1222" ParentGuid="" Guid="78b9ced2-2aab-42bc-8093-dc87d88a126c">
+          <DataAttributes>
+            <DataAttribute Name="Код">78</DataAttribute>
+            <DataAttribute Name="Наименование">Санкт-Петербург</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1208" ParentGuid="" Guid="6eaa134a-9a5b-478e-93b6-66baaa5b7c2b">
+          <DataAttributes>
+            <DataAttribute Name="Код">64</DataAttribute>
+            <DataAttribute Name="Наименование">Саратовская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1209" ParentGuid="" Guid="a7cef09c-ab72-4106-a0e3-d8fabc3802a7">
+          <DataAttributes>
+            <DataAttribute Name="Код">65</DataAttribute>
+            <DataAttribute Name="Наименование">Сахалинская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1210" ParentGuid="" Guid="8521fdfa-a734-4dbe-bb42-cfa1367ead1b">
+          <DataAttributes>
+            <DataAttribute Name="Код">66</DataAttribute>
+            <DataAttribute Name="Наименование">Свердловская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="85263" ParentGuid="" Guid="94a29b51-91bb-49b6-b421-8a018c91c256">
+          <DataAttributes>
+            <DataAttribute Name="Код">92</DataAttribute>
+            <DataAttribute Name="Наименование">Севастополь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1211" ParentGuid="" Guid="9c0a7890-096d-4bcf-a4d3-bb35935742db">
+          <DataAttributes>
+            <DataAttribute Name="Код">67</DataAttribute>
+            <DataAttribute Name="Наименование">Смоленская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1170" ParentGuid="" Guid="319459cc-968e-4501-9bdf-60e879838d70">
+          <DataAttributes>
+            <DataAttribute Name="Код">26</DataAttribute>
+            <DataAttribute Name="Наименование">Ставропольский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1212" ParentGuid="" Guid="8a977ac4-4cd0-4d5f-8deb-e0a2132d6845">
+          <DataAttributes>
+            <DataAttribute Name="Код">68</DataAttribute>
+            <DataAttribute Name="Наименование">Тамбовская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1213" ParentGuid="" Guid="ee0d0e72-0d08-4cb9-95c1-7067843c931a">
+          <DataAttributes>
+            <DataAttribute Name="Код">69</DataAttribute>
+            <DataAttribute Name="Наименование">Тверская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1214" ParentGuid="" Guid="2627ecd5-c225-4e1d-b0df-d141006e4945">
+          <DataAttributes>
+            <DataAttribute Name="Код">70</DataAttribute>
+            <DataAttribute Name="Наименование">Томская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1215" ParentGuid="" Guid="16af8ead-3fe9-4209-9edc-2e7c651e1b46">
+          <DataAttributes>
+            <DataAttribute Name="Код">71</DataAttribute>
+            <DataAttribute Name="Наименование">Тульская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1216" ParentGuid="" Guid="ffb9f2a1-771a-4216-8cfe-393cc9ec5748">
+          <DataAttributes>
+            <DataAttribute Name="Код">72</DataAttribute>
+            <DataAttribute Name="Наименование">Тюменская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1162" ParentGuid="" Guid="53ec3fb4-98d1-4d0f-8c3d-c6427fea656e">
+          <DataAttributes>
+            <DataAttribute Name="Код">18</DataAttribute>
+            <DataAttribute Name="Наименование">Удмуртская Республика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1217" ParentGuid="" Guid="f701fc77-3372-4596-8aba-e89f63fbfd77">
+          <DataAttributes>
+            <DataAttribute Name="Код">73</DataAttribute>
+            <DataAttribute Name="Наименование">Ульяновская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1171" ParentGuid="" Guid="b16a971c-d5e0-4d3d-8bb5-b7f28b839b55">
+          <DataAttributes>
+            <DataAttribute Name="Код">27</DataAttribute>
+            <DataAttribute Name="Наименование">Хабаровский край</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1228" ParentGuid="" Guid="d4064213-d49d-49ab-9b2e-4e3a19718a38">
+          <DataAttributes>
+            <DataAttribute Name="Код">86</DataAttribute>
+            <DataAttribute Name="Наименование">Ханты-Мансийский автономный округ - Югра</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1218" ParentGuid="" Guid="c560ddb1-e543-4224-ac31-226a3bb2104d">
+          <DataAttributes>
+            <DataAttribute Name="Код">74</DataAttribute>
+            <DataAttribute Name="Наименование">Челябинская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1164" ParentGuid="" Guid="11097aac-bbf0-48ed-825a-64ff67adf2d3">
+          <DataAttributes>
+            <DataAttribute Name="Код">20</DataAttribute>
+            <DataAttribute Name="Наименование">Чеченская Республика</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1165" ParentGuid="" Guid="c590c15c-b308-4a4e-8b63-0f3c614e149c">
+          <DataAttributes>
+            <DataAttribute Name="Код">21</DataAttribute>
+            <DataAttribute Name="Наименование">Чувашская Республика - Чувашия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1229" ParentGuid="" Guid="6a82169b-3a58-4489-81a3-173270471c83">
+          <DataAttributes>
+            <DataAttribute Name="Код">87</DataAttribute>
+            <DataAttribute Name="Наименование">Чукотский автономный округ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1230" ParentGuid="" Guid="97de642c-8368-4bfe-a911-804d245705c5">
+          <DataAttributes>
+            <DataAttribute Name="Код">89</DataAttribute>
+            <DataAttribute Name="Наименование">Ямало-Ненецкий автономный округ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1220" ParentGuid="" Guid="24fb491b-6614-4bed-959a-8b957d092f6a">
+          <DataAttributes>
+            <DataAttribute Name="Код">76</DataAttribute>
+            <DataAttribute Name="Наименование">Ярославская область</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

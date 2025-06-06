@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Ставки НДС" Type="0">
+  <Items>
+    <Dictionary Name="Ставки НДС">
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="" />
+        <Data Name="10" ParentGuid="" Guid="" />
+        <Data Name="18" ParentGuid="" Guid="" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

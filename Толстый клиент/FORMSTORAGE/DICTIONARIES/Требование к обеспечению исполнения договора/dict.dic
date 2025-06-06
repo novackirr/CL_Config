@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Требование к обеспечению исполнения договора" Type="0">
+  <Items>
+    <Dictionary Name="Требование к обеспечению исполнения договора">
+      <DataCollection>
+        <Data Name="Требование установлено" ParentGuid="" Guid="b5977c95-fea6-488c-bb95-c651df861a24" />
+        <Data Name="Требование не установлено" ParentGuid="" Guid="39a17b7d-0aeb-4e30-a776-1997e2665006" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

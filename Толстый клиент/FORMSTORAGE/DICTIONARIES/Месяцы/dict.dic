@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Месяцы" Type="0">
+  <Items>
+    <Dictionary Name="Месяцы">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="d3324da6-6aec-46c9-b989-f6a33abd34cf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Январь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="5f56cc9f-b1e1-497d-b004-a72f230b746f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Февраль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="98420d25-2366-4884-8ce1-94bb75c6ae37">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Март</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="7332eab3-215f-482b-af8a-33885936ce77">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Апрель</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="5581028c-6177-4439-95c0-4096397fa2e2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Май</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="6" ParentGuid="" Guid="8f941b7b-505d-4aa7-b7ae-446d9ac083c5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Июнь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="7" ParentGuid="" Guid="b3f14d2f-93ff-4784-9b59-9b8e0f988944">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Июль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="8" ParentGuid="" Guid="96d0d379-85bc-4acf-8197-a85641d95ecc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Август</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="9" ParentGuid="" Guid="3c361d2f-4b74-48b1-b8d1-d66b8ac35525">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сентябрь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="10" ParentGuid="" Guid="c761ff3c-01a1-4434-a951-0b85308394fd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Октябрь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="11" ParentGuid="" Guid="18f5d26f-c129-454b-b4f3-939cb332df0d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ноябрь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="12" ParentGuid="" Guid="2ff8243d-6652-44cc-8fbc-aa090834e9eb">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Декабрь</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

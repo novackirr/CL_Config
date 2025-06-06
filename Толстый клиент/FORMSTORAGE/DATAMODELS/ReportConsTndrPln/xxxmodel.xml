@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportConsTndrPln">
+	<CONTENT_MODEL use="ReportPlan" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible" required=""/>
+		<E name="Год" datatype="integer" index="false" default="year(nowdate())" required="false" displayname="Год"/>
+		<E name="Организация_заказчик_наименование" datatype="longtext" index="false" dictpath="" edit="textbox,tool(CallTools.AddressBookTool)" required="false" displayname="" absettings="&lt;ROOT title=&quot;Организация заказчик&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;"/>
+		<E name="Организация_заказчик_ИНН" datatype="text" index="true" displayname="Организация_заказчик_ИНН"/>
+		<E name="Организация_заказчик" datatype="integer" index="true" displayname="Организация_заказчик" view="invisible" required="false" dictpath="" extype="addressbook" abdata="Id" edit="textbox,tool(CallTools.AddressBookTool)"/>
+		<E name="ГРБС" datatype="integer" index="true" displayname="ГРБС" view="invisible"/><E name="ГРБС_наименование" datatype="longtext" index="true" displayname="ГРБС наименование"/></CONTENT_MODEL>
+	<plugins>
+		<dictionary name="Организации" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации"/>
+		<dictionary name="Организации заказчики" progid="FrmTools.DictSource" inittime="field" initstring="stored:Организации заказчики"/></plugins>
+</FORM_DESCRIPTION>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Единицы измерения" Type="0">
+  <Items>
+    <Dictionary Name="Единицы измерения">
+      <Attributes>
+        <Attribute Name="Условное обозначение" />
+        <Attribute Name="Коды единиц измерения" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="Килограмм" ParentGuid="" Guid="5d24b6ec-c578-432d-9cee-e7d305aed309">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">кг</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">166</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Брутто-регистровая тонна (2,8316 м)" ParentGuid="" Guid="4d63d5d9-6b9b-4c41-8745-424aaaa7feda">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">БРТ</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">181</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Грамм" ParentGuid="" Guid="ce2d3a15-a4d3-4692-a37c-e695c96a56ee">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">г</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">163</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Грамм делящихся изотопов" ParentGuid="" Guid="02ae9ecc-80fd-4bfd-a1eb-d98b3fbe9914">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">г Д/И</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">306</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Грузоподъемность в тоннах" ParentGuid="" Guid="0c6f28a0-2473-43ea-bf2f-2560683aab39">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">т грп</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">185</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Квадратный метр" ParentGuid="" Guid="ea037dd5-eb5c-4800-b670-e1b5de95e8c1">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">м2</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">55</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Килограмм азота" ParentGuid="" Guid="a6f87c9b-fb89-48c3-b2ae-128899999dfb">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">кгN</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">861</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Килограмм гидроксида натрия" ParentGuid="" Guid="9eea0249-1797-407a-bfb8-b1d81cbfb894">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">кг NaOH</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">863</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Килограмм оксида калия" ParentGuid="" Guid="d3403e46-8004-4963-85b7-acb6a6c21877">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">кг K2O</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">852</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="Килограмм пероксида водорода " ParentGuid="" Guid="491001f3-3ab8-4110-b9e4-7e32908af62b">
+          <DataAttributes>
+            <DataAttribute Name="Условное обозначение">кг H2O2</DataAttribute>
+            <DataAttribute Name="Коды единиц измерения">841</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

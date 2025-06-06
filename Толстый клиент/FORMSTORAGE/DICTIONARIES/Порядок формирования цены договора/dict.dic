@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Порядок формирования цены договора" Type="0">
+  <Items>
+    <Dictionary Name="Порядок формирования цены договора">
+      <DataCollection>
+        <Data Name="Цены уже заключенных договоров" ParentGuid="" Guid="868f714b-80ff-4d2a-bc2d-21b8fff26390" />
+        <Data Name="Сопоставление рыночных цен (анализ рынка)" ParentGuid="" Guid="8123fee3-7b08-482f-96e6-4d1255538397" />
+        <Data Name="Мониторинг каталожных цен и информационно-справочных материалов" ParentGuid="" Guid="412343ce-57a3-460e-806c-ca7fbe7c4a9a" />
+        <Data Name="Проектно-сметный" ParentGuid="" Guid="f0e4e62d-33b8-4e05-a703-794e250c2516" />
+        <Data Name="Прочие" ParentGuid="" Guid="7aade413-9692-4908-95fc-7ae268f35138" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

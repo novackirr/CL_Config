@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="ВалютаСбер" Type="1">
+  <Items>
+    <Dictionary Name="ВалютаСбер">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="Цифровой код" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="RUB" ParentGuid="" Guid="17e83c5f-2cdc-4477-ba8c-ca0f92fef820">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Российский рубль</DataAttribute>
+            <DataAttribute Name="Цифровой код">50</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="EUR" ParentGuid="" Guid="59a02a70-c2ce-4afc-bc57-d15dea312c3c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Евро</DataAttribute>
+            <DataAttribute Name="Цифровой код">48881</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="USD" ParentGuid="" Guid="db4dcb9b-8c1b-41a5-93da-0162796d1296">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар США</DataAttribute>
+            <DataAttribute Name="Цифровой код">48882</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="RUBPRC" ParentGuid="" Guid="7a5c9fa1-5108-4f83-9703-42c67a3280bc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Процент (%)</DataAttribute>
+            <DataAttribute Name="Цифровой код">92984</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="JPY" ParentGuid="" Guid="a85d1969-cabf-4844-b423-1e45758159b9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Японская иена</DataAttribute>
+            <DataAttribute Name="Цифровой код">525336</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="UAH" ParentGuid="" Guid="250ba309-f47a-432e-81b4-1156554a58cd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Украинская гривна</DataAttribute>
+            <DataAttribute Name="Цифровой код">525372</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="INR" ParentGuid="" Guid="d038591f-eae6-4baf-99f3-100b38b75fa5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Индийская рупия</DataAttribute>
+            <DataAttribute Name="Цифровой код">525373</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GBP" ParentGuid="" Guid="abbab90b-cbba-42c0-9910-4f9e9a432f94">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Фунт стерлингов Соединенного королевства</DataAttribute>
+            <DataAttribute Name="Цифровой код">525374</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CHF" ParentGuid="" Guid="84ffd806-ea7c-4988-ac3f-97ad83bb4bf6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Швейцарский франк</DataAttribute>
+            <DataAttribute Name="Цифровой код">525375</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CNY" ParentGuid="" Guid="2c2bb69c-20c8-412a-8990-a5e39a9f5b02">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Китайский юань</DataAttribute>
+            <DataAttribute Name="Цифровой код">525376</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

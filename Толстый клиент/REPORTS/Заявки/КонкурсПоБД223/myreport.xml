@@ -1,0 +1,2850 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <ЕВФРАТ Ref="2" type="Stimulsoft.Report.Dictionary.StiPostgreSQLDatabase" isKey="true">
+        <Alias>EDO</Alias>
+        <ConnectionStringEncrypted>4yD5SFtduv17E12NY/BiF9VW9etPWVt16VuhzPQBInv1aGlM5lHTvGJ42RjqPXd/gNR3TFxoGvVFbbm9aljoF9LIZQhbTEOVRhWohekd9XP/eMGjTXRCde9NOaXloKRGwsjZwlto+4jzZ+UIYQklE+oY2cvGVHNZbBWlhE49aUaQWs0sWUp51cB7uWxj</ConnectionStringEncrypted>
+        <Name>ЕВФРАТ</Name>
+      </ЕВФРАТ>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <Заявка Ref="3" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Заявка</Alias>
+        <Columns isList="true" count="327">
+          <value>Key,System.Int32</value>
+          <value>ИД_последний_редактор,System.String</value>
+          <value>Имя_последний_редактор,System.String</value>
+          <value>Document_Регистрационный_номер,System.String</value>
+          <value>Document_Префикс_регномера,System.String</value>
+          <value>Document_Число_регномера,System.Int32</value>
+          <value>Document_Суффикс_регномера,System.String</value>
+          <value>Document_Дата_регистрации,System.DateTime</value>
+          <value>Document_Вид_документа,System.String</value>
+          <value>Document_Краткое_содержание,System.String</value>
+          <value>Document_Имя_потока,System.String</value>
+          <value>Document_ИД_потока,System.Int32</value>
+          <value>Document_ИД_регистратора,System.Int32</value>
+          <value>Document_header,System.String</value>
+          <value>Document_subheader,System.String</value>
+          <value>Document_Статус,System.String</value>
+          <value>Document_ИД_извещения,System.String</value>
+          <value>Document_ИД_позиции_плана,System.String</value>
+          <value>Document_ИД_в_ЕИС,System.String</value>
+          <value>Document_Номер_извещения,System.String</value>
+          <value>Document_Номер_лота_в_извещении,System.Int32</value>
+          <value>Document_Номер_извещения_в_ЕИС,System.String</value>
+          <value>Document_Номер_плана_в_ЕИС,System.String</value>
+          <value>Document_Изменение,System.Int32</value>
+          <value>Document_Сведения_о_НМЦ,System.String</value>
+          <value>Document_Минимально_необход_000,System.String</value>
+          <value>Document_Участник_закупки_СМП,System.Int32</value>
+          <value>Document_Закупка_не_учитывается,System.Int32</value>
+          <value>Document_Фактическая_дата_р_000,System.DateTime</value>
+          <value>Document_Способ_закупки,System.String</value>
+          <value>Document_Закупка_в_электрон_000,System.Int32</value>
+          <value>Document_Дата_признания_нес_000,System.DateTime</value>
+          <value>Document_Дополнительные_све_000,System.String</value>
+          <value>Document_Субподрядчики_из_СМП,System.Int32</value>
+          <value>Document_Год_закупки,System.String</value>
+          <value>Document_Название_закупки,System.String</value>
+          <value>Document_Обеспечение_заявки,System.Int32</value>
+          <value>Document_Размер_обеспечения_000,System.String</value>
+          <value>Document_Предоставление_бан_000,System.Int32</value>
+          <value>Document_Обеспечение_исполн_000,System.Int32</value>
+          <value>Document_Размер_обеспечения_001,System.String</value>
+          <value>Document_Обеспечение_возвра_000,System.Int32</value>
+          <value>Document_Размер_обеспечения_002,System.Double</value>
+          <value>Document_Предоставление_обе_000,System.String</value>
+          <value>Document_Предоставление_обе_001,System.String</value>
+          <value>Document_Причина_признания__000,System.String</value>
+          <value>Document_Номер_извещения_на_ЭТП,System.String</value>
+          <value>Document_ИД_в_ЕИС_изменение,System.String</value>
+          <value>Document_Наименование_лота,System.String</value>
+          <value>Document_НМЦ_без_НДС,System.Double</value>
+          <value>Document_НМЦ_с_НДС,System.Double</value>
+          <value>Document_Валюта,System.String</value>
+          <value>Document_Цифровой_код_валюты,System.String</value>
+          <value>Document_Код_валюты,System.String</value>
+          <value>Document_Инновационная_прод_000,System.Int32</value>
+          <value>Document_Вид_закупки,System.String</value>
+          <value>Document_Цена_закупки_в_тек_000,System.Double</value>
+          <value>Document_Цена_закупки_сниже_000,System.Double</value>
+          <value>Document_Код_вида_деятельности,System.String</value>
+          <value>Document_Вид_закупаемой_про_000,System.String</value>
+          <value>Document_Источник_финансиро_000,System.String</value>
+          <value>Document_Номер_лота,System.String</value>
+          <value>Document_Номер_закупки,System.String</value>
+          <value>Document_Организация_заказч_000,System.String</value>
+          <value>Document_Организация_заказч_001,System.String</value>
+          <value>Document_Подразделение_иниц_000,System.String</value>
+          <value>Document_Подразделение_иниц_001,System.String</value>
+          <value>Document_Плановая_дата_нача_000,System.DateTime</value>
+          <value>Document_Плановая_дата_окон_000,System.DateTime</value>
+          <value>Document_Плановая_дата_закл_000,System.DateTime</value>
+          <value>Document_Плановая_дата_подв_000,System.DateTime</value>
+          <value>Document_Плановая_дата_разм_000,System.DateTime</value>
+          <value>Document_Документ_основание_000,System.String</value>
+          <value>Document_Примечание_ИПР,System.String</value>
+          <value>Document_Экспертная_комисси_000,System.String</value>
+          <value>Document_Номер_позиции_плана,System.Int32</value>
+          <value>Document_ОКАТО,System.String</value>
+          <value>Document_Регион,System.String</value>
+          <value>Document_Объем_поставки,System.String</value>
+          <value>Document_Условия_поставки,System.String</value>
+          <value>Document_Место_поставки,System.String</value>
+          <value>Document_Способ_закупки_код,System.String</value>
+          <value>Document_Категория_закупки_код,System.String</value>
+          <value>Document_Категория_закупки,System.String</value>
+          <value>Document_Совместная_закупка,System.Int32</value>
+          <value>Document_Дата_подготовки_ТЗ,System.DateTime</value>
+          <value>Document_Дата_отправки_ЦКЗ,System.DateTime</value>
+          <value>Document_Организатор_закупк_000,System.String</value>
+          <value>Document_Организатор_закупк_001,System.String</value>
+          <value>Document_Обоснование_внесен_000,System.String</value>
+          <value>Document_ИД_плана_в_ЕИС,System.String</value>
+          <value>Document_Закупка_не_состоялась,System.Int32</value>
+          <value>Document_Причина_аннулирования,System.String</value>
+          <value>Document_Причина_аннулирова_000,System.String</value>
+          <value>Document_Не_требует_коррект_000,System.Int32</value>
+          <value>Document_Утверждено_СД,System.Int32</value>
+          <value>Document_Инвестиционная_про_000,System.Int32</value>
+          <value>Document_Год_потребности,System.String</value>
+          <value>Document_Объем_обязательств_000,System.Double</value>
+          <value>Document_Наименование_органа_ЕП,System.String</value>
+          <value>Document_Дата_решения_ЕП,System.DateTime</value>
+          <value>Document_Номер_решения_ЕП,System.String</value>
+          <value>Document_Рамочный_договор,System.Int32</value>
+          <value>Document_Количество_этапов,System.Int32</value>
+          <value>Document_Предмет_договора,System.String</value>
+          <value>Document_Примечание,System.String</value>
+          <value>Document_ТЗ_согласовано,System.Int32</value>
+          <value>Document_Проект_договора_со_000,System.Int32</value>
+          <value>Document_ИД_извещения_на_ЭТП,System.String</value>
+          <value>Document_ИД_ЭТП,System.String</value>
+          <value>Document_Количество_заявок,System.Int32</value>
+          <value>Document_Количество_переторжек,System.Int32</value>
+          <value>Document_Количество_запросо_000,System.Int32</value>
+          <value>Document_Преференции,System.String</value>
+          <value>Document_Критерии_оценки,System.String</value>
+          <value>Document_Способ_закупки_пол_000,System.String</value>
+          <value>Document_Наименование_ЭТП,System.String</value>
+          <value>Document_Адрес_ЭТП,System.String</value>
+          <value>Document_Номер_итогового_пр_000,System.String</value>
+          <value>Document_Дата_подведения_итогов,System.DateTime</value>
+          <value>Document_НМЦ_по_ПЗ,System.Double</value>
+          <value>Document_Дата_вскрытия_конв_000,System.DateTime</value>
+          <value>Document_Код_вида_деятельно_000,System.String</value>
+          <value>Document_Победитель_Победит_000,System.String</value>
+          <value>Document_Победитель_Победит_001,System.String</value>
+          <value>Document_Победитель_Победит_002,System.Int32</value>
+          <value>Document_Победитель_Победит_003,System.String</value>
+          <value>Document_Победитель_Победитель,System.String</value>
+          <value>Document_Победитель_Победит_004,System.String</value>
+          <value>Document_Победитель_Победит_005,System.String</value>
+          <value>Document_Победитель_Победит_006,System.String</value>
+          <value>Document_Победитель_Фактиче_000,System.Double</value>
+          <value>Document_Победитель_Фактиче_001,System.Double</value>
+          <value>Document_Победитель_Победит_007,System.Int32</value>
+          <value>Document_Победитель_Победит_008,System.String</value>
+          <value>Document_Победитель_Победит_009,System.String</value>
+          <value>Document_Победитель_Победит_010,System.String</value>
+          <value>Document_Победитель_Победит_011,System.String</value>
+          <value>Document_Победитель_Победит_012,System.String</value>
+          <value>Document_Победитель_Победит_013,System.String</value>
+          <value>Document_Победитель_Победит_014,System.String</value>
+          <value>Document_Победитель_Победит_015,System.String</value>
+          <value>Document_Победитель_Победит_016,System.String</value>
+          <value>Document_Победитель_Победит_017,System.String</value>
+          <value>Document_Победитель_Победит_018,System.String</value>
+          <value>Document_Победитель_Победит_019,System.String</value>
+          <value>Document_Победитель_Победит_020,System.String</value>
+          <value>Document_Победитель_Победит_021,System.String</value>
+          <value>Document_Победитель_Победит_022,System.String</value>
+          <value>Document_Победитель_Победит_023,System.String</value>
+          <value>Document_Победитель_Победит_024,System.DateTime</value>
+          <value>Document_Победитель_Победит_025,System.String</value>
+          <value>Document_Победитель_Победит_026,System.String</value>
+          <value>Document_Победитель_Победит_027,System.String</value>
+          <value>Document_Победитель_Победит_028,System.Int32</value>
+          <value>Document_Победитель_Преддог_000,System.Int32</value>
+          <value>Document_Фактический_способ_000,System.String</value>
+          <value>Document_Загружен_из_ЕИС,System.Int32</value>
+          <value>Document_Расширенный_план,System.Int32</value>
+          <value>Document_Укрупненный,System.Int32</value>
+          <value>Document_Форма_переторжек,System.String</value>
+          <value>Document_Повторная_закупка,System.Int32</value>
+          <value>Document_Причины_невыполнен_000,System.String</value>
+          <value>Document_Исполнитель_Исполн_000,System.String</value>
+          <value>Document_Исполнитель_Исполн_001,System.String</value>
+          <value>Document_ИД_на_ЭТП,System.String</value>
+          <value>Document_Дата_подписания_до_000,System.DateTime</value>
+          <value>Document_Договор_в_бумажном_000,System.Int32</value>
+          <value>Document_Порядок_формирован_000,System.String</value>
+          <value>Document_Наличие_процедуры__000,System.Int32</value>
+          <value>Document_Наличие_процедуры__001,System.Int32</value>
+          <value>Document_Требуется_согласование,System.Int32</value>
+          <value>Document_Централизованная_з_000,System.Int32</value>
+          <value>Document_Ответственный_испо_000,System.String</value>
+          <value>Document_Ответственный_испо_001,System.String</value>
+          <value>Document_Ответственный_руко_000,System.String</value>
+          <value>Document_Ответственный_руко_001,System.String</value>
+          <value>Document_Ответственный_руко_002,System.String</value>
+          <value>Document_Утвердивший_Утверд_000,System.String</value>
+          <value>Document_Утвердивший_Утверд_001,System.String</value>
+          <value>Document_Утвердивший_Утверд_002,System.String</value>
+          <value>Document_Утвердивший_Утверд_003,System.String</value>
+          <value>Document_Утвердивший_Утверд_004,System.String</value>
+          <value>Document_Утвердивший_Утверд_005,System.String</value>
+          <value>Document_Согласующий_Соглас_000,System.String</value>
+          <value>Document_Согласующий_Соглас_001,System.String</value>
+          <value>Document_ИД_лота,System.String</value>
+          <value>Document_ИД_заявки_на_закупку,System.String</value>
+          <value>Files_header,System.String</value>
+          <value>Files_subheader,System.String</value>
+          <value>Заявки_участников_header,System.String</value>
+          <value>Заявки_участников_subheader,System.String</value>
+          <value>Договоры_header,System.String</value>
+          <value>Договоры_subheader,System.String</value>
+          <value>FilesIntegration_header,System.String</value>
+          <value>FilesIntegration_subheader,System.String</value>
+          <value>FilesLot_header,System.String</value>
+          <value>FilesLot_subheader,System.String</value>
+          <value>Протоколы_header,System.String</value>
+          <value>Протоколы_subheader,System.String</value>
+          <value>RegData_Key,System.String</value>
+          <value>RegData_Author,System.String</value>
+          <value>RegData_DataSource_SourceName,System.String</value>
+          <value>RegData_DataSource_DONum,System.String</value>
+          <value>RegData_DataSource_ActualDate,System.DateTime</value>
+          <value>RegData_DataSource_Certaint_000,System.String</value>
+          <value>RegData_DataSource_Comment,System.String</value>
+          <value>RegData_ModifyDate,System.DateTime</value>
+          <value>RegData_CreateDate,System.DateTime</value>
+          <value>RegData_title,System.String</value>
+          <value>RegData_versionID,System.Int32</value>
+          <value>RegData_ModifyAbonent,System.String</value>
+          <value>RegData_Abonent,System.String</value>
+          <value>RegData_FormCode,System.String</value>
+          <value>RegData_parentID,System.Guid</value>
+          <value>RegData_docid,System.Guid</value>
+          <value>xmlData,System.String</value>
+          <value>Document_Организация_заказч_002,System.String</value>
+          <value>Document_Организация_заказч_003,System.String</value>
+          <value>Document_Организация_заказч_004,System.String</value>
+          <value>Document_Организация_заказч_005,System.String</value>
+          <value>Document_Организация_заказч_006,System.String</value>
+          <value>Document_Организация_заказч_007,System.String</value>
+          <value>Document_Фактическая_дата_з_000,System.DateTime</value>
+          <value>Document_Обобщенный_статус,System.String</value>
+          <value>Document_Информация_об_объе_000,System.String</value>
+          <value>Document_Информация_об_объе_001,System.String</value>
+          <value>Document_Информация_об_объе_002,System.String</value>
+          <value>Document_Информация_об_объе_003,System.String</value>
+          <value>Document_Информация_об_объе_004,System.String</value>
+          <value>Document_Информация_об_объе_005,System.String</value>
+          <value>Document_Долгосрочный,System.Int32</value>
+          <value>Document_Заказчик_подраздел_000,System.Int32</value>
+          <value>Document_Заказчик_подраздел_001,System.String</value>
+          <value>Document_Контактное_лицо_Ко_000,System.Int32</value>
+          <value>Document_Контактное_лицо_Ко_001,System.String</value>
+          <value>Document_Контактное_лицо_Ко_002,System.String</value>
+          <value>Document_Контактное_лицо_Ко_003,System.String</value>
+          <value>Document_Контактное_лицо_Ко_004,System.String</value>
+          <value>Document_Контактное_лицо_Ко_005,System.String</value>
+          <value>Document_Контактное_лицо_Ко_006,System.String</value>
+          <value>Document_Контактное_лицо_Ко_007,System.String</value>
+          <value>Document_Контактное_лицо_До_000,System.String</value>
+          <value>Document_Контактное_лицо_По_000,System.String</value>
+          <value>Document_Контактное_лицо_Ад_000,System.String</value>
+          <value>Document_Ограничения_допуск_000,System.String</value>
+          <value>Document_Наличие_гос_экспертизы,System.String</value>
+          <value>Document_Наличие_утвержденн_000,System.String</value>
+          <value>Document_Возможность_измене_000,System.String</value>
+          <value>Document_Возможность_контра_000,System.String</value>
+          <value>Document_Возможность_одност_000,System.String</value>
+          <value>Document_Дополнительная_инф_000,System.String</value>
+          <value>Документация_по_закупке_header,System.String</value>
+          <value>Документация_по_закупке_sub_000,System.String</value>
+          <value>НМЦД_header,System.String</value>
+          <value>НМЦД_subheader,System.String</value>
+          <value>Проект_договора_header,System.String</value>
+          <value>Проект_договора_subheader,System.String</value>
+          <value>Document_Информация_о_контр_000,System.String</value>
+          <value>Document_Руководитель_контр_000,System.String</value>
+          <value>Document_Руководитель_контр_001,System.String</value>
+          <value>Document_Ответст_за_заключе_000,System.String</value>
+          <value>Document_Ответст_за_заключе_001,System.String</value>
+          <value>Document_Ответственный_испо_002,System.String</value>
+          <value>Document_Ответственный_испо_003,System.String</value>
+          <value>Document_Ответственный_испо_004,System.String</value>
+          <value>Document_Возможность_отказа_000,System.String</value>
+          <value>Document_Организация_заказч_008,System.String</value>
+          <value>Document_Организатор_закупк_002,System.String</value>
+          <value>Document_Организатор_закупк_003,System.String</value>
+          <value>Document_Организатор_закупк_004,System.String</value>
+          <value>Document_Требуется_согласов_000,System.Int32</value>
+          <value>Document_Виды_страхования,System.Int32</value>
+          <value>Document_Обеспечение_гарант_000,System.Int32</value>
+          <value>Document_Размер_обеспечения_003,System.Double</value>
+          <value>Document_Дата_окончания_при_000,System.DateTime</value>
+          <value>Document_Дата_оконачния_рас_000,System.DateTime</value>
+          <value>Document_Дата_начала_торгов,System.DateTime</value>
+          <value>Document_Торги_за_единицу_т_000,System.Int32</value>
+          <value>Document_Начальная_цена_ком_000,System.Double</value>
+          <value>Document_Цена_отсечения,System.Double</value>
+          <value>Document_Торги_на_процент_с_000,System.Int32</value>
+          <value>Document_Способ_предоставле_000,System.String</value>
+          <value>Document_Перечисление_ДС_на_000,System.String</value>
+          <value>Document_Получатель_Вид,System.String</value>
+          <value>Document_Способ_предоставле_001,System.String</value>
+          <value>Document_Перечисление_ДС_на_001,System.String</value>
+          <value>Document_Получатель_Получатель,System.String</value>
+          <value>Document_Получатель_Получат_000,System.String</value>
+          <value>Document_Получатель_Получат_001,System.String</value>
+          <value>Document_Получатель_Получат_002,System.String</value>
+          <value>Document_Получатель_Получат_003,System.String</value>
+          <value>Document_Получатель_Получат_004,System.String</value>
+          <value>Document_Получатель_Получат_005,System.String</value>
+          <value>Document_Получатель_Получат_006,System.String</value>
+          <value>Document_Получатель_Получат_007,System.String</value>
+          <value>Document_Получатель_Вид_код,System.String</value>
+          <value>Document_Порядок_поставки,System.String</value>
+          <value>Document_Порядок_оплаты,System.String</value>
+          <value>Document_Требование_РНП,System.Int32</value>
+          <value>Document_Организатор_закупк_005,System.String</value>
+          <value>Document_Победитель_Победит_029,System.String</value>
+          <value>Document_Победитель_Победит_030,System.String</value>
+          <value>Document_Победитель_Победит_031,System.String</value>
+          <value>Document_Победитель_Победит_032,System.String</value>
+          <value>Document_Победитель_Победит_033,System.String</value>
+          <value>Document_Номер_этапа,System.String</value>
+          <value>Document_Квалификационный_отбор,System.Int32</value>
+          <value>Document_Сведения_о_цене_код,System.String</value>
+          <value>Document_Сведения_о_цене,System.String</value>
+          <value>Document_Формула_цены,System.String</value>
+          <value>Document_Цена_единицы_тру,System.Double</value>
+          <value>Document_Требуется_форма,System.Int32</value>
+          <value>Document_Руководитель_контр_002,System.String</value>
+          <value>Document_Руководитель_контр_003,System.String</value>
+          <value>Document_Ответст_за_заключе_002,System.String</value>
+          <value>Document_Ответст_за_заключе_003,System.String</value>
+          <value>Document_Ответственный_испо_005,System.String</value>
+          <value>Document_Остаток_срока,System.String</value>
+          <value>Document_Дата_окончания_сог_000,System.DateTime</value>
+          <value>Document_Отзыв_заявки,System.Int32</value>
+          <value>Document_Отправка_уведомления,System.Int32</value>
+          <value>Document_Возврат_заявки,System.Int32</value>
+          <value>Document_ИД_ППЗ,System.Int32</value>
+          <value>Document_Источник_финансиро_001,System.String</value>
+          <value>Document_Требования_к_обесп_000,System.String</value>
+          <value>Document_Порядок_предоставл_000,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Заявка</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>CREATE TEMP TABLE "q"
+ON COMMIT DROP
+AS (SELECT
+  DISTINCT "__Documents"."doc_Id" AS w,
+  "__Documents"."doc_RegCard_rc_DataKey" as d,
+  "__Documents"."doc_RegCard_rc_FlowName",
+  "__DocumentLinks"."link_Owner",
+  "__DocumentLinks"."link_Document"
+FROM 
+public."__Documents"
+LEFT JOIN public."__DocumentLinks" ON "__Documents"."doc_Id"="__DocumentLinks"."link_Owner"
+WHERE "__Documents"."doc_RegCard_rc_FlowName"='Заявка на размещение закупки 223ФЗ' AND "__Documents"."doc_Id" IN ('{Ключ_документа}'));
+
+
+
+SELECT 
+  "__FlowCollection_{flowName:Исполнение договора 223ФЗ}".*
+FROM 
+  public."__FlowCollection_{flowName:Исполнение договора 223ФЗ}"
+WHERE  "__FlowCollection_{flowName:Исполнение договора 223ФЗ}"."RegData_Key" IN (SELECT d FROM q);</SqlCommand>
+      </Заявка>
+      <ППЗ Ref="4" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>ППЗ</Alias>
+        <Columns isList="true" count="3">
+          <value>ОКПД2,System.String</value>
+          <value>ОКВЭД2,System.String</value>
+          <value>Колво,System.Double</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>ППЗ</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>CREATE TEMP TABLE "q"
+ON COMMIT DROP
+AS (SELECT
+  DISTINCT "__Documents"."doc_Id" AS w,
+  "__Documents"."doc_RegCard_rc_DataKey" as d,
+  "__Documents"."doc_RegCard_rc_FlowName",
+  "__DocumentLinks"."link_Owner",
+  "__DocumentLinks"."link_Document" as link
+FROM 
+public."__Documents"
+LEFT JOIN public."__DocumentLinks" ON "__Documents"."doc_Id"="__DocumentLinks"."link_Owner"
+WHERE "__Documents"."doc_RegCard_rc_FlowName"='Заявка на размещение закупки 223ФЗ' AND "__Documents"."doc_Id" IN ('{Ключ_документа}'));
+
+
+CREATE TEMP TABLE "Связка"
+ON COMMIT DROP
+AS (SELECT 
+  "__Documents"."doc_Id" AS w,
+  "__Documents"."doc_RegCard_rc_DataKey" as d,
+  "__Documents"."doc_RegCard_rc_FlowName"
+FROM 
+public."__Documents"
+WHERE "__Documents"."doc_Id" IN (SELECT link FROM q) AND "__Documents"."doc_RegCard_rc_FlowName" IN ('Позиции плана закупок 223ФЗ'));
+
+CREATE TEMP TABLE "ППЗ"
+ON COMMIT DROP
+AS (SELECT 
+  cast("__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"."ОКПД2" as text), 
+  cast("__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"."ОКВЭД2" as text),
+ "__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"."Количество" as Количество
+FROM 
+  public."__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"
+JOIN public."__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5" ON "__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"."Key"= "__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5"."Key"
+WHERE ("__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5_Documen_003"."Key" IN (SELECT d FROM Связка)) AND ("__FlowCollection_{flowName:Заявка на размещение закупки 223ФЗ}5"."Document_Актуальность" = '1')
+);
+
+
+  SELECT array_to_string(array( SELECT ОКПД2 FROM ППЗ),'
+')  AS ОКПД2,
+  array_to_string(array( SELECT ОКВЭД2 FROM ППЗ),'
+')  AS ОКВЭД2,
+(SELECT SUM(Количество) FROM ППЗ) as Колво;</SqlCommand>
+      </ППЗ>
+      <Документы Ref="5" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Документы</Alias>
+        <Columns isList="true" count="1">
+          <value>документы,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Документы</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>CREATE TEMP TABLE "q"
+ON COMMIT DROP
+AS (SELECT
+  DISTINCT "__Documents"."doc_Id" AS w,
+  "__Documents"."doc_RegCard_rc_DataKey" as d,
+  "__Documents"."doc_RegCard_rc_FlowName",
+  "__DocumentLinks"."link_Owner",
+  "__DocumentLinks"."link_Document" as link
+FROM 
+public."__Documents"
+LEFT JOIN public."__DocumentLinks" ON "__Documents"."doc_Id"="__DocumentLinks"."link_Owner"
+WHERE "__Documents"."doc_RegCard_rc_FlowName"='Заявка на размещение закупки 223ФЗ' AND "__Documents"."doc_Id" IN ('{Ключ_документа}'));
+
+
+CREATE TEMP TABLE "Связка"
+ON COMMIT DROP
+AS (SELECT  
+  "__FlowCollection_{flowName:Исполнение договора 223ФЗ}_Document_005"."Key", 
+  CONCAT('Наименование: ', cast("__FlowCollection_{flowName:Исполнение договора 223ФЗ}_Document_005"."Наименование_документа" as text), '
+Ссылка:',  "__FlowCollection_{flowName:Исполнение договора 223ФЗ}_Document_005"."Ссылка") as документ
+FROM 
+  public."__FlowCollection_{flowName:Исполнение договора 223ФЗ}_Document_005"
+  WHERE "__FlowCollection_{flowName:Исполнение договора 223ФЗ}_Document_005"."Key" IN (SELECT "d" from q));
+
+
+  
+SELECT array_to_string(array( SELECT документ FROM Связка),'
+')  AS документы</SqlCommand>
+      </Документы>
+      <Документация Ref="6" type="Stimulsoft.Report.Dictionary.StiPostgreSQLSource" isKey="true">
+        <Alias>Документация</Alias>
+        <Columns isList="true" count="1">
+          <value>файл,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>Документация</Name>
+        <NameInSource>ЕВФРАТ</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT DISTINCT
+  "__Documents_doc_Parts_part__002"."partp_Value" as файл
+FROM 
+  public."__Documents_doc_Parts_part__002"
+Where "__Documents_doc_Parts_part__002"."doc_Id" IN ('{Ключ_документа}') and "__Documents_doc_Parts_part__002"."partp_Name" IN ('VidDoc')</SqlCommand>
+      </Документация>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="1">
+      <value>,Ключ_документа,Ключ_документа,System.String,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="31">
+        <ReportTitleBand1 Ref="8" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,4.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text29 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,0,6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>7838f7d030e44680bd115ebd25a40a68</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Руководителю
+ГАУ АО «РЦОЗ»
+
+Е.Г. Каминской
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text29>
+            <Text32 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,19,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Bold</Font>
+              <Guid>941d636068b148369c896c60e4ae8cd8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Заявка
+на осуществление закупки 
+способом {Заявка.Document_Способ_закупки} 
+на право заключения договора
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text32>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>00eb316293ae4981a6cd69a32f1e3c79</Guid>
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+        </ReportTitleBand1>
+        <DataBand27 Ref="11" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,6,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text43 Ref="12" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,19,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,14,Underline</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>79c6cbad064a48daa769c12283cec66d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="7" />
+              <Parent isRef="11" />
+              <Text>{Заявка.Document_Предмет_договора}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text43>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Заявка</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand27</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand27>
+        <DataBand29 Ref="13" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text62 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,8</Font>
+              <Guid>568f5a0d3fd04b80a1b19b6d720bafb4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="7" />
+              <Parent isRef="13" />
+              <Text>(наименование предмета договора)
+</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text62>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand29</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand29>
+        <DataBand1 Ref="15" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.2,19,3</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text78 Ref="16" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>575b0cf7aca14f67bd821e5556eb12f8</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text78</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Text>Наименование: 
+{Заявка.Document_Организация_заказч_000}
+Место нахождения: 
+{Заявка.Document_Организация_заказч_003}
+Почтовый адрес: 
+{Заявка.Document_Организация_заказч_003}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text78>
+            <Text27 Ref="17" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9d76d58cffc64b72ab8337f729dda3ad</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text27</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Text>Наименование, место нахождения, почтовый адрес заказчика</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="18" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Text28 Ref="19" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>020fca1a506b4c898336551dcc128cc3</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text28</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Text>1</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand2 Ref="20" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13,19,1</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text83 Ref="21" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>95cd9d26938b42e59586fb86f4e346ff</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text83</Name>
+              <Page isRef="7" />
+              <Parent isRef="20" />
+              <Text>{Заявка.Document_Организация_заказч_002}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text83>
+            <Text13 Ref="22" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ed41559e418346118831ed5e4aeee121</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text13</Name>
+              <Page isRef="7" />
+              <Parent isRef="20" />
+              <Text>ИНН заказчика</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="23" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text23 Ref="24" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a1a32662a3bc435eb7df6f642688a267</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text23</Name>
+              <Page isRef="7" />
+              <Parent isRef="20" />
+              <Text>2</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>76e255e259364bbfb3e54133ab5f8e99</Guid>
+          <Name>DataBand2</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand3 Ref="25" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.8,19,2.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text52 Ref="26" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>372bcb65cbe04d37adbb0626a4b8371c</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text52</Name>
+              <Page isRef="7" />
+              <Parent isRef="25" />
+              <Text>Руководитель контрактной службы: 
+{IIF(Заявка.Document_Руководитель_контр_001!="" , Заявка.Document_Руководитель_контр_000+" "+Заявка.Document_Руководитель_контр_001+"
+"+Заявка.Document_Руководитель_контр_002+"
+"+Заявка.Document_Руководитель_контр_003, "Не определен")}
+
+Должностное лицо, ответственное за заключение контракта: 
+{IIF(Заявка.Document_Ответст_за_заключе_001!="" , Заявка.Document_Ответст_за_заключе_000+" "+Заявка.Document_Ответст_за_заключе_001+"
+"+Заявка.Document_Ответст_за_заключе_002+"
+"+Заявка.Document_Ответст_за_заключе_003, "Не определен")}
+
+Ответственный исполнитель: 
+{IIF(Заявка.Document_Ответственный_испо_003!="" , Заявка.Document_Ответственный_испо_002+" "+Заявка.Document_Ответственный_испо_003+"
+"+Заявка.Document_Ответственный_испо_004+"
+"+Заявка.Document_Ответственный_испо_005, "Не определен")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text52>
+            <Text24 Ref="27" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>02aebfed8ab04db7811f7ebc5b7ebdbb</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text24</Name>
+              <Page isRef="7" />
+              <Parent isRef="25" />
+              <Text>Информация об ответственных за взаимодействие с ГКУ АО «РЦОЗ», заключение договора (номера контактного телефона и факса, адрес электронной почты)
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="28" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text26 Ref="29" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e3c5f393cb5e4b599af6cc88156de3dd</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text26</Name>
+              <Page isRef="7" />
+              <Parent isRef="25" />
+              <Text>3</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>e8c36205d28e444584344f28bae002fc</Guid>
+          <Name>DataBand3</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <DataBand4 Ref="30" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text54 Ref="31" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>17060189238f4a128b2814ad9e2601f4</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text54</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>{Заявка.Document_НМЦ_с_НДС} руб.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="32" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text54>
+            <Text8 Ref="33" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>845ed366e8814c0ea3909f2548a0b9d6</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text8</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>4</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text31 Ref="34" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0ce25b3c226b4809ba70f8b1d2a09ef1</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text31</Name>
+              <Page isRef="7" />
+              <Parent isRef="30" />
+              <Text>Начальная (максимальная) цена договора</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="35" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text31>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>e0e9bcad47834c7b8233cece7ec0c427</Guid>
+          <Name>DataBand4</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <DataBand5 Ref="36" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,20,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text55 Ref="37" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>5497c32cedcf4dafb163c39078f900ae</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text55</Name>
+              <Page isRef="7" />
+              <Parent isRef="36" />
+              <Text>{ППЗ.Колво}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text55>
+            <Text17 Ref="38" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9576eb31f4a14cb6b57f1b459a92471a</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text17</Name>
+              <Page isRef="7" />
+              <Parent isRef="36" />
+              <Text>5</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text34 Ref="39" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>39b2653f4c444620b704660f4a944c2b</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text34</Name>
+              <Page isRef="7" />
+              <Parent isRef="36" />
+              <Text>Количество товара, объем работ (услуг)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="40" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text34>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>5d63a1b1ce384e508f9ad8f07b840de3</Guid>
+          <Name>DataBand5</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand5>
+        <DataBand6 Ref="41" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,22,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text84 Ref="42" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0db8e51bd4c24acfbe087a8f8c5f0065</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text84</Name>
+              <Page isRef="7" />
+              <Parent isRef="41" />
+              <Text>{Заявка.Document_Номер_позиции_плана}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text84>
+            <Text15 Ref="43" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f64693461bc6402eabf61aa544badb0e</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text15</Name>
+              <Page isRef="7" />
+              <Parent isRef="41" />
+              <Text>Номер позиции в плане закупок</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="44" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text2 Ref="45" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6ca83ae7a8704b9a856160544656641a</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="41" />
+              <Text>6</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>fa7f5208a615432faeaf994d9384efb1</Guid>
+          <Name>DataBand6</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand6>
+        <DataBand7 Ref="46" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,24,19,1.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text53 Ref="47" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>bb528cd413014dc18a394394aff321d3</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text53</Name>
+              <Page isRef="7" />
+              <Parent isRef="46" />
+              <Text>{Switch(Month(Заявка.Document_Плановая_дата_разм_000)==1, "январь", Month(Заявка.Document_Плановая_дата_разм_000)==2, "февраль", Month(Заявка.Document_Плановая_дата_разм_000)==3, "март", Month(Заявка.Document_Плановая_дата_разм_000)==4, "апрель", Month(Заявка.Document_Плановая_дата_разм_000)==5, "май", Month(Заявка.Document_Плановая_дата_разм_000)==6, "июнь", Month(Заявка.Document_Плановая_дата_разм_000)==7, "июль", Month(Заявка.Document_Плановая_дата_разм_000)==8, "август", Month(Заявка.Document_Плановая_дата_разм_000)==9, "сентябрь", Month(Заявка.Document_Плановая_дата_разм_000)==10, "октябрь", Month(Заявка.Document_Плановая_дата_разм_000)==11, "ноябрь", Month(Заявка.Document_Плановая_дата_разм_000)==12, "декабрь")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="48" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text53>
+            <Text18 Ref="49" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>04182754a7c645ed844f43e076336f40</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text18</Name>
+              <Page isRef="7" />
+              <Parent isRef="46" />
+              <Text>7</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text22 Ref="50" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>be2cbdbf6d9844ff9592f2c32a2856e9</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text22</Name>
+              <Page isRef="7" />
+              <Parent isRef="46" />
+              <Text>Планируемая дата размещения в ЕИС информации о закупке (месяц)
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="51" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>12b1121de7a84c2cbc946052096ef168</Guid>
+          <Name>DataBand7</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand7>
+        <DataBand8 Ref="52" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,26.2,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text86 Ref="53" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>13a6065f39b74c23a1c5b48153e6996f</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text86</Name>
+              <Page isRef="7" />
+              <Parent isRef="52" />
+              <Text>{ППЗ.ОКПД2}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text86>
+            <Text4 Ref="54" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ea0b1a233e9b428c8f0229b961e9e1d5</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text4</Name>
+              <Page isRef="7" />
+              <Parent isRef="52" />
+              <Text>Код ОКПД 2</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="55" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text21 Ref="56" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>eeb6cdcc062f4d0abc894547d7be5a4d</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text21</Name>
+              <Page isRef="7" />
+              <Parent isRef="52" />
+              <Text>8</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>d7d7200128e441b6af858456ebb35898</Guid>
+          <Name>DataBand8</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand8>
+        <DataBand9 Ref="57" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,28.2,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text30 Ref="58" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>3ebb4c53ed604306acc73c0ab5fef220</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text30</Name>
+              <Page isRef="7" />
+              <Parent isRef="57" />
+              <Text>9</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text30>
+            <Text12 Ref="59" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ebc4114f92cc438cab5e72995569df7e</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text12</Name>
+              <Page isRef="7" />
+              <Parent isRef="57" />
+              <Text>{ППЗ.ОКВЭД2}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text14 Ref="60" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>417a640503fe4e7ebdfc19ec62f47ecb</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text14</Name>
+              <Page isRef="7" />
+              <Parent isRef="57" />
+              <Text>Код ОКВЭД 2</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="61" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>490c779779d64bd0b073c68e9aaa6daa</Guid>
+          <Name>DataBand9</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand9>
+        <DataBand25 Ref="62" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,30.2,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text40 Ref="63" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a649ebd221d24b66b105f45e78f6bc9f</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text40</Name>
+              <Page isRef="7" />
+              <Parent isRef="62" />
+              <Text>10</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 Ref="64" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>09e2c34ed10c4d0181ef0840b79498c7</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text41</Name>
+              <Page isRef="7" />
+              <Parent isRef="62" />
+              <Text>{Заявка.Document_Источник_финансиро_001}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+            <Text44 Ref="65" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7902bc858f4145a8adf19e2cfc99910e</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text44</Name>
+              <Page isRef="7" />
+              <Parent isRef="62" />
+              <Text>Источник финансирования</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="66" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>5bd265b725144f6696e1e5c2ed40465b</Guid>
+          <Name>DataBand25</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand25>
+        <DataBand10 Ref="67" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,32.2,19,2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text56 Ref="68" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2635c19ccfe9481990c9d2acc054a4be</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text56</Name>
+              <Page isRef="7" />
+              <Parent isRef="67" />
+              <Text>{IIF(Заявка.Document_Место_поставки=="" ,"Не установлено", Заявка.Document_Место_поставки)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="69" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text56>
+            <Text33 Ref="70" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f8b83aa8f9374442a4aaadd809de626d</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text33</Name>
+              <Page isRef="7" />
+              <Parent isRef="67" />
+              <Text>11</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text33>
+            <Text1 Ref="71" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c4daecd090934245977b6ab27a51e420</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="67" />
+              <Text>Место доставки товара, являющегося предметом договора, место выполнения работы или оказания услуги, являющихся предметом договора</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="72" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>3f91790d927f4f5991f444ad42c2c2ba</Guid>
+          <Name>DataBand10</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand10>
+        <DataBand11 Ref="73" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,35,19,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text57 Ref="74" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9df6235441fb4449b30ebf5f4bbcaff4</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text57</Name>
+              <Page isRef="7" />
+              <Parent isRef="73" />
+              <Text>{Day(Заявка.Document_Плановая_дата_окон_000)} {Switch(Month(Заявка.Document_Плановая_дата_окон_000)==1, "января", Month(Заявка.Document_Плановая_дата_окон_000)==2, "февраля", Month(Заявка.Document_Плановая_дата_окон_000)==3, "марта", Month(Заявка.Document_Плановая_дата_окон_000)==4, "апреля", Month(Заявка.Document_Плановая_дата_окон_000)==5, "мая", Month(Заявка.Document_Плановая_дата_окон_000)==6, "июня", Month(Заявка.Document_Плановая_дата_окон_000)==7, "июля", Month(Заявка.Document_Плановая_дата_окон_000)==8, "августа", Month(Заявка.Document_Плановая_дата_окон_000)==9, "сентября", Month(Заявка.Document_Плановая_дата_окон_000)==10, "октября", Month(Заявка.Document_Плановая_дата_окон_000)==11, "ноября", Month(Заявка.Document_Плановая_дата_окон_000)==12, "декабря")} {Year(Заявка.Document_Плановая_дата_окон_000)} г.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="75" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text57>
+            <Text36 Ref="76" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>566edb56ef22490791e19434357e02ac</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text36</Name>
+              <Page isRef="7" />
+              <Parent isRef="73" />
+              <Text>12</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text36>
+            <Text3 Ref="77" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d809072c11ac4aea963cde62275f50fc</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text3</Name>
+              <Page isRef="7" />
+              <Parent isRef="73" />
+              <Text>Сроки поставки товара, завершения работы, оказания услуг  </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>2621c1ad6c9d4d0ab04480cf1bd286a2</Guid>
+          <Name>DataBand11</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand11>
+        <DataBand12 Ref="79" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,37,19,2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text59 Ref="80" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d2b16f8fabb7403a865d14b98a3f445f</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text59</Name>
+              <Page isRef="7" />
+              <Parent isRef="79" />
+              <Text>{IIF(Заявка.Document_Наличие_утвержденн_000=="" ,"Не установлено", Заявка.Document_Наличие_утвержденн_000)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="81" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text59>
+            <Text42 Ref="82" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7fd7de2699e24961b6592198b4e24681</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text42</Name>
+              <Page isRef="7" />
+              <Parent isRef="79" />
+              <Text>13</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text42>
+            <Text5 Ref="83" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7bd719b18b464b7b91ea7382b9f43994</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text5</Name>
+              <Page isRef="7" />
+              <Parent isRef="79" />
+              <Text>Наличие утвержденной проектной, сметной документации (где требуется), номер и дата утверждения проектной, сметной документации</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="84" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>eff0c3672dcc4563a68594fba3d90ad7</Guid>
+          <Name>DataBand12</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand12>
+        <DataBand13 Ref="85" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,39.8,19,2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text100 Ref="86" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>de135e6568314a99b5f02242eb414856</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text100</Name>
+              <Page isRef="7" />
+              <Parent isRef="85" />
+              <Text>{IIF(Заявка.Document_Наличие_гос_экспертизы=="" ,"Не установлено", Заявка.Document_Наличие_гос_экспертизы)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="87" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text100>
+            <Text45 Ref="88" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>77d33bb3455d446c8b5cbbfb65127213</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text45</Name>
+              <Page isRef="7" />
+              <Parent isRef="85" />
+              <Text>14</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text49 Ref="89" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ec34a700b6b34c4d851d7a5827532620</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text49</Name>
+              <Page isRef="7" />
+              <Parent isRef="85" />
+              <Text>Наличие заключения государственной экспертизы проектной документации (где требуется), номер и дата заключения государственной экспертизы
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="90" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text49>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>3a9fd88086ef49c388cb82cca276da0b</Guid>
+          <Name>DataBand13</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand13>
+        <DataBand14 Ref="91" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,42.6,19,1.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text87 Ref="92" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>20c9666bb44844c884d2a06b89907dae</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text87</Name>
+              <Page isRef="7" />
+              <Parent isRef="91" />
+              <Text>{IIF(Заявка.Document_Размер_обеспечения_000=="" ,"Не установлен", Заявка.Document_Размер_обеспечения_000+" руб.")} </Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text87>
+            <Text46 Ref="93" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>273cae0c14374915b9c294e169602b8b</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text46</Name>
+              <Page isRef="7" />
+              <Parent isRef="91" />
+              <Text>15</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text50 Ref="94" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4b99e8c9a11a4a29b73313cde7242a8b</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text50</Name>
+              <Page isRef="7" />
+              <Parent isRef="91" />
+              <Text>Размер обеспечения заявок на участие в закупке  </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="95" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>818f80f279ec4314b6ed0f35d7497b22</Guid>
+          <Name>DataBand14</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand14>
+        <DataBand15 Ref="96" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,44.8,19,1.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text89 Ref="97" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1280e4af882d4b2391586f155c3586a5</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text89</Name>
+              <Page isRef="7" />
+              <Parent isRef="96" />
+              <Text>{IIF(Заявка.Document_Размер_обеспечения_001=="" ,"Не установлено", String.Format("{0:0.00}",Заявка.Document_Размер_обеспечения_001)+" руб.")}
+{IIF(Заявка.Document_Порядок_предоставл_000=="","","Порядок предоставления обеспечения: \n" + Заявка.Document_Порядок_предоставл_000)}
+{IIF(Заявка.Document_Требования_к_обесп_000=="","","Требования к обеспечению: \n" + Заявка.Document_Требования_к_обесп_000)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text89>
+            <Text47 Ref="98" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>502ee1d942e94961b7ad0f7e3df13f13</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text47</Name>
+              <Page isRef="7" />
+              <Parent isRef="96" />
+              <Text>16</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <Text6 Ref="99" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9b8fe84d9eaa427289b3cef9fbf84bc5</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text6</Name>
+              <Page isRef="7" />
+              <Parent isRef="96" />
+              <Text>Размер обеспечения исполнения договора, порядок предоставления обеспечения, требования к обеспечению </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="100" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>d507670d46ac4e51b892d6f5cc93ff40</Guid>
+          <Name>DataBand15</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand15>
+        <DataBand16 Ref="101" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,47.2,19,3.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text92 Ref="102" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,3.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e64b45d3fa57451499efdb4f2e072d47</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text92</Name>
+              <Page isRef="7" />
+              <Parent isRef="101" />
+              <Text>{IIF(Заявка.Document_Минимально_необход_000=="" ,"Не установлены", Заявка.Document_Минимально_необход_000)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="103" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text92>
+            <Text38 Ref="104" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,3.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2ec003f3e2f346eb90cfd23125ac70ef</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text38</Name>
+              <Page isRef="7" />
+              <Parent isRef="101" />
+              <Text>17</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text7 Ref="105" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,3.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ef428070f3814ffab8304491e47abe71</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text7</Name>
+              <Page isRef="7" />
+              <Parent isRef="101" />
+              <Text>Требования к описанию участниками закупки поставляемого товара, который является предметом закупки, его функциональных характеристиках (потребительских свойствах), количественных и качественных характеристиках; сведения о выполняемой работе (оказываемой услуге), ее количественных и качественных характеристиках)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="106" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>d734fad3db624313abb2e13c4245826f</Guid>
+          <Name>DataBand16</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand16>
+        <DataBand17 Ref="107" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,51.2,19,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text94 Ref="108" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a306fde2c05c4e6f98d47fa50aba5c82</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text94</Name>
+              <Page isRef="7" />
+              <Parent isRef="107" />
+              <Text>Критерии оценки: {IIF(Заявка.Document_Критерии_оценки=="" ,"Не установлены", Заявка.Document_Критерии_оценки)}
+Преференции: {IIF(Заявка.Document_Преференции=="" ,"Не установлены", Заявка.Document_Преференции)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="109" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text94>
+            <Text58 Ref="110" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>aed4e62447734320b07de7f818c5763e</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text58</Name>
+              <Page isRef="7" />
+              <Parent isRef="107" />
+              <Text>18</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text58>
+            <Text68 Ref="111" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4af80dbf6f3a46ffabe244b1b3724d4b</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text68</Name>
+              <Page isRef="7" />
+              <Parent isRef="107" />
+              <Text>Требования к участникам закупки </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="112" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text68>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>0521e8aa531248af895711ff9c5c712f</Guid>
+          <Name>DataBand17</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand17>
+        <DataBand18 Ref="113" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,54.2,19,1.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text95 Ref="114" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b8eb6025b8054d6486de67965beb7d06</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text95</Name>
+              <Page isRef="7" />
+              <Parent isRef="113" />
+              <Text>{IIF(Документы.документы=="" ,"Не установлены", Документы.документы)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="115" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text95>
+            <Text67 Ref="116" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ddff9e7e451744b39bdbb7967c448405</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text67</Name>
+              <Page isRef="7" />
+              <Parent isRef="113" />
+              <Text>19</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text67>
+            <Text80 Ref="117" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2396c28e0f1a4f44a82fb99623cc8085</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text80</Name>
+              <Page isRef="7" />
+              <Parent isRef="113" />
+              <Text>Перечень документов, предоставляемых участниками для подтверждения их соответствия установленным требованиям</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="118" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text80>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>ce7a314f66d644fc8947a6bdb520dbfd</Guid>
+          <Name>DataBand18</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand18>
+        <DataBand19 Ref="119" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,56.8,19,3.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text97 Ref="120" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,3.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>03e5dda06f8b47c8b61e64dd34bfb5cd</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text97</Name>
+              <Page isRef="7" />
+              <Parent isRef="119" />
+              <Text>{IIF(Заявка.Document_Требование_РНП==1, "Установлено","Не установлено")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="121" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text97>
+            <Text73 Ref="122" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,3.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>8b4d3159105244499b33a66c672e9d87</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text73</Name>
+              <Page isRef="7" />
+              <Parent isRef="119" />
+              <Text>20</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text73>
+            <Text9 Ref="123" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,3.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>27a845d7bc0e45e493c36e138d8330c6</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="119" />
+              <Text>Требование об отсутствии сведений об участниках закупки в реестре недобросовестных поставщиков, предусмотренном статьей 5 Федерального закона № 223-ФЗ и (или) в реестре недобросовестных поставщиков, предусмотренном Федеральным законом от 05 апреля 2013 года № 44-ФЗ «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд»
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="124" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>00a418307f744a3693ad34b252075cf8</Guid>
+          <Name>DataBand19</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand19>
+        <DataBand20 Ref="125" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,61,19,2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text98 Ref="126" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>fee1e9a0e812400db6223a1c7517d373</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text98</Name>
+              <Page isRef="7" />
+              <Parent isRef="125" />
+              <Text>{IIF(Заявка.Document_Возможность_отказа_000=="" ,"Не установлен", "не позднее, чем за "+Заявка.Document_Возможность_отказа_000+" день / дней до дня окончания срока подачи заявок")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="127" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text98>
+            <Text76 Ref="128" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ceedf6dbbe654349af0f293d54dfb886</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text76</Name>
+              <Page isRef="7" />
+              <Parent isRef="125" />
+              <Text>21</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text76>
+            <Text10 Ref="129" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e9fd389723214aa496194a5a18e885aa</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text10</Name>
+              <Page isRef="7" />
+              <Parent isRef="125" />
+              <Text>Возможность отказаться от проведения конкурса </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="130" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>23b85e64d28e43eea00ff755f079505a</Guid>
+          <Name>DataBand20</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand20>
+        <DataBand21 Ref="131" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,63.8,19,1.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text79 Ref="132" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>4096af8256c9472fac9c4b9953fc1c8e</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text79</Name>
+              <Page isRef="7" />
+              <Parent isRef="131" />
+              <Text>22</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text79>
+            <Text16 Ref="133" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a0cf9f483fe440c7ad3cf25934e2deb5</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text16</Name>
+              <Page isRef="7" />
+              <Parent isRef="131" />
+              <Text>{IIF(Заявка.Document_Участник_закупки_СМП==1, "Да","Нет")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="134" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text19 Ref="135" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>55b18fcabf97438da72400850eb7b081</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text19</Name>
+              <Page isRef="7" />
+              <Parent isRef="131" />
+              <Text>Закупка проводится у субъекта малого и среднего предпринимательства</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="136" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>4d2090ca8d454672b45414650b02d112</Guid>
+          <Name>DataBand21</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand21>
+        <DataBand22 Ref="137" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,66,19,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text82 Ref="138" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ba2066b799eb4b66a0a763ddbab29d4d</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text82</Name>
+              <Page isRef="7" />
+              <Parent isRef="137" />
+              <Text>23</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text82>
+            <Text20 Ref="139" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>231b11fc89544a7681e50ae3bdbec8b4</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text20</Name>
+              <Page isRef="7" />
+              <Parent isRef="137" />
+              <Text>{IIF(Заявка.Document_Возможность_измене_000=="" ,"Не установлена", Заявка.Document_Возможность_измене_000)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="140" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text37 Ref="141" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>574defe5ad684ab0852aea818920d1f5</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text37</Name>
+              <Page isRef="7" />
+              <Parent isRef="137" />
+              <Text>Информация о возможности изменить предусмотренные договором количество товаров, объем работ, объем услуг при заключении или в ходе исполнения договора
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="142" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>38c9f91425544b41af62dda6564a6279</Guid>
+          <Name>DataBand22</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand22>
+        <DataBand23 Ref="143" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,69,19,2.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text99 Ref="144" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>78ba10b6d6334769a2412fdb826e17ec</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text99</Name>
+              <Page isRef="7" />
+              <Parent isRef="143" />
+              <Text>{IIF(Заявка.Document_Дополнительная_инф_000=="" ,"Не установлена", Заявка.Document_Дополнительная_инф_000)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="145" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text99>
+            <Text85 Ref="146" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>fbb688488f4a49368aedecb30dc92880</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text85</Name>
+              <Page isRef="7" />
+              <Parent isRef="143" />
+              <Text>24</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text85>
+            <Text11 Ref="147" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,2.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6cd23bfd77d74b6ebf7b795f93c22ab1</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text11</Name>
+              <Page isRef="7" />
+              <Parent isRef="143" />
+              <Text>Иные сведения, которые, по мнению заказчика, имеют существенное значение при осуществлении закупки</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="148" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>bbd89160c86242a881072cf64576d554</Guid>
+          <Name>DataBand23</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand23>
+        <DataBand24 Ref="149" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,72,19,1.4</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text88 Ref="150" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>292b00abd93b43b58d4db5c0df3b3316</Guid>
+              <HideZeros>True</HideZeros>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text88</Name>
+              <Page isRef="7" />
+              <Parent isRef="149" />
+              <Text>25</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text88>
+            <Text51 Ref="151" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ab8d3af37254426f92be6b40ace2ba21</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text51</Name>
+              <Page isRef="7" />
+              <Parent isRef="149" />
+              <Text>Проведение открытого конкурса в электронной форме</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="152" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text51>
+            <Text60 Ref="153" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,9,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d824885655ee4fbebe09a3107d6213ef</Guid>
+              <HideZeros>True</HideZeros>
+              <Margins>10,5,5,5</Margins>
+              <Name>Text60</Name>
+              <Page isRef="7" />
+              <Parent isRef="149" />
+              <Text>{IIF(Заявка.Document_Закупка_в_электрон_000==1,"Да","Нет")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="154" type="DateFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Guid>64adecc23c824730845ee113063fa074</Guid>
+          <Name>DataBand24</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DataBand24>
+        <HeaderBand5 Ref="155" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,74.2,19,1.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text39 Ref="156" type="Text" isKey="true">
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>0,0,19,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="7" />
+              <Parent isRef="155" />
+              <Text>
+
+     К заявке на осуществление закупки прилагаются следующие документы:</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+            </Text39>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand5</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <PrintOnAllPages>False</PrintOnAllPages>
+        </HeaderBand5>
+        <DataBand26 Ref="157" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,76.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text25 Ref="158" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,0,18.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1bfdc275b50443459293015c061aa7af</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="7" />
+              <Parent isRef="157" />
+              <Text>{Документация.файл}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text35 Ref="159" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f98794c2d10b408a9870e5bb1b223f75</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="7" />
+              <Parent isRef="157" />
+              <Text>{Line}.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Документация</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>cf3615187851479d91971a1043bddabd</Guid>
+          <Name>DataBand26</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand26>
+        <FooterBand1 Ref="160" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,78.2,19,5.4</ClientRectangle>
+          <Components isList="true" count="8">
+            <Text178 Ref="161" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <ClientRectangle>0.2,2.2,5.8,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>72e97b6051b2466dad54d08308c872a0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text178</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>{Заявка.Document_Утвердивший_Утверд_005}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+            </Text178>
+            <Text179 Ref="162" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <ClientRectangle>6.4,2.8,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>75964249525a412ca1721c4e9eba5564</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text179</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>(подпись)</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+            </Text179>
+            <Text180 Ref="163" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <ClientRectangle>11.6,2.8,7.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>2346609e790a4d2388e78443b09ea507</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text180</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>(расшифровка подписи)</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>Expression</Type>
+            </Text180>
+            <Text181 Ref="164" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <ClientRectangle>0.2,4.2,6.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>33f5c53a77fd49ec8853f2cb697a4659</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text181</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>{Today}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextFormat Ref="165" type="DateFormat" isKey="true">
+                <StringFormat>D</StringFormat>
+              </TextFormat>
+              <Type>SystemVariables</Type>
+            </Text181>
+            <Text182 Ref="166" type="Text" isKey="true">
+              <Brush>[0:255:255:255]</Brush>
+              <ClientRectangle>11.6,2.2,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>2dff25e97ec54a02b0afad7d0074bce1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text182</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>{Заявка.Document_Утвердивший_Утверд_001}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <Type>DataColumn</Type>
+            </Text182>
+            <Text71 Ref="167" type="Text" isKey="true">
+              <Brush>[255:255:255]</Brush>
+              <ClientRectangle>0,0,19,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,12</Font>
+              <Guid>3753e28d73284d45b97558f7e0dcf47d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <Text>     Настоящей заявкой заказчик подтверждает наличие лимитов бюджетных обязательств по предмету данного контракта.</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text71>
+            <HorizontalLinePrimitive7 Ref="168" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>11.6,2.8,7.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="169" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>2424d1ae5edb4d5fb9c0426d80169c92</Guid>
+              <Name>HorizontalLinePrimitive7</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <StartCap Ref="170" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive7>
+            <HorizontalLinePrimitive8 Ref="171" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>6.4,2.8,4.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="172" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>bb6a93db913640f9893a7d5b91809b1d</Guid>
+              <Name>HorizontalLinePrimitive8</Name>
+              <Page isRef="7" />
+              <Parent isRef="160" />
+              <StartCap Ref="173" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>f8076aeaad5744caa960ab0fcd3ebb89</Guid>
+          <Name>FooterBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </FooterBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>f57ea72bbdbe4f959ddca30360564e38</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="174" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="175" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/18/2018 5:32:40 PM</ReportChanged>
+  <ReportCreated>1/16/2018 9:22:02 AM</ReportCreated>
+  <ReportFile>C:\Users\admin\AppData\Local\Temp\Cognitive\0ACC9F218\myreport.xml</ReportFile>
+  <ReportGuid>805971de6782405b9699395699d1debf</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2013.1.1600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

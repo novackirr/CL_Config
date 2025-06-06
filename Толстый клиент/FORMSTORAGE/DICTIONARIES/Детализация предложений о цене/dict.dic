@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Детализация предложений о цене" Type="1">
+  <Items>
+    <Dictionary Name="Детализация предложений о цене">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="09f6de1e-a93f-4813-8e5e-ca244c829d7f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">По лоту в целом</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="31a6727e-9a25-4279-a8aa-5af5a976a2e4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">По позициям лота</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="4581af1b-d62d-444d-b35a-2afc1c94e597">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">По части позиций лота</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

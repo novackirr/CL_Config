@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Требование подачи ТКП участниками" Type="0">
+  <Items>
+    <Dictionary Name="Требование подачи ТКП участниками">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="b286c04d-66b2-4b5c-9cf3-1cf387d07b6e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не установлено</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="0adbfa1d-d473-42a3-b8bc-ed9c1d31100d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Установлено</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

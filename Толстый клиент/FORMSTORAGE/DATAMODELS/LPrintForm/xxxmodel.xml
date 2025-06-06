@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform  ctform.xsd" name="LPrintForm">
+	<CONTENT_MODEL dfattchfiles="|Document|files" dfnumberdoc="|Document|Число_регномера" key="Key">
+		<E name="Key" datatype="integer" index="false" default="&quot;1&quot;" view="invisible" displayname="Ключ" dfprotected="true"/>
+		<S name="Document" use="ШаблоныПечати" displayname="Документ"><E displayname="Регистрационный номер" name="Регистрационный_номер" datatype="text(249)" index="true" dfprotected="true" dfhidden="true"/>
+			<E displayname="Префикс рег. номера" name="Префикс_регномера" datatype="dictionary(Prefix,text)" edit="combobox(Prefix)" index="true" view="invisible" dfprotected="false"/>
+			<E displayname="Порядковый рег. номер" name="Число_регномера" datatype="integer(+1..)" index="true" view="invisible" dfprotected="true" required="true"/>
+			<E displayname="Суффикс рег. номера" name="Суффикс_регномера" datatype="dictionary(Suffix,text)" edit="combobox(Suffix)" dfprotected="false" index="true" view="invisible"/>
+			<E displayname="Дата регистрации" name="Дата_регистрации" datatype="date" edit="" index="true" dfprotected="true" required="true" esp="false" default="nowdate()"/>
+			<E displayname="Вид документа" name="Вид_документа" datatype="dictionary(VidDocNames,text)" index="true" dfprotected="true" required="false" edit="combobox" default="&quot;Шаблон&quot;"/>
+			<E displayname="Краткое содержание" name="Краткое_содержание" datatype="longtext" euflag="7" index="true" dfprotected="true" required="false" edit="multiline"/>
+			<E displayname="ИД потока" name="ИД_потока" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false"/>
+			<E displayname="ИД регистратора" name="ИД_регистратора" datatype="integer" index="false" dfprotected="true" dfhidden="false" esp="false"/>
+			<E displayname="Имя потока" name="Имя_потока" datatype="text" index="false" view="invisible" dfprotected="true" dfhidden="true" esp="false"/>
+			<E name="header" datatype="text" index="false" value="&quot;Шаблон типового документа&quot;
+"/><E name="subheader" datatype="text" index="false"/><E name="Название_шаблона" datatype="text" index="true" displayname="Название шаблона" required="true"/><E name="Описание_шаблона" datatype="longtext" index="true" displayname="Описание шаблона"/><E name="Дата_создания" datatype="datetime" index="true" displayname="Дата создания"/><E name="Поток" datatype="text" index="true"/><S name="Организация_заказчик" displayname="Организация заказчик"><E name="Организация_заказчик_наименование" datatype="longtext" index="true" dictpath="" required="false" displayname="Организация заказчик наименование" absettings="&lt;ROOT title=&quot;Организация заказчик наименование&quot; IsMultiple=&quot;False&quot; CanSelectNobody=&quot;False&quot; SelectedUser=&quot;False&quot; SelectedGroup=&quot;False&quot; SelectedDepartments=&quot;True&quot;&gt;&lt;DateDictionary Name=&quot;Departments&quot; DisplayName=&quot;Структура предприятия&quot; /&gt;&lt;/ROOT&gt;" abdata="Name"/><E name="Организация_заказчик" datatype="integer" index="true" displayname="Организация заказчик" view="invisible" required="false" dictpath="" extype="addressbook" abdata="Id"/><E name="Организация_заказчик_код_по_СПЗ" datatype="text" index="true" displayname="Организация заказчик код по СПЗ" view="invisible" dictpath=""/><E name="Организация_заказчик_код_по_СР" datatype="dictionary(Организации заказчики,text)@Код по Сводному реестру" index="true" displayname="Организация заказчик код по СР" view="invisible" dictpath=""/><E name="Организация_заказчик_Код_в_ЕИС" datatype="text" index="true" displayname="Организация заказчик Код в ЕИС"/></S><S name="ГРБС" displayname="ГРБС"><E name="ГРБС_наименование" datatype="longtext" index="true" dictpath="" required="false" displayname="ГРБС_наименование" extype="addressbook" abdata="Name"/><E name="ГРБС" datatype="integer" index="true" displayname="ГРБС" required="false" dictpath="" extype="addressbook" abdata="Id"/></S></S>
+		<S name="Files" use="Files" displayname="Документация">
+			<E name="header" datatype="text" index="false" value="&quot;Документация&quot;"/>
+			<E name="subheader" datatype="text" index="false"/>
+		</S>
+	</CONTENT_MODEL>
+	<SCRIPT language="VBScript">Dim oTrace
+
+	
+Sub generate_num
+
+  'oTrace.Trace " VBCRPT generate_num..."
+
+  Dim rn
+  pref = ""
+  num = Data("|Document|Число_регномера").Value
+  suf = ""
+
+  if Len(num) = 0 then
+	'oTrace.Trace " VBCRPT End generate_num(Нет номера)"
+	Exit Sub
+  end if
+
+  if Len(pref)&gt;0 then
+	rn = CStr(rn) + pref + "-"
+  end if
+  rn = CStr(rn) + CStr(num)
+  if Len(suf)&gt;0 then
+    rn = CStr(rn) + "-" + CStr(suf)
+    end if
+    Data("|Document|Регистрационный_номер")=CStr(rn)
+    Exit Sub
+
+    'oTrace.Trace " VBCRPT End generate_num"
+    err_exit:
+    Form.MsgBox err.Description
+
+    End Sub
+
+    Sub clear_all_readonly
+    'oTrace.Trace " VBCRPT clear_all_readonly..."
+    Data("|Document|Число_регномера").Attribute("readonly")=""
+    Data("|Document|Дата_исполнения").Attribute("readonly")=""
+    Data("|Document|Ответственные_за_документ").Attribute("readonly")=""
+    Data("|Document|Исполнители_по_документу").Attribute("readonly")=""
+    Data("|Document|Контролер").Attribute("readonly")=""
+    Data("|Document|Срок_исполнения").Attribute("readonly")=""
+    Data("|Document|files").Attribute("readonly")=""
+    For Each el In Data("|Document|files")
+      el.Attribute("readonly")=""
+    Next
+    'oTrace.Trace " VBCRPT end clear_all_readonly"
+    End Sub
+
+    Sub prepare_completed
+    'oTrace.Trace " VBCRPT prepare_completed..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+    Data("|Document|Дата_исполнения").Attribute("readonly")="true"
+    Data("|Document|Ответственные_за_документ").Attribute("readonly")="true"
+    Data("|Document|Исполнители_по_документу").Attribute("readonly")="true"
+    'oTrace.Trace " VBCRPT End prepare_completed"
+    End Sub
+
+    Sub prepare_wfclosed
+    'oTrace.Trace " VBCRPT prepare_wfclosed..."
+    Data("|Document|Контролер").Attribute("readonly")="true"
+    Data("|Document|Срок_исполнения").Attribute("readonly")="true"
+    'oTrace.Trace " VBCRPT End prepare_wfclosed"
+    End Sub
+
+    Sub prepare_finder
+    'oTrace.Trace " VBCRPT prepare_finder..."
+    clear_all_readonly
+    Data("|Document|files").Attribute("readonly")="true"
+    for Each el in Data("|Document|files")
+      el.Attribute("readonly")="true"
+    Next
+    'oTrace.Trace " VBCRPT End prepare_finder"
+    End Sub
+
+    Sub prepare_registration
+    'oTrace.Trace " VBCRPT prepare_registration..."
+    clear_all_readonly
+    Data("|Document|Число_регномера").Attribute("readonly")="true"
+    Data("|Document|Дата_исполнения").Attribute("readonly")="true"
+    Data("|Document|Ответственные_за_документ").Attribute("readonly")="true"
+    Data("|Document|Исполнители_по_документу").Attribute("readonly")="true"
+    'oTrace.Trace " VBCRPT End prepare_registration"
+    End Sub
+
+    Sub Form_NamedEvent( evt )
+    'oTrace.Trace " VBCRPT Form_NamedEvent..."
+    
+    'MsgBox "Form_NamedEvent вход '" + evt + "'", vbOKOnly, "ЕВФРАТ-Документооборот"
+
+    if evt = "dfmakestrregnum" then
+      generate_num
+    End If
+    if evt = "dfrgmregistration" then
+      prepare_registration
+    End If
+    if evt = "dfrgmfinder" then
+      prepare_finder
+    End If
+    if evt = "dfrgmcompleted" then
+      prepare_completed
+    End If
+    if evt = "dfrgmwfclosed" then
+      prepare_wfclosed
+    End if
+
+    If evt = "attached_files_not" Then
+        Data("|Document|Соотношение_полей_и_реквизитов").RemoveAll
+    End If
+    'oTrace.Trace " VBCRPT End Form_NamedEvent"
+    End Sub
+
+    Sub Form_Load
+    'Set oTrace = CreateObject("TRACE.VBTracer")
+    'oTrace.Trace " VBCRPT End Form_Load"
+    filescount = -1
+    End Sub
+
+    Sub Form_Unload
+    'oTrace.Trace " VBCRPT Form_Unload..."
+    Set oTrace = Nothing
+    End Sub
+
+    sub form_FieldDataChanged(field)
+    s = field.Attribute("frm.abstoredata")
+    
+    if s &lt;&gt; "" and field.Value = "" then
+      Set arr = field.Parent(s)
+      
+      if not arr is nothing then
+        arr.RemoveAll
+      end if
+    end if
+
+    end sub
+
+Dim filescount</SCRIPT>
+	<plugins>
+		<restriction displayname="Генерация номера" progid="Euphfrm.RegNumGenerator" root="" initstring="">
+			<arg role="numberdoc" path="|S|Число_регномера"/>
+			<arg role="flow" path="|S|ИД_потока"/>
+			<arg role="regnum" path="|S|Регистрационный_номер"/>
+			<checkentry type="onevent" param="dfgenerateregnum" action="error"/>
+		</restriction>
+		<dictionary name="Suffix" progid="FrmTools.DictSource" inittime="field" initstring="stored:Suffix" view=""/><dictionary name="VidDocNames" progid="FrmTools.DictSource" inittime="field" initstring="stored:VidDocNames" view=""/><dictionary name="posttype" progid="FrmTools.DictSource" inittime="once" initstring="stored:posttype"/><dictionary name="Prefix" progid="FrmTools.DictSource" inittime="once" initstring="stored:Prefix"/><dictionary name="Resolutions" progid="FrmTools.DictSource" inittime="once" initstring="stored:Resolutions"/><dictionary name="Тип связки" progid="FrmTools.DictSource" inittime="once" initstring="stored:Тип связки"/><dictionary name="Реквизиты_РКК" progid="FRMITools.DocAttributes" inittime="once" initstring="stored:Реквизиты_РКК" view=""/></plugins>
+</FORM_DESCRIPTION>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by LEGO (LEGO) -->
+<FORM_DESCRIPTION xmlns="http://www.cognitive.ru/XML/2001/ctform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cognitive.ru/XML/2001/ctform
+
+ctform.xsd" name="ReportEffectZak">
+	<CONTENT_MODEL use="ReportSchedule" datafilename="">
+		<E name="key" datatype="integer" index="false" displayname="Ключ" default="&quot;1&quot;" view="invisible"/>
+		<E name="Квартал_с" datatype="integer" index="true" displayname="Квартал с"/><E name="Год" datatype="integer" index="true" displayname="Год"/><E name="Квартал_по" datatype="integer" index="true" displayname="Квартал по"/><E name="Количество_обоснованных_жалоб" datatype="integer" index="true" displayname="Количество обоснованных жалоб"/><E name="Количество_поданных_жалоб" datatype="integer" index="true" displayname="Количество поданных жалоб"/><E name="Количество_закупок_с_нарушениями_планирования" datatype="integer" index="true" displayname="Количество закупок с нарушениями планирования"/><E name="Количество_контрактов_с_нарушением_исполнения" datatype="integer" index="true" displayname="Количество_контрактов с нарушением исполнения"/></CONTENT_MODEL>
+	<plugins>
+		<dictionary displayname="Потоки" name="Потоки" progid="FRMITools.FlowsDictionary" initstring="" inittime="once"/>
+	</plugins>
+</FORM_DESCRIPTION>

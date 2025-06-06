@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип объекта закупки" Type="0">
+  <Items>
+    <Dictionary Name="Тип объекта закупки">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="G" ParentGuid="" Guid="dd4debb7-a0fd-4b0d-be7b-79020ce8db0a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Товар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="W" ParentGuid="" Guid="b8566afc-7a04-4819-934d-32b4c13bd252">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Работа</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="S" ParentGuid="" Guid="8f66880d-0b97-4028-98b9-b58b625c851d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Услуга</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

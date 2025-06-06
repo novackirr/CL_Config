@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Основание отклонения заявки участника" Type="0">
+  <Items>
+    <Dictionary Name="Основание отклонения заявки участника">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="STRUCTURE_CONTENT_DESIGN" ParentGuid="" Guid="f1688e6d-90c7-4b5a-8a48-a762d10bf853">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие заявки по составу, содержанию и оформлению</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PARTICIPATOR" ParentGuid="" Guid="c376fcad-0c53-49b1-ada4-208021d6c95c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие участника закупки требованиям документации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SUBCONTRACTOR" ParentGuid="" Guid="e5c0feac-18d8-41e8-9daf-c4376cfc65c1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие субподрядчиков (соисполнителей), изготовителей требованиям документации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PRODUCT" ParentGuid="" Guid="4bf3b255-7492-4633-801d-2563f4aea218">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие продукции</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CONDITIONS" ParentGuid="" Guid="b2a328a3-8d3d-431c-ab23-be93e2b70c16">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие договорных условий, указанных в заявке на участие закупки, требованиям документации</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SUPPLY" ParentGuid="" Guid="b8e6cfab-d71c-4121-9197-fc8092f335e1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Несоответствие размера, формы, условий или порядка предоставления обеспечения заявки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="OTHER" ParentGuid="" Guid="82b83418-563e-42e6-b844-d8d05d6f9025">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иное основание в соответствии с положением о закупке</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

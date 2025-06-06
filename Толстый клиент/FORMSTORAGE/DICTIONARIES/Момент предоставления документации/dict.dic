@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Момент предоставления документации" Type="0">
+  <Items>
+    <Dictionary Name="Момент предоставления документации">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="b2e2f8c0-c6ae-4c22-a5b3-c33f34022838">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Первые части</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="04cb590e-e8bc-4945-8024-ec0f63043d8f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Вторые части и квал. отбор</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="4e32d3c5-bd75-4697-b9d6-74645a718675">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ценовые предложения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="de4b27cd-4816-44be-b0f8-43585cc2f6b6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">В первой части заявки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="5" ParentGuid="" Guid="4ae841ac-5328-4c8b-b421-4261b525e71d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Во второй части заявки</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

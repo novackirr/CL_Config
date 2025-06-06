@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Типы перечня ТРУ" Type="0">
+  <Items>
+    <Dictionary Name="Типы перечня ТРУ">
+      <DataCollection>
+        <Data Name="Субъектов малого и среднего предпринимательства" ParentGuid="" Guid="7f703d2b-58d7-431c-b7f0-7a03ea26b94a" />
+        <Data Name="Инновационной продукции" ParentGuid="" Guid="fcf5f31d-6438-46f7-9dce-d6f64374cb2d" />
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

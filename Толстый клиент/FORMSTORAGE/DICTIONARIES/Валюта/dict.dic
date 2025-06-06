@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Валюта" Type="0">
+  <Items>
+    <Dictionary Name="Валюта">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="Цифровой код" />
+        <Attribute Name="Краткое наименование" />
+        <Attribute Name="Статус записи" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="BBD" ParentGuid="" Guid="b64d5a26-0295-49a6-a05a-6f6b0dc8ee13">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Барбадосский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Барбадос</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">052</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GYD" ParentGuid="" Guid="d4029cb8-97cf-49c6-953d-cf26f5c91523">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гайанский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гайана</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">328</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NAD" ParentGuid="" Guid="7695fc41-9fd7-441d-8100-6dc58f46bd27">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Намибии</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Намибия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">516</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MMK" ParentGuid="" Guid="df933fff-7c70-496e-bdc9-fc4f055629c0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кьят</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мьянма</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">104</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BHD" ParentGuid="" Guid="aa4ddd4b-652d-4917-bd5b-635a6044ae75">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бахрейнский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бахрейн</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">048</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="FJD" ParentGuid="" Guid="871eea45-6c6f-4759-a53d-bb24b38dd3bd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Фиджи</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Фиджи</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">242</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ZAR" ParentGuid="" Guid="88b0d40e-5edc-422e-981c-75708bbfd643">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Рэнд</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Лесото; Намибия; Южная Африка</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">710</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AFN" ParentGuid="" Guid="c4fb410a-d6c2-4c59-8726-46b492f8db14">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Афгани</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Афганистан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">971</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KYD" ParentGuid="" Guid="146b8625-c389-4885-9868-5f7b23a92a57">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Островов Кайман</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Острова Кайман</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">136</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="HUF" ParentGuid="" Guid="eb976d13-4f7e-4088-94ab-3890ac8b9acc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Форинт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Венгрия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">348</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SYP" ParentGuid="" Guid="f8309300-40a0-428c-b2d3-ce94a72ba20a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сирийский фунт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сирийская Арабская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">760</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KHR" ParentGuid="" Guid="e00f4832-f58b-4e27-b057-afa557bc4a2c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Риель</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Камбоджа</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">116</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CUP" ParentGuid="" Guid="47904027-a15a-44a2-9426-c8a49f22f564">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кубинское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Куба</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">192</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CNY" ParentGuid="" Guid="128ee21b-11b9-49e8-8e39-776ea5c25998">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Юань</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Китай</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">156</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LYD" ParentGuid="" Guid="04699947-6b5a-4b0c-9568-3edcdce87187">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ливийский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ливийская Арабская Джамахирия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">434</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ЕGP" ParentGuid="" Guid="9f2c8ee6-b405-4fe5-88e5-294a29c51fb5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Египетский фунт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Египет</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">818</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MZN" ParentGuid="" Guid="1ead73ee-f5d9-460f-a45d-7317fea9c224">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Мозамбикский метикал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мозамбик</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">943</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="EUR" ParentGuid="" Guid="3af26b60-d1d0-48e3-9ad5-78e60455a813">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Евро</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Австрия; Андорра; Бельгия; Гваделупа; Германия; Греция; Ирландия; Исландия; Испания; Италия; Кипр; Люксембург; Майотта; Мальта; Мартиника; Монако; Нидерланды; Папский Престол (Государство-город Ватикан); Португалия; Реюньон; Сан-Марино; Сен-Бартелеми; Сен-Мартен; Сент-Пьер и Микелон; Словакия; Словения; Финляндия; Франция; Французская Гвиана; Французские Южные территории; Черногория; Эстония</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">978</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="VUV" ParentGuid="" Guid="ca7c6e9d-22d3-43c3-97d2-8e5a880a36e8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Вату</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Вануату</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">548</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NGN" ParentGuid="" Guid="8363cc08-fcf4-46c0-8f6d-c724e47184b2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Найра</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Нигерия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">566</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SEK" ParentGuid="" Guid="0d5800f2-d252-4222-bad9-91537bc9eb86">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Шведская крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Швеция</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">752</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MRO" ParentGuid="" Guid="006a6dda-b9c5-49c0-aa0b-6f478fc413a5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Угия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мавритания</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">478</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CLР" ParentGuid="" Guid="3a70e0f2-7126-4950-9fd2-56f2babb8748">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Чилийское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Чили</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">152</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SCR" ParentGuid="" Guid="88466c7b-2241-4d71-8798-96e414923578">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сейшельская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сейшелы</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">690</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KWD" ParentGuid="" Guid="76767be5-b2a4-46eb-a615-d631c0e0baf5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кувейтский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Кувейт</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">414</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TZS" ParentGuid="" Guid="54f1d51b-84a3-4dca-bfb4-65310a1e6d05">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Танзанийский шиллинг</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Танзания, объединенная республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">834</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="XPF" ParentGuid="" Guid="59b4fd80-8370-4d36-8a63-b08160990b19">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Франк КФП</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Новая Каледония; Французкая Полинезия; Уоллис и Футуна</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">953</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="UZS" ParentGuid="" Guid="76b90f1d-0655-4195-9deb-96b060ecd649">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Узбекский сум</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Узбекистан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">860</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SLL" ParentGuid="" Guid="1c46adf3-a886-462f-b2dc-6bdce5a95e36">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Леоне</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сьерра-Леоне</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">694</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TMT" ParentGuid="" Guid="8989f384-e37e-4a30-a19a-667802ccd073">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Новый туркменский манат</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Туркмения</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">934</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SDG" ParentGuid="" Guid="635352ba-cc91-4445-af4f-5b9ebc5f9f54">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Суданский фунт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Судан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">938</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KES" ParentGuid="" Guid="0fe8338c-5810-4cd3-88ef-9e9f22c6f9a1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кенийский шиллинг</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Кения</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">404</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BOB" ParentGuid="" Guid="d9e882f5-d978-4dca-befe-91aae7b22c99">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Боливиано</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Боливия, многонациональное государство</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">068</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CRC" ParentGuid="" Guid="7ab1befe-e620-4ff1-abdd-63bd69765471">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Коста-риканский колон</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Коста-Рика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">188</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="COU" ParentGuid="" Guid="8def7b96-862a-4da8-9ed5-eceab07c56ed">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Единица реальной стоимости</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Колумбия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">970</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="IQD" ParentGuid="" Guid="3ba80d14-7066-4769-aa33-3e71c7eb3905">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иракский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ирак</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">368</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NIO" ParentGuid="" Guid="85054e3e-fb9e-43e5-aa11-28350e54edd4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Золотая кордоба</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Никарагуа</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">558</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AOA" ParentGuid="" Guid="be5a30c9-9e70-4c01-961c-6c0a3e3e1254">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кванза</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ангола</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">973</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MAD" ParentGuid="" Guid="548d7545-5a75-47d1-a0e3-85142b44d219">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Марокканский дирхам</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Западная Сахара; Марокко</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">504</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GIP" ParentGuid="" Guid="e0a3d932-8bf8-4eab-a9d3-b05e895fe063">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гибралтарский фунт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гибралтар</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">292</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="XDR" ParentGuid="" Guid="fcee77c1-4209-49c4-8708-6ac76b8b45f1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">СДР (специальные права заимствования)</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Международный валютный фонд (МВФ)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">960</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KRW" ParentGuid="" Guid="94ee0c58-486c-4b15-a600-b21146e1875d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Вона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Корея, республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">410</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TWD" ParentGuid="" Guid="62de466f-1a4c-413d-8c3d-932bdad16114">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Новый тайваньский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Тайвань (Китай)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">901</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GNF" ParentGuid="" Guid="7b18a31c-9605-42ca-be40-2b3c76abe8bf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гвинейский франк</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гвинея</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">324</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="DKK" ParentGuid="" Guid="22077be2-5b1b-46b3-858d-35d96a71208a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Датская крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гренландия; Дания; Фарерские острова</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">208</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PKR" ParentGuid="" Guid="fbf0a944-2000-4bf2-976a-642019fabd1b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Пакистанская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Пакистан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">586</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MXN" ParentGuid="" Guid="21a816ff-c533-4d9c-9c97-aeaa756a3974">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Мексиканское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мексика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">484</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SBD" ParentGuid="" Guid="ed5841b7-d4bc-40f5-8b13-d9398410191e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Соломоновых Островов</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Соломоновы Острова</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">090</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CDF" ParentGuid="" Guid="ad5d0c1e-e6e2-413d-8a67-b7028b52feaf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конголезский франк</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Конго, демократическая республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">976</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MVR" ParentGuid="" Guid="49a5f99c-a340-4836-a95f-2b880890c95a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Руфия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мальдивы</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">462</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KMF" ParentGuid="" Guid="fcee860d-5278-41a8-a21c-9c6b3d93b8e1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Коморский франк</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Коморы</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">174</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ZMW" ParentGuid="" Guid="5e1da7ff-bc26-4117-a512-a69f61a8c1c8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Замбийская квача</DataAttribute>
+            <DataAttribute Name="Краткое наименование" />
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">967</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ZMK" ParentGuid="" Guid="d2e1f242-7744-4a72-8c9c-4c8510fcfb2d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Замбийская квача</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Замбия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">894</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ISK" ParentGuid="" Guid="2b3b9f11-6f71-412e-bdc1-3f0db28869ec">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Исландская крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Исландия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">352</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="RSD" ParentGuid="" Guid="9e50f242-b8fe-43bf-9021-2c1dc1305435">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сербский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сербия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">941</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AWG" ParentGuid="" Guid="8c21f09f-f1f2-4a90-9abf-ee2b57743b1a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Арубанский флорин</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Аруба</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">533</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="UAH" ParentGuid="" Guid="c04ac23b-a823-4a38-a975-c006a7d562de">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гривна</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Украина</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">980</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="RWF" ParentGuid="" Guid="029df5ff-7690-4370-86ac-03865a879539">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Франк Руанды</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Руанда</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">646</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BND" ParentGuid="" Guid="5f26cf59-148e-4f26-b0d2-78865bb21598">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Брунейский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бруней-Даруссалам</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">096</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BTN" ParentGuid="" Guid="3eeae2d8-af7f-404d-8682-ac7e8ecb30b6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Нгултрум</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бутан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">064</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="WST" ParentGuid="" Guid="f2e16c0e-30db-4ead-80b2-938d9d17e0f5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тала</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Самоа</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">882</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LBP" ParentGuid="" Guid="83736b5a-245a-4f89-92e5-86d3c06c4324">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ливанский фунт</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ливан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">422</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="UYI" ParentGuid="" Guid="621432f7-83a7-4ff4-b8cf-e03c1fc0ef48">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Уругвайское песо в индексированных единицах</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Уругвай</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">940</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GEL" ParentGuid="" Guid="438b845f-d015-498a-840f-f6cf6525c827">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лари</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Грузия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">981</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SHP" ParentGuid="" Guid="c7053189-6840-4a12-8364-643823b483c9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Фунт Святой Елены.</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Святая Елена, остров Вознесения, Тристан-да-Кунья</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">654</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CZK" ParentGuid="" Guid="158f8d77-0e1e-4ee3-ad54-1653a03e95b4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Чешская крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Чешская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">203</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CUC" ParentGuid="" Guid="4f23f977-7015-4ce9-bba3-9496521bce1c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конвертируемое песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Куба</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">931</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="DJF" ParentGuid="" Guid="dd81f4b3-ecfd-40b3-9ebd-538216f90c50">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Франк Джибути</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Джибути</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">262</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NPR" ParentGuid="" Guid="e4682205-be90-4d0b-9e8c-c3af4e04d80a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Непальская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Непал</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">524</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="JPY" ParentGuid="" Guid="b408dd59-848b-4412-bbf8-17f5be688f39">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иена</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Япония</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">392</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="HTG" ParentGuid="" Guid="7ffab41a-22c9-4124-b4a0-cbe696927d3d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гурд</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гаити</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">332</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ERN" ParentGuid="" Guid="1737cfe7-d3d3-4795-be78-8711771b5163">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Накфа</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Эритрея</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">232</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BAM" ParentGuid="" Guid="2e3e1f68-8828-4b33-b416-b94555a8d9f7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конвертируемая марка</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Босния и Герцеговина</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">977</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="INR" ParentGuid="" Guid="c25b1664-717f-4dda-88f2-2215ea53f413">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Индийская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бутан; Индия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">356</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KGS" ParentGuid="" Guid="29ab6886-d0e8-45ed-b93d-a4fa366a3901">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сом</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Киргизия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">417</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MDL" ParentGuid="" Guid="819b590b-584c-4c5c-841e-01c7a8721eaf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Молдавский лей</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Молдова, республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">498</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MYR" ParentGuid="" Guid="bd2dd727-00d4-495b-a6fa-93388b0accc3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Малайзийский ринггит</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Малайзия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">458</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SOS" ParentGuid="" Guid="f3080477-2c9e-478e-b033-22cf21072b0d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сомалийский шиллинг</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сомали</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">706</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AED" ParentGuid="" Guid="146a614c-c560-4b20-bca1-07d098f12341">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Дирхам (ОАЭ)</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Объединенные Арабские Эмираты (ОАЭ)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">784</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SAR" ParentGuid="" Guid="e459e547-b31a-45a2-b290-d1f9b1f08d49">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Саудовский риял</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Саудовская Аравия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">682</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="IDR" ParentGuid="" Guid="860dd80c-d6cb-421c-a4a3-ae87bf74daa3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Индонезия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">360</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SVC" ParentGuid="" Guid="d2bd5c81-3837-4d30-bb8e-3d57e38cb6da">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сальвадорский колон</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Эль-Сальвадор</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">222</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="STN" ParentGuid="" Guid="40c36bd7-d771-4eca-a382-15dbb133d289">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Добра</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="UYU" ParentGuid="" Guid="e345100a-ebb5-4479-90a6-9a3f1bf961a6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Уругвайское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Уругвай</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">858</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="IRR" ParentGuid="" Guid="0a8e5244-70f0-4eb7-b3c1-38669027745b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иранский риал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Иран (Исламская Республика)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">364</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PGK" ParentGuid="" Guid="2796205f-9748-43be-a21c-779b816675aa">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кина</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Папуа-Новая Гвинея</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">598</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BSD" ParentGuid="" Guid="c1a63e0c-62be-4cbe-aaa1-41e15398e0cc">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Багамский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Багамы</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">044</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BYN" ParentGuid="" Guid="e7fe69d8-809b-4b8f-a247-3a1cfbfe866f">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Белорусский рубль</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+            <DataAttribute Name="Цифровой код">933</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Беларусь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ILS" ParentGuid="" Guid="7b62b38a-bf76-4b82-ae69-4960bb991abe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Новый израильский шекель</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Израиль</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">376</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PAB" ParentGuid="" Guid="2f51acd2-adef-48de-bc86-534ba899964e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бальбоа</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Панама</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">590</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NOK" ParentGuid="" Guid="f312a906-2ed7-441a-ba82-be090cc2648d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Норвежская крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Норвегия; Остров Буве; Шпицберген и Ян Майен</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">578</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="THB" ParentGuid="" Guid="d8354f3f-0ca7-4b69-ada7-aa30b1dd0ff2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бат</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Таиланд</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">764</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TOP" ParentGuid="" Guid="1d152cb5-445e-4e6e-bc23-410cc10217c9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Паанга</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Тонга</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">776</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ZWL" ParentGuid="" Guid="1824833d-c753-42bf-964e-c41d3604e963">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Зимбабве</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Зимбабве</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">932</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ANG" ParentGuid="" Guid="ce1aaf61-603e-4928-98c3-2559a1bd47f9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Нидерландский антильский гульден</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Нидерландские Антилы</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">532</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LTL" ParentGuid="" Guid="ee173326-4e93-4f30-b47e-2ab5d303ca91">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Литовский лит</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Литва</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">440</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="QAR" ParentGuid="" Guid="9eb57570-8e5b-40b1-81b9-ed27e973035b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Катарский риал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Катар</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">634</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="XCD" ParentGuid="" Guid="fa44ac43-317c-483a-b99c-47425d1320b9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Восточно-карибский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ангилья; Антигуа и Барбуда; Гренада; Доминика; Монтсеррат; Сент-Винсент и Гренадины; Сент-Китс и Невис; Сент-Люсия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">951</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GBP" ParentGuid="" Guid="6b89290f-9356-40d5-a3d3-0b76f2389fb4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Фунт стерлингов</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Соединенное королевство</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">826</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ARS" ParentGuid="" Guid="67aeef96-8dac-432a-ae6b-98e03b9d2c50">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Аргентинское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Аргентина</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">032</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="FKP" ParentGuid="" Guid="5457903d-c6c0-4c0e-8a7d-3d5ed59b25f3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Фунт Фолклендских островов</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Фолклендские острова (Мальвинские)</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">238</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TTD" ParentGuid="" Guid="ff6e5b37-04c2-4fd4-a9e7-805e4be6ff95">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар Тринидада и Тобаго</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Тринидад и Тобаго</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">780</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="XOF" ParentGuid="" Guid="7aba9b85-4acb-45d7-bdc2-ce24beb14e62">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Франк КФА ВСЕАО</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бенин; Буркина-Фасо; Гвинея-Бисау; Кот д'Ивуар; Мали; Нигер; Сенегал; Того</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">952</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="USD" ParentGuid="" Guid="0db7384c-88a5-4d72-8a35-1241d526ee33">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доллар США</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Американское Самоа; Британская территория в Индийском океане; Виргинские острова (Британские); Виргинские острова (США); Гаити; Гуам; Малые Тихоокеанские Отдаленные острова Соединенных Штатов; Маршалловы Острова; Микронезия, федеративные штаты; Острова Теркс и Кайкос; Палау; Панама; Пуэрто-Рико; Северные Марианские острова; Соединенные Штаты; Тимор-Лесте; Эквадор; Эль-Сальвадор</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">840</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SGD" ParentGuid="" Guid="982c6b12-d435-422e-856f-dd5e0486d154">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сингапурский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Сингапур</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">702</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ALL" ParentGuid="" Guid="d1c44b19-2e1d-40f4-b5f1-0eb51147b378">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лек</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Албания1</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">008</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="EEK" ParentGuid="" Guid="8b68b211-a02a-4605-9411-187d497828df">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Крона</DataAttribute>
+            <DataAttribute Name="Краткое наименование" />
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">233</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BIF" ParentGuid="" Guid="05b3abb0-fab3-4085-be60-ca4dfeaee546">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бурундийский франк</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бурунди</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">108</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BRL" ParentGuid="" Guid="c4450966-eac6-4098-ac9b-602810991e68">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бразильский реал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бразилия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">986</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PEN" ParentGuid="" Guid="3dd529c4-2f33-4ffe-a543-c842b7a980e0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Соль</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Перу</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">604</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AUD" ParentGuid="" Guid="e928ae51-b215-4b6c-a5dc-8a7243d181fa">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Австралийский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Австралия; Кирибати; Кокосовые (Килинг) острова;  Науру;  Остров Норфолк; Остров Рождества; Остров Херд и острова Макдональд;  Тувалу</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">036</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SRD" ParentGuid="" Guid="746c3cde-f3c8-4a5d-ad1d-4924f671ed7e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Суринамский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Суринам</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">968</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="HKD" ParentGuid="" Guid="8775abf3-64fd-407f-b4b0-b87453834809">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гонконгский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гонконг</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">344</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="YER" ParentGuid="" Guid="483385d7-01fb-4693-9c39-a87642ae8e2e">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Йеменский риал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Йемен</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">886</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MOP" ParentGuid="" Guid="6c3887c6-fe4b-46da-9769-b4d27201e282">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Патака</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Макао</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">446</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MUR" ParentGuid="" Guid="d9c90636-d77a-4d88-9cbc-459b78dd37b7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Маврикийская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Маврикий</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">480</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PYG" ParentGuid="" Guid="638e104c-6424-46b3-9fb0-2cbd578094f4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Гуарани</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Парагвай</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">600</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="VND" ParentGuid="" Guid="fdef7901-214e-4177-a8ff-330dc87106d1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Донг</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Вьетнам</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">704</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TRY" ParentGuid="" Guid="1ee1c496-0508-47f1-92d0-6b3bb3417788">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Турецкая лира</DataAttribute>
+            <DataAttribute Name="Цифровой код">949</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Турция</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="JOD" ParentGuid="" Guid="19e965b9-aaa4-4d81-9899-ff67c44ea053">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иорданский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Иордания</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">400</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CHF" ParentGuid="" Guid="89a30b55-b116-4830-b9a9-5d0608b5d2df">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Швейцарский франк</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Лихтенштейн; Швейцария</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">756</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GMD" ParentGuid="" Guid="90520aee-db4f-4ee3-9820-e2940999377d">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Даласи</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гамбия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">270</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MNT" ParentGuid="" Guid="7e4258a9-c046-4e0c-89ae-94238779f0c8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тугрик</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Монголия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">496</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BZD" ParentGuid="" Guid="02539ae9-372d-483a-9fac-9e017d6e9c57">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Белизский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Белиз</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">084</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GHS" ParentGuid="" Guid="79b2d2ba-47f9-4411-8320-52d23d6a0b41">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ганский седи</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гана</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">936</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MGA" ParentGuid="" Guid="fd184ba9-5c6c-47d2-a8b4-496b54be18c4">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Малагасийский ариари</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Мадагаскар</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">969</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="RON" ParentGuid="" Guid="0618be53-6170-4961-9f18-4c2e3ec8cc2c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Румынский лей</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Румыния</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">946</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KZT" ParentGuid="" Guid="15846e88-37c7-4ff9-99c5-fdad16e4a40c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тенге</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Казахстан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">398</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="TJS" ParentGuid="" Guid="d7065d9e-63ea-4b12-837f-84e7c6c1a919">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Сомони</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Таджикистан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">972</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="MKD" ParentGuid="" Guid="011df06b-89ca-4e6b-88ab-a1ceb749637c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Денар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Македония, бывшая Югославская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">807</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LKR" ParentGuid="" Guid="ee00494b-1d31-43ef-bf3e-ee8ebb6e1bf5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Шри-ланкийская рупия</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Шри-Ланка</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">144</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="OMR" ParentGuid="" Guid="9a13198e-0353-4ecc-8b32-095f7d579daf">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Оманский риал</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Оман</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">512</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="COP" ParentGuid="" Guid="5bc289cd-099d-4889-980d-70ad6516b9db">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Колумбийское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Колумбия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">170</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="HRK" ParentGuid="" Guid="618d8c0d-ccc9-48a3-a36e-7af766c924e9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Куна</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Хорватия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">191</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PLN" ParentGuid="" Guid="858235ec-aed9-416a-97a3-9834ba477c78">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Злотый</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Польша</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">985</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LSL" ParentGuid="" Guid="63af6d96-db30-453e-b78a-ad0f30445dfe">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лоти</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Лесото</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">426</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LAK" ParentGuid="" Guid="33f2b41d-eb3b-4e16-a79d-aba136883870">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лаосский кип</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Лаосская Народно-Демократическая Республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">418</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="XAF" ParentGuid="" Guid="401a4a1d-b851-4af7-a1a1-6407f9f858f9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Франк КФА ВЕАС</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Габон; Камерун; Конго; Центрально-Африканская  Республика; Чад; Экваториальная Гвинея</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">950</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="GTQ" ParentGuid="" Guid="5add4afe-4e47-4641-bc6b-ef7709ba62ff">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Кетсаль</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гватемала</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">320</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="DZD" ParentGuid="" Guid="a28c223a-3a27-48ad-b74d-a3c6a972f0b9">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Алжирский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Алжир</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">012</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CVE" ParentGuid="" Guid="ebeb02b7-5a43-4607-b401-86a3ecfdaa1b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Эскудо Кабо-Верде</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Кабо-Верде</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">132</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SSP" ParentGuid="" Guid="dcf961d2-5671-436c-a01f-47a5c3143156">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Южносуданский фунт</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="MWK" ParentGuid="" Guid="506d0fea-b9ce-416d-a15b-646a876dc5b6">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Малавийская квача</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Малави</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">454</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BDT" ParentGuid="" Guid="673e2f77-2e75-4049-825b-6473487f6cd5">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Така</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бангладеш</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">050</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BGN" ParentGuid="" Guid="10fd9004-9ad2-40e6-adb3-12ac7c81b183">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Болгарский лев</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Болгария</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">975</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="CAD" ParentGuid="" Guid="747b45e6-9fbc-4052-ad79-f1c4aaf9a215">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Канадский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Канада</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">124</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="KPW" ParentGuid="" Guid="a9a64f3d-3e78-46cb-bb18-2ae160afc774">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Северокорейская вона</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Корея, народно-демократическая республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">408</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BWP" ParentGuid="" Guid="ef4108c1-a53f-4b25-b58e-aa67e6586692">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Пула</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ботсвана</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">072</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ETB" ParentGuid="" Guid="219155b9-1bbc-43f9-aac0-18bbb7474656">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Эфиопский быр</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Эфиопия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">230</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AZN" ParentGuid="" Guid="1e553b09-b044-4b34-96ea-4b9bc76bcf31">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Азербайджанский манат</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Азербайджан</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">944</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="BMD" ParentGuid="" Guid="aa2f2100-1890-4503-874e-cad88a618fc0">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Бермудский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Бермуды</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">060</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="UGX" ParentGuid="" Guid="51d25288-d512-4b61-9763-d4ede429438c">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Угандийский шиллинг</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Уганда</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">800</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="HNL" ParentGuid="" Guid="c7af6d7c-5dbe-4e66-b322-8bbf52d7b127">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лемпира</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Гондурас</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">340</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PHP" ParentGuid="" Guid="acd3944f-01a7-431c-84af-b4ab05cc08c7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Филиппинское писо</DataAttribute>
+            <DataAttribute Name="Статус записи" />
+          </DataAttributes>
+        </Data>
+        <Data Name="TND" ParentGuid="" Guid="e8a68a4a-a1d6-4abc-ba3a-0d535b19cf80">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Тунисский динар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Тунис</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">788</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="DOP" ParentGuid="" Guid="f63f5e5c-ac52-462e-a5f1-f55ba6f15a41">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Доминиканское песо</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Доминиканская Республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">214</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LVL" ParentGuid="" Guid="6a639a5d-4d25-4106-9458-d32691f9f525">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Латвийский лат</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Латвия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">428</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="VEF" ParentGuid="" Guid="455e9683-4f85-4dd8-b547-cb0cd71aee43">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Боливар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Венесуэла, боливарианская республика</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">937</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="LRD" ParentGuid="" Guid="1241a8ac-00db-4479-9294-c34d5bbaf630">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Либерийский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Либерия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">430</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NZD" ParentGuid="" Guid="43beea8e-46f6-4de4-b71c-cd9f1add53ad">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Новозеландский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ниуэ; Новая Зеландия; Острова Кука; Питкерн; Токелау</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">554</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="JMD" ParentGuid="" Guid="ce82b620-1488-4857-9e7c-f843943ec670">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Ямайский доллар</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Ямайка</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">388</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="SZL" ParentGuid="" Guid="efa63c47-537e-4485-8bc3-815124343b79">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Лилангени</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Свазиленд</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">748</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="RUB" ParentGuid="" Guid="d80f920e-046a-40e4-abf8-7b4824ef4110">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Российский рубль</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Россия</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">643</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="AMD" ParentGuid="" Guid="4529a722-6d5c-4bff-9514-0b7b3a658729">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Армянский драм</DataAttribute>
+            <DataAttribute Name="Краткое наименование">Армения</DataAttribute>
+            <DataAttribute Name="Статус записи">Изменена</DataAttribute>
+            <DataAttribute Name="Цифровой код">051</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

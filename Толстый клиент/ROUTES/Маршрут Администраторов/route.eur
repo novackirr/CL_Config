@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ProcessTemplate><Activities><AutoprocessingActivity Instance="single" X="140" Y="51.32725715637207"><ID>1</ID><Name>Редактирование</Name><Creator><ABItem abType="Person"><ID>[Person] Администратор Администратор Администратор [VM\test]</ID></ABItem></Creator><Properties class="Cognitive.Docflow.Autoprocessing.Nodes.InterruptRoutesNode"><Property name="Requisites">&lt;requisites&gt;
+  &lt;requisite&gt;
+    &lt;name&gt;Document|Категория_закупки&lt;/name&gt;
+    &lt;value&gt;Закупки товаров, работ (услуг), выполняемых (оказываемых) при проведении плановых ремонтов, технического обслуживания и модернизации, осуществляемых в рамках существующих гарантийных или лицензионных обязательств по закупленным товару, работе (услуге)&lt;/value&gt;
+  &lt;/requisite&gt;
+  &lt;requisite&gt;
+    &lt;name&gt;Document|Категория_закупки_код&lt;/name&gt;
+    &lt;value&gt;19&lt;/value&gt;
+  &lt;/requisite&gt;
+  &lt;requisite&gt;
+    &lt;name&gt;Document|Закупка_не_учитывается&lt;/name&gt;
+    &lt;value&gt;1&lt;/value&gt;
+  &lt;/requisite&gt;
+&lt;/requisites&gt;</Property><Property name="Value">1</Property><Property name="Attribute">Document|Закупка_не_учитывается</Property><Property name="RouteNames">;Согласование заявки на закупку</Property><Property name="ActivityName">Ожидание публикации ППЗ в ЕИС</Property><Property name="InterruptType">Finish</Property></Properties><Class>Cognitive.Docflow.Autoprocessing.Nodes.InterruptRoutesNode</Class></AutoprocessingActivity></Activities><Transitions><Transition><From>0</From><To>1</To></Transition></Transitions></ProcessTemplate>

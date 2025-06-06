@@ -1,0 +1,3079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="ОКЕИСбер" Type="1">
+  <Items>
+    <Dictionary Name="ОКЕИСбер">
+      <Attributes>
+        <Attribute Name="Код" />
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1848" ParentGuid="" Guid="50869de1-722d-4a20-aa27-45c285a438bb">
+          <DataAttributes>
+            <DataAttribute Name="Код">861</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм азота</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1891" ParentGuid="" Guid="16b76ca3-f20d-4bfe-833d-0988ffbbf1e8">
+          <DataAttributes>
+            <DataAttribute Name="Код">172</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна условного топлива</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2041" ParentGuid="" Guid="fb2c9208-efee-47ac-898f-0b27b773f491">
+          <DataAttributes>
+            <DataAttribute Name="Код">896</DataAttribute>
+            <DataAttribute Name="Наименование">Семья</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1990" ParentGuid="" Guid="8e2c3225-6084-4d3d-9644-83069846569c">
+          <DataAttributes>
+            <DataAttribute Name="Код">709</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча номеров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2022" ParentGuid="" Guid="5d05efc0-e0bf-4d04-a888-274563c8ca1b">
+          <DataAttributes>
+            <DataAttribute Name="Код">877</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2049" ParentGuid="" Guid="318e883e-7431-4524-a072-bb0b1405eb22">
+          <DataAttributes>
+            <DataAttribute Name="Код">904</DataAttribute>
+            <DataAttribute Name="Наименование">Рабочее место</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140106" ParentGuid="" Guid="33884cc8-51a3-4ff1-89fd-d7d129bb88ac">
+          <DataAttributes>
+            <DataAttribute Name="Код">359</DataAttribute>
+            <DataAttribute Name="Наименование">Сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1754" ParentGuid="" Guid="1b338d31-1c0d-4dcb-9593-57cb9ab1cd3c">
+          <DataAttributes>
+            <DataAttribute Name="Код">280</DataAttribute>
+            <DataAttribute Name="Наименование">Градус Цельсия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2078" ParentGuid="" Guid="7bfa3c50-90ad-4ec9-b5bd-2be499309415">
+          <DataAttributes>
+            <DataAttribute Name="Код">955</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча поездо-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244693" ParentGuid="" Guid="64dc457a-57f7-4b77-91ed-a8124edeca98">
+          <DataAttributes>
+            <DataAttribute Name="Код">9111</DataAttribute>
+            <DataAttribute Name="Наименование">Койко-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1879" ParentGuid="" Guid="dc5bb600-88c6-451c-9905-2102ff21392e">
+          <DataAttributes>
+            <DataAttribute Name="Код">123</DataAttribute>
+            <DataAttribute Name="Наименование">Условный кубический метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2139" ParentGuid="" Guid="adc16cb8-3c32-4fb8-946c-f7b31a4bf519">
+          <DataAttributes>
+            <DataAttribute Name="Код">191</DataAttribute>
+            <DataAttribute Name="Наименование">Квартер СК (12,700586 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1702" ParentGuid="" Guid="6d0387f2-0772-46d3-be12-cbf905505fc0">
+          <DataAttributes>
+            <DataAttribute Name="Код">073</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный фут (0,092903 м²)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1749" ParentGuid="" Guid="0688e57e-f58d-493e-aa92-30bc254d39c5">
+          <DataAttributes>
+            <DataAttribute Name="Код">264</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча ампер-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1796" ParentGuid="" Guid="25cbb4e5-f80c-4676-9ce1-ba966e07b2f7">
+          <DataAttributes>
+            <DataAttribute Name="Код">362</DataAttribute>
+            <DataAttribute Name="Наименование">Месяц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244704" ParentGuid="" Guid="6d75998c-d6cf-4329-ba05-9c5d984caf80">
+          <DataAttributes>
+            <DataAttribute Name="Код">2558</DataAttribute>
+            <DataAttribute Name="Наименование">Йоттабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1826" ParentGuid="" Guid="acebb979-8117-40a3-948f-97ece081ada0">
+          <DataAttributes>
+            <DataAttribute Name="Код">778</DataAttribute>
+            <DataAttribute Name="Наименование">Упаковка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244675" ParentGuid="" Guid="f6eb6cf2-3fab-4f3f-b87a-8a970c6a8e46">
+          <DataAttributes>
+            <DataAttribute Name="Код">9642</DataAttribute>
+            <DataAttribute Name="Наименование">Балл</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1952" ParentGuid="" Guid="587e97e7-e842-4994-948a-36bb2a085860">
+          <DataAttributes>
+            <DataAttribute Name="Код">522</DataAttribute>
+            <DataAttribute Name="Наименование">Человек на квадратный километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2057" ParentGuid="" Guid="f5e01c52-58dc-48fc-af14-16fec4015a5b">
+          <DataAttributes>
+            <DataAttribute Name="Код">912</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча коек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2127" ParentGuid="" Guid="92419ed0-aa1a-4040-a8c3-b270cbc32fba">
+          <DataAttributes>
+            <DataAttribute Name="Код">151</DataAttribute>
+            <DataAttribute Name="Наименование">Сухой баррель США (115,627 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1787" ParentGuid="" Guid="e2e6e00f-77bb-4770-bc8f-bd0f55c07836">
+          <DataAttributes>
+            <DataAttribute Name="Код">335</DataAttribute>
+            <DataAttribute Name="Наименование">Метр на секунду в квадрате</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244683" ParentGuid="" Guid="e59cb4a3-5bc0-406d-9994-7ea20aa0290f">
+          <DataAttributes>
+            <DataAttribute Name="Код">985</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча голов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1936" ParentGuid="" Guid="bcc07671-f93d-41f1-8d58-2d2d6d4439ad">
+          <DataAttributes>
+            <DataAttribute Name="Код">421</DataAttribute>
+            <DataAttribute Name="Наименование">Пассажирское место (пассажирских мест)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2105" ParentGuid="" Guid="c93137b0-7ae9-49bf-8a3d-cc42800cefa0">
+          <DataAttributes>
+            <DataAttribute Name="Код">982</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонн кормовых единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1917" ParentGuid="" Guid="d80e5aca-33e3-40ab-b31e-95e9f7373bf1">
+          <DataAttributes>
+            <DataAttribute Name="Код">255</DataAttribute>
+            <DataAttribute Name="Наименование">Байт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1871" ParentGuid="" Guid="45b5c940-dcb3-4166-ab59-de045ac29690">
+          <DataAttributes>
+            <DataAttribute Name="Код">088</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квадратных метров учебно-лабораторных зданий</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1944" ParentGuid="" Guid="0d1b3fd5-8458-44ac-9f38-a1b72b4eae4b">
+          <DataAttributes>
+            <DataAttribute Name="Код">510</DataAttribute>
+            <DataAttribute Name="Наименование">Грамм на киловатт-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140107" ParentGuid="" Guid="dbfb702c-94f1-4e26-9ecf-331566a494f9">
+          <DataAttributes>
+            <DataAttribute Name="Код">366</DataAttribute>
+            <DataAttribute Name="Наименование">Год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2066" ParentGuid="" Guid="c2340341-445e-4caf-9457-949cfec1a9ab">
+          <DataAttributes>
+            <DataAttribute Name="Код">922</DataAttribute>
+            <DataAttribute Name="Наименование">Знак</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2098" ParentGuid="" Guid="308f083b-5c03-4622-9ef1-019dbdb63a47">
+          <DataAttributes>
+            <DataAttribute Name="Код">975</DataAttribute>
+            <DataAttribute Name="Наименование">Суго-сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1900" ParentGuid="" Guid="d04e4212-8d18-4373-b339-59c484009885">
+          <DataAttributes>
+            <DataAttribute Name="Код">232</DataAttribute>
+            <DataAttribute Name="Наименование">Килокалория</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1720" ParentGuid="" Guid="2f10cc02-04cf-4202-83a6-efdf3e86e135">
+          <DataAttributes>
+            <DataAttribute Name="Код">162</DataAttribute>
+            <DataAttribute Name="Наименование">Метрический карат</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1925" ParentGuid="" Guid="3deadf77-c52f-4f56-8c48-259fca52dc21">
+          <DataAttributes>
+            <DataAttribute Name="Код">338</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиметр ртутного столба</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2119" ParentGuid="" Guid="45398ffb-32f8-4fe8-91f2-f78db94dd8f1">
+          <DataAttributes>
+            <DataAttribute Name="Код">143</DataAttribute>
+            <DataAttribute Name="Наименование">Жидкостная пинта США (0,473176 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1973" ParentGuid="" Guid="4aa0d0b7-306b-4ca3-95c8-02287b3d3599">
+          <DataAttributes>
+            <DataAttribute Name="Код">556</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча голов в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2058" ParentGuid="" Guid="b8ce666f-895b-4aea-9f96-02146411c3ab">
+          <DataAttributes>
+            <DataAttribute Name="Код">913</DataAttribute>
+            <DataAttribute Name="Наименование">Том книжного фонда</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1734" ParentGuid="" Guid="7682aa92-94f7-4389-a4db-aec28bf0ca48">
+          <DataAttributes>
+            <DataAttribute Name="Код">214</DataAttribute>
+            <DataAttribute Name="Наименование">Киловатт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1965" ParentGuid="" Guid="347c5162-a6b3-4f0d-ae5d-7d82e7ce7498">
+          <DataAttributes>
+            <DataAttribute Name="Код">546</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча посещений в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2148" ParentGuid="" Guid="b647c679-e5f4-496b-a744-c3fd44cf6f62">
+          <DataAttributes>
+            <DataAttribute Name="Код">200</DataAttribute>
+            <DataAttribute Name="Наименование">Драхма США (3,887935 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1821" ParentGuid="" Guid="6605a56e-8c7b-40a7-80bb-ead51a7876b1">
+          <DataAttributes>
+            <DataAttribute Name="Код">735</DataAttribute>
+            <DataAttribute Name="Наименование">Часть</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1984" ParentGuid="" Guid="8aa60cca-f5b1-445f-9e38-7b6ec978cbd6">
+          <DataAttributes>
+            <DataAttribute Name="Код">643</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1991" ParentGuid="" Guid="e3a65121-b1a4-4a6d-9734-e7cccfcff601">
+          <DataAttributes>
+            <DataAttribute Name="Код">724</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча гектаров порций</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1849" ParentGuid="" Guid="13f4f586-238a-4d8e-93df-9b81be0b0e01">
+          <DataAttributes>
+            <DataAttribute Name="Код">863</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм гидроксида натрия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1857" ParentGuid="" Guid="e5208a60-1324-4ba8-9385-7451352f2ba5">
+          <DataAttributes>
+            <DataAttribute Name="Код">054</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квадратных дециметров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1695" ParentGuid="" Guid="b906ec5c-fabf-471e-b24c-323da52c0b24">
+          <DataAttributes>
+            <DataAttribute Name="Код">050</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный миллиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2050" ParentGuid="" Guid="a8ce2674-690b-4fd3-a262-91d1c4292298">
+          <DataAttributes>
+            <DataAttribute Name="Код">905</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча рабочих мест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1768" ParentGuid="" Guid="dbf7b486-9fc9-40d3-be74-64abe1664032">
+          <DataAttributes>
+            <DataAttribute Name="Код">300</DataAttribute>
+            <DataAttribute Name="Наименование">Физическая атмосфера (101325 Па)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1776" ParentGuid="" Guid="07a78192-c3d8-455e-ad3d-f1dd33644058">
+          <DataAttributes>
+            <DataAttribute Name="Код">310</DataAttribute>
+            <DataAttribute Name="Наименование">Гектобар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140108" ParentGuid="" Guid="e3c8d708-7960-45df-a5f2-9f23342cbbf4">
+          <DataAttributes>
+            <DataAttribute Name="Код">641</DataAttribute>
+            <DataAttribute Name="Наименование">Дюжина (12 шт.)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2031" ParentGuid="" Guid="8adede26-6762-45c8-b277-9495173d2a0f">
+          <DataAttributes>
+            <DataAttribute Name="Код">886</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных кусков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1892" ParentGuid="" Guid="d202ebb0-fcc0-48f4-8923-60a578e5ebd6">
+          <DataAttributes>
+            <DataAttribute Name="Код">175</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн условного топлива</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1827" ParentGuid="" Guid="80faf077-eac6-4bcf-a23f-8554eec17b89">
+          <DataAttributes>
+            <DataAttribute Name="Код">780</DataAttribute>
+            <DataAttribute Name="Наименование">Дюжина упаковок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2042" ParentGuid="" Guid="9811b228-1865-4452-8175-8a04c81fe2b1">
+          <DataAttributes>
+            <DataAttribute Name="Код">897</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча семей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2151" ParentGuid="" Guid="ecb61555-460a-4a71-a9d3-18f1793d83dd">
+          <DataAttributes>
+            <DataAttribute Name="Код">202</DataAttribute>
+            <DataAttribute Name="Наименование">Тройский фунт США (373,242 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2023" ParentGuid="" Guid="1081dd81-d387-45ba-8495-f2fe035a3281">
+          <DataAttributes>
+            <DataAttribute Name="Код">878</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2079" ParentGuid="" Guid="43353de5-7792-40e0-80c9-945b9ebffd07">
+          <DataAttributes>
+            <DataAttribute Name="Код">956</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча поездо-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1797" ParentGuid="" Guid="ce4bb513-a96f-4eef-b3b9-87560d580ea3">
+          <DataAttributes>
+            <DataAttribute Name="Код">364</DataAttribute>
+            <DataAttribute Name="Наименование">Квартал</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244662" ParentGuid="" Guid="ce9e48b0-cc4d-44b5-a3a1-c29199c7623d">
+          <DataAttributes>
+            <DataAttribute Name="Код">2545</DataAttribute>
+            <DataAttribute Name="Наименование">Мегабит в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1699" ParentGuid="" Guid="35694282-34b2-48f3-8d5e-24d1a6d5964d">
+          <DataAttributes>
+            <DataAttribute Name="Код">059</DataAttribute>
+            <DataAttribute Name="Наименование">Гектар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1703" ParentGuid="" Guid="85a9ef1d-b38e-4308-8657-b22c61f3bec5">
+          <DataAttributes>
+            <DataAttribute Name="Код">075</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный ярд (0,8361274 м²)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1895" ParentGuid="" Guid="4fdd1b6e-2851-4fd7-ad4f-794dd34457a5">
+          <DataAttributes>
+            <DataAttribute Name="Код">178</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн переработки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2087" ParentGuid="" Guid="4d786d3d-6eff-4fea-ae0b-0ac9fab1c6e6">
+          <DataAttributes>
+            <DataAttribute Name="Код">964</DataAttribute>
+            <DataAttribute Name="Наименование">Самолето-километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1852" ParentGuid="" Guid="c9d0d0d5-6c47-4774-aaf4-6a40e231e491">
+          <DataAttributes>
+            <DataAttribute Name="Код">018</DataAttribute>
+            <DataAttribute Name="Наименование">Погонный метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1755" ParentGuid="" Guid="ee48a2ff-7932-4fe3-8525-91f889136c0a">
+          <DataAttributes>
+            <DataAttribute Name="Код">281</DataAttribute>
+            <DataAttribute Name="Наименование">Градус Фаренгейта</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1823" ParentGuid="" Guid="d7cc0325-f0a2-454b-874b-d984ee7b40f0">
+          <DataAttributes>
+            <DataAttribute Name="Код">737</DataAttribute>
+            <DataAttribute Name="Наименование">Дюжина рулонов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1945" ParentGuid="" Guid="682d76ed-f217-462c-aee2-97f63a9b9509">
+          <DataAttributes>
+            <DataAttribute Name="Код">511</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм на гигакалорию</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1968" ParentGuid="" Guid="d011d98a-f613-47b9-a73d-6dba9b6fe4b9">
+          <DataAttributes>
+            <DataAttribute Name="Код">550</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонн в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244697" ParentGuid="" Guid="e37115ae-aa2b-43b7-918e-f985fbacf9f6">
+          <DataAttributes>
+            <DataAttribute Name="Код">6422</DataAttribute>
+            <DataAttribute Name="Наименование">Вызов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2106" ParentGuid="" Guid="66ed39c2-fc72-4d3a-9020-b7c44cf4d225">
+          <DataAttributes>
+            <DataAttribute Name="Код">983</DataAttribute>
+            <DataAttribute Name="Наименование">Судо-сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2027" ParentGuid="" Guid="f5a4f489-3ec4-4eb8-80fc-83afcb587a8e">
+          <DataAttributes>
+            <DataAttribute Name="Код">882</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных банок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1953" ParentGuid="" Guid="7c8a9011-4e2c-4f17-9523-95b3290c4245">
+          <DataAttributes>
+            <DataAttribute Name="Код">534</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140114" ParentGuid="" Guid="c009a8a1-f5cc-4cc4-ad4d-2cd33b33da40">
+          <DataAttributes>
+            <DataAttribute Name="Код">638</DataAttribute>
+            <DataAttribute Name="Наименование">Гросс (144 шт.)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1880" ParentGuid="" Guid="60d6114e-6770-40d3-bf66-8e57f37d5046">
+          <DataAttributes>
+            <DataAttribute Name="Код">124</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных кубических метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2045" ParentGuid="" Guid="53243385-e534-4a63-960f-7b0e944f88cf">
+          <DataAttributes>
+            <DataAttribute Name="Код">900</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча домохозяйств</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1813" ParentGuid="" Guid="b4ee412a-f909-4c6b-a5eb-3a9cc0bee736">
+          <DataAttributes>
+            <DataAttribute Name="Код">657</DataAttribute>
+            <DataAttribute Name="Наименование">Изделие</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1771" ParentGuid="" Guid="340b2ca6-d347-421a-9d77-2096ce2385a1">
+          <DataAttributes>
+            <DataAttribute Name="Код">304</DataAttribute>
+            <DataAttribute Name="Наименование">Милликюри</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1858" ParentGuid="" Guid="51f60e3e-2fff-4882-8519-8c5741a920d0">
+          <DataAttributes>
+            <DataAttribute Name="Код">056</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион квадратных дециметров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2101" ParentGuid="" Guid="10f79f8c-c0a6-45c8-a5ab-5ebb582472aa">
+          <DataAttributes>
+            <DataAttribute Name="Код">978</DataAttribute>
+            <DataAttribute Name="Наименование">Канало-концы</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1737" ParentGuid="" Guid="10016deb-dd1f-4340-80b2-8ddd26bed572">
+          <DataAttributes>
+            <DataAttribute Name="Код">222</DataAttribute>
+            <DataAttribute Name="Наименование">Вольт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1808" ParentGuid="" Guid="05389136-9d5a-4166-b86b-0706fdbdc2fb">
+          <DataAttributes>
+            <DataAttribute Name="Код">625</DataAttribute>
+            <DataAttribute Name="Наименование">Лист</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1948" ParentGuid="" Guid="6cd718aa-1d68-4fc1-ad62-ae2c52a8b729">
+          <DataAttributes>
+            <DataAttribute Name="Код">514</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна тяги</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1901" ParentGuid="" Guid="37ca6a7c-d4a5-49d0-bb18-47d271eeb72a">
+          <DataAttributes>
+            <DataAttribute Name="Код">233</DataAttribute>
+            <DataAttribute Name="Наименование">Гигакалория</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2143" ParentGuid="" Guid="82582d75-5adc-4dc8-8487-65b5f84c4052">
+          <DataAttributes>
+            <DataAttribute Name="Код">195</DataAttribute>
+            <DataAttribute Name="Наименование">Короткая тонна СК, США (0,90718474 т)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2067" ParentGuid="" Guid="2877da81-df3e-4190-b6ea-1847878e02f0">
+          <DataAttributes>
+            <DataAttribute Name="Код">923</DataAttribute>
+            <DataAttribute Name="Наименование">Слово</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244709" ParentGuid="" Guid="2fce37d5-7c8c-42cd-b769-007c340f9e19">
+          <DataAttributes>
+            <DataAttribute Name="Код">2553</DataAttribute>
+            <DataAttribute Name="Наименование">Гигабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244684" ParentGuid="" Guid="c010a736-14a6-425a-810b-7355deabe6c8">
+          <DataAttributes>
+            <DataAttribute Name="Код">984</DataAttribute>
+            <DataAttribute Name="Наименование">Центнеров с гектара</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2082" ParentGuid="" Guid="c6e19656-98d9-4bc5-b846-e7b839681dff">
+          <DataAttributes>
+            <DataAttribute Name="Код">959</DataAttribute>
+            <DataAttribute Name="Наименование">Автомобиле-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2128" ParentGuid="" Guid="8c379906-7b29-4d5b-87ab-0234b1b9707a">
+          <DataAttributes>
+            <DataAttribute Name="Код">152</DataAttribute>
+            <DataAttribute Name="Наименование">Стандарт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2062" ParentGuid="" Guid="9a454aa0-c902-47be-a3d3-5e1274bd65b4">
+          <DataAttributes>
+            <DataAttribute Name="Код">917</DataAttribute>
+            <DataAttribute Name="Наименование">Смена</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244663" ParentGuid="" Guid="0762d6f8-a28b-4fc6-8728-d69b8a01e585">
+          <DataAttributes>
+            <DataAttribute Name="Код">2547</DataAttribute>
+            <DataAttribute Name="Наименование">Гигабит в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1791" ParentGuid="" Guid="6d14a79b-8c1e-4fd1-ac58-5efdc9ce9810">
+          <DataAttributes>
+            <DataAttribute Name="Код">356</DataAttribute>
+            <DataAttribute Name="Наименование">Час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1940" ParentGuid="" Guid="e0c7ae26-0553-48b1-a280-652194d3b8a3">
+          <DataAttributes>
+            <DataAttribute Name="Код">449</DataAttribute>
+            <DataAttribute Name="Наименование">Тонно-километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2051" ParentGuid="" Guid="e909863d-8ced-4d08-ace9-f6927b46e621">
+          <DataAttributes>
+            <DataAttribute Name="Код">906</DataAttribute>
+            <DataAttribute Name="Наименование">Посадочное место</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1922" ParentGuid="" Guid="8f064753-7d42-4ec3-a2f3-fae9bdf01ef6">
+          <DataAttributes>
+            <DataAttribute Name="Код">313</DataAttribute>
+            <DataAttribute Name="Наименование">Тесла</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1853" ParentGuid="" Guid="e8809645-d284-425c-b639-c2fe802101f4">
+          <DataAttributes>
+            <DataAttribute Name="Код">019</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча погонных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2059" ParentGuid="" Guid="b6ebb4a0-e325-4bae-b562-2b613dddf35f">
+          <DataAttributes>
+            <DataAttribute Name="Код">914</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча томов книжного фонда</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1726" ParentGuid="" Guid="18f10161-8ae9-4b09-86e3-898471740a2b">
+          <DataAttributes>
+            <DataAttribute Name="Код">173</DataAttribute>
+            <DataAttribute Name="Наименование">Сантиграмм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244705" ParentGuid="" Guid="d764694f-095a-42a7-a85d-e25aa2d05ed8">
+          <DataAttributes>
+            <DataAttribute Name="Код">2557</DataAttribute>
+            <DataAttribute Name="Наименование">Зеттабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1875" ParentGuid="" Guid="26adee17-1755-4fff-93c5-ebc17edc2976">
+          <DataAttributes>
+            <DataAttribute Name="Код">116</DataAttribute>
+            <DataAttribute Name="Наименование">Декалитр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2140" ParentGuid="" Guid="17e09118-49d4-433a-965f-8970841edc13">
+          <DataAttributes>
+            <DataAttribute Name="Код">192</DataAttribute>
+            <DataAttribute Name="Наименование">Центал СК (45,3592 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1896" ParentGuid="" Guid="e7a5571c-aecb-43f1-a060-1cd3a7fd59be">
+          <DataAttributes>
+            <DataAttribute Name="Код">179</DataAttribute>
+            <DataAttribute Name="Наименование">Условная тонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244694" ParentGuid="" Guid="8812fe29-d267-4fe9-9766-fce6edc3d327">
+          <DataAttributes>
+            <DataAttribute Name="Код">8751</DataAttribute>
+            <DataAttribute Name="Наименование">Коробка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2046" ParentGuid="" Guid="561ee0d6-2553-402b-9f3b-d21d6e7ebdaf">
+          <DataAttributes>
+            <DataAttribute Name="Код">901</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион домохозяйство</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1751" ParentGuid="" Guid="931c528a-06e2-426e-acd0-730b8834b240">
+          <DataAttributes>
+            <DataAttribute Name="Код">271</DataAttribute>
+            <DataAttribute Name="Наименование">Джоуль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1872" ParentGuid="" Guid="2a3b78d4-c130-4a17-a942-8f6deb9acf8c">
+          <DataAttributes>
+            <DataAttribute Name="Код">089</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион квадратных метров в двухмиллиметровом исчислении</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2124" ParentGuid="" Guid="0353e48b-d64c-4c0b-b9f5-109cdee69610">
+          <DataAttributes>
+            <DataAttribute Name="Код">148</DataAttribute>
+            <DataAttribute Name="Наименование">Сухая кварта США (1,101221 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1918" ParentGuid="" Guid="8793add3-63ac-4151-bb63-147647e19b54">
+          <DataAttributes>
+            <DataAttribute Name="Код">256</DataAttribute>
+            <DataAttribute Name="Наименование">Килобайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2144" ParentGuid="" Guid="037a1ebc-a8bc-4073-ab57-57868e8f4077">
+          <DataAttributes>
+            <DataAttribute Name="Код">196</DataAttribute>
+            <DataAttribute Name="Наименование">Длинная тонна СК, США (1,0160469 т)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1850" ParentGuid="" Guid="91d4a675-77c9-4852-bcfe-806239c27dab">
+          <DataAttributes>
+            <DataAttribute Name="Код">865</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм пятиокиси фосфора</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140115" ParentGuid="" Guid="e5f1bf59-b013-495a-aa2b-ec79a4409555">
+          <DataAttributes>
+            <DataAttribute Name="Код">053</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный дециметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2120" ParentGuid="" Guid="b5994e77-875b-4616-87a4-1a38c9bca0fc">
+          <DataAttributes>
+            <DataAttribute Name="Код">144</DataAttribute>
+            <DataAttribute Name="Наименование">Жидкостная кварта США (0,946553 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244679" ParentGuid="" Guid="a46dd419-3b37-46fd-8ff3-7293aa44709d">
+          <DataAttributes>
+            <DataAttribute Name="Код">989</DataAttribute>
+            <DataAttribute Name="Наименование">Человек в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1824" ParentGuid="" Guid="8da17c1d-49d8-4d32-9eae-3e7055273edc">
+          <DataAttributes>
+            <DataAttribute Name="Код">740</DataAttribute>
+            <DataAttribute Name="Наименование">Дюжина штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1937" ParentGuid="" Guid="bcdffa0f-3658-4730-afd4-18c384368687">
+          <DataAttributes>
+            <DataAttribute Name="Код">423</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пассажиро-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1987" ParentGuid="" Guid="9d7239cb-5f34-499f-b3a0-303452758e2b">
+          <DataAttributes>
+            <DataAttribute Name="Код">673</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча комплектов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1788" ParentGuid="" Guid="603f0bbf-309e-48b1-b61e-c9ffa1943cc5">
+          <DataAttributes>
+            <DataAttribute Name="Код">349</DataAttribute>
+            <DataAttribute Name="Наименование">Кулон на килограмм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2028" ParentGuid="" Guid="1064a81f-24c0-4f31-a124-80ae9133750d">
+          <DataAttributes>
+            <DataAttribute Name="Код">883</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных банок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244676" ParentGuid="" Guid="69039cd3-0edb-4899-9859-48a6a8828d7b">
+          <DataAttributes>
+            <DataAttribute Name="Код">9802</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион долларов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1949" ParentGuid="" Guid="4ffcd514-ee6b-4bdb-8c1c-32db0698acbf">
+          <DataAttributes>
+            <DataAttribute Name="Код">515</DataAttribute>
+            <DataAttribute Name="Наименование">Дедвейт-тонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1806" ParentGuid="" Guid="6ccef2eb-0016-471e-a8e8-445883400434">
+          <DataAttributes>
+            <DataAttribute Name="Код">599</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча кубических метров в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1756" ParentGuid="" Guid="46eedae6-a606-477f-854c-cee8b60ada01">
+          <DataAttributes>
+            <DataAttribute Name="Код">282</DataAttribute>
+            <DataAttribute Name="Наименование">Кандела</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1969" ParentGuid="" Guid="ec916f8c-c786-4774-aae3-b8fbe085091c">
+          <DataAttributes>
+            <DataAttribute Name="Код">552</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна переработки в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140109" ParentGuid="" Guid="dfa8e2f0-ae7e-4b16-95ba-877c85501067">
+          <DataAttributes>
+            <DataAttribute Name="Код">796</DataAttribute>
+            <DataAttribute Name="Наименование">Штука</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1941" ParentGuid="" Guid="b8d5b00b-7000-4c90-a54e-0087374e5325">
+          <DataAttributes>
+            <DataAttribute Name="Код">450</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонно-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1696" ParentGuid="" Guid="eb1465b2-1463-4241-9cc4-89af720880aa">
+          <DataAttributes>
+            <DataAttribute Name="Код">051</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный сантиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2063" ParentGuid="" Guid="051f9aa1-de90-4908-baaf-ec21c00eb3d9">
+          <DataAttributes>
+            <DataAttribute Name="Код">918</DataAttribute>
+            <DataAttribute Name="Наименование">Лист авторский</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1721" ParentGuid="" Guid="86d4f601-d0c1-40da-9679-943983e27d2f">
+          <DataAttributes>
+            <DataAttribute Name="Код">163</DataAttribute>
+            <DataAttribute Name="Наименование">Грамм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244698" ParentGuid="" Guid="26db31ca-f7da-4465-89c5-07fcd2112f01">
+          <DataAttributes>
+            <DataAttribute Name="Код">6421</DataAttribute>
+            <DataAttribute Name="Наименование">Единиц в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1772" ParentGuid="" Guid="a1acd742-2512-483d-a4a7-a3744335467b">
+          <DataAttributes>
+            <DataAttribute Name="Код">305</DataAttribute>
+            <DataAttribute Name="Наименование">Кюри</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1893" ParentGuid="" Guid="a014285d-3e8a-41f3-99f4-9a8366b84574">
+          <DataAttributes>
+            <DataAttribute Name="Код">176</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонн условного топлива</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1700" ParentGuid="" Guid="fa86e6f4-0520-44a0-bd33-b217faf78345">
+          <DataAttributes>
+            <DataAttribute Name="Код">061</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1966" ParentGuid="" Guid="929ed27a-7728-49de-9b44-352d5c9fe638">
+          <DataAttributes>
+            <DataAttribute Name="Код">547</DataAttribute>
+            <DataAttribute Name="Наименование">Пара в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2083" ParentGuid="" Guid="b8080006-5aca-4675-b6e3-b5405c68d70a">
+          <DataAttributes>
+            <DataAttribute Name="Код">960</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча автомобиле-тонно-дней</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2024" ParentGuid="" Guid="275a320a-fa7b-4c50-8e37-80021eb3764e">
+          <DataAttributes>
+            <DataAttribute Name="Код">879</DataAttribute>
+            <DataAttribute Name="Наименование">Условная штука</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1854" ParentGuid="" Guid="4f635d1b-eb60-41a8-9d0e-ae345f8daa8c">
+          <DataAttributes>
+            <DataAttribute Name="Код">020</DataAttribute>
+            <DataAttribute Name="Наименование">Условный метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2060" ParentGuid="" Guid="4a3f6186-9287-4044-aeb6-bc00f34fb0d5">
+          <DataAttributes>
+            <DataAttribute Name="Код">915</DataAttribute>
+            <DataAttribute Name="Наименование">Условный ремонт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1727" ParentGuid="" Guid="ded5551b-932f-4863-977c-da3ca7cd1e2d">
+          <DataAttributes>
+            <DataAttribute Name="Код">181</DataAttribute>
+            <DataAttribute Name="Наименование">Брутто-регистровая тонна (2,8316 м³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244706" ParentGuid="" Guid="5a3fe5f3-a0a1-4d97-8275-8424d0474ce8">
+          <DataAttributes>
+            <DataAttribute Name="Код">2556</DataAttribute>
+            <DataAttribute Name="Наименование">Эксабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2102" ParentGuid="" Guid="229b37b5-b865-4b6b-b32f-f03acf28724c">
+          <DataAttributes>
+            <DataAttribute Name="Код">979</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча экземпляров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2043" ParentGuid="" Guid="86d6dabd-89c8-43cf-8620-dd2c16520a94">
+          <DataAttributes>
+            <DataAttribute Name="Код">898</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион семей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1876" ParentGuid="" Guid="a98252da-ab70-4c64-b4c7-9a3adcd32595">
+          <DataAttributes>
+            <DataAttribute Name="Код">119</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча декалитров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1985" ParentGuid="" Guid="b05a51bc-fbdb-435f-8484-e37a39eb2bad">
+          <DataAttributes>
+            <DataAttribute Name="Код">644</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="468793" ParentGuid="" Guid="1a5ede73-c3ca-4258-979b-d7cb4116c5cd">
+          <DataAttributes>
+            <DataAttribute Name="Код">728</DataAttribute>
+            <DataAttribute Name="Наименование">Пачка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1919" ParentGuid="" Guid="9fb8e54f-e3ff-4a52-83ca-249ad26a96fb">
+          <DataAttributes>
+            <DataAttribute Name="Код">257</DataAttribute>
+            <DataAttribute Name="Наименование">Мегабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140116" ParentGuid="" Guid="4bb909d5-1d42-40e5-886a-720bb6a287ed">
+          <DataAttributes>
+            <DataAttribute Name="Код">159</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион кубических метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1970" ParentGuid="" Guid="702b368d-dfe0-4f68-b326-9dec024ab79d">
+          <DataAttributes>
+            <DataAttribute Name="Код">553</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн переработки в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1769" ParentGuid="" Guid="1db8290f-5351-417d-b004-09e9c66e458a">
+          <DataAttributes>
+            <DataAttribute Name="Код">301</DataAttribute>
+            <DataAttribute Name="Наименование">Техническая атмосфера (98066,5 Па)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1834" ParentGuid="" Guid="baff9e18-ae56-4404-96d1-a6beefee6d88">
+          <DataAttributes>
+            <DataAttribute Name="Код">799</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140110" ParentGuid="" Guid="a0fd97e1-a3e2-4ee1-8bb5-759daa5bf6d6">
+          <DataAttributes>
+            <DataAttribute Name="Код">798</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1976" ParentGuid="" Guid="ae8dac59-0e44-4c1f-a54f-b9d635f52e3f">
+          <DataAttributes>
+            <DataAttribute Name="Код">559</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча кур-несушек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1794" ParentGuid="" Guid="eef9f37d-2324-4bbc-ae9c-6f8073456525">
+          <DataAttributes>
+            <DataAttribute Name="Код">360</DataAttribute>
+            <DataAttribute Name="Наименование">Неделя</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2070" ParentGuid="" Guid="4926c01c-2a58-40ec-a4d9-16a9ad4542c5">
+          <DataAttributes>
+            <DataAttribute Name="Код">930</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пластин</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2047" ParentGuid="" Guid="873cbd1c-dac2-4b0f-956e-624b5af24455">
+          <DataAttributes>
+            <DataAttribute Name="Код">902</DataAttribute>
+            <DataAttribute Name="Наименование">Ученическое место</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2158" ParentGuid="" Guid="f7d0cd36-3741-4a72-814c-aa803fdaac9f">
+          <DataAttributes>
+            <DataAttribute Name="Код">835</DataAttribute>
+            <DataAttribute Name="Наименование">Галлон спирта установленной крепости</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244680" ParentGuid="" Guid="cf66ade9-083f-4802-b997-81faa617abf4">
+          <DataAttributes>
+            <DataAttribute Name="Код">988</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных плиток</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1995" ParentGuid="" Guid="2da46e93-77ea-4273-bdd3-425cfc09b5b7">
+          <DataAttributes>
+            <DataAttribute Name="Код">751</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча рулонов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1752" ParentGuid="" Guid="7a301d40-e4a3-444d-8618-8bb8acdd6caa">
+          <DataAttributes>
+            <DataAttribute Name="Код">273</DataAttribute>
+            <DataAttribute Name="Наименование">Килоджоуль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2034" ParentGuid="" Guid="4b110d96-50a9-42d7-81bc-ceefd58056be">
+          <DataAttributes>
+            <DataAttribute Name="Код">889</DataAttribute>
+            <DataAttribute Name="Наименование">Условная катушка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1809" ParentGuid="" Guid="f58c35f2-eab0-4b23-a2f9-beda4995d630">
+          <DataAttributes>
+            <DataAttribute Name="Код">626</DataAttribute>
+            <DataAttribute Name="Наименование">Сто листов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1742" ParentGuid="" Guid="d1b5ca15-830b-40ba-abc2-2cd07e2db413">
+          <DataAttributes>
+            <DataAttribute Name="Код">243</DataAttribute>
+            <DataAttribute Name="Наименование">Ватт-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1773" ParentGuid="" Guid="4d975c0d-33c3-4afd-916f-e800e605afc3">
+          <DataAttributes>
+            <DataAttribute Name="Код">306</DataAttribute>
+            <DataAttribute Name="Наименование">Грамм делящихся изотопов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1950" ParentGuid="" Guid="0b5147d2-e161-43bb-8b92-a6a83aff4a9f">
+          <DataAttributes>
+            <DataAttribute Name="Код">516</DataAttribute>
+            <DataAttribute Name="Наименование">Тонно-танид</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244666" ParentGuid="" Guid="cf9148d0-ba8e-42de-8f51-97ac6681ba75">
+          <DataAttributes>
+            <DataAttribute Name="Код">2561</DataAttribute>
+            <DataAttribute Name="Наименование">Килобайт в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1897" ParentGuid="" Guid="9015b7fd-f6bb-4f6a-9da3-ae29b16123cb">
+          <DataAttributes>
+            <DataAttribute Name="Код">207</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча центнеров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1803" ParentGuid="" Guid="370bc446-4a32-4af6-b731-71a425bae045">
+          <DataAttributes>
+            <DataAttribute Name="Код">533</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна пара в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2084" ParentGuid="" Guid="8d6b3565-b97e-4775-9ce5-0ac35cc97dfe">
+          <DataAttributes>
+            <DataAttribute Name="Код">961</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча автомобиле-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2090" ParentGuid="" Guid="bae775f0-f6a8-431a-8988-332aec414db1">
+          <DataAttributes>
+            <DataAttribute Name="Код">967</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонно-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2145" ParentGuid="" Guid="8c90bbe2-ddfa-4490-bcab-f4459dbdfd5e">
+          <DataAttributes>
+            <DataAttribute Name="Код">197</DataAttribute>
+            <DataAttribute Name="Наименование">Скрупул СК, США (1,295982 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2159" ParentGuid="" Guid="b5fcdd77-6a9f-49a5-8923-743f63102384">
+          <DataAttributes>
+            <DataAttribute Name="Код">851</DataAttribute>
+            <DataAttribute Name="Наименование">Международная единица</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2064" ParentGuid="" Guid="0b4e64c7-da71-490f-8575-aee8238f0659">
+          <DataAttributes>
+            <DataAttribute Name="Код">920</DataAttribute>
+            <DataAttribute Name="Наименование">Лист печатный</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1759" ParentGuid="" Guid="60dc8985-1d2f-4474-b8df-0c7b241f6ace">
+          <DataAttributes>
+            <DataAttribute Name="Код">288</DataAttribute>
+            <DataAttribute Name="Наименование">Кельвин</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2125" ParentGuid="" Guid="6bb30643-e2bb-47b4-acd7-21655d8a95a4">
+          <DataAttributes>
+            <DataAttribute Name="Код">149</DataAttribute>
+            <DataAttribute Name="Наименование">Сухой галлон США (4,404884 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2110" ParentGuid="" Guid="ac8cbf79-5000-4b30-b93d-322c6da7ae7f">
+          <DataAttributes>
+            <DataAttribute Name="Код">079</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратная миля</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1877" ParentGuid="" Guid="d55844e7-7779-4b60-a7cc-0db680a1523e">
+          <DataAttributes>
+            <DataAttribute Name="Код">120</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион декалитров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1711" ParentGuid="" Guid="c1d1edcd-36aa-4bd8-8e16-5d843a37101a">
+          <DataAttributes>
+            <DataAttribute Name="Код">113</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1988" ParentGuid="" Guid="4ce49dcd-2995-42c5-a460-eef6de9a3c78">
+          <DataAttributes>
+            <DataAttribute Name="Код">698</DataAttribute>
+            <DataAttribute Name="Наименование">Место</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1942" ParentGuid="" Guid="e593279e-91e3-4c0e-bfd5-fd66ababa227">
+          <DataAttributes>
+            <DataAttribute Name="Код">451</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонно-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1835" ParentGuid="" Guid="b2539454-daeb-4314-9ca2-36f24e0de9af">
+          <DataAttributes>
+            <DataAttribute Name="Код">800</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244681" ParentGuid="" Guid="5aa35e9c-22ca-4d73-8a2f-8df9359a4e29">
+          <DataAttributes>
+            <DataAttribute Name="Код">987</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион краско-оттисков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1862" ParentGuid="" Guid="5e3a8dd7-5bd4-48d0-b096-66f748723b5b">
+          <DataAttributes>
+            <DataAttribute Name="Код">063</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных квадратных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1855" ParentGuid="" Guid="9be049c3-977c-45a9-be01-afc62603ea99">
+          <DataAttributes>
+            <DataAttribute Name="Код">048</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1996" ParentGuid="" Guid="cefca2f1-e0c2-4a55-864e-04fc065f1c44">
+          <DataAttributes>
+            <DataAttribute Name="Код">761</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча станов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1825" ParentGuid="" Guid="7ad64f15-8f6f-4177-93cb-5ebccd0f771f">
+          <DataAttributes>
+            <DataAttribute Name="Код">745</DataAttribute>
+            <DataAttribute Name="Наименование">Элемент</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1923" ParentGuid="" Guid="962ae4b8-332b-4571-9c56-e4e4de659824">
+          <DataAttributes>
+            <DataAttribute Name="Код">317</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм на квадратный сантиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1883" ParentGuid="" Guid="966943ce-faa2-4fd9-8563-4be99ec2ea6e">
+          <DataAttributes>
+            <DataAttribute Name="Код">128</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча полулитров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244699" ParentGuid="" Guid="6b71a7ee-97b2-40e3-96f1-52055ea17054">
+          <DataAttributes>
+            <DataAttribute Name="Код">5562</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча гнезд</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1743" ParentGuid="" Guid="e854c036-3176-497c-a57b-7840a9351167">
+          <DataAttributes>
+            <DataAttribute Name="Код">245</DataAttribute>
+            <DataAttribute Name="Наименование">Киловатт-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1971" ParentGuid="" Guid="983f0e99-326e-499b-a94a-c11fdcf63d58">
+          <DataAttributes>
+            <DataAttribute Name="Код">554</DataAttribute>
+            <DataAttribute Name="Наименование">Центнер переработки в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1957" ParentGuid="" Guid="a4b0ebb1-a6b0-4ea2-bad1-6ad1370ed355">
+          <DataAttributes>
+            <DataAttribute Name="Код">538</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244660" ParentGuid="" Guid="0b944fa5-29ed-4c1e-a98f-819893f83d06">
+          <DataAttributes>
+            <DataAttribute Name="Код">2541</DataAttribute>
+            <DataAttribute Name="Наименование">Бит в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1804" ParentGuid="" Guid="ff8b3b77-3ae1-4abd-b1d6-c1edea32f48c">
+          <DataAttributes>
+            <DataAttribute Name="Код">596</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический метр в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1728" ParentGuid="" Guid="2c61d9e9-ddc4-437b-9c03-499ee3f9e708">
+          <DataAttributes>
+            <DataAttribute Name="Код">185</DataAttribute>
+            <DataAttribute Name="Наименование">Грузоподъемность в метрических тоннах</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1815" ParentGuid="" Guid="192ec98a-1795-481d-982c-6da09ec03d06">
+          <DataAttributes>
+            <DataAttribute Name="Код">704</DataAttribute>
+            <DataAttribute Name="Наименование">Набор</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2029" ParentGuid="" Guid="f6cc023d-1c7a-453c-a681-b31b9880e50f">
+          <DataAttributes>
+            <DataAttribute Name="Код">884</DataAttribute>
+            <DataAttribute Name="Наименование">Условный кусок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2160" ParentGuid="" Guid="93668c38-911b-4ff5-a531-86b3f9ae2027">
+          <DataAttributes>
+            <DataAttribute Name="Код">853</DataAttribute>
+            <DataAttribute Name="Наименование">Сто международных единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2103" ParentGuid="" Guid="2a388c43-e55d-4941-aa15-ce2bd45a6ce4">
+          <DataAttributes>
+            <DataAttribute Name="Код">980</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча долларов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1774" ParentGuid="" Guid="2f57d1ac-20f1-400c-b64c-ea24aeedebe0">
+          <DataAttributes>
+            <DataAttribute Name="Код">308</DataAttribute>
+            <DataAttribute Name="Наименование">Миллибар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1904" ParentGuid="" Guid="0b5c26e1-b1f8-4df3-be12-97c33838af75">
+          <DataAttributes>
+            <DataAttribute Name="Код">236</DataAttribute>
+            <DataAttribute Name="Наименование">Калория в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2085" ParentGuid="" Guid="a639fa1b-4d01-4892-bd8a-1d8ea4cab7f3">
+          <DataAttributes>
+            <DataAttribute Name="Код">962</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча автомобиле-место-дней</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2071" ParentGuid="" Guid="07bc3200-a43a-4349-ad4f-336863bad998">
+          <DataAttributes>
+            <DataAttribute Name="Код">937</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион доз</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2048" ParentGuid="" Guid="5470dce4-a323-4b35-84d3-e5b5b1b708d2">
+          <DataAttributes>
+            <DataAttribute Name="Код">903</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча ученических мест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244687" ParentGuid="" Guid="12dc9acf-5df9-4061-a9d9-e6cfc7c6b09f">
+          <DataAttributes>
+            <DataAttribute Name="Код">9641</DataAttribute>
+            <DataAttribute Name="Наименование">Летный час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1753" ParentGuid="" Guid="253d1e09-ee27-4b3f-b1f9-e2d8c885b0d0">
+          <DataAttributes>
+            <DataAttribute Name="Код">274</DataAttribute>
+            <DataAttribute Name="Наименование">Ом</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1838" ParentGuid="" Guid="58f28e82-2c1a-48f5-b36d-4684fb82a7f8">
+          <DataAttributes>
+            <DataAttribute Name="Код">802</DataAttribute>
+            <DataAttribute Name="Наименование">Квинтильон штук (Европа)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1795" ParentGuid="" Guid="236dae89-d16d-4936-95f7-1c437f4c9da7">
+          <DataAttributes>
+            <DataAttribute Name="Код">361</DataAttribute>
+            <DataAttribute Name="Наименование">Декада</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2111" ParentGuid="" Guid="ad2dfcf9-13fa-4149-80f2-3979f6f8b89c">
+          <DataAttributes>
+            <DataAttribute Name="Код">135</DataAttribute>
+            <DataAttribute Name="Наименование">Жидкостная унция СК (28,413 см³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1701" ParentGuid="" Guid="c40a2028-b4aa-48db-982d-e8741c2c7455">
+          <DataAttributes>
+            <DataAttribute Name="Код">071</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный дюйм (645,16 мм²)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244667" ParentGuid="" Guid="04f29020-4980-4535-b945-0826c921781d">
+          <DataAttributes>
+            <DataAttribute Name="Код">2571</DataAttribute>
+            <DataAttribute Name="Наименование">Мегабайт в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1878" ParentGuid="" Guid="3282ca29-e0c4-4cd5-b447-b1ac7a5c89cd">
+          <DataAttributes>
+            <DataAttribute Name="Код">121</DataAttribute>
+            <DataAttribute Name="Наименование">Плотный кубический метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2131" ParentGuid="" Guid="4f3da458-79ec-454c-8c60-057f0028a16c">
+          <DataAttributes>
+            <DataAttribute Name="Код">182</DataAttribute>
+            <DataAttribute Name="Наименование">Нетто-регистровая тонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2146" ParentGuid="" Guid="4b9b5aa8-0314-4c2e-ae79-241ad0bc42e2">
+          <DataAttributes>
+            <DataAttribute Name="Код">198</DataAttribute>
+            <DataAttribute Name="Наименование">Пеннивейт СК, США (1,555174 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140098" ParentGuid="" Guid="4a2924e5-743d-4788-a9cb-95cc2aa01af2">
+          <DataAttributes>
+            <DataAttribute Name="Код">008</DataAttribute>
+            <DataAttribute Name="Наименование">Километр; Тысяча метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1898" ParentGuid="" Guid="bffb52bf-1053-482b-b555-2849bf0d3a10">
+          <DataAttributes>
+            <DataAttribute Name="Код">226</DataAttribute>
+            <DataAttribute Name="Наименование">Вольт-ампер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1805" ParentGuid="" Guid="1811ea01-87e6-419a-8df5-dd20233c5707">
+          <DataAttributes>
+            <DataAttribute Name="Код">598</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический метр в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1951" ParentGuid="" Guid="aaf75ad8-2fe6-4748-bdde-9312f2442938">
+          <DataAttributes>
+            <DataAttribute Name="Код">521</DataAttribute>
+            <DataAttribute Name="Наименование">Человек на квадратный метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1760" ParentGuid="" Guid="bb19d106-3df1-4ca6-b172-0a1781a32570">
+          <DataAttributes>
+            <DataAttribute Name="Код">289</DataAttribute>
+            <DataAttribute Name="Наименование">Ньютон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2126" ParentGuid="" Guid="782311fd-0b08-4574-9f2b-72843c430e65">
+          <DataAttributes>
+            <DataAttribute Name="Код">150</DataAttribute>
+            <DataAttribute Name="Наименование">Бушель США (35,2391 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140099" ParentGuid="" Guid="cfe074e6-53b9-45ae-805f-9eaa924bf018">
+          <DataAttributes>
+            <DataAttribute Name="Код">009</DataAttribute>
+            <DataAttribute Name="Наименование">Мегаметр; Миллион метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244682" ParentGuid="" Guid="8b7a0135-e7d1-4be1-9d2e-c7f2f6780452">
+          <DataAttributes>
+            <DataAttribute Name="Код">986</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча краско-оттисков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1780" ParentGuid="" Guid="1ba8bac2-f2bb-494a-adac-9f7a1c86f86b">
+          <DataAttributes>
+            <DataAttribute Name="Код">323</DataAttribute>
+            <DataAttribute Name="Наименование">Беккерель</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1989" ParentGuid="" Guid="5b7181e4-5519-4af2-80c0-4acb2a924ac9">
+          <DataAttributes>
+            <DataAttribute Name="Код">699</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча мест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1997" ParentGuid="" Guid="f72269d4-d0b8-44e2-a0ca-66b60fee615f">
+          <DataAttributes>
+            <DataAttribute Name="Код">762</DataAttribute>
+            <DataAttribute Name="Наименование">Станция</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1943" ParentGuid="" Guid="378f53d0-6cf4-49ee-a5f9-56d285a1ceea">
+          <DataAttributes>
+            <DataAttribute Name="Код">479</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча наборов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1863" ParentGuid="" Guid="7d1b7f8c-4918-4790-baaa-aba5958b9f2f">
+          <DataAttributes>
+            <DataAttribute Name="Код">064</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных квадратных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2065" ParentGuid="" Guid="908c0573-cc40-4e01-a38c-a110b37a7906">
+          <DataAttributes>
+            <DataAttribute Name="Код">921</DataAttribute>
+            <DataAttribute Name="Наименование">Лист учетно-издательский</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1929" ParentGuid="" Guid="653e1dea-a0cf-4f18-b6e6-449bef6f7136">
+          <DataAttributes>
+            <DataAttribute Name="Код">383</DataAttribute>
+            <DataAttribute Name="Наименование">Рубль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1924" ParentGuid="" Guid="738f0ea4-fe0a-41aa-9331-878b6e99b6dd">
+          <DataAttributes>
+            <DataAttribute Name="Код">337</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиметр водяного столба</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2112" ParentGuid="" Guid="35f4b7ed-46b1-4ebc-bd8b-398642248099">
+          <DataAttributes>
+            <DataAttribute Name="Код">136</DataAttribute>
+            <DataAttribute Name="Наименование">Джилл СК (0,142065 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1972" ParentGuid="" Guid="81a9e079-52d5-43f2-b3ff-ef7ceff3a86d">
+          <DataAttributes>
+            <DataAttribute Name="Код">555</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча центнеров переработки в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2104" ParentGuid="" Guid="305f7bc3-7687-48b4-9934-1e3dfd0f7943">
+          <DataAttributes>
+            <DataAttribute Name="Код">981</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн кормовых единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1958" ParentGuid="" Guid="cd8d04f2-3013-4fb0-91f8-c5487b8a9124">
+          <DataAttributes>
+            <DataAttribute Name="Код">539</DataAttribute>
+            <DataAttribute Name="Наименование">Человеко-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1733" ParentGuid="" Guid="5a53cf21-29d6-427c-b0c4-b8549774592f">
+          <DataAttributes>
+            <DataAttribute Name="Код">212</DataAttribute>
+            <DataAttribute Name="Наименование">Ватт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1839" ParentGuid="" Guid="499a4cf3-83cb-40e2-aa53-4e45f0381efb">
+          <DataAttributes>
+            <DataAttribute Name="Код">820</DataAttribute>
+            <DataAttribute Name="Наименование">Крепость спирта по массе</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1992" ParentGuid="" Guid="1535fa0c-537b-4043-ba64-2710dbed4697">
+          <DataAttributes>
+            <DataAttribute Name="Код">729</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пачек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1977" ParentGuid="" Guid="5b15ec52-fa4e-422f-8942-0301029adc2c">
+          <DataAttributes>
+            <DataAttribute Name="Код">560</DataAttribute>
+            <DataAttribute Name="Наименование">Минимальная заработная плата</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1974" ParentGuid="" Guid="008f0ec0-88e7-4e22-b2d2-47df6ed76fb9">
+          <DataAttributes>
+            <DataAttribute Name="Код">557</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион голов в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1905" ParentGuid="" Guid="94447cfa-6698-4a1e-aeb2-6adbcacbeb56">
+          <DataAttributes>
+            <DataAttribute Name="Код">237</DataAttribute>
+            <DataAttribute Name="Наименование">Килокалория в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1926" ParentGuid="" Guid="9ba52424-4f00-47f6-8678-dc9ff5a44385">
+          <DataAttributes>
+            <DataAttribute Name="Код">339</DataAttribute>
+            <DataAttribute Name="Наименование">Сантиметр водяного столба</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2072" ParentGuid="" Guid="73e92b77-15d6-40c2-bf09-5a25767c4ae5">
+          <DataAttributes>
+            <DataAttribute Name="Код">949</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион листов-оттисков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1859" ParentGuid="" Guid="87529a10-597d-47a0-b835-1b4edf92b422">
+          <DataAttributes>
+            <DataAttribute Name="Код">057</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион квадратных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140100" ParentGuid="" Guid="579b254d-c792-4a15-8320-cd697c09ba41">
+          <DataAttributes>
+            <DataAttribute Name="Код">111</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический сантиметр; Миллилитр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2035" ParentGuid="" Guid="44ca452c-761f-4278-a7cf-52c19400d625">
+          <DataAttributes>
+            <DataAttribute Name="Код">890</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных катушек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2152" ParentGuid="" Guid="124dd7b1-eda9-4d20-bcb0-dee026e7098c">
+          <DataAttributes>
+            <DataAttribute Name="Код">213</DataAttribute>
+            <DataAttribute Name="Наименование">Эффективная мощность (245,7 ватт)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1998" ParentGuid="" Guid="c2fef824-9810-41ad-a903-3733b3b7ca3a">
+          <DataAttributes>
+            <DataAttribute Name="Код">775</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тюбиков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1954" ParentGuid="" Guid="afa011b1-18cb-4bfb-b040-b9a12e3ef766">
+          <DataAttributes>
+            <DataAttribute Name="Код">535</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна в сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244668" ParentGuid="" Guid="5e510c81-c92e-4815-af5c-d866feac51cb">
+          <DataAttributes>
+            <DataAttribute Name="Код">2581</DataAttribute>
+            <DataAttribute Name="Наименование">Эрланг</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1798" ParentGuid="" Guid="f7028ccd-aecf-40ba-98eb-8459159817fe">
+          <DataAttributes>
+            <DataAttribute Name="Код">365</DataAttribute>
+            <DataAttribute Name="Наименование">Полугодие</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1840" ParentGuid="" Guid="218dac67-7801-4b53-9e4d-11a7a541572e">
+          <DataAttributes>
+            <DataAttribute Name="Код">821</DataAttribute>
+            <DataAttribute Name="Наименование">Крепость спирта по объему</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1777" ParentGuid="" Guid="2af323bd-79df-42e0-a69b-f9b75f3e1921">
+          <DataAttributes>
+            <DataAttribute Name="Код">312</DataAttribute>
+            <DataAttribute Name="Наименование">Килобар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2091" ParentGuid="" Guid="de48d825-1048-460d-ab06-ed4d79a9526a">
+          <DataAttributes>
+            <DataAttribute Name="Код">968</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион пассажиро-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2032" ParentGuid="" Guid="30037ab4-f3c3-4b9d-94a4-495bd2c77121">
+          <DataAttributes>
+            <DataAttribute Name="Код">887</DataAttribute>
+            <DataAttribute Name="Наименование">Условный ящик</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2113" ParentGuid="" Guid="e1605462-5f80-4a21-96c5-5637c11361a6">
+          <DataAttributes>
+            <DataAttribute Name="Код">137</DataAttribute>
+            <DataAttribute Name="Наименование">Пинта СК (0,568262 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2068" ParentGuid="" Guid="9b9f134e-04cf-4997-8649-11342fd46fb1">
+          <DataAttributes>
+            <DataAttribute Name="Код">924</DataAttribute>
+            <DataAttribute Name="Наименование">Символ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140101" ParentGuid="" Guid="648d4b8c-6cac-46e9-87ac-ba49f4cece18">
+          <DataAttributes>
+            <DataAttribute Name="Код">112</DataAttribute>
+            <DataAttribute Name="Наименование">Литр; Кубический дециметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2121" ParentGuid="" Guid="4e2000aa-5155-4652-97d2-807b3051e352">
+          <DataAttributes>
+            <DataAttribute Name="Код">145</DataAttribute>
+            <DataAttribute Name="Наименование">Жидкостный галлон США (3,78541 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244664" ParentGuid="" Guid="38ac7da9-43f0-495d-b20a-7aae508dde8e">
+          <DataAttributes>
+            <DataAttribute Name="Код">2551</DataAttribute>
+            <DataAttribute Name="Наименование">Байт в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2141" ParentGuid="" Guid="b7ffda8c-9dfd-4d6b-8943-dddcbeb18a59">
+          <DataAttributes>
+            <DataAttribute Name="Код">193</DataAttribute>
+            <DataAttribute Name="Наименование">Центнер США (45,3592 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1738" ParentGuid="" Guid="3c1d5a41-f401-4945-916e-c6c0bc9812f0">
+          <DataAttributes>
+            <DataAttribute Name="Код">223</DataAttribute>
+            <DataAttribute Name="Наименование">Киловольт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244695" ParentGuid="" Guid="7b22954e-e33b-457f-a306-dd2a2cfc593f">
+          <DataAttributes>
+            <DataAttribute Name="Код">8361</DataAttribute>
+            <DataAttribute Name="Наименование">Особь</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2107" ParentGuid="" Guid="e57b1238-5713-4012-a642-7ee048702c5c">
+          <DataAttributes>
+            <DataAttribute Name="Код">017</DataAttribute>
+            <DataAttribute Name="Наименование">Гектометр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1697" ParentGuid="" Guid="078fa871-0304-421e-adc2-72495ed91407">
+          <DataAttributes>
+            <DataAttribute Name="Код">055</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2088" ParentGuid="" Guid="709c57ad-565e-43ac-b812-2bf824236fdd">
+          <DataAttributes>
+            <DataAttribute Name="Код">965</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2080" ParentGuid="" Guid="b3d8cc82-6eb0-494b-a54a-de30a713ea14">
+          <DataAttributes>
+            <DataAttribute Name="Код">957</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонно-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1704" ParentGuid="" Guid="8ed9a4e8-be9a-4f8c-8d70-ebab1d6ae210">
+          <DataAttributes>
+            <DataAttribute Name="Код">109</DataAttribute>
+            <DataAttribute Name="Наименование">Ар (100 м²)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2025" ParentGuid="" Guid="58c2f845-3cf3-4b68-8cc5-f4c60743d766">
+          <DataAttributes>
+            <DataAttribute Name="Код">880</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1757" ParentGuid="" Guid="87cee346-9f71-425b-a1f4-6a9130d5b813">
+          <DataAttributes>
+            <DataAttribute Name="Код">283</DataAttribute>
+            <DataAttribute Name="Наименование">Люкс</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1851" ParentGuid="" Guid="9789a777-550d-4b30-81d7-72c69a239bb4">
+          <DataAttributes>
+            <DataAttribute Name="Код">867</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм урана</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1828" ParentGuid="" Guid="2f9d1b89-a8e7-40b0-bfab-c4b64836385c">
+          <DataAttributes>
+            <DataAttribute Name="Код">781</DataAttribute>
+            <DataAttribute Name="Наименование">Сто упаковок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1822" ParentGuid="" Guid="dc8ac4d9-eaf7-431f-8e55-35d207b1ea88">
+          <DataAttributes>
+            <DataAttribute Name="Код">736</DataAttribute>
+            <DataAttribute Name="Наименование">Рулон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1993" ParentGuid="" Guid="9180d296-e7f9-4489-a268-3e1ea6d49c16">
+          <DataAttributes>
+            <DataAttribute Name="Код">744</DataAttribute>
+            <DataAttribute Name="Наименование">Процент</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2099" ParentGuid="" Guid="83c2c7cc-8644-42d9-902d-287f712ecd2b">
+          <DataAttributes>
+            <DataAttribute Name="Код">976</DataAttribute>
+            <DataAttribute Name="Наименование">Штук в 20-футовом эквиваленте(ДФЗ)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244707" ParentGuid="" Guid="407d64a8-cb3b-4e8d-9b02-dc2d951c3fea">
+          <DataAttributes>
+            <DataAttribute Name="Код">2555</DataAttribute>
+            <DataAttribute Name="Наименование">Петабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1881" ParentGuid="" Guid="23cbb3f9-1e97-4600-90ed-70dd68509f9d">
+          <DataAttributes>
+            <DataAttribute Name="Код">125</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион кубических метров переработки газа</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1873" ParentGuid="" Guid="6b8fa6e4-a048-469a-8a34-a73f564cecb4">
+          <DataAttributes>
+            <DataAttribute Name="Код">114</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча кубических метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2129" ParentGuid="" Guid="5e88da1c-5260-4a40-98e3-0edeea66ba0f">
+          <DataAttributes>
+            <DataAttribute Name="Код">153</DataAttribute>
+            <DataAttribute Name="Наименование">Корд (3,63 м³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1807" ParentGuid="" Guid="47c3cea7-3f89-4ade-b6f2-ad1abaab8a73">
+          <DataAttributes>
+            <DataAttribute Name="Код">616</DataAttribute>
+            <DataAttribute Name="Наименование">Бобина</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1860" ParentGuid="" Guid="55487997-f160-4d3c-bd44-e5ffc954cdc4">
+          <DataAttributes>
+            <DataAttribute Name="Код">060</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча гектаров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140111" ParentGuid="" Guid="a3fc90bd-dc82-4ddb-9e8f-bd9bbbf5b4d1">
+          <DataAttributes>
+            <DataAttribute Name="Код">801</DataAttribute>
+            <DataAttribute Name="Наименование">Биллион штук (Европа); Триллион штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2052" ParentGuid="" Guid="0bc1f251-6af7-4269-b9e8-3b6bf413ec0d">
+          <DataAttributes>
+            <DataAttribute Name="Код">907</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча посадочных мест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1938" ParentGuid="" Guid="9aad3905-9c85-43cf-b052-6e39e38acf6a">
+          <DataAttributes>
+            <DataAttribute Name="Код">424</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион пассажиро-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1801" ParentGuid="" Guid="8b0a3ec0-3d9a-4da9-b4d4-b686425e3a6c">
+          <DataAttributes>
+            <DataAttribute Name="Код">368</DataAttribute>
+            <DataAttribute Name="Наименование">Десятилетие</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1789" ParentGuid="" Guid="e4192f42-92c0-4b78-bdaa-c677e4f3beff">
+          <DataAttributes>
+            <DataAttribute Name="Код">354</DataAttribute>
+            <DataAttribute Name="Наименование">Секунда</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244685" ParentGuid="" Guid="4c12c2c1-a321-45a1-9e18-4ef4dd510bbb">
+          <DataAttributes>
+            <DataAttribute Name="Код">9805</DataAttribute>
+            <DataAttribute Name="Наименование">Доллар за тонну</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244677" ParentGuid="" Guid="8df75595-56c3-4695-b92c-f547f085967c">
+          <DataAttributes>
+            <DataAttribute Name="Код">991</DataAttribute>
+            <DataAttribute Name="Наименование">Пассажиро-миля</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1856" ParentGuid="" Guid="e1725c3d-4e3a-478d-af5a-96e9add261b2">
+          <DataAttributes>
+            <DataAttribute Name="Код">049</DataAttribute>
+            <DataAttribute Name="Наименование">Километр условных труб</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1927" ParentGuid="" Guid="f8cb94c7-4d10-4346-b3ab-91eb0b46b274">
+          <DataAttributes>
+            <DataAttribute Name="Код">352</DataAttribute>
+            <DataAttribute Name="Наименование">Микросекунда</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1810" ParentGuid="" Guid="eb04f100-a1f2-43a9-bda0-ca8d53c8186f">
+          <DataAttributes>
+            <DataAttribute Name="Код">630</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча стандартных условных кирпичей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1775" ParentGuid="" Guid="2dad1a17-ffaf-41c5-bd5e-b0a996d9062f">
+          <DataAttributes>
+            <DataAttribute Name="Код">309</DataAttribute>
+            <DataAttribute Name="Наименование">Бар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1920" ParentGuid="" Guid="ef32d39e-6342-425a-8a97-defef82dd483">
+          <DataAttributes>
+            <DataAttribute Name="Код">258</DataAttribute>
+            <DataAttribute Name="Наименование">Бод</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1899" ParentGuid="" Guid="0d770574-6652-408f-afb3-06f76d7323f2">
+          <DataAttributes>
+            <DataAttribute Name="Код">231</DataAttribute>
+            <DataAttribute Name="Наименование">Метр в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2122" ParentGuid="" Guid="698686af-6bdc-48e5-a4cf-8a70a945a601">
+          <DataAttributes>
+            <DataAttribute Name="Код">146</DataAttribute>
+            <DataAttribute Name="Наименование">Баррель (нефтяной) США (158,987 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2147" ParentGuid="" Guid="479b15d0-9d76-4bb4-9a17-606a8ce829a5">
+          <DataAttributes>
+            <DataAttribute Name="Код">199</DataAttribute>
+            <DataAttribute Name="Наименование">Драхма СК (3,887935 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140112" ParentGuid="" Guid="c9aa81ed-5d05-4a0c-a522-93ca500396e7">
+          <DataAttributes>
+            <DataAttribute Name="Код">130</DataAttribute>
+            <DataAttribute Name="Наименование">1000 литров; Тысяча литров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244661" ParentGuid="" Guid="81898440-2410-4734-8b4f-f43f1b41ccd6">
+          <DataAttributes>
+            <DataAttribute Name="Код">2543</DataAttribute>
+            <DataAttribute Name="Наименование">Килобит в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1894" ParentGuid="" Guid="b8134d8b-b1a2-4521-bb3b-6e7986de0a0d">
+          <DataAttributes>
+            <DataAttribute Name="Код">177</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн единовременного хранения</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2086" ParentGuid="" Guid="f93a49b6-c43b-47bb-8f67-d68a529c52ae">
+          <DataAttributes>
+            <DataAttribute Name="Код">963</DataAttribute>
+            <DataAttribute Name="Наименование">Приведенный час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1722" ParentGuid="" Guid="fdc52938-10cd-4ea8-b452-eb2f302de5f3">
+          <DataAttributes>
+            <DataAttribute Name="Код">166</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2030" ParentGuid="" Guid="fed151ee-807d-4787-b044-62e32576b213">
+          <DataAttributes>
+            <DataAttribute Name="Код">885</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных кусков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1967" ParentGuid="" Guid="41c30326-3aae-476a-84d0-45bf21447d44">
+          <DataAttributes>
+            <DataAttribute Name="Код">548</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пар в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1698" ParentGuid="" Guid="fd69c700-0e7f-4eb0-bc6d-a962f39464bd">
+          <DataAttributes>
+            <DataAttribute Name="Код">058</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квадратных метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1761" ParentGuid="" Guid="d0cba8a5-69c5-43b7-a920-8bd814baba7c">
+          <DataAttributes>
+            <DataAttribute Name="Код">290</DataAttribute>
+            <DataAttribute Name="Наименование">Герц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244696" ParentGuid="" Guid="c41aff2e-86ad-42e1-a35d-52ae31c3455b">
+          <DataAttributes>
+            <DataAttribute Name="Код">6424</DataAttribute>
+            <DataAttribute Name="Наименование">Штамм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1712" ParentGuid="" Guid="ed905079-fda9-4d65-ab2a-7e5d2fbaf236">
+          <DataAttributes>
+            <DataAttribute Name="Код">118</DataAttribute>
+            <DataAttribute Name="Наименование">Децилитр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1999" ParentGuid="" Guid="75c6ca89-aff0-4940-adbc-45e556776da4">
+          <DataAttributes>
+            <DataAttribute Name="Код">776</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных тубов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140113" ParentGuid="" Guid="5d66b6b5-a20e-4b7a-9937-0c9bdb0d7b07">
+          <DataAttributes>
+            <DataAttribute Name="Код">201</DataAttribute>
+            <DataAttribute Name="Наименование">Унция СК, США (31,10348 г); Тройская унция</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140102" ParentGuid="" Guid="78f7fb54-21f1-4e3b-90f4-52082c4413d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">168</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна; Метрическая тонна (1000 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1770" ParentGuid="" Guid="02e6210e-5a9f-4e8a-891c-85caee798ead">
+          <DataAttributes>
+            <DataAttribute Name="Код">302</DataAttribute>
+            <DataAttribute Name="Наименование">Гигабеккерель</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1864" ParentGuid="" Guid="7693b6e7-2f6e-4891-b529-84db60462044">
+          <DataAttributes>
+            <DataAttribute Name="Код">081</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный метр общей площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2044" ParentGuid="" Guid="c23b5665-ee88-4c26-886a-294899725d5d">
+          <DataAttributes>
+            <DataAttribute Name="Код">899</DataAttribute>
+            <DataAttribute Name="Наименование">Домохозяйство</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1884" ParentGuid="" Guid="3fc084a3-9d62-43f3-be54-d36684059647">
+          <DataAttributes>
+            <DataAttribute Name="Код">129</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион полулитров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2026" ParentGuid="" Guid="0d8a2a5b-ef2e-446a-90fa-3fedff9deca7">
+          <DataAttributes>
+            <DataAttribute Name="Код">881</DataAttribute>
+            <DataAttribute Name="Наименование">Условная банка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1906" ParentGuid="" Guid="df721649-2901-4680-a49a-53b7981315fa">
+          <DataAttributes>
+            <DataAttribute Name="Код">238</DataAttribute>
+            <DataAttribute Name="Наименование">Гигакалория в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1817" ParentGuid="" Guid="e30376de-faa2-4c8d-a906-30bc52ccfa40">
+          <DataAttributes>
+            <DataAttribute Name="Код">730</DataAttribute>
+            <DataAttribute Name="Наименование">Два десятка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1841" ParentGuid="" Guid="795384fd-4cef-45ca-8ef2-ef8b29c6fb1f">
+          <DataAttributes>
+            <DataAttribute Name="Код">831</DataAttribute>
+            <DataAttribute Name="Наименование">Литр чистого (100%) спирта</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1866" ParentGuid="" Guid="298bc003-afd8-4c64-85be-6111a3a27084">
+          <DataAttributes>
+            <DataAttribute Name="Код">083</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион квадратных метров общей площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1959" ParentGuid="" Guid="2cf6363a-de4f-4daf-8898-839156f57489">
+          <DataAttributes>
+            <DataAttribute Name="Код">540</DataAttribute>
+            <DataAttribute Name="Наименование">Человеко-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1888" ParentGuid="" Guid="a3eadc17-be4b-4cfe-b641-21f474bed7ec">
+          <DataAttributes>
+            <DataAttribute Name="Код">167</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион каратов метрических</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1910" ParentGuid="" Guid="6b5272a6-fe31-43f2-aad4-1bae293d3c03">
+          <DataAttributes>
+            <DataAttribute Name="Код">248</DataAttribute>
+            <DataAttribute Name="Наименование">Киловольт-ампер реактивный</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2114" ParentGuid="" Guid="57cf2cd9-e16f-4944-b503-049cfa870c51">
+          <DataAttributes>
+            <DataAttribute Name="Код">138</DataAttribute>
+            <DataAttribute Name="Наименование">Кварта СК (1,136523 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244690" ParentGuid="" Guid="0f604b8f-4bfa-47de-b8ed-a681994e0493">
+          <DataAttributes>
+            <DataAttribute Name="Код">9246</DataAttribute>
+            <DataAttribute Name="Наименование">Документ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2132" ParentGuid="" Guid="2aba472e-7d7b-4ec6-91a2-c49dbef3dac1">
+          <DataAttributes>
+            <DataAttribute Name="Код">183</DataAttribute>
+            <DataAttribute Name="Наименование">Обмерная (фрахтовая) тонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2006" ParentGuid="" Guid="436f50a7-7561-4079-923c-c5f2e83db9dd">
+          <DataAttributes>
+            <DataAttribute Name="Код">810</DataAttribute>
+            <DataAttribute Name="Наименование">Ячейка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1842" ParentGuid="" Guid="aede0252-ca3d-4866-bae1-2149667c6f6a">
+          <DataAttributes>
+            <DataAttribute Name="Код">833</DataAttribute>
+            <DataAttribute Name="Наименование">Гектолитр чистого (100%) спирта</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1783" ParentGuid="" Guid="4260fccd-def2-4e47-98ee-925d2e242a81">
+          <DataAttributes>
+            <DataAttribute Name="Код">328</DataAttribute>
+            <DataAttribute Name="Наименование">Метр в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2073" ParentGuid="" Guid="e384e49c-1152-4745-ab8b-f39141af7b8c">
+          <DataAttributes>
+            <DataAttribute Name="Код">950</DataAttribute>
+            <DataAttribute Name="Наименование">Вагоно (машино)-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1911" ParentGuid="" Guid="5e44e561-bbf5-4e8a-8f4b-dcf85e8e8f92">
+          <DataAttributes>
+            <DataAttribute Name="Код">249</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард киловатт-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244688" ParentGuid="" Guid="5d069b9d-2fa7-4cf5-88db-a643d2de1a77">
+          <DataAttributes>
+            <DataAttribute Name="Код">9501</DataAttribute>
+            <DataAttribute Name="Наименование">Вагоно (машино)-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1980" ParentGuid="" Guid="5ef8bc02-e77d-4764-aa93-468b513d754f">
+          <DataAttributes>
+            <DataAttribute Name="Код">563</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча прядильных мест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2000" ParentGuid="" Guid="7238f0dd-dca6-4508-8541-260e261578f3">
+          <DataAttributes>
+            <DataAttribute Name="Код">779</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион упаковок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2007" ParentGuid="" Guid="d763d1f2-cdaf-41e6-a743-90bb17b94fbc">
+          <DataAttributes>
+            <DataAttribute Name="Код">812</DataAttribute>
+            <DataAttribute Name="Наименование">Ящик</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1843" ParentGuid="" Guid="ec729672-0d47-4863-8c25-a88325e769f8">
+          <DataAttributes>
+            <DataAttribute Name="Код">841</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм пероксида водорода</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2008" ParentGuid="" Guid="04c80576-53f2-441a-b3db-dc8c6aa0f4e6">
+          <DataAttributes>
+            <DataAttribute Name="Код">836</DataAttribute>
+            <DataAttribute Name="Наименование">Голова</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244669" ParentGuid="" Guid="2255d15e-be3c-4fb7-a58d-cf5d2669a455">
+          <DataAttributes>
+            <DataAttribute Name="Код">2931</DataAttribute>
+            <DataAttribute Name="Наименование">Гигагерц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1955" ParentGuid="" Guid="f13ebcdb-fd13-4fa9-a5a5-1afbf9d34996">
+          <DataAttributes>
+            <DataAttribute Name="Код">536</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2100" ParentGuid="" Guid="4c7aa0d5-b36b-4aed-afa2-5ce1f4d991d6">
+          <DataAttributes>
+            <DataAttribute Name="Код">977</DataAttribute>
+            <DataAttribute Name="Наименование">Канало-километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2115" ParentGuid="" Guid="f1169f71-2b85-41d8-aed0-e56ed1aa5c4a">
+          <DataAttributes>
+            <DataAttribute Name="Код">139</DataAttribute>
+            <DataAttribute Name="Наименование">Галлон СК (4,546092 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1930" ParentGuid="" Guid="34785465-10fd-4971-b7fb-82440db1397f">
+          <DataAttributes>
+            <DataAttribute Name="Код">384</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча рублей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1750" ParentGuid="" Guid="78e8d215-4988-493f-ba1e-5be230cc6be7">
+          <DataAttributes>
+            <DataAttribute Name="Код">270</DataAttribute>
+            <DataAttribute Name="Наименование">Кулон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2081" ParentGuid="" Guid="919c2b6c-ef48-443f-ba98-7239ad5aba8b">
+          <DataAttributes>
+            <DataAttribute Name="Код">958</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пассажиро-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1844" ParentGuid="" Guid="5cd5b90a-e1a7-43ec-8021-c0e084577fc8">
+          <DataAttributes>
+            <DataAttribute Name="Код">845</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм 90%-го сухого вещества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2142" ParentGuid="" Guid="d65337f2-2c87-4d92-9cdb-436e7f804d33">
+          <DataAttributes>
+            <DataAttribute Name="Код">194</DataAttribute>
+            <DataAttribute Name="Наименование">Длинный центнер СК (50,802345 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1781" ParentGuid="" Guid="a5d02b86-786d-478b-8811-8fc805db0c27">
+          <DataAttributes>
+            <DataAttribute Name="Код">324</DataAttribute>
+            <DataAttribute Name="Наименование">Вебер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244708" ParentGuid="" Guid="aea00bcf-850a-468e-affa-f4a72cbabe87">
+          <DataAttributes>
+            <DataAttribute Name="Код">2554</DataAttribute>
+            <DataAttribute Name="Наименование">Терабайт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1865" ParentGuid="" Guid="bdfb9ca9-075d-49ba-9dc3-e1d0963b779e">
+          <DataAttributes>
+            <DataAttribute Name="Код">082</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квадратных метров общей площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1986" ParentGuid="" Guid="e26897ff-7874-4246-adbe-86d8139a69a3">
+          <DataAttributes>
+            <DataAttribute Name="Код">661</DataAttribute>
+            <DataAttribute Name="Наименование">Канал</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1907" ParentGuid="" Guid="c6650c2b-095c-4f88-a31d-bd3fb828dd4c">
+          <DataAttributes>
+            <DataAttribute Name="Код">239</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча гигакалорий в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1947" ParentGuid="" Guid="300188bd-0cb6-423e-bd74-7c6daecd3435">
+          <DataAttributes>
+            <DataAttribute Name="Код">513</DataAttribute>
+            <DataAttribute Name="Наименование">Автотонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1939" ParentGuid="" Guid="74623860-27c5-4ce6-ad59-b1e1f1d3e68c">
+          <DataAttributes>
+            <DataAttribute Name="Код">427</DataAttribute>
+            <DataAttribute Name="Наименование">Пассажиропоток</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1816" ParentGuid="" Guid="d506abb2-6bdb-41f6-b6f1-54ec33268eb0">
+          <DataAttributes>
+            <DataAttribute Name="Код">715</DataAttribute>
+            <DataAttribute Name="Наименование">Пара (2 шт.)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1874" ParentGuid="" Guid="cb03232e-4f77-4793-8bac-e8e6036286e3">
+          <DataAttributes>
+            <DataAttribute Name="Код">115</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард кубических метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1978" ParentGuid="" Guid="e3eb6bc2-04b8-469e-9d7c-23413c2581e6">
+          <DataAttributes>
+            <DataAttribute Name="Код">561</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн пара в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1921" ParentGuid="" Guid="39f804e7-e4ce-473c-a626-a662c52c8ca4">
+          <DataAttributes>
+            <DataAttribute Name="Код">287</DataAttribute>
+            <DataAttribute Name="Наименование">Генри</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2001" ParentGuid="" Guid="3eec86eb-0edf-45c8-9bc4-df9a102c0371">
+          <DataAttributes>
+            <DataAttribute Name="Код">782</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча упаковок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1790" ParentGuid="" Guid="9c993128-32b2-4d06-93e3-afeb0ee5c11a">
+          <DataAttributes>
+            <DataAttribute Name="Код">355</DataAttribute>
+            <DataAttribute Name="Наименование">Минута</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2036" ParentGuid="" Guid="8d16f2c0-f871-473f-9557-dc427d655049">
+          <DataAttributes>
+            <DataAttribute Name="Код">891</DataAttribute>
+            <DataAttribute Name="Наименование">Условная плитка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2123" ParentGuid="" Guid="2b8c199f-d727-4d20-88f5-85dac4fb5952">
+          <DataAttributes>
+            <DataAttribute Name="Код">147</DataAttribute>
+            <DataAttribute Name="Наименование">Сухая пинта США (0,55061 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2092" ParentGuid="" Guid="31fa138e-4b8b-4ec3-b349-a3d368985771">
+          <DataAttributes>
+            <DataAttribute Name="Код">969</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тоннаже-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2061" ParentGuid="" Guid="e092649a-df9c-4991-87ea-0aea3eb9b633">
+          <DataAttributes>
+            <DataAttribute Name="Код">916</DataAttribute>
+            <DataAttribute Name="Наименование">Условный ремонт в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1725" ParentGuid="" Guid="51d994d2-23b3-461f-a293-885ec28be1d3">
+          <DataAttributes>
+            <DataAttribute Name="Код">170</DataAttribute>
+            <DataAttribute Name="Наименование">Килотонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1762" ParentGuid="" Guid="8e695b70-956d-40ca-8f2b-e4b747a61436">
+          <DataAttributes>
+            <DataAttribute Name="Код">291</DataAttribute>
+            <DataAttribute Name="Наименование">Килогерц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244678" ParentGuid="" Guid="37fc111b-aa22-4fbe-b726-774693da1da2">
+          <DataAttributes>
+            <DataAttribute Name="Код">990</DataAttribute>
+            <DataAttribute Name="Наименование">Пассажиров в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2002" ParentGuid="" Guid="c6ec8bae-bfca-4069-b5d0-31486c2309f2">
+          <DataAttributes>
+            <DataAttribute Name="Код">792</DataAttribute>
+            <DataAttribute Name="Наименование">Человек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1713" ParentGuid="" Guid="4fcd2abd-2d2f-4c18-aa6d-59d5f90a11f4">
+          <DataAttributes>
+            <DataAttribute Name="Код">122</DataAttribute>
+            <DataAttribute Name="Наименование">Гектолитр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1887" ParentGuid="" Guid="e56ecdf9-f361-4a60-93b2-a92c3a78173c">
+          <DataAttributes>
+            <DataAttribute Name="Код">165</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча каратов метрических</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1975" ParentGuid="" Guid="5a495694-ad77-4405-a8fc-ff14d8996bc4">
+          <DataAttributes>
+            <DataAttribute Name="Код">558</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча птицемест</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2153" ParentGuid="" Guid="73963710-5a85-496f-b0e7-07300c8726ae">
+          <DataAttributes>
+            <DataAttribute Name="Код">275</DataAttribute>
+            <DataAttribute Name="Наименование">Британская тепловая единица (1,055 кДж)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1908" ParentGuid="" Guid="534b45fc-427c-430e-804b-94c02276a8cc">
+          <DataAttributes>
+            <DataAttribute Name="Код">241</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион ампер-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1902" ParentGuid="" Guid="92852588-e310-49c8-bc41-c0de36c38830">
+          <DataAttributes>
+            <DataAttribute Name="Код">234</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча гигакалорий</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2133" ParentGuid="" Guid="e1712d3b-8989-4c76-af60-24a6a019b71d">
+          <DataAttributes>
+            <DataAttribute Name="Код">184</DataAttribute>
+            <DataAttribute Name="Наименование">Водоизмещение</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1814" ParentGuid="" Guid="445bc5be-a48d-4c4e-b7ee-9351d954b175">
+          <DataAttributes>
+            <DataAttribute Name="Код">683</DataAttribute>
+            <DataAttribute Name="Наименование">Сто ящиков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1960" ParentGuid="" Guid="4646c02e-04d0-4264-bb4d-6e61e9dd9526">
+          <DataAttributes>
+            <DataAttribute Name="Код">541</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча человеко-дней</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1778" ParentGuid="" Guid="d8c85c41-a97f-40d0-856e-d6cc38e180e2">
+          <DataAttributes>
+            <DataAttribute Name="Код">314</DataAttribute>
+            <DataAttribute Name="Наименование">Фарад</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2003" ParentGuid="" Guid="dbb913d9-a336-4152-a1b5-d03935f0c72b">
+          <DataAttributes>
+            <DataAttribute Name="Код">793</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча человек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2069" ParentGuid="" Guid="41ab2cf4-c924-4c39-b513-1e49df3cc60d">
+          <DataAttributes>
+            <DataAttribute Name="Код">925</DataAttribute>
+            <DataAttribute Name="Наименование">Условная труба</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244689" ParentGuid="" Guid="08e999f1-454d-41ae-bb40-403fbc6be39e">
+          <DataAttributes>
+            <DataAttribute Name="Код">9491</DataAttribute>
+            <DataAttribute Name="Наименование">Лист-оттиск</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2108" ParentGuid="" Guid="5ff3ba1f-d5fb-4c6c-a1f7-552c54b5929d">
+          <DataAttributes>
+            <DataAttribute Name="Код">045</DataAttribute>
+            <DataAttribute Name="Наименование">Миля (уставная) (1609,344 м)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1931" ParentGuid="" Guid="469097c8-c5a1-4022-8e25-9185ee518f79">
+          <DataAttributes>
+            <DataAttribute Name="Код">385</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион рублей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2089" ParentGuid="" Guid="b1043d51-7445-4ca7-b8aa-73f2bdecf9fd">
+          <DataAttributes>
+            <DataAttribute Name="Код">966</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тоннаже-рейсов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1683" ParentGuid="" Guid="5e0153c5-1d20-4058-9c23-aa1322960b13">
+          <DataAttributes>
+            <DataAttribute Name="Код">003</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1739" ParentGuid="" Guid="b19d3d09-e518-4040-ab5a-4308450242ac">
+          <DataAttributes>
+            <DataAttribute Name="Код">227</DataAttribute>
+            <DataAttribute Name="Наименование">Киловольт-ампер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1684" ParentGuid="" Guid="9326e412-7ae1-4b31-8c8e-a50f5043f04b">
+          <DataAttributes>
+            <DataAttribute Name="Код">004</DataAttribute>
+            <DataAttribute Name="Наименование">Сантиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244665" ParentGuid="" Guid="063b1bd7-a64e-419b-915a-be7849dc830d">
+          <DataAttributes>
+            <DataAttribute Name="Код">2552</DataAttribute>
+            <DataAttribute Name="Наименование">Гигабайт в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2016" ParentGuid="" Guid="cdd9b046-92c2-4d3b-b9d6-25b7c2aa8081">
+          <DataAttributes>
+            <DataAttribute Name="Код">871</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча ампул</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2033" ParentGuid="" Guid="45e049fb-759d-4011-beea-8df75b0e352f">
+          <DataAttributes>
+            <DataAttribute Name="Код">888</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных ящиков</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2134" ParentGuid="" Guid="3cba5911-a66b-4553-9bf1-e4d540c1c2e4">
+          <DataAttributes>
+            <DataAttribute Name="Код">186</DataAttribute>
+            <DataAttribute Name="Наименование">Фунт СК, США (0,45359237 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1802" ParentGuid="" Guid="9565f1d3-c76c-4a1d-9034-4419574fd817">
+          <DataAttributes>
+            <DataAttribute Name="Код">499</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1685" ParentGuid="" Guid="3685a95b-e987-4313-843e-3504c1991522">
+          <DataAttributes>
+            <DataAttribute Name="Код">005</DataAttribute>
+            <DataAttribute Name="Наименование">Дециметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1932" ParentGuid="" Guid="5b0874c8-c8d9-402c-847e-3c3139c36fe2">
+          <DataAttributes>
+            <DataAttribute Name="Код">386</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард рублей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2053" ParentGuid="" Guid="fb991c5d-ece1-4286-ad2b-f209550e9120">
+          <DataAttributes>
+            <DataAttribute Name="Код">908</DataAttribute>
+            <DataAttribute Name="Наименование">Номер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1763" ParentGuid="" Guid="7b5a5580-8dfd-4116-9ae4-3c8b70fd1c6f">
+          <DataAttributes>
+            <DataAttribute Name="Код">292</DataAttribute>
+            <DataAttribute Name="Наименование">Мегагерц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1882" ParentGuid="" Guid="896a86d9-0b1f-4d09-8efa-078255c630d1">
+          <DataAttributes>
+            <DataAttribute Name="Код">127</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча плотных кубических метров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1715" ParentGuid="" Guid="ec8e334a-3bc0-4fe6-b186-1eadb1b351a4">
+          <DataAttributes>
+            <DataAttribute Name="Код">131</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический дюйм (16387,1 мм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1758" ParentGuid="" Guid="c64f6f08-65b8-4985-a945-56885e3b0f1a">
+          <DataAttributes>
+            <DataAttribute Name="Код">284</DataAttribute>
+            <DataAttribute Name="Наименование">Люмен</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2017" ParentGuid="" Guid="38824c07-9031-4b6c-bba4-a2d5d861c604">
+          <DataAttributes>
+            <DataAttribute Name="Код">872</DataAttribute>
+            <DataAttribute Name="Наименование">Флакон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1994" ParentGuid="" Guid="874c5ba4-81fc-4f29-a85b-b48494dc7935">
+          <DataAttributes>
+            <DataAttribute Name="Код">746</DataAttribute>
+            <DataAttribute Name="Наименование">Промилле (0,1 процента)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2135" ParentGuid="" Guid="0b2cdca3-6200-47e8-8bfd-9ad7bad5e1ba">
+          <DataAttributes>
+            <DataAttribute Name="Код">187</DataAttribute>
+            <DataAttribute Name="Наименование">Унция СК, США (28,349523 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1686" ParentGuid="" Guid="66073cd2-d153-4730-bd64-f5e0a61c4f2d">
+          <DataAttributes>
+            <DataAttribute Name="Код">006</DataAttribute>
+            <DataAttribute Name="Наименование">Метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1705" ParentGuid="" Guid="85e92616-ff1c-4a7d-92ee-e373ccf6b52b">
+          <DataAttributes>
+            <DataAttribute Name="Код">110</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический миллиметр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1961" ParentGuid="" Guid="0112dd3e-76b2-4beb-a236-9b30335252ce">
+          <DataAttributes>
+            <DataAttribute Name="Код">542</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча человеко-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1831" ParentGuid="" Guid="99076bdd-0d44-4152-ac98-941c1840b2cc">
+          <DataAttributes>
+            <DataAttribute Name="Код">797</DataAttribute>
+            <DataAttribute Name="Наименование">Сто штук</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2038" ParentGuid="" Guid="c14611df-0828-4ae0-86a7-2a43d670e3e1">
+          <DataAttributes>
+            <DataAttribute Name="Код">893</DataAttribute>
+            <DataAttribute Name="Наименование">Условный кирпич</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2156" ParentGuid="" Guid="f351ae8b-fdf1-4d8e-ba23-22789a9da844">
+          <DataAttributes>
+            <DataAttribute Name="Код">731</DataAttribute>
+            <DataAttribute Name="Наименование">Большой гросс (12 гроссов)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2018" ParentGuid="" Guid="e838a499-7b43-4981-bc55-8aacf292aa83">
+          <DataAttributes>
+            <DataAttribute Name="Код">873</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча флаконов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244686" ParentGuid="" Guid="699b0e46-fccd-4836-978e-73f35c2815cb">
+          <DataAttributes>
+            <DataAttribute Name="Код">9803</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард долларов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2094" ParentGuid="" Guid="179de038-fcf5-4bd4-a4f8-11c141c9fd27">
+          <DataAttributes>
+            <DataAttribute Name="Код">971</DataAttribute>
+            <DataAttribute Name="Наименование">Кормо-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1861" ParentGuid="" Guid="79e1bb9a-817e-40c0-a663-b5d3754bc8c8">
+          <DataAttributes>
+            <DataAttribute Name="Код">062</DataAttribute>
+            <DataAttribute Name="Наименование">Условный квадратный метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244700" ParentGuid="" Guid="10049dae-ef07-47ee-94ae-5e4978b27408">
+          <DataAttributes>
+            <DataAttribute Name="Код">5451</DataAttribute>
+            <DataAttribute Name="Наименование">Посещение</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2109" ParentGuid="" Guid="4367ebb7-0ac8-47f7-8936-a6d4d1700697">
+          <DataAttributes>
+            <DataAttribute Name="Код">077</DataAttribute>
+            <DataAttribute Name="Наименование">Акр (4840 квадратных ярдов)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1740" ParentGuid="" Guid="b4e28f1d-213e-4fdf-a24d-832f6abf14e0">
+          <DataAttributes>
+            <DataAttribute Name="Код">228</DataAttribute>
+            <DataAttribute Name="Наименование">Мегавольт-ампер (тысяча киловольт-ампер)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2130" ParentGuid="" Guid="71a780c4-4a86-4db8-906d-39a66ccfae1a">
+          <DataAttributes>
+            <DataAttribute Name="Код">154</DataAttribute>
+            <DataAttribute Name="Наименование">Тысячи бордфутов (2,36 м³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2157" ParentGuid="" Guid="9f99597e-e93d-4431-a7f6-83ab00ba5595">
+          <DataAttributes>
+            <DataAttribute Name="Код">738</DataAttribute>
+            <DataAttribute Name="Наименование">Короткий стандарт (7200 единиц)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1889" ParentGuid="" Guid="3d7b0938-4d28-4afc-81e7-8bd230890d6d">
+          <DataAttributes>
+            <DataAttribute Name="Код">169</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1779" ParentGuid="" Guid="92b23bec-cd62-441a-8968-aa2865c77924">
+          <DataAttributes>
+            <DataAttribute Name="Код">316</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм на кубический метр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1818" ParentGuid="" Guid="3d87aba6-54c2-4200-8144-bd49dd41ea5b">
+          <DataAttributes>
+            <DataAttribute Name="Код">732</DataAttribute>
+            <DataAttribute Name="Наименование">Десять пар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1956" ParentGuid="" Guid="f8e241db-e548-4dfb-9d58-75b5cda34b2c">
+          <DataAttributes>
+            <DataAttribute Name="Код">537</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тонн в сезон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244671" ParentGuid="" Guid="03987e76-63a6-49ee-b425-123e55101a9c">
+          <DataAttributes>
+            <DataAttribute Name="Код">7923</DataAttribute>
+            <DataAttribute Name="Наименование">Абонент</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1903" ParentGuid="" Guid="fac16bb0-5e75-4331-a50a-10a9a09eef41">
+          <DataAttributes>
+            <DataAttribute Name="Код">235</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион гигакалорий</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1691" ParentGuid="" Guid="db827a67-46c2-4e3b-b497-1a1f7fd17311">
+          <DataAttributes>
+            <DataAttribute Name="Код">039</DataAttribute>
+            <DataAttribute Name="Наименование">Дюйм (25,4 мм)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1741" ParentGuid="" Guid="fb64f560-2f6b-4aa4-9c16-a76a3781977a">
+          <DataAttributes>
+            <DataAttribute Name="Код">230</DataAttribute>
+            <DataAttribute Name="Наименование">Киловар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1845" ParentGuid="" Guid="75c622a3-998c-49d8-ac65-559ba9f35527">
+          <DataAttributes>
+            <DataAttribute Name="Код">847</DataAttribute>
+            <DataAttribute Name="Наименование">Тонна 90%-го сухого вещества</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1928" ParentGuid="" Guid="0c188e2d-8321-4b8b-b063-2eff773e7b42">
+          <DataAttributes>
+            <DataAttribute Name="Код">353</DataAttribute>
+            <DataAttribute Name="Наименование">Миллисекунда</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1784" ParentGuid="" Guid="c5714774-5d96-4200-8a49-8fdf9cdc82af">
+          <DataAttributes>
+            <DataAttribute Name="Код">330</DataAttribute>
+            <DataAttribute Name="Наименование">Оборот в секунду</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2136" ParentGuid="" Guid="7c4096dd-1fab-467d-b9b5-29dbc69e9310">
+          <DataAttributes>
+            <DataAttribute Name="Код">188</DataAttribute>
+            <DataAttribute Name="Наименование">Драхма СК (1,771745 г)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1867" ParentGuid="" Guid="6d3cdec3-0534-46af-8c0b-a956e069016c">
+          <DataAttributes>
+            <DataAttribute Name="Код">084</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный метр жилой площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1909" ParentGuid="" Guid="fd121ae3-fa67-4a65-8b2e-e65a0d3081e7">
+          <DataAttributes>
+            <DataAttribute Name="Код">242</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион киловольт-ампер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2019" ParentGuid="" Guid="fec8c95f-0bc3-4a4b-a475-da1c4f015b43">
+          <DataAttributes>
+            <DataAttribute Name="Код">874</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тубов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2074" ParentGuid="" Guid="7dd1fe5c-78cd-473b-be1a-17f93c4f4bae">
+          <DataAttributes>
+            <DataAttribute Name="Код">951</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча вагоно-(машино)-часов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1716" ParentGuid="" Guid="37cf758e-01e6-4846-800a-cb5239d70ed9">
+          <DataAttributes>
+            <DataAttribute Name="Код">132</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический фут (0,02831685 м³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2037" ParentGuid="" Guid="d3b113a3-f108-44a6-b136-d7c924903a5d">
+          <DataAttributes>
+            <DataAttribute Name="Код">892</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных плиток</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1846" ParentGuid="" Guid="6b76f783-ff25-4bb0-a76e-5d2a96daa3b3">
+          <DataAttributes>
+            <DataAttribute Name="Код">852</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм оксида калия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1933" ParentGuid="" Guid="a9f7af64-72a6-4a64-bf6d-436d3e254086">
+          <DataAttributes>
+            <DataAttribute Name="Код">387</DataAttribute>
+            <DataAttribute Name="Наименование">Триллион рублей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1782" ParentGuid="" Guid="9a7e472d-5d21-48f1-9eb9-d13bbdb9ab37">
+          <DataAttributes>
+            <DataAttribute Name="Код">327</DataAttribute>
+            <DataAttribute Name="Наименование">Узел (миля/ч)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1912" ParentGuid="" Guid="593bbef9-d615-4d78-944e-01b44bdb260c">
+          <DataAttributes>
+            <DataAttribute Name="Код">250</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча киловольт-ампер реактивных</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2004" ParentGuid="" Guid="1442fa7a-a6bd-4ce5-b08c-6d4c8d0b1c1c">
+          <DataAttributes>
+            <DataAttribute Name="Код">794</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион человек</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2095" ParentGuid="" Guid="6dfb148b-b30e-4bfd-89eb-fec71be1e722">
+          <DataAttributes>
+            <DataAttribute Name="Код">972</DataAttribute>
+            <DataAttribute Name="Наименование">Центнер кормовых единиц</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244670" ParentGuid="" Guid="d13e7f13-12e3-4232-94c8-b892a3392d21">
+          <DataAttributes>
+            <DataAttribute Name="Код">3135</DataAttribute>
+            <DataAttribute Name="Наименование">Децибел</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244701" ParentGuid="" Guid="0e39c266-53b8-454e-8a73-c0fe99311653">
+          <DataAttributes>
+            <DataAttribute Name="Код">5423</DataAttribute>
+            <DataAttribute Name="Наименование">Человек в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1714" ParentGuid="" Guid="9397693e-f879-4477-b0c7-8d394f514968">
+          <DataAttributes>
+            <DataAttribute Name="Код">126</DataAttribute>
+            <DataAttribute Name="Наименование">Мегалитр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1764" ParentGuid="" Guid="76bad24f-6d12-4852-bb71-f8b697e92998">
+          <DataAttributes>
+            <DataAttribute Name="Код">294</DataAttribute>
+            <DataAttribute Name="Наименование">Паскаль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2039" ParentGuid="" Guid="adeec9d5-2d92-485c-b587-996c7ceb6ca4">
+          <DataAttributes>
+            <DataAttribute Name="Код">894</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных кирпичей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1979" ParentGuid="" Guid="6ecb17b3-ef1b-4666-974f-40859a4307d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">562</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча прядильных веретен</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2116" ParentGuid="" Guid="043f5a94-b31b-40b6-9b09-337a8d48a8f0">
+          <DataAttributes>
+            <DataAttribute Name="Код">140</DataAttribute>
+            <DataAttribute Name="Наименование">Бушель СК (36,36874 дм³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1746" ParentGuid="" Guid="23a1cbde-faf4-471d-afe3-ba8ffebca000">
+          <DataAttributes>
+            <DataAttribute Name="Код">247</DataAttribute>
+            <DataAttribute Name="Наименование">Гигаватт-час (миллион киловатт-часов)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2005" ParentGuid="" Guid="d31d68f4-1132-4a48-87ad-fd9c5769c20f">
+          <DataAttributes>
+            <DataAttribute Name="Код">808</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион экземпляров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1819" ParentGuid="" Guid="9a92ee7b-9db6-44cf-98fa-bbb1c93fdb84">
+          <DataAttributes>
+            <DataAttribute Name="Код">733</DataAttribute>
+            <DataAttribute Name="Наименование">Дюжина пар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2093" ParentGuid="" Guid="96fbc9e9-fd8e-46c0-98b7-dc276e94e923">
+          <DataAttributes>
+            <DataAttribute Name="Код">970</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион пассажиро-место-миль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1981" ParentGuid="" Guid="d863d251-59c0-41f0-8257-17a02a01f5af">
+          <DataAttributes>
+            <DataAttribute Name="Код">639</DataAttribute>
+            <DataAttribute Name="Наименование">Доза</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2009" ParentGuid="" Guid="cf24a6ed-a10d-45a2-a91b-485f93031aef">
+          <DataAttributes>
+            <DataAttribute Name="Код">837</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча пар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2075" ParentGuid="" Guid="6b8b0778-1426-41b4-9683-aec4d2e18442">
+          <DataAttributes>
+            <DataAttribute Name="Код">952</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча вагоно-(машино)-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1692" ParentGuid="" Guid="2c8cda9c-dfa7-4652-b986-edad76d9ad9f">
+          <DataAttributes>
+            <DataAttribute Name="Код">041</DataAttribute>
+            <DataAttribute Name="Наименование">Фут (0,3048 м)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1913" ParentGuid="" Guid="9c217bff-3afa-4f1b-ab5c-82375378c945">
+          <DataAttributes>
+            <DataAttribute Name="Код">251</DataAttribute>
+            <DataAttribute Name="Наименование">Лошадиная сила</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244672" ParentGuid="" Guid="0a8752fb-e79f-48f8-8156-cfbb8dd5e6d8">
+          <DataAttributes>
+            <DataAttribute Name="Код">9061</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион гектаров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140103" ParentGuid="" Guid="e5f18075-09c2-4e55-8695-2d8f9893e5ce">
+          <DataAttributes>
+            <DataAttribute Name="Код">206</DataAttribute>
+            <DataAttribute Name="Наименование">Центнер (метрический) (100 кг); Гектокилограмм; Квинтал (метрический); Децитонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1717" ParentGuid="" Guid="f32ae55e-5de2-42b6-8bca-3f89dcd2f7fa">
+          <DataAttributes>
+            <DataAttribute Name="Код">133</DataAttribute>
+            <DataAttribute Name="Наименование">Кубический ярд (0,764555 м³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1914" ParentGuid="" Guid="ec9eba59-c306-46c4-9734-65d99e0ff8d7">
+          <DataAttributes>
+            <DataAttribute Name="Код">252</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча лошадиных сил</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244691" ParentGuid="" Guid="e2083e49-7a2b-45af-941c-57ea913269b4">
+          <DataAttributes>
+            <DataAttribute Name="Код">9245</DataAttribute>
+            <DataAttribute Name="Наименование">Запись</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1962" ParentGuid="" Guid="c239712e-f2c7-4b66-abb1-943a028b80d4">
+          <DataAttributes>
+            <DataAttribute Name="Код">543</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча условных банок в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2020" ParentGuid="" Guid="57887e4e-ba1e-4d66-b4b9-f0b736c50d47">
+          <DataAttributes>
+            <DataAttribute Name="Код">875</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча коробок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2010" ParentGuid="" Guid="d418a974-bffc-4ff0-bce5-685b423710bb">
+          <DataAttributes>
+            <DataAttribute Name="Код">838</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион пар</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1868" ParentGuid="" Guid="0d257c33-8fa3-4b1f-8b30-7edfcb7dbf33">
+          <DataAttributes>
+            <DataAttribute Name="Код">085</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квадратных метров жилой площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2054" ParentGuid="" Guid="2f951ee7-b586-4a81-a179-fcd37e66f573">
+          <DataAttributes>
+            <DataAttribute Name="Код">909</DataAttribute>
+            <DataAttribute Name="Наименование">Квартира</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2011" ParentGuid="" Guid="598b68b0-0fb8-49d3-8735-4284619d20ec">
+          <DataAttributes>
+            <DataAttribute Name="Код">839</DataAttribute>
+            <DataAttribute Name="Наименование">Комплект</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2137" ParentGuid="" Guid="f0035c7b-7948-4a0f-b496-8d5c975953a0">
+          <DataAttributes>
+            <DataAttribute Name="Код">189</DataAttribute>
+            <DataAttribute Name="Наименование">Гран СК, США (64, 798910 мг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1785" ParentGuid="" Guid="f9e5aea8-53a5-4a32-83fd-c38eab639afd">
+          <DataAttributes>
+            <DataAttribute Name="Код">331</DataAttribute>
+            <DataAttribute Name="Наименование">Оборот в минуту</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1765" ParentGuid="" Guid="6cad5e49-c26a-4d65-8ecb-fc2e6f90a8ba">
+          <DataAttributes>
+            <DataAttribute Name="Код">296</DataAttribute>
+            <DataAttribute Name="Наименование">Сименс</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1915" ParentGuid="" Guid="57792eca-79f7-425e-a77b-b3b066e3578a">
+          <DataAttributes>
+            <DataAttribute Name="Код">253</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион лошадиных сил</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244702" ParentGuid="" Guid="25e0483a-695c-49d8-853b-5a569a6b8f2c">
+          <DataAttributes>
+            <DataAttribute Name="Код">5401</DataAttribute>
+            <DataAttribute Name="Наименование">Дето-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2076" ParentGuid="" Guid="e1ee16f3-155b-4b1f-b09d-8129753515f9">
+          <DataAttributes>
+            <DataAttribute Name="Код">953</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча место-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1946" ParentGuid="" Guid="a58a3984-af0a-4a99-8088-39d788ad9bcc">
+          <DataAttributes>
+            <DataAttribute Name="Код">512</DataAttribute>
+            <DataAttribute Name="Наименование">Тонно-номер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2012" ParentGuid="" Guid="83ed53a1-3458-4e4a-8f50-7e7317eb6747">
+          <DataAttributes>
+            <DataAttribute Name="Код">840</DataAttribute>
+            <DataAttribute Name="Наименование">Секция</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1934" ParentGuid="" Guid="e65572c3-4560-406a-9c24-e08a35490bc0">
+          <DataAttributes>
+            <DataAttribute Name="Код">388</DataAttribute>
+            <DataAttribute Name="Наименование">Квадрильон рублей</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244673" ParentGuid="" Guid="344d3024-87fa-447c-a120-127c8e2e34c2">
+          <DataAttributes>
+            <DataAttribute Name="Код">9062</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиард гектаров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2096" ParentGuid="" Guid="f2c38a8d-56e0-4727-91a5-ad1813e7f882">
+          <DataAttributes>
+            <DataAttribute Name="Код">973</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча автомобиле-километров</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2013" ParentGuid="" Guid="622c459f-24a2-4572-8bc5-cd9a4411a734">
+          <DataAttributes>
+            <DataAttribute Name="Код">868</DataAttribute>
+            <DataAttribute Name="Наименование">Бутылка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2117" ParentGuid="" Guid="99e14292-3cd5-419c-aeb3-d479e8f590c7">
+          <DataAttributes>
+            <DataAttribute Name="Код">141</DataAttribute>
+            <DataAttribute Name="Наименование">Жидкостная унция США (29,5735 см³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1963" ParentGuid="" Guid="93af6f7c-60b2-486e-8f55-9a6ff1c2e786">
+          <DataAttributes>
+            <DataAttribute Name="Код">544</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион единиц в год</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2055" ParentGuid="" Guid="74cfcfa4-b588-4332-ae61-b5bccb9d68bc">
+          <DataAttributes>
+            <DataAttribute Name="Код">910</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча квартир</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2014" ParentGuid="" Guid="99e995a2-0d3b-4111-acb3-9604f2899462">
+          <DataAttributes>
+            <DataAttribute Name="Код">869</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча бутылок</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1869" ParentGuid="" Guid="bcb0d4b4-d58f-4cb4-8eb4-443f2bc7dc4f">
+          <DataAttributes>
+            <DataAttribute Name="Код">086</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион квадратных метров жилой площади</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1718" ParentGuid="" Guid="11553a5a-93fe-4aec-a0d2-4c616e1c1a1f">
+          <DataAttributes>
+            <DataAttribute Name="Код">160</DataAttribute>
+            <DataAttribute Name="Наименование">Гектограмм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1890" ParentGuid="" Guid="89cfa07e-4d60-48a7-9d0f-4368cfae2720">
+          <DataAttributes>
+            <DataAttribute Name="Код">171</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион тонн</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1693" ParentGuid="" Guid="583b974b-fb56-4c4a-b0ef-2a69a2f9922f">
+          <DataAttributes>
+            <DataAttribute Name="Код">043</DataAttribute>
+            <DataAttribute Name="Наименование">Ярд (0,9144 м)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2015" ParentGuid="" Guid="9b685de1-2751-4591-9b6b-f4f1d87191bd">
+          <DataAttributes>
+            <DataAttribute Name="Код">870</DataAttribute>
+            <DataAttribute Name="Наименование">Ампула</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140104" ParentGuid="" Guid="1a08f150-cc19-42be-86c6-2e6647afdd67">
+          <DataAttributes>
+            <DataAttribute Name="Код">215</DataAttribute>
+            <DataAttribute Name="Наименование">Мегаватт; Тысяча киловатт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1766" ParentGuid="" Guid="67e05aa8-bcbd-4362-99ec-9c26b977b3c1">
+          <DataAttributes>
+            <DataAttribute Name="Код">297</DataAttribute>
+            <DataAttribute Name="Наименование">Килопаскаль</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1982" ParentGuid="" Guid="a9a86ff7-3192-46c5-b59d-910082619dc8">
+          <DataAttributes>
+            <DataAttribute Name="Код">640</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча доз</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2040" ParentGuid="" Guid="f158d3e7-0615-4043-907e-291ea3f61feb">
+          <DataAttributes>
+            <DataAttribute Name="Код">895</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион условных тубов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2021" ParentGuid="" Guid="9c337ac0-a485-44b7-b907-e9d465fc7eed">
+          <DataAttributes>
+            <DataAttribute Name="Код">876</DataAttribute>
+            <DataAttribute Name="Наименование">Условная единица</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1747" ParentGuid="" Guid="e1ab56a5-7fd4-4e73-86a1-8b0e10d65620">
+          <DataAttributes>
+            <DataAttribute Name="Код">260</DataAttribute>
+            <DataAttribute Name="Наименование">Ампер</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2077" ParentGuid="" Guid="94444c0a-2aa9-468c-93d5-ec33f1eb3446">
+          <DataAttributes>
+            <DataAttribute Name="Код">954</DataAttribute>
+            <DataAttribute Name="Наименование">Вагоно-сутки</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244692" ParentGuid="" Guid="9a1a4784-10b6-4da5-8df3-02ab10299cee">
+          <DataAttributes>
+            <DataAttribute Name="Код">9113</DataAttribute>
+            <DataAttribute Name="Наименование">Пациенто-день</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1935" ParentGuid="" Guid="43be7185-7993-40ce-b66c-0931a3fcd5b8">
+          <DataAttributes>
+            <DataAttribute Name="Код">414</DataAttribute>
+            <DataAttribute Name="Наименование">Пассажиро-километр</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244703" ParentGuid="" Guid="c0d1d4cf-5eb1-47ee-bafb-644f0f39aaf2">
+          <DataAttributes>
+            <DataAttribute Name="Код">3831</DataAttribute>
+            <DataAttribute Name="Наименование">Рубль тонна</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1847" ParentGuid="" Guid="45ed0b11-02cf-4d91-b142-0d79372a1a2f">
+          <DataAttributes>
+            <DataAttribute Name="Код">859</DataAttribute>
+            <DataAttribute Name="Наименование">Килограмм гидроксида калия</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="244674" ParentGuid="" Guid="665df218-851c-4d9b-9de0-c775150212d5">
+          <DataAttributes>
+            <DataAttribute Name="Код">9557</DataAttribute>
+            <DataAttribute Name="Наименование">Миллион голов</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2138" ParentGuid="" Guid="5e0ef0db-8213-4d15-8474-a2107303a668">
+          <DataAttributes>
+            <DataAttribute Name="Код">190</DataAttribute>
+            <DataAttribute Name="Наименование">Стоун СК (6,350293 кг)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1786" ParentGuid="" Guid="0c69c729-56a6-4711-9728-54d6596946c8">
+          <DataAttributes>
+            <DataAttribute Name="Код">333</DataAttribute>
+            <DataAttribute Name="Наименование">Километр в час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1916" ParentGuid="" Guid="4deeefed-e543-4e1c-9cf3-389c67be39d0">
+          <DataAttributes>
+            <DataAttribute Name="Код">254</DataAttribute>
+            <DataAttribute Name="Наименование">Бит</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="140105" ParentGuid="" Guid="91ed3ae2-4527-4989-b9d8-f765467c0379">
+          <DataAttributes>
+            <DataAttribute Name="Код">246</DataAttribute>
+            <DataAttribute Name="Наименование">1000 киловатт-часов; Мегаватт-час</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1870" ParentGuid="" Guid="a6f22651-9e57-4e43-9082-3e9c3bfc9727">
+          <DataAttributes>
+            <DataAttribute Name="Код">087</DataAttribute>
+            <DataAttribute Name="Наименование">Квадратный метр учебно-лабораторных зданий</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1820" ParentGuid="" Guid="217a4918-4cb8-4568-aca5-77469ba01c0b">
+          <DataAttributes>
+            <DataAttribute Name="Код">734</DataAttribute>
+            <DataAttribute Name="Наименование">Посылка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2097" ParentGuid="" Guid="d09af783-91f7-436e-a720-843e447ad884">
+          <DataAttributes>
+            <DataAttribute Name="Код">974</DataAttribute>
+            <DataAttribute Name="Наименование">Тысяча тоннаже-сут</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2056" ParentGuid="" Guid="c2bc310f-ef61-46f9-9065-ec85f0c57aaa">
+          <DataAttributes>
+            <DataAttribute Name="Код">911</DataAttribute>
+            <DataAttribute Name="Наименование">Койка</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2118" ParentGuid="" Guid="6aeecce5-bfa1-46fb-8330-d22e455041a0">
+          <DataAttributes>
+            <DataAttribute Name="Код">142</DataAttribute>
+            <DataAttribute Name="Наименование">Джилл США (11,8294 см³)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1964" ParentGuid="" Guid="3e8ac452-73e3-4ed2-a5d7-917d27e6c237">
+          <DataAttributes>
+            <DataAttribute Name="Код">545</DataAttribute>
+            <DataAttribute Name="Наименование">Посещение в смену</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1748" ParentGuid="" Guid="4022d916-ca35-493f-91f5-afcc0fcc45d7">
+          <DataAttributes>
+            <DataAttribute Name="Код">263</DataAttribute>
+            <DataAttribute Name="Наименование">Ампер-час (3,6 кКл)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1983" ParentGuid="" Guid="5cb562bb-34ab-4512-a031-71c6c863759b">
+          <DataAttributes>
+            <DataAttribute Name="Код">642</DataAttribute>
+            <DataAttribute Name="Наименование">Единица</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1719" ParentGuid="" Guid="0ac1a5b4-100d-4d7e-abbc-6d2251b40ee6">
+          <DataAttributes>
+            <DataAttribute Name="Код">161</DataAttribute>
+            <DataAttribute Name="Наименование">Миллиграмм</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1694" ParentGuid="" Guid="ecdeed49-6c11-4c8b-bc3d-308377ca0648">
+          <DataAttributes>
+            <DataAttribute Name="Код">047</DataAttribute>
+            <DataAttribute Name="Наименование">Морская миля (1852 м)</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1767" ParentGuid="" Guid="ff282692-f599-4eb2-8cc8-6c2287aabd58">
+          <DataAttributes>
+            <DataAttribute Name="Код">298</DataAttribute>
+            <DataAttribute Name="Наименование">Мегапаскаль</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Способы предоставления обеспечения" Type="0">
+  <Items>
+    <Dictionary Name="Способы предоставления обеспечения">
+      <DataCollection>
+        <Data Name="Путем внесения денежных средств на реквизиты электронной площадки" ParentGuid="" Guid="ab22ded1-5a14-420c-9dde-92913eb6d0a0" />
+        <Data Name="Путем перечисления денежных средств на реквизиты заказчика" ParentGuid="" Guid="8002cfc1-33a8-44c2-a995-172659fe0378" />
+      </DataCollection>
+      <Items>
+        <Dictionary Name="Реквизиты перечисления ДС">
+          <DataCollection>
+            <Data Name="Перечисление денежных средств осуществляется на реквизиты, указанные в документации процедуры" ParentGuid="8002cfc1-33a8-44c2-a995-172659fe0378" Guid="390c0eb4-2fe0-469d-9dbb-d268fd4d79ec" />
+            <Data Name="Перечисление денежных средств осуществляется на указанные ниже реквизиты" ParentGuid="8002cfc1-33a8-44c2-a995-172659fe0378" Guid="6c0ad3ec-a666-4566-8134-99c7855b46a8" />
+          </DataCollection>
+          <Items>
+            <Dictionary Name="Вид получателя">
+              <DataCollection>
+                <Data Name="Бюджетное учреждение (перевод средств осуществляется в одно из подразделений Центрального банка РФ)" ParentGuid="6c0ad3ec-a666-4566-8134-99c7855b46a8" Guid="396b04e8-f0da-4577-82d3-b4870e70c859" />
+                <Data Name="Небюджетное учреждение (перевод средств осуществляется на счет кредитной организации)" ParentGuid="6c0ad3ec-a666-4566-8134-99c7855b46a8" Guid="a10f868b-e402-4ce9-9b76-8d56210c1ab4" />
+              </DataCollection>
+            </Dictionary>
+          </Items>
+        </Dictionary>
+      </Items>
+    </Dictionary>
+  </Items>
+</Dictionary>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Решение по закупке" Type="0">
+  <Items>
+    <Dictionary Name="Решение по закупке">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="0" ParentGuid="" Guid="cc14a65d-5692-4344-ae1b-7633ba3bc949">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Не заключать договор, перевести в архив</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="1" ParentGuid="" Guid="f17fd0ee-d674-4073-9ee9-772d3fb90130">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Заключить договор</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="86a02f4b-e42a-478b-9d51-f0cbb06ed854">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Перейти на подведение итогов</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

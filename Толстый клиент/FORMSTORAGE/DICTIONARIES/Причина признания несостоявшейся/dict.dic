@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Причина признания несостоявшейся" Type="0">
+  <Items>
+    <Dictionary Name="Причина признания несостоявшейся">
+      <Attributes>
+        <Attribute Name="Наименование" />
+        <Attribute Name="ИД площадки" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="NO_APPLICATIONS" ParentGuid="" Guid="70cbd7a8-c7f1-44ba-aaf7-49479302bdfd">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">На участие в закупке не подано ни одной заявки</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="ONE_APPLICATION" ParentGuid="" Guid="03a1fdb8-5ee9-4ed9-8766-db66c3c05678">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">На участие в закупке была подана только одна заявка</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="ACCESS_DENIED_ALL" ParentGuid="" Guid="cdb2c6a0-157b-452a-bb20-7ba47b567006">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">По итогам рассмотрения отказано в допуске всем участникам закупки</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="ACCESS_GRANTED_ONE" ParentGuid="" Guid="ed298d25-f85a-4934-8ac8-e72c5428d289">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">По итогам рассмотрения допущен только один участник закупки</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="NO_PRICE_OFFERS" ParentGuid="" Guid="f548cd65-6041-471c-8735-7cf3a6afcde1">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Все заявки были отозваны</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="OTHER" ParentGuid="" Guid="f2c30b43-a9cf-4460-8c54-50208c9aaa47">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Иная</DataAttribute>
+            <DataAttribute Name="ИД площадки" />
+          </DataAttributes>
+        </Data>
+        <Data Name="ONE_APPLICATION_SUBMITTED" ParentGuid="" Guid="9514d0e4-270f-48e5-bdf9-7eaaa0983804">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конкурентная закупка признана несостоявшейся в связи с тем, что на участие в закупке подана только одна заявка</DataAttribute>
+            <DataAttribute Name="ИД площадки">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="NO_APPLICATIONS_SUBMITTED" ParentGuid="" Guid="5767eeaa-f110-4a65-8703-aaee7e3d6915">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конкурентная закупка признана несостоявшейся в связи с тем, что не подано ни одной заявки на участие в закупке</DataAttribute>
+            <DataAttribute Name="ИД площадки">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ALL_PARTICIPANTS_AVOIDED_CONTRACT" ParentGuid="" Guid="04558ffc-5695-44aa-b756-a98afa175072">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конкурентная закупка признана несостоявшейся в связи с тем, что по результатам ее проведения от заключения договора уклонились все участники закупки</DataAttribute>
+            <DataAttribute Name="ИД площадки">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ALL_APPLICATIONS_CANCELED_EXCEPT_ONE" ParentGuid="" Guid="81b1557c-4ce7-43d0-a412-7eb0f17262b7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конкурентная закупка признана несостоявшейся в связи с тем, что по результатам ее проведения отклонены все заявки, за исключением одной заявки на участие в закупке</DataAttribute>
+            <DataAttribute Name="ИД площадки">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="ALL_APPLICATIONS_CANCELED" ParentGuid="" Guid="38803668-c39e-42e6-8060-f9b9c60251d8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Конкурентная закупка признана несостоявшейся в связи с тем, что по результатам ее проведения все заявки на участие в закупке отклонены</DataAttribute>
+            <DataAttribute Name="ИД площадки">2</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

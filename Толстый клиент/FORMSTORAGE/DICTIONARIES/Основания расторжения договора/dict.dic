@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Основания расторжения договора" Type="0">
+  <Items>
+    <Dictionary Name="Основания расторжения договора">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="1" ParentGuid="" Guid="9f3f1541-f826-4ebf-bd61-66a125d9a7c2">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Соглашение сторон</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="2" ParentGuid="" Guid="494fdcd9-af8f-4512-a52f-f6a7a5a92c9a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Судебный акт</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="3" ParentGuid="" Guid="7f2396d8-2c9f-42c9-8e98-bd238ed21be8">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Односторонний отказ заказчика от исполнения договора в соответствии с гражданским законодательством</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="4" ParentGuid="" Guid="54783e24-3fb6-4519-b279-6e7f0592dceb">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Односторонний отказ поставщика от исполнения договора в соответствии с гражданским законодательством</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>

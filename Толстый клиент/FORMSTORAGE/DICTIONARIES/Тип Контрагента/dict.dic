@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary Name="Тип Контрагента" Type="0">
+  <Items>
+    <Dictionary Name="Тип Контрагента">
+      <Attributes>
+        <Attribute Name="Наименование" />
+      </Attributes>
+      <DataCollection>
+        <Data Name="UF" ParentGuid="" Guid="5cc1ed72-fad7-49a2-b2da-bb045d7fa8d3">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Юридическое лицо иностранного государства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="U" ParentGuid="" Guid="2035f6a8-8cab-40a4-a326-be3eedcce88b">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Юридическое лицо РФ</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="PF" ParentGuid="" Guid="43077213-14c5-49cc-812b-35fb8bf7c2d7">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Физическое лицо иностранного государства</DataAttribute>
+          </DataAttributes>
+        </Data>
+        <Data Name="P" ParentGuid="" Guid="71edfbb4-7ecd-4646-96c9-58a7fe75eb4a">
+          <DataAttributes>
+            <DataAttribute Name="Наименование">Физическое лицо РФ</DataAttribute>
+          </DataAttributes>
+        </Data>
+      </DataCollection>
+    </Dictionary>
+  </Items>
+</Dictionary>
