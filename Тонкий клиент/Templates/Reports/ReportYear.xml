@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+  <edit>
+    <rows>
+	  <!-- <row>
+	  <column>
+	  <field name="Год" isLabel="true" edit-name="year"/>
+          <field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true" edit-name="year" edit-required="true" edit-default-value="2017"></field>
+        </column> 	
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Составитель" name="Составитель" valueType="text" isValue="true" edit-name="creator" edit-hidden="true" edit-default-value="{currentUser}"></field>
+        </column>
+      </row> -->
+    </rows>
+  </edit>
+</root>

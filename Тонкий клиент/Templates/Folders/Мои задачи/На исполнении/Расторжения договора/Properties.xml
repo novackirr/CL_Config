@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<query value="(act_powerPerformer/actual = '{currentUser}' or act_performers/performer/actual = '{currentUser}' {fullDeputyFilter} ){notificatiionDepFilter}{nomenclatureFilter}"/>
+</root>

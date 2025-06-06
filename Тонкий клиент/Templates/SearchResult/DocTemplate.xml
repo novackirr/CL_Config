@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="DocTemplate" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allow-create-excel="true">
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_создания" name="Дата создания" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_создания" weight="12" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" weight="20" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Поток" name="Поток" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Поток" weight="20" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Название_шаблона" name="Название шаблона" sortPredicate="doc_RegCard/rc_Index/text_Название_шаблона" valueType="text" weight="30"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Описание_шаблона" name="Описание шаблона" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/text_Описание_шаблона" weight="30" />
+	</columns>
+	  <sort predicate="doc_CreateTime descending"/>
+</root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify>
+		<SetField  dst="|Document|Актуальность" value="1" />
+		<SetField dst="|Document|Имя_потока" value="Тип процедуры" />
+	</FieldsModify>
+	
+	<LinksModify>
+		<LinkCurrentDoc />
+	</LinksModify>
+	
+	<OnDocumentCreated transaction="single">
+
+	</OnDocumentCreated>
+	
+	<OnRegcardEdited transaction="single"> 
+	</OnRegcardEdited>
+</Hooks>

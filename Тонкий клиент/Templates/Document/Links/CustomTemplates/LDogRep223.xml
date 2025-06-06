@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<table flow="Отчетность о договорах 223ФЗ" name="Версии отчетности о договорах" allow-grouping="true">
+		<columns>
+		    <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата создания" valueType="date" weight="15" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="№ редакции" valueType="integer" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Тип_отчетности" name="Тип отчетности" valueType="text" weight="30"  />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" weight="30" />
+		</columns>
+	</table>
+	
+</root>
+

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Срок исполнения" isLabel="true" />
+          <block id="block1" name="block1" height="300">
+            <rows>
+              <row>
+                <column>
+                  <field name="от" isLabel="true" />
+                </column>
+                <column>
+                  <field fieldType="field" key="3" name="от" valueType="date" value-db-type="date" isValue="true" edit-name="dateFrom"  />
+                </column>
+                <column>
+                  <field name="до" isLabel="true" />
+                </column>
+                <column>
+                  <field fieldType="field" key="4" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="dateTo"  />
+                </column>
+              </row>
+            </rows>
+          </block>
+        </column>
+        <column>
+          <field name="Дата регистрации" isLabel="true"/>
+          <block id="block2" name="block2" height="300">
+            <rows>
+              <row>
+                <column>
+                  <field name="от" isLabel="true"/>
+                </column>
+                <column>
+                  <field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+                </column>
+                <column>
+                  <field name="до" isLabel="true" />
+                </column>
+                <column>
+                  <field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+                </column>
+              </row>
+            </rows>
+          </block>
+        </column>
+        <column>
+          <field name="Поток" isLabel="true"/>
+          <field fieldType="field" key="|Поток" name="Поток" edit-name="flowKey" valueType="text"  isValue="true" edit-dictionary="#Потоки" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-isMultiple ="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Название задачи" isLabel="true"/>
+          <field fieldType="field" key="1" name="Название задачи" valueType="text" isValue="true" edit-name="activityName" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Краткое содержание" isLabel="true" />
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="text" isValue="true" edit-name="description" list="content-addressbook-suggestions" />
+        </column>
+      </row>
+    </rows>
+  </edit>
+  <search>
+
+    <!-- Фильтр для отображения элементов на странице "На исполнении"->"Согласования"-->
+    <!-- Т.к. выборка идет из activities - то строка ниже дописывается к выборке activities (по сути идет подзапрос к задачам) -->
+    <!-- Значение "doc_Id > 0" добавлено для того, чтобы без костылей работал пустой фильтр -->
+    <field fieldValue="(act_type = '1') and (xn-contains(act_Name ,@activityName)) and ((act_DueTime &gt;= @dateFrom) and (act_DueTime &lt;= @dateTo) and ((act_State = '1') or (act_State = '-1'))) and act_context/Documents/S1/Dockey=document[doc_RegCard/rc_FlowKey and doc_Id >= 0 and (xn-contains(doc_RegCard/rc_Index/longtext_Краткое_содержание ,@description)) and (doc_RegCard/rc_Index/text_Регистрационный_номер = @regNum) and (xn-in(doc_RegCard/rc_FlowKey, @flowKey) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo))]" />
+  </search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

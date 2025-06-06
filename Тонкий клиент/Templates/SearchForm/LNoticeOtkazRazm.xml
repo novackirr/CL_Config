@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>
+	    <!-- <column>
+				 <field name="Организация-заказчик" isLabel="true" />
+                     <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"   dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa" show-dict-column="false" />
+                     <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"    edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true"/>
+				
+		</column> -->
+		<column>
+				<field name="Наименование объекта закупки" isLabel="true" />
+				<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" isValue="true" edit-name="lotName" />
+			</column>
+			
+				
+    </row> 
+	 <row>
+		<column>
+				<field name="Способ определения поставщика" isLabel="true" />
+				<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Способ определения поставщика" valueType="text"  isValue="true" edit-name="sposzak"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Способ определения поставщика" dict-edit-name="sposzak" show-dict-column="false" />
+				<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика наименование" valueType="text" isValue="true" edit-name="sposzakName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="sposzak" display-field-part="true" edit-hidden="true"/>
+			</column>	
+		<column>
+		    <field name="Статус" isLabel="true"/>			
+			<field fieldType="field" key="Статусы извещения" name="Статусы извещения" edit-name="status" valueType="text"  isValue="true" edit-tool="Статусы закупки" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" display-field-part="true" dict-edit-name="status" />			
+        </column>		
+		<column>
+			<field name="НМЦ (с НДС), руб." isLabel="true"/>			
+			<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|НМЦК" name="НМЦК" valueType="date" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|НМЦК" name="до" valueType="date" isValue="true" edit-name="sumLotTo"  />
+							</column>						
+						</row>
+					</rows>								
+				</block>				
+        </column>		
+     </row>
+	 <row>		 
+		<column>
+			<field name="Планируемый срок размещения" isLabel="true"/>
+			<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Планируемый_срок_размещения" name="Планируемый срок размещения" valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Планируемый_срок_размещения" name="до" valueType="date" isValue="true" edit-name="publicDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+			</block>		
+        </column>
+		<column>
+			<field name="Дата начала подачи заявок" isLabel="true"/>
+			<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_начала_подачи_заявок" name="Планируемый срок размещения" valueType="date" isValue="true"  edit-name="beginDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_начала_подачи_заявок" name="до" valueType="date" isValue="true" edit-name="beginDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+			</block>		
+        </column>
+		</row>
+	    <row>
+		<column>
+			<field name="Дата окончания подачи заявок" isLabel="true"/>
+			<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" name="Планируемый срок размещения" valueType="date" isValue="true"  edit-name="finishDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" name="до" valueType="date" isValue="true" edit-name="finishDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+			</block>
+		</column>	
+		<column>
+		
+			<field name="Дата проведения аукциона" isLabel="true"/>
+			<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_проведения_аукциона" name="Дата аукциона" valueType="date" isValue="true"  edit-name="itogDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Дата_проведения_аукциона" name="до" valueType="date" isValue="true" edit-name="itogDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+			</block>
+		</column>			
+     </row>	 
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре') and (doc_RegCard/rc_Index/text_Статус='Отказ от размещения')  and (doc_RegCard/rc_Index/text_Способ_определения_поставщика_код = @sposzak) and ((doc_RegCard/rc_Index/date_Планируемый_срок_размещения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Планируемый_срок_размещения &lt;= @publicDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок &gt;= @finishDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок &lt;= @finishDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_начала_подачи_заявок &gt;= @beginDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_начала_подачи_заявок &lt;= @beginDateTo)) and ((doc_RegCard/rc_Index/money_НМЦК &gt;= @sumLotFrom) and (doc_RegCard/rc_Index/money_НМЦК &lt;= @sumLotTo))  and (xn-contains(doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки ,@lotName)) and ((doc_RegCard/rc_Index/datetime_Дата_проведения_аукциона &gt;= @itogDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_проведения_аукциона &lt;= @itogDateTo))" />
+  </search>
+</root>

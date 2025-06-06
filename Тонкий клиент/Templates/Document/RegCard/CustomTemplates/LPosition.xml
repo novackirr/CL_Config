@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>	
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="15" name="Общие сведения">
+										<rows>
+
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>																								
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="Инициатор" valueType="text" />
+												</column>				  
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Год_финансирования" name="Год финансирования" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|Месяц_финансирования" name="Месяц финансирования" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Источник_финансирования_по_статье_расхода" name="Источник финансирования по статье расхода" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|КБК_по_статье_расхода" name="КБК по статье расхода" valueType="text" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Сведения о закупке">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Значение_КВР_неопределено" name="Значение КВР неопределено" valueType="boolean" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|КВР" name="КВР" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|КВР_наименование" name="КВР по статье расхода" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|КТРУ_ОКПД2" name="КТРУ ОКПД2" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|КТРУ_ОКПД2_наименование" name="КТРУ ОКПД2 наименование" valueType="longtext" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_позиции" name="Наименование позиции" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Эксплуатационные_характеристики" name="Эксплуатационные характеристики" valueType="text" />
+												</column>								
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Невозможно_определить_количество" name="Невозможно определить количество" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Лекарственный_препарат" name="Лекарственный препарат" valueType="boolean" />
+												</column>
+											</row> 
+											<row>								
+												<column>
+													<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Средняя_цена_за_единицу" name="Средняя цена за единицу" valueType="money" />
+												</column>
+											</row>							
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Цена_запасных_частей" name="Цена запасных частей" valueType="money" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Количество">
+										<rows>							
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Количество_текущего_года" name="Количество текущего года" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Количество_второго_планового_года" name="Количество второго планового года" valueType="text" />	 
+												</column>
+											</row>														
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Количество_первого_планового_года" name="Количество первого планового года" valueType="text" />	
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Количество_последующих_годов" name="Количество последующих годов" valueType="text" />
+												</column>
+											</row> 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Количество_всего" name="Количество всего" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Единица_измерения" name="Единица измерения" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field"  key="|Document|Ед_изм_КТРУ" name="Единица измерения КТРУ" valueType="text"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Сумма выплат">
+										<rows>		
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_выплат_последующих_годов" name="Сумма выплат последующих годов" valueType="money" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_выплат_текущего_года" name="Сумма выплат текущего года" valueType="money"/>
+												</column>
+											</row>														
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_выплат_первого_года" name="Сумма выплат первого года" valueType="money"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_выплат_второго_года" name="Сумма выплат второго года" valueType="money" />
+												</column>
+											</row> 									
+											<row>
+												<column>	
+													<field fieldType="field" key="|Document|Сумма_выплат_всего" name="Сумма выплат всего" valueType="money"  />	
+												</column>								
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>							
+						</rows>
+					</block>	
+				</column>	
+			</row>
+			<row>
+				<column>
+					<block id="block8" name="Международное группировочное или химическое наименование лекарственного препарата ">
+						<rows> 								
+							<row>
+								<column>
+									<field fieldType="field" key="|МНН|Срок_годности" name="Срок годности" valueType="date"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|МНН|Признак_включения_в_ЖНВЛП" name="Признак включения в ЖНВЛП" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|МНН|Отсутствует_в_МНН" name="Отсутствует в МНН" valueType="boolean" />
+								</column>
+								<column>	
+									<field fieldType="field" key="|МНН|Международное_непатентованное_наименование" name="Международное непатентованное наименование" valueType="text"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|МНН|Международное_непатентованное_наименование_для_редактирования" name="Международное непатентованное наименование для редактирования" valueType="text" />                   									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Наименование производителя препарата" isLabel="true" />
+									<table key="|МНН|Позиции_по_торговому_наименованию" height="300">
+										<column fieldType="field" key="|Торговое_наименование_ЛП" valueType="text" name="Торговое наименование" width="100"/>
+										<column fieldType="field" key="|Номер_регистрационного_удостоверения_ЛП" valueType="text" name="Номер регистрационного наименования ЛП" width="150"/>
+										<column fieldType="field" key="|Наименование_лекарственной_формы" valueType="longtext" name="Наименование лекарственной формы" width="150"/>
+										<column fieldType="field" key="|Наименование_дозировки" valueType="longtext" name="Наименование дозировки" width="100"/>
+										<column fieldType="field" key="|Единица_измерения_дозировки_код" valueType="text" name="Единица измерения дозировки код" width="150"/>	
+										<column fieldType="field" key="|Единица_измерения_дозировки" valueType="text" name="Единица измерения дозировки" width="100"/>
+										<column fieldType="field" key="|Значение_дозировки" valueType="double" name="Значение дозировки" width="150"/>
+										<column fieldType="field" key="|Полная_форма_дозировки" valueType="longtext" name="Полная форма дозировки" width="150"/>
+										<column fieldType="field" key="|Владелец_регистрационного_удостоверения" valueType="longtext" name="Владелец регистрационного удостоверения" width="150"/>
+										<column fieldType="field" key="|Страна_производителя_препарата" valueType="text" name="Страна производителя препарата" width="100"/>
+										<column fieldType="field" key="|Страна_производителя_препарата_код" valueType="text" name="Страна производителя препарата код" width="150"/>
+										<column fieldType="field" key="|Наименование_производителя_препарата" valueType="longtext" name="Наименование производителя препарата" width="150"/>
+										<!-- Эта таблица долждна быть вложенной на просмотр-->	
+										<view>
+											<rows>	
+												<row>
+													<column>
+														<field name="Сведения об упаковке" isLabel="true" />
+														<table key="|Сведения_об_упаковке" height="300">
+															<column fieldType="field" key="|Наименование_вида_первичной_упаковки" valueType="longtext" name="Наименование вида первичной упаковки" width="100"/>
+															<column fieldType="field" key="|Количество_первичной_упаковки" valueType="integer" name="Количество первичной упаковки" width="150"/>
+															<column fieldType="field" key="|Количество_первичных_во_вторичной_упаковке" valueType="integer" name="Количество первичных во вторичной упаковке" width="150"/>
+															<column fieldType="field" key="|Количество_вторичной_упаковки" valueType="integer" name="Количество вторичной упаковки" width="100"/>
+															<column fieldType="field" key="|Комплектность_упаковки" valueType="longtext" name="Комплектность упаковки" width="150"/>	
+															<column fieldType="field" key="|Количество_товара_в_ед_измерения" valueType="double" name="Количество товара в ед измерения" width="100"/>																														
+														</table> 	
+													</column>
+												</row>														
+											</rows> 
+										</view> 	
+									</table>
+								</column>
+							</row>									
+						</rows> 
+					</block> 
+				</column>				
+			</row>
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="t2cInfo" name="Основные сведения">
+						<rows>		
+							<row>	
+								<column>
+									<field name="Год финансирования" isLabel="true" edit-name="god" />	>
+								</column>								
+								<column>
+									<field name="Месяц финансирования" isLabel="true" edit-name="monthkod"/>                 
+								</column>  								
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Год_финансирования" name="Год финансирования" valueType="integer" isValue="true" edit-name="god" edit-required="true"  />
+								</column>								
+								<column>            
+									<field fieldType="field" key="|Document|Месяц_финансирования_код" name="Месяц финансирования" valueType="text" isValue="true" edit-name="monthkod" dictionary-selection-start-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="monthkod" edit-disabled="true" edit-required="true" show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Месяц_финансирования" name="Месяц финансирования наименование" valueType="text" isValue="true" edit-name="month" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="monthkod" edit-required="true" dict-column-width-percentage="70"  />
+								</column>  	
+							</row>
+							<row>
+								<column>				
+									<field name="Источник финансирования" isLabel="true"  edit-name="registerIF"/>
+								</column>
+								<column>	
+									<field name="" isLabel="true"  edit-name="LecPrep"/>
+								</column>
+							</row>
+							<row>	
+								<column>				
+									<field fieldType="field" key="|Document|Источник_финансирования_по_статье_расхода" name="Источник финансирования" valueType="text" isValue="true" edit-readonly="true" edit-name="registerIF"  edit-required="true" dict-column-name="code"  dictionary-selection-start-level="1" edit-tool = "Источники финансирования"  display-field-part="true" dict-edit-name="registerIF"/>
+								</column>
+								<column>	
+									<field fieldType="field" key="|Document|Лекарственный_препарат" name="Лекарственный препарат"  valueType="boolean" edit-name="LecPrep" edit-default-value="0" />	
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="КБК по статье расхода" isLabel="true"  edit-name="registerKBK"/>	
+								</column>
+								<column>
+									<field name="" isLabel="true"  edit-name="notKVR"/> 									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|КБК_по_статье_расхода" name="КБК по статье расхода" valueType="text" isValue="true" edit-name="registerKBK"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Коды бюджетной классификации"  display-field-part="true" dict-edit-name="registerKBK" />		
+								</column>
+								<column>
+									<field fieldType="field"  key="|Document|Значение_КВР_неопределено" name="Значение КВР неопределено" valueType="boolean"   edit-name="notKVR"  edit-default-value="0"/>
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field name="ОКПД2" isLabel="true"  edit-name="registerOKDP"/>	
+								</column>
+								<column>
+									<field name="КВР" isLabel="true" edit-name="registerKVR"/>	
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|КВР" name="КВР" valueType="text" isValue="true" edit-name="registerKVR"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "Коды видов расходов"   display-field-part="true" dict-edit-name="registerKVR" />
+								</column>
+							</row>								
+							<row>
+								<column>
+									<field name="ОКПД2 наименование" isLabel="true"  edit-name="registerOKDPName"/>	
+								</column>
+								<column>
+									<field name="КВР по статье расхода" isLabel="true"  edit-name="registerKVRName"/>	
+								</column>								
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="last"  display-field-part="false" dict-edit-name="registerOKDP" />
+								</column>	
+								<column>
+									<field fieldType="field"  key="|Document|КВР_наименование" name="КВР по статье расхода" valueType="longtext" isValue="true" edit-name="registerKVRName" edit-readonly="true" dict-column-name="Наименование" dictionary-selection-start-level="last" display-field-part="false"  dict-edit-name="registerKVR" />	  
+								</column>							
+							</row>
+
+
+
+
+							<row>
+								<column>		
+									<block id="17" name="block17" >
+										<rows>
+											<row>
+												<column>				
+													<field name="КТРУ" isLabel="true"  edit-name="KTRU"/>
+												</column>
+												<column>	
+													<field name="" isLabel="true"  />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>				
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+
+
+							<row>
+								<column>		
+									<block id="18" name="block18">
+										<rows>
+											<row>
+												<column>				
+													<field fieldType="field" key="|Document|КТРУ" name="КТРУ" valueType="text" isValue="true" edit-readonly="true" edit-name="KTRU"  dict-column-name="code"  dictionary-selection-start-level="1" edit-tool = "КТРУ"  display-field-part="true" dict-edit-name="KTRU"/>
+												</column>
+												<column>	
+													<field fieldType="field" key="|Document|КТРУ_ОКПД2" name="КТРУ ОКПД2" isValue="true"  valueType="text" edit-name="KTRUOKPD"  dict-column-name="ОКПД2"  edit-readonly="true"  dict-edit-name="KTRU" edit-hidden="true" display-field-part="true"/>	
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>		
+
+								</column>
+							</row>
+
+							<row>
+
+								<column>
+									<field name="Описание позиции КТРУ" isLabel="true"  edit-name="KTRUOKDPName"/>	
+								</column>	
+								<column>
+									<field name="" isLabel="true"  />	
+								</column>									
+							</row>
+							<row>	
+
+								<column>
+									<field fieldType="field"  key="|Document|КТРУ_ОКПД2_наименование" name="КТРУ ОКПД2 наименование" valueType="longtext" isValue="true" edit-name="KTRUOKDPName" edit-readonly="true" dict-column-name="ОКПД2 наименование"    dict-edit-name="KTRU" />
+								</column>	
+								<column>
+
+								</column>									
+							</row>
+
+
+							<row>	
+								<column>
+									<field name="Наименование позиции" isLabel="true"  edit-name="Name"/>	
+								</column>		
+								<column>
+									<field name="Эксплуатационные характеристики" isLabel="true"  edit-name="expKind"/>	
+								</column>										
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field"  key="|Document|Наименование_позиции" name="Наименование позиции" valueType="longtext" isValue="true" edit-name="Name" edit-required="true"     />
+								</column>		
+								<column>
+									<field fieldType="field"  key="|Document|Эксплуатационные_характеристики" name="Эксплуатационные характеристики" valueType="longtext" isValue="true" edit-required="true"  edit-name="expKind"     />
+								</column>										
+							</row>	
+							<row>									
+								<column>
+									<field name="Валюта" isLabel="true"  edit-name="registerCurId"/>
+								</column>	
+								<column>
+									<field name="Средняя цена за единицу" isLabel="true"  edit-name="PriceMid"/>	
+									<field name="Цена запасных частей" isLabel="true"  edit-name="PriceRez"/>	
+								</column>
+								<column>						
+									<field name="Единица измерения" isLabel="true"  edit-name="okei"/>
+									<field name="Единица измерения КТРУ" isLabel="true"  edit-name="EDKTRU"/>
+								</column>
+								<column>	
+									<field name="" isLabel="true"  edit-name="notcol"/>
+								</column>																		
+							</row>								
+							<row>									
+								<column>
+									<field fieldType="field" key="|Document|Код_валюты" name="Код валюты" valueType="text" isValue="true" edit-name="registerCurId"    edit-default-value="RUB" dict-edit-name="registerCurId" edit-tool="Валюта" dictionary-selection-start-level="1" dict-column-name="code" edit-readonly="true" show-dict-column="true" />	
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="registerCur" edit-readonly="true"  dict-column-name="Наименование" edit-default-value="Российский рубль" dict-edit-name="registerCurId"  display-field-part="true" edit-hidden="true"  />
+								</column>	
+								<column>
+									<field fieldType="field"  key="|Document|Средняя_цена_за_единицу" name="Средняя цена за единицу" valueType="money" isValue="true" edit-name="PriceMid" dict-column-name="Цена"   dict-edit-name="KTRU"     />
+								</column>		
+								<column>
+									<field fieldType="field"  key="|Document|Цена_запасных_частей" name="Цена запасных частей" valueType="money" isValue="true" edit-name="PriceRez"   />
+								</column>
+								<column>						
+									<field fieldType="field" key="|Document|ОКЕИ" name="ОКЕИ" valueType="text" isValue="true" edit-name="okei"  dictionary-selection-start-level="1" edit-tool = "ОКЕИ" edit-readonly="true" dict-column-name="code" dict-edit-name="okei" show-dict-column="false"  />
+									<field fieldType="field" key="|Document|Единица_измерения" name="Единица измерения" valueType="text" isValue="true"    edit-name="okeiName" edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="okei" />
+									<field fieldType="field" key="|Document|ОКЕИ_КТРУ" name="ОКЕИ КТРУ" valueType="text" isValue="true" edit-name="okeiKTRU"   edit-readonly="true" dict-column-name="ОКЕИ" dict-edit-name="KTRU" show-dict-column="false" edit-hidden="true" />
+									<field fieldType="field"  key="|Document|Ед_изм_КТРУ" name="Единица измерения КТРУ" valueType="text" isValue="true" edit-name="EDKTRU" edit-readonly="true" dict-column-name="Единица измерения"    dict-edit-name="KTRU" />
+								</column>
+								<!-- <column>
+									<field fieldType="field" key="|Document|ОКЕИ_КТРУ" name="ОКЕИ КТРУ" valueType="text" isValue="true" edit-name="okeiKTRU"   edit-readonly="true" dict-column-name="ОКЕИ" dict-edit-name="KTRU" show-dict-column="false"   />
+									<field fieldType="field"  key="|Document|Ед_изм_КТРУ" name="Единица измерения КТРУ" valueType="text" isValue="true" edit-name="EDKTRU" edit-readonly="true" dict-column-name="Единица измерения"    dict-edit-name="KTRU" />
+								</column>	 -->
+								<column>	
+									<field fieldType="field" key="|Document|Невозможно_определить_количество" name="Неопределено"  valueType="boolean" edit-name="notcol" edit-default-value="0" />	
+								</column>																		
+							</row>								
+							<row>								
+								<column>	
+									<field name="Количество текущего года" isLabel="true"  edit-name="colcur"/>								
+								</column>
+								<column>							
+									<field name="Количество первого планового года" isLabel="true"  edit-name="colfirst"/>
+								</column>																
+								<column>	
+									<field name="Количество второго планового года" isLabel="true"  edit-name="colsec"/>								
+								</column>
+								<column>	
+									<field name="Количество последующих годов" isLabel="true"  edit-name="collast"/>									
+								</column>
+							</row>															
+							<row>								
+								<column>								
+									<field fieldType="field" key="|Document|Количество_текущего_года" name="Количество текущего года" isValue="true" valueType="double" edit-name="colcur" edit-required="true" />	
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Количество_первого_планового_года" name="Количество первого планового года"  isValue="true" valueType="double" edit-name="colfirst" />	
+								</column>																
+								<column>								
+									<field fieldType="field" key="|Document|Количество_второго_планового_года" name="Количество второго планового года" isValue="true" valueType="double" edit-name="colsec"  />	
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Количество_последующих_годов" name="Количество последующих годов" isValue="true" valueType="double" edit-name="collast" />	
+								</column>
+							</row>																													
+							<row>
+								<column>	
+									<field name="Сумма выплат текущего года" isLabel="true"  edit-name="sumcur"/>								
+								</column>
+								<column>							
+									<field name="Сумма выплат первого года" isLabel="true"  edit-name="sumfirst"/>
+								</column>																
+								<column>	
+									<field name="Сумма выплат второго года" isLabel="true"  edit-name="sumsec"/>								
+								</column>
+								<column>	
+									<field name="Сумма выплат последующих годов" isLabel="true"  edit-name="sumlast"/>								
+								</column>																
+							</row>							
+							<row>
+								<column>								
+									<field fieldType="field" key="|Document|Сумма_выплат_текущего_года" name="Сумма выплат текущего года" isValue="true" valueType="money" edit-name="sumcur" edit-required="true" edit-readonly="true" />	
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Сумма_выплат_первого_года" name="Сумма выплат первого года"  isValue="true" valueType="money" edit-name="sumfirst" edit-readonly="true"/>	
+								</column>																
+								<column>									
+									<field fieldType="field" key="|Document|Сумма_выплат_второго_года" name="Сумма выплат второго года" isValue="true" valueType="money" edit-name="sumsec" edit-readonly="true"  />	
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Сумма_выплат_последующих_годов" name="Сумма выплат последующих годов" isValue="true" valueType="money" edit-name="sumlast" edit-readonly="true" />	
+								</column>																
+							</row>							
+						</rows>
+					</block>
+				</column>
+			</row>			
+			<row>
+				<column>
+					<block id="block8" name="Международное группировочное или химическое наименование лекарственного препарата">
+						<rows> 								
+							<row>								
+								<column>
+									<field name="Международное непатентованное наименование" isLabel="true"  edit-name="Megdun"/>	
+									<field name="Международное непатентованное наименование для редактирования" isLabel="true" edit-name="MegdunNameRed"/>                   									
+								</column>
+							</row> 							
+							<row>								
+								<column>
+									<field fieldType="field" key="|МНН|МНН_код" name="МНН код" valueType="text"   isValue="true" edit-name="Megdun"   dict-column-name="code"  edit-tool="Лекарственные препараты" is-select-one-level="2" edit-readonly="true" one-level-parent="OKPD2LP"  show-dict-column="false"   dict-edit-name="Megdun" />
+									<field fieldType="field" key="|МНН|Международное_непатентованное_наименование" name="Международное непатентованное наименование" valueType="text" isValue="true" edit-name="MegdunName"  edit-readonly="true"  dict-column-name="Наименование МНН"   dict-edit-name="Megdun" edit-hidden="true"  display-field-part="true" dict-column-width-percentage="100"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|МНН|Международное_непатентованное_наименование_для_редактирования" name="Международное непатентованное наименование для редактирования" valueType="text" isValue="true" edit-name="MegdunNameRed"  edit-readonly="true"/>                   									
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block10" name=" ">
+										<rows>
+											<row>
+												<column>	
+													<field name="Срок годности" isLabel="true"  edit-name="SrockGodnosti"/>	
+												</column>
+												<column>
+													<field name="" isLabel="true"  edit-name="NotMNN"/>
+												</column>	
+												<column>										
+													<field name="" isLabel="true"  edit-name="GNVLP"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+									<field name="" isLabel="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block11" name=" ">
+										<rows>
+											<row>
+												<column>	
+													<field fieldType="field" key="|МНН|Срок_годности" name="Срок годности" valueType="date" isValue="true" edit-name="SrockGodnosti"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|МНН|Отсутствует_в_МНН" name="Отсутствует в МНН"  valueType="boolean" edit-name="NotMNN" edit-default-value="0" />	
+												</column>
+												<column>	
+													<field fieldType="field" key="|МНН|Признак_включения_в_ЖНВЛП" name="Признак включения в ЖНВЛП"  valueType="boolean" edit-name="GNVLP" edit-default-value="0" />										
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+								</column>
+							</row>
+							<!--                                     <row>
+								<column>
+								<field  name="ОКПД2ЛП" isLabel="true" edit-name="OKPD2LP"/>							
+								</column>
+							</row> -->
+							<!--							<row>
+								<column>
+								<field fieldType="field" key="|МНН|ОКПД2_ЛП" name="ОКПД2ЛП" valueType="text"  isValue="true" edit-name="OKPD2LP"  dict-column-name="code"  edit-tool = "Лекарственные препараты" is-select-one-level="1" edit-readonly="true"  dict-edit-name="OKPD2LP"  display-field-part="true"/>
+								</column>
+							</row>--> 													
+							<row>
+								<column>
+									<field fieldType="field" key="|МНН|Наименование_лекарственной_формы_tmp"  valueType="text" isValue="true" edit-hidden="true" edit-name="NameLF"  dict-column-name="Наименование формы" dict-edit-name="Megdun" name="Наименование лекарственной формы"  dict-column-width-percentage="15"  show-dict-column="false"/>
+								</column>	
+								<column>	
+									<field fieldType="field" key="|МНН|Наименование_дозировки_tmp"  valueType="text" isValue="true" edit-name="NameDoz"  edit-hidden="true" dict-column-name="Дозировка" dict-edit-name="Megdun" name="Наименование дозировки"  dict-column-width-percentage="15"  show-dict-column="false"/>
+								</column>	
+								<column>	
+									<field fieldType="field" key="|МНН|Единица_измерения_дозировки_код_tmp" valueType="text"  isValue="true" name="Единица измерения дозировки код" edit-name="DozCode"  edit-hidden="true"  dict-column-name="Код ОКЕИ"   show-dict-column="false"  dict-edit-name="Megdun"/>
+									<field fieldType="field" key="|МНН|Единица_измерения_дозировки_tmp" name="Единица измерения дозировки"  valueType="text" isValue="true" edit-hidden="true" edit-name="DozName" dict-column-name="ОКЕИ"  show-dict-column="false" dict-edit-name="Megdun"/>
+								</column>	
+								<column>	
+									<field fieldType="field" key="|МНН|Значение_дозировки_tmp"  valueType="double" isValue="true" edit-name="ZnachDoz"  dict-column-name="Значение" edit-hidden="true" dict-edit-name="Megdun" name="Значение дозировки"  dict-column-width-percentage="15"  show-dict-column="false"/>
+								</column>	
+								<column>	
+									<field fieldType="field" key="|МНН|Полная_форма_дозировки_tmp"  valueType="text" isValue="true" edit-name="FullDoz"  dict-column-name="Полная форма" edit-hidden="true" dict-edit-name="Megdun" name="Полная форма дозировки"  dict-column-width-percentage="15"  show-dict-column="false"/>
+								</column>	
+							</row>	
+							<row>
+								<column>
+									<field name="Наименование производителя препарата" isLabel="true" />
+									<table key="|МНН|Позиции_по_торговому_наименованию" edit-name="PozTab" height="300">							
+										<!--здесь словарь должен  зависить от поля "|МНН|МНН_код"-->								
+										<column fieldType="field" key="|Торговое_наименование_ЛП_код" name="Торговое наименование ЛП" valueType="text" isValue="true" edit-name="TorgNameKod" edit-readonly="true" dict-column-name="code"  edit-tool = "Лекарственные препараты" is-select-one-level="3"  one-level-parent="Megdun" show-dict-column="false" dict-edit-name="TorgNameKod" width="200" />
+										<column fieldType="field" key="|Торговое_наименование_ЛП" valueType="text"  isValue="true" name="Торговое наименование" edit-name="TorgName"  edit-readonly="true" dict-column-name="Торговое наименование"  display-field-part="true" width="300"  show-dict-column="true" edit-hidden="true" dict-edit-name="TorgNameKod"/>
+										<column fieldType="field" key="|Номер_регистрационного_удостоверения_ЛП" valueType="text" isValue="true" edit-name="RegNumber"  dict-column-name="Рег удост" dict-edit-name="TorgNameKod" name="Номер регистрационного наименования ЛП" dict-column-width-percentage="15"  show-dict-column="false" width="150"/>
+										<column fieldType="field" key="|Наименование_лекарственной_формы" name="Наименование лекарственной формы" valueType="text" isValue="true" edit-name="LecFormName"  dict-column-name="Наименование формы"  dict-edit-name="Megdun" show-dict-column="false"  dict-column-width-percentage="30" width="300" />
+										<column fieldType="field" key="|Наименование_дозировки" name="Наименование дозировки" valueType="longtext" isValue="true" edit-name="DosNAme" width="100"/>
+										<column fieldType="field" key="|Единица_измерения_дозировки_код" name="Единица измерения дозировки код" valueType="text" isValue="true" edit-name="EdIzmDosKod" edit-hidden="true" width="100" />
+										<column fieldType="field" key="|Единица_измерения_дозировки" name="Единица измерения дозировки" valueType="text"  isValue="true" edit-name="EdIzmDosName"   width="100"/>
+										<column fieldType="field" key="|Значение_дозировки" name="Значение дозировки" valueType="double" isValue="true" edit-name="ZnachDos" width="100"/>
+										<column fieldType="field" key="|Полная_форма_дозировки" name="Полная форма дозировки" valueType="longtext" isValue="true" edit-name="FullFormDos" width="100" />
+										<column fieldType="field" key="|Владелец_регистрационного_удостоверения" valueType="longtext" isValue="true" name="Владелец регистрационного удостоверения" edit-name="Vladelec" dict-column-name="Держатель удост"  dict-column-width-percentage="30"  show-dict-column="false" dict-edit-name="TorgNameKod" width="200"/>
+										<column fieldType="field" key="|Страна_производителя_препарата" name="Страна производителя препарата" valueType="text"  isValue="true" edit-name="StanaProizv"   dict-column-name="Наименование страны" dict-column-width-percentage="20"  show-dict-column="false" dict-edit-name="TorgNameKod"  display-field-part="true" width="200"/>
+										<column fieldType="field" key="|Страна_производителя_препарата_код" name="Страна производителя препарата код" valueType="text"  isValue="true" edit-name="StanaProizvKod"   dict-column-name="Код страны" dict-column-width-percentage="10"  show-dict-column="false" dict-edit-name="TorgNameKod" edit-hidden="true" width="100"/>
+										<column fieldType="field" key="|Наименование_производителя_препарата" name="Наименование производителя препарата" valueType="longtext"  isValue="true" edit-name="NameProizvPrep"  dict-column-name="Производитель" dict-column-width-percentage="20"  show-dict-column="false" dict-edit-name="TorgNameKod" width="200"/>
+										<column fieldType="field" key="|Наименование_вида_первичной_упаковки_tmp" valueType="longtext" isValue="true" name="Наименование вида первичной упаковки tmp" edit-name="VidNametmp" dict-column-name="Упаковка"  dict-column-width-percentage="30"  edit-hidden="true" show-dict-column="false" dict-edit-name="TorgNameKod" width="200"/>
+										<column fieldType="field" key="|Количество_первичной_упаковки_tmp" valueType="text" isValue="true" name="Количество первичной упаковки tmp" edit-name="ColPervUptmp" dict-column-name="Количество1"  dict-column-width-percentage="30" edit-hidden="true" show-dict-column="false" dict-edit-name="TorgNameKod" width="200"/>
+										<column fieldType="field" key="|Количество_первичных_во_вторичной_упаковке_tmp" valueType="text" isValue="true" name="Количество первичных во вторичной упаковке" edit-name="ColPervInVtorUptmp" dict-column-name="Количество2"  dict-column-width-percentage="30" show-dict-column="false" edit-hidden="true" dict-edit-name="TorgNameKod" width="200"/>
+										<edit>
+											<rows>
+												<row>
+													<column>
+														<field name="Сведения об упаковке" isLabel="true" />
+														<table key="|Сведения_об_упаковке" edit-name="SvedTab" height="300">							
+															<column fieldType="field" key="|Наименование_вида_первичной_упаковки" valueType="longtext"  isValue="true" name="Наименование вида первичной упаковки" edit-name="VidName"  width="320"/>
+															<column fieldType="field" key="|Количество_первичной_упаковки" name="Количество первичной упаковки" valueType="integer" isValue="true" edit-name="ColPervUp"  width="180" />
+															<column fieldType="field" key="|Количество_первичных_во_вторичной_упаковке" name="Количество первичных во вторичной упаковке" valueType="integer" isValue="true" edit-name="ColPervInVtorUp"  width="180" />
+															<column fieldType="field" key="|Количество_вторичной_упаковки" name="Количество вторичной упаковки" valueType="integer" isValue="true" edit-name="ColVtorUp"   width="180"/>
+															<column fieldType="field" key="|Комплектность_упаковки" name="Комплектность упаковки" valueType="longtext" isValue="true" edit-required="false" edit-name="ComplUpack" width="180" />
+															<column fieldType="field" key="|Количество_товара_в_ед_измерения" name="Количество товара в ед измерения" valueType="double" isValue="true" edit-required="false" edit-name="ColVtorEdIzm" width="180"/>
+														</table> 
+													</column>
+												</row>
+											</rows>
+										</edit>
+									</table>
+								</column>
+							</row>
+						</rows> 
+					</block> 
+				</column>				
+			</row>			
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>									
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true"/>		
+
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" /> 									
+									<field fieldType="field" key="|Document|Реестровый_номер_позиции_ПЗ" name="Реестровый_номер_позиции_ПЗ" valueType="text" isValue="true" edit-hidden="true" edit-name="ReestNumPZ" />
+									<field fieldType="field" key="|Document|Описание_изменений" name="Описание_изменений" valueType="text" isValue="true" edit-hidden="true" edit-name="OpisIzm" />
+									<field fieldType="field" key="|Document|Нормативные_правовые_акты_отсутствуют" name="Нормативные правовые акты отсутствуют" valueType="boolean" isValue="true" edit-hidden="true" edit-name="NormAct" />
+									<field fieldType="field" key="|Document|Департамент_инициатора" name="Департамент инициатора" valueType="text" isValue="true" edit-hidden="true" edit-name="DeprtIn" />
+									<field fieldType="field" key="|Document|Департамент_инициатора_код" name="Департамент инициатора код" valueType="text" isValue="true" edit-hidden="true" edit-name="DeprtInKod" />
+									<field fieldType="field" key="|Document|ИД_заявки" name="ИД заявки" valueType="text" isValue="true" edit-hidden="true" edit-name="IdZayv" />
+									<field fieldType="field" key="|Document|Номер_заявки" name="Номер заявки" valueType="text" isValue="true" edit-hidden="true" edit-name="NumZayv" />
+									<field fieldType="field" key="|Document|ИД_позиции_ПЗ" name="ИД позиции ПЗ" valueType="text" isValue="true" edit-hidden="true" edit-name="IdPozPZ" />
+									<field fieldType="field" key="|Document|ИД_позиции_ПГ" name="ИД позиции ПГ" valueType="text" isValue="true" edit-hidden="true" edit-name="IdPozPG" />
+									<field fieldType="field" key="|Document|ИД_контракта" name="ИД контракта" valueType="text" isValue="true" edit-hidden="true" edit-name="IdKontr" />
+									<field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="ФИО инициатора" valueType="text"  isValue="true" edit-name="IDIniciatora" edit-addressbook-groups="person" edit-required="true"  edit-default-value="{currentUser}" address-book-tool ="IDIniciatora" edit-readonly="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrgZaName" show-dict-column="false" display-field-part="true" />
+									<!-- <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZaName" display-field-part="true" edit-default-value="{addressbook,value=IDIniciatora,attribute=Department}" edit-required="true"/> -->
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true" edit-default-value="{addressbook,value=IDIniciatora,attribute=Organization}" edit-required="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Организация-заказчик СПЗ" valueType="text" isValue="true" edit-name="registerOrgZaSPZ"    edit-readonly="true"  dict-column-name="Код по СПЗ" is-select-one-level="1" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Организация_заказчик_код_по_СР" valueType="text" isValue="true" edit-name="registerOrgZaSr"    edit-readonly="true"  dict-column-name="Код по Сводному реестру" is-select-one-level="1" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|ОКТМО" name="ОКТМО" valueType="text" isValue="true" edit-name="registerOrgOKTMO" edit-hidden="true" dict-column-name="ОКТМО" dict-edit-name="registerOrgZa" is-select-one-level="1" display-field-part="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="ОКОПФ_заказчика" valueType="text" isValue="true" edit-name="registerOrgZaOKPF" edit-hidden="true" dict-column-name="ОКОПФ" dict-edit-name="registerOrgZa" is-select-one-level="1" display-field-part="true" /> 
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО" name="ОКТМОППО_заказчика" valueType="text" isValue="true" edit-name="registerOrgZaOKTMOPPO" edit-hidden="true" dict-column-name="ОКТМОППО" dict-edit-name="registerOrgZa" is-select-one-level="1" display-field-part="true" /> 
+									<field fieldType="field" key="|Document|Организация_заказчик|КФC" name="КФC" valueType="text"   isValue="true" edit-name="orgzakКФC" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Сумма_выплат_всего" name="Сумма выплат всего" isValue="true" valueType="money" edit-name="sum"  edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИКЗ" name="ИКЗ" isValue="true" valueType="text" edit-name="IKZ"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Количество_всего" name="Количество всего" isValue="true" valueType="double" edit-name="col" edit-readonly="true"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор_закупки" valueType="text"  isValue="true" edit-name="orgzak2"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор_закупки_наименование"  valueType="text" isValue="true" edit-name="orgzakName2"   edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" name="Организатор_закупки_код_по_СПЗ" valueType="text" isValue="true" edit-name="orgzakСПЗ2" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" name="Организатор_закупки_код_по_СР" valueType="text"   isValue="true" edit-name="orgzakCP2" edit-hidden="true" />
+
+									<field fieldType="field" key="|МНН|ОКПД2_ЛП" name="ОКПД2ЛП" valueType="text"  isValue="true" edit-name="OKPD2LP" edit-hidden="true"/>
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row> 						
+		</rows>			
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="\Scripts\Content\Document\RegCard\LPosition.js" />
+	</scripts>
+</root>

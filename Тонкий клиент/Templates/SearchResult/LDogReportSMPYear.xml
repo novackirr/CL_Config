@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+		<columns state-key="LFederalReportSMP" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allow-create-excel="true">
+			<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="12"  />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата создания" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" valueType="date" weight="15" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" name="Дата размещения" sortPredicate="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" valueType="date" weight="15" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" valueType="integer" weight="15" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус"  sortPredicate="doc_RegCard/rc_Index/text_Статус" valueType="text" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация-заказчик" sortPredicate="doc_RegCard/rc_Index/longtext_Наименование_организации_заказчика" valueType="longtext" weight="35" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год_сведений" name="Год сдачи отчетности" sortPredicate="doc_RegCard/rc_Index/integer_Год_сведений" valueType="integer" weight="20" />	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Заполнить_автоматически" name="Заполнить автоматически" sortPredicate="doc_RegCard/rc_Index/boolean_Заполнить_автоматически" valueType="boolean" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" name="Обоснование внесения изменений" sortPredicate="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" valueType="longtext" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_создавшая_отчетность_наименование" name="Организация создавшая отчетность" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_создавшая_отчетность_наименование" valueType="longtext" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" name="ИНН организации заказчика" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" valueType="text" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_КПП" name="КПП организации заказчика" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_КПП" valueType="text" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_ОГРН" name="ОГРН организации заказчика" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_ОГРН" valueType="text" weight="20" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_ИНН" name="ИНН организации создавшей отчетность" sortPredicate="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_ИНН" valueType="text" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_КПП" name="КПП организации создавшей отчетность" sortPredicate="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_КПП" valueType="text" weight="20" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_ОГРН" name="ОГРН организации создавшей отчетность" sortPredicate="doc_RegCard/rc_Index/text_Организация_создавшая_отчетность_ОГРН" valueType="text" weight="20" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" sortPredicate="doc_RegCard/rc_Index/text_Валюта" valueType="text" weight="20" defaultHide="true"/>
+		</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>
+

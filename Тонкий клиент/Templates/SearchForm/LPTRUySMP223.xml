@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="addressbook" isValue="true" edit-name="registerOrgZaName"    edit-hidden="true"  edit-default-value="{currentOrganization}"  />
+				</column> 
+			</row>
+			<row>
+				<column>
+					<field name="Дата создания версии" isLabel="true"/>
+				</column>
+				<column>
+					<field name="Номер версии" isLabel="true" />
+				</column>
+				<column>
+					<field name="Статус" isLabel="true" />
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<block id="block1" name="block1"  height="300">	
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_создания" name="Дата создания версии" valueType="datetime" isValue="true" edit-name="dateVerFrom"   />
+								</column>
+								<column>
+									<field name="до" isLabel="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_создания" name="Дата создания версии" valueType="datetime" isValue="true" edit-name="dateVerTo"   />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>	
+				<column>
+					<field fieldType="field" key="|Document|Номер_редакции" name="Номер версии" valueType="integer" isValue="true" edit-name="num_red"  />
+				</column>
+				<column>
+					<table edit-tool = "Статусы плана" key="|Document" edit-name="registerStatus" height="300">
+						<field fieldType="field" key="|Document|Статус" valueType="text" isValue="true" edit-name="regstatus" dict-column-name="code"  edit-tool="Статусы плана" display-field-part="true" dict-edit-name="regstatus" />
+					</table>
+				</column>
+				
+			</row>
+		
+		</rows>
+	</edit>	 
+	<search>
+		<!--<field fieldValue="(doc_RegCard/rc_FlowName = 'Перечни ТРУ 223ФЗ') and (doc_RegCard/rc_Index/integer_Организация_заказчик = @registerOrgZaName) and ((doc_RegCard/rc_Index/datetime_Дата_создания &gt;= @yearPlanSecondFrom) and (doc_RegCard/rc_Index/datetime_Дата_создания &lt;= @yearPlanSecondTo)) and (xn-in(doc_RegCard/rc_Index/text_Статус, @regstatus)) and (doc_RegCard/rc_Index/integer_Номер_редакции = @num_red)" />-->
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Перечни ТРУ 223ФЗ') and ((doc_RegCard/rc_Index/datetime_Дата_создания &gt;= @yearPlanSecondFrom) and (doc_RegCard/rc_Index/datetime_Дата_создания &lt;= @yearPlanSecondTo)) and (xn-in(doc_RegCard/rc_Index/text_Статус, @regstatus)) and (doc_RegCard/rc_Index/integer_Номер_редакции = @num_red)" />
+	</search>
+	<scripts>
+		<script file="~/Scripts/Content/SearchForm/SKTRU.js" />
+	</scripts>	
+</root>

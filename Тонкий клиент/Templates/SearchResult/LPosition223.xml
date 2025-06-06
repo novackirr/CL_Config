@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="LPosition223" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true">
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" weight="25" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" weight="30" isOptional="true" />
+	<!-- <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_наименование" name="Организация" valueType="text" weight="150" isOptional="true" /> -->
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" weight="160" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦК" name="НМЦК" valueType="money" weight="50" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" weight="100" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="50" isOptional="true" />
+  </columns>
+  
+  <!--<sort predicate="doc_RegCard/rc_Index/date_Дата_регистрации descending, doc_RegCard/rc_Index/text_Регистрационный_номер descending "/>-->
+<sort predicate="doc_CreateTime descending"/>
+</root>
+
+
+

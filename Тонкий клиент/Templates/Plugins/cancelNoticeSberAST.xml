@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<workflow name="Отмена процедуры"/>
+	<view>
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field isLabel="true" name="Дата принятия решения" edit-name="datereshenie1" title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+						<field fieldType="field" key="|Document|Дата_принятия_решения_отмена" name="Дата принятия решения" valueType="datetime" isValue="true" edit-name="datereshenie1"/>
+						<field fieldType="field" key="|Document|Отмена_закупки" name="Отмена закупки" valueType="boolean" edit-name="otmena1" edit-default-value="1" edit-hidden="true"/>
+					</column> 
+					<column>
+						
+					</column>
+				</row>
+				<row>
+					<column>
+						<field isLabel="true" name="Основание для отказа" edit-name="osnovreshenie1"  title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+						<field fieldType="field" key="|Document|Основание_принятия_решения_отмена" name="Основания для отказа" valueType="longtext" isValue="true" edit-name="osnovreshenie1"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field isLabel="true" name="Орган, выдавший решение об отмене процедуры" edit-name="cancelsupervisorcode"  />
+						<field fieldType="field" key="|Document|Сбербанк_АСТ|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_код" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="cancelsupervisorcode" edit-readonly="true" edit-required="true"  dict-column-name="code" edit-tool="Formdata:Орган, выдавший решение об отмене процедуры" dict-edit-name="cancelsupervisorcode"  show-dict-column="false" edit-default-value="customer"/>
+						<field fieldType="field" key="|Document|Сбербанк_АСТ|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_наименование" name="Решение по закупке" valueType="text"  isValue="true" edit-name="cancelsupervisorName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="cancelsupervisorcode"  display-field-part="true"  edit-hidden="true" edit-default-value="по решению Заказчика"/>
+					</column>
+					<column>
+						<field isLabel="true" name="Отменить процедуру в целом" edit-name="purchasetotalcancel"  />
+						<field fieldType="field" key="|Document|Сбербанк_АСТ|Отмена_процедуры|Отмена_процедуры_в_целом" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="purchasetotalcancel" dict-column-name="Выбор значения" edit-required="true"  edit-tool = "Formdata:Выбор значения" dict-edit-name="purchasetotalcancel"  display-field-part="true" edit-readonly="true"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<!-- <field isLabel="true" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" edit-name="Emergency1"  /> -->
+						<field fieldType="field" key="|Document|Закупка_отменяется_в_следствии_непреодолимой_силы" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" valueType="boolean"   edit-name="Emergency1"/>
+					</column>
+				</row>
+				<!-- <row>
+					<column>									
+						<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"   isValue="true" edit-name="naimETPID1"/>
+					</column>
+				</row> -->
+				<row>
+                    <column>
+						<field fieldType="field" key="|Document|Согласование_закупочной_комиссией" name="Согласование закупочной комиссией" valueType="boolean" edit-name="ApproveCommission" edit-force-default-value="1"/>
+					</column>
+                </row>
+				<row>
+                    <column>
+                        <field fieldType="field" key="|Document|Согласование_руководителем_инициатора" name="Согласование руководителем инициатора" valueType="boolean"  edit-name="ApproveLeader" edit-force-default-value="1"/>
+                    </column>
+                </row>
+				<row>
+					<column>
+						<table key="|Document|Лоты" edit-name="LotsTab" height="300" name="Лоты" horizontall-scroll="false">
+							<column fieldType="field" key="|Лот_docId" valueType="text"  isValue="true" name="Лот_docId" edit-name="Lot_docId"  width="150"  headerNoEllipsis="true" edit-hidden="true"/>
+							<column fieldType="field" key="|Лот_ИД_Лота_на_ЭТП" valueType="text"  isValue="true" name="Лот_ИД_Лота_на_ЭТП" edit-name="Lot_IDonETP"  width="150" headerNoEllipsis="true" edit-hidden="true"/>
+							<column fieldType="field" key="|Лот_Номер_лота_в_извещении" valueType="text"  isValue="true" name="Номер лота" edit-name="Lot_NumberInPurchsase"  width="120" headerNoEllipsis="true" />
+							<column fieldType="field" key="|Лот_Предмет_договора" valueType="Longtext"  isValue="true" name="Предмет договора" edit-name="Lot_PurchsaseName"  width="350" headerNoEllipsis="true" />
+							<column fieldType="field" key="|Лот_Отменить_лот" valueType="text"  isValue="true" name="Отменить лот" edit-name="Lot_CancelLot"  width="200" dict-column-name="Выбор значения"  edit-tool = "Formdata:Выбор значения" dict-edit-name="Lot_CancelLot"  display-field-part="true" edit-readonly="true" title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+							<column fieldType="field" key="|Лот_Дата_отмены_лота" valueType="date"  isValue="true" name="Дата отмены лота" edit-name="Lot_DateCancelLot"  width="160" headerNoEllipsis="true" title='Доступно для редактирования и обязательно, если значение столбца "Отменить лот" = "Да"'/>
+							<column fieldType="field" key="|Лот_Причина_отмены_лота" valueType="Longtext"  isValue="true" name="Причина отмены лота" edit-name="Lot_ReasonCancelLot"  width="350" headerNoEllipsis="true" title='Доступно для редактирования и обязательно, если значение столбца "Отменить лот" = "Да"'/>
+							
+						</table>
+					</column>
+				</row>
+			</rows>									
+		</template>
+	</view>
+	<scripts>
+		<script file="\Scripts\Content\Plugins\cancelNoticeSberAST.js" />
+	</scripts>
+	<attachment required="true">
+        <categories>
+            <category name="Документы об отказе от проведения процедуры"/>
+        </categories>
+    </attachment>
+</root>

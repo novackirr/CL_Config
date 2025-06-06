@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <dictionary name="Контрагенты" customForm="Supplier.xml" canView="true">
+        <columns>
+            <column name="Наименование"/>
+            <column name="Фирменное наименование"/>
+            <column name="ИНН"/>
+            <column name="КПП"/>
+        </columns>
+        <!-- <access>
+            <view>
+                <workGroup name="Администратор"/>
+            </view>
+        </access> -->
+    </dictionary>
+</root>

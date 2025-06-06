@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<LinksModify>
+		<LinkCurrentDoc />
+		<LinkAllLinksWhereFlow name="Заявки участников 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Заявка на размещение закупки 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Извещения о закупочной процедуре 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Позиции плана закупок 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Заявки участников ПКО" />
+		<LinkAllLinksWhereFlow name="Запросы RFI" />
+	</LinksModify>
+	<FieldsModify source="Запросы RFI">      
+		<Select>			
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения')]" tag="Заявки участников" />
+		</Select>
+		<Actions>
+			<CopyField src="%key%" dst="|Document|ИД_извещения" />
+			<CopyField src="%key%" dst="|Document|ИД_лота" />
+			<SetField dst="|Document|Имя_потока" value="Протоколы 223ФЗ" />
+			<SetField dst="|Document|Статус" value="Черновик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />              
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+			<CopyField src="|Document|Предмет_договора" dst="|Document|Название_закупки"/>			
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|Номер_в_ЕИС"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|ИД_лота_на_ЭТП" />
+			<CopyField src="|Document|ИД_протокола" dst="|Document|ИД_на_ЭТП" />
+			<CopyField src="|Document|Номер_извещения"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|ИД_на_ЭТП"  dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Адрес_ЭТП" />
+			<SetField dst="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />
+			<SetField dst="|Document|Код_протокола" value="2" />
+			<SetField dst="|Document|Форма_торгов" value="Запрос RFI" />
+			<SetField dst="|Document|Форма_торгов_код" value="6" />
+			<SetField dst="|Document|Наименование_протокола" value="Протокол подведения итогов" />
+			<CopyField src="|Document|Год_закупки" />
+			<CreateTable dst="|Document|Заявки_участников" srcDocs="Заявки участников">
+				<Column src="|Document|ИД_на_ЭТП" dst="|ИД_заявки_на_ЭТП" />
+				<Column src="|Document|Номер_заявки" dst="|Номер_заявки" />
+				<Column src="|Document|Участник_заявки_наименование" dst="|Наименование"/>
+				<Column src="|Document|Результат_допуска" dst="|Результат_допуска" />
+				<Column src="|Document|Результат_допуска_код" dst="|Результат_допуска_код" />
+				<Column src="|Document|Место_заявки_по_цене" dst="|Место_заявки"/>    
+				<Column src="|Document|Основание_для_решения" dst="|Основание_для_решения" />
+				<Column src="|Document|Окончательная_цена_с_НДС" dst="|Цена_участника_с_НДС" />
+				<Column src="|Document|Окончательная_цена_без_НДС" dst="|Цена_участника_без_НДС" />
+				<Column src="|Document|ЦП_вне_шага_с_НДС" dst="|ЦП_вне_шага_с_НДС" />
+				<Column src="|Document|ЦП_вне_шага_без_НДС" dst="|ЦП_вне_шага_без_НДС" />
+				<Column src="|Document|ЦП_с_НДС" dst="|ЦП_с_НДС" />
+				<Column src="|Document|ЦП_без_НДС" dst="|ЦП_без_НДС" />
+				<Column src="|Document|Процент_снижения_от_НМЦ" dst="|Процент_снижения_от_НМЦ" />
+				<Column src="|Document|НДС" dst="|НДС" />
+			</CreateTable>
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			<CopyTable dst="|Document|Участники_комиссии" src="|Document|Участники_комиссии"/> 
+			<CopyField dst="|Document|Название_комиссии_код" src="|Document|Название_комиссии_код"/> 
+			<CopyField dst="|Document|Название_комиссии" src="|Document|Название_комиссии"/>
+			<CopyField src="|Document|Номер_процедуры"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки" />
+		</Actions>
+	</FieldsModify>
+	<FieldsModify source="Заявка на размещение закупки 223ФЗ">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}')  and not(doc_RegCard/rc_Index/text_Статус = 'В архиве')]" tag="Извещения о закупочной процедуре 223ФЗ" /> 
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}') and not(doc_RegCard/rc_Index/text_Результат_допуска_код = 'F' or doc_RegCard/rc_Index/text_Результат_допуска = 'Предложение в аукционе не подавалось') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения') and not(doc_RegCard/rc_Index/boolean_Не_подано_ценовое_предложение = 1) and (doc_RegCard/rc_Index/text_Номер_заявки)]" tag="Заявки участников" />
+			<!-- <Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}') and doc_RegCard/rc_Index/boolean_Актуальность = '1']" tag="ППЗ" /> -->
+			<Select searchString="document[doc_Id='{baseDocumentsKeys}']" tag="ЛОТ" />
+		</Select>                           
+		<Actions> 
+			<CopyField src="|Document|Организация_документации|Организация_документации" />
+			<CopyField src="|Document|Организация_документации|Организация_документации_наименование" />
+			<CopyTable src="|Document|Заказчик_права_таблица" />
+			
+			<CopyField src="|Document|ИД_извещения" dst="|Document|ИД_извещения" />              
+			<SetField dst="|Document|Имя_потока" value="Протоколы 223ФЗ" />
+			<SetField dst="|Document|Статус" value="Черновик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />              
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" /> 
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|Макс_количество_победителей" />
+			<CopyField src="|Document|Название_закупки" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />               
+			<CopyField src="|Document|НМЦ_с_НДС" />                                              
+			<CopyField src="%key%" dst="|Document|ИД_лота" />                                         
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП" />
+			<CopyField src="|Document|ИД_протокола" dst="|Document|ИД_на_ЭТП" />
+			<CopyField src="|Document|Номер_извещения"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|ИД_извещения_на_ЭТП"  dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Адрес_ЭТП" />
+			<CopyField src="|Document|Наименование_ЭТП" dst="|Document|Наименование_ЭТП"/>
+			<CopyField src="|Document|Форма_торгов" />
+			<CopyField src="|Document|Форма_торгов_код" />
+			<CopyField src="|Document|Проведена_переторжка" />
+			<CopyField src="|Document|Название_закупки" dst="|Document|Название_закупки" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" dst="|Document|Дата_окончания_подачи_заявок" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|Победитель|Победитель" dst="|Document|Победитель|Победитель"/>
+			<CopyField src="|Document|Победитель|Победитель_наименование" dst="|Document|Победитель|Победитель_наименование"/>
+			<CopyField src="|Document|Победитель|Победитель_фирменное_наименование" dst="|Document|Победитель|Победитель_фирменное_наименование"/>
+			<CopyField src="|Document|Номер_закупки" dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|Номер_извещения_на_ЭТП" dst="|Document|Номер_закупки"/>
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			<CopyField src="|Document|Попозиционная_закупка" />
+			<CopyField src="|Document|Коэффициент_снижения" />
+			<SetField dst="|Document|Код_протокола" value="1">
+				<And>
+					<Or>
+						<Or>
+							<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+							<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+						</Or>
+						<And>
+							<WhenParentFieldEquals path="|Document|Статус" value="Прием заявок"  />
+							<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="62"  />
+						</And>
+					</Or>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>                                                                       
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения заявок">
+				<And>
+					<Or>
+						<Or>
+							<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+							<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+						</Or>
+						<And>
+							<WhenParentFieldEquals path="|Document|Статус" value="Прием заявок"  />
+							<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="62"  />
+						</And>
+					</Or>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>					
+				</And>
+			</SetField>
+			<SetField dst="|Document|Код_протокола" value="2">
+				<And>
+					<And>
+						<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />  
+					</And>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>	                                                                      
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Наименование_протокола" value="протокол подведения итогов">
+				<And>
+					<And>
+						<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />   
+					</And>                                                        
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>	                                                                      
+				</And>
+			</SetField>        
+			<SetField dst="|Document|Код_протокола" value="6">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" />                                                                       
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Наименование_протокола" value="протокол подведения итогов предквалификационного отбора">
+				<And>
+					<And>
+						<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора" />   
+					</And>                                                     
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>	                                                                    
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="49">
+				<And>
+					<And>
+						<WhenParentFieldEquals path="|Document|Статус" value="Торги завершены" />    
+					</And>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>	                                                                      
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Наименование_протокола" value="протокол проведения аукциона">
+				<And>
+					<And>
+						<WhenParentFieldEquals path="|Document|Статус" value="Торги завершены" />    
+					</And>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" /> 
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />  
+					</Or>	                                                                       
+				</And>
+			</SetField>
+			<!-- ЗАПРОС ПРЕДЛОЖЕНИЙ МСП -->
+			<SetField dst="|Document|Код_протокола" value="4150">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение первых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4171">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>  
+			<SetField dst="|Document|Код_протокола" value="4171">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField> 
+			<SetField dst="|Document|Код_протокола" value="4270">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                           
+				</And>
+			</SetField>                       
+
+			<!-- ЗАПРОС КОТИРОВОК МСП -->
+			<SetField dst="|Document|Код_протокола" value="4209">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="2" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4249">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="2" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                           
+				</And>
+			</SetField>                       
+
+			<!-- АУКЦИОН МСП -->
+			<SetField dst="|Document|Код_протокола" value="4149">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение первых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4170">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4170">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>        
+			<SetField dst="|Document|Код_протокола" value="4369">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                           
+				</And>
+			</SetField>                       
+
+			<!-- КОНКУРС МСП -->
+			<SetField dst="|Document|Код_протокола" value="4523">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение первых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4111">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4111">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>                       
+			<SetField dst="|Document|Код_протокола" value="4504">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />                                                                                           
+				</And>
+			</SetField>        
+			<!-- Костыльный код протокола квалификационного отбора, на площадке налл -->
+			<SetField dst="|Document|Код_протокола" value="4666">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Квалификационный отбор" />
+					<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+				</And>
+			</SetField>        
+			<SetField dst="|Document|Наименование_протокола" value="Протокол квалификационного отбора">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Квалификационный отбор" />                                                              
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения первых частей заявок">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение первых частей" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+					<Or>
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					</Or>
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения вторых частей заявок">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+					<Or>
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					</Or>
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения единственной заявки">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+					<Or>
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="1" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="3" />
+						<WhenParentFieldEquals path="|Document|Форма_торгов_код" value="4" />
+					</Or>
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения заявок">
+				<And>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+						<WhenParentFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+					</Or>
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" />
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />             
+					</Or>                                                                  
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол подведения итогов">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов" />
+					<Or>
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" />         
+						<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;МСП-ЕЭТП&quot;" />
+					</Or>
+				</And>
+			</SetField>
+			<SetField dst="|Document|Наименование_протокола" value="протокол подведения итогов предквалификационного отбора">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;ЕЭТП&quot;" />                                                           
+				</And>
+			</SetField>
+			<!-- Сбербанк АСТ -->
+			<!-- <SetField dst="|Document|Наименование_протокола" value="Создание этапа/стадии по лоту">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="В процессе проведения" />
+					<WhenParentFieldEquals path="|Document|Наименование_ЭТП" value="АО &quot;Сбербанк - АСТ&quot;" />                                                           
+				</And>
+			</SetField> -->
+			<CreateTable dst="|Document|Заявки_участников" srcDocs="Заявки участников">
+				<Column src="|Document|ИД_на_ЭТП" dst="|ИД_заявки_на_ЭТП" />
+				<Column src="|Document|Номер_заявки" dst="|Номер_заявки" />
+				<Column src="|Document|Участник_заявки_наименование" dst="|Наименование"/>
+				<Column src="|Document|ид_заявки_участника" dst="|ид_заявки_участника" />
+				<Column src="|Document|Окончательная_цена_с_НДС" dst="|Цена_участника_с_НДС" />
+				<Column src="|Document|Окончательная_цена_без_НДС" dst="|Цена_участника_без_НДС" />
+				<Column src="|Document|ЦП_вне_шага_с_НДС" dst="|ЦП_вне_шага_с_НДС" />
+				<Column src="|Document|ЦП_вне_шага_без_НДС" dst="|ЦП_вне_шага_без_НДС" />
+				<Column src="|Document|ЦП_с_НДС" dst="|ЦП_с_НДС" />
+				<Column src="|Document|ЦП_без_НДС" dst="|ЦП_без_НДС" />
+				<Column src="|Document|Процент_снижения_от_НМЦ" dst="|Процент_снижения_от_НМЦ" />
+				<Column src="|Document|НДС" dst="|НДС" />
+				<Column src="|Document|Коэффициент_снижения_цен_без_НДС" dst="|Коэффициент_снижения_цен_без_НДС" />
+				<Column src="|Document|Дата_подачи_ЦП" dst="|Дата_подачи_ЦП" />
+				<Column src="|Document|Результат_допуска_1х_частей" dst="|Результат_допуска_1х_частей" />
+				<Column src="|Document|Результат_допуска_1х_частей_код" dst="|Результат_допуска_1х_частей_код" />
+			</CreateTable>
+			<CreateTable dst="|Document|Позиции" srcTable="|Document|Позиции" srcDocs="ЛОТ">
+				<Column src="|NUM" dst="|NUM" />
+				<Column src="|Наименование_позиции" dst="|Наименование_позиции" />
+				<Column src="|Без_объявления_цены" dst="|Без_объявления_цены" />
+				<Column src="|Цена_за_единицу_без_НДС" dst="|Цена_за_единицу_без_НДС" />
+				<Column src="|Ставка_НДС" dst="|Ставка_НДС" />
+				<Column src="|Цена_за_единицу_с_НДС" dst="|Цена_за_единицу_с_НДС" />
+				<Column src="|Итоговая_цена_без_НДС" dst="|Итоговая_цена_без_НДС" />
+				<Column src="|Итоговая_цена_с_НДС" dst="|Итоговая_цена_с_НДС" />
+				<Column src="|ИД_позиции_на_ЭТП" dst="|ИД_позиции_на_ЭТП" />
+			</CreateTable>
+			<CopyTable dst="|Document|Участники_комиссии" src="|Document|Участники_комиссии" srcDocs="Извещения о закупочной процедуре 223ФЗ"/> 
+			<CopyField dst="|Document|Название_комиссии_код" src="|Document|Название_комиссии_код" srcDocs="Извещения о закупочной процедуре 223ФЗ"/> 
+			<CopyField dst="|Document|Название_комиссии" src="|Document|Название_комиссии" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_код" dst="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Детализация_предложения|Детализация_предложения_код"/>
+			<CopyField src="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_наименование" dst="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Детализация_предложения|Детализация_предложения_наименование"/>
+			<CopyField src="|Document|Сбербанк_АСТ|Текущее_лучшее_предложение_среди_заявок" dst="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Текущее_лучшее_предложение_среди_заявок"/>
+			<CopyField src="|Document|Сбербанк_АСТ|Начальная_цена_этапа" dst="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Начальная_цена_этапа"/>
+		</Actions>         
+
+
+	</FieldsModify>
+
+	<FieldsModify source="Извещения о закупочной процедуре 223ФЗ">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}')]" tag="Заявка на размещение закупки 223ФЗ" /> 
+		</Select> 
+		<Actions>
+			<CopyField src="|Document|Организация_документации|Организация_документации" />
+			<CopyField src="|Document|Организация_документации|Организация_документации_наименование" />
+			<CopyField src="%key%" dst="|Document|ИД_извещения" />
+			<SetField dst="|Document|Имя_потока" value="Протоколы 223ФЗ" />
+			<SetField dst="|Document|Статус" value="Черновик" />
+			<SetField dst="|Document|Создана_из_процедуры" value="1" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />              
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />		
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|ИД_лота" />
+			<CopyField src="|Document|Номер_в_ЕИС"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|Форма_торгов" />
+			<CopyField src="|Document|Форма_торгов_код" />
+			<CopyField src="|Document|Название_закупки" />
+			<CopyField src="|Document|Номер_закупки" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />               
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Дата_окончания_подачи_заявок" />
+			<CopyTable src="|Document|Заказчик_права_таблица" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			<CopyField src="|Document|Попозиционная_закупка" />
+			<CopyField src="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" dst="|Document|Дата_окончания_подачи_заявок" />
+			<CopyTable dst="|Document|Участники_комиссии" src="|Document|Участники_комиссии"  />
+			<CopyField dst="|Document|Название_комиссии_код" src="|Document|Название_комиссии_код"  />
+			<CopyField dst="|Document|Название_комиссии" src="|Document|Название_комиссии"  />
+			<CopyField src="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Адрес_ЭТП" />
+			<CopyField src="|Document|Наименование_ЭТП" dst="|Document|Наименование_ЭТП"/>
+			<CopyField src="|Document|Номер_в_ЕИС" dst="|Document|Номер_закупки"/>
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|Сбербанк_АСТ|Этап_протокола" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дата_и_время_проведения_этапа_процедуры" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Направить_в_ЕИС" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Место_проведения_этапа" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дополнительная_информация" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Тип_протокола" />
+			<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Комментарий_к_описанию_события" />
+			<CopyField src="|Document|Сбербанк_АСТ|Комиссия|Номер_комиссии" />
+			<CopyField src="|Document|Сбербанк_АСТ|Комиссия|Результат_работы_комиссии" />
+			<CreateTable dst="|Document|Лоты" srcDocs="Заявка на размещение закупки 223ФЗ">
+				<Column src="|Document|ИД_на_ЭТП" dst="|ИД_лота_на_ЭТП" />
+				<Column src="|Document|Номер_лота_в_извещении" dst="|Номер_лота_в_извещении" />
+				<Column src="|Document|Предмет_договора" dst="|Предмет_договора" />
+				<Column src="|Document|С_учетом_НДС" dst="|С_учетом_НДС" />
+				<Column src="|Document|Статус" dst="|Статус_лота" />
+			</CreateTable>
+		</Actions>  
+	</FieldsModify>
+
+	<FieldsModify source="Предквалификационный отбор">      
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения') and (not(doc_RegCard/rc_Index/text_Код_протокола = '2') or (doc_RegCard/rc_Index/text_Код_протокола = '2' and not(doc_RegCard/rc_Index/text_Результат_допуска_код = 'F')))]" tag="Заявки участников" />
+		</Select>
+		<Actions>
+			<CopyField src="%key%" dst="|Document|ИД_извещения" />
+			<SetField dst="|Document|Имя_потока" value="Протоколы 223ФЗ" />
+			<SetField dst="|Document|Статус" value="Черновик" />
+			<CopyField src="%key%" dst="|Document|ИД_лота" /> 
+			<CopyField src="|Document|Наименование_процедуры" dst="|Document|Название_закупки" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />              
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|ИД_лота_на_ЭТП" />
+			<CopyField src="|Document|ИД_протокола" dst="|Document|ИД_на_ЭТП" />
+			<CopyField src="|Document|Номер_процедуры"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|ИД_на_ЭТП"  dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Адрес_ЭТП" />
+			<SetField dst="|Document|Наименование_ЭТП" value="АО &quot;РТ-ЕЭТП&quot;" />
+			<SetField dst="|Document|Форма_торгов" value="Предквалификационный отбор" />
+			<SetField dst="|Document|Форма_торгов_код" value="60" />
+			<CreateTable dst="|Document|Заявки_участников_ПКО" srcDocs="Заявки участников">
+				<Column src="|Document|ИД_на_ЭТП" dst="|ИД_заявки_на_ЭТП_ПКО" />
+				<Column src="|Document|Участник_заявки_наименование" dst="|Наименование_ПКО"/>			
+				<Column src="|Document|Номер_заявки" dst="|Номер_заявки" />				
+			</CreateTable>
+			<CopyTable dst="|Document|Участники_комиссии" src="|Document|Участники_комиссии"/> 
+			<CopyField dst="|Document|Название_комиссии_код" src="|Document|Название_комиссии_код"/>
+			<CopyField dst="|Document|Название_комиссии" src="|Document|Название_комиссии"/>
+			<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки" />
+			<SetField dst="|Document|Код_протокола" value="1">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Прием заявок"  />			
+				</And>
+			</SetField> 
+			<SetField dst="|Document|Наименование_протокола" value="протокол рассмотрения заявок">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Прием заявок"  />			
+				</And>
+			</SetField>
+			<SetField dst="|Document|Код_протокола" value="6">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов"  />			
+				</And>
+			</SetField> 
+			<SetField dst="|Document|Наименование_протокола" value="Протокол подведения итогов предквалификационного отбора">
+				<And>
+					<WhenParentFieldEquals path="|Document|Статус" value="Подведение итогов"  />			
+				</And>
+			</SetField>	
+			<CopyField src="|Document|ГРБС|ГРБС" />			
+		</Actions>
+	</FieldsModify>
+	
+	<FieldsModify source="Протоколы 223ФЗ">
+		<CopyField src="|Document|Макс_количество_победителей" />
+		<CopyField src="|Document|Организация_документации|Организация_документации" />
+		<CopyField src="|Document|Организация_документации|Организация_документации_наименование" />
+		<CopyTable src="|Document|Заказчик_права_таблица" />
+		<CopyField src="|Document|ИД_извещения"/>              
+		<CopyField src="|Document|Имя_потока"/>
+		<SetField dst="|Document|Статус" value="Черновик" />
+		<CopyField src="%key%" dst="|Document|ParentRK" /> 
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />              
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" /> 
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+		<CopyField src="|Document|Способ_закупки" />
+		<CopyField src="|Document|Способ_закупки_код"  />
+		<CopyField src="|Document|Название_закупки" />
+		<CopyField src="|Document|Валюта" />
+		<CopyField src="|Document|Цифровой_код_валюты" />
+		<CopyField src="|Document|Код_валюты" />               
+		<CopyField src="|Document|НМЦ_с_НДС" />                                              
+		<CopyField src="|Document|ИД_лота"/>                                      
+		<CopyField src="|Document|ИД_лота_на_ЭТП"/>
+		<CopyField src="|Document|Номер_извещения_в_ЕИС"/>
+		<CopyField src="|Document|ИД_извещения_на_ЭТП"/>
+		<CopyField src="|Document|Год_закупки" />
+		<CopyField src="|Document|ИД_ЭТП"/>
+		<CopyField src="|Document|Адрес_ЭТП" />
+		<CopyField src="|Document|Наименование_ЭТП"/>
+		<CopyField src="|Document|Форма_торгов" />
+		<CopyField src="|Document|Форма_торгов_код" />
+		<CopyField src="|Document|Проведена_переторжка" />
+		<CopyField src="|Document|Название_закупки"/>
+		<CopyField src="|Document|Дата_окончания_подачи_заявок"/>
+		<CopyField src="|Document|Победитель|Победитель"/>
+		<CopyField src="|Document|Победитель|Победитель_наименование"/>
+		<CopyField src="|Document|Победитель|Победитель_фирменное_наименование"/>
+		<CopyField src="|Document|Номер_извещения_в_ЕИС"/>
+		<CopyField src="|Document|Номер_закупки"/>
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Попозиционная_закупка" />
+		<CopyField src="|Document|Код_протокола" />
+		<CopyField src="|Document|Наименование_протокола" />
+		<CopyTable src="|Document|Заявки_участников" />
+		<CopyTable src="|Document|Позиции" />
+		<CopyTable src="|Document|Участники_комиссии"/>
+		<!-- <CopyTable src="|Document|Лоты"/> -->
+		<CopyTable src="|Document|Лоты" dst="|Document|Лоты">
+			<Column src="|ИД_лота_на_ЭТП" dst="|ИД_лота_на_ЭТП"/>
+			<Column src="|Номер_лота_в_извещении" dst="|Номер_лота_в_извещении"/>
+			<Column src="|Предмет_договора" dst="|Предмет_договора"/>
+			<Column src="|С_учетом_НДС" dst="|С_учетом_НДС"/>
+			<Column src="|Статус_лота" dst="|Статус_лота"/>
+		</CopyTable>
+		<CopyField src="|Document|Название_комиссии_код"/> 
+		<CopyField src="|Document|Название_комиссии"/> 			
+		<CopyField src="|Document|Номер_протокола_в_ЕИС"/> 			
+		<CopyField src="|Document|VersionGuid"/>
+		<CopyField src="|Document|Сбербанк_АСТ|Этап_протокола" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дата_и_время_проведения_этапа_процедуры" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Направить_в_ЕИС" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Место_проведения_этапа" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дополнительная_информация" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Тип_протокола" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Комментарий_к_описанию_события" />
+		<CopyField src="|Document|Сбербанк_АСТ|Комиссия|Номер_комиссии" />
+		<CopyField src="|Document|Сбербанк_АСТ|Комиссия|Результат_работы_комиссии" />
+		<CopyField src="|Document|Создана_из_процедуры" />
+		<CopyField src="|Document|Продолжить_рассмотрение_единственной_заявки" />
+	</FieldsModify>
+
+	<OnDocumentCreated transaction="single">
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещения о закупочной процедуре 223ФЗ" />                                                                 
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Позиции плана закупок 223ФЗ" />     
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявки участников" />
+			</Select>
+			<Actions>
+				<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Участники_комиссии" operation="less" value="1" message="Нужно указать хотя бы одного члена Закупочной комиссии" />
+				<CopyField sourceFlow="Извещения о закупочной процедуре 223ФЗ" targetFlow="{current}" targetField="|Document|Номер_закупки" sourceField="|Document|Номер_закупки"/>                          
+				<UpdateDocumentsByRowData>
+					<Table source="{current}" path="|Document|Заявки_участников" />
+					<ForEachRow>
+						<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+						<UpdateRules>
+							<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+							<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+							<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+							<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+							<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+							<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+							<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+							<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+							<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+							<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+							<!-- <UpdateRule field="|Document|Цена_участника_с_НДС" formula="{Цена_участника_с_НДС}" />
+							<UpdateRule field="|Document|Цена_участника_без_НДС" formula="{Цена_участника_без_НДС}" /> -->
+							<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+							<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+						</UpdateRules>
+					</ForEachRow>
+				</UpdateDocumentsByRowData>
+				<UpdateDocumentsByRowData>
+					<Table source="{current}" path="|Document|Заявки_участников_ПКО" />
+					<ForEachRow>
+						<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП_ПКО}')]" />
+						<UpdateRules>
+							<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска_ПКО}" />
+							<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код_ПКО}" />
+							<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки_ПКО}" />
+							<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения_ПКО}" />
+						</UpdateRules>
+					</ForEachRow>
+				</UpdateDocumentsByRowData>
+			</Actions>
+
+			<!-- Количество для печатных форм -->
+			<CalculateExpression targetFlow="{current}" targetField="|Document|Количество_поданных_заявок">
+				<Variables>                          
+					<Variable name="Количество" source="{current}" path="|Document|Заявки_участников" isTable="true" tableColumn="ИД_заявки_на_ЭТП" aggregation="count"/>                          
+				</Variables>
+				<Expression value="$NullToZero({Количество})"/>
+			</CalculateExpression>               
+
+			<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок_1х_частей" value="0" />           
+			<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок_1х_частей" value="0" />                                                                                        
+			<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок_2х_частей" value="0" />           
+			<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок_2х_частей" value="0" />                                                                                        
+			<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок" value="0" />    
+			<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок" value="0" />   
+
+			<TableFieldOperations sourceTag="{current}" targetTag="{current}" documentFieldsIsTarget="true" >
+				<SourceTable tableName="|Document|Заявки_участников">              
+					<Column name="Результат_допуска_1х_частей_код"  />
+					<Column name="Результат_допуска_2х_частей_код"  />                                                                                                    
+					<Column name="Результат_допуска_код" />
+					<Column name="Место_заявки" />
+				</SourceTable>                                                                             
+
+				<Action column="|Document|Количество_допущенных_заявок_1х_частей" formula="{fieldTarget=|Document|Количество_допущенных_заявок_1х_частей}+ iif({sourceTableColumn=Результат_допуска_1х_частей_код}==&quot;T&quot;, 1, 0)" />
+				<Action column="|Document|Количество_отклоненных_заявок_1х_частей" formula="{fieldTarget=|Document|Количество_отклоненных_заявок_1х_частей}+ iif({sourceTableColumn=Результат_допуска_1х_частей_код}==&quot;F&quot;, 1, 0)" />
+				<Action column="|Document|Количество_допущенных_заявок_2х_частей" formula="{fieldTarget=|Document|Количество_допущенных_заявок_2х_частей}+ iif({sourceTableColumn=Результат_допуска_2х_частей_код}==&quot;T&quot;, 1, 0)" />
+				<Action column="|Document|Количество_отклоненных_заявок_2х_частей" formula="{fieldTarget=|Document|Количество_отклоненных_заявок_2х_частей}+ iif({sourceTableColumn=Результат_допуска_2х_частей_код}==&quot;F&quot;, 1, 0)" />                                      
+				<Action column="|Document|Количество_допущенных_заявок" formula="{fieldTarget=|Document|Количество_допущенных_заявок}+ iif({sourceTableColumn=Результат_допуска_код}==&quot;T&quot; or ({sourceTableColumn=Место_заявки}!=&quot;Место не присвоено&quot; and {sourceTableColumn=Место_заявки}!=null) , 1, 0 )" />                                                                                                             
+				<Action column="|Document|Количество_отклоненных_заявок" formula="{fieldTarget=|Document|Количество_отклоненных_заявок}+ iif({sourceTableColumn=Результат_допуска_код}==&quot;F&quot; or {sourceTableColumn=Место_заявки}==&quot;Место не присвоено&quot;, 1, 0)" />                                                                                                                                            
+			</TableFieldOperations>            
+
+			<!-- Количество для печатных форм -->                                                          
+
+		</Aggregation>
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="parent" /> 
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id])]" tag="Заявки_участников_223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ' and doc_RegCard/rc_Index/integer_ИД_лота= '{NullToZero({currentDocField=|Document|ИД_лота})}' and doc_RegCard/rc_Index/text_Код_протокола = '{currentDocField=|Document|Код_протокола}' and doc_Id != '{current_Id}']" tag="Версии_протоколов" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id = document[doc_Links/doc_Link/link_Document={parent}/doc_Id] and doc_RegCard/rc_Index/boolean_Квалификационный_отбор='0' and doc_RegCard/rc_Index/boolean_Проведена_переторжка='{currentDocField=|Document|Проведена_переторжка}' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="ЗУ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="RFI_applic" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="ЗУК" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ'  and doc_Id = document[doc_Links/doc_Link/link_Document={parent}/doc_Id] and doc_RegCard/rc_Index/boolean_Квалификационный_отбор='0' and doc_RegCard/rc_Index/boolean_Проведена_переторжка='{currentDocField=|Document|Проведена_переторжка}' and (doc_RegCard/rc_Index/text_Результат_допуска_код = 'F' or doc_RegCard/rc_Index/text_Результат_допуска = 'Предложение в аукционе не подавалось' or doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения' or doc_RegCard/rc_Index/boolean_Не_подано_ценовое_предложение = 1 or not(doc_RegCard/rc_Index/text_Номер_заявки)) and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="ЗУ_Не_допущен" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and (doc_RegCard/rc_Index/text_Результат_допуска_код = 'F' or doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения') and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}' and doc_RegCard/rc_Index/text_ИД_извещения_на_ЭТП = '{currentDocField=|Document|ИД_извещения_на_ЭТП}']" tag="ЗУ_ПКО_Не_допущен" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id = document[doc_Links/doc_Link/link_Document={parent}/doc_Id] and doc_RegCard/rc_Index/boolean_Квалификационный_отбор='0' and doc_RegCard/rc_Index/boolean_Проведена_переторжка='{currentDocField=|Document|Проведена_переторжка}' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}' and doc_RegCard/rc_Index/integer_Номер_переторжки={max(Заявки_участников_223ФЗ/Document/Номер_переторжки)}]" tag="ЗУП" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ'  and doc_Id = document[doc_Links/doc_Link/link_Document={parent}/doc_Id] and doc_RegCard/rc_Index/boolean_Квалификационный_отбор='0' and doc_RegCard/rc_Index/boolean_Проведена_переторжка='{currentDocField=|Document|Проведена_переторжка}' and (doc_RegCard/rc_Index/text_Результат_допуска_код = 'F' or doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения' or doc_RegCard/rc_Index/boolean_Не_подано_ценовое_предложение = 1) and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}' and doc_RegCard/rc_Index/integer_Номер_переторжки={max(Заявки_участников_223ФЗ/Document/Номер_переторжки)}]" tag="ЗУП_Не_допущен" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ'  and not(doc_RegCard/rc_Index/text_Номер_заявки)]" tag="ЗУ_баг" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ' and doc_Id = '{NullToZero({currentDocField=|Document|ParentRK})}']" tag="ParentRK" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Переторжки' and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id])]" tag="ПереторжкиВсе" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Переторжки' and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id]) and doc_RegCard/rc_Index/integer_Номер_переторжки={max(ПереторжкиВсе/Document/Номер_переторжки)}]" tag="ПереторжкиМакс" />
+			</Select>
+			<Actions>
+				<ConditionalAction>                                     
+					<Conditions>
+						<And>                                                                                                                               
+							<WhenDocsExist tag="ПереторжкиВсе"/>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField  sourceFlow='ПереторжкиМакс' targetFlow="{current}" sourceField="|Document|Номер_переторжки" targetField="|Document|Номер_переторжки" />                        
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>
+						<And>                                                                                                                               
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" />
+						</And>
+					</Conditions>
+					<Actions>
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_Номер_заявки, '{Номер_заявки}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<!-- <UpdateRule field="|Document|Цена_участника_с_НДС" formula="{Цена_участника_с_НДС}" />
+									<UpdateRule field="|Document|Цена_участника_без_НДС" formula="{Цена_участника_без_НДС}" /> -->
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>                           
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                 
+						<And>                                                                                                                
+							<WhenDocsExist tag="ЗУ_баг"/>						
+						</And>
+					</Conditions>
+					<Actions> 
+						<LinksRemove sourceFlow="{current}" targetFlow="ЗУ_баг" />           
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals  tag="{current}" path="|Document|Статус" value="Черновик" />
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField  sourceFlow='{current}' targetFlow="{current}" sourceField="%key%" targetField="|Document|Внутренний_номер" />
+						<CalculateExpression targetFlow="{current}" targetField="|Document|Внутренний_номер">
+							<Variables>
+								<Variable name="Наименование" source="{current}" path="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+								<Variable name="Ключ" source="{current}" path="|Document|Внутренний_номер" />
+								<Variable name="Год закупки" source="{current}" path="|Document|Год_закупки" />
+							</Variables>
+							<Expression value="{Наименование} + &quot; &quot; + &quot;{Год закупки}&quot; + &quot; &quot; + {Ключ} + &quot; Протокол&quot;"/>
+						</CalculateExpression>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction> 
+					<Conditions>
+						<And>
+							<WhenFieldsEquals  tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+					</Actions>
+				</ConditionalAction>
+				<!-- Гуид версии -->
+				<ConditionalAction> 
+					<Conditions>
+						<And>
+							<WhenFieldsEquals  tag="{current}" path="|Document|VersionGuid" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|VersionGuid" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions><!-- В этом блоке не уверен, какие МСПшные протоколы добавлять всегда, а какие в зависимости от переторжки -->
+						<Or>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="1" />      
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" /> 
+								<WhenFieldsNotEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="49" />      
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4149" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4170" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4523" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4111" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4209" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4150" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4171" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4369" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4249" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4270" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4504" />
+							</And>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4666" />
+							</And>
+						</Or>
+					</Conditions>
+					<Actions>
+						<AddLink target="{current}" link="ЗУ"/> 
+						<CopyField  targetFlow="ЗУ" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+						<ClearTable source="ЗУ" tablePath="|Document|Выбор_комиссии"/>
+						<TableFieldOperations sourceTag="{current}" targetTag="ЗУ" targetTable="|Document|Выбор_комиссии">
+							<SourceTable  tableName="|Document|Участники_комиссии">
+								<Column name="Участник_комиссии"/>
+								<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+								<Column name="ФИО_комиссии|Имя_комиссии" />
+								<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                      
+								<Column name="Присутствие" />
+							</SourceTable>
+							<CreateTargetRows>
+								<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+							</CreateTargetRows>
+							<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+							<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+							<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+							<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+						</TableFieldOperations>                            
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>
+						<And>                                                                                                                               
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" />                                                                                                                                     
+							<WhenFieldsEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<AddLink target="{current}" link="ЗУП"/> 
+						<CopyField  targetFlow="ЗУП" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+						<ClearTable source="ЗУП" tablePath="|Document|Выбор_комиссии"/>
+						<TableFieldOperations sourceTag="{current}" targetTag="ЗУП" targetTable="|Document|Выбор_комиссии">
+							<SourceTable  tableName="|Document|Участники_комиссии">
+								<Column name="Участник_комиссии"/>
+								<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+								<Column name="ФИО_комиссии|Имя_комиссии" />
+								<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                      
+								<Column name="Присутствие" />
+							</SourceTable>
+							<CreateTargetRows>
+								<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+							</CreateTargetRows>
+							<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+							<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+							<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+							<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+						</TableFieldOperations>                            
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<!-- <Or>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" /> 
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4369" />
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4249" />
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4270" />
+							</Or> -->
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Изменения" value="1" />
+							<WhenDocsExist tag="ЗУ_Не_допущен"/>
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<LinksRemove sourceFlow="{current}" targetFlow="ЗУ_Не_допущен" />                                                                                                       
+					</Actions>
+				</ConditionalAction>				
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                                                                                              
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" />
+							<WhenFieldsEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Изменения" value="1" />
+							<WhenDocsExist tag="ЗУП_Не_допущен"/>
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<LinksRemove sourceFlow="{current}" targetFlow="ЗУП_Не_допущен" />                                                                                                    
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<Or>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" /> 
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4369" />
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4249" />
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4270" />
+							</Or>
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<TableConsolidation>
+							<SourceTable flow="Заявка на размещение закупки 223ФЗ" tableName="|Document|Критерии_оценки">
+								<Column name="Ид_критерия" />
+								<Column name="Наименование_критерия" />
+								<Column name="Описание_критерия" />
+								<Column name="Макс_критерий" />
+								<Column name="Вес_критерий" />
+							</SourceTable>
+							<TargetTable flow="ЗУ" tableName="|Document|Критерии_оценки">
+								<Column name="ИД_критерия" findExisting="true"/>
+								<Column name="Наименование_критерия"/> 
+								<Column name="Описание_критерия" />
+								<Column name="Макс_критерий" /> 
+								<Column name="Вес_критерий" />
+							</TargetTable>
+						</TableConsolidation>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" />
+							<WhenFieldsEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<TableConsolidation>
+							<SourceTable flow="Заявка на размещение закупки 223ФЗ" tableName="|Document|Критерии_оценки">
+								<Column name="Ид_критерия" />
+								<Column name="Наименование_критерия" />
+								<Column name="Описание_критерия" />
+								<Column name="Макс_критерий" />
+								<Column name="Вес_критерий" />
+							</SourceTable>
+							<TargetTable flow="ЗУП" tableName="|Document|Критерии_оценки">
+								<Column name="ИД_критерия" findExisting="true"/>
+								<Column name="Наименование_критерия"/> 
+								<Column name="Описание_критерия" />
+								<Column name="Макс_критерий" /> 
+								<Column name="Вес_критерий" />
+							</TargetTable>
+						</TableConsolidation>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" /> 
+							<WhenDocsExist tag="ЗУК"/>
+						</And>
+					</Conditions>
+					<Actions>           
+						<AddLink target="{current}" link="ЗУК"/> 
+						<CopyField  targetFlow="ЗУК" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+						<TableFieldOperations sourceTag="{current}" targetTag="ЗУК" targetTable="|Document|Выбор_комиссии">
+							<SourceTable  tableName="|Document|Участники_комиссии">
+								<Column name="Участник_комиссии"/>
+								<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+								<Column name="ФИО_комиссии|Имя_комиссии" />
+								<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                      
+								<Column name="Присутствие" />
+							</SourceTable>
+							<CreateTargetRows>
+								<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+							</CreateTargetRows>
+							<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+							<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+							<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+							<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+						</TableFieldOperations>                                                                                                          
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" /> 
+							<WhenDocsExist tag="RFI_applic"/>
+						</And>
+					</Conditions>
+					<Actions>           
+						<AddLink target="{current}" link="RFI_applic"/> 
+						<CopyField  targetFlow="RFI_applic" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+						<TableFieldOperations sourceTag="{current}" targetTag="RFI_applic" targetTable="|Document|Выбор_комиссии">
+							<SourceTable  tableName="|Document|Участники_комиссии">
+								<Column name="Участник_комиссии"/>
+								<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+								<Column name="ФИО_комиссии|Имя_комиссии" />
+								<Column name="ФИО_комиссии|Отчество_комиссии" />
+							</SourceTable>
+							<CreateTargetRows>
+								<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}"/>
+							</CreateTargetRows>
+							<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+							<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+							<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+							<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+						</TableFieldOperations>                                                                                                          
+					</Actions>
+				</ConditionalAction>
+				<!-- Удаляю линки с недопущенными заявками у предквалификационного отбора при на подведении итогов. При рассомтрении могут быть несколько протоколов рассмотрения -->
+				<ConditionalAction>                                     
+					<Conditions>                                                                                            
+						<And>                                                                                                                
+							<WhenDocsExist tag="ЗУ_ПКО_Не_допущен"/>
+							<WhenFieldsEquals tag="{current}" path="|Document|Форма_торгов_код" value="60" /> 
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<LinksRemove sourceFlow="{current}" targetFlow="ЗУ_ПКО_Не_допущен" />                                                                                                       
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<WhenFieldsEquals tag="{current}" path="|Document|Изменения" value="1" />
+							<WhenDocsExist tag="Версии_протоколов"/>
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<AddLink target="{current}" link="Версии_протоколов"/> 						
+					</Actions>
+				</ConditionalAction>
+				
+				<!-- СберАСТ при создании протоколов с процедуры -->
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<!-- Признак того, что протокол создан из извещения -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Создана_из_процедуры" value="1" />
+							<!-- Площадка Сбер-АСТ-->
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ЭТП" value="2" />
+							<!--НЕ Протокол подведения итогов -->
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Код_протокола" value="ancorResultProtocol" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты|{all}|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>					
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>
+							<!-- Признак того, что протокол создан из извещения -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Создана_из_процедуры" value="1" />
+							<!-- Площадка Сбер-АСТ-->
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ЭТП" value="2" />
+							<!-- Протокол подведения итогов -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="ancorResultProtocol" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты|{all}|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+									<UpdateRule field="|Document|Сбербанк_АСТ|Заключить_договор" formula="{Заключить_договор}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>
+						<!-- Копирую признак договор заключается на лоты -->
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_лота_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" formula="{Лот_договор_заключается}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>	
+						<!-- Копирую признак договор заключается на процедуру -->
+						<CopyField sourceFlow="{current}" targetFlow="parent" sourceField="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" targetField="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" />
+					</Actions>
+				</ConditionalAction>
+				<!-- Новая версия протокола -->
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Изменения" value="1" />
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер АСТ -->
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="ParentRK" targetFlow="{current}" sourceField="|Document|ИД_на_ЭТП" targetField="|Document|ИД_на_ЭТП" />
+					</Actions>
+				</ConditionalAction>
+			</Actions>
+		</ConditionalActions>
+		<NamedConstants>                      
+			<Constant>
+				<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+				<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|VersionGuid})"/>
+			</Constant>                                     
+		</NamedConstants> 
+
+
+	</OnDocumentCreated>
+
+	<OnRegcardEdited transaction="single"> 
+		<Aggregation>
+			<Select>                                             
+
+				<!-- <Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Позиции плана закупок 223ФЗ" /> -->              
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявки участников" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявки участников ПКО" />
+			</Select>
+			<Actions>
+				<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Участники_комиссии" operation="less" value="1" message="Нужно указать хотя бы одного члена Закупочной комиссии" />
+				<UpdateDocumentsByRowData>
+					<Table source="{current}" path="|Document|Заявки_участников" />
+					<ForEachRow>
+						<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+						<UpdateRules>
+							<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+							<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+							<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+							<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+							<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+							<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+							<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+							<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+							<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+							<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+							<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+							<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+						</UpdateRules>
+					</ForEachRow>
+				</UpdateDocumentsByRowData>
+				<UpdateDocumentsByRowData>
+					<Table source="{current}" path="|Document|Заявки_участников_ПКО" />
+					<ForEachRow>
+						<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП_ПКО}')]" />
+						<UpdateRules>
+							<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска_ПКО}" />
+							<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код_ПКО}" />
+							<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки_ПКО}" />
+							<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения_ПКО}" />
+						</UpdateRules>
+					</ForEachRow>
+				</UpdateDocumentsByRowData>
+				<SetField targetFlow="{current}" targetField="|Document|Количество_присутствующих_членов_комиссии" value="0"/>                                   
+				<TableFieldOperations sourceTag="{current}" targetTag="{current}" documentFieldsIsTarget="true" targetRowFilter="{sourceTableColumn=Присутствие}=1">
+					<SourceTable  tableName="|Document|Участники_комиссии">
+						<Column name="Присутствие" />                        
+					</SourceTable>
+					<Action column="|Document|Количество_присутствующих_членов_комиссии" formula="$NullToZero({fieldTarget=|Document|Количество_присутствующих_членов_комиссии})+1" />                
+				</TableFieldOperations>            
+				<ClearTable source="Заявки участников" tablePath="|Document|Выбор_комиссии"/>
+				<TableFieldOperations sourceTag="{current}" targetTag="Заявки участников" targetTable="|Document|Выбор_комиссии">
+					<SourceTable  tableName="|Document|Участники_комиссии">
+						<Column name="Участник_комиссии"/>
+						<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+						<Column name="ФИО_комиссии|Имя_комиссии" />
+						<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                   
+						<Column name="Присутствие" />
+					</SourceTable>
+					<CreateTargetRows>
+						<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+					</CreateTargetRows>
+					<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+					<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+					<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+					<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+				</TableFieldOperations>            
+
+				<!-- Количество для печатных форм -->
+				<CalculateExpression targetFlow="{current}" targetField="|Document|Количество_поданных_заявок">
+					<Variables>                          
+						<Variable name="Количество" source="{current}" path="|Document|Заявки_участников" isTable="true" tableColumn="ИД_заявки_на_ЭТП" aggregation="count"/>                          
+					</Variables>
+					<Expression value="$NullToZero({Количество})"/>
+				</CalculateExpression>               
+
+				<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок_1х_частей" value="0" />           
+				<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок_1х_частей" value="0" />                                                                                        
+				<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок_2х_частей" value="0" />           
+				<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок_2х_частей" value="0" />                                                                                        
+				<SetField targetFlow="{current}" targetField="|Document|Количество_допущенных_заявок" value="0" />    
+				<SetField targetFlow="{current}" targetField="|Document|Количество_отклоненных_заявок" value="0" />   
+
+				<TableFieldOperations sourceTag="{current}" targetTag="{current}" documentFieldsIsTarget="true" >
+					<SourceTable tableName="|Document|Заявки_участников">              
+						<Column name="Результат_допуска_1х_частей_код"  />
+						<Column name="Результат_допуска_2х_частей_код"  />                                                                                                    
+						<Column name="Результат_допуска_код" />
+						<Column name="Место_заявки" />
+					</SourceTable>                                                                             
+
+					<Action column="|Document|Количество_допущенных_заявок_1х_частей" formula="{fieldTarget=|Document|Количество_допущенных_заявок_1х_частей}+ iif({sourceTableColumn=Результат_допуска_1х_частей_код}==&quot;T&quot;, 1, 0)" />
+					<Action column="|Document|Количество_отклоненных_заявок_1х_частей" formula="{fieldTarget=|Document|Количество_отклоненных_заявок_1х_частей}+ iif({sourceTableColumn=Результат_допуска_1х_частей_код}==&quot;F&quot;, 1, 0)" />
+					<Action column="|Document|Количество_допущенных_заявок_2х_частей" formula="{fieldTarget=|Document|Количество_допущенных_заявок_2х_частей}+ iif({sourceTableColumn=Результат_допуска_2х_частей_код}==&quot;T&quot;, 1, 0)" />
+					<Action column="|Document|Количество_отклоненных_заявок_2х_частей" formula="{fieldTarget=|Document|Количество_отклоненных_заявок_2х_частей}+ iif({sourceTableColumn=Результат_допуска_2х_частей_код}==&quot;F&quot;, 1, 0)" />                                      
+					<Action column="|Document|Количество_допущенных_заявок" formula="{fieldTarget=|Document|Количество_допущенных_заявок}+ iif({sourceTableColumn=Результат_допуска_код}==&quot;T&quot; or ({sourceTableColumn=Место_заявки}!=&quot;Место не присвоено&quot; and {sourceTableColumn=Место_заявки}!=null) , 1, 0 )" />                                                                                                             
+					<Action column="|Document|Количество_отклоненных_заявок" formula="{fieldTarget=|Document|Количество_отклоненных_заявок}+ iif({sourceTableColumn=Результат_допуска_код}==&quot;F&quot; or {sourceTableColumn=Место_заявки}==&quot;Место не присвоено&quot;, 1, 0)" />                                                                                                                                            
+				</TableFieldOperations>            
+
+				<!-- Количество для печатных форм -->           
+
+
+			</Actions>
+		</Aggregation>
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="parent" /> 
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id = document[doc_Links/doc_Link/link_Document={parent}/doc_Id] and doc_RegCard/rc_Index/boolean_Квалификационный_отбор='0' and doc_RegCard/rc_Index/boolean_Проведена_переторжка='{currentDocField=|Document|Проведена_переторжка}' and  doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}' and not(doc_RegCard/rc_Index/text_Результат_допуска_код = 'F') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения') and not(doc_RegCard/rc_Index/boolean_Не_подано_ценовое_предложение = 1)]" tag="ЗУ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Переторжки' and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id])]" tag="ПереторжкиВсе" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Переторжки' and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id]) and doc_RegCard/rc_Index/integer_Номер_переторжки={max(ПереторжкиВсе/Document/Номер_переторжки)}]" tag="ПереторжкиМакс" />
+			</Select>            
+			<Actions>
+				<ConditionalAction>                                     
+					<Conditions>
+						<And>                                                                                                                               
+							<WhenDocsExist tag="ПереторжкиВсе"/>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField  sourceFlow='ПереторжкиМакс' targetFlow="{current}" sourceField="|Document|Номер_переторжки" targetField="|Document|Номер_переторжки" />                        
+					</Actions>
+				</ConditionalAction>
+				
+				<ConditionalAction>                                     
+					<Conditions>
+						<And>                                                                                                                               
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" />
+						</And>
+					</Conditions>
+					<Actions>
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_Номер_заявки, '{Номер_заявки}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<!-- <UpdateRule field="|Document|Цена_участника_с_НДС" formula="{Цена_участника_с_НДС}" />
+									<UpdateRule field="|Document|Цена_участника_без_НДС" formula="{Цена_участника_без_НДС}" /> -->
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>                           
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                 
+						<And>                                                                                                                
+							<WhenFieldsEquals tag="{current}" path="|Document|Статус" value="На согласовании закупочной комиссии" />
+							<WhenFieldsEquals tag="{current}" path="|Document|За" value="1" /> 							
+						</And>
+					</Conditions>
+					<Actions> 
+						<CalculateExpression targetFlow="{current}" targetField="|Document|Количество_За">
+							<Variables>
+								<Variable name="Количество_За" source="{current}" path="|Document|Количество_За" />
+								<Variable name="За" source="{current}" path="|Document|За" />
+							</Variables>
+							<Expression value="$NullToZero({Количество_За}) + {За}"/>
+						</CalculateExpression>
+						<SetField targetFlow="{current}" targetField="|Document|За" value="0"/>            
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                 
+						<And>                                                                                                                
+							<WhenFormula param-someParam1="{current}|Document|Количество_членов" param-someParam2="{current}|Document|Количество_За" formula="$NullToZero({someParam2}) > ($NullToZero({someParam1})+0.00)/3*2"/>
+							<WhenFieldsEquals tag="{current}" path="|Document|Статус" value="На согласовании закупочной комиссии" /> 
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<SetField targetFlow="{current}" targetField="|Document|Кворум_собран" value="1"/>            
+					</Actions>
+				</ConditionalAction>
+			  <ConditionalAction>                                     
+				<Conditions><!-- В этом блоке не уверен, какие МСПшные протоколы добавлять всегда, а какие в зависимости от переторжки -->                              
+					<Or>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="1" />      
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" /> 
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="49" />      
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4149" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4170" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4523" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4111" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4209" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4150" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4171" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4369" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4249" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4270" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4504" />
+						</And>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="4666" />
+						</And>
+					</Or>
+				</Conditions>
+				<Actions>
+					<AddLink target="{current}" link="ЗУ"/> 
+					<CopyField  targetFlow="ЗУ" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+					<ClearTable source="ЗУ" tablePath="|Document|Выбор_комиссии"/>
+					<TableFieldOperations sourceTag="{current}" targetTag="ЗУ" targetTable="|Document|Выбор_комиссии">
+						<SourceTable  tableName="|Document|Участники_комиссии">
+							<Column name="Участник_комиссии"/>
+							<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+							<Column name="ФИО_комиссии|Имя_комиссии" />
+							<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                      
+							<Column name="Присутствие" />
+						</SourceTable>
+						<CreateTargetRows>
+							<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+						</CreateTargetRows>
+						<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+						<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+						<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+						<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+					</TableFieldOperations>                            
+				</Actions>
+			  </ConditionalAction>
+			  <ConditionalAction>                                     
+				<Conditions>                                                                                                  
+					<And>                                                                                                                
+						<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2" /> 
+						<WhenFieldsNotEquals tag="{current}" path="|Document|Проведена_переторжка" value="1" />
+					</And>
+				</Conditions>
+				<Actions>                                                                                                                         
+					<TableConsolidation>
+						<SourceTable flow="Заявка на размещение закупки 223ФЗ" tableName="|Document|Критерии_оценки">
+							<Column name="Ид_критерия" />
+							<Column name="Наименование_критерия" />
+							<Column name="Описание_критерия" />
+							<Column name="Макс_критерий" />
+							<Column name="Вес_критерий" />
+						</SourceTable>
+						<TargetTable flow="ЗУ" tableName="|Document|Критерии_оценки">
+							<Column name="ИД_критерия" findExisting="true"/>
+							<Column name="Наименование_критерия"/> 
+							<Column name="Описание_критерия" />
+							<Column name="Макс_критерий" /> 
+							<Column name="Вес_критерий" />
+						</TargetTable>
+					</TableConsolidation>
+				</Actions>
+			  </ConditionalAction>
+			  
+			 <!-- СберАСТ при создании протоколов с процедуры -->
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>                                                                                                                
+							<!-- Признак того, что протокол создан из извещения -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Создана_из_процедуры" value="1" />
+							<!-- Площадка Сбер-АСТ-->
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ЭТП" value="2" />
+							<!--НЕ Протокол подведения итогов -->
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Код_протокола" value="ancorResultProtocol" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты|{all}|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>					
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>                                     
+					<Conditions>                                                                                                  
+						<And>
+							<!-- Признак того, что протокол создан из извещения -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Создана_из_процедуры" value="1" />
+							<!-- Площадка Сбер-АСТ-->
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ЭТП" value="2" />
+							<!-- Протокол подведения итогов -->
+							<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="ancorResultProtocol" />
+						</And>
+					</Conditions>
+					<Actions>                                                                                                                         
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты|{all}|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей" formula="{Результат_допуска_1х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_1х_частей_код" formula="{Результат_допуска_1х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей" formula="{Результат_допуска_2х_частей}" />
+									<UpdateRule field="|Document|Результат_допуска_2х_частей_код" formula="{Результат_допуска_2х_частей_код}" />
+									<UpdateRule field="|Document|Результат_допуска_квал" formula="{Результат_допуска_квал}" />
+									<UpdateRule field="|Document|Результат_допуска_квал_код" formula="{Результат_допуска_квал_код}" />
+									<UpdateRule field="|Document|Место_заявки_по_цене" formula="{Место_заявки}" />
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске_код" formula="{Причина_отказа_в_допуске_код}" />
+									<UpdateRule field="|Document|Причина_отказа_в_допуске" formula="{Причина_отказа_в_допуске}" />
+									<UpdateRule field="|Document|Сбербанк_АСТ|Заключить_договор" formula="{Заключить_договор}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>
+						<!-- Копирую признак договор заключается на лоты -->
+						<UpdateDocumentsByRowData>
+							<Table source="{current}" path="|Document|Лоты" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_лота_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" formula="{Лот_договор_заключается}" />
+								</UpdateRules>
+							</ForEachRow>
+						</UpdateDocumentsByRowData>	
+						<!-- Копирую признак договор заключается на процедуру -->
+						<CopyField sourceFlow="{current}" targetFlow="parent" sourceField="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" targetField="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" />
+					</Actions>
+				</ConditionalAction>
+		  </Actions>
+	  </ConditionalActions>
+	  <ConditionalActions>
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Предквалификационный отбор' and xn-in(doc_Id, {currentDocLinkList})]" tag="PKO" />
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников ПКО' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}' and not(doc_RegCard/rc_Index/text_Результат_допуска_код = 'F') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения')]" tag="ЗУК" />
+		</Select>
+		<Actions>
+			<ConditionalAction>                                     
+				<Conditions>                                                                                                  
+					<And>                                                                                                                
+						<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="6" /> 
+						<WhenDocsExist tag="ЗУК"/>
+					</And>
+				</Conditions>
+				<Actions>           
+					<AddLink target="{current}" link="ЗУК"/> 
+					<CopyField  targetFlow="ЗУК" sourceFlow="{current}" sourceField="|Document|Код_протокола" targetField="|Document|Код_протокола" /> 
+					<TableFieldOperations sourceTag="{current}" targetTag="ЗУК" targetTable="|Document|Выбор_комиссии">
+						<SourceTable  tableName="|Document|Участники_комиссии">
+							<Column name="Участник_комиссии"/>
+							<Column name="ФИО_комиссии|Фамилия_комиссии" />  
+							<Column name="ФИО_комиссии|Имя_комиссии" />
+							<Column name="ФИО_комиссии|Отчество_комиссии" />                                                                                      
+							<Column name="Присутствие" />
+						</SourceTable>
+						<CreateTargetRows>
+							<Table name="|Document|Выбор_комиссии" filterForUpdate="{ИД_члена_комиссии}={sourceTableColumn=Участник_комиссии}" filterForCreate="{sourceTableColumn=Присутствие}=1"/>
+						</CreateTargetRows>
+						<Action column="ИД_члена_комиссии" formula="{sourceTableColumn=Участник_комиссии}"/> 
+						<Action column="Фамилия" formula="{sourceTableColumn=ФИО_комиссии|Фамилия_комиссии}"/> 
+						<Action column="Имя" formula="{sourceTableColumn=ФИО_комиссии|Имя_комиссии}"/> 
+						<Action column="Отчество" formula="{sourceTableColumn=ФИО_комиссии|Отчество_комиссии}"/>  
+					</TableFieldOperations>                                                                                                          
+				</Actions>
+			</ConditionalAction>                                   
+		</Actions>
+	  </ConditionalActions>
+  </OnRegcardEdited>
+</Hooks>

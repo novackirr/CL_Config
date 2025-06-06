@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Черновик')" />
+	</search> 
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

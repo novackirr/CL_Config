@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="Potok1" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" allow-create-excel="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="4"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_создания" name="Дата создания" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_создания" weight="6" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Редакция" weight="7" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/integer_Статус" weight="8" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ФИО_ответственного" name="ФИО ответственного" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_ФИО_ответственного" weight="8" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Дополнительная_информация" name="Дополнительная информация" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Дополнительная_информация" weight="8" isOptional="true"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Логическое_поле_1" name="Логическое поле 1" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Логическое_поле_1"  weight="2" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Стоимость" name="Стоимость" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Стоимость" weight="7" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Налог" name="Налог, %" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Налог" weight="7" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Числовое_поле_4" name="Числовое поле 4" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Числовое_поле_4" weight="4" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Логическое_поле_2" name="Логическое поле 2" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Логическое_поле_2"  weight="2" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Логическое_поле_3" name="Логическое поле 3" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Логическое_поле_3"  weight="2" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Текстовое_поле_5" name="Текстовое поле 5" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Текстовое_поле_5" weight="4" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_3" name="Дата 3" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_3" weight="7" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Категория" name="Категория" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Категория" weight="8" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Комментарий" name="Комментарий" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Комментарий" weight="6" isOptional="true"  />
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

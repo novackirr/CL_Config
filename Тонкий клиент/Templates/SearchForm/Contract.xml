@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Номер контракт" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_контракт" name="Номер контракт" valueType="text" isValue="true" edit-name="regNum" />
+				</column>
+				
+			</row>
+			
+			
+			
+			<row>
+				<column>
+					<field name="Дата заключения договора" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения"  valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+								</column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_заключения" name="по" valueType="date" isValue="true" edit-name="publicDateTo" />
+								
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row>
+			
+			
+			<row>
+				<column>
+					<field name="Цена контракта, руб." isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Цена_контракта" name="Цена контракта с НДС" valueType="money" isValue="true"  edit-name="sumFrom" weight="300"/>
+								</column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Цена_контракта" name="до" valueType="money" isValue="true" edit-name="sumTo"  />
+								
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row>
+
+<row>
+				<column>
+					<field name="Дата начала исполнения" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_начала_исполнения_контракта" name="Дата начала исполнения" valueType="date" isValue="true"  edit-name="startDateFrom" weight="300"/></column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_начала_исполнения_контракта" name="по" valueType="date" isValue="true" edit-name="startDateTo"  />
+								
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row>
+		<row>
+				<column>
+					<field name="Дата окончания исполнения" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_окончания_исполнения_контракта" name="Дата окончания исполнения" valueType="date" isValue="true"  edit-name="finishDateFrom" weight="300"/>
+					</column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_окончания_исполнения_контракта" name="по" valueType="date" isValue="true" edit-name="finishDateTo"  />
+			
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row>
+		
+
+
+	</rows>
+</edit>	 
+<search>
+	<field fieldValue="(doc_RegCard/rc_FlowName = 'Контракты')  and (doc_RegCard/rc_Index/text_Номер_контракт = @regNum)  and ((doc_RegCard/rc_Index/date_Дата_заключения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения &lt;= @publicDateTo)) and ((doc_RegCard/rc_Index/money_Цена_контракта &gt;= @sumFrom) and (doc_RegCard/rc_Index/money_Цена_контракта &lt;= @sumLotTo))  and ((doc_RegCard/rc_Index/date_Дата_начала_исполнения_контракта &gt;= @startDateFrom) and (doc_RegCard/rc_Index/date_Дата_начала_исполнения_контракта &lt;= @startDateTo)) and ((doc_RegCard/rc_Index/date_Дата_окончания_исполнения_контракта &gt;= @finishDateFrom) and (doc_RegCard/rc_Index/date_Дата_окончания_исполнения_контракта &lt;= @finishDateTo)) " />
+</search>
+</root>

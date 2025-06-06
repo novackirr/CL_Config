@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<block name="Печатные формы">
+		<field name="DocTemplate" value="Все">
+			<access>
+                <workgroup name="Суперпользователи"/>
+             </access>
+		</field>
+	</block>	
+	<block name="Положение о закупках" >
+		<field name="PologenieNaZakProject223"  value="Все" >
+			<access>
+				<workgroup name="Суперпользователи"/>
+			</access>
+		</field>
+	</block>
+	<block name="Сопоставление типов процедур" >
+		<field name="MatchProcedureTypeAll"  value="Все" >
+			<access>
+				<workgroup name="Суперпользователи"/>
+			</access>
+		</field>
+	</block>
+	<block name="Перечни ТРУ" >
+		<field name="LPTRUySMP223" value="Все">
+			<access>
+				<workgroup name="Суперпользователи"/>  
+				<workgroup name="Администратор"/>				
+				<!-- <workgroup name="Ответственный за размещение плана закупок"/>   
+				<workgroup name="Департамент закупок"/>
+				<workgroup name="Департамент закупок ЦХД"/>
+				<workgroup name="Плановики"/> -->
+			</access>
+		</field>
+	</block>
+	<block name="Распределение зам. Пред.">
+	    <field name="DistributionOfManagers" value="Все" >
+			<access>
+				<workgroup name="Суперпользователи"/>       
+				<workgroup name="Специалист по закупкам"/>       
+			</access>
+		</field>	
+	</block>
+	<predefinedBlock name="dictionary" displayName ="Справочники" >    
+		<access>
+			<workgroup name="Суперпользователи"/>
+			<workgroup name="Суперпользователи"/>
+			<workgroup name="Департамент закупок"/>
+			<workgroup name="Департамент закупок ЦХД"/>
+			<workgroup name="Руководитель ДЗ"/>
+		</access>
+    </predefinedBlock> 
+</root>

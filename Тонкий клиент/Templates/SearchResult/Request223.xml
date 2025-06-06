@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="RequestNew223" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" allow-create-excel="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<!-- Активные поля -->
+		<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="8"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_закупки_в_ЕИС" weight="13"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_публикации_запроса" name="Дата публикации запроса" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_публикации_запроса" valueType="datetime" weight="13" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Описание_запроса" name="Текст запроса" sortPredicate="doc_RegCard/rc_Index/longtext_Описание_запроса" valueType="longtext" weight="30" />			
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" sortPredicate="doc_RegCard/rc_Index/text_Статус" valueType="text" weight="20" />
+		<!-- Скрытые поля -->
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_публикации_разъяснения" name="Дата разъяснения" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_публикации_разъяснения" valueType="datetime" weight="20" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Описание_разъяснения" name="Текст разъяснения" sortPredicate="doc_RegCard/rc_Index/longtext_Описание_разъяснения" valueType="longtext" weight="20" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" min-width="150" weight="10" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="10" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_отклонения" name="Дата отклонения" sortPredicate="doc_RegCard/rc_Index/date_Дата_отклонения" valueType="date" weight="15" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Причина_отклонения" name="Причина отклонения" sortPredicate="doc_RegCard/rc_Index/longtext_Причина отклонения" valueType="longtext" weight="15" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Отклонение" name="Отклонение" sortPredicate="doc_RegCard/rc_Index/boolean_Отклонение" valueType="boolean" weight="15" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_запроса" name="Номер запроса" sortPredicate="doc_RegCard/rc_Index/text_Номер_запроса" valueType="text" weight="15" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_публикации_разъяснения" name="Дата публикации разъяснения" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_публикации_разъяснения" valueType="datetime" weight="15" isOptional="true" defaultHide="true"/>
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+	<table flow="Позиции плана закупок 223ФЗ"  name="Версии ППЗ" allow-grouping="true" state-key="LLot223vppz">
+		<settings>
+				<setting key="canModify" value="false" />		
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="8" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Подразделение инициатора" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" weight="20" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" weight="20" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Предмет_договора" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная(максимальная) цена договора" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_НМЦ_с_НДС" weight="12" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="12" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Инициатор_ФИО" name="Инициатор" sortPredicate="doc_RegCard/rc_Index/text_Инициатор_ФИО" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения" name="Срок исполнения договора" sortPredicate="doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения" valueType="date" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКАТО" name="ОКАТО" sortPredicate="doc_RegCard/rc_Index/text_ОКАТО" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регион" name="Регион" sortPredicate="doc_RegCard/rc_Index/text_Регион" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_позиции" name="Наименование позиции" sortPredicate="doc_RegCard/rc_Index/text_Наименование_позиции" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКПД2" name="ОКПД2" sortPredicate="doc_RegCard/rc_Index/text_ОКПД2" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_ОКПД2_наименование" name="ОКПД2 наименование" sortPredicate="doc_RegCard/rc_Index/longtext_ОКПД2_наименование" valueType="longtext" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКВЭД2" name="ОКВЭД2" sortPredicate="doc_RegCard/rc_Index/text_ОКВЭД2" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Закупочная_категория" name="Закупочная категория" sortPredicate="doc_RegCard/rc_Index/text_Закупочная_категория" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Цена_за_единицу" name="Цена за единицу" sortPredicate="doc_RegCard/rc_Index/money_Цена_за_единицу" valueType="money" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_позиции" name="Сумма позиции" sortPredicate="doc_RegCard/rc_Index/money_Сумма_позиции" valueType="money" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/double_Количество" name="Количество" sortPredicate="doc_RegCard/rc_Index/double_Количество" valueType="double" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Место_поставки" name="Место поставки" sortPredicate="doc_RegCard/rc_Index/longtext_Место_поставки" valueType="longtext" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" name="Обоснование внесения изменений" sortPredicate="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" valueType="longtext" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Причина_аннулирования" name="Причина аннулирования" sortPredicate="doc_RegCard/rc_Index/text_Причина_аннулирования" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Планируемый_год" name="Год планируемого периода" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Планируемый_год" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Планируемый_месяц_наименование" name="Месяц планируемого периода" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Планируемый_месяц_наименование" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Планируемый_квартал" name="Квартал планируемого периода" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Планируемый_квартал" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Долгосрочный" name="Долгосрочный договор" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Долгосрочный" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" name="Участник закупки МСП" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Выбрать_позицию_из_справочника" name="Позиция из справочника" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Выбрать_позицию_из_справочника" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Инновационная_продукция" name="Инновационная продукция" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Инновационная_продукция" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Признак_адреса_ППЗ" name="Единый адрес поставки для всех товаров, работ, услуг" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Признак_адреса_ППЗ" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Невозможно_определить_количество" name="Невозможно определить кол-во" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Невозможно_определить_количество" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Малая_закупка" name="Малая закупка" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Малая_закупка" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_не_включена_в_план_закупки" name="Закупка не включена в план закупки в соответствии с ч.15 ст.4 №223-ФЗ" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_не_включена_в_план_закупки" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_не_учитывается" name="Закупка не учитывается при расчёте совокупного годового стоимостного объёма договоров" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_не_учитывается" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Победитель_СМП" name="Победитель МСП" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Победитель_СМП" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Победитель_нерезидент" name="Нерезидент" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Победитель_нерезидент" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Победитель_состоит_на_учете" name="Состоит на учете в налоговых органах РФ" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Победитель_состоит_на_учете" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Победитель_отсутствует_в_РНП" name="Победитель отсутствует в РНП" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Победитель_отсутствует_в_РНП" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Преддоговорные_переговоры" name="Преддоговорные переговоры" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Преддоговорные_переговоры" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Категория_закупки" name="Категория закупки, которая не учитывается при расчёте совокупного годового стоимостного объёма договоров" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Категория_закупки" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Основание_закупки_у_ЕП_наименование" name="Основание закупки у ЕП" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Основание_закупки_у_ЕП_наименование" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_наименование" name="Организация поставщик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/text_Победитель_наименование" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Победитель_фирменное_наименование" name="Фирменное наименование" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Победитель_фирменное_наименование" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_ИНН" name="ИНН" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_ИНН" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_КПП" name="КПП" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_КПП" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_ОГРН" name="ОГРН" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_ОГРН" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_ОКПО" name="ОКПО" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_ОКПО" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_доп_идентификационный_номер" name="Дополнительный идентификационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_доп_идентификационный_номер" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_идентификационный_номер" name="Идентификационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_идентификационный_номер" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_ОКОПФ" name="ОКОПФ" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_ОКОПФ" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Победитель_ОКОПФ_наименование" name="ОКОПФ наименование" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Победитель_ОКОПФ_наименование" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Победитель_доп_информация" name="Дополнительная информация" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Победитель_доп_информация" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_тип" name="Тип юридического лица" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_тип" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_ОКТМО" name="ОКТМО" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_ОКТМО" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_email" name="E-mail" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_email" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_телефон" name="Телефон" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_телефон" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_страна" name="Страна" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_страна" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_индекс" name="Индекс" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_индекс" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_район" name="Район" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_район" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_регион" name="Регион победителя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_регион" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_город" name="Город" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_город" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_населенный_пункт" name="Населенный пункт" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_населенный_пункт" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_улица" name="Улица" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_улица" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_дом" name="Номер дома (владения)" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_дом" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_корпус" name="Корпус (строение)" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_корпус" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Победитель_офис" name="Офис (квартира)" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Победитель_офис" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Победитель_дата_постановки" name="Дата постановки на учет" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Победитель_дата_постановки" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Фактическая_цена_закупки_с_НДС" name="Фактическая цена закупки (с НДС), руб." valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Фактическая_цена_закупки_с_НДС" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Фактическая_цена_закупки_без_НДС" name="Фактическая цена закупки (без НДС), руб." valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Фактическая_цена_закупки_без_НДС" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Фактическая_дата_заключения_договора" name="Фактическая дата заключения договора" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Фактическая_дата_заключения_договора" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Валюта" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/real_Курс_валюты" name="Курс валюты" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_Курс_валюты" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_курс_валюты" name="Дата, на которую установлен курс валюты" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_курс_валюты" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Объем_поставки" name="Объем поставки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Объем_поставки" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Условия_поставки" name="Условия поставки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Условия_поставки" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Изменение_ТРУ_и_сроков" name="Изменение ТРУ и сроков" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Изменение_ТРУ_и_сроков" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Изменение_более_чем_на_10_процентов_НМЦД" name="Изменение НМЦД более чем на 10%" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Изменение_более_чем_на_10_процентов_НМЦД" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Иные_случаи_изменения" name="Иные случаи изменения" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Иные_случаи_изменения" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_оплаты_за_все_года" name="Объем оплаты за все года" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_оплаты_за_все_года" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_оплаты_за_все_года_СМП" name="Объем оплаты за все года МСП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_оплаты_за_все_года_СМП" weight="10" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" name="Номер плана в ЕИС" sortPredicate="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" name="Номер заявки на закупку в ЕИС" sortPredicate="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_извещения_на_ЭТП" name="Номер заявки на закупку на ЭТП" sortPredicate="doc_RegCard/rc_Index/text_Номер_извещения_на_ЭТП" valueType="text" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус_публикации_в_ЕИС" name="Статус публикации в ЕИС" sortPredicate="doc_RegCard/rc_Index/text_Статус_публикации_в_ЕИС" valueType="text" weight="10" defaultHide="true"/>
+		</columns>
+    </table>
+	<table flow="Заявка на размещение закупки 223ФЗ"  name="Лот" allow-grouping="true" state-key="LLot223lot">
+		<settings>
+				<setting key="canModify" value="false" />		
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="8" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Подразделение инициатора" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" weight="20" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" weight="20" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Предмет_договора" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная(максимальная) цена договора" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_НМЦ_с_НДС" weight="12" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="12" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Внутренний_номер" name="Внутренний номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Внутренний_номер" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Руководитель_инициатора" name="Руководитель инициатора" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Руководитель_инициатора" weight="10" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_лота_в_извещении" name="Номер лота в извещении" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Номер_лота_в_извещении" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_извещения_на_ЭТП" name="Номер извещения на ЭТП" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_извещения_на_ЭТП" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Исполнитель_ФИО" name="Исполнитель" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Исполнитель_ФИО" weight="15" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Порядок_формирования_цены_договора" name="Порядок формирования цены договора" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Порядок_формирования_цены_договора" weight="15" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Размер_обеспечения_заявки" name="Размер обеспечения заявки" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Размер_обеспечения_заявки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Размер_обеспечения_договора" name="Размер обеспечения договора" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Размер_обеспечения_договора" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_предоставления_обеспечения" name="Способ предоставления обеспечения" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_предоставления_обеспечения" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Перечисление_ДС_на_реквизиты_заказчика" name="Реквизиты перечисления денежных средств" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Перечисление_ДС_на_реквизиты_заказчика" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель" name="Получатель" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_КПП" name="КПП получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_КПП" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_КБК" name="КБК получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_КБК" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_УИН" name="УИН получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_УИН" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_ИНН" name="ИНН получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_ИНН" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_БИК" name="БИК получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_БИК" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_РС" name="Расчетный счет получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_РС" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Получатель_Кор_счет" name="Корреспондентский счет получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Получатель_Кор_счет" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКАТО" name="ОКТМО" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_ОКАТО" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регион" name="Регион получателя" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Регион" weight="15" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" name="Участник закупки СМП" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_не_учитывается" name="Закупка не учитывается при расчёте совокупного годового стоимостного объёма договоров" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_не_учитывается" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Категория_закупки" name="Категория закупки, которая не учитывается при расчёте совокупного годового стоимостного объёма договоров" valueType="longtext"  sortPredicate="doc_RegCard/rc_Index/longtext_Категория_закупки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Сведения_о_цене" name="Сведения о начальной (максимальной) цене договора (цене заявки)" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Сведения_о_цене" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Формула_цены" name="Формула цены и максимальное значение цены договора (цены заявки)" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Формула_цены" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Начальная_цена_комплекта" name="Начальная цена комплекта без НДС" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Начальная_цена_комплекта" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Обеспечение_заявки" name="Обеспечение заявки" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Обеспечение_заявки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Обеспечение_исполнения_договора" name="Обеспечение исполнения договора" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Обеспечение_исполнения_договора" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Место_поставки" name="Место доставки товара, являющегося предметом договора, место выполнения работы или оказания услуги, являющихся предметом договора" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Место_поставки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Объем_поставки" name="Объем поставки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Объем_поставки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Условия_поставки" name="Сроки поставки товара, завершения работы, оказания услуг" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Условия_поставки" weight="15" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_ИД_документа" name="ИД документа" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_ИД_документа" weight="15" defaultHide="true"/>
+		</columns>
+    </table>
+	<table flow="Извещения о закупочной процедуре 223ФЗ" name="Заявки на закупку" state-key="LLot223LinksOnNotice">  
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" weight="12" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Название_закупки" name="Название закупки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Название_закупки" weight="12" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная(максимальная) цена договора" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_НМЦ_с_НДС" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_размещения" name="Плановая дата размещения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Плановая_дата_размещения" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок" name="Окончание подачи заявок" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_рассмотрения_заявок" name="Рассмотрение заявок" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_рассмотрения_заявок" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_подведения_итогов" name="Подведение итогов" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_подведения_итогов" weight="10" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="12" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_на_ЭТП" name="Номер на ЭТП" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_на_ЭТП" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_в_ЕИС" name="Номер в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_в_ЕИС" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Требуется_согласование" name="Требуется согласование" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Требуется_согласование" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Утвердивший_ФИО" name="Утвердивший" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Утвердивший_ФИО" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Согласующий_ФИО" name="Согласующий" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Согласующий_ФИО" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик наименование" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" weight="13" isOptional="true" defaultHide="false" />	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" name="Организатор закупки наименование" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" weight="13" isOptional="true" defaultHide="true" />	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Квалификационный_отбор" name="Квалификационный отбор" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Квалификационный_отбор" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Отсутствие_участника_в_РНП" name="Отсутствие участника в РНП" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Отсутствие_участника_в_РНП" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Централизованная_закупка" name="Централизованная закупка" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Централизованная_закупка" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Требуется_согласование_юриста" name="Требуется согласование юриста" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Требуется_согласование_юриста" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Ответственный_юрист_ФИО" name="Ответственный юрист" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Ответственный_юрист_ФИО" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Количество_этапов" name="Количество этапов" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Количество_этапов" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Адрес" name="Адрес местонахождения" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Адрес" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_ЭТП" name="Наименование ЭТП" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Наименование_ЭТП" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Форма_торгов" name="Форма торгов" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Форма_торгов" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Место_рассмотрения_заявок" name="Место рассмотрения заявок" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Место_рассмотрения_заявок" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_вскрытия_конвертов" name="Дата вскрытия конвертов" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_вскрытия_конвертов" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_проведения_торгов" name="Дата проведения торгов" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_проведения_торгов" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_макс_колво_запросов_от_участника" name="Максимальное количество запросов от одного участника" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_макс_колво_запросов_от_участника" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Время_ожидания_подачи_ценовых_предложений" name="Время ожидания ценовых предложений (минут)" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Время_ожидания_подачи_ценовых_предложений" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/real_Шаг_торгов_от" name="Шаг ценовых предложений от" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_Шаг_торгов_от" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/real_Шаг_торгов_до" name="Шаг ценовых предложений до" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_Шаг_торгов_до" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Шаг_торгов" name="Шаг ценовых предложений в валюте договора" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Шаг_торгов" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_вскрытия_конвертов_КО" name="Дата приёма квалификационных заявок" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_вскрытия_конвертов_КО" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_рассмотрения_заявок_КО" name="Дата подведение итогов квалификационного отбора" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_рассмотрения_заявок_КО" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_подачи_ТКП" name="Дата подтверждение публикации процедуры" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_подачи_ТКП" weight="15" defaultHide="true" />
+			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Отмена_закупки" name="Отмена закупки" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Отмена_закупки" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_принятия_решения_отмена" name="Дата принятия решения" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_принятия_решения_отмена" weight="15" defaultHide="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Основание_принятия_решения_отмена" name="Основание принятия решения" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Основание_принятия_решения_отмена" weight="15" defaultHide="true" />
+		</columns>
+		<settings>
+			<setting key="canModify" value="false" />		
+		</settings>
+	</table>
+	<table flow="Предквалификационный отбор"  name="ПКО" allow-grouping="true"  state-key="LLotPKO">
+		<settings>
+			<setting key="canModify" value="true" />		
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" weight="40" isOptional="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="longtext" weight="150" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_запроса" name="Регистрационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_запроса" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" weight="40" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="НМЦ, руб." valueType="money" weight="40" />
+			<!-- <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Подразделение" valueType="text" weight="120" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_размещения" name="Плановая дата размещения" valueType="date" weight="60" /> -->
+		</columns>
+    </table>
+	<table flow="Договоры 223ФЗ" name="Договоры" allow-grouping="true" filter="doc_RegCard/rc_Index/boolean_Актуальность = '1'" state-key="LDogovor223Links">
+		<settings>
+			<setting key="canModify" value="true" />
+			<setting key="canCreateLinks" value="true" />
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_договора" name="Номер договора" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_договора" weight="15" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="text" sortPredicate="doc_RegCard/rc_Index/longtext_Предмет_договора"  weight="60"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Подразделение инициатора" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование"  weight="30"/>			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_заключения" name="Дата заключения" valueType="date"  sortPredicate="doc_RegCard/rc_Index/date_Дата_заключения" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_начала_исполнения" name="Дата начала исполнения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_начала_исполнения" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_окончания_исполнения" name="Дата окончания исполнения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_окончания_исполнения" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Цена_с_НДС" name="Цена с НДС" valueType="money"  sortPredicate="doc_RegCard/rc_Index/money_Цена_с_НДС" weight="20" />			
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text"  sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Исполнитель_ФИО" name="Инициатор" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Исполнитель_ФИО"  weight="30" defaultHide="true"/>	
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Валюта"  weight="20" defaultHide="true"/>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="20" defaultHide="true"/>
+			
+		</columns>
+	</table>
+</root>

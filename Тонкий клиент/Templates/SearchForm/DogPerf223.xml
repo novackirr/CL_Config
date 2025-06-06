@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+		<row>
+			<column>
+				<field name="Номер договора" isLabel="true" />
+				<field fieldType="field" key="|Document|Номер_договора" name="Номер договора" valueType="text" isValue="true" edit-name="doсNum" />
+			</column>
+			<column>				
+				<field name="Дата заключения договора" isLabel="true"/>
+				<block id="block1" name="block1" height="300">
+					<rows>
+						<row>
+							<column>			
+								<field name="с" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_заключения_договора" name="Дата заключения договора" valueType="date" value-db-type="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_заключения_договора" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="publicDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+				</block>
+			</column>		
+		</row>
+		<row>
+			<column>
+				<field name="Предмет договора" isLabel="true" />
+				<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="dogovorName" />
+			</column> 
+			<column>
+				<field name="Организация поставщик" isLabel="true" />
+				<block id="block20" name="block20" height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" key="Document|Организация_поставщик|Организация_поставщик" name="Организация поставщик" valueType="text" dict-column-name="code" isValue="true" edit-name="post2"  edit-readonly="true" dictionary-selection-start-level="1" edit-tool = "Контрагенты" dict-edit-name="post2" show-dict-column="false"/>
+								<field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация поставщик наименование" dict-column-name="Наименование" valueType="text" isValue="true" edit-name="post2Name"  edit-readonly="true"  edit-hidden="true" display-field-part="true" dict-edit-name="post2"  />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block21" name="block21" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="Номер этапа" isLabel="true" />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block22" name="block22" height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" key="|Document|Номер_этапа" name="Номер этапа" valueType="text" isValue="true" edit-name="stepNum" />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+			</column> 
+		</row>	 	 
+		<row>
+			<column>
+				<field name="Дата регистрации" isLabel="true"/>
+				<block id="block1" name="block1" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="с" isLabel="true"/>
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+							</column>
+							<column>					
+								<field name="по" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+			</column>	
+			<column>
+				<field name="Дата накладной/акта" isLabel="true"/>
+				<block id="block11" name="block11" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="с" isLabel="true"/>
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_документа_от" name="Дата документа от" valueType="date" value-db-type="date" isValue="true"  edit-name="dateDocFrom" weight="300"/>
+							</column>
+							<column>					
+								<field name="по" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_документа_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="dateDocTo"  />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+			</column>
+			<column>
+				<field name="Дата оплаты" isLabel="true"/>
+				<block id="block2" name="block2" height="300">	
+					<rows>
+						<row>
+							<column>			
+								<field name="с" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_оплаты" name="Дата оплаты" valueType="date" value-db-type="date" isValue="true"  edit-name="startDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_оплаты" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="startDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+				</block>
+			</column>
+		</row>       
+	</rows>
+  </edit>
+	<extraSearchForm>
+		<rows>
+			<row>
+				<column>
+					<field name="Номер сведений о завершении договора" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Начисление неустоек" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Номер_сведений" name="Номер сведений о завершении договора" valueType="text" isValue="true" edit-name="NumberSved"  />
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Начисление_неустоеек" name="Начисление неустоек" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Neust"  />
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Прекращение_обязательств" name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="PrekOb"  />
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<field name="Информация о неустойках" isLabel="true" />									
+					<field fieldType="field" key="|Document|Информация_о_неустойках" name="Информация о неустойках" valueType="longtext" isValue="true"   edit-name="InfNeust"  />
+				</column>
+				<column>
+					<field name="Обоснование изменений" isLabel="true" />
+					<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование изменений" valueType="longtext" isValue="true"   edit-name="Obosn"  />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Обоснование изменений" isLabel="true" />
+					<field fieldType="field" key="|Document|Причина_отмены_сведений" name="Причина отмены сведений" valueType="longtext" isValue="true"   edit-name="Prich"  />
+				</column>
+				<column>
+					<field name="Цена договора" isLabel="true" />
+					<block id="block1" name="block1" height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Цена_договора" name="Цена_договора" valueType="money" isValue="true" edit-name="priceFrom"  />
+								</column>
+								<column>
+									<field name="до" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Цена_договора" name="Цена_договора" valueType="money" isValue="true" edit-name="priceTo"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+	</extraSearchForm>
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ') and (doc_RegCard/rc_Index/integer_Номер_этапа = @stepNum) and (doc_RegCard/rc_Index/text_Номер_договора = @doсNum) and (doc_RegCard/rc_Index/longtext_Предмет_договора = @dogovorName) and (doc_RegCard/rc_Index/text_Организация_поставщик = @post2) and ((doc_RegCard/rc_Index/date_Дата_заключения_договора &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения_договора &lt;= @publicDateTo)) and ((doc_RegCard/rc_Index/date_Дата_оплаты &gt;= @startDateFrom) and (doc_RegCard/rc_Index/date_Дата_оплаты &lt;= @startDateTo)) and ((doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and (doc_RegCard/rc_Index/text_Номер_сведений = @NumberSved) and (doc_RegCard/rc_Index/boolean_Начисление_неустоеек = @Neust) and (doc_RegCard/rc_Index/boolean_Прекращение_обязательств = @PrekOb) and (doc_RegCard/rc_Index/longtext_Информация_о_неустойках = @InfNeust) and ((doc_RegCard/rc_Index/money_Цена_договора &gt;= @priceFrom) and (doc_RegCard/rc_Index/money_Цена_договора &lt;= @priceTo)) and (doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений = @Obosn) and (doc_RegCard/rc_Index/longtext_Причина_отмены_сведений = @Prich) and ((doc_RegCard/rc_Index/date_Дата_документа &gt;= @dateDocFrom) and (doc_RegCard/rc_Index/date_Дата_документа &lt;= @dateDocTo))" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

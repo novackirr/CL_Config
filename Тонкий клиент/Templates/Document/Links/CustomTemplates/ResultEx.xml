@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<table flow="Тип процедуры" name="Тип процедуры" id="MatchProcedureTypeAll"  allow-grouping="true" state-key="MatchProcedureTypeAllLinks" allow-filters-row="true" allow-selection="false">  
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" valueType="date" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Форма_торгов" name="Форма торгов" sortPredicate="doc_RegCard/rc_Index/text_Форма_торгов" valueType="text" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Способ_наименование" name="Способ" sortPredicate="doc_RegCard/rc_Index/longtext_Способ_наименование" valueType="text" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Конкурентная_наименование" name="Конкурентная" sortPredicate="doc_RegCard/rc_Index/text_Конкурентная_наименование" valueType="text" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Вариант_проведения_наименование" name="Вариант проведения" sortPredicate="doc_RegCard/rc_Index/text_Вариант_проведения_наименование" valueType="text" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Активная" name="Активная" sortPredicate="doc_RegCard/rc_Index/text_Активная" valueType="text" weight="30" />
+			
+		</columns>
+		<settings>
+			<setting key="canModify" value="false" />		
+		</settings>
+	</table>
+</root>

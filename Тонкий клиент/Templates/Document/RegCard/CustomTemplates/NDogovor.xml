@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <!-- Поля для просмотра -->
+
+  <view>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_Creator" name="Автор" valueType="addressbook" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Номер_договора" name="Номер договора" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Вид_договора" name="Вид договора" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Стадия_обработки" name="Стадия обработки" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Контрагент" name="Контрагент" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Роль_контрагента" name="Роль контрагента" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Менеджер|Идентификатор_менеджер_договора" name="Менеджер договора" valueType="addressbook" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Сумма_договора" name="Сумма договора" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Наименование_договора" name="Наименование договора" valueType="longtext" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" />
+        </column>
+      </row>
+    </rows>
+  </view>
+
+  <!-- Поля для редактирования -->
+
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Регистрационный номер" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" isValue="true" edit-name="prefix" edit-autocomplete="Prefix"/>
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" isValue="true" edit-name="regnum" edit-disabled="true" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" isValue="true" edit-name="Suffix" edit-autocomplete="Suffix"/>
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Дата регистрации" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-required="true" edit-default-value="{today}" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Номер договора" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Номер_договора" name="Номер договора" valueType="text" isValue="true" edit-name="ContractNumber" edit-required="false" />
+        </column>
+        </row>
+      <row>
+        <column>
+          <field name="Вид договора" isLabel="true" />
+        </column>
+        </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Вид_договора" name="Вид договора" valueType="text" isValue="true" edit-name="ContractType" edit-required="true" edit-dictionary="Вид договора" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Стадия обработки" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Стадия_обработки" name="Стадия обработки" valueType="text" isValue="true" edit-name="ProcessingStage" edit-required="true" edit-dictionary="Стадия обработки"/>
+        </column>
+        </row>
+      <row>
+        <column>
+          <field name="Контрагент" isLabel="true" />
+        </column>
+        </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Контрагент" name="Контрагент" valueType="text" isValue="true" edit-name="Contractor" edit-required="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="ИНН" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" isValue="true" edit-name="INN"/>
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Роль контрагента" isLabel="true" />
+        </column>
+      </row>
+      <row>
+      <column>
+        <field fieldType="field" key="|Document|Роль_контрагента" name="Роль контрагента" valueType="text" isValue="true" edit-name="RoleContractor" edit-dictionary="Роль контрагента"/>
+      </column>
+        </row>
+      <row>
+        <column>
+          <field name="Менеджер договора" isLabel="true" />
+        </column>
+      </row>
+      <row>
+      <column>
+        <field fieldType="field" key="|Document|Менеджер|Идентификатор_менеджер_договора" name="Менеджер договора" valueType="addressbook" isValue="true" edit-name="ContractManager" edit-default-value="{currentUser}" edit-addressbook-groups="person" />
+      </column>
+        </row>
+      <row>
+        <column>
+          <field name="Сумма договора" isLabel="true" />
+        </column>
+        </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Сумма_договора" name="Сумма договора" valueType="text" isValue="true" edit-name="AmountContract" edit-required="false" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Наименование договора" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Наименование_договора" name="Наименование договора" valueType="longtext" isValue="true" edit-name="ContractName" edit-required="true" />
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="longtext" isValue="true" edit-name="ContractName" edit-required="true" edit-isCalculated="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Предмет договора" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="SubjectContract" edit-required="false" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="document-header" edit-hidden="true" edit-value="Договор" />
+          <field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="links-header" edit-hidden="true" edit-value="Связки" />
+          <field fieldType="field" key="|Control|header" valueType="text" isValue="true" edit-name="control-header" edit-hidden="true" edit-value="Контроль" />
+          <field fieldType="field" key="|Storage|header" valueType="text" isValue="true" edit-name="storage-header" edit-hidden="true" edit-value="Хранение" />
+        </column>
+      </row>
+    </rows>
+    <variables>
+      <variable variable-name="regNumber" variable-format="{prefix}{number}{suffix}">
+        <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" variable-name="prefix" variable-format="{value}-" />
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+        <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" variable-name="suffix" variable-format="-{value}" />
+      </variable>
+    </variables>
+  </edit>
+</root>

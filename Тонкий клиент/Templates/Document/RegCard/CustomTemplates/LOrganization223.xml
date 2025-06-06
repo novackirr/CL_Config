@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация|Краткое_наименование" name="Краткое наименование" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Фирменное_наименование" name="Фирменное наименование" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Полное_наименование" name="Полное наименование" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дополнительное_наименование" name="Дополнительное наименование" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_постановки_на_учет" name="Дата постановки на учет" valueType="date" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Нерезидент" name="Нерезидент" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Страна" name="Страна" valueType="text" />
+								</column>
+							</row>							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|СМП" name="СМП" valueType="boolean" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|ИП" name="ИП" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|КПП" name="КПП" valueType="text" />
+								</column>
+							</row> 		  
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ИКО" name="ИКО" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|ОГРН" name="ОГРН" valueType="text" />
+								</column>
+							</row> 
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ОКПО" name="ОКПО" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|ОКАТО" name="ОКАТО" valueType="text" />
+								</column>
+							</row> 
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ОКОПФ" name="ОКОПФ" valueType="text" />
+								</column>
+							</row>  		  
+						</rows>
+					</block>
+				</column>
+			</row>		  
+			<row>
+				<column>
+					<block id="tlcContacts" name="Контактные данные">		 
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Юридический_адрес" name="Юридический адрес" valueType="longtext" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Почтовый_адрес" name="Почтовый адрес" valueType="longtext" />
+								</column>
+							</row> 
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Почтовый_адрес_совпадает_с_Юридическим" name="Почтовый адрес совпадает с Юридическим" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Почтовый_индекс" name="Почтовый индекс" valueType="text" />
+								</column>	
+								<column>
+									<field fieldType="field" key="|Document|Email_организации" name="E-mail" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Телефон_организации" name="Телефон" valueType="text" />
+								</column>	
+								<column>
+									<field fieldType="field" key="|Document|Факс_организации" name="Факс" valueType="text" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>		
+			<row>
+				<column>
+					<block id="tlcEtpv" name="Электронные площадки">		 
+						<rows>
+							<row>
+								<column>
+									<table key="|Document|ЭТП"  height="300">	
+										<column fieldType="field" key="|Наименование_ЭТП_организации" name="Наименование ЭТП" valueType="text"  width="300"   />
+										<column fieldType="field" key="|Адрес_ЭТП_организации" name="Адрес ЭТП" valueType="text"   width="300"   />									
+										<column fieldType="field" key="|ИД_организации" name="ИД организации" valueType="text"    width="200" />						
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="tlcDocs" name="Дополнительные сведения">		 
+						<rows>
+							<row>
+								<column>								
+									<field fieldType="field" key="|Document|Дополнительные_сведения" name="Дополнительные сведения" valueType="longtext" />
+								</column>
+							</row>			  
+						</rows>
+					</block>
+				</column>
+			</row>	
+		</rows>
+		<variables>		
+			<variable variable-name="caption" variable-format="Организация{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>      
+
+
+
+			<row>
+				<column>
+					<block id="t1cInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>									
+									<field fieldType="field" key="|Document|Нерезидент" name="Нерезидент" valueType="boolean" edit-name="nerez"  edit-default-value="0"  />
+								</column>
+								<column>									
+									<field fieldType="field" key="|Document|СМП" name="СМП" valueType="boolean" edit-name="SMP"  edit-default-value="0"  />
+								</column>
+								<column>									
+									<field fieldType="field" key="|Document|ИП" name="ИП" valueType="boolean" edit-name="IP"   edit-default-value="0" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Краткое наименование" isLabel="true" />
+									<field fieldType="field" key="|Document|Организация|Организация_код" name="Организация_код" valueType="text"  isValue="true" edit-name="OrgKratkoe" edit-readonly="true"   dict-column-name="code" edit-required="true"    dictionary-selection-start-level="1" edit-tool = "Организаторы закупки" dict-edit-name="OrgKratkoe" />
+									<field fieldType="field" key="|Document|Организация|Краткое_наименование" name="Краткое наименование" valueType="text" isValue="true" edit-name="OrgKratkoeName"  edit-required="true" edit-readonly="true" dict-column-name="Краткое наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="OrgKratkoe"  />
+									<field name="Полное наименование" isLabel="true" />
+									<field fieldType="field" key="|Document|Организация|Полное_наименование" name="Полное наименование" valueType="text"  isValue="true" edit-name="polnoenaim" edit-required="true" dict-column-name="Наименование"  display-field-part="true" dict-edit-name="OrgKratkoe"/>
+									<field name="ИНН" isLabel="true" title="Введите числовое значение"/>								
+									<field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" isValue="true" edit-name="INN"  dict-column-name="ИНН"  display-field-part="true" dict-edit-name="OrgKratkoe"/> 
+									<field name="КПП" isLabel="true" title="Введите числовое значение"/>
+									<field fieldType="field" key="|Document|КПП" name="КПП" valueType="text" isValue="true" edit-name="KPP" dict-column-name="КПП"  display-field-part="true" dict-edit-name="OrgKratkoe" />
+									<field name="ОГРН" isLabel="true" title="Введите числовое значение"/>									
+									<field fieldType="field" key="|Document|ОГРН" name="ОГРН" valueType="text" isValue="true" edit-name="OGRN" dict-column-name="ОГРН"  display-field-part="true" dict-edit-name="OrgKratkoe"  />
+								</column>
+								<column>
+									<field name="Фирменное наименование" isLabel="true" />
+									<field fieldType="field" key="|Document|Фирменное_наименование" name="Фирменное наименование" valueType="text"  isValue="true" edit-name="firmnaim"  />
+									<field name="Дата постановки на учет" isLabel="true" />
+									<field fieldType="field" key="|Document|Дата_постановки_на_учет" name="Дата постановки на учет" valueType="date" isValue="true" edit-name="datepostnauch"  />
+									<field name="Страна" isLabel="true" />	
+									<field fieldType="field" key="|Document|Страна" name="Страна" valueType="text" isValue="true" edit-name="strana" edit-tool = "Страны" dictionary-selection-start-level="1"  edit-readonly="true" dict-column-name="Наименование"    display-field-part="true"  dict-edit-name="strana"   />
+
+									<field name="ОКПО" isLabel="true" title="Введите числовое значение"/>
+									<field fieldType="field" key="|Document|ОКПО" name="ОКПО" isValue="true" edit-name="OKPO" edit-required="true" />
+
+									<field name="ИКО" isLabel="true" />
+									<field fieldType="field" key="|Document|ИКО" name="ИКО" valueType="text" isValue="true" edit-name="IKO" />
+								</column>
+							</row>
+							
+							<row>
+								<column>
+									<field name="ОКАТО" isLabel="true" />							
+									<field fieldType="field" key="|Document|ОКАТО" name="ОКАТО" valueType="text" isValue="true" edit-name="registerOKATO" edit-tool = "ОКАТО" dictionary-selection-start-level="1"  edit-required="true"  edit-readonly="true"  dict-column-name="code"    display-field-part="true"  dict-edit-name="registerOKATO" />
+									<field fieldType="field" key="|Document|Регион" name="Регион" valueType="text" isValue="true" edit-name="registerOKATOName"  edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" dict-edit-name="registerOKATO"/>
+								</column>									
+								<column>
+									<field name="ОКОПФ" isLabel="true" title="Введите числовое значение"/>
+									<field fieldType="field" key="|Document|ОКОПФ" name="ОКОПФ" isValue="true" edit-name="OKPF"  edit-required="true"/>									
+								</column>
+							</row>
+							
+							<row>
+								<column>
+									<field name="Дополнительное наименование" isLabel="true" />
+									<field fieldType="field" key="|Document|Дополнительное_наименование" name="Дополнительное наименование" valueType="text"  isValue="true" edit-name="dopnaim"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+
+					<block id="tlcContacts" name="Контактные данные">
+						<rows>
+							<row>
+								<column>
+									<field name="Юридический адрес" isLabel="true" />
+									<field fieldType="field" key="|Document|Юридический_адрес" name="Юридический адрес" valueType="longtext" isValue="true" edit-name="URADD" />
+								</column>
+								<column>
+									<field name="Почтовый адрес" isLabel="true" />
+									<field fieldType="field" key="|Document|Почтовый_адрес" name="Почтовый адрес" valueType="longtext" isValue="true" edit-name="POSTADD" />
+								</column>
+							</row> 
+							<row>
+								<column>									
+									<field fieldType="field" key="|Document|Почтовый_адрес_совпадает_с_Юридическим" name="Почтовый адрес совпадает с Юридическим" valueType="boolean" isValue="true" edit-name="POSTADDsovp"  edit-default-value="0"  />
+									<field name="Почтовый адрес совпадает с Юридическим" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Почтовый индекс" isLabel="true" />
+									<field fieldType="field" key="|Document|Почтовый_индекс" name="Почтовый индекс" valueType="text" isValue="true" edit-name="POSTind" edit-required="true"/>
+								</column>
+								<column>
+									<field name="E-mail" isLabel="true" />
+									<field fieldType="field" key="|Document|Email_организации" name="E-mail" valueType="text" isValue="true" edit-name="emailorg" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Телефон" isLabel="true" />
+									<field fieldType="field" key="|Document|Телефон_организации" name="Телефон" valueType="text" isValue="true" edit-name="telorg" />
+								</column>	
+								<column>
+									<field name="Факс" isLabel="true" />
+									<field fieldType="field" key="|Document|Факс_организации" name="Факс" valueType="text" isValue="true" edit-name="faxorg" />
+								</column>
+							</row>
+						</rows>
+					</block>
+
+
+					<block id="tlcEtp" name="Электронные площадки">		 
+						<rows>
+							<row>
+								<column>
+									<table key="|Document|ЭТП"  edit-name="EtpTab" height="300">	
+										<column fieldType="field" key="|Наименование_ЭТП_организации" name="Наименование ЭТП" valueType="text" isValue="true"  dictionary-selection-start-level="1" edit-readonly="true" edit-tool = "Электронные площадки"  edit-name="naimETP"  is-select-one-level="1"  dict-column-name="code"  display-field-part="true" dict-edit-name="naimETP"  width="300" title="Выберите наименование электронной торговой площадки" />												
+										<column fieldType="field" key="|Адрес_ЭТП_организации" name="Адрес ЭТП" valueType="text"   isValue="true" edit-name="naimETPName"  dict-column-name="Адрес" dict-edit-name="naimETP"  width="300" title="Введите адрес электронной торговой площадки. Заполняется автоматически после выбора наименования ЭТП" />
+										<column fieldType="field" key="|ИД_ЭТП_организации" name="ИД организации" valueType="text"   isValue="true" edit-name="ID_ETP"  dict-column-name="Идентификатор" edit-hidden="true" dict-edit-name="naimETP" />	
+										<column fieldType="field" key="|ИД_организации" name="ИД организации" valueType="text"   isValue="true" edit-name="IdOrg" width="200"/>	
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+
+
+					<block id="tlcDocs" name="Дополнительные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Дополнительные сведения" isLabel="true" />
+									<field fieldType="field" key="|Document|Дополнительные_сведения" name="Дополнительные сведения" valueType="longtext" isValue="true" edit-name="dopsvedorg" />
+								</column>
+							</row>			  
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>		  
+							<row>
+								<column>
+
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Организация" />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" edit-value="Организация"/>	
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"   edit-default-value ="Организация" />	
+									<field fieldType="field" key="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" name="Заказчик_подразделение" valueType="addressbook" address-book-tool="CustomerDepartment" isValue="true" edit-name="CustomerDepartment"  edit-default-value="{currentOrganization}" edit-addressbook-groups = "Department" edit-hidden="true"/> 
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" />
+
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>   
+
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+			<variable variable-name="caption" variable-format="Организация{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LOrganization223.js" />
+	</scripts> 
+</root>

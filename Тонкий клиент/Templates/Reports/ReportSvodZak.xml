@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+	<edit>
+		<rows>
+		  <row>
+			<column>
+				<field name="Год" isLabel="true" edit-name="from"/>
+				<field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true" edit-name="from" edit-required="true"/>
+			</column>
+			<column>
+				<field name="Месяц" isLabel="true" edit-name="month"/>	
+				<field fieldType="field" key="|Document|Месяц_код" name="Месяц планируемого периода" valueType="text" isValue="true" edit-name="month" dict-column-name="code" edit-tool = "Месяцы" edit-readonly="true" dict-edit-name="month" show-dict-column="true" />
+				<field fieldType="field" key="|Document|Месяц" name="Месяц планируемого периода наименование" valueType="text"  isValue="true" edit-name="PlanMonthName" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="month" dict-column-width-percentage="50" />
+			</column>
+			<column>	
+				<field name="Квартал с" isLabel="true" edit-name="quarterPlanFrom"/>						
+				<field fieldType="field" key="|Квартал_с" name="Квартал_с" valueType="integer" isValue="true" edit-name="quarterPlanFrom"/>
+			</column>					
+			<column>			
+				<field name="Квартал по" isLabel="true" edit-name="quarterPlanTo"/>						
+				<field fieldType="field" key="|Квартал_по" name="Квартал_по" valueType="integer" isValue="true" edit-name="quarterPlanTo"/>
+			</column>			
+		  </row>
+		</rows>
+	</edit>
+    <scripts>
+		<script file="Scripts\Content\Reports\ReportSvodZak.js" />
+	</scripts>
+</root>

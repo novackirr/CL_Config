@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Заявки участников 223ФЗ" />
+			<CopyField src="%key%" dst="|Document|ИД_лота" />
+			<CopyField src="|Document|Регистрационный_номер" dst="|Document|Номер_лота" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Наименование_лота" />
+			<CopyField src="|Document|Номер_извещения_в_ЕИС" />
+			<CopyField src="|Document|Номер_лота_в_извещении" />
+			<CopyField src="|Document|Фактическая_дата_размещения" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код" />
+			<CopyField src="|Document|Способ_закупки_положение" />
+			<CopyField src="|Document|Год_закупки" />
+		</FieldsModify>
+		<OnDocumentCreated>
+		</OnDocumentCreated>
+		<OnRegcardEdited>
+			<ConditionalActions>
+				<Select>					
+				   <Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_победитель" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and doc_RegCard/rc_Index/integer_Макс_количество_победителей='1']" tag="Заявка на размещение закупки 223ФЗ" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and doc_RegCard/rc_Index/integer_Макс_количество_победителей &gt;'1']" tag="Заявка на размещение закупки 223ФЗ несколько победителей" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещение"/>					
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id != {current_Id} and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ}/doc_Id]) and doc_RegCard/rc_Index/text_Место_заявки_по_цене='{currentDocField=|Document|Место_заявки_по_цене}' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}' and (doc_RegCard/rc_Index/text_Место_заявки_по_цене != 'Не допущен' and doc_RegCard/rc_Index/text_Место_заявки_по_цене != 'Место не присвоено')]" tag="Заявки_участников_победитель" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id != {current_Id} and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ несколько победителей}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ несколько победителей}/doc_Id]) and doc_RegCard/rc_Index/text_Место_заявки_по_цене='{currentDocField=|Document|Место_заявки_по_цене}' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}' and (doc_RegCard/rc_Index/text_Место_заявки_по_цене != 'Не допущен' and doc_RegCard/rc_Index/text_Место_заявки_по_цене != 'Место не присвоено' and doc_RegCard/rc_Index/text_Место_заявки_по_цене != '1')]" tag="Заявки_участников_несколько_победителей" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_Id != {current_Id} and (doc_Id = document[doc_Links/doc_Link/link_Document={Заявка на размещение закупки 223ФЗ несколько победителей}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Заявка на размещение закупки 223ФЗ несколько победителей}/doc_Id]) and doc_RegCard/rc_Index/text_Место_заявки_по_цене='1' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}']" tag="Заявки_участников_победитель_несколько" />
+
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2"/>
+							</And>
+						</Conditions>
+						<Actions>				
+							<DocsCountCheck sourceTag="Заявки_участников_победитель" operation="notEmpty" message="Данное место уже присвоено другому участнику, внесите корректировки в заявку" />
+							<DocsCountCheck sourceTag="Заявки_участников_несколько_победителей" operation="notEmpty" message="Данное место уже присвоено другому участнику, внесите корректировки в заявку" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Код_протокола" value="2"/>
+								<WhenFieldsEquals tag="{current}" path="|Document|Место_заявки_по_цене" value="1"/>
+								<WhenDocsExist tag="Заявка на размещение закупки 223ФЗ несколько победителей"/>
+							</And>
+						</Conditions>
+						<Actions>				
+							<VerifyExpression>
+                                <Variables>
+                                    <Variable name="Статус" source="Заявки_участников_победитель_несколько" path="|Document|Статус" aggregation="count" />
+									<Variable name="Количество" source="Заявка на размещение закупки 223ФЗ несколько победителей" path="|Document|Макс_количество_победителей"/>
+                                </Variables>
+                                <Expression value="$NullToZero({Статус}) &lt; {Количество}"/>
+                                <FailtureText value="Выбрано максимальное количество победителей по лоту, внесите корректировки в заявку"/>
+                            </VerifyExpression>
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+						    <And>
+								<WhenFieldsEquals tag="{current}" path="|Document|Результат_код" value="F"/>
+							</And>
+						</Conditions>
+							<Actions>
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки" targetField="|Document|Победитель|Победитель" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_наименование" targetField="|Document|Победитель|Победитель_наименование" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_ИНН" targetField="|Document|Победитель|Победитель_ИНН"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_КПП" targetField="|Document|Победитель|Победитель_КПП"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_тип_код" targetField="|Document|Победитель|Победитель_тип_код"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_тип" targetField="|Document|Победитель|Победитель_тип" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_СМП" targetField="|Document|Победитель|Победитель_СМП"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_закупки_ОГРН" targetField="|Document|Победитель|Победитель_ОГРН"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_ОКОПФ" targetField="|Document|Победитель|Победитель_ОКОПФ"/>
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_ОКПО" targetField="|Document|Победитель|Победитель_ОКПО"  />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_страна_код" targetField="|Document|Победитель|Победитель_страна_код" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_страна" targetField="|Document|Победитель|Победитель_страна" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_индекс" targetField="|Document|Победитель|Победитель_индекс"/>
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_регион_код" targetField="|Document|Победитель|Победитель_регион_код" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_регион" targetField="|Document|Победитель|Победитель_регион" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_состоит_на_учете" targetField="|Document|Победитель|Победитель_состоит_на_учете" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_дата_постановки" targetField="|Document|Победитель|Победитель_дата_постановки" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_район" targetField="|Document|Победитель|Победитель_район" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_город" targetField="|Document|Победитель|Победитель_город" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_населенный_пункт" targetField="|Document|Победитель|Победитель_населенный_пункт" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_улица" targetField="|Document|Победитель|Победитель_улица" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_дом" targetField="|Document|Победитель|Победитель_дом" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_корпус" targetField="|Document|Победитель|Победитель_корпус" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_офис" targetField="|Document|Победитель|Победитель_офис"/>
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_email" targetField="|Document|Победитель|Победитель_email" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_телефон" targetField="|Document|Победитель|Победитель_телефон" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_идентификационный_номер" targetField="|Document|Победитель|Победитель_идентификационный_номер" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_доп_идентификационный_номер" targetField="|Document|Победитель|Победитель_доп_идентификационный_номер" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_нерезидент" targetField="|Document|Победитель|Победитель_нерезидент" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Участник_заявки_отсутствует_в_РНП" targetField="|Document|Победитель|Победитель_отсутствует_в_РНП" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Окончательная_цена_без_НДС" targetField="|Document|Победитель|Фактическая_цена_закупки_без_НДС" />
+								<CopyField sourceFlow="{current}" targetFlow="ППЗ_победитель" sourceField="|Document|Окончательная_цена_с_НДС" targetField="|Document|Победитель|Фактическая_цена_закупки_с_НДС" />
+							</Actions>
+					</ConditionalAction>
+
+				</Actions>
+		</ConditionalActions>
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and doc_RegCard/rc_Index/text_Статус!='Закупка отменена']" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещение"/>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Контрагенты' and xn-in(doc_Id, {currentDocLinkList}) ]" tag="Контрагент" />								  
+			</Select>
+			<Actions>
+				<CopyField sourceFlow="Заявка на размещение закупки 223ФЗ" targetFlow="{current}" sourceField="%key%" targetField="|Document|ИД_лота" /> 
+				<CopyField sourceFlow="Контрагент" targetFlow="{current}" sourceField="|Document|Наименование" targetField="|Document|Наименование_контрагента" />
+				<TableFieldOperations sourceTag="Извещение" targetTag="Контрагент" targetTable="|Document|Закупки" targetRowFilter="{Номер_закупки}={field=|Document|Номер_закупки}"  >
+					<CreateTargetRows> 			
+						<Table name="|Document|Закупки" filterForUpdate="{Номер_закупки}={field=|Document|Номер_закупки}"   /> 
+					</CreateTargetRows>
+					<Action column="Заголовок" formula="{field=|Document|Название_закупки}"/>
+					<Action column="Номер_закупки" formula="{field=|Document|Номер_закупки}"/>
+				  		<Action column="Дата_создания_закупки" formula="{field=|Document|Дата_создания}"/>
+					<Action column="Способ_закупки" formula="{field=|Document|Способ_закупки}"/>
+				</TableFieldOperations>									
+			</Actions>
+		</Aggregation>
+	</OnRegcardEdited>
+	<LinksModify>
+		<LinkCurrentDoc />
+		<LinkAllLinksWhereFlow name="Заявка на размещение закупки 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Извещения о закупочной процедуре 223ФЗ" />
+	</LinksModify>
+</Hooks>

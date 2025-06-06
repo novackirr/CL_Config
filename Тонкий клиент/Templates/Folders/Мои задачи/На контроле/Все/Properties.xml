@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<query value="(act_context/Documents/S1/Dockey =  document[doc_ControlCard/cc_Observer = '{currentUser}']/doc_Id or act_Observer = '{currentUser}')"/>
+</root>

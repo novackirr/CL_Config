@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+		  
+	<row>
+		<column>
+			<field name="Организация заказчик" isLabel="true" />
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa" dict-column-name="code" edit-readonly="true" is-select-one-level="1"   edit-tool = "Организации заказчики" dict-edit-name= "registerOrgZa" show-dict-column="false"/>
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-readonly="true"  dict-column-name="Краткое наименование"  edit-hidden="true" display-field-part="true" dict-edit-name= "registerOrgZa" />
+		</column>	
+		
+		<column>		              
+			<field name="Тип отчетности" isLabel="true" />     
+			<field fieldType="field" key="|Document|Тип_отчетности_код" name="Тип отчетности код" valueType="text" isValue="true" edit-name="RepType_kod" edit-readonly="true" dictionary-selection-start-level="1" edit-tool = "Тип отчетности о договорах" dict-column-name="code" dict-edit-name="RepType_kod" show-dict-column="false"/>
+			<field fieldType="field" key="|Document|Тип_отчетности" name="Тип отчетности" valueType="text" isValue="true" edit-name="RepType" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="RepType_kod"/>
+        </column>
+     </row>
+	 <row>
+       <!--  <column>
+          <field name="Регистрационный номер" isLabel="true" />
+		  <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" isValue="true" edit-name="regNum" />
+        </column>	  -->
+		<column>
+			<field name="Период сведений" isLabel="true"/>
+			<block id="block1" name="block1" height="300">
+				<rows>
+					<row>
+						<column>			
+							<field name="c" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Период_сведений_с" name="Период сведений с" valueType="date" value-db-type="date"  isValue="true" edit-name="DateFrom"  weight="300"/>
+						</column>
+						<column>							
+							<field name="по" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Период_сведений_по" name="Период сведений по" valueType="date" value-db-type="date" isValue="true"   edit-name="DateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>
+        </column>
+	    <column>
+			<field name="Дата регистрации" isLabel="true"/>
+			<block id="block1" name="block1" height="300">
+				<rows>
+					<row>
+						<column>
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+						</column>
+						<column>					
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+						</column>						
+					</row>
+				</rows>							
+			</block>
+        </column>
+		<column></column>		
+   </row>	 
+
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Отчетность о договорах 223ФЗ') and (doc_RegCard/rc_Index/text_Тип_отчетности_код = @RepType_kod) and (doc_RegCard/rc_Index/text_Организация_заказчик = @registerOrgZa) and ((doc_RegCard/rc_Index/date_Период_сведений_по &gt;= @DateFrom) and (doc_RegCard/rc_Index/date_Период_сведений_по &lt;= @DateTo)) and ((doc_RegCard/rc_Index/text_Регистрационный_номер = @regNum) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo))" />
+  </search>
+</root>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<options showComment="true" />
+	<flows>
+		<flow name="Договоры 223ФЗ"/>
+		<flow name="Исполнение договора 223ФЗ"/>
+		<flow name="Расторжения договора 223ФЗ"/>
+	</flows>
+	<activities>
+		<activity name="Согласование договора с УЗД" type="Approval" action="normal" />			
+		<activity name="Согласование договора с Контрактным отделом" type="Approval" action="normal" />		
+		<activity name="Согласование исполнения с УЗД" type="Approval" action="normal" />			
+		<activity name="Согласование исполнения с Контрактным отделом" type="Approval" action="normal" />
+		<activity name="Согласование расторжения с УЗД" type="Approval" action="normal" />			
+		<activity name="Согласование расторжения с Контрактным отделом" type="Approval" action="normal" />	
+	</activities>
+	<view showCurrentValues="false" >
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Ответственный_за_договор|Ответственный_за_договор" name="Ответственный за договор" valueType="addressbook" isValue="true" edit-name="OtvDog" edit-addressbook-groups="" address-book-tool ="OtvDog" address-book-tool-selectable = "WorkGroup, Person, 'УЗД по договорной деятельности'" edit-default-value="{currentUser}" edit-hidden="true"/>
+					</column>
+				</row>
+			</rows>
+		</template>
+	</view>
+</root>

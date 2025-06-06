@@ -1,0 +1,1097 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="11" name="Общие сведения">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+											</row>	
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Номер_протокола_в_ЕИС" name="Номер в ЕИС" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" />
+												</column>			
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_подписания_протокола" name="Дата подписания протокола" valueType="date"/>
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="datetime"/>
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дата_и_время_проведения_этапа_процедуры" name="Дата этапа процедуры" valueType="datetime"/>
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Направить_в_ЕИС" name="Направить в ЕИС" valueType="boolean"/>
+												</column>	
+											</row>											
+											<row>
+												<column>
+													<!-- <field fieldType="field" key="|Document|Код_протокола" name="Наименование протокола" valueType="text" /> -->
+													<field fieldType="field" key="|Document|Наименование_протокола" name="Наименование протокола" valueType="text"  />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="Инициатор" valueType="text" />	
+												</column>
+												<!-- <column>
+													<field fieldType="field" key="|Document|Тип_протокола" name="Тип протокола по классификатору ЕИС" valueType="text"  />
+												</column> -->	
+											</row>
+											<!-- <row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_и_время_проведения_этапа" name="Дата и время проведения этапа процедуры" valueType="datetime"  />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Место_проведения_этапа" name="Место проведения этапа процедуры" valueType="longtext"  />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Не_отправлять_данные_о_заявителях_в_ЕИС" name="Не отправлять данные о заявителях в ЕИС" valueType="boolean"  />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Не_отправлять_ценовые_предложения_заявителей_в_ЕИС" name="Не отправлять ценовые предложения заявителей в ЕИС" valueType="boolean"  />
+												</column>	
+											</row> -->
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Место_проведения_этапа" name="Место проведения этапа" valueType="text"/>
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дополнительная_информация" name="Дополнительная информация" valueType="text"/>
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Тип_протокола" name="Тип протокола" valueType="text"/>
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Комментарий_к_описанию_события" name="Комментарий к описанию события" valueType="text"/>
+												</column>	
+											</row>
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="longtext" />
+												</column>
+												<!-- <column>
+													<field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="Инициатор" valueType="text" />	
+												</column> -->
+											</row>											
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Адрес_ЭТП" name="Адрес_ЭТП" valueType="text" />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ_закупки_код" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Код_протокола" name="Код протокола" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Коэффициент_снижения" name="Коэффициент снижения" valueType="boolean" />
+												</column>
+											</row> 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Попозиционная_закупка" name="Попозиционная закупка" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Создана_из_процедуры" name="Создана из процедуры" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="11" name="Общие сведения о процедуре">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Название_закупки" name="Название закупки" valueType="longtext" />								
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_закупки" name="Номер процедуры" valueType="text"/>				  
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Форма_торгов" name="Форма торгов" valueType="text" />				  
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Закупка_не_состоялась" name="Несостоявшаяся закупка" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Договор_заключается" name="Договор заключается" valueType="boolean"/>	
+												</column>
+											</row>
+											<row>								
+												<column>
+													<field fieldType="field" key="|Document|Дата_признания_несостоявшейся" name="Дата признания несостоявшейся" valueType="date"    />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Причина_признания_несостоявшейся" name="Причина признания несостоявшейся" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Отправить_лот_в_архив" name="Отправить лот в архив" valueType="boolean" />	
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Продолжить_рассмотрение_единственной_заявки" name="Продолжить рассмотрение единственной заявки" valueType="boolean"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Решение_по_закупке" name="Решение по закупке" valueType="text"/>	
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Завершить_проведение_процедуры|Завершить_проведение_процедуры_наименование" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"/>	
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="201" name="Сведения о заявках участников">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Заявки_участников" height="300" api-table-name="applictable"  horizontall-scroll="true">
+														<column fieldType="field" key="|Номер_заявки" valueType="text" name="Номер заявки на ЭТП" headerNoEllipsis="true" min-width="50" />
+														<column fieldType="field" key="|Наименование" valueType="text"  name="Наименование" headerNoEllipsis="true" min-width="300" />
+														<column fieldType="field" key="|Цена_участника_с_НДС" valueType="text"  name="Цена с НДС" headerNoEllipsis="true" min-width="200" />
+														<column fieldType="field" key="|Цена_участника_без_НДС" valueType="text"  name="Цена без НДС" headerNoEllipsis="true" min-width="200" />
+														<column fieldType="field" key="|ЦП_вне_шага_с_НДС" name="ЦП вне шага с НДС" valueType="money" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|ЦП_вне_шага_без_НДС" name="ЦП вне шага без НДС" valueType="money" headerNoEllipsis="true" min-width="100"/>
+														<column fieldType="field" key="|ЦП_с_НДС" name="ЦП с НДС" valueType="money" min-width="100" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|ЦП_без_НДС" name="ЦП без НДС" valueType="money" headerNoEllipsis="true" min-width="100"/>
+														<column fieldType="field" key="|Процент_снижения_от_НМЦ" name="% снижения от НМЦ" valueType="double" headerNoEllipsis="true" min-width="100"/>
+														<column fieldType="field" key="|НДС" name="Ставка НДС" valueType="text" headerNoEllipsis="true" min-width="100"/>
+														<column fieldType="field" key="|Коэффициент_снижения_цен_без_НДС" name="Коэффициент снижения цен без НДС" valueType="double" headerNoEllipsis="true" min-width="100"/>
+														<column fieldType="field" key="|Дата_подачи_ЦП" name="Дата подачи ЦП" valueType="datetime" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Результат_допуска" valueType="text" name="Результат допуска" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Результат_допуска_1х_частей" valueType="text"  name="Результат допуска первых частей" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Результат_допуска_квал" valueType="text"  name="Результат допуска квалификационного отбора" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Результат_допуска_2х_частей" valueType="text" name="Результат допуска вторых частей" headerNoEllipsis="true" min-width="100"  />
+														<column fieldType="field" key="|Основание_для_решения" valueType="longtext"  name="Основание для решения" headerNoEllipsis="true" min-width="300" />
+														<column fieldType="field" key="|Место_заявки" valueType="text"  name="Место заявки" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Причина_отказа_в_допуске" valueType="text"  name="Причина отказа в допуске" headerNoEllipsis="true" min-width="300" />
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="20" name="Сведения о заявках участников">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Лоты" height="300" api-table-name="LotsTab" >
+														<!-- <column fieldType="field" key="|ИД_лота_на_ЭТП" valueType="text" name="ИД лота на_ЭТП" min-width="50" headerNoEllipsis="true"/> -->
+														<column fieldType="field" key="|Номер_лота_в_извещении" valueType="text" name="Номер лота" width="200" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Предмет_договора" valueType="text" name="Предмет договора" width="600" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Результат_по_лоту|Результат_по_лоту_наименование" valueType="text" name="Результат по лоту" width="200" headerNoEllipsis="true"/>
+														<view>
+															<rows>
+																<row>
+																	<column>
+																		<table key="|Заявки_участников" height="5700" api-table-name="|Заявки_участников" horizontall-scroll="true">
+																			<column fieldType="field" key="|Номер_заявки" valueType="text" name="Номер заявки на ЭТП" headerNoEllipsis="true" width="250" />
+																			<column fieldType="field" key="|Дата_подачи_заявки" valueType="text" name="Дата подачи заявки" headerNoEllipsis="true" width="500" />
+																			<column fieldType="field" key="|Наименование" valueType="text"  name="Наименование" headerNoEllipsis="true"  width="1000" />
+																			<!-- <column fieldType="field" key="|Цена_участника_с_НДС" valueType="money"  name="Цена с НДС" headerNoEllipsis="true" width="100" />
+																			<column fieldType="field" key="|Цена_участника_без_НДС" valueType="money"  name="Цена без НДС" headerNoEllipsis="true" width="100" /> -->
+																			<column fieldType="field" key="|Цена_участника" valueType="money"  name="Цена участника" horizontalAlignment="left" headerNoEllipsis="true" width="500" />
+																			<column fieldType="field" key="|Предложение_в_составе_заявки" valueType="money"  name="Предложение в составе заявки" headerNoEllipsis="true" width="500"/>
+																			<column fieldType="field" key="|Результат_допуска" valueType="text" name="Результат допуска" headerNoEllipsis="true" width="500" />
+																			<column fieldType="field" key="|Результат_допуска_1х_частей" valueType="text"  name="Результат допуска первых частей" headerNoEllipsis="true" width="500" />
+																			<column fieldType="field" key="|Результат_допуска_квал" valueType="text"  name="Результат допуска квалификационного отбора" headerNoEllipsis="true" width="500" />
+																			<column fieldType="field" key="|Результат_допуска_2х_частей" valueType="text" name="Результат допуска вторых частей" headerNoEllipsis="true" width="500"  />
+																			<column fieldType="field" key="|Основание_для_решения" valueType="longtext"  name="Основание для решения" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Место_заявки" valueType="text"  name="Место заявки" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Заключить_договор" valueType="text"  name="Заключить договор" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Причина_отказа_в_допуске" valueType="text"  name="Причина отказа в допуске" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Валюта|Валюта" valueType="text"  name="Валюта" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Сведения_о_предложении_о_цене" valueType="text"  name="Сведения о предложении о цене" headerNoEllipsis="true" min-width="500" />
+																			<column fieldType="field" key="|Результат_оценки" valueType="double"  name="Результат оценки" headerNoEllipsis="true" min-width="500" />
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</view>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<!-- <row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row> -->
+							<row>
+								<column>
+									<block id="20" name="Сведения о заявках участников ПКО">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Заявки_участников_ПКО" height="300" api-table-name="applictablePKO" horizontall-scroll="true">
+														<column fieldType="field" key="|Номер_заявки" valueType="text" name="Номер заявки на ЭТП" headerNoEllipsis="true" min-width="150" />
+														<column fieldType="field" key="|Наименование_ПКО" valueType="text"  name="Наименование" headerNoEllipsis="true" min-width="300"/>
+														<column fieldType="field" key="|Результат_допуска_ПКО" valueType="text"  name="Результат допуска" headerNoEllipsis="true" min-width="200"/>
+														<column fieldType="field" key="|Основание_для_решения_ПКО" valueType="text"  name="Основание для решения" headerNoEllipsis="true" min-width="500" />
+														<column fieldType="field" key="|Причина_отказа_в_допуске_ПКО" valueType="text"  name="Причина отказа в допуске" headerNoEllipsis="true" min-width="500" />
+														<column fieldType="field" key="|Место_заявки_ПКО" valueType="text"  name="Место заявки" headerNoEllipsis="true" min-width="200" />
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="20" name="Предложения поставщиков">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Позиции" height="300" api-table-name="applictable" horizontall-scroll="true">
+														<column fieldType="field" key="|Наименование_позиции" valueType="text"  name="Наименование позиции" headerNoEllipsis="true" min-width="300" />
+														<column fieldType="field" key="|Без_объявления_цены" valueType="boolean" name="Без объявления цены" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Цена_за_единицу_без_НДС" valueType="money"  name="Цена за единицу без НДС" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Ставка_НДС" valueType="double"  name="Ставка НДС" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Цена_за_единицу_с_НДС" valueType="money" name="Цена за единицу с НДС" headerNoEllipsis="true" min-width="100"  />
+														<column fieldType="field" key="|Итоговая_цена_без_НДС" valueType="money"  name="Итоговая цена без НДС" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Итоговая_цена_с_НДС" valueType="money"  name="Итоговая цена с НДС" headerNoEllipsis="true" min-width="100" />
+														<view>
+															<rows>										
+																<row>
+																	<column>
+																		<table key="|Характеристики_товара" height="300" horizontall-scroll="true">
+																			<column fieldType="field" key="|NUM" valueType="integer" name="№" width="50" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|ХТ_Участник_заявки_наименование" valueType="text" name="Поставщик" width="300" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|ХТ_Место_Заявки" valueType="text" name="Место заявки" width="100" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Соответствующее_наименование_ТУ" valueType="text" name="Соответствующее наименование" width="300" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Производитель" valueType="text" name="Производитель" width="200" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Страна_происхождения_товара" valueType="text" name="Страна происхождения товара" width="200" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Цена_за_единицу_без_НДС" valueType="money" name="Цена за единицу без НДС" width="150" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Ставка_НДС_за_единицу" valueType="double" name="Ставка НДС" width="100" headerNoEllipsis="true"/>
+																			<column fieldType="field" key="|Цена_за_единицу_с_НДС" valueType="money" name="Цена за единицу с НДС" width="150" headerNoEllipsis="true"/>
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</view>
+													</table>
+												</column>
+											</row>											
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcCrit" name="Информация о комиссии">		 
+						<rows>
+							<row>
+								<column>
+									<block id="ComissionView" name="Информация о комиссии" >
+										<rows>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Комиссия|Номер_комиссии" name="Номер комиссии" valueType="text" />
+												</column>
+												<column>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Название_комиссии" name="Наименование комиссии" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Комиссия|Результат_работы_комиссии" name="Результаты работы комиссии" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>								
+								<column>		
+									<field name="" isLabel="true"/>	
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="tlcuchKomissii" name="Участники комиссии">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Участники_комиссии" horizontall-scroll="false" height="200">	
+														<column fieldType="field" key="|ФИО_комиссии|Фамилия_комиссии" valueType="text" name="Фамииля" headerNoEllipsis="true" width="200" horizontalAlignment="center"/>
+														<column fieldType="field" key="|ФИО_комиссии|Имя_комиссии" valueType="text" name="Имя" headerNoEllipsis="true" width="200" horizontalAlignment="center"/>
+														<column fieldType="field" key="|ФИО_комиссии|Отчество_комиссии" valueType="text" name="Отчество" headerNoEllipsis="true" width="200" horizontalAlignment="center"/>
+														<!-- <column fieldType="field" key="|Присутствие" valueType="boolean" name="Присутствие" width="200" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+														<!-- <column fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Роль" width="250" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+													</table>
+												</column>
+											</row>	
+										</rows>
+									</block>
+
+								</column>
+							</row>							
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="t2cInfo" name="Изменения">
+						<rows>
+							<row>
+								<column>
+									<block id="24" name="Сведения об изменениях закупки">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+
+						</rows>
+					</block>
+				</column>
+			</row>
+
+
+		</rows>
+		<variables>		
+			<variable variable-name="caption" variable-format="Протокол{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>	
+							<row>
+								<column>
+									<block id="BasicInformation" name="Основные сведения" view="true">
+										<rows>	
+											<row>
+												<column>
+													<field name="Наименование протокола" isLabel="true" edit-name="registerProtocol" title="Заполняется автоматически"/>
+													<field fieldType="field" key="|Document|Код_протокола" name="Наименование протокола" valueType="text"  isValue="true" edit-name="registerProtocol"  edit-required="true" edit-readonly="true"  is-select-one-level="2" one-level-parent="naimETP" dict-subdictionary="Протоколы" edit-tool = "Электронные площадки"  dict-column-name="code" dict-edit-name="registerProtocol" show-dict-column="false"/>
+													<field fieldType="field" key="|Document|Наименование_протокола" name="Протокол" valueType="text" isValue="true" edit-name="registerProtocolName" edit-required="true" dict-column-name="Наименование" edit-readonly="true" edit-hidden="true" dict-edit-name="registerProtocol" show-dict-column="true"  display-field-part="true" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Название закупки" isLabel="true" edit-name="namezak" title="Заполняется автоматически из заявки на закупку"/>	
+													<field fieldType="field" key="|Document|Название_закупки" valueType="longtext" isValue="true" edit-readonly="true" name="Название закупки"  edit-name="namezak" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Дата этапа процедуры" isLabel="true" edit-name="ProcedureDate" title="Дата и время проведения этапа процедуры (по результатам которого составлен протокол)"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дата_и_время_проведения_этапа_процедуры" valueType="datetime" isValue="true" name="Название закупки"  edit-name="ProcedureDate" />
+												</column>
+												<column>
+													<field name="Дата подписания протокола" isLabel="true" edit-name="date_podp_prot" title="Заполняется после согласования комиссией"/>
+													<field fieldType="field" key="|Document|Дата_подписания_протокола" name="Дата подписания протокола" valueType="date" isValue="true" edit-name="date_podp_prot" edit-readonly="true" />
+												</column>
+												<column>
+													<field name="Направить в ЕИС" isLabel="true" edit-name="SendOOS" title="Если публикация процедуры предусмотрена в ЕИС"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Направить_в_ЕИС" valueType="boolean" isValue="true" name="Направить в ЕИС"  edit-name="SendOOS" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Место проведения этапа" isLabel="true" edit-name="ProcedurePlace" title="Место проведения этапа, по результатам которого формируется протокол"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Место_проведения_этапа" valueType="longtext" isValue="true" name="Название закупки"  edit-name="ProcedurePlace" />
+												</column>
+												<column>
+													<field name="Дополнительная информация" isLabel="true" edit-name="AdditionalInfo"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Дополнительная_информация" valueType="longtext" isValue="true" name="Название закупки"  edit-name="AdditionalInfo" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Тип протокола" isLabel="true" edit-name="FreeProtocolType" title="Указанное значение будет добавлено к общему названию протокола - Протокол в свободной форме"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Тип_протокола" valueType="text" isValue="true" name="Тип протокола"  edit-name="FreeProtocolType" />
+												</column>
+												<column>
+													<field name="Комментарий к описанию события" isLabel="true" edit-name="TextForComment" title="Комментарий будет опубликован в открытой части УТП в списке событий"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_протоколе|Комментарий_к_описанию_события" valueType="longtext" isValue="true" name="Комментарий к описанию события"  edit-name="TextForComment" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="GeneralStagesParameters" name="Общие параметры этапов/стадий по лоту" view="true">
+										<rows>	
+											<row>
+												<column>
+													<field name="Детализация предложения о цене" isLabel="true" edit-name="BidTradeTypeCode" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Детализация_предложения|Детализация_предложения_код" name="Детализация_предложения_код" valueType="text" isValue="true" edit-name="BidTradeTypeCode"  edit-readonly="true"  edit-tool = "Детализация предложений о цене"  dict-column-name="code"  dict-edit-name="BidTradeTypeCode"  display-field-part="false"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Детализация_предложения|Детализация_предложения_наименование" name="Детализация_предложения_наименование" valueType="text" isValue="true" edit-name="BidTradeTypeName"   edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="BidTradeTypeCode" />
+												</column>
+												<column>
+													<field name="Текущее лучшее предложение среди заявок по лоту" isLabel="true" edit-name="BidCurrentBestPrice" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Текущее_лучшее_предложение_среди_заявок" name="Текущее лучшее предложение среди заявок по лоту" valueType="money" isValue="true" edit-name="BidCurrentBestPrice" edit-readonly="true"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Тип этапа/стадии по лоту" isLabel="true" edit-name="BidStageCode" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Тип_стадии_по_лоту_код" name="Тип_стадии_по_лоту_код" valueType="text" isValue="true" edit-name="BidStageCode" edit-tool = "Тип стадии по лоту" edit-readonly="true" dict-column-name="code" dict-edit-name="BidStageCode" show-dict-column="false" />
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Тип_стадии_по_лоту_наименование" name="Тип_стадии_по_лоту_наименование" valueType="text" isValue="true" edit-name="BidStageName" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BidStageCode" dict-column-width-percentage="65"/>
+												</column>
+												<column>
+													<field name="Начальная цена этапа по лоту" isLabel="true" edit-name="BidCurrentPrice" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Начальная_цена_этапа" name="Начальная цена этапа по лоту" valueType="money" isValue="true" edit-name="BidCurrentPrice" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Учитывать предложения о цене из заявки на участие в этапе" isLabel="true" edit-name="BidUseRequestPrice" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Общие_параметры_стадий_по_лоту|Учитывать_предложения_о_цене_в_этапе" name="Учитывать предложения о цене из заявки на участие в этапе" valueType="boolean" isValue="true" edit-name="BidUseRequestPrice"/>
+												</column>
+												<column>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="TradingParameters" name="Параметры торгового этапа/стадии переторжки" view="true">
+										<rows>	
+											<row>
+												<column>
+													<field name="Дата и время начала торгов" isLabel="true" edit-name="AuctionStartDate" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_торгового_этапа|Дата_и_время_начала_торгов" name="Дата_и_время_начала_торгов" valueType="datetime" isValue="true" edit-name="AuctionStartDate" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Минимальный шаг торгов, %" isLabel="true" edit-name="AuctionStepMinPercent" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_торгового_этапа|Минимальный_шаг_торгов" name="Минимальный_шаг_торгов" valueType="double" isValue="true" edit-name="AuctionStepMinPercent" />
+												</column>
+												<column>
+													<field name="Максимальный шаг торгов, %" isLabel="true" edit-name="AuctionStepMaxPercent" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_торгового_этапа|Максимальный_шаг_торгов" name="Максимальный_шаг_торгов" valueType="double" isValue="true" edit-name="AuctionStepMaxPercent"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Сформировать запрос сведений для участников по окончанию этапа" isLabel="true" edit-name="FormRequestInformationForParticipantsEndStage" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_торгового_этапа|Сформировать_запрос_сведений" name="Сформировать_запрос_сведений" valueType="boolean" isValue="true" edit-name="FormRequestInformationForParticipantsEndStage" />
+												</column>
+												<column>
+													<field name="Продолжительность времени для ответа на запрос по окончанию торгов (час)" isLabel="true" edit-name="LengthTimeRespondRequestEndAuction" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_торгового_этапа|Продолжительность_времени_для_ответа_на_запрос" name="Продолжительность_времени_для_ответа_на_запрос" valueType="double" isValue="true" edit-name="LengthTimeRespondRequestEndAuction"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="NonTradingParameters" name="Параметры неторговых этапов/стадий запроса информации " view="true">
+										<rows>	
+											<row>
+												<column>
+													<field name="Дата и время начала этапа/стадии" isLabel="true" edit-name="StartDate" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_неторговых_этапов|Дата_начала_этапа" name="Дата_и_время_начала_торгов" valueType="datetime" isValue="true" edit-name="StartDate" />
+												</column>
+												<column>
+													<field name="Дата и время окончания этапа/стадии" isLabel="true" edit-name="StopDate" />	
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Параметры_неторговых_этапов|Дата_окончания_этапа" name="Дата_и_время_начала_торгов" valueType="datetime" isValue="true" edit-name="StopDate" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Тип протокола по классификатору ЕИС" isLabel="true" edit-name="ProtocolEIS" title="Выберите тип протокола по классификатору ЕИС"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Тип_протокола_код" name="Тип_протокола_код" valueType="text"  isValue="true" edit-name="ProtocolEIS"  edit-required="true" dict-column-name="code" edit-tool = "Типы протокола" is-select-one-level="1" edit-readonly="true" dict-edit-name="ProtocolEIS"/>
+									<field fieldType="field" key="|Document|Тип_протокола" name="Тип_протокола" valueType="text" isValue="true" edit-name="ProtocolEISName" edit-required="true" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="ProtocolEIS" dict-column-width-percentage="80"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Дата и время проведения процедуры" isLabel="true" edit-name="date_etap" title="Введите дату и время проведения этапа процедуры"/>
+								</column>
+								<!-- <column>
+									<field name="Дата подписания" isLabel="true" edit-name="date_podp_prot" title="Введите дату подписания протокола"/>
+                                </column> -->
+								<column>
+									<field name="" isLabel="true" edit-name="zak_nesost"/>									
+								</column>	
+								<column>
+									<field name="" isLabel="true"/>									
+								</column>	
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_и_время_проведения_этапа" name="Дата_и_время_проведения_этапа" valueType="datetime" isValue="true"   edit-name="date_etap" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Закупка_не_состоялась" name="Несостоявшаяся закупка" valueType="boolean"  edit-name="zak_nesost"  />	
+								</column> 
+								
+								<column>							
+								</column>										
+							</row>				
+
+							<row>
+								<column>
+									<field name="Дополнительная информация" isLabel="true" edit-name="DopInfo" title="Введите дополнительную информацию по протоколу"/>								
+								</column>
+								<column>
+									<field name="Место проведения процедуры" isLabel="true" edit-name="mesto_etap"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная_информация" valueType="longtext"  isValue="true" edit-name="DopInfo"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Место_проведения_этапа" name="Место_проведения_этапа" valueType="longtext" isValue="true" edit-name="mesto_etap"  />	
+								</column>
+							</row>	
+							<row>								
+								<column>
+									<field name="Дата признания несостоявшейся" isLabel="true" edit-name="Date_nesost"/>										
+								</column>   
+								<column>
+									<field name="" isLabel="true" edit-name="contractagree"/>									
+								</column> 
+								<column>		
+									<field name="" isLabel="true"/>	
+								</column>								
+								<column>		
+									<field name="" isLabel="true"/>	
+								</column>
+							</row>
+							<row>	
+								<column>								
+									<field fieldType="field" key="|Document|Дата_признания_несостоявшейся" name="Дата признания несостоявшейся" valueType="date" isValue="true" edit-name="Date_nesost"  />
+								</column> 	
+								<column>
+									<field fieldType="field" key="|Document|Договор_заключается" name="Договор заключается" valueType="boolean"  edit-name="contractagree" edit-default-value="0" />	
+								</column> 
+								<column>								
+									<field fieldType="field" key="|Document|Отправить_лот_в_архив" name="Отправить лот в архив" valueType="boolean" edit-name="go_archive" edit-default-value="0" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Продолжить_рассмотрение_единственной_заявки" name="Продолжить рассмотрение единственной заявки" valueType="boolean" edit-name="one_zay" edit-default-value="0" />
+								</column>	
+							</row>				
+							<row>
+								<column>
+									<field name="Причина признания несостоявшейся" isLabel="true" edit-name="Prich_nesost" title="При интеграции с COM и RT секциями доступна возможность ввода информации вручную. При интеграции с MSP секцией, доступен только выбор из справочника"/>								
+								</column>
+								<column>
+									<block id="MissedPurchaseLabel" name="Решение по закупке" >
+										<rows>	
+											<row>
+												<column>
+													<field name="Решение по закупке" isLabel="true" edit-name="DesCode" title="Выберите решение по закупке"/>							
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Завершить проведение процедуры и публикацию протоколов" isLabel="true" edit-name="MissedPurchaseStopCode" title="Выберите решение по закупке"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Код_причины_признания_несостоявшейся" name="Код_признания_несост2" valueType="longtext"  isValue="true" edit-name="Prich_nesost" edit-readonly="true"  dict-column-name="code" edit-tool="Причина признания несостоявшейся" dict-edit-name="Prich_nesost"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Причина_признания_несостоявшейся" name="Наименование основания" valueType="text"  isValue="true" edit-name="Prich_nesost_name" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="Prich_nesost"  display-field-part="true"  edit-hidden="true"/>
+								</column>
+								<column>
+									<block id="MissedPurchase" name="Решение по закупке" >
+										<rows>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Решение_по_закупке_код" name="Код решения по закупке" valueType="text"  isValue="true" edit-name="DesCode" edit-readonly="true"  dict-column-name="code" edit-tool="Решение по закупке" dict-edit-name="DesCode"  show-dict-column="false"/>
+													<field fieldType="field" key="|Document|Решение_по_закупке" name="Решение по закупке" valueType="text"  isValue="true" edit-name="DesName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="DesCode"  display-field-part="true"  edit-hidden="true"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Завершить_проведение_процедуры|Завершить_проведение_процедуры_код" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="MissedPurchaseStopCode" edit-readonly="true"  dict-column-name="code" edit-tool="Завершить проведение процедуры(СберАСТ)" dict-edit-name="MissedPurchaseStopCode"  show-dict-column="false"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Завершить_проведение_процедуры|Завершить_проведение_процедуры_наименование" name="Решение по закупке" valueType="text"  isValue="true" edit-name="MissedPurchaseStopName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="MissedPurchaseStopCode"  display-field-part="true"  edit-hidden="true"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<table key="|Document|Заявки_участников" edit-name="applicTab" height="300" name="Заявки участников">
+										<column fieldType="field" key="|ИД_заявки_на_ЭТП" valueType="text"  isValue="true" name="ИД заявки на ЭТП" edit-name="applicId" headerNoEllipsis="true" width="150"  edit-readonly="true" edit-hidden="true" />
+										<column fieldType="field" key="|Номер_заявки" valueType="text"  isValue="true" name="Номер заявки на ЭТП" edit-name="applicNumber" headerNoEllipsis="true" width="150"  edit-readonly="true" />
+										<column fieldType="field" key="|Наименование" valueType="text"  isValue="true" name="Наименование" edit-name="applicName" headerNoEllipsis="true" width="500" edit-readonly="true" />
+										<column fieldType="field" key="|Цена_участника_с_НДС" valueType="money"  isValue="true" name="Цена с НДС" edit-name="priceNDS" headerNoEllipsis="true" width="150" edit-readonly="true" />
+										<column fieldType="field" key="|Цена_участника_без_НДС" valueType="money"  isValue="true" name="Цена без НДС" edit-name="priceOutNDS" headerNoEllipsis="true" width="150" edit-readonly="true" />
+										<column fieldType="field" key="|ЦП_вне_шага_с_НДС" name="ЦП вне шага с НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="offerOutOfStepWithVAT" headerNoEllipsis="true" />
+										<column fieldType="field" key="|ЦП_вне_шага_без_НДС" name="ЦП вне шага без НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="offerOutOfStepWithoutVAT" headerNoEllipsis="true" />
+										<column fieldType="field" key="|ЦП_с_НДС" name="ЦП с НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="cpNds" headerNoEllipsis="true" />
+										<column fieldType="field" key="|ЦП_без_НДС" name="ЦП без НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="priceWithoutVAT" headerNoEllipsis="true"/>
+										<column fieldType="field" key="|Процент_снижения_от_НМЦ" name="% снижения от НМЦ" valueType="text" edit-readonly="true" isValue="true" edit-name="percentageReduction" headerNoEllipsis="true"/>
+										<column fieldType="field" key="|Коэффициент_снижения_цен_без_НДС" name="Коэффициент снижения цен без НДС" valueType="double" isValue="true" edit-name="koefSnizNoNDS" headerNoEllipsis="true" edit-readonly="true"/>
+										<column fieldType="field" key="|Дата_подачи_ЦП" name="Дата подачи ЦП" valueType="datetime" isValue="true" edit-name="date_offer" headerNoEllipsis="true" edit-readonly="true" width="200"/>
+										<column fieldType="field" key="|НДС" name="Ставка НДС" valueType="text" edit-readonly="true" isValue="true" edit-name="nds" headerNoEllipsis="true"/>
+										<column fieldType="field" key="|Результат_допуска_код" valueType="text"  isValue="true" name="Результат допуска" edit-name="allowedCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="allowedCode" show-dict-column="false"/>
+										<column fieldType="field" key="|Результат_допуска" valueType="text"  isValue="true" name="Результат допуска наименование" edit-name="allowed" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="allowedCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Результат_допуска_1х_частей_код" valueType="text"  isValue="true" name="Результат допуска первых частей" edit-name="firstPartsCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="firstPartsCode" show-dict-column="false" />
+										<column fieldType="field" key="|Результат_допуска_1х_частей" valueType="text"  isValue="true" name="Результат допуска первых частей наименование" edit-name="firstParts" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="firstPartsCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Результат_допуска_квал_код" valueType="text"  isValue="true" name="Результат допуска квалификационного отбора" edit-name="qualCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="qualCode" show-dict-column="false" />
+										<column fieldType="field" key="|Результат_допуска_квал" valueType="text"  isValue="true" name="Результат допуска квалификационного отбора" edit-name="qual" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="qualCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Результат_допуска_2х_частей_код" valueType="text"  isValue="true" name="Результат допуска вторых частей" edit-name="secondPartsCode" headerNoEllipsis="true" width="200" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="secondPartsCode" show-dict-column="false" edit-readonly="true" />
+										<column fieldType="field" key="|Результат_допуска_2х_частей" valueType="text"  isValue="true" name="Результат допуска вторых частей наименование" edit-name="secondParts" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="secondPartsCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true"  />
+										<column fieldType="field" key="|Основание_для_решения" valueType="longtext"  isValue="true" name="Основание для решения" edit-name="reason" headerNoEllipsis="true" width="500" />
+										<column fieldType="field" key="|ид_заявки_участника" valueType="text"  isValue="true" name="ид_заявки_участника" edit-name="idapplic" headerNoEllipsis="true" width="500" edit-hidden="true" />
+										<column fieldType="field" key="|Место_заявки" valueType="text"  isValue="true" name="Место заявки" edit-name="place" headerNoEllipsis="true" width="200" dict-column-name="Место"  edit-tool = "Formdata:Количество заявок" dict-edit-name="place"  display-field-part="true" edit-readonly="true" />
+										<column fieldType="field" key="|Причина_отказа_в_допуске_код" valueType="text"  isValue="true" name="Причина отказа в допуске" edit-name="declineReasonCode" headerNoEllipsis="true" width="500"  edit-tool="Основание отклонения заявки участника" dict-column-name="code" edit-readonly="true" dict-edit-name="declineReasonCode" one-level-parent="NormBas_kod" is-select-one-level="1"  show-dict-column="false"   display-field-part="false" />
+										<column fieldType="field" key="|Причина_отказа_в_допуске" valueType="text"  isValue="true" name="Причина отказа в допуске наименование" edit-name="declineReason" headerNoEllipsis="true" width="500" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="declineReasonCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Заявки_участников_ПКО" edit-name="applicTabPKO" height="300" name="Заявки участников ПКО">
+										<column fieldType="field" key="|Номер_заявки" valueType="text"  isValue="true" name="Номер заявки на ЭТП" edit-name="applicId" headerNoEllipsis="true" width="150"  edit-readonly="true" />
+										<column fieldType="field" key="|ИД_заявки_на_ЭТП_ПКО" valueType="text"  isValue="true" name="ИД заявки на ЭТП ПКО" edit-name="IdOnEETP" headerNoEllipsis="true" width="150" edit-hidden="true"/>
+										<column fieldType="field" key="|Наименование_ПКО" valueType="text"  isValue="true" name="Наименование" edit-name="applicName" headerNoEllipsis="true" width="300" edit-readonly="true" />
+										<column fieldType="field" key="|Результат_допуска_код_ПКО" valueType="text"  isValue="true" name="Результат допуска" edit-name="allowedCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="allowedCode" show-dict-column="false" title="Заполняется автоматически после выбора значения поля 'Место заявки'"/>
+										<column fieldType="field" key="|Результат_допуска_ПКО" valueType="text"  isValue="true" name="Результат допуска наименование" edit-name="allowed" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="allowedCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Основание_для_решения_ПКО" valueType="text"  isValue="true" name="Основание для решения" edit-name="reason" headerNoEllipsis="true" width="500" />
+										<column fieldType="field" key="|Причина_отказа_в_допуске_код_ПКО" valueType="text"  isValue="true" name="Причина отказа в допуске" edit-name="declineReasonCode" headerNoEllipsis="true" width="500"  edit-tool="Основание отклонения заявки участника" dict-column-name="code" edit-readonly="true" dict-edit-name="declineReasonCode" one-level-parent="NormBas_kod" is-select-one-level="1"  show-dict-column="false"   display-field-part="false" />
+										<column fieldType="field" key="|Причина_отказа_в_допуске_ПКО" valueType="text"  isValue="true" name="Причина отказа в допуске наименование" edit-name="declineReason" headerNoEllipsis="true" width="500" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="declineReasonCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Место_заявки_ПКО" valueType="text"  isValue="true" name="Место заявки" edit-name="place" headerNoEllipsis="true" width="200" dict-column-name="Место"  edit-tool = "Formdata:Количество заявок ПКО" dict-edit-name="place"  display-field-part="true" edit-readonly="true" />
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Лоты" edit-name="LotsTab" height="300" name="Лоты">
+										<column fieldType="field" key="|ИД_лота_на_ЭТП" valueType="text"  isValue="true" name="ИД лота на_ЭТП" edit-name="LotIdOnEETP" headerNoEllipsis="true" width="150" edit-hidden="true" edit-readonly="true" />
+										<column fieldType="field" key="|С_учетом_НДС" valueType="boolean"  isValue="true" name="ИД лота на_ЭТП" edit-name="initialSumWithVAT" headerNoEllipsis="true" width="150" edit-readonly="true" edit-hidden="true"/>
+										<column fieldType="field" key="|Номер_лота_в_извещении" valueType="text"  isValue="true" name="Номер лота" edit-name="LotNumber" headerNoEllipsis="true" width="100"  edit-readonly="true" />
+										<column fieldType="field" key="|Предмет_договора" valueType="text"  isValue="true" name="Предмет договора" edit-name="LotName" headerNoEllipsis="true" width="800"  edit-readonly="true" />
+										<column fieldType="field" key="|Результат_по_лоту|Результат_по_лоту_код" valueType="text"  isValue="true" name="Результат по лоту" edit-name="LOTSResultCode" headerNoEllipsis="true" width="200"  edit-tool="Результат по лоту(СберАСТ)" dict-column-name="code" edit-readonly="true" dict-edit-name="LOTSResultCode" show-dict-column="false"  display-field-part="false" />
+										<column fieldType="field" key="|Результат_по_лоту|Результат_по_лоту_наименование" valueType="text"  isValue="true" name="Результат по лоту" edit-name="LOTSResultName" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSResultCode" show-dict-column="true" edit-hidden="true" />
+										<column fieldType="field" key="|Статус_лота" valueType="text"  isValue="true" name="Статус_лота" edit-name="LotStatus" headerNoEllipsis="true" width="150" edit-readonly="true" edit-hidden="true"/>
+										<column fieldType="field" key="|Лот_договор_заключается" valueType="boolean"  isValue="true" name="Лот_договор_заключается" edit-name="LotCompleteDogovor" headerNoEllipsis="true" width="150"  edit-hidden="true"/>
+										<edit>
+											<rows>
+												<row>
+													<column>
+														<field name="Заявки_участников" isLabel="true" />
+														<table key="|Заявки_участников" edit-name="LOTSapplicTab" height="300" name="Заявки участников">
+															<column fieldType="field" key="|ИД_заявки_на_ЭТП" valueType="text"  isValue="true" name="ИД заявки на ЭТП" edit-name="LOTSapplicId" headerNoEllipsis="true" width="150"  edit-readonly="true" edit-hidden="true" />
+															<column fieldType="field" key="|Номер_заявки" valueType="text"  isValue="true" name="Номер заявки на ЭТП" edit-name="LOTSapplicNumber" headerNoEllipsis="true" width="150"  edit-readonly="true" />
+															<column fieldType="field" key="|Дата_подачи_заявки" valueType="text"  isValue="true" name="Дата подачи заявки" edit-name="LOTSapplicDate" headerNoEllipsis="true" width="200"  edit-readonly="true" />
+															<column fieldType="field" key="|Наименование" valueType="text"  isValue="true" name="Наименование" edit-name="LOTSapplicName" headerNoEllipsis="true" width="500" edit-readonly="true" />
+															<!-- <column fieldType="field" key="|Цена_участника_с_НДС" valueType="money"  isValue="true" name="Цена с НДС" edit-name="LOTSpriceNDS" headerNoEllipsis="true" width="150" edit-readonly="true" />
+															<column fieldType="field" key="|Цена_участника_без_НДС" valueType="money"  isValue="true" name="Цена без НДС" edit-name="LOTSpriceOutNDS" headerNoEllipsis="true" width="150" edit-readonly="true" /> -->
+															<column fieldType="field" key="|Цена_участника" valueType="money"  isValue="true" name="Цена участника" edit-name="LOTSSupplierPrice" headerNoEllipsis="true" width="150" edit-readonly="true" />
+															<column fieldType="field" key="|Предложение_в_составе_заявки" valueType="money"  isValue="true" name="Предложение в составе заявки" edit-name="LOTSRequestPrice" headerNoEllipsis="true" width="150"/>
+															<!-- <column fieldType="field" key="|ЦП_вне_шага_с_НДС" name="ЦП вне шага с НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="LOTSofferOutOfStepWithVAT" headerNoEllipsis="true" />
+															<column fieldType="field" key="|ЦП_вне_шага_без_НДС" name="ЦП вне шага без НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="LOTSofferOutOfStepWithoutVAT" headerNoEllipsis="true" />
+															<column fieldType="field" key="|ЦП_с_НДС" name="ЦП с НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="LOTScpNds" headerNoEllipsis="true" />
+															<column fieldType="field" key="|ЦП_без_НДС" name="ЦП без НДС" valueType="money" edit-readonly="true" isValue="true" edit-name="LOTSpriceWithoutVAT" headerNoEllipsis="true"/>
+															<column fieldType="field" key="|Процент_снижения_от_НМЦ" name="% снижения от НМЦ" valueType="text" edit-readonly="true" isValue="true" edit-name="LOTSpercentageReduction" headerNoEllipsis="true"/>
+															<column fieldType="field" key="|Коэффициент_снижения_цен_без_НДС" name="Коэффициент снижения цен без НДС" valueType="double" isValue="true" edit-name="LOTSkoefSnizNoNDS" headerNoEllipsis="true" edit-readonly="true"/> -->
+															<!-- <column fieldType="field" key="|Дата_подачи_ЦП" name="Дата подачи ЦП" valueType="datetime" isValue="true" edit-name="LOTSdate_offer" headerNoEllipsis="true" edit-readonly="true" width="200"/>
+															<column fieldType="field" key="|НДС" name="Ставка НДС" valueType="text" edit-readonly="true" isValue="true" edit-name="LOTSnds" headerNoEllipsis="true"/> -->
+															<column fieldType="field" key="|Результат_допуска_код" valueType="text"  isValue="true" name="Результат допуска" edit-name="LOTSallowedCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="LOTSallowedCode" show-dict-column="false"/>
+															<column fieldType="field" key="|Результат_допуска" valueType="text"  isValue="true" name="Результат допуска наименование" edit-name="LOTSallowed" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSallowedCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+															<column fieldType="field" key="|Результат_допуска_1х_частей_код" valueType="text"  isValue="true" name="Результат допуска первых частей" edit-name="LOTSfirstPartsCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="LOTSfirstPartsCode" show-dict-column="false" />
+															<column fieldType="field" key="|Результат_допуска_1х_частей" valueType="text"  isValue="true" name="Результат допуска первых частей наименование" edit-name="LOTSfirstParts" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSfirstPartsCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+															<column fieldType="field" key="|Результат_допуска_квал_код" valueType="text"  isValue="true" name="Результат допуска квалификационного отбора" edit-name="LOTSqualCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="LOTSqualCode" show-dict-column="false" />
+															<column fieldType="field" key="|Результат_допуска_квал" valueType="text"  isValue="true" name="Результат допуска квалификационного отбора" edit-name="LOTSqual" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSqualCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+															<column fieldType="field" key="|Результат_допуска_2х_частей_код" valueType="text"  isValue="true" name="Результат допуска вторых частей" edit-name="LOTSsecondPartsCode" headerNoEllipsis="true" width="200" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="LOTSsecondPartsCode" show-dict-column="false" edit-readonly="true" />
+															<column fieldType="field" key="|Результат_допуска_2х_частей" valueType="text"  isValue="true" name="Результат допуска вторых частей наименование" edit-name="LOTSsecondParts" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSsecondPartsCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true"  />
+															<column fieldType="field" key="|Основание_для_решения" valueType="longtext"  isValue="true" name="Основание для решения" edit-name="LOTSreason" headerNoEllipsis="true" width="500" />
+															<column fieldType="field" key="|ид_заявки_участника" valueType="text"  isValue="true" name="ид_заявки_участника" edit-name="LOTSidapplic" headerNoEllipsis="true" width="500" edit-hidden="true" />
+															<column fieldType="field" key="|Место_заявки" valueType="text"  isValue="true" name="Место заявки" edit-name="LOTSplace" headerNoEllipsis="true" width="200" dict-column-name="Место"  edit-tool = "Formdata:Место заявки" dict-edit-name="LOTSplace"  display-field-part="true" edit-readonly="true" />
+															<column fieldType="field" key="|Заключить_договор" valueType="text"  isValue="true" name="Заключить договор" edit-name="NeedContractConclusion" headerNoEllipsis="true" width="200" dict-column-name="Выбор значения"  edit-tool = "Formdata:Выбор значения" dict-edit-name="NeedContractConclusion"  display-field-part="true" edit-readonly="true" title="Значение не передается на ЭТП, если заявка была НЕ допущена"/>
+															<field fieldType="field" key="|Валюта|Код_валюты" name="Валюта" valueType="text" isValue="true" edit-name="LOTSCurrency_kod" dict-column-name="code"  edit-tool = "ВалютаСбер" is-select-one-level="1" edit-readonly="true" show-dict-column="false" dict-edit-name="LOTSCurrency_kod"  width="200"/>
+															<field fieldType="field" key="|Валюта|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="LOTSCurrency" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="LOTSCurrency_kod" dict-column-width-percentage="100"/>
+															<field fieldType="field" key="|Валюта|Цифровой_код_валюты" name="Цифровой_код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="LOTSCurrency_dig_kod" edit-readonly="true" dict-column-name="Цифровой код" dict-edit-name="LOTSCurrency_kod" show-dict-column="false" />	
+															<column fieldType="field" key="|Сведения_о_предложении_о_цене" valueType="longtext"  isValue="true" name="Сведения о предложении о цене" edit-name="LOTSRequestPriceInfo" headerNoEllipsis="true" width="500"  title='Если указаны "Сведения о предложении о цене" то значения полей "Предложение в составе заявки" и "Валюта" не передаются на ЭТП' />
+															<column fieldType="field" key="|Результат_оценки" valueType="double"  isValue="true" name="Результат оценки" edit-name="LOTSRequestAssessmentResult" headerNoEllipsis="true" width="200"  />
+															<column fieldType="field" key="|Причина_отказа_в_допуске_код" valueType="text"  isValue="true" name="Причина отказа в допуске" edit-name="LOTSdeclineReasonCode" headerNoEllipsis="true" width="500"  edit-tool="Основание отклонения заявки участника" dict-column-name="code" edit-readonly="true" dict-edit-name="LOTSdeclineReasonCode" one-level-parent="NormBas_kod" is-select-one-level="1"  show-dict-column="false"   display-field-part="false" />
+															<column fieldType="field" key="|Причина_отказа_в_допуске" valueType="text"  isValue="true" name="Причина отказа в допуске наименование" edit-name="LOTSdeclineReason" headerNoEllipsis="true" width="500" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="LOTSdeclineReasonCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+														</table>
+													</column>
+												</row>
+											</rows>
+										</edit>
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Позиции" edit-name="ItemTab" height="300" name="Позиции">
+										<column fieldType="field" key="|NUM" valueType="integer" isValue="true" edit-name="NUM" edit-hidden="true" />
+										<column fieldType="field" key="|Наименование_позиции" valueType="text"  isValue="true" name="Наименование позиции" edit-name="itemName" width="310" edit-readonly="true" headerNoEllipsis="true"/>
+										<column fieldType="field" key="|Без_объявления_цены" name="Без объявления цены" valueType="boolean" isValue="true" edit-name="noPrice1" width="180" headerNoEllipsis="true" edit-readonly="true" />
+										<column fieldType="field" key="|Цена_за_единицу_без_НДС" name="Цена за единицу без НДС" valueType="money" isValue="true" edit-name="price1TaxNoNDS" width="150" headerNoEllipsis="true" edit-readonly="true"/>
+										<column fieldType="field" key="|Ставка_НДС" name="Ставка НДС" valueType="double" isValue="true" edit-name="NDS" width="150" headerNoEllipsis="true" edit-readonly="true" />
+										<column fieldType="field" key="|Цена_за_единицу_с_НДС" name="Цена за единицу с НДС" valueType="money" isValue="true" edit-name="price1TaxWithNDS" width="150" headerNoEllipsis="true" edit-readonly="true"  />
+										<column fieldType="field" key="|Итоговая_цена_без_НДС" name="Итоговая цена без НДС" valueType="money" isValue="true" edit-name="finalPrice1TaxNoNDS" width="150" headerNoEllipsis="true" edit-readonly="true"  />
+										<column fieldType="field" key="|Итоговая_цена_с_НДС" name="Итоговая цена с НДС" valueType="money" isValue="true" edit-name="finalPrice1TaxWithNDS" width="150" headerNoEllipsis="true" edit-readonly="true" />										
+										<column fieldType="field" key="|ИД_позиции_на_ЭТП" name="ИД_позиции_на_ЭТП" valueType="text" isValue="true" edit-name="PositionIdOnEETP" width="150" headerNoEllipsis="true" edit-readonly="true" edit-hidden = "true"/>
+										<edit>
+											<rows>
+												<row>
+													<column>
+														<field name="Предложения поставщиков" isLabel="true" />
+														<table key="|Характеристики_товара" edit-name="ProductСharacteristics" height="200">
+															<column fieldType="field" key="|unit_id" isValue="true" valueType="text" name="unit_id" width="400" headerNoEllipsis="true" horizontalAlignment="center" edit-name="PСhUnit_id" edit-readonly="true" edit-hidden="true"/>
+															<column fieldType="field" key="|ХТ_Участник_заявки_наименование" isValue="true" valueType="text" name="Поставщик" width="400" headerNoEllipsis="true" horizontalAlignment="center" edit-name="PСhApplicationName" edit-readonly="true"/>
+															<column fieldType="field" key="|ХТ_Место_Заявки" valueType="text"  isValue="true" name="Место заявки" edit-name="ProductPlace" headerNoEllipsis="true" width="200" dict-column-name="Место"  edit-tool = "Formdata:Количество заявок" dict-edit-name="ProductPlace"  display-field-part="true" edit-readonly="true" />
+															<column fieldType="field" key="|ХТ_Результат_допуска_код" valueType="text"  isValue="true" name="Результат допуска" edit-name="ProductallowedCode" headerNoEllipsis="true" width="200"  edit-readonly="true" dict-column-name="code" edit-tool = "Результат допуска" dict-edit-name="ProductallowedCode" show-dict-column="false" edit-hidden="true"/>
+															<column fieldType="field" key="|ХТ_Результат_допуска" valueType="text"  isValue="true" name="Результат допуска наименование" edit-name="Productallowed" headerNoEllipsis="true" width="200" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="ProductallowedCode" dict-column-width-percentage="25" show-dict-column="true" edit-hidden="true" />
+															<column fieldType="field" key="|Соответствующее_наименование_ТУ" isValue="true" valueType="text" name="Соответствующее наименование" width="300" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductAppropriateName" edit-readonly="true"/>
+															<column fieldType="field" key="|Наименование_товара" isValue="true" valueType="longtext" name="Наименование товара" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductName" edit-readonly="true" edit-hidden="true"/>
+															<column fieldType="field" key="|Производитель" isValue="true" valueType="text" name="Производитель" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductManufacturer" edit-readonly="true"/>
+															<column fieldType="field" key="|Страна_происхождения_товара" isValue="true" valueType="text" name="Страна происхождения товара" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductCountry" edit-readonly="true"/>
+															<!-- <column fieldType="field" key="|Торговая_марка" isValue="true" valueType="text" name="Торговая марка" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductBrand"/> -->
+															<column fieldType="field" key="|Цена_за_единицу_без_НДС" isValue="true" valueType="money" name="Цена за единицу без НДС" width="150" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductPriceNoNDS" edit-readonly="true"/>
+															<column fieldType="field" key="|Ставка_НДС_за_единицу" isValue="true" valueType="double" name="Ставка НДС" width="100" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductNDS" edit-readonly="true"/>
+															<column fieldType="field" key="|Цена_за_единицу_с_НДС" isValue="true" valueType="money" name="Цена за единицу с НДС" width="150" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductPriceWithNDS" edit-readonly="true"/>
+															<column fieldType="field" key="|Комментарий_поставщика" isValue="true" valueType="text" name="Комментарий" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="ProductCustomerComment" edit-readonly="true" edit-hidden="true"/>
+															<column fieldType="field" key="|ХТ_ИД_на_ЭТП" isValue="true" valueType="text" name="ХТ_ИД_на_ЭТП" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-name="PСhIdOnEETP" edit-hidden="true" edit-readonly="true"/>
+															<column fieldType="field" key="|ХТ_ид_заявки_участника" isValue="true" valueType="text" name="ХТ_ид_заявки_участника" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-hidden="true" edit-name="PСhOnApplicatiob" edit-readonly="true"/>															
+															<column fieldType="field" key="|ХТ_Участник_код_на_ЭТП" isValue="true" valueType="text" name="ХТ_Участник_код_на_ЭТП" width="200" headerNoEllipsis="true" horizontalAlignment="center" edit-hidden="true" edit-name="PСh_Code_On_EETP" edit-readonly="true"/>															
+														</table>
+													</column>
+												</row>
+											</rows>
+										</edit>
+									</table>
+								</column>
+							</row>
+							<!-- 
+							<row>
+								<column>
+									<field fieldType="field" key="|Место_заявки" valueType="text"  isValue="true" name="Место заявки" edit-name="place" dict-column-name="Место"  edit-tool = "Formdata:Количество заявок" dict-edit-name="place"  display-field-part="true" edit-readonly="true" />
+								</column>
+							</row> -->
+
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column> 
+					<block id="tlcCrit" name="Информация о комиссии">		 
+						<rows>
+							<row>
+								<column>
+									<block id="Comission" name="Информация о комиссии" view="true">
+										<rows>	
+											<row>
+												<column>
+													<field name="Номер комиссии" edit-name="CommissionNumber"  isLabel="true"  />
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Комиссия|Номер_комиссии" name="Номер комиссии" valueType="text"  isValue="true" edit-name="CommissionNumber" />
+												</column>
+												<column>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Наименование комиссии" edit-name="CommissionName"  isLabel="true"  />
+													<field fieldType="field" key="|Document|Название_комиссии" name="Наименование комиссии" valueType="longtext"  isValue="true" edit-name="CommissionName" />
+												</column>
+												<column>
+													<field name="Результаты работы комиссии" edit-name="CommissionResult"  isLabel="true"  />
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Комиссия|Результат_работы_комиссии" name="Результаты работы комиссии" valueType="longtext"  isValue="true" edit-name="CommissionResult" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>								
+								<column>		
+									<field name="" isLabel="true"/>	
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="Comission" name="Участники комиссии" view="true">
+										<rows>	
+											<row>
+												<column>
+													<table key="|Document|Участники_комиссии"  name="Участники комиссии" edit-name="Uch_Kom" height="500" edit-required="true" >									
+														 <column fieldType="field" key="|Участник_комиссии" name="Участник" valueType="text"  isValue="true" edit-name="Uchastnik" dict-column-name="code"  edit-tool = "Организации заказчики223" is-select-one-level="3" edit-readonly="true" one-level-parent="Namekomissii" dict-edit-name="Uchastnik" show-dict-column="false" edit-isInvisible="true"/> 
+														<column fieldType="field" key="|ФИО_комиссии|ФИО_комиссии" name="ФИО" isValue="true"  valueType="addressbook" edit-name="FioUch" address-book-tool ="FioUch" edit-addressbook-groups = ""   address-book-tool-selectable = "Department, Person, {currentOrganizationWithChilds}" width="300" title="Заполняется автоматически. Можно вручную выбрать пользователя из адресной книги." edit-readonly="true" edit-required="true"/> 	
+														<!-- <column fieldType="field" key="|ФИО_комиссии|Фамилия_комиссии" name="Ф" isValue="true"  valueType="text" edit-name="FamUch" 
+														width="50" edit-hidden="true"/> 	
+														<column fieldType="field" key="|ФИО_комиссии|Имя_комиссии" name="И" isValue="true"  valueType="text" edit-name="NameUch" width="50" edit-hidden="true"/> 
+														<column fieldType="field" key="|ФИО_комиссии|Отчество_комиссии" name="О" isValue="true"  valueType="text" edit-name="OtUch" width="50" edit-hidden="true"/>
+														 -->
+														<column fieldType="field" key="|ФИО_комиссии|Фамилия_комиссии" name="Ф" isValue="true"  valueType="text" edit-name="FamUch" 
+														width="50" edit-isInvisible="true" addressbook-main-field="FioUch" addressbook-property="Surname"/> 	
+														<column fieldType="field" key="|ФИО_комиссии|Имя_комиссии" name="И" isValue="true"  valueType="text" edit-name="NameUch" width="50" edit-isInvisible="true" addressbook-main-field="FioUch" addressbook-property="FirstName"/> 
+														<column fieldType="field" key="|ФИО_комиссии|Отчество_комиссии" name="О" isValue="true"  valueType="text" edit-name="OtUch" width="50" edit-isInvisible="true" addressbook-main-field="FioUch" addressbook-property="Patronymic"/>
+														
+														<!-- <column fieldType="field" key="|Участники_комиссии_роль_код" valueType="text" name="Роль_код" isValue="true" edit-name="RoleUchCode"
+														dict-edit-name="Uchastnik"   dict-column-name="Код роли" width="300" show-dict-column="false" edit-isInvisible="true" /> 
+														
+														<column fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Роль" isValue="true" edit-name="RoleUch" 
+														dict-column-name="Роль" dict-edit-name="Uchastnik"  edit-readonly="true" edit-required="true" dict-column-width-percentage="100"  
+														title="Заполняется автоматически при выборе Названия комиссии" width="300"/> -->
+														<!-- <column fieldType="field" key="|Участники_комиссии_роль_код" valueType="text" name="Роль" isValue="true" edit-name="RoleUchCode" 
+														edit-tool = "Роль участника комиссии" dict-edit-name="RoleUchCode" dict-column-name="code" width="300" 
+														edit-readonly="true" show-dict-column="false"  title="Заполняется автоматически. Можно вручную выбрать пользователя из адресной книги."/> 
+														<column fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Наименование роли" isValue="true" edit-name="RoleUch" dict-column-name="Наименование" dict-edit-name="RoleUchCode" width="300"  edit-required="true" dict-column-width-percentage="100"  title="Заполняется автоматически при выборе Названия комиссии" edit-readonly="true"  display-field-part="true" show-dict-column="true" edit-hidden="true" /> -->
+														
+														<!-- <column fieldType="field" key="|Присутствие" valueType="boolean" name="Присутствует"  isValue="true" edit-name="Prisutstvie" title="Выберите присутствоваших членов комиссии"/> --> 										
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>	
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="t2cInfo" name="Изменения">
+						<rows>	
+							<row>
+								<column>
+									<field name="Обоснование внесения изменений" isLabel="true" edit-name="obosnov"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext"   isValue="true"   edit-name="obosnov"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>	  
+
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Инициатор|ИД_Инициатора" name="Инициатор" valueType="addressbook" isValue="true" edit-name="Iniciator" edit-addressbook-groups="person"   edit-default-value="{currentUser}" />	
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  isValue="true" edit-name="registerDate" edit-required="true"    edit-default-value="{today}" edit-hidden="true"/>
+									<!-- <field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  /> -->
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Протокол" />
+									<field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="FilesPlane-header" edit-hidden="true" edit-value="Документация" />
+									<field fieldType="field" key="|FilesIntegration|header" valueType="text" isValue="true" edit-name="FilesIntegration-header" edit-hidden="true" edit-value="Файлы интеграции" />
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" edit-name="NumReg"    edit-hidden="true" />
+									<field fieldType="field" key="|Document|Год_закупки" name="Год закупки" valueType="integer" isValue="true" edit-name="godzak" edit-readonly="true" edit-isInvisible="true" />		
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />
+									<field fieldType="field" key="|Document|Номер_переторжки" name="Номер переторжки" valueType="integer"  isValue="true" edit-name="peretorgNum" edit-default-value= "0" edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Проведена_переторжка" name="Проведена переторжка" valueType="boolean"  isValue="true" edit-name="peretorgTrue" edit-default-value= "0" edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД_ЭТП" valueType="text"   isValue="true"   edit-name="ID_ETP"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_извещения_на_ЭТП" name="ИД_извещения_на_ЭТП" valueType="text"   isValue="true"   edit-name="ID_notice_ETP"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_лота_на_ЭТП" name="ИД_лота_на_ЭТП" valueType="text"   isValue="true"   edit-name="ID_lotETP"   edit-hidden="true" />
+									<field fieldType="field" key="|Document|ИД_на_ЭТП" name="ИД_на_ЭТП" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_on_ETP" />
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД в ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_IIS" />
+									<field fieldType="field" key="|Document|ИД_лота" name="ИД лота" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_Lot" />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" edit-value="Протокол"/>	
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  edit-default-value ="Протокол"/>	
+									<field fieldType="field" key="|Document|ИД_в_ЕИС_изменение" valueType="text" isValue="true" edit-name="ID_IIS_Change" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Изменение" valueType="boolean" isValue="true" edit-name="Change" edit-hidden="true" edit-value="0"/>
+									<field fieldType="field" key="|Document|Номер_извещения_в_ЕИС" valueType="text" isValue="true" edit-name="Num_Izv_IIS" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|ИД_извещения" valueType="text" isValue="true" edit-name="ID_Izv" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Фактическая_дата_размещения" valueType="datetime" isValue="true" edit-name="Fact_date" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true"  edit-default-value= "Новый" edit-name="regstatus"  edit-readonly="true"  />
+									<field fieldType="field" key="|Document|Номер_протокола_в_ЕИС" name="Номер протокола в ЕИС" valueType="text"  isValue="true" edit-name="NumProtocolEIS"  edit-readonly="true"   edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="registerSpZakup"  edit-hidden="true"   />
+									<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="registerSpZakupName"    edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="longtext" isValue="true" edit-name="registerOrgZaName"  />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_справочный_код" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="OrgZakKodSprav"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="Организация-заказчик ИНН" valueType="text" isValue="true" edit-name="registerOrgZaINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="Организация-заказчик КПП" valueType="text" isValue="true" edit-name="registerOrgZaKPP" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация-заказчик ОГРН" valueType="text" isValue="true" edit-name="registerOrgZaOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="OrgZakupkiINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="integer"  isValue="true" edit-name="OrgZakupki"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки наименование" valueType="longtext" isValue="true" edit-name="OrgZakupkiName"   edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="OrgZakupkiKPP" edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text"   isValue="true" edit-name="OrgZakupkiOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="orgzakuoEISCode" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" name="Заказчик_подразделение" valueType="addressbook" address-book-tool="CustomerDepartment" isValue="true" edit-name="CustomerDepartment"  edit-default-value="{currentOrganization}" edit-addressbook-groups = "Department" edit-hidden="true"/> 
+
+									<field fieldType="field" key="|Document|Адрес_ЭТП" valueType="text" isValue="true" edit-name="ETPaddress" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true"  dictionary-selection-start-level="1"  edit-readonly="true" edit-tool = "Электронные площадки"  edit-name="naimETP"  is-select-one-level="1"  dict-column-name="code"  display-field-part="true"  dict-edit-name="naimETP"  />															
+									<field fieldType="field" key="|Document|Форма_торгов" valueType="text" isValue="true" edit-name="forma" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Форма_торгов_код" valueType="text" isValue="true" edit-name="formacode" edit-hidden="true" />
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" valueType="money" isValue="true" edit-name="NMC" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Дата_окончания_подачи_заявок" valueType="datetime" isValue="true" edit-name="dateokon" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Не_отправлять_данные_о_заявителях_в_ЕИС" name="Не отправлять данные о заявителях в ЕИС" valueType="boolean"  edit-name="zayvEIS"  />
+									<field fieldType="field" key="|Document|Не_отправлять_ценовые_предложения_заявителей_в_ЕИС" name="Не отправлять ценовые предложения заявителей в ЕИС" valueType="boolean" edit-name="cenaEIS"  />
+									<field fieldType="field" key="|Document|Код_валюты" name="Валюта" valueType="text" isValue="true" edit-name="Currency_kod" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="Currency"  />
+									<field fieldType="field" key="|Document|Цифровой_код_валюты" name="Цифровой_код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency_dig_kod"  />	
+									<field fieldType="field" key="|Document|Номер_закупки" name="Номер_закупки" valueType="text" isValue="true" edit-name="numzakupka" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Порядковый_номер_протокола" name="Порядковый_номер_протокола" valueType="integer" isValue="true" edit-name="prnumb" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Победитель|Победитель" name="Победитель" valueType="longtext"  isValue="true" edit-name="orgpost2" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Победитель|Победитель_наименование" name="Победитель наименование" valueType="longtext"  isValue="true" edit-name="orgpost2Name" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Подразделение инициатора" valueType="addressbook" isValue="true" edit-name="IniciatorDep" />
+									<field fieldType="field" key="|Document|Победитель|Победитель_фирменное_наименование" name="Организация поставщик фирменное наименование" valueType="longtext" isValue="true" edit-name="FirmName" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний номер" valueType="text" isValue="true" edit-name="Vnut_nomber" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Количество_членов" name="Количеств членов" valueType="integer" isValue="true" edit-name="colComission" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|Количество_За" name="Количество За" valueType="integer" isValue="true" edit-name="sayYes" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|Кворум_собран" name="Кворум собран" valueType="boolean" edit-name="canPublic" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|За" name="За" valueType="integer" isValue="true" edit-name="Yes" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" />
+									<field fieldType="field" key="|Document|Попозиционная_закупка" name="Попозиционная закупка" valueType="boolean" edit-name="poPosZak"/>
+									<field fieldType="field" key="|Document|Изменения" name="Изменения" valueType="boolean" edit-name="amendment" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|Неактуальный" name="Неактуальный" valueType="boolean" edit-name="NotActual" edit-hidden="true" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|ParentRK" name="ParentRK" valueType="text" edit-name="ParentRK" />
+									<field fieldType="field" key="|Document|Коэффициент_снижения" name="Коэффициент снижения" valueType="boolean" isValue="true" edit-name="koefSniz"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_документа_на_ЭТП" isValue="true" name="ИД_документа_на_ЭТП" valueType="integer" edit-name="IdDocumentOnSber"/>
+									<field fieldType="field" key="|Document|Создана_из_процедуры" name="Создана_из_процедуры" valueType="boolean" edit-name="CreateIsNotice"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Этап_протокола" isValue="true" name="Этап_протокола" valueType="text" edit-name="ProtocolStep"/>
+									<field fieldType="field" key="|Document|VersionGuid" isValue="true" name="Гуид версии" valueType="text" edit-name="VersionGuid"/>
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность"  valueType="boolean" edit-name="actual" edit-default-value="1"/>
+									<field fieldType="field" key="|Document|Макс_количество_победителей" name="Максимальное количество победителей по лоту" valueType="integer" isValue="true" edit-name="MaxWinners" edit-default-value="1"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительные_этапы|Код_этапа" name="Код_этапа"  valueType="text" edit-name="purchasestageid" />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительные_этапы|Наименование_этапа" name="Наименование_этапа"  valueType="text" edit-name="purchasestagetypename" />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|СбАСТ_Договор_заключается" name="СбАСТ_Договор_заключается"  valueType="boolean" edit-name="DogovorComplete" />
+									<!-- <table key="|Document|Заказчик_права_таблица" edit-name="CustomerTab" height="300">
+										<column fieldType="field" key="|Заказчик_код_права"  name="Заказчики" valueType="addressbook" isValue="true" edit-addressbook-groups = "Department" edit-name="customertable" address-book-tool ="customertable" width="150"/>
+										<column fieldType="field" key="|Заказчик_наименование_права"  name="Заказчики" valueType="addressbook" isValue="true" edit-addressbook-groups = "Department" edit-name="customertablename" address-book-tool ="customertable" width="150"/>
+									</table> -->
+								</column>
+							</row> 
+						</rows>
+					</block>
+				</column>
+			</row>  
+
+		</rows>
+
+		<variables>
+			<!-- <variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format="{value}" />		
+			</variable> -->
+			<variable variable-name="caption" variable-format="Протокол{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>  
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LProtocol223.js" />
+	</scripts>
+</root>

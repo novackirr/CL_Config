@@ -1,0 +1,154 @@
+
+.approve-capture {
+    margin-bottom: 30px;
+    color: #428bca;
+    padding-left: 15px;
+}
+
+.documentView-field-value label.control-label {
+    font-weight: normal;
+    color: gray;
+    font-size: 14px;
+    text-align: left;
+}
+
+.content-approve-panel,.content-etp-panel {
+    margin-top: 30px;
+    max-width: 710px;
+}
+
+.content-etp-panel {
+    max-width: 1000px;
+    padding-bottom: 50px;
+}
+
+
+
+.content-etp-panel .error::-webkit-input-placeholder { /* Chrome */
+    color: red;
+}
+.content-etp-panel .error:-ms-input-placeholder { /* IE 10+ */
+    color: red;
+}
+.content-etp-panel .error::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+    opacity: 1;
+}
+.content-etp-panel .error:-moz-placeholder { /* Firefox 4 - 18 */
+    color: red;
+    opacity: 1;
+}
+
+
+    .content-etp-panel .pswd-input {
+        border: 0;
+        padding-right: 20px;
+        width: 100%;
+    }
+
+    .content-etp-panel .glyphicon {
+        color: #777;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 0;
+        top: 12px;
+    }
+
+.content-etp-panel .dx-highlight-outline .pswd-input {
+    padding-left: 7px;
+}
+
+    .content-etp-panel .dx-highlight-outline .glyphicon { top: 5px; }
+
+.content-etp-panel .buttons {
+    margin-top: 30px;
+}
+
+.content-etp-panel .buttons button {
+    margin-right: -10px;
+}
+
+
+.default-font-size {
+    font-size: 12px;
+}
+
+.form-control {
+    font-weight: normal;
+}
+
+.not-required-label {
+    padding-right: 25px;
+}
+
+.chosen-select,
+.custom-multiselect {
+    height: 0px !important;
+    max-height: 0px !important;    
+}
+
+.chosen-container {
+    font-weight: normal !important;
+}
+
+.custom-error {
+    border: 1px solid;
+    border-color: #a94442;
+    border-radius: 4px;
+    margin-top: -2px;
+}
+
+.custom-error-label {
+    color: #a94442;
+}
+
+.buttons {
+    text-align: right;
+}
+
+#Organization_chosen .chosen-single {
+    line-height: initial;
+    white-space: initial;
+    height: auto;
+    min-height: 34px;
+    padding: 8px;
+    cursor: not-allowed;
+}
+
+    #Organization_chosen .chosen-single span {
+        text-overflow: initial;
+        white-space: initial;
+    }
+
+.search-menu-content .search-result *:after, .search-menu-content .nav:after, .search-menu-content .container:after, .search-menu-content .container *:after, .search-menu-content .btn-toolbar:after {
+    clear: right !important;
+}
+
+
+.edit-dictionaries .container { margin-bottom: 45px; }
+
+.dictionary-item-form-buttons { padding-right: 45px; }
+
+.edit-dictionaries .grid-clickable .dx-column-lines { cursor: pointer; }
+
+.edit-dictionaries .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
+}
+.edit-dictionaries .dictionary-item-commands .dx-button {
+    margin-right: 10px;
+}
+ .edit-dictionaries .dictionary-item-commands .dx-button-content{
+    padding: 4px;
+}
+
+.edit-dictionaries .dictionary-item-commands .dx-button-content .dx-icon {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    line-height: 14px;
+}

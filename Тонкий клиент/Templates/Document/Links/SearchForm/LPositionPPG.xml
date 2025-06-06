@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <derivedFields>
+    <field edit-name="IKZPZ" fieldType="field" key="|Document|ИКЗ_позиции_ПЗ" isValue="true" valueType="text"/>
+	<field edit-name="OrgZakup" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" isValue="true" valueType="text"/> 
+  </derivedFields>
+  <edit>
+     <rows>
+	       <row>
+		          <column>
+                     <field name="Наименование объекта закупки" isLabel="true" />
+                     <field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext"  isValue="true" edit-name="NameObZak" />
+				     <field fieldType="field" key="|Document|ИД_позиции_ПГ" name="ИД_позиции_ПГ" valueType="text" isValue="true" edit-name="IPPG" edit-hidden="true"  />
+				  </column>
+				  
+            </row>
+	      
+	 </rows>
+  </edit>
+  <search>
+   <field fieldValue="doc_RegCard/rc_FlowName = 'Позиции' and ((doc_RegCard/rc_FlowKey = @flowKey) and (doc_RegCard/rc_Index/text_ИКЗ = @IKZPZ) and (doc_RegCard/rc_Index/text_Организация_заказчик= @OrgZakup )  and (doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки= @NameObZak ) and not(doc_RegCard/rc_Index/text_ИД_позиции_ПГ))" /> 
+
+   </search>
+</root>

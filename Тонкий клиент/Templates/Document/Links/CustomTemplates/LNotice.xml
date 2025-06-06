@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+	<table flow="Заявки на размещение закупки" childLinksFlow="Позиции плана-графика">
+		<settings>
+			<setting key="addButtonText"  value="Добавить заявку"/>
+			<setting key="canModify" condition="(doc_RegCard/rc_Index/text_Статус = 'Черновик')" value="true" />
+			<setting key="canCreateLinks" condition="(doc_RegCard/rc_Index/text_Статус = 'Черновик')" value="true" />
+			<setting key="terminalRoute"  value="Удаление заявки из извещения"/>
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" weight="150" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" weight="40" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦК" name="НМЦК" valueType="money" weight="40" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Планируемый_срок_размещения" name="Плановая дата размещения" valueType="date" weight="60" />
+		</columns>
+	</table>
+	<table flow="Протоколы" childLinksFlow="Заявки участников">
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Номер_протокола" name="Номер протокола" valueType="text" weight="50" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="date" weight="60" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Вид_протокола" name="Вид протокола" valueType="text" weight="140" />
+		</columns>
+	</table>
+	<!-- <table flow="Заявки участников">
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_заявки" name="Номер заявки" valueType="text" weight="50" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_подачи_заявки" name="Дата подачи заявки" valueType="date" weight="60" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Участник_заявки_наименование" name="Участник заявки наименование" valueType="text" weight="140" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Результат" name="Результат" valueType="text" weight="140" />
+		</columns>
+	</table> -->
+</root>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<actions>
+	<action type="CreateDocumentTemplate">
+	  <flows>
+	  	<flow name="Поток1" default-action="doNotCopy">
+			<field name="|Document|Планируемый_год_размещения" action="Copy"/>		
+			<field name="|Document|Периодичность_закупки" action="Copy" />					
+			<field name="|Document|Наименование_объекта_закупки" action="Copy" />
+			<field name="|Document|Техническая_сложность" action="Copy" />
+			<field name="|Document|Дополнительные_сведения" action="Copy" />
+			<field name="|Document|Общественное_обсуждение" action="Copy" />		
+			<field name="|Document|Ожидаемый_результат" action="Copy" />
+			<field name="|Document|Обоснование_соответствия_объекта" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_наименование" action="Copy" />
+			<!--<field name="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ИНН" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_КПП" action="Copy"/>
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Адрес" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Телефон" action="Copy"/>
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Код_в_ЕИС" action="Copy"/>--> 
+		</flow>
+		<flow name="Позиции плана закупок" default-action="doNotCopy">
+			<field name="|Document|Планируемый_год_размещения" action="Copy"/>		
+			<field name="|Document|Периодичность_закупки" action="Copy" />					
+			<field name="|Document|Наименование_объекта_закупки" action="Copy" />
+			<field name="|Document|Техническая_сложность" action="Copy" />
+			<field name="|Document|Дополнительные_сведения" action="Copy" />
+			<field name="|Document|Общественное_обсуждение" action="Copy" />		
+			<field name="|Document|Ожидаемый_результат" action="Copy" />
+			<field name="|Document|Обоснование_соответствия_объекта" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_наименование" action="Copy" />
+			<!--<field name="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_ИНН" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_КПП" action="Copy"/>
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Адрес" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Телефон" action="Copy"/>
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" action="Copy" />
+			<field name="|Document|Организация_заказчик|Организация_заказчик_Код_в_ЕИС" action="Copy"/>--> 
+		</flow>
+		<flow name="Извещения о закупочной процедуре" default-action="doNotCopy">	
+			<field name="|Document|Контактное_лицо|Дополнительная_контактная_информация" action="Copy" />		
+			<field name="|Document|Место_предоставления_документации" action="Copy" />			
+		</flow>
+		<flow name="Заявки на размещение закупки" default-action="doNotCopy">
+			<!-- <field name="|Document|Ограничения_допуска_товаров" action="Copy" />
+			<field name="|Document|Наличие_утвержденной_документации" action="Copy" />
+			<field name="|Document|Наличие_гос_экспертизы" action="Copy" />
+			<field name="|Document|Возможность_изменения_условий_контракта" action="Copy" />
+			<field name="|Document|Возможность_контракт_с_несколькими_участниками" action="Copy" />
+			<field name="|Document|Возможность_одностороннего_отказа" action="Copy" />
+			<field name="|Document|Дополнительная_информация" action="Copy" />
+			<field name="|Document|Информация_о_контрактной_службе" action="Copy" />
+			<field name="|Document|Контактное_лицо|Дополнительная_контактная_информация" action="Copy"/> -->
+			<field name="|Document|Руководитель_контрактной_службы_должность" action="Copy" />
+			<field name="|Document|Руководитель_контрактной_службы_ФИО" action="Copy" />
+			<field name="|Document|Руководитель_контрактной_службы_телефон" action="Copy" />
+			<field name="|Document|Руководитель_контрактной_службы_email" action="Copy" />
+			<field name="|Document|Ответст_за_заключение_контракта_должность" action="Copy" />					
+			<field name="|Document|Ответст_за_заключение_контракта_ФИО" action="Copy" />
+			<field name="|Document|Ответст_за_заключение_контракта_телефон" action="Copy" />					
+			<field name="|Document|Ответст_за_заключение_контракта_email" action="Copy" />
+			<field name="|Document|Ответственный_исполнитель_должность" action="Copy" />					
+			<field name="|Document|Ответственный_исполнитель_ФИО" action="Copy" />
+			<field name="|Document|Ответственный_исполнитель_телефон" action="Copy" />
+			<field name="|Document|Ответственный_исполнитель_email" action="Copy" />			
+		</flow>
+		<flow name="Позиции плана-графика" default-action="doNotCopy">
+			<field name="|Document|Информация_об_одностороннем_отказе_от_исполнения" action="Copy" />
+			<field name="|Document|Информация_о_контрактной_службе" action="Copy" />
+			<field name="|Document|Банковское_сопровождение_контракта" action="Copy" />
+			<field name="|Document|Максимальный_размер_оплаты" action="Copy" />
+			<field name="|Document|Дополнительные_сведения" action="Copy" />
+			<field name="|Document|Сведения_об_общественном_обсуждении" action="Copy" />
+			<field name="|Document|Электронная_закупка" action="Copy" />
+			<field name="|Document|Общественное_обсуждение" action="Copy" />
+			<field name="|Document|СМП" action="Copy" />
+			<field name="|Document|Лекарственный_препарат" action="Copy" />
+			<field name="|Document|Не_публиковать_в_ЕИС" action="Copy" />
+			<field name="|Document|Закупки_продукции_сх_производителей" action="Copy" />
+			<field name="|Document|Контракт_жизненного_цикла" action="Copy" />		
+		</flow>
+		<flow name="Протоколы" default-action="doNotCopy">
+			<field name="|Document|Место_рассмотрения_заявок" action="Copy" />			
+		</flow>
+	  </flows>
+	</action>
+	<action type="CopyDocument">
+		<flows>
+			<flow name="*">
+				<field name="|Key" action="doNotCopy" />
+				<field name="|Document|Число_регномера" action="doNotCopy" />
+				<field name="|Document|Регистрационный_номер" action="doNotCopy" />
+			</flow>
+			<flow name="Позиции плана закупок 223ФЗ" copyLinkedDocuments="false" isNeedLinks="false" >
+				<field name="|Document|Дата_регистрации" action="setCurrentDate" />
+				<field name="|Document|Статус" action="setValue" value="Черновик" />
+				<field name="|Document|Номер_редакции" action="setValue" value="1" />
+				<field name="|Document|ИД_первой_редакции" action="doNotCopy" />
+				<field name="|Document|ИД_в_ЕИС" action="doNotCopy" />
+				<field name="|Document|ИД_позиции_плана" action="doNotCopy" />
+				<field name="|Document|Инициатор|Инициатор" action="setCurrentUser"/>
+				<field name="|Document|Ответственный_исполнитель|Ответственный_исполнитель" action="doNotCopy" />
+				<field name="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" action="doNotCopy" />
+			</flow>
+			<flow name="Заявки на закупку" copyLinkedDocuments="true" >
+				<field name="|Document|Дата_регистрации" action="setCurrentDate" />
+				<field name="|Document|Статус" action="setValue" value="Черновик" />
+			</flow>
+			<flow name="Контракты" copyLinkedDocuments="true" >
+				<field name="|Document|Дата_регистрации" action="setCurrentDate" />
+				<field name="|Document|Статус" action="setValue" value="Черновик" />
+			</flow>
+			<flow name="Позиции">
+				<field name="|Document|ИД_заявки" action="setParentDocKey" />
+				<field name="|Document|Статус" action="setValue" value="Черновик" />
+				<field name="|Document|ИД_позиции_ПГ" action="doNotCopy" />
+				<field name="|Document|ИД_контракта" action="doNotCopy" />
+				<field name="|Document|ИД_позиции_ПЗ" action="doNotCopy" />
+				<field name="|Document|ИД_позиции_ПЗ" action="doNotCopy" />
+				<field name="|Document|Тип_особой_закупки_код" action="doNotCopy" />
+				<field name="|Document|Тип_особой_закупки" action="doNotCopy" />
+			</flow>
+		</flows>
+	</action>
+	<action type="CreateFromLink">
+		<flows>
+			<flow name="*">
+				<field name="|Key" action="doNotCopy" />
+				<field name="|Document|Число_регномера" action="doNotCopy" />
+				<field name="|Document|Регистрационный_номер" action="doNotCopy" />
+			</flow>
+			<flow name="Позиции">
+				<attachments>
+					<category name="Присоединенные файлы" action="doNotCopy"/>
+				</attachments>
+				<!-- <links>
+					<link flow="Позиции плана-графика" action="doNotCopy" />
+				</links> -->
+				<field name="|Key" action="doNotCopy" />
+				<field name="|Document|Число_регномера" action="doNotCopy" />
+				<field name="|Document|Регистрационный_номер" action="doNotCopy" />
+				<field name="|Document|ИД_заявки" action="setParentDocKey" />
+				<field name="|Document|Статус" action="setValue" value="Позиция контракта" />
+				<field name="|Document|ИД_позиции_ПЗ" action="doNotCopy" />
+			 	<field name="|Document|ИД_контракта" action="doNotCopy" /> 
+			
+			</flow>
+			<flow name="Контракты">
+				<attachments>
+					<category name="Присоединенные файлы" action="doNotCopy"/>
+				</attachments>
+				
+				<field name="|Key" action="doNotCopy" />
+				<field name="|Document|Число_регномера" action="doNotCopy" />
+				<field name="|Document|Регистрационный_номер" action="doNotCopy" />
+				<field name="|Document|Номер_редакции" action="doNotCopy" /> 
+			
+			</flow>
+			
+			
+		
+						
+		</flows>
+	</action>
+</actions>

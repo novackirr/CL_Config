@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="notifications" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allowAllActions="true" allowSingleActions="true" allowSelection="true">
+    <column fieldType="attribute" key="data/subject" 	name="Тема" 			valueType="text" 		sortPredicate="data/subject" weight="40" />
+	<column fieldType="attribute" key="data/text" 		name="Сообщение" 		valueType="text" 		sortPredicate="data/text" 	 weight="40" />
+	<column fieldType="attribute" key="sendedAt" 	 	name="Дата отправки" 	valueType="date" 		sortPredicate="sendedAt" 	 weight="10" />
+  </columns>
+  <sort predicate="sendedAt" direction="ascending"/>
+</root>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>
+		<column>
+			<field name="Организация поставщик" isLabel="true" />
+			<field fieldType="field" key="Document|Организация_поставщик|Организация_поставщик" name="Организация поставщик" valueType="text"  dict-column-name="code" isValue="true" edit-name="post2" edit-readonly="true" dictionary-selection-start-level="1" edit-tool = "Контрагенты" dict-edit-name="post2" show-dict-column="false" />
+			<field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация поставщик наименование"  dict-column-name="Наименование"  valueType="text" isValue="true" edit-name="post2Name"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="post2"  />
+        </column>	
+		
+    </row>
+	<row>	
+		<column>
+			<field name="Предмет договора" isLabel="true" />
+			<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="dogovorName" />
+        </column>
+		<column>		
+			<field name="Номер основного договора" isLabel="true" />
+			<block id="block10" name="block10" height="300">		
+				<rows>
+					<row>
+						<column>			
+							<field fieldType="field" key="|Document|Номер_основного_договора" name="Номер основного договора" valueType="text" isValue="true" edit-name="regNumDogovor" />
+						</column>						
+					</row>
+				</rows>								
+			</block>
+			<block id="block11" name="block11" height="300">		
+				<rows>
+					<row>
+						<column>			
+							<field name="Дата заключения договора" isLabel="true"/>
+						</column>						
+					</row>
+				</rows>								
+			</block>
+			<block id="block12" name="block12" height="300">		
+				<rows>
+					<row>
+						<column>			
+							<field name="с" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения" valueType="date" value-db-type="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+						</column>
+						<column>							
+							<field name="по" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_заключения" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="publicDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>
+        </column>			
+    </row>
+	</rows>
+  </edit>
+	<extraSearchForm>
+		<rows>
+			<row>
+				<column>
+					<field name="Основание расторжения договора" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Документ-основание расторжения договора" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Основание_расторжения_код" valueType="longtext" name="Основание расторжения" isValue="true"  edit-tool="Основания расторжения договора" dict-column-name="code" edit-name="Osnovanie"   dict-edit-name="Osnovanie" show-dict-column="false" edit-readonly="true"/>
+					<field fieldType="field" key="|Document|Основание_расторжения" valueType="longtext" name="Основание расторжения наименование"  isValue="true"   edit-name="OsnovanieName"  dict-column-name="Наименование"   dict-edit-name="Osnovanie"  display-field-part="true" edit-hidden="true" edit-readonly="true"/>	
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Документ_основание_расторжения_код" valueType="longtext" name="Документ-основание расторжения" isValue="true"  edit-tool="Документ основание расторжения договора" dict-column-name="code" edit-name="DocOsnovanie"   dict-edit-name="DocOsnovanie" show-dict-column="false" edit-readonly="true"/>
+					<field fieldType="field" key="|Document|Документ_основание_расторжения" valueType="longtext" name="Документ-основание расторжения наименование"  isValue="true"   edit-name="DocOsnovanieName"  dict-column-name="Наименование"   dict-edit-name="DocOsnovanie"  display-field-part="true" edit-hidden="true" edit-readonly="true"/>	
+				</column>
+			</row>   
+			<row>
+				<column>
+					<field name="Дата расторжения договора" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Дата документа-основания расторжения договора" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="block2" name="block2" height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_расторжения_договора" valueType="datetime" name="Дата расторжения договора" isValue="true" edit-name="DateRastFrom"  />
+								</column>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_расторжения_договора" valueType="datetime" name="Дата расторжения договора" isValue="true" edit-name="DateRastTo"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+				<column>
+					<block id="block2" name="block2" height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения_дата" valueType="date" name="Дата документа-основания расторжения договора" isValue="true" edit-name="DateRastOsnovanieFrom"  />
+								</column>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения_дата" valueType="date" name="Дата документа-основания расторжения договора" isValue="true" edit-name="DateRastOsnovanieTo"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Номер сведений о расторжении договора" isLabel="true" />									
+				</column>
+				<column>
+					<block id="block2" name="block2" height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" isLabel="true" />									
+								</column>
+								<column>
+									<field name="Начисление неустоек" isLabel="true" />									
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Номер_сведений_о_расторжении" valueType="text" name="Номер сведений о завершении договора" isValue="true" edit-name="NumberSved"/>
+				</column>
+				<column>
+					<block id="block2" name="block2" height="300">		
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Прекращение_обязательств_сторон_окончание_действия" valueType="boolean" name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Prekr" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Начисление_неустоек" valueType="boolean" name="Начисление неустоек" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="neust"/>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>     
+			<row>
+				<column>
+					<field name="Номер документа-основания расторжения договора" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Информация о неустойках" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Документ_основание_расторжения_номер" valueType="longtext" name="Номер документа-основания расторжения договора" isValue="true" edit-name="NumberRastOsnovanie" />
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Информация_о_неустойках" valueType="longtext" name="Информация о неустойках" edit-name="neustName" isValue="true"/>
+				</column>
+			</row> 
+			
+			<row>
+				<column>
+					<field name="Обоснование изменений" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Причина отмены сведений" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование изменений" valueType="longtext" isValue="true"   edit-name="Obosn"  />
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Причина_отмены_сведений" name="Причина отмены сведений" valueType="longtext" isValue="true"   edit-name="Prich"  />
+				</column>
+			</row>
+		</rows>
+	</extraSearchForm>
+  <search>
+     <field fieldValue="(doc_RegCard/rc_FlowName = 'Расторжения договора 223ФЗ') and (doc_RegCard/rc_Index/text_Номер_основного_договора = @regNumDogovor) and (doc_RegCard/rc_Index/text_Статус = @status) and (doc_RegCard/rc_Index/text_Организация_поставщик = @post2) and ((doc_RegCard/rc_Index/date_Дата_заключения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения &lt;= @publicDateTo)) and (xn-contains(doc_RegCard/rc_Index/longtext_Предмет_договора ,@dogovorName)) and (doc_RegCard/rc_Index/longtext_Основание_расторжения_код = @Osnovanie) and (doc_RegCard/rc_Index/longtext_Документ_основание_расторжения_код = @DocOsnovanie) and ((doc_RegCard/rc_Index/datetime_Дата_расторжения_договора &gt;= @DateRastFrom) and (doc_RegCard/rc_Index/datetime_Дата_расторжения_договора &lt;= @DateRastTo)) and ((doc_RegCard/rc_Index/date_Документ_основание_расторжения_дата &gt;= @DateRastOsnovanieFrom) and (doc_RegCard/rc_Index/date_Документ_основание_расторжения_дата &lt;= @DateRastOsnovanieTo)) and (doc_RegCard/rc_Index/text_Номер_сведений_о_расторжении = @NumberSved) and (doc_RegCard/rc_Index/longtext_Документ_основание_расторжения_номер = @NumberRastOsnovanie) and (doc_RegCard/rc_Index/boolean_Прекращение_обязательств_сторон_окончание_действия = @Prekr) and (doc_RegCard/rc_Index/boolean_Начисление_неустоек = @neust) and (doc_RegCard/rc_Index/longtext_Информация_о_неустойках = @neustName) and (doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений = @Obosn) and (doc_RegCard/rc_Index/longtext_Причина_отмены_сведений = @Prich)" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

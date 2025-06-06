@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>
+
+		<row>	
+			<column>
+				<field name="Организация заказчик" isLabel="true" />
+				<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" edit-readonly="true" dict-column-name="code" valueType="text"  isValue="true" edit-name="registerOrgZa"  is-select-one-level="1"  edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa"/>			
+				<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" dict-column-name="Краткое наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="registerOrgZa"/>
+			</column>	
+			<column>
+				<field name="Год закупки" isLabel="true"/>
+				<table key="table1" edit-name="table1" height="300">
+					<field name="от" isLabel="true"/>
+					<field fieldType="field" key="|Document|Год_закупки" name="Год" valueType="text" isValue="true" edit-name="yearFrom" />
+					<field name="до" isLabel="true" />
+					<field fieldType="field" key="|Document|Год_закупки" name="Год" valueType="text" isValue="true" edit-name="yearTo" />
+				</table>					
+			</column>			
+				<column></column>
+		</row>
+	
+	 
+      
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок') and (doc_RegCard/rc_Index/text_Статус = @status) and ((doc_RegCard/rc_Index/text_Год_закупки &gt;= @yearPlanFrom) and (doc_RegCard/rc_Index/text_Год_закупки &lt;= @yearPlanTo))" />
+  </search>
+</root>

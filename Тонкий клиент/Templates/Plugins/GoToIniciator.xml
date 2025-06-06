@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<options showComment="true" />
+	<flows>
+		<flow name="Разъяснения положений документации 223ФЗ"/>
+	</flows>
+	<activities>
+		<activity name="Дать ответ на запрос" type="Task" action="normal"/>		
+	</activities>
+	<view showCurrentValues="false" >
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Переназначен_ответственный" name="Переназначен ответственный" valueType="boolean" edit-hidden="true" isValue="true" edit-name="NewOtv" edit-default-value="1"/>
+					</column>
+				</row>
+			</rows>
+		</template>
+	</view>
+	
+</root>

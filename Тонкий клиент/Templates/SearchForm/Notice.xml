@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Наименование объекта закупки" isLabel="true" /> 
+					<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" isValue="true" edit-name="Namezak"  /> 
+				</column> 
+			</row>
+			<row>
+				<column>
+					<field name="Способ определения поставщика" isLabel="true" />
+					<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Способ определения поставщика" valueType="text"  isValue="true" edit-name="sposob"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Способ определения поставщика" dict-edit-name="sposob" />
+					<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика наименование" valueType="text" isValue="true" edit-name="sposobName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="sposob" display-field-part="true" edit-hidden="true"/>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Статус" isLabel="true"/>
+					<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Статусы закупки" dict-edit-name="Status" display-field-part="true"/>
+				</column>
+				<column>
+					<field name="Номер закупки" isLabel="true"/>
+					<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки" valueType="text"  isValue="true" edit-name="NumberZak"/>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Планируемый год размещения" isLabel="true"/>
+					<field fieldType="field" key="|Document|Планируемый_год_размещения" name="Планируемый год размещения" valueType="date"  isValue="true" edit-name="God"/>
+				</column>
+				<column>
+					<field name="Предквалификационный отбор" isLabel="true"/>
+					<field fieldType="field" key="|Document|Предквалификационный_отбор" name="Предквалификационный отбор" valueType="boolean"  isValue="true" edit-name="PredKval"/>
+				</column>
+			</row>
+
+			<row>
+				<column>
+					<field name="Дата публикации" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_публикации" name="Дата публикации" valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_публикации" name="до" valueType="date" isValue="true" edit-name="publicDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+
+
+				<column>
+					<field name="Дата окончания подачи заявок" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_окончания_подачи_заявок" name="Дата окончания подачи заявок" valueType="date" isValue="true"  edit-name="finishDateFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_окончания_подачи_заявок" name="до" valueType="date" isValue="true" edit-name="finishDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+
+			</row>
+			<row>
+				<column>
+					<field name="Дата рассмотрения заявок" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_рассмотрения_заявок" name="Дата рассмотрения заявок" valueType="date" isValue="true"  edit-name="itogDateFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_рассмотрения_заявок" name="до" valueType="date" isValue="true" edit-name="itogDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+				<column>
+					<field name="Дата проведения аукциона" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_проведения_аукциона" name="Дата проведения аукциона" valueType="date" isValue="true"  edit-name="AucDateFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Дата_проведения_аукциона" name="до" valueType="date" isValue="true" edit-name="AucDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+			</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре') and (doc_RegCard/rc_Index/text_Статус = @status) and (doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки = @Namezak)  and (doc_RegCard/rc_Index/text_Способ_определения_поставщика_код = @sposob)  and (doc_RegCard/rc_Index/boolean_Предквалификационный_отбор = @PredKval) and (doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @God) and ((doc_RegCard/rc_Index/date_Дата_публикации &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_публикации &lt;= @publicDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок &gt;= @finishDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок &lt;= @finishDateTo))  and ((doc_RegCard/rc_Index/datetime_Дата_рассмотрения_заявок &gt;= @itogDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_рассмотрения_заявок &lt;= @itogDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_проведения_аукциона &gt;= @AucDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_проведения_аукциона &lt;= @AucDateTo))" />
+	</search>
+</root>

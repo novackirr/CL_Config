@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+    <LinksModify>
+        <LinkCurrentDoc />
+    </LinksModify>
+
+    <FieldsModify>
+         <SetField dst="|Document|Имя_потока" value="Поток1" />
+         <CopyField src="%key%" dst="|Document|Рег_номер"/>
+    </FieldsModify>
+
+    <OnDocumentCreated>
+        <NamedConstants>
+            <Constant>
+                <Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+                <Setting key="CounterNameFormat" value="({|Document|Имя_потока})"/>
+            </Constant>     
+        </NamedConstants>
+    </OnDocumentCreated>
+
+</Hooks>

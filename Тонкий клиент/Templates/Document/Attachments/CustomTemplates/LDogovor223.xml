@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <createTable>
+		<columns>
+		  <column fieldType="property" key="AttachmentDocType" edit-name="AttachmentDocType" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-autocomplete ="formdata:Договор типы" edit-required="true" edit-readonly="true"/>
+		  <column fieldType="property" key="AttachmentPublication" edit-name="publication" name="Признак публикации" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="isPublished" display-field-part="true" edit-autocomplete ="Признак публикации" edit-readonly="true"/>
+		  <column fieldType="property" key="AttachmentFileName" edit-name="attachmentTitle" name="Название файла" isValue="true" valueType="text" edit-required="true" />
+		</columns>
+	</createTable>
+	<table category="Документация" allowedExtensions="pdf,doc,docx,rtf,xls,xlsx,jpg,jpeg,bmp,tif,tiff,txt,zip,rar,gif,csv,odp,odf,ods,odt,sxc,sxw,html,htm,xml">
+		<view>
+		  <columns>
+			<column fieldType="property" key="AttachmentDocType"  name="Вид документа"  valueType="text" weight="30" headerNoEllipsis="true" horizontalAlignment="center"/>
+			<column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="55" headerNoEllipsis="true" horizontalAlignment="center"/>		
+			<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>			
+			<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>
+			<column fieldType="property" key="AttachmentLastModify" name="Дата изменения" valueType="datetime" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>
+			<column fieldType="property" key="AttachmentPublication"  name="Публикация"  valueType="text" weight="25" headerNoEllipsis="true" horizontalAlignment="center"/>
+		  </columns>
+		</view>
+		<edit>
+		  <columns>
+			<!-- <column fieldType="property" key="AttachmentDocType" edit-name="attachmentDocumentcontract" name="Вид проекта договора" isValue="true" valueType="text" edit-readonly="true"/> -->
+			<column fieldType="property" key="AttachmentDocType" edit-name="attachmentDocumentcontract" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-dictionary ="formdata:Договор типы" edit-required="true"/>
+			<column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle1" name="Описание файла" isValue="true" valueType="text" edit-required="true" />
+			<column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName1" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+			<column fieldType="property" key="AttachmentPublication" edit-name="publication1" name="Признак публикации" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="publication" display-field-part="true" edit-dictionary ="Признак публикации"/>
+		 </columns>
+		</edit>
+		<!-- <createTable>
+			<columns>
+			  <column fieldType="property" key="AttachmentDocType" edit-name="attachmentVidDocument" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-autocomplete ="Вид документа"/>
+			  <column fieldType="property" key="AttachmentFileName" edit-name="attachmentTitle" name="Название файла" isValue="true" valueType="text" edit-required="true" />
+			</columns>
+		 </createTable> -->
+	</table>
+  </root>
+ 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Идея работы следующая.
+  Есть тэги с условиями, есть тэги с проверками. 
+  Тэги с условиями могут содержать в себе другие тэги с условиями ЛИБО тэги с проверками, но не оба сразу.
+  
+  Так неправильно:
+  <And>
+      <WhenUserInGroup name="Инициаторы закупки" />
+	    <And>
+		    <WhenFieldEquals path="|Document|Статус" value="Черновик" />
+      </And>
+  </And>
+  
+  Результат работы отображение кнопки согласно условиям.
+  Для примера разберем блок:
+  <And>
+	  <And>
+		  <WhenUserInGroup name="Инициаторы закупки" />
+		  <WhenHasNotProcess name="Согласование заявки на закупку" />
+	  </And>
+	  <Or>
+		  <WhenFieldEquals path="|Document|Статус" value="Черновик" />
+		  <WhenFieldEquals path="|Document|Статус" value="Доработка новой заявки" />
+	  </Or>
+  </And>
+  
+  Проверки WhenUserInGroup и WhenHasNotProcess должны быть успешны, а также любая из проверок WhenFieldEquals должна быть успешна, в этом случае кнопка появится.
+  
+  Реализованные условия:
+  Or  - Любая проверка должна быть успешной
+  And - Все проверки должны быть успешными.
+  
+  Реализованные проверки:
+  WhenFieldEquals[@path][@value] - проверяет совпадает ли поле документа @path со значением @value
+  WhenInternalChecks - внутренние проверки, для совместимости со старым кодом.
+  WhenCanRegister[@name] - пользователь имеет право регистрировать новый документ в потоке @name.
+  WhenFlow[@name] - документ принадлежит к указанному в @name потоку.
+  WhenUserInGroup[@name] - пользователь входит в группу с именем @name
+  WhanHasNotProcess[@name] - среди процессов документа нет процесса с именем @name
+  WhenHasRouteTemplate[@name] - документ содержит шаблон маршрута с именем @name
+  WhenCanDeleteDocument - пользователь может удалить документ
+  WhenHistoryEnabled - для потока включена функциональность "Хранить историю изменений"
+-->
+
+
+<Buttons>
+	<Location name="DocumentView">
+	    <Button name="Загрузить позицию">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Заявки на закупку" />
+				<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+				<WhenUserInGroup name="Инициаторы закупки" />
+				
+			</And>
+		</Button>
+		
+		<Button name="Рассмотреть заявку">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Заявки на закупку" />
+				<WhenFieldEquals path="|Document|Статус" value="Загружена" />
+				<WhenUserInGroup name="Инициаторы закупки" />
+				<WhenHasRouteTemplate name="Рассмотрение заявки" />
+			</And>
+		</Button>
+		
+		<Button name="Отзыв заявки">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Заявки на закупку" />
+				<WhenFieldEquals path="|Document|Статус" value="В работе" />
+				<WhenUserInGroup name="Инициаторы закупки" />
+				<WhenHasRouteTemplate name="Отказ от размещения" />
+			</And>
+		</Button>
+
+        <Button name="Отправить уведомление">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Заявки на закупку" />
+				<WhenFieldEquals path="|Document|Статус" value="В работе" />
+				<WhenUserInGroup name="Согласующие заявку" />
+				<!--<WhenFieldNotEquals path="|Document|Отправка_уведомления" value="1" />-->
+			</And>
+		</Button>
+		
+	
+		<Button name="Создать извещение">
+			<And>
+				<WhenInternalChecks />
+				<WhenCanRegister name="Извещения о закупочной процедуре" />
+				<WhenFlow name="Заявки на закупку" />
+		    	<WhenFieldEquals path="|Document|Статус" value="Закупка согласована" />   
+				<WhenUserInGroup name="Ответственные в ЕИС" />
+			</And>
+		</Button>
+		
+		<Button name="Показать извещение">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Заявки на закупку" />
+			    <!--<WhenFieldEquals path="|Document|Статус" value="Подготовка извещения" />  -->
+				<WhenFieldNotEquals path="|Document|ИД_извещения" value="" /> 
+				
+			</And>
+		</Button>
+		
+		
+		<Button name="Отправить в ЕИС">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Извещения о закупочной процедуре" />
+				<WhenUserInGroup name="Ответственные в ЕИС" />
+	        </And>			
+		</Button>		
+		
+		<Button name="Показать заявку">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Извещения о закупочной процедуре" />
+				<WhenFieldNotEquals path="|Document|ИД_Позиции_ПГ" value="" /> 
+			</And>
+		</Button>
+		
+		<Button name="Показать заявку">
+			<And>
+				<WhenInternalChecks />
+				<WhenFlow name="Лоты" />
+				<WhenFieldNotEquals path="|Document|ИД_Позиции_ПГ" value="" /> 
+			</And>
+		</Button>
+		
+	</Location>	
+	
+</Buttons>
+

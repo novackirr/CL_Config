@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+  <edit>
+    <rows>
+      <row>
+		<column>
+			<field name="Способ определения поставщика" isLabel="true"/>
+			<field fieldType="field" key="|Способ_определения_поставщика_код" name="Способ_определения_поставщика_код" valueType="text"  isValue="true" edit-name="Sposob" dict-column-name="code"  edit-readonly="true" is-select-one-level="1" edit-tool = "Способ определения поставщика" dict-edit-name="Sposob"/>
+			<field fieldType="field" key="|Способ_определения_поставщика" name="Способ_определения_поставщика" valueType="text" isValue="true" edit-name="SposobName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Sposob" />
+		</column>
+		<column>
+          <field name="По всем" isLabel="true"/>
+		   <field fieldType="field" key="|По_всем_Способ_определения_поставщика" name="По_всем_Способ_определения_поставщика" valueType="boolean"   isValue="true"   edit-name="All_Sposob"  edit-default-value="1" />
+        </column>
+      </row>	
+      <row>
+        <column>
+			<field name="Организация заказчик" isLabel="true"/>
+			<field fieldType="field" key="|Организация_заказчик" name="Организация_заказчик" valueType="text"  isValue="true" edit-name="Org"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики"   dict-edit-name="Org"  />
+			<field fieldType="field" key="|Организация_заказчик_наименование" name="Организация_заказчик_наименование" valueType="text" isValue="true" edit-name="OrgName"   edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Org"  />
+        </column>
+        <column>
+          <field name="По всем" isLabel="true"/>
+		   <field fieldType="field" key="|По_всем_Организация_заказчик" name="По_всем_Организация_заказчик" valueType="boolean"   isValue="true"   edit-name="All_Org"  edit-default-value="1" />
+        </column>
+      </row>
+		<row>
+        <column>
+          <field name="Статус" isLabel="true"/>
+          <field fieldType="field" key="|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Статусы заявки" dict-edit-name="Status" display-field-part="true"/>
+        </column>
+        <column>
+          <field name="По всем" isLabel="true"/>
+		   <field fieldType="field" key="|По_всем_Статус" name="По_всем_Статус" valueType="boolean"   isValue="true"   edit-name="All_Status"  edit-default-value="1" />
+        </column>
+		</row>
+		<row>
+			<column>
+				<field name="Дата регистрации" isLabel="true"/>		  
+				<field fieldType="field" key="|От" name="От" valueType="date" isValue="true"  edit-name="DateFrom"/>
+	
+				<field name="Дата регистрации по" isLabel="true" />			        
+			  <field fieldType="field" key="|До" name="До" valueType="date" isValue="true" edit-name="DateTo"  />
+		</column>
+			<column>
+				<field name="По всем" isLabel="true"/>				        
+				<field fieldType="field" key="|По_всем_дата_регистрации" name="По_всем_дата_регистрации" valueType="boolean"   isValue="true"   edit-name="All_Date"  edit-default-value="1" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Подразделение инициатор" isLabel="true" />     
+				<field fieldType="field" key="|Исполнитель_Министерства" name="Исполнитель_Министерства" isValue="true"  valueType="addressbook" edit-name="Performer" edit-addressbook-groups="person"  />
+			</column>	
+			<column>
+				<field name="По всем" isLabel="true"/>
+				<field fieldType="field" key="|По_всем_Исполнитель" name="По_всем_Исполнитель" valueType="boolean"   isValue="true"   edit-name="All_Performer"  edit-default-value="1" />
+			</column>
+		</row>
+		<row>
+        <column>
+          <field name="Регистрационный номер" isLabel="true"/>
+          <field fieldType="field" key="|Регистрационный_номер" name="Регистрационный_номер" edit-name="RegNum" valueType="text"  isValue="true"   />
+        </column>
+        <column>
+          <field name="По всем" isLabel="true"/>
+		   <field fieldType="field" key="|По_всем_рег_номер" name="По_всем_рег_номер" valueType="boolean"   isValue="true"   edit-name="All_RegNum"  edit-default-value="1" />
+        </column>
+		</row>		
+    </rows>
+  </edit>
+</root>

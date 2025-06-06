@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<block name="Договоры" yearRequisite="integer_Год_закупки" selectedYear="current">
+		<field name="DogovorMy223" value="Мои" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorChern223" value="Черновики" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorPublicETP223" value="Отправленные на ЭТП" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorPodpisan223" value="Подписанные" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorPublicEIS223" value="Отправленные в ЕИС" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorIzm223" value="Внесение изменений" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorIsp223" value="Исполнение" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorIspoln223" value="Исполненные" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorRast223" value="Расторгнутые" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogovorAll223" value="Все" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+	</block>
+	<block name="Сведения об исполнении договора" yearRequisite="integer_Год_закупки" selectedYear="current">
+		<field name="DogovorBezIsp223" value="Не исполненные" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogPerf223" value="Исполнение договора" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="DogPerfizm223" value="Сведения об изменении" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+	</block>
+	<block name="Сведения об рассторжении договора" yearRequisite="integer_Год_закупки" selectedYear="current">
+		<field name="DopSogl223" value="Расторжение договора" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+	</block>
+	<scripts>
+	
+	</scripts>
+</root>

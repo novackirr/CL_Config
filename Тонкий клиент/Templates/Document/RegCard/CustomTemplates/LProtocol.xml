@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Протокол-->
+<root>
+  <view>
+    <rows>
+		<row>
+			<column>
+			  <block id="tlcInfo" name="Основные сведения">		 
+				 <rows>
+				 	<row>
+                          <column>
+                       <block id="tlcInfoall" name="Общие сведения">		 
+				 <rows>   	
+					<row>
+                          <column>
+                          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+                          </column>
+                           <column>
+                         <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" edit-default-value="{today}" valueType="date"  />
+                         </column>
+			        </row>
+			        <row>
+			            <column>
+                           <field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+                        </column>
+						<column>
+                           <field fieldType="field" key="|Document|Дата_составления" name="Дата составления" valueType="date"  />
+                         </column>
+						<!-- <column>
+                           <field fieldType="field" key="|Document|ИД_извещения" name="ИД_извещения" valueType="text" />
+                        </column> -->
+			        </row>
+			        <row>
+                         <column>
+                          <field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" />
+                         </column>
+                         <column>
+                         
+                           <field fieldType="field" key="|Document|Дата_подписания" name="Дата подписания" valueType="date"  />
+                         </column>
+						 
+			        </row>
+					<row>
+                         
+						 <column>
+                             <field fieldType="field" key="|Document|Номер_протокола" name="Номер протокола" valueType="text"  />
+                         </column>
+						 <column>
+                           <field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="date"  />
+                         </column>
+                    </row>
+					<!--<row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+							</column>
+					</row>-->
+					<row>
+							 <column>
+							  <field fieldType="field" key="|Document|Вид_протокола" name="Вид протокола" valueType="text" />
+							</column>
+							<column>
+							  <field fieldType="field" key="|Document|Место_рассмотрения_заявок" name="Место проведения процедуры" valueType="text" />
+							</column>
+					</row>
+
+					
+					<row>
+					        
+					        <column>
+							  <field fieldType="field" key="|Document|Печатная_форма" name="Печатная форма документа" valueType="url" />
+							</column>
+							
+					</row> 
+					<row>
+				   <column>
+                      <field fieldType="field" key="|Document|Признан_несостоявшимся" name="Признан несостоявшимся" valueType="boolean"  />
+                 </column>   
+			  	
+				   <column>
+                   
+                 	<field fieldType="field" key="|Document|Наименование_признания_несост" name="Наименование основания" valueType="text" />
+  </column> 
+  <column>
+
+                 	<field fieldType="field" key="|Document|Код_признания_несост" name="Код_признания_несост" valueType="text"  />
+
+
+                 </column>   
+			  	</row> 	
+			  		<row>
+				   <column>
+                      <field fieldType="field" key="|Document|Заключить_контракт_с_несколькими_участниками" name="Право заключения контракта с несколькими участниками закупки" valueType="boolean"  />
+                 </column>   
+			  	
+				   <column>
+                    
+                    <field fieldType="field" key="|Document|Количество_контрактов" name="Количество контрактов" valueType="integer" />
+ </column>   
+                 	
+			  	</row> 
+			        </rows>  
+			    </block>
+				 
+				</column>
+				</row>	
+<row>
+                          <column>
+                       <block id="tlcInfozak" name="Сведения о закупке">		 
+				 <rows>   	
+			         <row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+							</column>
+					</row>
+						<row>
+					     	<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Роль_организатора_закупки_протокол" name="Роль организатора закупки" valueType="text" />
+							</column>
+							
+					</row>	
+
+				    
+					<!--<row>
+                          
+                          <column>
+                            <field fieldType="field" key="|Document|Реестровый_номер_позиции_ПГ" name="Реестровый номер позиции ПГ" valueType="text"  />
+                         </column>
+			        </row>
+					<row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+							</column>
+					</row>
+					<row>
+							<column>
+							  <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик" valueType="text" />
+							</column>
+							
+					</row>  -->
+					<row>
+					        
+					        <column>
+							  <field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" />
+							</column>
+							
+							
+					</row> 	
+					<!-- <row>
+				   <column>
+                      <field fieldType="field" key="|Document|Признан_несостоявшимся" name="Признан несостоявшимся" valueType="boolean"  />
+                 </column>   
+			  	
+				   <column>
+                   
+                 	<field fieldType="field" key="|Document|Наименование_признания_несост" name="Наименование основания" valueType="text" />
+  </column> 
+  <column>
+
+                 	<field fieldType="field" key="|Document|Код_признания_несост" name="Код_признания_несост" valueType="text"  />
+
+
+                 </column>   
+			  	</row> 	
+			  		<row>
+				   <column>
+                      <field fieldType="field" key="|Document|Заключить_контракт_с_несколькими_участниками" name="Право заключения контракта с несколькими участниками закупки" valueType="boolean"  />
+                 </column>   
+			  	
+				   <column>
+                    
+                    <field fieldType="field" key="|Document|Количество_контрактов" name="Количество контрактов" valueType="integer" />
+ </column>   
+                 	
+			  	</row>  -->
+					</rows>  
+			    </block>
+				 
+				</column>
+				</row>	
+						
+					<!--<row>
+					        
+					        <column>
+							  <field fieldType="field" key="|Document|Вид_протокола_код" name="Вид протокола код" valueType="text" />
+							</column>
+							
+					</row> 	-->
+			 </rows>
+			   </block>
+			</column>			
+					  
+												
+		</row>		
+	
+	<row>
+			<column>
+				<block id="tlcCrit" name="Информация о комиссии">		 
+					<rows>
+						<row>
+						 <column>
+						 	<block id="tlcInfKomissii" name="Сведения о комиссии">		 
+					<rows>
+
+					<row>
+					        
+					        <column>
+							  <field fieldType="field" key="|Document|Название_комиссии" name="Название комиссии" valueType="text" />
+							</column>
+							
+					
+					        
+					        <column>
+							  <field fieldType="field" key="|Document|Комиссия_правомочна" name="Комиссия правомочна" valueType="boolean" />
+							</column>
+							
+					</row>
+						 <row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="longtext" />
+							</column>
+					</row>
+						<!--  <row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+							</column>
+					</row>
+						<row>
+					     	<column>
+							  <field fieldType="field" key="|Document|Организатор_закупки|Роль_организатора_закупки_протокол" name="Роль организатора закупки" valueType="text" />
+							</column>
+							
+					</row>	 -->
+	</rows>
+					</block>
+					 </column>
+						  </row>	
+
+					    <row>
+					    	<column>
+				<block id="tlcuchKomissii" name="Участники комиссии">		 
+					<rows>
+						<row>
+						 <column>
+						  <table key="|Document|Участники_комиссии" height="200">
+						  <column fieldType="field" key="|Номер" valueType="text" name="№" width="15"/>
+						  <column fieldType="field" key="|Участники_комиссии_фамилия" valueType="text" name="Фамилия" width="40"/>
+                          <column fieldType="field" key="|Участники_комиссии_имя" valueType="text" name="Имя" width="40"/>
+						  <column fieldType="field" key="|Участники_комиссии_отчество" valueType="text" name="Отчество" width="40"/>
+						  <column fieldType="field" key="|Участники_комиссии_имеет_право_голоса" valueType="boolean" name="Право голоса" width="15"/>
+						  <column fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Роль" width="70"/>
+						    </table>
+						  </column>
+						  </row>	
+						</rows>
+					</block>
+
+						  </column>
+						 </row>							
+					</rows>
+				</block>
+			</column>
+		</row>	
+			
+		<row>
+			<column>
+				<block id="tlcKom" name="Критерии оценки заявки">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Критерии_оценки_заявки_участников" height="200">
+						  <column fieldType="field" key="|Код_критерия" valueType="text" name="Код критерия" width="30"/>
+                          <column fieldType="field" key="|Значимость_критерия" valueType="text" name="Значимость критерия" width="50"/>
+						  <column fieldType="field" key="|Дополнение_критерия" valueType="text" name="Дополнение критерия" width="50"/>
+						  <column fieldType="field" key="|Лимит_критерия" valueType="text" name="Лимит критерия" width="40"/>
+						  <column fieldType="field" key="|Порядок_оценки_критерия" valueType="text" name="Порядок оценки критерия" width="50"/>
+						  <view>
+									<rows>
+										<row>
+											<column>
+												<table key="|Показатели_критерия_оценки" height="300">							
+													<column fieldType="field" key="|Наименование_показателя" valueType="text"   name="Показатель"  />
+													<column fieldType="field" key="|Значимость_показателя" valueType="text"   name="Показатель"  />
+													<column fieldType="field" key="|Порядок_оценки_по_показателю" name="Порядок оценки по показателю" valueType="text"  />
+													
+												</table> 
+											</column>
+										</row>
+								</rows>
+							</view>
+						    </table>
+						  </column>
+						 </row>		
+											
+					</rows>
+				</block>
+			</column>
+		</row>				
+			
+				<row>
+			<column>
+				<block id="tlcneedDocs" name="Информация и документы предусмотренные в составе заявки">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Список_документов" height="200">
+						  <column fieldType="field" key="|Порядковый_номер" valueType="integer" name="№" width="30"/>
+                          <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" width="50"/>
+						  <column fieldType="field" key="|Обязательность_предоставления" valueType="boolean" name="Обязательность" width="50"/>
+						 <!--  <column fieldType="field" key="|Наличие" valueType="text" name="Лимит критерия" width="40"/>
+						  <column fieldType="field" key="|Описание_иного" valueType="text" name="Описание" width="50"/>
+						  -->
+						    </table>
+						  </column>
+						 </row>		
+											
+					</rows>
+				</block>
+			</column>
+		</row>				
+						
+
+		<row>
+			<column>
+				<block id="tlcDocs" name="Изменения">		 
+					<rows>
+					    <row>
+							  <column>
+								   <field fieldType="field" key="|Document|Изменения" name="Изменения" valueType="boolean" />								
+							  </column>
+							 							  
+						</row>
+						<row>
+                          <column>
+                             <table key="|Document|Внесение_изменений" height="200">
+                                 <column fieldType="field" key="|NUM" valueType="text" name="№" width="50"/>
+                                 <column fieldType="field" key="|Обоснование_внесения_изменений_протокола" valueType="text" name="Обоснование внесения изменений протокола" width="150"/>
+				                <column fieldType="field" key="|Краткое_описание_изменения" valueType="text" name="Краткое описание изменения" width="150"/>
+					             <column fieldType="field" key="|Дата_принятия_решения" valueType="datetime" name="Дата принятия решения" width="150"/>
+					             <column fieldType="field" key="|Предписание_отсутствует_в_реестре_результатов_контроля" valueType="boolean" name="Предписание отсутствует в реестре результатов контроля" width="150"/>
+					             <column fieldType="field" key="|Номер_результата_контроля_по_предписанию" valueType="text" name="Номер результата контроля по предписанию" width="150"/>
+					             <column fieldType="field" key="|Наименование_органа" valueType="text" name="Наименование органа" width="150"/>
+					             <column fieldType="field" key="|Вид_органа" valueType="text" name="Вид органа" width="150"/>
+					             <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" width="150"/>
+					             <column fieldType="field" key="|Дата_документа" valueType="datetime" name="Дата документа" width="150"/>
+                                 <column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" width="150"/>
+					             <column fieldType="field" key="|Новое_изменение" valueType="text" name="Новое изменение" width="150"/>
+                                 
+                             </table>
+                          </column>
+				        </row>		  
+					</rows>
+				</block>
+			</column>
+		</row>	
+    </rows>
+	<variables>
+		<variable variable-name="caption" variable-format="Протокол{number}{RegDate}">
+			<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+			<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+		</variable>
+    </variables>
+  </view>
+<!--Блок на редактирование-->
+  <edit>
+    <rows> 
+
+	<row>
+		<column>
+			<block id="tlcInfo" name="Основные сведения">		 
+				<rows>
+				<row>
+				   <column>
+                        <field fieldType="field" key="|Document|ИД_извещения" name="ИД_извещения" valueType="text"  isValue="true" edit-name="IdNotice" edit-hidden="true" />
+						 <field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Код способа" valueType="text"  isValue="true" edit-name="Protocol"  edit-readonly="true"   dict-column-name="code" is-select-one-level="1" edit-tool ="Способ определения поставщика"  dict-edit-name="Protocol" edit-isInvisible="true" /> 
+						  <field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ " valueType="text"  isValue="true" edit-name="Protocolname"  edit-readonly="true"   dict-column-name="Наименование"  dict-edit-name="Protocol" edit-isInvisible="true" /> 
+						<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="statusnotice" edit-default-value="Черновик" edit-hidden="true" />
+						<!-- <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" isValue="true" edit-name="Orgzakup"  edit-hidden="true"/> -->
+						<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор_закупки_наименование" valueType="text" isValue="true" edit-name="Organizator" edit-hidden="true" edit-default-value="ДЕПАРТАМЕНТ ИМУЩЕСТВЕННЫХ И ЗЕМЕЛЬНЫХ ОТНОШЕНИЙ АДМИНИСТРАЦИИ ВЛАДИМИРСКОЙ ОБЛАСТИ" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" name="Организатор_закупки_код_по_СПЗ" valueType="text" isValue="true" edit-name="OrganizatorSPZ" edit-hidden="true" edit-default-value="01012000071" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" name="Организатор_закупки_код_по_СР" valueType="text" isValue="true" edit-name="OrganizatorSR" edit-hidden="true" edit-default-value="" />
+						<field fieldType="field" key="|Document|Организатор_закупки|Роль_организатора_закупки_протокол" name="Роль организатора закупки" isValue="true" valueType="text"  edit-name="RoleOrg" edit-hidden="true"/>
+						 <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerRegDate"  edit-hidden="true" edit-default-value="{today}" />
+               
+                 </column>   
+			  	</row>
+				<row>
+				  <column>
+					<block id="1" name="Общие сведения">
+										<rows>
+		        <row>
+				   <column>
+                    <field name="Номер протокола" isLabel="true" edit-name="Numprotocol"/>
+                    <field fieldType="field" key="|Document|Номер_протокола" name="Номер протокола" valueType="text"  isValue="true" edit-name="Numprotocol" edit-required="true" />
+                 </column>
+					 <column>
+					     <field name="Дата составления" isLabel="true" edit-name="DateCreate" />
+                         <field fieldType="field" key="|Document|Дата_составления" name="Дата составления" valueType="date" edit-default-value="{today}" edit-name="DateCreate" isValue="true"  />
+                    </column>
+					 <column>
+						<field name="Дата подписания" isLabel="true" edit-name="DateWrite" />
+						<field fieldType="field" key="|Document|Дата_подписания" name="Дата подписания" valueType="date"  isValue="true" edit-name="DateWrite" edit-required="true" edit-default-value="{today}" />
+					 </column>
+					  </row>
+					 </rows>
+					 	</block>
+						  </column>
+						    <column>
+										
+				<block id="2" name="Общие">
+										<rows>
+		        <row>			 
+					
+					 <column>
+					 	 		 					 					 
+					 	<field name="Вид протокола" isLabel="true" />
+						
+				 	<field fieldType="field" key="|Document|Вид_протокола_код" valueType="text" name="Вид протокола код" edit-name="ProtocolType" isValue="true" edit-tool="Способ определения поставщика" dict-column-name="Протокол" edit-readonly="true" dict-edit-name="ProtocolType" one-level-parent="Protocol" is-select-one-level="2" dict-subdictionary="Протокол" show-dict-column="false"  />
+						<field fieldType="field" key="|Document|Вид_протокола" name="Вид протокола" valueType="text" isValue="true" edit-name="ProtocolTypeName" dict-column-name="Наименование" edit-readonly="true"  dict-edit-name="ProtocolType" weight="3"  display-field-part="true"  edit-hidden="true" />
+					 </column> 
+					 	<!-- <field name="Вид протокола" isLabel="true" />
+						<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Код способа" valueType="text"  isValue="true" edit-name="Protocol"  edit-readonly="true"   dict-column-name="code" is-select-one-level="1" edit-tool ="Способ определения поставщика" edit-required="true" dict-edit-name="Protocol" display-field-part="true" />
+						<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика " valueType="text" isValue="true"  edit-name="SposobPost" edit-required="true" edit-hidden="true"  dict-edit-name="Protocol"  dict-column-name="Наименование" />	
+						<field fieldType="field" key="|Document|Вид_протокола_код" valueType="text" name="Вид протокола код" edit-name="ProtocolType" isValue="true" edit-tool="Способ определения поставщика" dict-column-name="Протокол" edit-readonly="true" dict-edit-name="ProtocolType" one-level-parent="Protocol" is-select-one-level="2" dict-subdictionary="Протокол"/>
+						<field fieldType="field" key="|Document|Вид_протокола" name="Вид протокола" valueType="text" isValue="true" edit-name="ProtocolTypeName" dict-column-name="Наименование" edit-readonly="true"  dict-edit-name="ProtocolType" display-field-part="true"  edit-hidden="true" />
+						</column>  -->
+               </row> 
+			    </rows>
+					 	</block>
+						  </column>
+						</row>
+			  	<row>
+				   <column>
+                    <field name="Место рассмотрения заявок" isLabel="true" edit-name="placeprotocol"/>
+                    <field fieldType="field" key="|Document|Место_рассмотрения_заявок" name="Место рассмотрения заявок" valueType="longtext"  isValue="true" edit-name="placeprotocol" edit-required="true" />
+                 </column>   
+			  	</row> 	
+			  	<row>
+				   <column>
+                      <field fieldType="field" key="|Document|Признан_несостоявшимся" name="Признан несостоявшимся" valueType="boolean" edit-name="notPosture" />
+                 </column>   
+			  	
+				   <column>
+                    <field name="Наименование основания" isLabel="true" edit-name="PostureReason"/>
+                    <!--  <field fieldType="field" key="|Document|Код_признания_несост" name="Код_признания_несост" valueType="text"  isValue="true" edit-name="PostureReason" edit-readonly="true" edit-tool="Способ определения поставщика" dict-column-name="code" dict-edit-name="PostureReason" one-level-parent="ProtocolType" display-field-part="true" dictionary-selection-start-level="3" />
+
+                     <column fieldType="field" key="|Торговое_наименование_ЛП_код" name="Торговое наименование ЛП" valueType="text" isValue="true" edit-name="TorgNameKod" edit-readonly="true" dict-column-name="code"  edit-tool = "Лекарственные препараты" is-select-one-level="3"  one-level-parent="Megdun" show-dict-column="false" dict-edit-name="TorgNameKod" width="200" /> 
+                     <column fieldType="field" key="|Торговое_наименование_ЛП_код" name="Торговое наименование ЛП" valueType="text" isValue="true" edit-name="TorgNameKod" edit-readonly="true" dict-column-name="code"  edit-tool = "Лекарственные препараты" is-select-one-level="3"  one-level-parent="Megdun" show-dict-column="false" dict-edit-name="TorgNameKod" width="200" dictionary-selection-start-level="3"/> 
+                 	 <field fieldType="field" key="|Document|Наименование_признания_несост" name="Наименование основания" valueType="text"  isValue="true" edit-name="PostureReasonkod" edit-readonly="true" dict-column-name="Тип" dict-edit-name="PostureReason" display-field-part="true"  /> -->
+                 <!-- 	<field fieldType="field" key="|Document|Код_признания_несост" name="Код_признания_несост" valueType="text"  isValue="true" edit-name="PostureReason" edit-readonly="true" edit-tool="Основание признания процедуры несостоявшейся" dict-column-name="code" dict-edit-name="PostureReason" display-field-part="true" show-dict-column="false"/>
+                 	<field fieldType="field" key="|Document|Наименование_признания_несост" name="Наименование основания" valueType="text"  isValue="true" edit-name="PostureReasonkod" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="PostureReason" display-field-part="true" edit-hidden="true" /> -->
+                    <field fieldType="field" key="|Document|Наименование_признания_несост" name="Наименование основания" valueType="text"  isValue="true" edit-name="PostureReason" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="PostureReason" display-field-part="true" edit-tool="Основание признания процедуры несостоявшейся"/>
+
+                 	<field fieldType="field" key="|Document|Код_признания_несост" name="Код_признания_несост" valueType="text"  isValue="true" edit-name="PostureReasonkod" edit-readonly="true"  dict-column-name="code" dict-edit-name="PostureReason"  edit-hidden="true"/>
+
+                 </column>   
+			  	</row> 
+			  	<row>
+				   <column>
+                      <field fieldType="field" key="|Document|Заключить_контракт_с_несколькими_участниками" name="Право заключения контракта с несколькими участниками закупки" valueType="boolean"   edit-name="MultyContract"/>
+                 </column>   
+			  	
+				   <column>
+                    <field name="Количество контрактов" isLabel="true" edit-name="NumberContract"/>
+                    <field fieldType="field" key="|Document|Количество_контрактов" name="Количество контрактов" valueType="integer" isValue="true" edit-name="NumberContract" />
+ </column>   
+                 	
+			  	</row> 
+			  <!-- 	<row>
+					        
+					        <column>
+							 <field name="Печатная форма документа" isLabel="true" />
+							  <field fieldType="field" key="|Document|Печатная_форма" name="Печатная форма документа" valueType="url" isValue="true" edit-name="href" />
+							</column>
+							
+				</row> 	  -->
+			  </rows>
+			</block>
+		 </column>
+	</row>		  
+
+	<row>
+		<column> 
+			<block id="tlcCrit" name="Информация о комиссии">		 
+				<rows>
+						<row>					        
+					        <column>
+							
+							<field name="Название комиссии" isLabel="true" edit-name="Namekomissii"/>							
+							  <field fieldType="field" key="|Document|Название_комиссии" name="Название комиссии" valueType="text" isValue="true" edit-name="Namekomissii" edit-required="true"/>
+							</column>
+						
+					        <column>
+							<!-- <field name="Комиссия правомочна" isLabel="true" />  -->
+							<field name="" isLabel="true" />
+							<field fieldType="field" key="|Document|Комиссия_правомочна" name="Комиссия правомочна" valueType="boolean" edit-name="PravKcb" edit-default-value="0" />
+							     </column>
+							   </row> 
+					
+						<row>
+							
+							<column>
+							<field name="Дополнительная информация" isLabel="true" />
+							  <field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="longtext" isValue="true" edit-name="Dop"/>
+							</column>
+					</row>
+					
+					<row>
+								<column>
+									<field name="Участники комиссии" isLabel="true"  />
+								</column>
+							</row>
+					   <row>
+						 <column>
+						  <table key="|Document|Участники_комиссии" edit-name="Uch_Kom" height="300">
+						   <column fieldType="field" key="|Номер" valueType="text" name="№"   isValue="true" edit-name="Num"  dict-column-name="Номер"/>
+						  <column fieldType="field" key="|Участники_комиссии_фамилия" valueType="text" name="Фамилия"  isValue="true" edit-name="FamUch"  dict-column-name="Фамилия" />
+                          <column fieldType="field" key="|Участники_комиссии_имя" valueType="text" name="Имя" isValue="true" edit-name="NameUch"   dict-column-name="Имя"/>
+						  <column fieldType="field" key="|Участники_комиссии_отчество" valueType="text" name="Отчество"  isValue="true" edit-name="OtUch"   dict-column-name="Отчество"/>
+						  <column fieldType="field" key="|Участники_комиссии_имеет_право_голоса" valueType="boolean" name="Право голоса"  isValue="true" edit-name="Voice"  dict-column-name="Право голоса"/>
+						  <column fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Роль" isValue="true" edit-name="RoleUch"  dict-column-name="Роль"   dict-edit-name="RoleUch" edit-dictionary ="Роль участника комиссии" edit-dictionaryValue="Наименование" width="200"/>
+						    </table>
+						  </column>
+						 </row>		
+					 <!-- <row>
+							<column>
+									<field name="Организатор закупки" isLabel="true" edit-name="Orgzakup"/>
+								</column>
+								</row>	
+								<row>
+							<column>
+							
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" edit-name="Orgzakup"  dict-column-name="Наименование" is-select-one-level="1" edit-tool ="Организации заказчики" edit-required="true" dict-edit-name="Orgzakup"  isValue="true" display-field-part="true"/>
+							</column>
+							</row>	
+							<row>
+					     	<column>
+							<field name="Роль организатора закупки" isLabel="true" />
+							  <field fieldType="field" key="|Document|Организатор_закупки|Роль_организатора_закупки_протокол" name="Роль организатора закупки" valueType="text" isValue="true" edit-name="RoleOrg"/>
+							</column>
+							
+					</row>		
+					 -->
+		        
+			  </rows>
+			</block>
+		</column>
+	</row>	
+
+ <row>
+			<column>
+				<block id="tlcKom" name="Критерии оценки заявки">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Критерии_оценки_заявки_участников" height="200" edit-name="Krit">
+						     <column fieldType="field" key="|Критерий" valueType="text" name="Критерий"  isValue="true" edit-name="Ktrit" edit-tool = "Критерии оценки заявок участников"  dict-column-name="Наименование" edit-readonly="true"   dict-edit-name="Ktrit" display-field-part="true"/>
+						     <column fieldType="field" key="|Код_критерия" valueType="text" name="Код критерия" isValue="true" edit-name="KofKtrit" edit-readonly="true"  dict-edit-name="Ktrit"  dict-column-name="code"/>
+                          <column fieldType="field" key="|Значимость_критерия" valueType="text" name="Значимость критерия"  isValue="true" edit-name="ZnachKrit"/>
+						  <column fieldType="field" key="|Дополнение_критерия" valueType="text" name="Дополнение критерия"  isValue="true" edit-name="DopKrit"/>
+						  <column fieldType="field" key="|Лимит_критерия" valueType="text" name="Лимит критерия"  isValue="true" edit-name="LimKrit"/>
+						  <column fieldType="field" key="|Порядок_оценки_критерия" valueType="text" name="Порядок оценки критерия"  isValue="true" edit-name="orderKrit" edit-tool = "Порядок оценки по показателю" dict-column-name="Наименование" edit-readonly="true"  display-field-part="true" dict-edit-name="orderKrit"/>
+						    <column fieldType="field" key="|Порядок_оценки_критерия_код" valueType="text" name="Порядок_оценки_критерия_код"  isValue="true" edit-name="orderKritKod"  dict-column-name="Порядок оценки по показателю" edit-readonly="true"  dict-edit-name="orderKrit" edit-isInvisible="true"/>
+				   			<edit>
+									<rows>
+										<row>
+											<column>
+												<table key="|Показатели_критерия_оценки" edit-name="markview" height="400">							
+													<column fieldType="field" key="|Наименование_показателя" valueType="text"   name="Показатель"  edit-name="mark" isValue="true"  edit-tool = "Показатели критерии" dict-column-name="Наименование" edit-readonly="true"  display-field-part="true" dict-edit-name="mark" width="300"/>
+													<column fieldType="field" key="|Код_показателя" name="Код_показателя" valueType="text" edit-name="markkod" isValue="true" dict-edit-name="mark" dict-column-name="Показатели критерии" edit-isInvisible="true"/>
+													<column fieldType="field" key="|Значимость_показателя"  name="Значимость показателя"  valueType="text"  isValue="true" edit-name="markznnn" width="60" />
+													<column fieldType="field" key="|Порядок_оценки_по_показателю" name="Порядок оценки по показателю" valueType="text"  edit-name="marknum" isValue="true" edit-tool = "Порядок оценки по показателю" dict-column-name="Наименование" edit-readonly="true"  display-field-part="true" dict-edit-name="marknum" width="300"/>
+													<column fieldType="field" key="|Код_порядка" valueType="text" name="Код_порядка"  isValue="true" edit-name="marknumKod"  dict-column-name="Порядок оценки по показателю" edit-readonly="true"  dict-edit-name="marknum" edit-isInvisible="true"/>
+												</table> 
+											</column>
+										</row>
+								</rows>
+							</edit>
+						    </table>
+						  </column>
+						 </row>		
+											
+					</rows>
+				</block>
+			</column>
+		</row>		
+		
+
+				<row>
+			<column>
+				<block id="tlcneedDocs" name="Информация и документы предусмотренные в составе заявки">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Список_документов" height="200" edit-name="Docslist">
+						  <column fieldType="field" key="|Порядковый_номер" valueType="integer" name="№"  edit-name="NumberList" isValue="true" width="70"/>
+                          <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" edit-name="NameList" isValue="true" width="400"/>
+						  <column fieldType="field" key="|Обязательность_предоставления" valueType="boolean" name="Обязательность"  edit-name="certainList" isValue="true" width="70"/>
+						 <!--  <column fieldType="field" key="|Наличие" valueType="text" name="Наличие"  edit-name="needList" isValue="true" edit-readonly="true"    dict-column-name="Наименование"  edit-tool = "Наличие информации и документов"  dict-edit-name="needList" display-field-part="true"/>
+						  <column fieldType="field" key="|Наличие_код" valueType="text" name="Наличие_код"  edit-name="needListKod" isValue="true" edit-readonly="true"    dict-column-name="code"  dict-edit-name="needList" edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Описание_иного" valueType="text" name="Описание"   edit-name="ListView" isValue="true"/> -->
+						 
+						    </table>
+						  </column>
+						 </row>		
+											
+					</rows>
+				</block>
+			</column>
+		</row>				
+						
+
+		<row>
+		<column>
+		  <block id="tlcDocs" name="Изменения">		 
+			<rows>
+			 <row>
+			      <column>
+                    <field fieldType="field" key="|Document|Изменения" name="Изменения" valueType="boolean" edit-name="ChangeNotice" edit-default-value="0" width="400"/>
+                    <field name="Изменения" isLabel="true" />
+				  </column>
+			</row>
+			  <row>
+                <column>
+                  <table key="|Document|Внесение_изменений" edit-name="Izmeneniyz" height="300">
+                 	<column fieldType="field" key="|Обоснование_внесения_изменений_протокола" name="Обоснование внесения изменений протокола" valueType="text" isValue="true" edit-name="ObosnVnesIzm"  edit-readonly="true"    dict-column-name="code"  edit-tool = "Обоснование внесения изменений протокола"  dict-edit-name="ObosnVnesIzm" display-field-part="true"  width="200" />
+					<column fieldType="field" key="|Краткое_описание_изменения" valueType="text" name="Краткое описание изменения" edit-name="TOpisIzm" isValue="true"  width="200"/>
+                    <column fieldType="field" key="|Дата_принятия_решения" valueType="date" name="Дата принятия решения" edit-name="TDatePrinResh" isValue="true" width="200"/>
+				    <column fieldType="field" key="|Предписание_отсутствует_в_реестре_результатов_контроля" valueType="boolean" name="Предписание отсутствует в реестре" edit-name="TPredpisOtsut" isValue="true" edit-default-value="0" width="100"/>
+				    <column fieldType="field" key="|Номер_результата_контроля_по_предписанию" valueType="text" name="Номер результата контроля по предписанию" edit-name="TNomRes" isValue="true" width="200"/>
+                    <column fieldType="field" key="|Наименование_органа" valueType="text" name="Наименование органа" edit-name="TNaimOrg" isValue="true" width="200"/>
+					<column fieldType="field" key="|Вид_органа_код" name="Вид органа" valueType="text" isValue="true" edit-name="TVidOrgana" dict-edit-name="TVidOrgana" edit-tool="Вид уполномоченного органа"  dictionary-selection-start-level="1"  dict-column-name="code" edit-readonly="true" width="200"/>
+					 <column fieldType="field" key="|Вид_органа" name="Вид органа наимнование" valueType="text" isValue="true" edit-name="TVidOrganaName" edit-readonly="true"  dict-column-name="Наименование"  dict-edit-name="TVidOrgana"  display-field-part="true"  edit-hidden="true"  />
+					 <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" edit-name="TNaimDok" isValue="true" width="200"/>
+                    <column fieldType="field" key="|Дата_документа" valueType="date" name="Дата документа" edit-name="TDateDokum" isValue="true" width="200"/>
+					<column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" edit-name="TNomDokumenta" isValue="true" width="100"/>
+				    <column fieldType="field" key="|Новое_изменение" valueType="text" name="Новое изменение" edit-name="TNovoeIzm" isValue="true" edit-default-value="Да" edit-readonly="true" width="200"/>
+				  </table>
+                </column>
+              </row>		  
+			</rows>
+		</block>
+			</column>
+		</row>	
+		
+		
+		</rows>
+				
+	  
+		
+    
+    <variables>
+      <variable variable-name="regNumber" variable-format="{number}">
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+      </variable>
+	  <variable variable-name="caption" variable-format="Протокол{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>	
+    </variables>
+  </edit> 
+  	<scripts>
+	<script file="\Scripts\Content\Document\RegCard\LProtocol.js" />	
+	</scripts>
+</root>

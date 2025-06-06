@@ -1,0 +1,222 @@
+var TableViewForm = function (buttonElement, js) {
+
+    String.prototype.replaceAll = function (search, replace) {
+        return this.split(search).join(replace);
+    }
+
+    var deferred = $.Deferred();
+    var itemForm;
+    var searchInExternalSystemForm;
+    var win;
+
+    var $tableButton = $(buttonElement);
+    var jsSrc = js;
+    var key = $tableButton.closest(".dx-row").attr("data-row-path");
+    var gridId = key.split(":")[0];
+    var rowId = key.split(":")[1];
+    var grid = $('[data-api-table-name=' + gridId + ']').children('.dx-widget').dxDataGrid('instance');
+    var rowKey = grid.getRowIndexByKey(rowId);
+    var dt = grid.getDataSource()._items[rowKey];
+    var columns = [];
+
+    var model;
+    var treeWidth = 779;
+    var panelWidth = 800;
+    var panelHeight = 700;
+
+    var uniqId;
+
+    var formContent = [];
+    var isButtonExternalSystemClick = false;
+
+    // [{ property: 'Код КПГЗ',   value: '3204978'}]
+
+
+
+    function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+    function init() {
+
+        for (var i = 1; i < grid.columnCount(); i++) {
+            columns.push(grid.columnOption(i));
+        }
+        sortable = true;
+        localize();
+        uniqId = makeid();
+        Ext.define('OverrideHeaderResizer',
+            {
+                override: 'Ext.grid.plugin.HeaderResizer',
+                maxColWidth: 9999
+            });
+        if (jsSrc != undefined && jsSrc != "") {
+            //formContent.push('<script src="' + js + '"></script>');
+            $.getScript(js);
+        }
+
+
+
+        formContent.push('<div class="panel panel-default">',
+            '<div class="panel-body">');
+
+        $.each(columns, function (index, column) {
+
+            var path = column.dataField;
+            path = path.replace("Fields.", "");
+            var field = dt.Fields[path];
+
+            formContent.push('<div class="row row-container clearfix">',
+                '<div class= "col-xs-12 column-container">',
+                '<div class="documentView-field-label" data-related-field="form-' + column.dataField + '" data-label-name="' + column.caption + '">',
+                '<label class="control-label">' + column.caption + '</label>',
+                '</div>',
+                '</div>',
+                '</div>');
+            formContent.push('<div class="row row-container clearfix">',
+                '<div class= "col-xs-12 column-container">',
+                '<div class="documentView-field-value form-group without-overflow" data-field-name="" style="white-space: pre-wrap !important; font-size: 14px; ">',
+                field,
+                '</div>',
+                '</div>',
+                '</div>');
+        });
+
+        formContent.push('</div>',
+            '</div>');
+
+        showModalWindow();
+
+
+
+
+    }
+
+    function closeWin() {
+        win.close();
+
+        if ($tableButton.parents(".modal").length > 0) {
+            $("body").addClass("modal-open");
+        } else {
+            $("body").removeClass("modal-open");
+        }
+    }
+
+
+    function showModalWindow() {
+
+        itemForm = Ext.create('Ext.panel.Panel',
+            {
+                id: 'itemTableViewFormPanel' + uniqId,
+                minHeight: 555,
+                maxHeight: 755,
+                rootVisible: true,
+                hideHeaders: false,
+                hidden: false,
+                html: formContent,
+                layout: 'container',
+                bodyCls: "x-body x-webkit x-chrome",
+                buttons: [
+                    {
+                        text: 'Ок',
+                        handler: closeWin
+                    }
+                ],
+                autoScroll: true
+            });
+
+
+        var windowDefaultMinWidth = 350;
+        var windowDefaultMinHeight = 750;
+
+        win = Ext.create('widget.window',
+            {
+                title: 'Просмотр таблицы',
+                header: {
+                    titleAlign: 'center'
+                },
+                closable: false,
+                id: 'TableWind' + uniqId,
+                closeAction: 'destroy',
+                maximizable: true,
+                width: panelWidth,
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                monitorResize: true,
+                //layout: 'fit',
+                modal: true,
+                items: [itemForm],
+                autoDestroy: false,
+                listeners: {
+                    //close: enableDictButton,
+                    resize: function (el, newWidth, newHeight, oldWidth, oldHeight) {
+                        if ($('#editView').length > 0 || $('#registerView').length > 0 || $('#address-book-container').length > 0
+                            || $('#build-report-form').length > 0) {
+
+                            newWidth = Math.min(newWidth, ct.common.calc.getMinClientWidth());
+
+                            el.setWidth(newWidth);
+                            el.setHeight(newHeight);
+
+                            var treePanelHeight = isButtonExternalSystemClick
+                                ? newHeight - searchInExternalSystemForm.height - 45
+                                : el.height - 45
+                            itemForm.setHeight(treePanelHeight);
+                        }
+                    },
+                    maximize: function (window, opts) {
+                        window.anchorTo('TableWind' + uniqId, 'bl-bl?', [0, 0], true, 50, function () {
+                        });
+                    },
+                    restore: function (window, opts) {
+                        window.anchorTo(Ext.getBody(), 'c-c', [0, 0], true, 50, function () {
+                        });
+                    }
+                },
+            });
+
+        /* hierar.win = win;
+         hierar.treePanel = treePanel;
+         hierar.store = store;*/
+
+        win.show();
+
+
+
+
+        //} else {
+        //    win = cmp;
+        //    win.items.add(treePanel);
+        //    win.show();
+        //}
+
+    }
+
+
+
+
+    function localize() {
+        Ext.define('Ext.grid.header.Container',
+            {
+                override: 'Ext.grid.header.Container',
+                sortAscText: 'Сортировать по возрастанию',
+                sortDescText: 'Сортировать по убыванию'
+            });
+    }
+
+    init();
+    /*return {
+        treePanel: treePanel,
+        win: win,
+        store: store
+    }*/
+    return deferred;
+};

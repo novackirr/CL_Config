@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns>    
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Регистрационный_номер" weight="80" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="100" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_заявки" name="Наименование заявки" valueType="text" sortPredicate="doc_RegCard/rc_Index/longtext_Наименование_заявки" weight="300" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма" name="Сумма" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Сумма" weight="100" /> 
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора_с" name="Срок исполнения с" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Срок_исполнения_договора_с" weight="120" /> 
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора_по" name="Срок исполнения по" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Срок_исполнения_договора_по" weight="120" /> 
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="200" /> 
+  </columns>
+</root>

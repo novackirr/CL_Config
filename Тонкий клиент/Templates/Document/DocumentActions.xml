@@ -1,0 +1,3782 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	Описание файла: https://cgnjira.cognitive.ru:8444/pages/viewpage.action?pageId=30835016
+	и в задаче https://cgnjira.cognitive.ru:8443/browse/ETPZAK-420
+-->
+
+ 
+<Buttons>
+	<Location name="PlanningMenu">
+		 
+		<Button name="СоздатьдокументПоток1" displayName="Создать документ Поток1">
+			<Action type="Register">
+				<FlowName value="Поток1" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchBlock" value="Поток 1" />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Создать таблицу распределения" displayName="Создать новый документ">
+			<Action type="Register">
+				<FlowName value="Таблица Председателей" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchType" value="DistributionOfManagers" />
+						<WhenHttpGetParamEquals param="searchBlock" value="Распределение зам. Пред." />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Новый план" displayName="Сформировать план">
+			<Action type="Register" beforeSubmitJs="checkOpenFormPossible">
+				<View name="CreatePlan"/>       
+				<Parameters>
+					<Parameter name="planFlowName" value="Планы закупок 223ФЗ"/>
+				</Parameters> 
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenHttpGetParamEquals param="searchType" value="PlanPablik223" />
+							<WhenHttpGetParamEquals param="searchBlock" value="Планы закупок"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button> 
+		
+		<Button name="Новый перечень ТРУ 223 ФЗ" id="c6bafa07-f8f4-4cd3-8999-877762e2537f2" displayName="Новый ПТРУ">
+			<Action type="Register">
+				<FlowName value="Перечни ТРУ 223ФЗ" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchType" value="LPTRUySMP223" />
+						<WhenHttpGetParamEquals param="searchBlock" value="Перечни ТРУ" />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Новая позиция ПЗ 223 ФЗ" id="c6bafa07-f8f4-4cd3-8999-877762e876f2" displayName="Новая позиция ПЗ">   
+			<Action type="Register">
+				<FlowName value="Позиции плана закупок 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+						<!-- <WhenHttpGetParamEquals param="searchType" value="LotChern223" /> -->
+							<WhenHttpGetParamEquals param="searchBlock" value="Позиции плана закупок" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Инициаторы" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility> 
+			<FieldsModify>
+				<SetField dst="|Document|ParentRK" value="-1" />
+			</FieldsModify>
+		</Button>
+
+		<Button name="Сформировать отчет223" displayName="Сформировать отчет">   
+			<Action type="Register">            
+				<FlowName value="Отчетность о договорах 223ФЗ" />  
+			</Action>   
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenHttpGetParamEquals param="searchType" value="LDogReport" />
+							<WhenHttpGetParamEquals param="searchBlock" value="Отчетность о договорах" /> 
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility> 
+		</Button>
+		
+		<Button name="Создать форму">   
+			<Action type="Register">            
+				<FlowName value="Печатные формы" />  
+			</Action>   
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchType" value="DocTemplate" />
+						<WhenHttpGetParamEquals param="searchBlock" value="Печатные формы" /> 
+						<WhenUserInWorkGroup name="Суперпользователи" />
+					</And>
+				</Rules>
+			</Visibility>   
+		</Button>
+		<Button name="Создать положение 223" displayName="Создать положение">
+			<Action type="Register">
+				<FlowName value="Положение о закупках 223ФЗ" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchType" value="PologenieNaZakProject223" />
+						<WhenHttpGetParamEquals param="searchBlock" value="Положение о закупках" />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		<Button name="ТестСозданиеДокументаПоток1" displayName="ТестСозданиеДокументаПоток1">
+			<Action type="Register">
+				<FlowName value="ТестПоток1" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchBlock" value="Тестовый Поток 1" />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Создать новый документ" displayName="Создать новый документ">
+			<Action type="Register">
+				<FlowName value="Тестовый поток" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenHttpGetParamEquals param="searchBlock" value="Учебный раздел" />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+	</Location>
+
+	<Location name ="SearchResult">
+		<Button name="Удалить из базы">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<And>
+						<Or>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+						</Or>						
+						<And>
+							<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+						</And> 
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Создать заявку на закупку">
+			<Action type="RegisterOnBase">
+				<FlowName value="Извещения о закупочной процедуре 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="533003" />
+						</And>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasAnyLink flowName="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Для создания заявки на закупку необходимо сначала создать лот'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Создать договор">
+			<Action type="RegisterOnBase">
+				<FlowName value="Договоры 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ"/>
+							<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Малая_закупка" value="1" />
+								<WhenHasNotAnyLink flowName="Договоры 223ФЗ"/>
+								<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Малая_закупка" value="1" />
+								<WhenFieldEquals path="|Document|Закупка_не_включена_в_план_закупки" value="1" />
+							</Or>
+						</And>
+						<And>
+							<And>							
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+								<WhenFieldEquals path="|Document|Закупка_в_электронной_форме" value="1" />
+								<WhenHasAnyLink flowName="Заявка на размещение закупки 223ФЗ" path="|Document|Статус" value="Заключение договора; Закупка завершена"/>
+								<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+	</Location>
+	
+	<Location name="DocumentView">	
+		
+		<Button name="Лист согласования">
+			<Action type="Predefined">
+			</Action>
+			<Visibility>
+				<Rules>					
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Перевести на исполнение">
+			<Action type="RunRoute">
+				<RouteName value="Не публикуемые договора"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenInternalChecks/>
+						<WhenFlow name="Договоры 223ФЗ"/>
+						<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+						<WhenFieldEquals path="|Document|Не_публиковать_в_ЕИС" value="1" />
+						<WhenUserInWorkGroup name="Специалист по закупкам"/>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Отменить лот">
+			<Action type="Predefined">
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ"/>
+							<WhenFieldNotEquals path="|Document|Отмена_лота" value="1"/>
+							<WhenHasNotActiveProcess name="Отмена лота"/>
+							<WhenHasNotActiveProcess name="Восстановление лота"/>
+							<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Отмена_закупки" values= "1" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+						<Or>
+							<And>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+								</Or>
+								<Or>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="113" />
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="999" />
+								</Or>
+							</And>
+							<And>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+								</Or>
+								<And>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+								</And>
+							</And>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Восстановить лот">
+			<Action type="Predefined">
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ"/>
+							<WhenFieldEquals path="|Document|Отмена_лота" value="1"/>
+							<WhenFieldNotEquals path="|Document|Статус" value="Закупка завершена"/>
+							<WhenHasNotActiveProcess  name="Отмена лота"/>
+							<WhenHasNotActiveProcess  name="Восстановление лота"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Восстановить процедуру">
+			<Action type="Predefined">
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+							<WhenFieldEquals path="|Document|Отмена_закупки" value="1"/>
+							<WhenFieldNotEquals path="|Document|Статус" value="Закупка завершена"/>
+							<!-- <WhenHasNotActiveProcess  name="Отмена процедуры"/> -->
+							<WhenHasNotActiveProcess  name="Восстановление процедуры"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Отменить процедуру">
+			<Action type="Predefined">
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+							<WhenFieldNotEquals path="|Document|Отмена_закупки" value="1"/>
+							<WhenHasNotActiveProcess  name="Отмена процедуры"/>
+							<WhenHasNotActiveProcess  name="Восстановление процедуры"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+						<Or>
+							<And>
+								<Or>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="113" />
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="999" />
+								</Or>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Вскрытие конвертов" />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Подача окончательных ценовых предложений" />
+									<WhenFieldEquals path="|Document|Статус" value="Прием квалификационных заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора" />
+									<WhenFieldEquals path="|Document|Статус" value="Подтверждение публикации процедуры" />
+								</Or>
+							</And>
+							<And>
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+								<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+							</And>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<!-- Отмена процедуры по Сбер АСТ -->
+		<Button name="Отменить процедуру (лоты)">
+			<Action type="RegisterOnBase">
+				<FlowName value="Отмена процедуры"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+							<WhenFieldNotEquals path="|Document|Отмена_закупки" value="1"/>
+							<WhenHasNotActiveProcess  name="Отмена процедуры"/>
+							<WhenHasNotActiveProcess  name="Восстановление процедуры"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам" />
+						</Or>
+						<Or>
+							<And>
+								<Or>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+								</Or>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="В процессе проведения" />
+								</Or>
+							</And>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						 <And>
+							<WhenNotExists searchString="document[(doc_RegCard/rc_FlowName = 'Отмена процедуры') and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/text_Статус = 'В архиве') and not(doc_RegCard/rc_Index/text_Статус = 'Опубликован на ЭТП')]" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Невозможно создать отмену процедуры(лотов). Присутствует не опубликованная версия отмены процедуры(лотов)'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Обновить информацию c ЭТП">
+			<Action type="RunAutoTask">
+				<taskType value="import"/>
+				<sourceType value="Импорт запросов на разъяснение"/>
+				<taskName value="ЕЭТП обновление по одной процедуре"/>
+				<title value="Обновление информации с ЕЭТП"/>
+				<message value="Вы действительно хотите обновить информацию?"/>
+				<!-- <taskContext value="none"/> -->
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Актуальность" value="1" />
+										<WhenFieldNotEquals path="|Document|ИД_на_ЭТП" value="0" />
+										<WhenFieldNotEquals path="|Document|ИД_на_ЭТП" value="" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Внесение изменений" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На согласовании" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Согласован" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Согласована" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На согласовании закупочной комиссии" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На доработке" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>
+									<Or>
+										<WhenFlow name="Разъяснения положений документации 223ФЗ" />							
+										<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />													
+										<WhenFlow name="Анализ рынка" />							
+										<WhenFlow name="Предквалификационный отбор" />							
+										<WhenFlow name="Запросы RFI" />							
+									</Or>
+								</And>
+									<!-- Отдельный блок для запросов на разъяснение т.к. заполняется ИД_запроса_ЕЭТП -->
+								<And>
+									<And>
+										<!-- <WhenFieldEquals path="|Document|Актуальность" value="1" /> -->
+										<WhenFieldNotEquals path="|Document|ИД_запроса_ЕЭТП" value="0" />
+										<WhenFieldNotEquals path="|Document|ИД_запроса_ЕЭТП" value="" />
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFlow name="Разъяснения положений документации 223ФЗ" />	
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>	
+									</Or>
+								</And>
+									<!-- Договоры 223 ФЗ -->
+								<And>
+									<And>
+										<!-- <WhenFieldEquals path="|Document|Актуальность" value="1" /> -->
+										<WhenFieldEquals path="|Document|Актуальность" value="1" />
+										<WhenFieldNotEquals path="|Document|ИД_на_ЭТП" value="0" />
+										<WhenFieldNotEquals path="|Document|ИД_на_ЭТП" value="" />
+										<WhenFlow name="Договоры 223ФЗ" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>	
+									</Or>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания заказчиком" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания победителем" />
+										<WhenFieldEquals path="|Document|Статус" value="Договор заключен" />
+										<WhenFieldEquals path="|Document|Статус" value="Размещен проект разногласий" />
+										<WhenFieldEquals path="|Document|Статус" value="Проект отправлен" />
+										<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+									</Or>
+								</And>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Обновить план с ЕИС">
+			<Action type="RunAutoTask">
+				<taskType value="import"/>
+				<sourceType value="Автоимпорт с ЕЭТП"/>
+				<taskName value="UpdatePlanButton"/>
+				<taskContext value="UpdatePlanButton"/>
+				<title value="Обновление информации о плане с ЕИС"/>
+				<message value="Вы действительно хотите обновить информацию?"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<!-- <WhenFieldEquals path="|Document|Актуальность" value="1" /> -->
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+								<WhenFlow name="Планы закупок 223ФЗ" />							
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>		
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Отказаться от строки" displayName="Отказаться от строки">
+			<Action type="RunRoute">
+				<RouteName value="Отказ от строки"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenInternalChecks/>
+						<WhenFlow name="Позиции плана закупок 223ФЗ"/>
+						<WhenFieldNotEquals path="|Document|Статус_публикации_в_ЕИС" value="Опубликовано в ЕИС" />
+						<WhenFieldEquals path="|Document|Номер_плана_в_ЕИС" value="" />
+						<WhenFieldNotEquals path="|Document|Статус" value="Отменена" />
+						<WhenFieldNotEquals path="|Document|Статус" value="В архиве" />
+						<WhenFieldNotEquals path="|Document|Статус" value="Аннулирована" />
+						<WhenFieldNotEquals path="|Document|Статус" value="Неактуальная" />
+						<WhenFieldNotEquals path="|Document|Статус" value="Отказ" />
+						<WhenHasNotAnyLink flowName="Договоры 223ФЗ" />
+						<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" />
+						<WhenUserInWorkGroup name="Специалист по закупкам"/>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<WhenFieldEquals path="|Document|Создана_заявка_на_закупку" value="1" />
+								<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Заявка отозвана" />
+							</And>
+							<And>
+								<WhenFieldNotEquals path="|Document|Создана_заявка_на_закупку" value="1" />
+								<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" />
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Отказ от строки плана не возможен. Пожалуйста, сначала произведите отзыв заявки на закупку."/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldNotEquals path="|Document|Включена_в_ПЗ" value="1" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Отказ от строки плана не возможен. Пожалуйста, сначала удалите строку плана из проекта плана."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Корректировка НМЦ и размера НДС">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Подготовка заявки на закупку" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласован" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+	
+		<Button name="Создать запрос на разъяснение">
+			<Action type="RegisterOnBase">
+				<FlowName value="Разъяснения положений документации 223ФЗ"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />													
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="В процессе проведения" />
+								<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+								<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+								<WhenFieldEquals path="|Document|Статус" value="Подведение итогов" />
+								<WhenFieldEquals path="|Document|Статус" value="Рассмотрение первых частей" />
+								<WhenFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей" />
+								<WhenFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора" />
+								<WhenFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFieldEquals path="|Document|Форма_торгов_код" value="33" />								
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Закупка завершена" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Добавить разъяснение (без запроса)" id="c6bafa07-f8f4-4cd3-9999-836562e246f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Разъяснения положений документации 223ФЗ"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2"  />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<FieldsModify>
+				<SetField dst="|Document|Разъяснение_без_запроса" value="1" />
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Новая версия разъяснения" displayName="Внести изменения" id="c4bafa03-f814-4cd3-8217-877762e246f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Разъяснения положений документации 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Разъяснение отправлено" />
+								<WhenFieldEquals path="|Document|Разъяснение_без_запроса" value="1" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								<WhenUserInWorkGroup name="Инициаторы"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Разъяснения положений документации 223ФЗ" path ="|Document|Статус" values= "Черновик; На доработке; Внесение изменений; Отправлено в ЕИС" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии Разъяснения положений документации недопустимо, т.к. уже существует не опубликованная версия документа."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<SetField dst="|Document|Внесение_изменений" value="1"/> 
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Создать переторжку" displayName="Провести переторжку">
+			<Action type="RegisterOnBase">
+				<FlowName value="Переторжки"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Подведение итогов"  />
+						</And>
+						<Or>
+							<And>
+								<And>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="113"  />
+								</And>
+								<Or>
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос котировок"  />
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос предложений"  />
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Конкурс"  />
+								</Or>
+							</And>
+							<And>
+								<And>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="999"  />
+									<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path="|Document|Процедуры_РТК|Возможность_проведения_процедуры_переторжки" values="1" useSqlQuery="true"/>
+								</And>
+								<Or>
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый запрос котировок (РТ)"  />
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый запрос предложений (РТ)"  />
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый конкурс (РТ)"  />
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Конкурентный отбор со стартовой ценой (РТ)"  />
+								</Or>
+							</And>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Удалить из базы">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+							<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+							<WhenHasNotActiveProcess name="Согласование ППЗ"/>
+							<WhenHasNotActiveProcess name="Согласование ППЗ для ДЗ"/>
+						</And>
+						<And>
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>					
+
+		<Button name="Создать договор">
+			<Action type="RegisterOnBase">
+				<FlowName value="Договоры 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ"/>
+							<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Малая_закупка" value="1" />
+								<WhenHasNotAnyLink flowName="Договоры 223ФЗ"/>
+								<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Малая_закупка" value="1" />
+								<WhenFieldEquals path="|Document|Закупка_не_включена_в_план_закупки" value="1" />
+							</Or>
+						</And>
+						<And>
+							<And>							
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+								<WhenFieldEquals path="|Document|Закупка_в_электронной_форме" value="1" />
+								<WhenHasAnyLink flowName="Заявка на размещение закупки 223ФЗ" path="|Document|Статус" value="Заключение договора; Закупка завершена"/>
+								<WhenFieldNotEquals path="|Document|Запрос_цен" value="1" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Создать договор (по заявке)">
+			<Action type="RegisterOnBase">
+				<FlowName value="Договоры 223ФЗ"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>							
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+								<WhenFieldEquals path="|Document|Закупка_в_электронной_форме" value="1" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />  <!-- Сбербанк-АСТ -->
+								<WhenFieldMore path="|Document|Макс_количество_победителей" value="1" />
+								<WhenFieldNotEquals path="|Document|Победитель|Победитель" value="" /> <!-- Определен победитель -->
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Завершен(-а)" />
+								<WhenFieldEquals path="|Document|Статус" value="Состоялся(-ась)" />
+								<WhenFieldEquals path="|Document|Статус" value="Не состоялся(-ась)" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />								
+								<!-- <WhenHasNotAnyLink flowName="Договоры 223ФЗ"/> -->
+								<WhenFieldNotEquals path="|Document|Победитель|Победитель" value="" /> <!-- Определен победитель -->
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />  <!-- Сбербанк-АСТ -->
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Завершен(-а)" />
+								<WhenFieldEquals path="|Document|Статус" value="Состоялся(-ась)" />
+								<WhenFieldEquals path="|Document|Статус" value="Не состоялся(-ась)" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						 <And>
+							<WhenExists searchString="document[(doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ') and xn-in(doc_Id, {currentDocLinkList}) and (doc_RegCard/rc_Index/text_Код_протокола = 'ancorResultProtocol') and (doc_RegCard/rc_Index/text_Номер_протокола_в_ЕИС)]" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Необходимо обновить информацию с ЭТП в Заявке на закупку'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Создать договор (не по заявке)" id="c6bafa07-f8f4-4cd3-8217-836562e246f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Договоры 223ФЗ"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />								
+								<!-- <WhenHasNotAnyLink flowName="Договоры 223ФЗ"/> -->
+								<WhenFieldEquals path="|Document|Победитель|Победитель" value="" /> <!-- Не определен победитель -->
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />  <!-- Сбербанк-АСТ -->
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Завершен(-а)" />
+								<WhenFieldEquals path="|Document|Статус" value="Состоялся(-ась)" />
+								<WhenFieldEquals path="|Document|Статус" value="Не состоялся(-ась)" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<FieldsModify>
+				<SetField dst="|Document|Сбербанк_АСТ|Договор_не_по_заявке" value="1"/> 
+			</FieldsModify>
+		</Button>
+		
+
+		<Button name="Новая версия договора" displayName="Внести изменения" id="c6bafa07-f8f4-4cd3-8217-877762e246f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Договоры 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Исполнение" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер-АСТ -->
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания заказчиком" />
+								<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания победителем" />
+								<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания поставщиком" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ" path ="|Document|Статус" values= "Черновик; На доработке; Внесение изменений; Отправлено в ЕИС" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии договора недопустимо, т.к. уже существует проект договора."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<SetField dst="|Document|Статус" value="Внесение изменений"/> 
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Новая версия протокола" displayName= "Внести изменения" id="c6bafa07-f6f4-4cd3-8211-822262e246f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Протоколы 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Опубликован в ЕИС" />
+								<!-- <WhenFieldEquals path="|Document|ИД_ЭТП" value="1" /> -->
+								<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Статус" values= "Закупка не состоялась;Закупка завершена" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Протоколы 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Опубликован на ЭТП" />
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+							<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Статус" values= "Закупка не состоялась;Закупка завершена" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Опубликован на ЭТП" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<And>
+									<WhenFieldEquals path="|Document|Форма_торгов" value="Аукцион в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+									<WhenFieldEquals path="|Document|Код_протокола" value="ancorProtocolRZ1" />
+								</And>	
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Аукцион в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос предложений в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+									</Or>
+									<And>
+										<WhenFieldEquals path="|Document|Код_протокола" value="ancorProtocolRZ2" />									
+									</And>	
+								</And>	
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Аукцион в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Конкурс в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос котировок в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос предложений в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+									</Or>
+									<And>
+										<WhenFieldEquals path="|Document|Код_протокола" value="ancorResultProtocol" />							
+									</And>	
+								</And>	
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" path ="|Document|Статус" values= "Черновик; На согласовании закупочной комиссии; На доработке; Согласован; Отправлено на ЭТП" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии протокола недопустимо, т.к. уже существует не опубликованная версия протокола."/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							 <WhenFlow name="Протоколы 223ФЗ" />
+							 <WhenFieldNotEquals path="|Document|Код_протокола" value="4149" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Создание новой версии протокола "Рассмотрения первых частей заявок" недопустимо при форме торгов - Аукцион'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<CopyField src="%key%" dst="|Document|ParentRK"/>
+				<SetField dst="|Document|Изменения" value="1"/> 
+			</FieldsModify>
+		</Button>
+			
+		<Button name="Согласовать протокол" displayName="Направить на согласование">
+			<Action type="RunRoute">
+				<RouteName value="Согласование протокола"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Протоколы 223ФЗ" /> 
+							<WhenHasNotActiveProcess  name="Согласование протокола"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							<WhenFieldEquals path="|Document|Статус" value="Новый"/>
+						</Or>
+					</And> 
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>	
+							<WhenHasAttachments category="Документация"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Для согласования протокола пожалуйста присоедините Документацию."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Добавить позицию ПЗ" >
+			<Action type="Predefined"/>    
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Планы закупок 223ФЗ" />
+							<WhenFieldNotEquals path="|Document|Инновационная_продукция" value="1" />
+						</And>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Проект" />
+							<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+							<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+						</Or>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>  
+				</Rules>
+			</Visibility>
+		</Button>	 
+
+		<Button name="Сохранить">
+			<Action type="Predefined" />
+		</Button>
+		
+		<Button name="Согласование ППЗ" displayName="Направить на согласование">
+			<Action type="RunRoute">
+				<RouteName value="Согласование ППЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenHasNotActiveProcess name="Согласование ППЗ"/>
+							<WhenFieldNotEquals path="|Document|Статус" value="Аннулирована" />
+						</And>
+						<Or>
+							<And>
+								<WhenUserInWorkGroup name="Инициаторы" />
+								<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</Or>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+						</Or>
+					</And> 
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Создать лот" displayName="Создать лот">
+			<Action type="RunRoute">
+				<RouteName value="Создание Лота"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ"/>
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС"/>
+							<WhenFieldNotEquals path="|Document|plannedAfterSecondYear" value="1"/>
+							<WhenHasNotActiveProcess name="Создание Лота"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>							
+						</Or>
+					</And> 
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Сформировать отчёт ПЗ" displayName="Сформировать отчёт">
+			<Action type="RunRoute">
+				<RouteName value="Обработка плана223"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Планы закупок 223ФЗ" />
+						</And>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Проект" />
+							<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+							<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+						</Or>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Создать заявку на закупку">
+			<Action type="RegisterOnBase">
+				<FlowName value="Извещения о закупочной процедуре 223ФЗ"/>
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="533003" />
+							<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+						<Or>
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasAnyLink flowName="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Для создания заявки на закупку необходимо сначала создать лот'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Отказ от запроса на разъяснение">
+			<Action type="RunRoute">
+				<RouteName value="Отказ от запроса на разъяснение"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenFlow name="Разъяснения положений документации 223ФЗ" />					
+						<WhenFieldEquals path="|Document|Статус" value="Черновик"/>		
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>	
+		
+		<Button name="Импорт из Сбер Аст" displayName="Обновить информацию c ЭТП">
+			<Action type="RunAutoTask">
+				<taskType value="import"/>
+				<sourceType value="Импорт из Сбер Аст"/>
+				<taskName value="Сбер АСТ импорт по одной процедуре"/>
+				<taskContext value="Сбер АСТ импорт по одной процедуре"/>
+				<title value="Обновление информации из Сбербанк-АСТ"/>
+				<message value="Вы действительно хотите обновить информацию?"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Актуальность" value="1" />
+										<WhenFieldNotEquals path="|Document|Сбербанк_АСТ|ИД_документа_на_ЭТП" value="" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Внесение изменений" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На согласовании" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Согласован" />
+										<WhenFieldNotEquals path="|Document|Статус" value="Согласована" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На согласовании закупочной комиссии" />
+										<WhenFieldNotEquals path="|Document|Статус" value="На доработке" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам" />	
+									</Or>
+									<Or>							
+										<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />																		
+									</Or>
+								</And>
+									<!-- Отдельный блок для запросов на разъяснение т.к. заполняется ИД_запроса_ЕЭТП -->
+								<!-- <And>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_запроса_ЕЭТП" value="0" />
+										<WhenFieldNotEquals path="|Document|ИД_запроса_ЕЭТП" value="" />
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFlow name="Разъяснения положений документации 223ФЗ" />	
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам" />	
+									</Or>
+								</And> -->
+								
+								<And>
+									<And>
+										<!-- <WhenFieldEquals path="|Document|Актуальность" value="1" /> -->
+										<WhenFieldEquals path="|Document|Актуальность" value="1" />
+										<WhenFlow name="Договоры 223ФЗ" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам" />
+									</Or>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания заказчиком" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания победителем" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает подписания поставщиком" />
+										<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Подписан участником" />
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFlow name="Сопоставление типов процедур" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Загружен" />
+									</Or>
+								</And>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Отправить на ЭТП (Сбер Аст)" displayName="Отправить на ЭТП" taskName="Сбер Аст">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="" />
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+								</And>
+								<Or>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Готова к публикации" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Создан новый черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает публикации в ЕИС" />									
+									</Or>
+									<Or>
+										<And>
+											<And>
+												<WhenFieldEquals path="|Document|Отмена_закупки_согласована" value="1"/>
+											</And>
+											<Or>
+												<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+												<WhenFieldEquals path="|Document|Статус" value="В процессе проведения" />
+											</Or>
+											<Or>
+												<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="113" />
+												<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="999" />
+											</Or>
+										</And>
+										<And>
+											<WhenFieldEquals path="|Document|Отмена_закупки_согласована" value="1"/>
+											<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+											<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+										</And>
+									</Or>
+								</Or>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />								
+							</And>
+							<Or>
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Отправить разъяснение" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласован" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />	
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+								<WhenFieldEquals path="|Document|Основание_закупки_у_ЕП_код" value="" />
+								<WhenFieldNotEquals path="|Document|Извещение_не_размещалось" value="1" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласован" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект отправлен" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+								<!-- <WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" /> -->
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отмена процедуры" />
+								<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+									</And>
+									<And>
+										<WhenFieldNotEquals path ="|Document|Форма_торгов" value='Аукцион'/>
+										<WhenFieldNotEquals path ="|Document|Форма_торгов" value='Аукцион (заявка из 2-х частей)'/>
+										<WhenFieldNotEquals path ="|Document|Форма_торгов" value='Аукцион с двумя частями заявок'/>
+										<WhenFieldNotEquals path ="|Document|Форма_торгов" value='Аукцион в электронной форме'/>
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Сведения_о_торгах|Минимальный_шаг" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Сведения_о_торгах|Максимальный_шаг" values= "" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='Для интеграции со СберАСТ при форме торгов аукцион необходимо на карточке "ЛОТ" указать "Минимальный шаг, %" и "Максимальный шаг, %"'/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Позиции плана закупок 223ФЗ" path ="|Document|Статус_публикации_в_ЕИС" values= "" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='Позиция плана закупок ещё не опубликована в ЕИС'/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос цен (коммерческих предложений)" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Квалификационный отбор в электронной форме" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сведения_о_цене" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Регион" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_код" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Обеспечение_заявки|Вид_обеспечения_заявки_код" values= "" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='Для интеграции со СберАСТ необходимо на карточке "ЛОТ" указать "Сведения о начальной (максимальной) цене договора (цене заявки)", "Сведения о поставке", "Детализация предложения о цене" и "Вид обеспечения заявки на участие"'/>
+				</AccessibilityRulesGroup>
+				<!-- Запрос цен (коммерческих предложений) -->
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenFieldNotEquals path="|Document|Форма_торгов" value="Запрос цен (коммерческих предложений)" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_код" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Срок_действия_цены" values= "" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='Для интеграции со СберАСТ необходимо на карточке "ЛОТ" указать "Детализация предложения о цене" и "Срок действия цены"'/>
+				</AccessibilityRulesGroup>
+				<!-- Квалификационный отбор в электронной форме -->
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenFieldNotEquals path="|Document|Форма_торгов" value="Квалификационный отбор в электронной форме" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сведения_о_цене" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Регион" values= "" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_код" values= "" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='Для интеграции со СберАСТ необходимо на карточке "ЛОТ" указать "Сведения о начальной (максимальной) цене договора (цене заявки)", "Сведения о поставке" и "Детализация предложения о цене"'/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Отмена процедуры" />
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path ="|Document|Размер_НДС" values="" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос цен (коммерческих предложений)" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='На карточке "ЛОТ" не заполнено поле "Размер НДС"'/>
+				</AccessibilityRulesGroup>
+				<!-- Отмена процедуры -->
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<Or>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFlow name="Предквалификационный отбор" />
+								<WhenFlow name="Запросы RFI" />
+								<WhenFlow name="Переторжки" />
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+							</Or>
+							<And>
+								<And>
+									<WhenFlow name="Отмена процедуры" />
+								</And>
+								<Or>
+									<And>
+										<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values="Прием заявок" />
+										<WhenFieldEquals path="|Document|Закупка_отменяется_в_следствии_непреодолимой_силы" value="1" />
+									</And>
+								</Or>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value='После окончания приема заявок процедура закупки может быть отменена только при возникновении обстоятельств непреодолимой силы в соответствии с гражданским законодательством'/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		
+		<Button name="Отправить на ЭТП" displayName="Отправить на ЭТП">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+								</And>
+								<Or>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Создан новый черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает публикации в ЕИС" />									
+									</Or>
+									<Or>
+										<And>
+											<And>
+												<WhenFieldEquals path="|Document|Отмена_закупки_согласована" value="1"/>
+											</And>
+											<Or>
+												<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+												<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+												<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+												<WhenFieldEquals path="|Document|Статус" value="Вскрытие конвертов" />
+												<WhenFieldEquals path="|Document|Статус" value="Подача окончательных ценовых предложений" />
+												<WhenFieldEquals path="|Document|Статус" value="Прием квалификационных заявок" />
+											</Or>
+											<Or>
+												<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="113" />
+												<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="999" />
+											</Or>
+										</And>
+										<And>
+											<WhenFieldEquals path="|Document|Отмена_закупки_согласована" value="1"/>
+											<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+											<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+										</And>
+									</Or>
+								</Or>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<And>
+									<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+								</And>
+								<Or>
+									<And>
+										<And>
+											<WhenFieldEquals path="|Document|Отмена_лота" value="1"/>
+										</And>
+										<Or>
+											<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+											<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок" />
+											<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок" />
+										</Or>
+										<Or>
+											<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="113" />
+											<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="999" />
+										</Or>
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|Отмена_лота" value="1"/>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+										<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+									</And>
+								</Or>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+								<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />								
+							</And>
+							<Or>
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Отправить разъяснение" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</Or>
+								</And>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+								<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласован" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Анализ рынка" />
+								<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Тип_анализа" value="Запрос на ЭТП" />
+								<WhenFieldEquals path="|Document|Тип_анализа" value="Запрос на ЭТП с рассылкой приглашений" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />	
+								<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+								<WhenFieldEquals path="|Document|Основание_закупки_у_ЕП_код" value="" />
+								<WhenFieldNotEquals path="|Document|Извещение_не_размещалось" value="1" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект отправлен" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на площадке" />
+								<WhenFieldEquals path="|Document|Статус" value="Подписан" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<And>
+									<WhenFlow name="Переторжки" />
+									<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" />
+								</And>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+									<WhenFieldEquals path="|Document|Статус" value="Отправлена на ЭТП" /> 
+									<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />								
+								</Or>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path="|Document|Место_поставки" values="" />
+									</And>
+								</Or>
+							</And>
+							<And>
+								<WhenFlow name="Переторжки" />
+							</And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Для публикации необходимо указать место поставки."/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="1" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="1" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path="|Document|Порядок_формирования_цены_договора" values="" />
+									</And>
+								</Or>
+							</And>
+							<And>
+								<WhenFlow name="Переторжки" />
+							</And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Для публикации необходимо заполнить информацию на Лоте."/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<And>
+									<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								</And>
+								<Or>
+									<And>
+										<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="113" />
+									</And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="113" />
+										<WhenHasNotAnyLink flowName="Заявка на размещение закупки 223ФЗ" path="|Document|Сведения_о_цене_код" values="" />
+									</And>
+								</Or>
+							</And>
+							<And>
+								<WhenFlow name="Переторжки" />
+							</And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Для публикации необходимо заполнить информацию на Лоте."/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+							</And>
+							<And>
+								<WhenFlow name="Анализ рынка" />
+							</And>
+							<And>
+								<WhenFlow name="Предквалификационный отбор" />
+							</And>
+							<And>
+								<WhenFlow name="Запросы RFI" />
+							</And>
+							<And>
+								<WhenFlow name="Переторжки" />
+								<WhenHasAttachments category="Документация"/>
+							</And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+								<WhenHasAttachments category="Документация"/>
+							</And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenHasAttachments category="Документы по отмене лота"/>
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Для публикации необходимо прикрепить документ"/>
+				</AccessibilityRulesGroup>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<Or>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+								<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path="|Document|Статус" values="Рассмотрение первых частей; Обсуждение функциональных характеристик; 'Приостановка по требованию контрольных органов; Квалификационный отбор; Ожидание торгов; Торги; Рассмотрение заявок; Рассмотрение вторых частей; Подведение итогов; Заключение договора; Архив; Рассмотрение  заявок; Проведение торгов; Торги завершены; Переторжка(очная); Переторжка(заочная); Преддоговорные переговоры; Заключение дополнительного соглашения; Публикация результатов переторжки ; Публикация результатов переторжки"/>
+							</And>
+							<And>
+								<WhenFlow name="Анализ рынка" />
+							</And>
+							<And>
+								<WhenFlow name="Предквалификационный отбор" />
+							</And>
+							<And>
+								<WhenFlow name="Запросы RFI" />
+							</And>
+							<And>
+								<WhenFlow name="Переторжки" />
+							</And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+						</Or>
+					</Rules>
+					<NotAccessibleMessage value="Публиковать изменения можно только на статусе Прием заявок"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Новая версия извещения223" displayName="Внести изменения" id="c6okno10-f6f7-9cd5-8217-876762a876f2">
+			<Action type="RegisterOnBase">
+				<FlowName value="Извещения о закупочной процедуре 223ФЗ" law="223"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+					    <And>
+							<WhenInternalChecks />
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />				
+							<!-- <WhenHasNotAnyLink flowName="Протоколы 223ФЗ" /> -->
+							<WhenFieldEquals path="|Document|Актуальность" value="1" />
+							<WhenFieldNotEquals path="|Document|Отмена_закупки" value="1" />
+							<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений; На доработке; На согласовании; На согласовании закупочной комиссии; Согласована; Отправлено на ЭТП" />
+						</And>
+						<Or>
+							<And>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Прием квалификационных заявок" />
+									<WhenFieldEquals path="|Document|Статус" value="Подтверждение публикации процедуры" />
+								</Or>
+								<Or>
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="1"  />
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="113"  />
+								</Or>
+							</And>
+							<And>
+								<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="999"  />
+							</And>
+							<!-- Сбербанк-АСТ -->
+							<And>
+								<WhenFieldEquals path="|Document|Статус" value="Прием заявок" />
+								<WhenFieldEquals path="|Document|ИД_ЭТП" value="2"  />
+							</And>
+						</Or>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<FieldsModify>
+				<CopyField src="%key%" dst="|Document|ParentRK"/>
+				<SetField dst="|Document|Статус" value="Внесение изменений"/>
+				<CopyField src="|Document|ИД_ЭТП" />
+				<CopyField src="|Document|Номер_в_ЕИС" />
+				<CopyField src="|Document|ИД_процедуры" />
+				<CopyField src="|Document|ИД_на_ЭТП" />
+				<CopyField src="|Document|Номер_на_ЭТП" />
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Создать протокол" displayName="Создать протокол">
+			<Action type="RegisterOnBase">
+				<FlowName value="Протоколы 223ФЗ" />
+				<ShowInNewTab value="true"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС"  />
+									<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" />
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+										<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" path ="|Document|Статус" values= "Черновик; На согласовании закупочной комиссии; На доработке; Согласован; Отправлено на ЭТП; В процессе проведения" />
+									</And>
+									<Or>
+										<Or>
+											<WhenFieldEquals path="|Document|Статус" value="В процессе проведения"  />
+											<WhenFieldEquals path="|Document|Статус" value="Состоялся(-ась)"  />
+											<WhenFieldEquals path="|Document|Статус" value="Не состоялся(-ась)"  />
+										</Or>
+										<And>
+											<Or>
+												<WhenFieldEquals path="|Document|Статус" value="Прием заявок"  />
+												<WhenFieldEquals path="|Document|Статус" value="Формирование результатов подачи заявок"  />
+											</Or>
+											<Or>
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Конкурс (заявка из 2-х частей)"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Аукцион (заявка из 2-х частей)"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос котировок (заявка из 2-х частей)"  />											
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос предложений (заявка из 2-х частей)"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Квалификационный отбор в электронной форме"  />
+											</Or>
+										</And>
+										<And>
+											<Or>
+												<WhenFieldEquals path="|Document|Статус" value="Прием заявок"  />
+												<WhenFieldEquals path="|Document|Статус" value="Формирование результатов подачи заявок"  />
+												<WhenFieldEquals path="|Document|Статус" value="Блокирование денежных средств на спецсчете"  />
+											</Or>
+											<Or>
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Аукцион в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Конкурс в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос котировок в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+												<WhenFieldEquals path="|Document|Форма_торгов" value="Запрос предложений в электронной форме, участниками которого могут являться только субъекты малого и среднего предпринимательства"  />
+											</Or>
+										</And>
+									</Or>
+								</And>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+								<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" path ="|Document|Статус" values= "Черновик; На согласовании закупочной комиссии; На доработке; Согласован; Отправлено на ЭТП; В процессе проведения" />
+							</And>
+							<Or>
+								<Or>
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение заявок"  />
+									<WhenFieldEquals path="|Document|Статус" value="Квалификационный отбор"  />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение  заявок"  />
+									<WhenFieldEquals path="|Document|Статус" value="Подведение итогов"  />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение первых частей"  />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение вторых частей"  />
+									<WhenFieldEquals path="|Document|Статус" value="Рассмотрение единственной заявки" />
+									<WhenFieldEquals path="|Document|Статус" value="Подведение итогов квалификационного отбора"  />
+								</Or>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Прием заявок"  />
+									<WhenFieldEquals path="|Document|Форма_торгов_код" value="62"  /><!-- Подтверждение стандартных условий -->
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="В процессе проведения"  />
+									<WhenFieldEquals path="|Document|ИД_ЭТП" value="2" />
+								</And>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Предквалификационный отбор" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Прием заявок"  />
+								<WhenFieldEquals path="|Document|Статус" value="Подведение итогов"  />
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Запросы RFI" />
+							<WhenFieldEquals path="|Document|Статус" value="Подведение итогов"  />
+							<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" />
+						</And>
+						<!-- <And>
+							<WhenFlow name="Предквалификационный отбор" />
+							<WhenFieldEquals path="|Document|Статус" value="Подведение итогов"  />
+							<WhenHasNotAnyLink flowName="Протоколы 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений; На согласовании; Согласован; Отправлено на ЭТП" />
+						</And> -->
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Добавить исполнение" displayName="Добавить сведения об исполнении">
+			<Action type="RegisterOnBase">
+				<FlowName value="Исполнение договора 223ФЗ" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Договоры 223ФЗ"/>							
+							<WhenFieldEquals path="|Document|Статус" value="Исполнение"  />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Инициаторы" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ" path ="|Document|Статус" values= "Черновик; На доработке; Внесение изменений; Отправлено в ЕИС" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание исполнения недопустимо, т.к. происходит изменение договора."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Расторжение" displayName="Добавить сведения о расторжении договора">
+			<Action type="RegisterOnBase">
+				<FlowName value="Расторжения договора 223ФЗ" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Договоры 223ФЗ"/>							
+							<WhenFieldEquals path="|Document|Статус" value="Исполнение"  />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Инициаторы"/>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ" path ="|Document|Статус" values= "Черновик; На доработке; Внесение изменений; Отправлено в ЕИС" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание расторжения недопустимо, т.к. происходит изменение договора."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Согласовать исполнение" displayName="Направить на размещение">
+			<Action type="RunRoute">
+				<RouteName value="Согласование исполнения"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Исполнение договора 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							<WhenHasNotActiveProcess name="Согласование иcполнения"/>
+						</And>
+					</And> 
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>						
+							<WhenHasAttachments category="Документация"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Для согласования исполнения необходимо прикрепить документацию"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Согласовать расторжение" displayName="Направить на размещение">
+			<Action type="RunRoute">
+				<RouteName value="Согласование расторжения"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Расторжения договора 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							<WhenHasNotActiveProcess name="Согласование расторжения"/>
+						</And>
+					</And> 
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>						
+							<WhenHasAttachments category="Документация"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Для размещения необходимо прикрепить документацию"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="прерывание маршрутов в текущем документе" displayName="прерывание маршрутов в текущем документе">
+			<Action type="RunRoute">
+				<RouteName value="прерывание маршрутов в текущем документе"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		<Button name="Редактировать">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+									<WhenHasNotActiveProcess name="Согласование ППЗ"/>
+									<WhenHasNotActiveProcess name="Согласование ППЗ для ДЗ"/>
+									<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+									<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Номер_плана_в_ЕИС" value="" />
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+										<WhenFieldEquals path="|Document|Статус" value="На согласовании у специалистов по закупкам" />
+									</Or>
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</And>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Планы закупок 223ФЗ" />
+							</And>
+							<And>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Проект" />
+									<WhenHasNotActiveProcess name="Согласование ПЗ 223"/>
+								</And>
+								<Or>
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</Or>
+							</And>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Согласована" /> 
+										<WhenFieldEquals path="|Document|Статус" value="Ожидает публикации в ЕИС" />
+										<WhenFieldEquals path="|Document|Статус" value="Подготовка к публикации" />
+										<WhenFieldEquals path="|Document|Статус" value="Проведение закупочной комиссии" />
+										<WhenFieldEquals path="|Document|Статус" value="Подготовка документации" />
+										<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Готова к публикации" />
+									</Or>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>
+								</And>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" /> 
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" /> 
+								<WhenFieldEquals path="|Document|Статус" value="Ожидает публикации в ЕИС" />
+								<WhenFieldEquals path="|Document|Статус" value="Подготовка к публикации" />
+								<WhenFieldEquals path="|Document|Статус" value="Проведение закупочной комиссии" />
+								<WhenFieldEquals path="|Document|Статус" value="Подготовка документации" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Готова к публикации" />
+								<WhenFieldEquals path="|Document|Статус" value="Подготовка заявки на закупку" />
+								<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path="|Document|Статус" value="Внесение изменений; Отправлено на ЭТП"/>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+										<WhenFieldEquals path="|Document|Переназначен_ответственный" value="1" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Инициаторы"/>
+									</Or>
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Передано для разъяснения Инициатору" />
+									<WhenUserInWorkGroup name="Инициаторы"/>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+									</Or>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>
+								</And>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="На согласовании" />
+								<WhenFieldEquals path="|Document|Статус" value="Подписан" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Исполнение договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Инициаторы"/>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Расторжения договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отчетность о договорах 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Положение о закупках 223ФЗ" />
+							<!-- <WhenFieldEquals path="|Document|Статус" value="Черновик"/> -->
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Переторжки" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Печатные формы" />
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Сопоставление типов процедур" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отмена процедуры" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+					</Or>  
+				</Rules>
+			</Visibility>
+		</Button>						
+
+		<Button name="Присоединить файлы">
+			<Action type="Predefined" />
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+									<WhenHasNotActiveProcess name="Согласование ППЗ"/>
+									<WhenHasNotActiveProcess name="Согласование ППЗ для ДЗ"/>
+									<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Инициатор|Инициатор" value="{currentUser}" />
+									<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Номер_плана_в_ЕИС" value="" />
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+										<WhenFieldEquals path="|Document|Статус" value="На согласовании у специалистов по закупкам" />
+									</Or>
+								</And>
+								<And>
+									<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</And>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+								<WhenHasNotActiveProcess name="Согласование заявки на закупку"/>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenFieldEquals path="|Document|Номер_в_ЕИС" value="" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" /> 
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							</And>
+							<Or>
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправить разъяснение" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+									</Or>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>									
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Статус" value="В ожидании разъяснения" />
+										<WhenFieldEquals path="|Document|Переназначен_ответственный" value="1" />
+									</And>
+									<Or>
+										<WhenUserInWorkGroup name="Инициаторы"/>
+									</Or>
+								</And>
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Создана_в_Е1" value="1" />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+									</Or>
+									<Or>
+										<WhenUserInWorkGroup name="Специалист по закупкам"/>
+									</Or>
+								</And>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Разъяснения положений документации 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Передано для разъяснения Инициатору" />
+							<WhenUserInWorkGroup name="Инициаторы"/>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Протоколы 223ФЗ" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="На визировании" />
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Подписан" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+								<WhenFieldEquals path="|Document|Статус" value="Проект отправлен" />
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Договоры 223ФЗ" />
+							<WhenFieldNotEquals path="|Document|Статус" value="Исполнение" />
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Исполнение договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Инициаторы"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Исполнение договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Расторжения договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отчетность о договорах 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Переторжки" />
+						</And>
+						
+						<And>
+							<WhenFlow name="Предквалификационный отбор" />
+							<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Запросы RFI" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП"/>
+								<WhenFieldEquals path="|Document|Статус" value="Согласован"/>
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+								<WhenFieldEquals path="|Document|Статус" value="На доработке"/>
+							</Or>
+						</And>
+						<And>
+							<WhenFlow name="Печатные формы" />
+							<WhenUserInWorkGroup name="Суперпользователи" />
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Сопоставление типов процедур" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отмена процедуры" />
+							</And>
+							<Or>								
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenFieldEquals path="|Document|Статус" value="На доработке" />
+								<WhenFieldEquals path="|Document|Статус" value="Согласована" />
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено на ЭТП" />
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам" />
+							</Or>
+						</And>
+					</Or>  
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Корректировка ППЗ" id="c6bafa07-f8f4-4cd3-8217-878762e876f2" displayName="Внести изменения">
+			<Action type="RegisterOnBase">
+				<FlowName value="Позиции плана закупок 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenHasNotAnyLink flowName="Позиции плана закупок 223ФЗ" path ="|Document|Статус" values="Внесение изменений; Изменения утверждены; На доработке изменений; Изменения подготовлены для включения в план; На согласовании у начальника отдела; На доработке; На согласовании у начальника управления; На согласовании у отдела планирования" />
+							<WhenFieldEquals path="|Document|Актуальность" value="1"/>
+							<WhenFieldEquals path="|Document|Статус_публикации_в_ЕИС" value="Опубликовано в ЕИС"/>
+							<WhenFieldNotEquals path="|Document|Инициатор|Инициатор" value="" />
+							<WhenFieldNotEquals path="|Document|Позиция_в_нескольких_планах" value="1" />
+							<WhenFieldNotEquals path="|Document|plannedAfterSecondYear" value="1" />
+							<WhenFieldEquals path="|Document|Номер_извещения_в_ЕИС" value=""/>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							<WhenHasNotAnyLink flowName="Договоры 223ФЗ" />
+							<WhenHasNotAnyLink flowName="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Позиции плана закупок 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений; Включена в проект плана закупок; Включена в опубликованный план закупок; Внесение изменений в проект плана закупок; На согласовании у начальника отдела; На согласовании у начальника управления; На согласовании у отдела планирования; Изменения подготовлены для включения в план" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии позиции плана закупок недопустимо, т.к. уже существует измененная версия"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<CopyField src="|Document|Номер_основного_договора" />
+				<CopyField src="|Document|Юр_лицо_основного_договора" />
+				<CopyField src="|Document|Внутренний_номер" />
+				<CopyField src="|Document|ИД_на_ЭТП" />
+				<CopyField src="|Document|ИД_извещения_в_ЕИС" />
+				<CopyField src="|Document|ИД_лота_в_ЕИС" />
+				<CopyField src="|Document|Дата_подписания_договора" />
+				<CopyField src="|Document|Дата_подготовки_ТЗ" />
+				<CopyField src="|Document|Номер_извещения_в_ЕИС" />
+				<CopyField src="|Document|Номер_договора" />
+				<CopyField src="|Document|ИД_извещения_на_ЭТП" />
+				<CopyField src="|Document|Номер_плана_в_ЕИС" />
+				<CopyField src="|Document|ИД_плана_в_ЕИС" />
+				<CopyField src="|Document|Номер_договора" />
+				<CopyField src="|Document|ИД_в_ЕИС" />
+				<CopyField src="|Document|ИД_позиции_плана" />
+				<CopyField src="|Document|Номер_позиции_плана" />
+				<CopyField src="|Document|ИД_в_ЕИС_изменение" />
+				<CopyField src="|Document|Фактическая_дата_размещения" />
+				<CopyField src="|Document|ИД_извещения" />
+				<CopyField src="|Document|Номер_извещения" />
+				<CopyField src="|Document|Номер_итогового_протокола" />
+				<CopyField src="|Document|Дата_подведения_итогов" />
+				<CopyField src="|Document|Дата_вскрытия_конвертов" />
+				<CopyField src="|Document|Номер_закупки" />
+				<CopyField src="|Document|Номер_лота" />
+				<CopyField src="|Document|Расширенный_план" />
+				<CopyField src="|Document|Наличие_процедуры_в_ЕИС" />
+				<CopyField src="|Document|Наличие_процедуры_на_ЭТП" />
+				<CopyField src="|Document|Номер_извещения_на_ЭТП" />
+				<CopyField src="|Document|Ввести_сумму_по_строке" />
+				<CopyField src="|Document|Количество_связанных_лотов" />
+				<CopyField src="|Document|ИД_лота" />
+				<CopyField src="|Document|ИД_договора" />
+				<CopyField src="|Document|ИД_первой_редакции" />
+				<CopyField src="%key%" dst="|Document|ParentRK"/>
+				<SetField dst="|Document|Статус" value="Внесение изменений"/> 
+				<SetField dst="|Document|Корректировка" value="1"/>
+				<CopyField src="|Document|НМЦ_с_НДС" dst="|Document|Первоначальная_цена"/>				
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Скачать файлы" >
+			<Action type="DownloadLinkedDocumentsAttachments" >
+				<IncludeCurrentDocument value="true"/>
+				<LinkedDocumentsQuery value="doc_RegCard/rc_FlowName = 'Заявки на размещение закупки'"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<WhenInternalChecks />
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Анулирование ППЗ 223ФЗ" id="c6bafa07-f8f4-4cd3-8217-877762e456f2" displayName="Аннулировать">
+			<Action type="RegisterOnBase">
+				<FlowName value="Позиции плана закупок 223ФЗ" law="223"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Актуальность" value="1" />
+							<WhenFieldEquals path="|Document|Статус_публикации_в_ЕИС" value="Опубликовано в ЕИС"/> 
+							<WhenFieldNotEquals path="|Document|Статус" value="Аннулирована" />
+							<WhenFieldEquals path="|Document|Номер_извещения_в_ЕИС" value=""/>	
+							<WhenFieldNotEquals path="|Document|Инициатор|Инициатор" value="" />
+							<WhenFieldNotEquals path="|Document|Позиция_в_нескольких_планах" value="1" />	
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</And>
+					</Or>
+				</Rules>												
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Позиции плана закупок 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений; Включена в проект плана закупок; Включена в опубликованный план закупок; Внесение изменений в проект плана закупок; На согласовании у начальника отдела; На согласовании у начальника управления; На согласовании у отдела планирования; Изменения подготовлены для включения в план" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии позиции плана закупок недопустимо, т.к. уже существует измененная версия"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<CopyField src="|Document|ИД_на_ЭТП" />
+				<CopyField src="|Document|ИД_извещения_в_ЕИС" />
+				<CopyField src="|Document|ИД_лота_в_ЕИС" />
+				<CopyField src="|Document|Дата_подписания_договора" />
+				<CopyField src="|Document|Дата_подготовки_ТЗ" />
+				<CopyField src="|Document|Номер_извещения_в_ЕИС" />
+				<CopyField src="|Document|Номер_договора" />
+				<CopyField src="|Document|ИД_извещения_на_ЭТП" />
+				<CopyField src="|Document|Номер_плана_в_ЕИС" />
+				<CopyField src="|Document|ИД_плана_в_ЕИС" />
+				<CopyField src="|Document|Номер_договора" />
+				<CopyField src="|Document|ИД_в_ЕИС" />
+				<CopyField src="|Document|ИД_позиции_плана" />
+				<CopyField src="|Document|Номер_позиции_плана" />
+				<CopyField src="|Document|ИД_в_ЕИС_изменение" />
+				<CopyField src="|Document|Фактическая_дата_размещения" />
+				<CopyField src="|Document|ИД_извещения" />
+				<CopyField src="|Document|Номер_извещения" />
+				<CopyField src="|Document|Номер_итогового_протокола" />
+				<CopyField src="|Document|Дата_подведения_итогов" />
+				<CopyField src="|Document|Дата_вскрытия_конвертов" />
+				<CopyField src="|Document|Номер_закупки" />
+				<CopyField src="|Document|Номер_лота" />
+				<CopyField src="|Document|Расширенный_план" />
+				<CopyField src="|Document|Наличие_процедуры_в_ЕИС" />
+				<CopyField src="|Document|Наличие_процедуры_на_ЭТП" />
+				<CopyField src="|Document|Номер_извещения_на_ЭТП" />
+				<CopyField src="|Document|Ввести_сумму_по_строке" />
+				<CopyField src="|Document|Количество_связанных_лотов" />
+				<CopyField src="|Document|ИД_лота" />
+				<CopyField src="|Document|ИД_первой_редакции" />
+				<CopyField src="|Document|Плановая_дата_размещения" />
+				<CopyField src="|Document|Плановая_дата_окончания_исполнения" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_справочный_код" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Адрес" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Телефон" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+				<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+				<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+				<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОГРН" />
+				<CopyField src="|Document|Исполнитель|Исполнитель_ФИО" />
+				<CopyField src="|Document|Способ_закупки_код" />
+				<CopyField src="|Document|Способ_закупки" />
+				<CopyField src="|Document|Закупка_в_электронной_форме" />
+				<CopyField src="|Document|Инновационная_продукция" />
+				<CopyField src="|Document|Субподрядчики_из_СМП" />
+				<CopyField src="|Document|Участник_закупки_СМП" />
+				<CopyField src="|Document|Долгосрочный" />
+				<CopyField src="|Document|Рамочный_договор" />
+				<CopyField src="|Document|Закупка_не_учитывается" />
+				<CopyField src="|Document|Торги_за_единицу_товара" />
+				<CopyField src="|Document|Начальная_цена_комплекта" />
+				<CopyField src="|Document|Торги_на_процент_снижения" />
+				<CopyField src="|Document|Категория_закупки_код" />
+				<CopyField src="|Document|Категория_закупки" />
+				<CopyField src="|Document|Предмет_договора" />
+				<CopyField src="|Document|Порядок_формирования_цены_договора" />
+				<CopyField src="|Document|Сведения_о_НМЦ" />
+				<CopyField src="|Document|Минимально_необходимые_требования" />
+				<CopyField src="|Document|Код_валюты" />
+				<CopyField src="|Document|Валюта" />
+				<CopyField src="|Document|Цифровой_код_валюты" />
+				<CopyField src="|Document|НМЦ_с_НДС" />
+				<CopyField src="|Document|НМЦД_в_рублях" />
+				<CopyField src="|Document|Курс_валюты" />
+				<CopyField src="|Document|Дата_курс_валюты" />
+				<CopyField src="|Document|Цена_отсечения" />
+				<CopyTable src="|Document|Позиции" />
+				<CopyField src="|Document|Условия_поставки" />
+				<CopyField src="|Document|Объем_поставки" />
+				<CopyField src="|Document|Порядок_поставки" />
+				<CopyField src="|Document|Порядок_оплаты" />
+				<CopyField src="|Document|Место_поставки" />
+				<CopyField src="|Document|ОКАТО" />
+				<CopyField src="|Document|Регион" />
+				<CopyField src="|Document|Победитель|Победитель" />
+				<CopyField src="|Document|Победитель|Победитель_наименование" />
+				<CopyField src="|Document|Победитель|Победитель_ИНН" />
+				<CopyField src="|Document|Победитель|Победитель_КПП" />
+				<CopyField src="|Document|Победитель|Победитель_ОГРН" />
+				<CopyField src="|Document|Победитель|Победитель_тип" />
+				<CopyField src="|Document|Победитель|Победитель_тип_код" />
+				<CopyField src="|Document|Победитель|Победитель_ОКОПФ" />
+				<CopyField src="|Document|Победитель|Победитель_ОКПО" />
+				<CopyField src="|Document|Победитель|Победитель_идентификационный_номер" />
+				<CopyField src="|Document|Победитель|Победитель_доп_идентификационный_номер" />
+				<CopyField src="|Document|Победитель|Победитель_дата_постановки" />
+				<CopyField src="|Document|Победитель|Победитель_СМП" />
+				<CopyField src="|Document|Победитель|Победитель_отсутствует_в_РНП" />
+				<CopyField src="|Document|Победитель|Победитель_нерезидент" />
+				<CopyField src="|Document|Победитель|Преддоговорные_переговоры" />
+				<CopyField src="|Document|Победитель|Фактическая_цена_закупки_с_НДС" />
+				<CopyField src="|Document|Победитель|Фактическая_цена_закупки_без_НДС" />
+				<CopyField src="|Document|Победитель|Победитель_состоит_на_учете" />
+				<CopyField src="|Document|Фактическая_дата_заключения_договора" />
+				<CopyField src="|Document|Победитель|Победитель_email" />
+				<CopyField src="|Document|Победитель|Победитель_телефон" />
+				<CopyField src="|Document|Победитель|Победитель_страна" />
+				<CopyField src="|Document|Победитель|Победитель_страна_код" />
+				<CopyField src="|Document|Победитель|Победитель_регион_код" />
+				<CopyField src="|Document|Победитель|Победитель_регион" />
+				<CopyField src="|Document|Победитель|Победитель_город" />
+				<CopyField src="|Document|Победитель|Победитель_населенный_пункт" />
+				<CopyField src="|Document|Победитель|Победитель_район" />
+				<CopyField src="|Document|Победитель|Победитель_индекс" />
+				<CopyField src="|Document|Победитель|Победитель_улица" />
+				<CopyField src="|Document|Победитель|Победитель_дом" />
+				<CopyField src="|Document|Победитель|Победитель_корпус" />
+				<CopyField src="|Document|Победитель|Победитель_офис" />
+				<CopyField src="|Document|Победитель|Победитель_фирменное_наименование"/>		
+				<CopyField src="|Document|Победитель|Победитель_ОКТМО"/>		
+				<CopyField src="|Document|Победитель|Победитель_ОКОПФ_наименование"/>		
+				<CopyField src="|Document|Победитель|Победитель_доп_информация"/>	
+				<CopyField src="|Document|Победитель|Победитель_статус"/>
+				<CopyTable src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" />
+				<CopyTable src="|Document|Информация_об_объемах_привлечения_СМП|Планируемые_платежи_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Код_валюты_платежа" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Валюта_платежа" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Цифровой_код_валюты_платежа" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Курс_валюты_долгосрочный" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Дата_курса_долгосрочный" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Код_валюты_платежа_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Валюта_платежа_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Цифровой_код_валюты_платежа_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Курс_валюты_СМП" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Дата_курса_СМП" />
+				<CopyField src="|Document|Год_закупки" />			
+				<CopyField src="|Document|Вид_документа" />
+				<CopyField src="|Document|Изменение" />
+				<CopyField src="|Document|Фактическая_дата_размещения" />
+				<CopyField src="|Document|Загружен_из_ЕИС" />
+				<CopyField src="|Document|Форма_переторжек" />
+				<CopyField src="|Document|Количество_заявок" />
+				<CopyField src="|Document|Количество_переторжек" />
+				<CopyField src="|Document|Количество_запросов_на_разъяснение" />
+				<CopyField src="|Document|Укрупненный" />
+				<CopyField src="|Document|Повторная_закупка" />
+				<CopyField src="|Document|Совместная_закупка" />			
+				<CopyField src="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" />
+				<CopyField src="|Document|Документ_основание_цены" />
+				<CopyField src="|Document|Примечание" />
+				<CopyField src="|Document|Плановая_дата_подведения_итогов" />
+				<CopyField src="|Document|Плановая_дата_заключения_договора" />
+				<CopyField src="|Document|ИД_ППЗ_долгосрочной" />
+				<CopyField src="|Document|Планируемый_год" />
+				<CopyField src="|Document|Планируемый_месяц_наименование" />
+				<CopyField src="|Document|Планируемый_квартал" />
+				<CopyField src="|Document|Планируемый_месяц" />
+				<CopyField src="|Document|Позиция_в_нескольких_планах" />
+				<CopyField src="|Document|Признак_адреса_ППЗ" />
+				<CopyField src="|Document|Количество_этапов" />
+				<CopyField src="|Document|Для_инновационного_плана" />
+				<CopyField src="|Document|Созданна_иновационная_позиция" />
+				<CopyField src="|Document|Год_плана" />
+				<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель" />
+				<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" />
+				<CopyField src="|Document|Инициатор|Инициатор" />
+				<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+				<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора" />
+				<CopyField src="|Document|okpdCheckView" />
+				<CopyField src="|Document|okpdCheck" />
+				<CopyField src="|Document|Проверка_окпд" />
+				<CopyField src="|Document|Дополнительные_сведения" />
+				<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года_в_рублях" />
+				<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_в_рублях_СМП" />
+				<CopyField src="|Document|Основание_закупки_у_ЕП_код" />
+				<CopyField src="|Document|Основание_закупки_у_ЕП_наименование" />
+				<CopyField src="|Document|Основание_ПБ_закупки_код" />
+				<CopyField src="|Document|Основание_ПБ_закупки_наименование" />
+				<CopyField src="|Document|Комментарий" />
+				<CopyField src="|Document|Выбрать_позицию_из_справочника" />
+				<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_добавочный"/>	
+				<CopyField src="|Document|Ввести_сумму_по_строке"/>	
+				<CopyField src="|Document|Малая_закупка"/>	
+				<CopyField src="|Document|Закупка_не_включена_в_план_закупки"/>
+				<CopyField src="%key%" dst="|Document|ParentRK"/>
+				<SetField dst="|Document|Статус" value="Аннулирование утверждено"/>
+				<SetField dst="|Document|Закупка_аннулирована" value="1"/> 
+			</FieldsModify>
+		</Button>
+											
+		<Button name="Новая версия отчетности 223ФЗ" id="a6bafa07-f8f4-4ad3-8217-899962e876f7" displayName="Внести изменения">
+			<Action type="RegisterOnBase">
+				<FlowName value="Отчетность о договорах 223ФЗ" law="223"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Отчетность о договорах 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Отчетность о договорах 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии отчетности о договорах недопустимо, т.к. уже существует измененная версия"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		
+		<Button name="Новая версия исполнения 223ФЗ" id="c6bFfa07-f8f4-4cd3-8217-877762e876f2" displayName="Внести изменения">
+			<Action type="RegisterOnBase">
+				<FlowName value="Исполнение договора 223ФЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Исполнение договора 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Опубликовано в ЕИС" />
+							<WhenFieldEquals path="|Document|Актуальность" value="1" />
+						</And>	
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenHasNotAnyLink flowName="Исполнение договора 223ФЗ" path ="|Document|Статус" values= "Черновик; Внесение изменений; На согласовании; Согласовано" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Создание новой версии исполнения недопустимо, т.к. уже существует измененная версия"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+			<FieldsModify>
+				<CopyField src="%key%" dst="|Document|ParentRK"/>
+				<CopyField src="|Document|Номер_сведений" />
+				<SetField dst="|Document|Статус" value="Внесение изменений"/> 
+			</FieldsModify>
+		</Button>
+		
+		<Button name="Прикрепить отчет">   
+			<Action type="RunRoute">
+				<RouteName value="Формирование отчетности о договорах 223"/>
+			</Action>  
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Отчетность о договорах 223ФЗ"/>	 	
+							<WhenFieldNotEquals path="|Document|Статус" value="Опубликовано в ЕИС"/>
+							<WhenFieldNotEquals path="|Document|Статус" value="Неактуальная"/>
+							<WhenHasNotActiveProcess  name="Публикация отчетности223"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>   
+		</Button>
+		
+		<Button name="Опубликовать документ223" displayName="Отправить в ЕИС">
+            <Action type="RunAutoTask">
+                <taskType value="export"/>
+                <sourceType value="ЕИС223"/>
+                <taskName value="ЕИС223"/>
+                <title value="Отправка в ЕИС"/>
+                <message value="Вы действительно хотите отправить в ЕИС?"/>
+            </Action>  
+            <Visibility>
+                <Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Планы закупок 223ФЗ" />
+							</And>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласован"/>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenFieldEquals path="|Document|Статус" value="Проект"/>
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС"/>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Договоры 223ФЗ" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<!-- Если выбрана мсп площадка -->
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="1"  />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+										<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+									</Or>	
+								</And>
+								<!-- Если НЕ мсп площадка -->
+								<And>
+									<Or>
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="113"  />
+										<WhenFieldEquals path="|Document|ИД_ЭТП" value="999"  />
+									</Or>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Завизирован" />
+										<WhenFieldEquals path="|Document|Статус" value="Подписан" />
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+										<WhenFieldEquals path="|Document|Статус" value="Проект договора подписан на ЭТП" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+									</Or>	
+								</And>
+								<!-- Если ЕП -->
+								<And>
+									<And>
+										<WhenFieldEquals path="|Document|Способ_закупки_код" value="533003"  />
+										<WhenFieldNotEquals path="|Document|Не_публиковать_в_ЕИС" value="1"  />
+									</And>
+									<Or>
+										<WhenFieldEquals path="|Document|Статус" value="Внесение изменений" />
+										<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС" />
+										<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+									</Or>	
+								</And>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Исполнение договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Согласовано"/>
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+								<WhenFieldEquals path="|Document|Статус" value="Отправлено в ЕИС"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Расторжения договора 223ФЗ" />
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenFieldEquals path="|Document|Статус" value="Согласовано"/>
+								<WhenFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<WhenFlow name="Отчетность о договорах 223ФЗ" />
+								<WhenFieldEquals path="|Document|Статус" value="Черновик"/>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+                </Rules>
+            </Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>						
+							<WhenHasAttachments category="Документация"/>
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="Для публикации сведений в ЕИС необходимо прикрепить документацию"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Загрузка положения">
+            <Action type="RunAutoTask">
+                <taskType value="import"/>
+                <sourceType value="EISDocsLoader"/>
+                <taskName value="Box223orderClauseAll"/>
+                <title value="Загрузка с ЕИС"/>
+                <message value="Вы действительно хотите загрузить положение с ЕИС?"/>
+            </Action>
+            <Visibility>
+                <Rules>
+                    <And>
+                        <WhenFlow name="Положение о закупках 223ФЗ" />
+						<WhenFieldNotEquals path="|Document|Заполнить_способы_закупок" value="1" />
+                    </And>
+                </Rules>
+            </Visibility>
+        </Button>
+		
+		<Button name="Загрузить план">
+            <Action type="RunAutoTask">
+                <taskType value="import"/>
+                <sourceType value="EISDocsLoader"/>
+                <taskName value="Box223purchasePlan"/>
+                <title value="Загрузка с ЕИС"/>
+                <message value="Вы действительно хотите загрузить план с ЕИС?"/>
+            </Action>
+            <Visibility>
+                <Rules>
+                    <And>
+                        <WhenFlow name="Планы закупок 223ФЗ" />
+						<WhenUserInWorkGroup name="Суперпользователи" />
+						<WhenFieldEquals path="|Document|Статус" value="Проект" />
+					</And>
+                </Rules>
+            </Visibility>
+        </Button>
+		
+		<Button name="Добавить заявку на размещение закупки" displayName="Добавить лот">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+						</And>
+						<Or>
+							<And>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenHasNotActiveProcess name="Согласование заявки на закупку"/>
+							</And>
+						</Or>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+
+		<Button name="Добавить документ Потока 1" displayName="Добавить документ Поток1">
+			<Action type="RegisterOnBase">
+				<FlowName value="Поток1" />
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Извещения о закупочной процедуре 223ФЗ" />
+						</And>
+						<Or>
+							<And>
+								<WhenFieldEquals path="|Document|Статус" value="Черновик" />
+								<WhenHasNotActiveProcess name="Согласование заявки на закупку"/>
+							</And>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Загрузка ТРУ">
+            <Action type="RunAutoTask">
+                <taskType value="import"/>
+                <sourceType value="EISDocsLoader"/>
+                <taskName value="BoxTRUMSP"/>
+                <title value="Загрузка с ЕИС"/>
+                <message value="Вы действительно хотите загрузить перечень ТРУ с ЕИС?"/>
+            </Action>
+            <Visibility>
+                <Rules>
+                    <And>
+                        <WhenFlow name="Перечни ТРУ 223ФЗ" />
+                    </And>
+                </Rules>
+            </Visibility>
+        </Button>
+	</Location>
+	
+	<Location name="DocumentLinks">
+		<Button name="Удалить">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<Or>
+						<And>
+							<And>
+								<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							</And>
+							<Or>
+								<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик"  useSqlQuery="true"/>
+								<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Удалить_лот" values= "1"  useSqlQuery="true"/>
+							</Or>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+						<And>
+							<And>
+								<!-- <WhenHasAnyLink flowName="Планы закупок 223ФЗ" path ="|Document|Статус" values= "На доработке; Проект; Отправлено в ЕИС"  useSqlQuery="true"/> -->
+								<WhenHasAnyLink flowName="Планы закупок 223ФЗ" path ="|Document|Статус" values= "На доработке; Проект"  useSqlQuery="true"/>
+							</And>
+							<Or>
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+						</And>
+					</Or>
+				</Rules>
+			</Visibility>
+		</Button>
+				
+		<Button name="На доработку ппз" displayName="На доработку">
+			<Action type="RunRoute">
+				<RouteName value="Доработка ППЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Включена в проект плана закупок"/>
+							<WhenHasAnyLink flowName="Планы закупок 223ФЗ" path ="|Document|Статус" values= "На доработке"  useSqlQuery="true"/>
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And> 
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="Заполнить требования к участникам">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации" useSqlQuery="true"/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер-АСт -->
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>		
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Необходимо выбрать ЭТП на вкладке "Порядок проведения"' />
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Заполнить цену позиций">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации" useSqlQuery="true"/>
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|ИД_ЭТП" values= "999"  useSqlQuery="true"/>
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Процедуры_РТК|Попозиционная_закупка" values= "1" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>		
+				</Rules>
+			</Visibility>
+		</Button>
+		<Button name="Заполнить категорию имущества">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации" useSqlQuery="true"/>
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|ИД_ЭТП" values= "113"  useSqlQuery="true"/>
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Форма_торгов_код" values= "1" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>		
+				</Rules>
+			</Visibility>
+		</Button>
+		<Button name="Заполнить критерии оценки">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации" useSqlQuery="true"/>
+							<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value='АО "МСП-ЕЭТП"'/>
+							<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value='АО "Сбербанк - АСТ"'/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+							<WhenFieldNotEquals path="|Document|Форма_торгов" value="Запрос цен (РТ)"/>
+							<WhenFieldNotEquals path="|Document|Форма_торгов" value="Подтверждение стандартных условий (РТ)"/>
+						</And>
+						<!-- <Or>
+							<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый конкурс (РТ)"/>
+							<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый запрос предложений (РТ)"/>
+							<WhenFieldEquals path="|Document|Форма_торгов" value="Открытый запрос котировок (РТ)"/>
+							<WhenFieldEquals path="|Document|Форма_торгов" value="Аккредитационный отбор (РТ)"/>
+						</Or> -->
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>		
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Необходимо выбрать ЭТП на вкладке "Порядок проведения"' />
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Заполнить особенности размещения">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации"  useSqlQuery="true"/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер-АСт -->
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldNotEquals path="|Document|Наименование_ЭТП" value="" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value='Необходимо выбрать ЭТП на вкладке "Порядок проведения"' />
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Заполнить цену за единицу товара, работы, услуги">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации"  useSqlQuery="true"/>
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="240548" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="2464" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="33505" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="3363" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="103765" />
+							<WhenFieldNotEquals path="|Document|Способ_закупки_код" value="285643" />
+							<WhenFieldEquals path="|Document|Сведения_о_цене_код" value='3'/>
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер-АСт -->
+						</And>	
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		<Button name="Корректировка НМЦ и размера НДС">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenFlow name="Заявка на размещение закупки 223ФЗ" />
+							<WhenParentFlowExt name="Извещения о закупочной процедуре 223ФЗ" />
+							<WhenHasAnyLink flowName="Извещения о закупочной процедуре 223ФЗ" path ="|Document|Статус" values= "Черновик; Отправлено на ЭТП; Внесение изменений; Готова к публикации" useSqlQuery="true"/>
+							<WhenFieldNotEquals path="|Document|ИД_ЭТП" value="2" /> <!-- Сбер-АСт -->
+						</And>	
+						<Or>
+							<WhenUserInWorkGroup name="Специалист по закупкам"/>
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+	</Location>
+	
+</Buttons>								

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<options showComment="true" />
+	<flows>
+		<flow name="Позиции плана закупок 223ФЗ"/>
+	</flows>
+	<activities>
+		<activity name="Согласование новой потребности Специалистом по закупкам" type="Approval" action="normal"/>		
+	</activities>
+	<view showCurrentValues="false" >
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель" name="Ответственный исполнитель" valueType="addressbook" isValue="true" address-book-tool="DepSotr" edit-addressbook-groups = "" address-book-tool-selectable = "Person, Person, {currentOrganization}" edit-name="DepSotr" edit-readonly="true" edit-default-value="{currentUser}" edit-hidden="true"/>
+					</column>
+				</row>
+			</rows>
+		</template>
+	</view>
+	
+</root>

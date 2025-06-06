@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		<row>
+			<column>
+				<field name="Наименование позиции" isLabel="true" /> 
+				<field fieldType="field" key="|Document|Наименование_позиции" name="Наименование_позиции" valueType="longtext" isValue="true" edit-name="Namezak"  /> 
+			</column> 
+		</row>
+		<row>
+			<column>
+				<field name="Год закупки" isLabel="true" /> 
+				<field fieldType="field" key="|Document|Год_финансирования" name="Год_финансирования" valueType="integer" isValue="true" edit-name="godzak" /> 
+			</column> 
+		</row>
+	
+		<row>	
+			<column>
+				<field name="ОКПД2" isLabel="true" />	
+				<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+			</column>
+			<column>
+				<field name="ОКПД2 наименование" isLabel="true" />	
+				<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="text" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="6"   display-field-part="false" dict-edit-name="registerOKDP" />
+			</column>
+
+		</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции') and (doc_RegCard/rc_Index/text_Статус = 'Включена в опубликованный план закупок') and (doc_RegCard/rc_Index/longtext_Наименование_позиции = @Namezak) and (doc_RegCard/rc_Index/integer_Год_финансирования = @godzak) and (doc_RegCard/rc_Index/integer_ОКПД2 = @registerOKDP)" />
+	</search>
+	<scripts>
+    <script file="Scripts/Content/SearchForm/Positions.js" />
+  </scripts>
+
+</root>

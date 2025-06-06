@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-filters-row="true" horizontall-scroll="true">
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_заявки" name="Наименование заявки" valueType="longtext" weight="40" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год_закупки" name="Год закупки" valueType="integer" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_выплат_всего" name="Сумма заявки" valueType="money" weight="30" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="15" />
+	</columns>
+	  <sort predicate="doc_CreateTime descending"/>
+</root>

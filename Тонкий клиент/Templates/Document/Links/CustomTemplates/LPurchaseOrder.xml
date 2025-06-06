@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <table flow="Позиции">
+    <settings>
+      <setting key="canModify" value="true" />
+      <setting key="canCreateLinks" value="true" />
+      <setting key="terminalRoute" value="Согласование плана закупок"/>
+    </settings>
+    <columns>
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_позиции" name="Наименование позиции" valueType="text" weight="300" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Единица_измерения" name="Ед.измерения" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество" name="Количество" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма" name="Сумма" valueType="money" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" weight="150" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора" name="Срок исполнения" valueType="date" weight="120" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="200" />
+    </columns>  
+  </table>
+  <table flow="Лоты">
+    <settings>
+      <setting key="canModify" value="true" />
+      <setting key="canCreateLinks" value="true" />
+      <setting key="terminalRoute" value="Согласование плана закупок"/>
+    </settings>
+    <columns>
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_позиции" name="Наименование позиции" valueType="text" weight="300" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Единица_измерения" name="Ед.измерения" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество" name="Количество" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма" name="Сумма" valueType="money" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" weight="150" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора" name="Срок исполнения" valueType="date" weight="120" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="200" />
+    </columns>
+  </table>
+  <table flow="Планы закупок">
+    <settings>
+      <setting key="canModify" value="true" />
+      <setting key="canCreateLinks" value="true" />
+      <setting key="terminalRoute" value="Согласование плана закупок"/>
+    </settings>
+    <columns>
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_позиции" name="Наименование позиции" valueType="text" weight="300" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Единица_измерения" name="Ед.измерения" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество" name="Количество" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма" name="Сумма" valueType="money" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" weight="150" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора" name="Срок исполнения" valueType="date" weight="120" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="200" />
+    </columns>
+  </table>
+  <table flow="Извещения о закупочной процедуре">
+    <settings>
+      <setting key="canModify" value="true" />
+      <setting key="canCreateLinks" value="true" />
+      <setting key="terminalRoute" value="Согласование плана закупок"/>
+    </settings>
+    <columns>
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_позиции" name="Наименование позиции" valueType="text" weight="300" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Единица_измерения" name="Ед.измерения" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество" name="Количество" valueType="text" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма" name="Сумма" valueType="money" weight="100" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" weight="150" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Срок_исполнения_договора" name="Срок исполнения" valueType="date" weight="120" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="200" />
+    </columns>
+  </table>
+  <table>
+    <settings>
+      <setting key="canModify" value="true" />
+      <setting key="canCreateLinks" value="true" />
+      <setting key="terminalRoute" value="Согласование плана закупок"/>
+    </settings>
+    <columns>
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" weight="60" />
+      <column fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" weight="200" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" valueType="text" weight="700" />
+    </columns>
+  </table>
+</root>

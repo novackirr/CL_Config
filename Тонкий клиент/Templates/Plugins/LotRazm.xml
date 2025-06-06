@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <flows>
+    <flow name="Заявка на размещение закупки 223ФЗ"/>
+  </flows>
+  <view showCurrentValues="true" >
+    <template>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcPoz" name="Особенности размещения">
+						<rows> 
+							<row>
+								<column>
+									<field name="Сведения о НМЦД" isLabel="true" edit-name="Kodcen" title ="Выберите из справочника сведения о начальной (максимальной) цене договора (цене заявки)"/>
+									<field fieldType="field" key="|Document|Сведения_о_цене_код" name="Сведения о начальной (максимальной) цене договора (цене заявки)" valueType="text" isValue="true" edit-name="Kodcen" dict-column-name="code" edit-tool = "Сведения о цене лота" edit-readonly="true" dict-edit-name="Kodcen" show-dict-column="false" edit-default-value="1" />
+									<field fieldType="field" key="|Document|Сведения_о_цене" name="Сведения_о_цене" valueType="text"  isValue="true" edit-name="cen" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Kodcen" dict-column-width-percentage="50" edit-default-value="Сведения о начальной (максимальной) цене договора (цене лота)" />
+								</column>
+								<column>
+									<!-- <field name="" isLabel="true" /> -->
+									<field name="Альтернативные предложения" isLabel="true" edit-name="registerOPos" title ="Выберите из справочника альтернативные предложения"/>
+									<field fieldType="field" key="|Document|Альтернативные_предложения_код" name="Альтернативные предложения код" valueType="text"  isValue="true"  edit-name="othOffersCode" dict-column-name="code" edit-tool="Альтернативные предложения" edit-readonly="true" dict-edit-name="othOffersCode" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Альтернативные_предложения" name="Альтернативные предложения" valueType="text" isValue="true" edit-name="othOffers" edit-hidden="true" edit-readonly="true" dict-column-name="Наименование" display-field-part="true" dict-edit-name="othOffersCode" dict-column-width-percentage="100" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Срок заключения договора (дней)" isLabel="true" edit-name="srZaDo" />
+									<field fieldType="field" key="|Document|Срок_заключения_договора" name="Срок заключения договора" valueType="text" isValue="true" edit-name="srZaDo" />
+								</column>
+								<column>
+									<field name="Количество заключаемых договоров:" isLabel="true" edit-name="coZaDo" />
+									<field fieldType="field" key="|Document|Количество_заключаемых_договоров" name="Количество заключаемых договоров" valueType="text" isValue="true" edit-name="coZaDo" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Позиции" edit-name="ItemTab" height="300" name="Позиции">										
+										<column fieldType="field" key="|Наименование_позиции" valueType="text"  isValue="true" name="Наименование позиции" edit-name="itemName"  title="Введите наименование позиции" width="310" edit-required="false" headerNoEllipsis="true" edit-readonly="true"/>
+										<column fieldType="field" key="|Цена_за_единицу_ТРУ" name="Цена за единицу" valueType="money" isValue="true" edit-name="priceTaxTRU" width="150" headerNoEllipsis="true" title="Введите цену за единицу ТРУ"/>
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Начальная цена комплекта без НДС" isLabel="true" edit-name="NMK" title ='Рассчитывается как сумма "Цены за единицу" в таблице позиций'/>
+									<field fieldType="field" key="|Document|Начальная_цена_комплекта" name="Цена единицы товара, работы, услуги и максимальное значение цены договора (цены заявки)" valueType="money" isValue="true" edit-name="NMK" edit-readonly="true" />
+								</column>
+								<column>
+									<!-- <field name="Цена единицы товара, работы, услуги (в рамках лота)" isLabel="true" edit-name="cened" title ="Введите цену единицы товара, работы, услуги (в рамках лота)"/> -->
+									<field name="Цена единицы ТРУ" isLabel="true" edit-name="cened" title ='Рассчитывается как сумма "Цены за единицу" в таблице позиций'/>
+									<field fieldType="field" key="|Document|Цена_единицы_тру" name="Цена единицы товара, работы, услуги и максимальное значение цены договора (цены заявки)" valueType="money" isValue="true" edit-name="cened" edit-readonly="true"/>
+								</column>
+								<column>
+									<field name="Торги за единицу" isLabel="true"  edit-name="TorgEd"/> 
+									<field fieldType="field" key="|Document|Торги_за_единицу" valueType="boolean" edit-name="TorgEd" edit-readonly="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Формула цены и максимальное значение цены договора (цены заявки)" isLabel="true" edit-name="formula" title ="Введите формулу цены и максимальное значение цены договора (цены заявки)"/>	
+									<field fieldType="field" key="|Document|Формула_цены" name="Формула цены и максимальное значение цены договора (цены заявки)" valueType="longtext" isValue="true" edit-name="formula" edit-readonly="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Порядок формирования цены договора" isLabel="true" edit-name="PriceOrderForm" title ="Введите порядок формирования цены договора, требуется для ЭТП"/>
+									<field fieldType="field" key="|Document|Порядок_формирования_цены_договора" name="Порядок формирования цены договора" valueType="text" isValue="true" edit-name="PriceOrderForm" is-select-one-level="1" edit-required="true" edit-readonly="true" dict-column-name="code" edit-tool = "Порядок формирования цены договора" dict-edit-name="PriceOrderForm" display-field-part="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Возможность отказаться от проведения процедуры" isLabel="true" edit-name="vozmotk" title ="Введите возможность отказаться от проведения процедуры за (дней)"/>
+									<field fieldType="field" key="|Document|Возможность_отказаться_от_проведения_процедуры" name="Возможность отказаться от проведения процедуры за (дней)" isValue="true" valueType="integer" edit-name="vozmotk"/>
+								</column>
+								<column>
+									<!-- <field name="" isLabel="true"/> -->
+									<field name="Максимальное количество победителей по лоту" isLabel="true" edit-name="MaxWinners" title ="Введите максимальное количество победителей по лоту, не больше 99"/>
+									<field fieldType="field" key="|Document|Макс_количество_победителей" name="Максимальное количество победителей по лоту" valueType="integer" isValue="true" edit-name="MaxWinners" edit-required="true" edit-default-value="1"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Регион поставки" isLabel="true" edit-name="registerOKATO" title="Укажите регион поставки"/>
+									<field fieldType="field" key="|Document|ОКАТО" name="ОКАТО" valueType="text" isValue="true" edit-name="registerOKATO"  edit-readonly="true"  edit-tool = "ОКАТО"  dict-column-name="code"  dict-edit-name="registerOKATO"  display-field-part="false"/>
+									<field fieldType="field" key="|Document|Регион" name="Регион" valueType="text" isValue="true" edit-name="registerOKATOName"   edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="registerOKATO" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Объем поставки" isLabel="true" edit-name="registerOPos" title="Введите объем поставки закупаемых товаров, выполняемых работ или оказываемых услуг"/>
+									<field fieldType="field" key="|Document|Объем_поставки" name="Объем поставки" valueType="longtext"  isValue="true" edit-name="registerOPos" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="Место поставки" isLabel="true" edit-name="registerPlasePos" title="Введите место поставки закупаемых товаров, выполняемых работ или оказываемых услуг"/>
+									<field fieldType="field" key="|Document|Место_поставки" name="Место поставки" valueType="longtext"  isValue="true" edit-name="registerPlasePos" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="Условия поставки" isLabel="true" edit-name="registerUslPos" title="Введите условия, сроки поставки и оплаты закупаемых товаров, выполняемых работ или оказываемых услуг"/>
+									<field fieldType="field" key="|Document|Условия_поставки" name="Условия поставки" valueType="longtext"  isValue="true" edit-name="registerUslPos"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Возможны аналоги" isLabel="true" edit-name="BidAnalogValid" title="Заказчик может разрешить предоставлять аналоги при проведении процедуры. В случае заполнения данного поля участники в составе заявки на участие в структурированном виде в отдельном поле при подаче заявки смогут указать аналоги по соответствующим позициям. Значения выбираются исходя из информации в документации о конкурентной закупке Заказчика."/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительная_информация|Возможны_аналоги" name="Возможны_аналоги" valueType="boolean" isValue="true" edit-name="BidAnalogValid" />
+								</column>
+								<column>
+									<field name="В заявке требуется указать страну происхождения товара" isLabel="true" edit-name="BidSpecifyContractPositionObject"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительная_информация|Требуется_указать_страну_происхождения" name="Требуется_указать_страну_происхождения" valueType="boolean" isValue="true" edit-name="BidSpecifyContractPositionObject" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Дополнительная информация/Ключевые слова" isLabel="true" edit-name="BidComment"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительная_информация|Ключевые_слова" name="Ключевые_слова" valueType="longtext" isValue="true" edit-name="BidComment"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Детализация предложения о цене" isLabel="true" edit-name="BidTradeTypeCode" title="При проведении закупок можно задать формат подачи предложения о цене участниками как по лоту в целом, так и в разрезе позиций такого лота, выбрав из предложенного справочника значения:
+
+«По лоту в целом»:
+Участником будет подано одно ценовое предложение по лоту в целом в заявке и на этапах (переторжках).
+«По позициям лота»:
+Участником будет подано ценовое предложение по каждой позиции лота в заявке и на этапах (переторжках). В торговой сессии также будет рассчитываться общее совокупное предложении о цене по лоту для каждого участника.
+«По части позиций»:
+Участником будет подано ценовое предложение по тем позициям, которые интересуют участника в заявке и на этапах (переторжках). При проведении переторжки (дополнительных этапов) участник подает предложения о цене по тем позициям, по которым он подал предложения в заявке. Участник не сможет подать предложения по позициям, по которым не подавал предложение в заявке.
+Проведение процедуры Аукцион (все типы) со значением «По части позиций» не возможно"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_код" name="Детализация_предложения_код" valueType="text" isValue="true" edit-name="BidTradeTypeCode"  edit-readonly="true"  edit-tool = "Детализация предложений о цене"  dict-column-name="code"  dict-edit-name="BidTradeTypeCode"  display-field-part="false" />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительная_информация|Детализация_предложения|Детализация_предложения_наименование" name="Детализация_предложения_наименование" valueType="text" isValue="true" edit-name="BidTradeTypeName"   edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="BidTradeTypeCode" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Минимальный шаг, %" isLabel="true" edit-name="BidAuctionStepMinPercent"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_торгах|Минимальный_шаг" name="Минимальный_шаг" valueType="double" isValue="true" edit-name="BidAuctionStepMinPercent" />
+								</column>
+								<column>
+									<field name="Максимальный шаг, %" isLabel="true" edit-name="BidAuctionStepMaxPercent"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_торгах|Максимальный_шаг" name="Максимальный_шаг" valueType="double" isValue="true" edit-name="BidAuctionStepMaxPercent" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Направить запрос КП участникам после завершения торгов" isLabel="true" edit-name="BidContractConditionDemandTradeSession"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_торгах|Направить_запрос_КП" name="Направить_запрос_КП" valueType="boolean" isValue="true" edit-name="BidContractConditionDemandTradeSession" />
+								</column>
+								<column>
+									<field name="Регламентированный срок направления обновленного КП участником (час)" isLabel="true" edit-name="BidContractConditionDemandPeriodTradeSession"/>
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_торгах|Срок_направления_КП" name="Срок_направления_КП" valueType="double" isValue="true" edit-name="BidContractConditionDemandPeriodTradeSession" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Указать дополнительные сведения о цене договора" isLabel="true" edit-name="SpecifyAdditionalInformation1" title="Только для процедур без начальной цены. В случае ее указания в ЕИС будет передана только начальная цена договора, а не сведения о цене"/>
+									<field fieldType="field" key="|Document|Указать_дополнительные_сведения_о_цене_договора" name="Указать_дополнительные_сведения_о_цене_договора" isValue="true" valueType="boolean"  edit-name="SpecifyAdditionalInformation1" />
+								</column>
+								<column>
+									<field name="Приоритет товаров российского происхождения" isLabel="true" edit-name="SetPriorityRF1" title="Установить приоритет товаров/услуг российского происхождения в соответствии с ПП РФ от 16.09.2016г. № 925"/>
+									<field fieldType="field" key="|Document|Установить_приоритет_товаров_российского_происхождения" name="Установить_приоритет_товаров_российского_производства" isValue="true" valueType="boolean"  edit-name="SetPriorityRF1" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Дополнительные сведения о цене договора" isLabel="true" edit-name="AdditionalInformation1" title="Укажите дополнительные сведения о цене договора"/>
+									<field fieldType="field" key="|Document|Дополнительные_сведения_о_цене_договора" name="Дополнительные_сведения_о_цене_договора" valueType="longtext" isValue="true"  edit-name="AdditionalInformation1" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true" edit-readonly="true" edit-name="naimETP" />
+									<field fieldType="field" key="|Document|Форма_торгов_код" name="Форма торгов код" valueType="text"  isValue="true" edit-name="formTorgCode"  edit-readonly="true" />
+								</column>
+							</row>		
+							<row>
+								<column>            
+									<field fieldType="field" key="|Document|Критерии" valueType="boolean" edit-name="krit"  edit-readonly="false" edit-isInvisible="true"/>
+								</column>
+							</row>								
+						</rows> 
+					</block>
+				</column>
+			</row>
+		</rows>
+    </template>
+  </view>
+	<scripts>
+		<script file="\Scripts\Content\Plugins\LotRazm.js" />
+	</scripts>
+</root>
+
+				

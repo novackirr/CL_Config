@@ -1,0 +1,95 @@
+; (function () {    
+    if (addButtonsFromRoutes.toLowerCase() === "true") {
+        var selector = "[data-grid-id^=routes-table] > div";
+        var dataGridSelector = $(selector);
+        var i = 0;
+
+        if (dataGridSelector.length > 0) {
+            setTimeout(addbuttons, 50);
+        }
+
+        function addbuttons() {
+
+            if (!dataGridSelector.data('dxDataGrid')) {
+                setTimeout(addbuttons, 25);
+                return;
+            }
+            var urls = [];
+            var dataGrid;
+            try
+            {
+                dataGrid = $(selector).dxDataGrid("instance");
+            } catch (e)
+            {
+                setTimeout(addbuttons, 25);
+                return;
+            }
+
+            
+            var dataGridDataSource = dataGrid.getDataSource();
+            var selector2 = "[data-grid-id^=routes-detail-table-] > div";
+            var dg2 = $(selector2);
+            var again = true;
+            for (var i = 0; i < dg2.length; i++) {
+                var dataGrid2 = $(dg2[i]).dxDataGrid('instance');
+                var dataGridDataSource2 = dataGrid2.getDataSource();
+                if (dataGridDataSource2._items.length > 0) {
+                    again = false;
+                    
+                }
+            }
+
+            if (dataGridDataSource._items.length === 0 || again === true)
+                setTimeout(addbuttons, 50);
+            else {
+
+                dataGridDataSource._items.forEach(function (k) {
+                    k.Actions.forEach(function (a)
+                    { var url = { title: a.Title, url: a.Options.url, dialog: a.Options.dialog }; urls.push(url); })
+                });
+
+                for (var i = 0; i < dg2.length; i++) {
+                    var dataGrid2 = $(dg2[i]).dxDataGrid('instance');
+
+                    var dataGridDataSource2 = dataGrid2.getDataSource();
+                    dataGridDataSource2._items.forEach(function (k) {
+                        k.Actions.forEach(function (a) {
+                            var url = { title: a.Title, url: a.Options.url, dialog: a.Options.dialog }
+                            if (url.dialog === "DialogWindow" || url.dialog === "DialogWindowWithResultOnBlank")
+                                url.dialog = "#actionDialog";
+                            else if (url.dialog === "InfoWindow")
+                                url.dialog = "#modalInfo";
+
+                            urls.push(url);
+                        })
+                    });
+                }
+
+                var actMenu = $(".lazy-actions.basic-route-actions");
+                //actMenu.empty();
+                if (urls.length > 0)$(".dropdown.lazy-actions.route-actions").show();
+
+                urls.forEach(function (u) {
+                    if (actMenu.length === 0) {
+                        $('#documentView').find(".panel-heading").find(".btn-toolbar").prepend("<a href=\"" +
+                            u.url +
+                            "\" class=\"btn btn-default btn-md\" onclick=\"handleLinkActionAndDisable(this, '" +
+                            u.dialog +
+                            "', event);\">" +
+                            u.title +
+                            "</a>");
+                    } else {
+                        //ничего не надо делать, т.к. сейчас отельное меню для действий
+                        //var linkHtml = '<a title="' + u.title + '" href="' + u.url + '" class="item-ajax-action" onclick="handleLinkActionAndDisable(this, \'' + u.dialog + '\', event);">' + u.title + '</a>';
+                        //actMenu.append(linkHtml);
+                    }
+                });
+            }
+
+            return;
+
+        };
+    }
+
+    
+}());

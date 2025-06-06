@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <edssimple>  
+		<field name="Все пользователи" />	
+    </edssimple>
+    <edslong>
+        <!-- <TSAAddress value="http://tsp.dvinaland.ru:8777/tsp"/> -->
+		<!-- <TSAAddress value="http://testca.cryptopro.ru/tsp/tsp.srf"/> -->
+        <!-- name - имя рабочей группы -->
+        
+    </edslong> 
+	<signAttach value="false" />
+</root>

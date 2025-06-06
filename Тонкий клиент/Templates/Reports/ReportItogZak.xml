@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+	<edit>
+		<rows>
+		  <row>
+			<column>
+				<field name="Год" isLabel="true" edit-name="from"/>
+				<field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true" edit-name="from" edit-required="true"/>
+			</column>		
+			<column>	
+				<field name="Квартал с" isLabel="true" edit-name="quarterPlanFrom"/>						
+				<field fieldType="field" key="|Квартал_с" name="Квартал_с" valueType="integer" isValue="true" edit-name="quarterPlanFrom" edit-required="true" edit-default-value="1"/>
+			</column>					
+			<column>			
+				<field name="Квартал по" isLabel="true" edit-name="quarterPlanTo"/>						
+				<field fieldType="field" key="|Квартал_по" name="Квартал_по" valueType="integer" isValue="true" edit-name="quarterPlanTo" edit-required="true" edit-default-value="4"/>
+			</column>							
+		  </row>
+		</rows>
+	</edit>
+    <scripts>
+		<script file="Scripts\Content\Reports\ReportMonitoring.js" />
+	</scripts>
+</root>

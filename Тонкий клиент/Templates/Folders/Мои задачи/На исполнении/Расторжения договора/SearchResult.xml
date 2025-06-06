@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="FDogovor223" allow-create-excel="true" allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<column fieldType="property" key="ActivityName" name="Название задачи" valueType="text" sortPredicate="act_Name" weight="25" />
+		<column fieldType="attribute" key="act_Creator" name="Назначил задачу" valueType="addressbook" weight="15" sortPredicate="act_Creator" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="property" key="activityState" name="Статус задачи" valueType="text" sortPredicate="activityState" weight="15"  horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="15" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" sortPredicate="document$doc_RegCard/rc_Index/date_Дата_регистрации" valueType="date" horizontalAlignment="center" weight="15" defaultHide="true"/>	
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Статус" name="Статус документа" sortPredicate="document$doc_RegCard/rc_Index/text_Статус" valueType="text" weight="15" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ФИО_инициатора" name="Автор" sortPredicate="document$doc_RegCard/rc_Index/text_ФИО_инициатора" valueType="text" weight="10" defaultHide="true"/>			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Код_ПФМ_исполняющего_подразделения" name="Код исполняющего подразделения" valueType="text" weight="10" isOptional="true"  sortPredicate= "doc_RegCard/rc_Index/text_Подразделение" horizontalAlignment="center" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Код_ПФМ_закупающего_подразделения" name="Код закупающего подразделения" sortPredicate="doc_RegCard/rc_Index/text_Код_ПФМ_закупающего_подразделения" valueType="text" weight="10" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подразделение" name="Исполняющее подразделение" valueType="text" weight="16" isOptional="true"  sortPredicate= "document$doc_RegCard/rc_Index/text_Подразделение" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Закупающее_подразделение_наименование" name="Закупающее подразделение" valueType="text" weight="15" isOptional="true"  sortPredicate= "document$doc_RegCard/rc_Index/text_Закупающее_подразделение_наименование"  />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" sortPredicate="doc_RegCard/rc_Index/longtext_Предмет_договора" valueType="text" weight="15" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Номер_сведений_о_расторжении" name="Номер расторжения" sortPredicate="doc_RegCard/rc_Index/text_Номер_сведений_о_расторжении" valueType="text" weight="10"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Номер_договора" name="Номер договора" sortPredicate="doc_RegCard/rc_Index/text_Номер_договора" valueType="text" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ИД_УВХД" name="Номер расторжения в SAP УВХД" sortPredicate="doc_RegCard/rc_Index/text_ИД_УВХД" valueType="text" weight="15" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ИД_САП" name="Номер договора в SAP" sortPredicate="doc_RegCard/rc_Index/text_ИД_САП" valueType="text" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_МВП" name="МВП" sortPredicate="doc_RegCard/rc_Index/text_МВП" valueType="text" weight="10" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Победитель_наименование" name="Организация поставщик" valueType="text" weight="25" defaultHide="true" sortPredicate= "document$doc_RegCard/rc_Index/text_Победитель_наименование"/>
+	</columns>
+</root>

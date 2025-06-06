@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<LinksModify>
+		<LinkCurrentDoc />
+		<!-- <LinkAllLinksWhereFlow name="Заявки участников 223ФЗ" /> -->
+		<LinkAllLinksWhereFlow name="Заявка на размещение закупки 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Извещения о закупочной процедуре 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Позиции плана закупок 223ФЗ" />							  
+	</LinksModify>
+	<FieldsModify source="Заявка на размещение закупки 223ФЗ">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}')]" tag="Извещения о закупочной процедуре 223ФЗ" /> 
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}')]" tag="Заявки участников" />
+		</Select>		
+		<Actions>
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор"  />
+			<CopyTable src="|Document|Заказчик_права_таблица" />
+			<CopyField src="|Document|ИД_извещения" dst="|Document|ИД_извещения" />	
+			<SetField dst="|Document|Имя_потока" value="Переторжки" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" />	
+            <CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН" />				
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|Название_закупки" />
+			<CopyField src="|Document|Номер_закупки" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />	
+			<CopyField src="|Document|НМЦ_с_НДС" />			
+			<CopyField src="%key%" dst="|Document|ИД_лота" />			
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП" />
+			<CopyField src="|Document|ИД_протокола" dst="|Document|ИД_на_ЭТП" />
+			<CopyField src="|Document|Номер_извещения_на_ЭТП"  dst="|Document|Номер_извещения_в_ЕИС"/>
+			<CopyField src="|Document|ИД_извещения_на_ЭТП"  dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Адрес_ЭТП" />
+			<CopyField src="|Document|Наименование_ЭТП" dst="|Document|Наименование_ЭТП"/>
+			<CopyField src="|Document|Форма_торгов" />
+			<CopyField src="|Document|Форма_торгов_код" />
+			<CopyField src="|Document|Проведена_переторжка" />
+			 <CopyField src="|Document|Название_закупки" dst="|Document|Название_закупки" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Закупающее_подразделение|ИД_родителя"  />		
+			<CopyField src="|Document|Закупающее_подразделение|Код_ПФМ_закупающего_подразделения"  />
+			<CopyField src="|Document|Закупающее_подразделение|ИД_закупающего_подразделения"  />
+			<CopyField src="|Document|Исполняющее_подразделение|Подразделение" dst= "|Document|Исполняющее_подразделение|Подразделение"  />
+			<CopyField src="|Document|Исполняющее_подразделение|Код_ПФМ_исполняющего_подразделения" dst= "|Document|Исполняющее_подразделение|Код_ПФМ_исполняющего_подразделения"  />
+			<CopyField src="|Document|Исполняющее_подразделение|ИД_исполняющего_подразделения" dst= "|Document|Исполняющее_подразделение|ИД_исполняющего_подразделения"  />
+			<CopyField src="|Document|Макс_количество_победителей" dst= "|Document|Максимальное_количество_победителей_по_лоту"  />
+			<CreateTable dst="|Document|Заявки_участников" srcDocs="Заявки участников">
+				<Column src="|Document|ИД_на_ЭТП" dst="|ИД_заявки_на_ЭТП" />
+				<Column src="|Document|Участник_заявки_наименование" dst="|Наименование"/>
+				<Column src="|Document|Результат_допуска" dst="|Результат_допуска" />
+				<Column src="|Document|Результат_допуска_код" dst="|Результат_допуска_код" />
+				<Column src="|Document|Результат_допуска_1х_частей" dst="|Результат_допуска_1х_частей" />
+				<Column src="|Document|Результат_допуска_1х_частей_код" dst="|Результат_допуска_1х_частей_код" />
+				<Column src="|Document|Результат_допуска_2х_частей" dst="|Результат_допуска_2х_частей" />
+				<Column src="|Document|Результат_допуска_2х_частей_код" dst="|Результат_допуска_2х_частей_код" />
+				<Column src="|Document|Место_заявки_по_цене" dst="|Место_заявки"/>
+			</CreateTable>
+			<CopyTable dst="|Document|Участники_комиссии" src="|Document|Участники_комиссии" srcDocs="Извещения о закупочной процедуре 223ФЗ"/> 
+			<CopyField dst="|Document|Название_комиссии_код" src="|Document|Название_комиссии_код" srcDocs="Извещения о закупочной процедуре 223ФЗ"/> 
+			<CopyField dst="|Document|Название_комиссии" src="|Document|Название_комиссии" srcDocs="Извещения о закупочной процедуре 223ФЗ"/> 
+			<CopyField src="|Document|ГРБС|ГРБС" />
+		</Actions>	
+			
+			
+	</FieldsModify>
+		<OnDocumentCreated transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="ЗУ" />
+				</Select>
+				<Actions>
+					<UpdateDocumentsByRowData>
+						<Table source="{current}" path="|Document|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />									
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+								</UpdateRules>
+							</ForEachRow>
+					</UpdateDocumentsByRowData>
+					<AddLink target="{current}" link="ЗУ"/>
+				</Actions>
+			</Aggregation>
+			<NamedConstants>		
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_переторжки"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Номер_извещения_в_ЕИС})"/>
+				</Constant>			
+			</NamedConstants>
+			<NamedConstants>
+		</NamedConstants>	
+			
+			
+		</OnDocumentCreated>
+		
+		<OnRegcardEdited transaction="single"> 
+			<Aggregation>
+				<Select>	
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|ИД_лота_на_ЭТП}']" tag="ЗУ" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещения о закупочной процедуре 223ФЗ" />
+				</Select>
+				<Actions>			
+					<UpdateDocumentsByRowData>
+						<Table source="{current}" path="|Document|Заявки_участников" />
+							<ForEachRow>
+								<FindDocuments searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and xn-in(doc_RegCard/rc_Index/text_ИД_на_ЭТП, '{ИД_заявки_на_ЭТП}')]" />
+								<UpdateRules>
+									<UpdateRule field="|Document|Результат_допуска" formula="{Результат_допуска}" />
+									<UpdateRule field="|Document|Результат_допуска_код" formula="{Результат_допуска_код}" />									
+									<UpdateRule field="|Document|Основание_для_решения" formula="{Основание_для_решения}" />
+								</UpdateRules>
+							</ForEachRow>
+					</UpdateDocumentsByRowData>
+					<AddLink target="{current}" link="ЗУ"/>
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		
+		
+</Hooks>

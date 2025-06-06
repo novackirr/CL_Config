@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_ContextActionLayout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(ViewBag.Name) ? "Отчитаться о ходе исполнения" : ViewBag.Name;
+    ViewBag.ActionUrl = Url.Action("ReportActivityHandler");
+
+    string neutralModeAdditionalAttributes = null;
+    string observerModeAdditionalAttributes = "checked";
+    string powerPerformerAdditionalAttributes = null;
+    string radioClass = ViewBag.HideRadioButtons ? "radio hide" : "radio";
+
+    if (!ViewBag.CanReportObserver && !ViewBag.CanReportPowerPerformer)
+    {
+        neutralModeAdditionalAttributes = "checked";
+    }
+    else if (ViewBag.CanReportObserver && !ViewBag.CanReportPowerPerformer)
+    {
+        observerModeAdditionalAttributes = "checked";
+    }
+    else if (!ViewBag.CanReportObserver && ViewBag.CanReportPowerPerformer)
+    {
+        powerPerformerAdditionalAttributes = "checked";
+    }
+
+
+}
+
+<div class="@radioClass" style="display: none;">
+    <div class="form-group clearfix">
+        <label>
+            <input type="radio" name="mode" value="neutral" checked="checked" id="neutralMode" @neutralModeAdditionalAttributes />Отправить промежуточный отчет                
+        </label>
+    </div>
+</div>
+@if (ViewBag.CanReportObserver)
+{
+    <div class="@radioClass" style="display: none;">
+        <div class="form-group clearfix">
+            <label>
+                <input type="radio" name="mode" value="observer" checked="checked" id="observerMode" @observerModeAdditionalAttributes />Заявить контролирующему по маршруту о готовности
+            </label>
+        </div>
+    </div>
+}
+@if (ViewBag.CanReportPowerPerformer)
+{
+    <div class="@radioClass" style="display: none;">
+        <div class="form-group clearfix">
+            <label>
+                <input type="radio" name="mode" value="powerPerformer" id="powerPerformerMode" @powerPerformerAdditionalAttributes />Отправить отчет ответственному исполнителю
+            </label>
+        </div>
+    </div>
+}
+<div class="form-group clearfix">
+    <label for="comment" class="control-label">Комментарий</label>
+    <textarea id="comment" name="comment" class="form-control required-with-radio" data-radio-selector="#neutralMode, #powerPerformerMode"></textarea>
+</div>

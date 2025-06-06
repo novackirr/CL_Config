@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="SrokIspol" allow-create-excel="true" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true">
+		<column fieldType="property" key="ActivityName" name="Название" valueType="text" sortPredicate="act_Name" weight="35" />
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="20" isOptional="true" />
+		<column fieldType="attribute" key="act_FinishTime" name="Фактический срок исполнения" valueType="datetime" sortPredicate="act_FinishTime" weight="25" isOptional="true" />
+
+
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ФИО_инициатора" name="Инициатор" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_ФИО_инициатора" weight="15" isOptional="true" />
+		<!-- <column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Внутренний_номер_закупки" name="Внутренний номер закупки" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Внутренний_номер_закупки" weight="15"/> -->
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" sortPredicate="document$doc_RegCard/rc_Index/text_Способ_закупки" valueType="text" weight="20" />
+		<column fieldType="attribute" key="act_Creator" name="Автор" valueType="addressbook" weight="25" sortPredicate="act_Creator" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="act_powerPerformer/actual" name="Исполнитель" sortPredicate="act_powerPerformer/actual" valueType="addressbook" weight="25" defaultHide="true" />
+		<column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="20" defaultHide="true" />
+
+		<column fieldType="attribute" key="act_Text" name="Текст" valueType="text" sortPredicate="act_Text" weight="35" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" sortPredicate="document$doc_RegCard/rc_Index/longtext_Предмет_договора" valueType="text" weight="30" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная(максимальная) цена договора" valueType="money" weight="35" isOptional="true" sortPredicate="document$doc_RegCard/rc_Index/money_НМЦ_с_НДС" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Ответственный_юрист_ФИО" name="Юрист" valueType="text" weight="20" isOptional="true" sortPredicate="document$doc_RegCard/rc_Index/text_Ответственный_юрист_ФИО" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Организация_поставщик_наименование" name="Поставщик" valueType="longtext" sortPredicate="document$doc_RegCard/rc_Index/text_Организация_поставщик_наименование" weight="25" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Статус" name="Статус документа" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Статус" weight="23" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Подразделение инициатора" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" weight="15" isOptional="true" defaultHide="true" />
+
+		<!-- <column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Оператор_инициатора_ФИО" name="Оператор инициатора" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Оператор_инициатора_ФИО" weight="15" isOptional="true" defaultHide="true" /> -->
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Планируемый_месяц_наименование" name="Планируемый месяц размещения" valueType="text" weight="15" isOptional="true" defaultHide="true" sortPredicate="document$doc_RegCard/rc_Index/text_Планируемый_месяц_наименование" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Планируемый_год" name="Планируемый год размещения" valueType="integer" weight="15" isOptional="true" defaultHide="true" sortPredicate="document$doc_RegCard/rc_Index/integer_Планируемый_год" />
+	</columns>
+</root>

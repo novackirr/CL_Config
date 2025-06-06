@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify>
+	</FieldsModify>
+	<OnDocumentCreated>
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Таблица распределения менеджеров МР']" tag="Распределение" />
+			</Select>
+			<Actions>
+				<DocsCountCheck sourceTag="Распределение" operation="notEmpty" message="Таблица распределения менеджеров уже создана" />
+			</Actions>
+		</Aggregation>
+	</OnDocumentCreated>
+	<OnRegcardEdited>
+		<Aggregation>
+			<Select>
+			</Select>
+			<Actions>
+				<UpdateDocumentsByRowData>
+					<Table source="{current}" path="|Document|Распределение_менеджеров" />
+					<ForEachRow>
+						<FindDocuments>
+							<Sql procedure="TELE2Hooks_UpdateManager">
+								<Param val="{Макрорегион|Макрорегион_код}"/>
+								<Param val="{Менеджер|Менеджер_код}"/>
+								<Param val="{Billing_IT}"/>
+								<Param val="{Commercial_GA}"/>
+								<Param val="{Construction}"/>
+								<Param val="{Network}"/>
+								<Param val="{Marketing_Media}"/>
+							</Sql>
+						</FindDocuments>
+						<UpdateRules>
+							<UpdateRule field="|Document|Менеджер_по_закупкам|Менеджер_по_закупкам" formula="{Менеджер|Менеджер_код}" />
+						</UpdateRules>
+					</ForEachRow>
+				</UpdateDocumentsByRowData>
+			</Actions>
+		</Aggregation>
+	</OnRegcardEdited>
+</Hooks>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+	<rows>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Инициатор|Инициатор" name="ИД_инициатора" valueType="addressbook" isValue="true" edit-name="IDIniciatora" address-book-tool ="IDIniciatora" edit-addressbook-groups = ""  edit-required="false" address-book-tool-selectable = "" edit-hidden="false" edit-readonly="true" edit-default-value="{currentUser}" />
+				</column> 
+			</row>
+		</rows>
+</edit>	 
+<search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ') and (doc_RegCard/rc_Index/integer_Инициатор = @IDIniciatora)" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

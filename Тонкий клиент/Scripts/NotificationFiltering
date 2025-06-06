@@ -1,0 +1,690 @@
+(function () {
+    var personsTable;
+    var mainEditPopup;
+    var mvpMainEditPopup;
+    var personNoticeFlagEditPopup;
+    var personsGrid;
+    var currentEditingPerson;
+    var currentEditingIsPurch;
+    var currentEditingDepartments;
+    var currentEditingMvps;
+    var selectedFilterAccessGroupId;
+    var currentMvpInversCheckValue;
+    var currentPersonsNoticeOffFlag;
+
+    function updateItemDepNames(data) {
+        data.forEach(function (row) {
+            row.ExecNames = row.ExecDepartments.map(function(x) { return x.DepartmentName }).join('<br>');
+            row.PurchNames = row.PurchDepartments.map(function(x) { return x.DepartmentName }).join('<br>');
+        });
+    }
+
+    var searchBox = $("#searchBox").dxSelectBox({
+        dataSource: {
+            load: function (options) {
+                //Загрузка групп доступа в выпадающий список
+                var d = $.Deferred();
+                $.ajax({
+                    url: getAbsoluteUrl("Administration/GetAllAccessGroupsToFilter"),
+                    type: "GET",
+                    cache: false,
+                    data: { filterText: options.searchValue },
+                    success: function (data) {
+                        d.resolve(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        showAlert("Ошибка полуечния групп доступа", errorThrown);
+                    }
+                });
+                return d.promise();
+            }
+        },
+        displayExpr: "name",
+        searchEnabled: true,
+        minSearchLength: 3,
+        onValueChanged: function (options) {
+            selectedFilterAccessGroupId = options.value.key;
+            //Выбор группы доступа с выпадающем списке
+            $.ajax({
+                url: getAbsoluteUrl("Administration/GetPersonsByAccessGroup"),
+                type: "GET",
+                cache: false,
+                data: { accessGroupId: options.value.key },
+                success: function (data) {
+                    updateItemDepNames(data);
+                    personsTable = data;
+                    $("#gridContainer").dxDataGrid("instance").refresh();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    showAlert("Ошибка полученя таблицы сотрудников", errorThrown);
+                }
+            });
+        },
+        onChange: function (e) {
+        }
+    }).dxSelectBox("instance");
+
+    function init() {
+        var dataSource = {
+            load: function () {
+                var items = $.Deferred();
+                items.resolve(personsTable);
+                return items.promise();
+            }
+        };
+
+        personsGrid = $("#gridContainer").dxDataGrid({
+            dataSource: dataSource,//orders,
+            columnsAutoWidth: true,
+            showBorders: true,
+            filterRow: {
+                visible: true,
+                applyFilter: "auto"
+            },
+            headerFilter: {
+                visible: true
+            },
+            columns: [
+                {
+                    dataField: "PersonName",
+                    caption: "Сотрудник",
+                    headerFilter: {
+                        groupInterval: 10000
+                    }
+                },
+                {
+                    dataField: "PurchNames",
+                    caption: "Закупающие",
+                    headerFilter: {
+                        groupInterval: 10000
+                    },
+                    cellTemplate: function (element, info) {
+                        element.append("<div>" + info.text + "</div>");
+                    }
+                },
+                {
+                    dataField: "ExecNames",
+                    caption: "Исполняющие",
+                    headerFilter: {
+                        groupInterval: 10000
+                    },
+                    cellTemplate: function (element, info) {
+                        element.append("<div>" + info.text + "</div>");
+                    }
+                },
+                {
+                    width: 100,
+
+                    caption: "МВП",
+                    headerFilter: {
+                        groupInterval: 10000
+                    },
+                    cellTemplate: function (container, options) {
+                        //container.append("<div>" + options.data.Mvp + "</div>");
+
+                        var mvpCont = $("<a />");
+
+                        if (options.data.MvpInverseFlag && options.data.Mvps && options.data.Mvps.length > 0) {
+                            mvpCont.append("<div>Инверсия:</div>");
+                        }
+
+                        if (options.data.Mvps) {
+                            options.data.Mvps.forEach(function(x) {
+                                 if (x) mvpCont.append("<div>" + x + "</div>");
+                            });
+                        }
+
+                        if (mvpCont.children().size() === 0) {
+                            mvpCont.append("<div>не задано</div>");
+                        }
+
+                        //var mvpNames = options.data.Mvps ? options.data.Mvps.join(', ') : 'не задано';
+                        //var mvpNamesContainer = $("<div />");
+
+                        mvpCont.addClass('dx-link')
+                            //.append(mvpCont)
+                                //.text(options.data.Mvps ? options.data.Mvps.join('<br> ') : 'не задано')
+                            .on('dxclick',
+                                function () {
+                                    editMvpPopup(options.data);
+                                })
+                            .appendTo(container);
+                    }
+                },
+                {
+                    width: 200,
+                    alignment: 'left',
+                    caption: "Подразделения",
+                    cellTemplate: function (container, options) {
+                        if (options.data.IsReadonlyPurch) {
+                            $('<a/>').addClass('dx-link')
+                                .text('Редакт. исполняющие')
+                                .on('dxclick',
+                                    function() {
+                                        editPurchPopup(options.data, false);
+                                    })
+                                .appendTo(container);
+                        } else {
+                            $('<a/>').addClass('dx-link')
+                                .text('Редакт. закупающие')
+                                .on('dxclick', function () {
+                                    editPurchPopup(options.data,true);
+                                })
+                                .appendTo(container);
+                        }
+
+
+                        //$('<a/>').addClass('dx-link')
+                        //    .text('Редакт. закупающие')
+                        //    .on('dxclick', function () {
+                        //        editPurchPopup(options.data,true);
+                        //    })
+                        //    .appendTo(container);
+                        //$('<br>').appendTo(container);
+                        //$('<a/>').addClass('dx-link')
+                        //    .text('Редакт. исполняющие')
+                        //    .on('dxclick', function () {
+                        //        editPurchPopup(options.data,false);
+                        //    })
+                        //    .appendTo(container);
+                    }
+                },
+                {
+                    caption: "Уведомления группы",
+                    headerFilter: {
+                        groupInterval: 10000
+                    },
+                    cellTemplate: function (container, options) {
+
+                        var mvpCont = $("<a />");
+
+                        if (options.data.IsPersonNoticeOff) {
+                            mvpCont.append("<div>Уведомления отключены</div>")
+                        }
+                        else {
+                            mvpCont.append("<div>Уведомления включены, согласно настройке</div>")
+                        }
+
+                        mvpCont.addClass('dx-link')
+                            .on('dxclick',
+                                function () {
+                                    editPersonNoticeFlagPopup(options.data);
+                                })
+                            .appendTo(container);
+                    }
+                }
+
+            ]
+        });
+    }
+
+    init();
+
+
+    //Тут всё что с модалькой связано для редактирования подразделений
+    function editMvpPopup(selectedItem) {
+        var popupOptions = {
+            width: 750,
+            height: 'auto',
+            showTitle: true,
+            title: "МВП",
+            visible: false,
+            dragEnabled: false,
+            closeOnOutsideClick: true,
+            contentTemplate: function () {
+                var resultContainer = $("<div />");
+
+                var mvpInverseDiv = $('<div/>').appendTo(resultContainer);
+                mvpInverseDiv.dxCheckBox({
+                    value: currentMvpInversCheckValue,
+                    text: "Инверсия условия МВП",
+                    onValueChanged: function (data) {
+                        currentMvpInversCheckValue = data.value;
+                    }
+                }).dxCheckBox("instance");
+
+                var searchMvps = $("<div />").appendTo(resultContainer);
+
+                var scrollViewDeps = $("<div />").appendTo(resultContainer);
+
+                var scroolContent = $('<div id="scrollview-content" style="max-height: 300px; "/>').appendTo(scrollViewDeps);
+                var mvpsList = $('<div/>').appendTo(scroolContent);
+
+
+                mvpsList.dxList({
+                    dataSource: currentEditingMvps,
+                    height: "100%",
+                    itemTemplate: function (data, index) {
+                        var result = $("<div>");
+                        $("<span>").text(data).appendTo(result);
+                        $(
+                            "<span class='dx-button-content' style='float: right'><i class='dx-icon dx-icon-close'></i></span>")
+                            .appendTo(result)
+                            .click(function () {
+                                var ind = currentEditingMvps.indexOf(data);
+                                if (ind > -1) {
+                                    currentEditingMvps.splice(ind, 1);
+                                }
+                                mvpsList.dxList("instance").reload();
+                            });
+
+                        return result;
+
+                    }
+                }).dxList("instance");
+
+                scrollViewDeps.dxScrollView({
+                    scrollByContent: true,
+                    scrollByThumb: true,
+                    // useNative: true,  
+                    showScrollbar: "always",
+
+                    reachBottomText: "Updating..."
+                }).dxScrollView("instance");
+
+
+                searchMvps.dxSelectBox({
+                    dataSource: {
+                        load: function (options) {
+
+                            //Загрузка ПОДРАЗДЕЛЕНИЙ в выпадающий список
+                            var d = $.Deferred();
+                            $.ajax({
+                                url: getAbsoluteUrl("Administration/SearchMvps"),
+                                type: "GET",
+                                cache: false,
+                                data: { filterText: options.searchValue },
+                                success: function (data) {
+                                    d.resolve(data);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    showAlert("Ошибка полуечния групп доступа", errorThrown);
+                                }
+                            });
+                            return d.promise();
+                        }
+                    },
+                    //displayExpr: "Name",
+                    searchEnabled: true,
+                    minSearchLength: 0,
+                    onValueChanged: function (options) {
+                        //Выбор поздразделения
+                        if (options.value) {
+                            var existingDep = currentEditingMvps.find(function (x) {
+                                return x === options.value;
+                                //return x.DepartmentDocId == options.value.Key;
+                            });
+                            if (!existingDep) {
+                                currentEditingMvps.push(options.value);
+                                //currentEditingDepartments.push({
+                                //    DepartmentDocId: options.value.Key,
+                                //    DepartmentName: options.value.Name
+                                //});
+
+                                mvpsList.dxList("instance").reload();//обновляем список с подразделениями в модальке
+
+                            }
+
+                        }
+                    },
+                    onChange: function (e) {
+                    }
+                }).dxSelectBox("instance");
+
+
+                var okButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                okButton.dxButton({
+                    text: "Сохранить",
+                    onClick: function () {
+                        //var enteredVal = inp.val();
+                        
+                        //$("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+
+                        $.ajax({
+                            url: getAbsoluteUrl("Administration/SetMpv"),
+                            type: "POST",
+                            data: {
+                                personKey: currentEditingPerson.PersonId,
+                                accessGroupId: selectedFilterAccessGroupId,
+                                inverseMvpFlag: currentMvpInversCheckValue ? 1 : 0,
+                                isReadonlyPurch: currentEditingPerson.IsReadonlyPurch,
+                                isReadonlyDepId: currentEditingPerson.IsReadonlyDepId,
+                                mvps: currentEditingMvps
+                            },
+                            traditional: true,
+                            success: function (data) {
+                                currentEditingPerson.Mvps = currentEditingMvps.slice();
+                                currentEditingPerson.MvpInverseFlag = currentMvpInversCheckValue;
+
+                                //if (currentEditingIsPurch) {
+                                //    currentEditingPerson.PurchDepartments = currentEditingDepartments;
+                                //} else {
+                                //    currentEditingPerson.ExecDepartments = currentEditingDepartments;
+                                //}
+
+                                //updateItemDepNames(personsTable);
+
+                                $("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                showAlert("Ошибка при установке подразделений", errorThrown);
+                            }
+                        });
+
+                        mvpMainEditPopup.hide();
+                    }
+                }).dxButton("instance");
+                var cancelButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                cancelButton.dxButton({
+                    text: "Отмена",
+                    onClick: function () {
+                        mvpMainEditPopup.hide();
+                    }
+                }).dxButton("instance");
+
+                return resultContainer;
+            }
+        }
+
+        if (mvpMainEditPopup) {
+            mvpMainEditPopup.option("contentTemplate", popupOptions.contentTemplate.bind(this));
+        } else {
+            mvpMainEditPopup = $("#mvpEditPopup").dxPopup(popupOptions).dxPopup("instance");
+        }
+
+        currentEditingPerson = selectedItem;
+
+        currentEditingMvps = selectedItem.Mvps.slice();
+        currentMvpInversCheckValue = selectedItem.MvpInverseFlag;
+
+        mvpMainEditPopup.show();
+    }
+
+    //Тут всё что с модалькой связано для редактирования подразделений
+    function editPurchPopup(selectedItem, isPurch) {
+
+        var popupOptions = {
+            width: 750,
+            height: 'auto',
+            contentTemplate: function () {
+                var resultContainer = $("<div />");
+                var searchDeps = $("<div />").appendTo(resultContainer);
+
+                var scrollViewDeps = $("<div />").appendTo(resultContainer);
+
+                //var depsList = $("<div />").appendTo(resultContainer);
+                var scroolContent = $('<div id="scrollview-content" style="max-height: 300px; "/>').appendTo(scrollViewDeps);
+                var depsList = $('<div/>').appendTo(scroolContent);
+                
+                depsList.dxList({
+                    dataSource: currentEditingDepartments,
+                    height: "100%",
+                    itemTemplate: function (data, index) {
+                        var result = $("<div>");
+                        $("<span>").text(data.DepartmentName).appendTo(result);
+                        $(
+                            "<span class='dx-button-content' style='float: right'><i class='dx-icon dx-icon-close'></i></span>")
+                            .appendTo(result)
+                            .click(function () {
+                                var ind = currentEditingDepartments.indexOf(data);
+                                if (ind > -1) {
+                                    currentEditingDepartments.splice(ind, 1);
+
+                                    //var readonlyDep = currentEditingPerson.IsReadonlyDepId;
+
+                                    //var updateUrl = currentEditingIsPurch ? "Administration/SetPurchDepartments" : "Administration/SetExecDepartments";
+                                    //$.ajax({
+                                    //    url: getAbsoluteUrl(updateUrl),
+                                    //    type: "POST",
+                                    //    data: {
+                                    //        personKey: currentEditingPerson.PersonId,
+                                    //        departmentsIds: currentEditingDepartments.map(x => x.DepartmentDocId),
+                                    //        readonlyDep: readonlyDep
+                                    //    },
+                                    //    traditional: true,
+                                    //    success: function (data) {
+                                    //        updateItemDepNames(personsTable);
+                                    //        $("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+                                    //    },
+                                    //    error: function (jqXHR, textStatus, errorThrown) {
+                                    //        showAlert("Ошибка при установке подразделений", errorThrown);
+                                    //    }
+                                    //});
+                                }
+                                depsList.dxList("instance").reload();
+                            });
+
+                        return result;
+
+                    }
+                }).dxList("instance");
+
+                scrollViewDeps.dxScrollView({
+                    scrollByContent: true,
+                    scrollByThumb: true,
+                    // useNative: true,  
+                    showScrollbar: "always",
+
+                    reachBottomText: "Updating..."
+                }).dxScrollView("instance");
+
+
+                searchDeps.dxSelectBox({
+                    dataSource: {
+                        load: function(options) {
+                            //Загрузка ПОДРАЗДЕЛЕНИЙ в выпадающий список
+                            var d = $.Deferred();
+                            $.ajax({
+                                url: getAbsoluteUrl("Administration/SearchDepartments"),
+                                type: "GET",
+                                cache: false,
+                                data: { filterText: options.searchValue, isPurch: isPurch, personId: currentEditingPerson.PersonId },
+                                success: function(data) {
+                                    d.resolve(data);
+                                },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                    showAlert("Ошибка полуечния групп доступа", errorThrown);
+                                }
+                            });
+                            return d.promise();
+                        }
+                    },
+                    displayExpr: "Name",
+                    searchEnabled: true,
+                    minSearchLength: 0,
+                    onValueChanged: function (options) {
+                        //Выбор поздразделения
+                        if (options.value) {
+                            var existingDep = currentEditingDepartments.find(function(x) {
+                                return x.DepartmentDocId == options.value.Key;
+                            });
+                            if (!existingDep) {
+
+                                //DEBUG for
+                                //for (var i = 0; i < 20; i++) {
+                                    currentEditingDepartments.push({
+                                        DepartmentDocId: options.value.Key,
+                                        DepartmentName: options.value.Name
+                                    });  
+                                //}
+                                
+                                //var readonlyDep = currentEditingPerson.IsReadonlyDepId;
+
+                                //var updateUrl = currentEditingIsPurch ? "Administration/SetPurchDepartments" : "Administration/SetExecDepartments"; 
+                                //$.ajax({
+                                //    url: getAbsoluteUrl(updateUrl),
+                                //    type: "POST",
+                                //    data: {
+                                //        personKey: currentEditingPerson.PersonId,
+                                //        departmentsIds: currentEditingDepartments.map(x => x.DepartmentDocId),
+                                //        readonlyDep: readonlyDep
+                                //    },
+                                //    traditional: true,
+                                //    success: function (data) {
+                                //        updateItemDepNames(personsTable);
+                                //        $("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+                                //    },
+                                //    error: function (jqXHR, textStatus, errorThrown) {
+                                //        showAlert("Ошибка при установке подразделений", errorThrown);
+                                //    }
+                                //});
+
+                                depsList.dxList("instance").reload();//обновляем список с подразделениями в модальке
+                                
+                            }
+                            
+                        }
+                    },
+                    onChange: function(e) {
+                    }
+                }).dxSelectBox("instance");
+
+                var okButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                okButton.dxButton({
+                    text: "Сохранить",
+                    onClick: function() {
+                        var readonlyDep = currentEditingPerson.IsReadonlyDepId;
+
+                        var updateUrl = currentEditingIsPurch ? "Administration/SetPurchDepartments" : "Administration/SetExecDepartments";
+                        $.ajax({
+                            url: getAbsoluteUrl(updateUrl),
+                            type: "POST",
+                            data: {
+                                personKey: currentEditingPerson.PersonId,
+                                departmentsIds: currentEditingDepartments.map(function(x) { return x.DepartmentDocId }),
+                                readonlyDep: readonlyDep,
+                                accessGroupId: selectedFilterAccessGroupId
+                            },
+                            traditional: true,
+                            success: function (data) {
+                                
+
+
+                                if (currentEditingIsPurch) {
+                                    currentEditingPerson.PurchDepartments = currentEditingDepartments;
+                                } else {
+                                    currentEditingPerson.ExecDepartments = currentEditingDepartments;
+                                }
+
+                                updateItemDepNames(personsTable);
+
+                                $("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                showAlert("Ошибка при установке подразделений", errorThrown);
+                            }
+                        });
+
+                        mainEditPopup.hide();
+                    }
+                }).dxButton("instance");
+                var cancelButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                cancelButton.dxButton({
+                    text: "Отмена",
+                    onClick: function () {
+                        mainEditPopup.hide();
+                    }
+                }).dxButton("instance");
+
+                return resultContainer;
+            },
+            showTitle: true,
+            title: "Подразделения",
+            visible: false,
+            dragEnabled: false,
+            closeOnOutsideClick: true
+        };
+
+        if (mainEditPopup) {
+            mainEditPopup.option("contentTemplate", popupOptions.contentTemplate.bind(this));
+        } else {
+            mainEditPopup = $("#editPopup").dxPopup(popupOptions).dxPopup("instance");
+        }
+
+        currentEditingPerson = selectedItem;
+        currentEditingIsPurch = isPurch;
+        currentEditingDepartments = isPurch ? selectedItem.PurchDepartments.slice(0) : selectedItem.ExecDepartments.slice(0);
+        mainEditPopup.show();
+    }
+
+    //Тут всё что с модалькой связано для редактирования фильтрации адресатов
+    function editPersonNoticeFlagPopup(selectedItem) {
+
+        var popupOptions = {
+            width: 750,
+            height: 'auto',
+            showTitle: true,
+            title: "Фильтр адресатов",
+            visible: false,
+            dragEnabled: false,
+            closeOnOutsideClick: true,
+            contentTemplate: function () {
+                var resultContainer = $("<div />");
+
+                var personFilterCheckDiv = $('<div/>').appendTo(resultContainer);
+                personFilterCheckDiv.dxCheckBox({
+                    value: currentPersonsNoticeOffFlag,
+                    text: "Отключить уведомления группы для данного пользователя",
+                    onValueChanged: function (data) {
+                        currentPersonsNoticeOffFlag = data.value;
+                    }
+                }).dxCheckBox("instance");
+
+                $("<br><br>").appendTo(resultContainer);
+
+                var okButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                okButton.dxButton({
+                    text: "Сохранить",
+                    onClick: function () {
+                        $.ajax({
+                            url: getAbsoluteUrl("Administration/SetPersonNoticeOffFlag"),
+                            type: "POST",
+                            data: {
+                                personKey: currentEditingPerson.PersonId,
+                                accessGroupId: selectedFilterAccessGroupId,
+                                isReadonlyPurch: currentEditingPerson.IsReadonlyPurch,
+                                isReadonlyDepId: currentEditingPerson.IsReadonlyDepId,
+                                personIsNoticeOff: currentPersonsNoticeOffFlag ? 1 : 0,
+                            },
+                            traditional: true,
+                            success: function (data) {
+                                currentEditingPerson.IsPersonNoticeOff = currentPersonsNoticeOffFlag;
+
+                                $("#gridContainer").dxDataGrid("instance").refresh();//обновляем главную таблицу с сотрудниками
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                showAlert("Ошибка при установке подразделений", errorThrown);
+                            }
+                        });
+
+                        personNoticeFlagEditPopup.hide();
+                    }
+                }).dxButton("instance");
+
+                var cancelButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                cancelButton.dxButton({
+                    text: "Отмена",
+                    onClick: function () {
+                        personNoticeFlagEditPopup.hide();
+                    }
+                }).dxButton("instance");
+
+                return resultContainer;
+            }
+        }
+
+        if (personNoticeFlagEditPopup) {
+            personNoticeFlagEditPopup.option("contentTemplate", popupOptions.contentTemplate.bind(this));
+        } else {
+            personNoticeFlagEditPopup = $("#personNoticeFlagEditPopup").dxPopup(popupOptions).dxPopup("instance");
+        }
+
+        currentEditingPerson = selectedItem;
+
+        currentPersonsNoticeOffFlag = selectedItem.IsPersonNoticeOff;
+
+        personNoticeFlagEditPopup.show();
+    }
+
+
+}());

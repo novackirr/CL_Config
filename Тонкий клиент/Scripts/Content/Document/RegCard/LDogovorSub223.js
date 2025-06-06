@@ -1,0 +1,4 @@
+﻿
+$("#documentView-controlCard-accordion").hide();
+
+

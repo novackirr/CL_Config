@@ -1,0 +1,854 @@
+﻿; (function () { }(window.ct = window.ct || {}));
+
+; (function (addressBook) {
+    var _html = {
+        containerId: "address-book-container",
+        dataGridId: "address-book-datagrid",
+        treeListId: "address-book-treelist",
+        addPropertyButtonId: "address-book-item-add-property-button",
+        itemPropertiesListId: "address-book-item-properties",
+
+        containerSelector: "#address-book-container",
+        treeListSelector: "#address-book-treelist",
+        dataGridSelector: "#address-book-datagrid"
+    };
+
+    var ADDRESS_BOOK_ITEM_TYPE = {
+        PERSON: "Person",
+        WORK_GROUP: "WorkGroup"
+    };
+
+    var _$addressBookContainer;
+    var _$addressBookDataGrid;
+    var _addressBookApiService;
+    var PROPERTY_KEY_PREFIX = {
+        COMMON: "vtb",
+        NOMENCLATURE: "vtb_nomen",
+        OKATO: "vtb_okato",
+        SUM_SIGN: "vtb_sum_sign",
+        SUM: "vtb_sum"
+    }
+    var DICTIONARY_NAME = {
+        NOMENCLATURE: "Номенклатурные группы и позиции",
+        OKATO: "ОКАТО"
+    };
+    var SUM_SIGNS = [ "<=", ">=" ];
+
+    
+    init();
+
+    var _store;
+    var _dataSource;
+    var _items = [];
+
+    var mainEditPopup;
+
+    function init() {
+        var addressBookUrl = $(_html.containerSelector).attr("data-base-url");
+        _addressBookApiService = ct.api.AddressBookApiService.create(addressBookUrl);
+        _$addressBookContainer = $(_html.containerSelector).dxResponsiveBox({
+            rows: [
+                { ratio: 1 }
+            ],
+            cols: [
+                { ratio: 1 }
+            ]
+        });
+
+        _store = new DevExpress.data.CustomStore({
+            key: "key",
+            load: function(options) {
+                var filter = {
+                    data: {
+                        type: ADDRESS_BOOK_ITEM_TYPE.PERSON,
+                        selectable: {
+                            from: {
+                                type: "name",
+                                values: ["Закупщик"]
+                            },
+                            ofType: ADDRESS_BOOK_ITEM_TYPE.WORK_GROUP
+                        },
+                        propertiesFilter: {
+                            propertyKeySearchString: PROPERTY_KEY_PREFIX.COMMON
+                        }
+                    },
+                    pageInfo: {
+                        page: options.skip / options.take + 1,
+                        size: options.take
+                    }
+                }
+
+                return _addressBookApiService.getItems(filter).then(function (itemsResult) {
+                    _items = itemsResult.data;
+                    return itemsResult.data;
+                });
+            },
+            insert: function (item) {
+                console.log("-- INSERT");
+            },
+            update: function (key, item) {
+                function setProperties(properties) {
+                    if (properties && properties.length) {
+                        return _addressBookApiService.setItemProperties(properties);
+                    } else {
+                        var d = $.Deferred();
+                        d.resolve(properties);
+                        return d;
+                    }
+                }
+
+                if (item.properties) {
+                    var abItem = _items.find(function (x) { return x.key === key; });
+                    var propertiesToRemove = abItem.properties.filter(function(x) {
+                        return !~item.properties.findIndex(function(y) { return y.key === x.key; });
+                    });
+                    return propertiesToRemove.length
+                        ? _addressBookApiService.removeItemProperties(propertiesToRemove).then(function () { setProperties(item.properties); })
+                        : setProperties(item.properties);
+                }
+
+                if (item.purchDepartments) {
+                    //сохраняем закупающие в БД
+                    $.ajax({
+                        url: getAbsoluteUrl('AddressBook/SetUserNomenPurchDepFilter'),
+                        type: "POST",
+                        async: false,
+                        data: {
+                            personKey: key,
+                            departmentsIds: item.purchDepartments.map(function(x) { return x.departmentDocId })
+                        },
+                        traditional: true,
+                        success: function (data) {
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            showAlert("Ошибка при установке подразделений", errorThrown);
+                        }
+                    });
+                }
+            },
+            remove: function (key) {
+                console.log("-- REMOVE");
+            }
+        });
+
+        _dataSource = new DevExpress.data.DataSource({
+            store: _store,
+            pageSize: 3
+        });
+
+        _$addressBookDataGrid = $(_html.dataGridSelector).dxDataGrid({
+            columns: [
+                {
+                    caption: "Ф.И.О.",
+                    dataField: "name",
+                    allowEditing: false
+                },
+                {
+                    caption: "Сумма",
+                    dataField: "properties",
+                    cellTemplate: createSumLimitCellTemplate(),
+                    editCellTemplate: createSumLimitEditCellTemplate()
+                },
+                {
+                    caption: "Номенклатура",
+                    dataField: "properties",
+                    cellTemplate: createItemPropertiesCellTemplate(PROPERTY_KEY_PREFIX.NOMENCLATURE),
+                    editCellTemplate: createItemPropertiesEditCellTemplate(PROPERTY_KEY_PREFIX.NOMENCLATURE, DICTIONARY_NAME.NOMENCLATURE),
+                    setCellValue: createCellValueSetter(PROPERTY_KEY_PREFIX.NOMENCLATURE)
+                },
+                {
+                    caption: "ОКАТО",
+                    dataField: "properties",
+                    cellTemplate: createItemPropertiesCellTemplate(PROPERTY_KEY_PREFIX.OKATO),
+                    editCellTemplate: createItemPropertiesEditCellTemplate(PROPERTY_KEY_PREFIX.OKATO, DICTIONARY_NAME.OKATO),
+                    setCellValue: createCellValueSetter(PROPERTY_KEY_PREFIX.OKATO)
+                },
+                {
+                    caption: "Закупающее подразделение",
+                    dataField: "purchDepartments",
+                    cellTemplate: createPurchDepCellTemplate(),
+                    editCellTemplate: createPurchDepEditCellTemplate(),
+                    setCellValue: createPurchDepCellValueSetter()
+                }
+            ],
+            dataSource: _dataSource,
+            editing: {
+                mode: "form",
+                allowUpdating: true,
+                texts: {
+                    editRow: "Редактировать",
+                    saveRowChanges: "Сохранить",
+                    cancelRowChanges: "Отмена"
+                }
+            },
+            remoteOperations: {
+                paging: true
+            },
+            scrolling: {
+                mode: "infinite",
+                rowRenderingMode: "virtual"
+            },
+            paging: {
+                pageSize: 200
+            },
+            selection: {
+                mode: "single"
+            },
+            repaintChangesOnly: true
+        });
+
+        var currentEditingPurchDeps;
+
+        function editPurchPopup(cellElement,item) {
+            var popupOptions = {
+                width: 750,
+                height: 'auto',
+                contentTemplate: function() {
+                    var resultContainer = $("<div />");
+                    var searchDeps = $("<div />").appendTo(resultContainer);
+
+                    var scrollViewDeps = $("<div />").appendTo(resultContainer);
+
+                    //var depsList = $("<div />").appendTo(resultContainer);
+                    var scroolContent = $('<div id="scrollview-content" style="max-height: 300px; "/>')
+                        .appendTo(scrollViewDeps);
+                    var depsList = $('<div/>').appendTo(scroolContent);
+
+                    currentEditingPurchDeps = item.value.slice(0);
+
+                    depsList.dxList({
+                        dataSource: currentEditingPurchDeps,
+                        height: "100%",
+                        itemTemplate: function(data, index) {
+                            var result = $("<div>");
+                            $("<span>").text(data.departmentName).appendTo(result);
+                            $(
+                                    "<span class='dx-button-content' style='float: right'><i class='dx-icon dx-icon-close'></i></span>")
+                                .appendTo(result)
+                                .click(function() {
+                                    var ind = currentEditingPurchDeps.indexOf(data);
+                                    if (ind > -1) {
+                                        currentEditingPurchDeps.splice(ind, 1);
+                                    }
+                                    depsList.dxList("instance").reload();
+                                });
+
+                            return result;
+
+                        }
+                    }).dxList("instance");
+
+                    scrollViewDeps.dxScrollView({
+                        scrollByContent: true,
+                        scrollByThumb: true,
+                        // useNative: true,  
+                        showScrollbar: "always",
+
+                        reachBottomText: "Updating..."
+                    }).dxScrollView("instance");
+
+
+                    searchDeps.dxSelectBox({
+                        dataSource: {
+                            load: function(options) {
+                                //Загрузка ПОДРАЗДЕЛЕНИЙ в выпадающий список
+                                var d = $.Deferred();
+                                $.ajax({
+                                    url: getAbsoluteUrl("Administration/SearchDepartments"),
+                                    type: "GET",
+                                    cache: false,
+                                    data: {
+                                        filterText: options.searchValue,
+                                        isPurch: true,
+                                        personId: item.key
+                                    },
+                                    success: function(data) {
+                                        d.resolve(data);
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                        showAlert("Ошибка полуечния групп доступа", errorThrown);
+                                    }
+                                });
+                                return d.promise();
+                            }
+                        },
+                        displayExpr: "Name",
+                        searchEnabled: true,
+                        minSearchLength: 0,
+                        onValueChanged: function (options) {
+                            //Выбор поздразделения
+                            if (options.value) {
+                                var existingDep =
+                                    currentEditingPurchDeps.find(function(x) {
+                                        return x.departmentDocId == options.value.Key;
+                                    });
+                                if (!existingDep) {
+
+                                    currentEditingPurchDeps.push({
+                                        departmentDocId: options.value.Key,
+                                        departmentName: options.value.Name
+                                    });
+                                    
+                                    depsList.dxList("instance").reload(); //обновляем список с подразделениями в модальке
+                                }
+
+                            }
+                        },
+                        onChange: function(e) {
+                        }
+                    }).dxSelectBox("instance");
+
+                    var okButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                    okButton.dxButton({
+                        text: "Сохранить",
+                        onClick: function() {
+                            item.setValue(currentEditingPurchDeps);
+                            mainEditPopup.hide();
+                        }
+                    }).dxButton("instance");
+                    var cancelButton = $("<div style='margin:5px;'/>").appendTo(resultContainer);
+                    cancelButton.dxButton({
+                        text: "Отмена",
+                        onClick: function() {
+                            mainEditPopup.hide();
+                        }
+                    }).dxButton("instance");
+
+                    return resultContainer;
+                },
+                showTitle: true,
+                title: "Подразделения",
+                visible: false,
+                dragEnabled: false,
+                closeOnOutsideClick: true
+            };
+
+            var popupDiv = $("<div/>").appendTo(cellElement);
+            mainEditPopup = popupDiv.dxPopup(popupOptions).dxPopup("instance");
+            mainEditPopup.show();
+        }
+
+        function createPurchDepCellTemplate() {
+            return function ($cell, cellInfo) {
+                var t = cellInfo.value.map(function(x)
+                {
+                    return x.departmentName + ' (' + x.pfmCode + ')';
+                }).join('<br>');
+                $cell.html(t);//.attr("title", 'demo title');
+            }
+        }
+
+        function createPurchDepEditCellTemplate() {
+            return function ($cell, cellInfo) {
+                var setPurchDepButton = $("<div style='margin:5px;'/>").appendTo($cell);
+                setPurchDepButton.dxButton({
+                    text: "Установить закупающие...",
+                    onClick: function () {
+                        editPurchPopup($cell, cellInfo);
+                    }
+                }).dxButton("instance");
+            }
+        }
+
+        function createPurchDepCellValueSetter() {
+            return function (newData, value, currentRowData) {
+                newData.purchDepartments = value;
+            }
+        }
+
+        function createItemPropertiesCellTemplate(propertyKeyPrefix) {
+            return function ($cell, cellInfo) {
+                var noBreakSpace = "\u00A0";
+                var properties = filterPropertiesByKeyPrefix(propertyKeyPrefix, cellInfo.value);
+                var text = getDisplayProperties(propertyKeyPrefix, properties);
+                $cell.text(text || noBreakSpace).attr("title", text);
+            }
+        }
+
+        function createItemPropertiesEditCellTemplate(propertyKeyPrefix, dictionaryName) {
+            return function($cell, cellInfo) {
+                var itemPropertiesComponent = createItemPropertiesComponent(propertyKeyPrefix, dictionaryName, cellInfo);
+                $cell.append(itemPropertiesComponent.getContainerElement());
+            }
+        }
+
+        function createCellValueSetter(propertyKeyPrefix) {
+            return function (newData, value, currentRowData) {
+                var updatedProperties = currentRowData.properties.filter(function (x) { return !x.key.startsWith(propertyKeyPrefix); }).concat(value);
+                newData.properties = updatedProperties;
+            }
+        }
+
+        function createItemPropertiesComponent(propertyKeyPrefix, dictionaryName, cellInfo) {
+            var filteredProperties = filterPropertiesByKeyPrefix(propertyKeyPrefix, cellInfo.value);
+            return new AddressBookItemPropertiesComponent({
+                //height: 400,
+                items: filteredProperties,
+                getUpdatedItems: function (params) {
+                    return openHierarchicalDictionary(params.$updateItemsButton, params.items.map(function (x) { return x.value; })).then(function (selectedNodes) {
+                        if (!selectedNodes.length) {
+                            return [];
+                        }
+
+                        return selectedNodes.map(function (node, index) {
+                            return createItemProperty(propertyKeyPrefix, node.data.code, cellInfo.data.key, params.items, index);
+                        });
+                    });
+                },
+                updateItemsButtonConfig: createUpdateItemsButtonConfig(dictionaryName),
+                onItemsUpdated: function (properties) {
+                    cellInfo.setValue(properties);
+                }
+            });
+        }
+
+        function createUpdateItemsButtonConfig(dictionaryName) {
+            function getDataFields(dictionaryName) {
+                switch (dictionaryName) {
+                    case DICTIONARY_NAME.NOMENCLATURE:
+                        return '&dictFieldsInfo={"DictionaryFieldInfoList":[{"EditName":"groupCode","DictColumnName":"code","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":true},{"EditName":"groupName","DictColumnName":"Наименование","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":true},{"EditName":"registerOKPD","DictColumnName":"ОКПД2","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"registerOKPDName","DictColumnName":"ОКПД2 наименование","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"registerOKVED","DictColumnName":"ОКВЭД2","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"registerOKVEDName","DictColumnName":"ОКВЭД2 наименование","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"SMP","DictColumnName":"Признак СМП","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"notSMP","DictColumnName":"Исключение из СМП","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":true},{"EditName":"PriznakSMPNametable","DictColumnName":"Причина исключения из СМП наименование","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false},{"EditName":"PriznakSMPtable","DictColumnName":"Причина исключения из СМП","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":false}]}';
+                    case DICTIONARY_NAME.OKATO:
+                        return '&dictFieldsInfo={"DictionaryFieldInfoList":[{"EditName":"registerOKATO","DictColumnName":"code","ShowAsDisplayText":true,"DictColumnWidth":"","ShowAsDictionaryColumn":true},{"EditName":"registerOKATOName","DictColumnName":"Наименование","ShowAsDisplayText":true,"DictColumnWidth":"70","ShowAsDictionaryColumn":true}]}';
+                    default:
+                        return "";
+                }
+            }
+            return {
+                attributes: [
+                    {
+                        name: "data-url",
+                        value: addressBookUrl.replace("AddressBook", "Dictionary") + "/GetJson?dictionaryName=" + dictionaryName + "&showCodeColumn=True"
+                    },
+                    {
+                        name: "data-fields",
+                        value: getDataFields(dictionaryName)
+                    },
+                    {
+                        name: "data-is-virtual-grid",
+                        value: "False"
+                    },
+                    {
+                        name: "data-vg-page-size",
+                        value: "200"
+                    },
+                    {
+                        name: "data-dict-name",
+                        value: dictionaryName
+                    },
+                    {
+                        name: "data-multiple",
+                        value: "true"
+                    }
+                ]
+            };
+        }
+
+        function createSumLimitCellTemplate() {
+            function createEmptyProperty() {
+                return {
+                    key: "",
+                    value: ""
+                };
+            }
+
+            return function ($cell, cellInfo) {
+                var noBreakSpace = "\u00A0";
+                var signProperty = cellInfo.value ? cellInfo.value.find(function(x) {
+                    return x.key === PROPERTY_KEY_PREFIX.SUM_SIGN;
+                }) || createEmptyProperty()
+                    : createEmptyProperty();
+                var sumProperty = cellInfo.value ? cellInfo.value.find(function(x) {
+                    return x.key === PROPERTY_KEY_PREFIX.SUM;
+                }) || createEmptyProperty()
+                    : createEmptyProperty();
+                var text = (signProperty.value + " " + sumProperty.value).trim();
+                $cell.text(text || noBreakSpace).attr("title", text);
+            }
+        }
+
+        function createSumLimitEditCellTemplate() {
+            function initProperty(key, properties, itemKey) {
+                var property = properties
+                    ? properties.find(function(x) { return x.key === key; })
+                    : null;
+                if (!property) {
+                    property = createItemProperty(key, null, itemKey);
+                }
+
+                return property;
+            }
+            return function ($cell, cellInfo) {
+                var signProperty = initProperty(PROPERTY_KEY_PREFIX.SUM_SIGN, cellInfo.value, cellInfo.data.key);
+                var sumProperty = initProperty(PROPERTY_KEY_PREFIX.SUM, cellInfo.value, cellInfo.data.key);
+                var sumComponent = new ComparisonComponent({
+                    sign: signProperty.value,
+                    rightValue: sumProperty.value,
+                    signDataSource: SUM_SIGNS,
+                    onUpdate: function(sumLimit) {
+                        var signProp = createItemProperty(PROPERTY_KEY_PREFIX.SUM_SIGN, sumLimit.sign, cellInfo.data.key);
+                        var sumProp = createItemProperty(PROPERTY_KEY_PREFIX.SUM, sumLimit.rightValue, cellInfo.data.key);
+                        var updatedProperties = cellInfo.value.filter(function (x) {
+                            return (x.key !== PROPERTY_KEY_PREFIX.SUM_SIGN) && (x.key !== PROPERTY_KEY_PREFIX.SUM);
+                        });
+
+                        if ((sumProp.value !== null) && (sumProp.value !== undefined)) {
+                            updatedProperties.push(signProp);
+                            updatedProperties.push(sumProp);
+                        }
+
+                        cellInfo.setValue(updatedProperties);
+                    }
+                });
+
+                $cell.append(sumComponent.getContainerElement());
+            }
+        }
+    }
+
+    function getDisplayProperties(keyPrefix, properties) {
+        return (properties || []).map(function (property) { return property.value; }).join(", ");
+    }
+
+    function getPropertyKey(propKeyPrefix, id) {
+        return propKeyPrefix + (id || (id === 0) ? "_" + id : "");
+    }
+
+    function getLastId(keyPrefix, properties) {
+        if (!properties) {
+            return 0;
+        }
+
+        var ids = properties.map(function (x) {
+            var keyParts = x.key.split("_");
+            var id = keyParts.pop();
+            return id;
+        });
+        var max = Math.max.apply(null, ids);
+        return max > 0 ? max : 0;
+    }
+
+    function createKey(keyPrefix, properties, id) {
+        if (!properties) {
+            return keyPrefix;
+        }
+        if (!id && (id !== 0)) {
+            var lastId = getLastId(keyPrefix, properties);
+            id = lastId + 1;
+        }
+        return getPropertyKey(keyPrefix, id);
+    }
+
+    function createItemProperty(keyPrefix, value, itemKey, properties, id) {
+        if (properties) {
+            properties = properties.filter(function (x) { return x.key.startsWith(keyPrefix); });
+        }
+        var itemProperty = {
+            key: createKey(keyPrefix, properties, id),
+            value: value,
+            addressBookItemKey: itemKey
+        };
+        return itemProperty;
+    }
+
+    function filterPropertiesByKeyPrefix(keyPrefix, properties) {
+        return (properties || []).filter(function (x) { return x.key.startsWith(keyPrefix); });
+    }
+
+    function openHierarchicalDictionary($button, selectedNodes) {
+        return HierarDictionary($button, null, { selectedNodes: selectedNodes });
+    }
+    
+
+    function AddressBookItemPropertiesComponent(config) {
+        var _config = Object.assign({
+            height: undefined,
+            items: [],
+            getAddingItems: undefined,
+            getUpdatedItems: undefined,
+            addItemButtonConfig: undefined,
+            updateItemsButtonConfig: undefined,
+            onItemsAdded: undefined,
+            onItemsUpdated: undefined,
+            onItemDeleted: undefined
+        }, config);
+        
+        var _$container = $("<div>");
+        var _$addItemButton = $("<div>");
+        var _$updateItemsButton = $("<div>");
+        var _$itemsList = $("<div>");
+        var _itemsList;
+        var _items = _config.items || [];
+
+        var _store;
+        var _dataSource;
+        
+        this.getContainerElement = function() {
+            return _$container;
+        }
+
+        this.getItems = function() {
+            return _items;
+        }
+
+        init();
+
+        function init() {
+            _store = createStore(_items);
+            _dataSource = new DevExpress.data.DataSource({
+                store: _store
+            });
+            _$itemsList = createListElement(_dataSource);
+            _itemsList = _$itemsList.dxList("instance");
+
+            if (_config.addItemButtonConfig) {
+                _$addItemButton = createAddItemButton();
+                _$container.append(_$addItemButton);
+            }
+
+            if (_config.updateItemsButtonConfig) {
+                _$updateItemsButton = createUpdateItemsButton();
+                _$container.append(_$updateItemsButton);
+            }
+
+            _$container.append(_$itemsList);
+        }
+
+        function addItems() {
+            if (!_config.getAddingItems) {
+                throw new Error("_config.getAddingItem() must be defined.");
+            }
+
+            _config.getAddingItems(createInteractionParams()).then(function (itemsToAdd) {
+                //itemsToAdd.forEach(function (x) { _config.items.push(x); });
+                _items = _items.concat(itemsToAdd);
+                _itemsList.reload();
+
+                if (_config.onItemsAdded) {
+                    _config.onItemsAdded(itemsToAdd);
+                }
+                if (_config.onItemsUpdated) {
+                    _config.onItemsUpdated(_items);
+                }
+            });
+        }
+
+        function updateItems() {
+            if (!_config.getUpdatedItems) {
+                throw new Error("_config.getUpdatedItems() must be defined.");
+            }
+
+            _config.getUpdatedItems(createInteractionParams()).then(function (updatedItems) {
+                _items = updatedItems;
+                _itemsList.reload();
+
+                if (_config.onItemsUpdated) {
+                    _config.onItemsUpdated(_items);
+                }
+            });
+        }
+
+        function onItemDeleted(e) {
+            if (_config.onItemDeleted) {
+                _config.onItemDeleted(e.itemData);
+            }
+            if (_config.onItemsUpdated) {
+                _config.onItemsUpdated(_items);
+            }
+        }
+
+        function createInteractionParams() {
+            return {
+                $addItemButton: _$addItemButton,
+                $updateItemsButton: _$updateItemsButton,
+                items: _items
+            };
+        }
+
+        function createAddItemButton() {
+            var $btn = $("<div>");
+
+            if (_config.addItemButtonConfig) {
+                if (_config.addItemButtonConfig.attributes) {
+                    _config.addItemButtonConfig.attributes.forEach(function(attr) {
+                        $btn.attr(attr.name, attr.value);
+                    });
+                }
+            }
+
+            return $btn.dxButton({
+                icon: "plus",
+                hint: "Добавить",
+                disabled: false,
+                onClick: addItems
+            });
+        }
+
+        function createUpdateItemsButton() {
+            var $btn = $("<div>");
+
+            if (_config.updateItemsButtonConfig) {
+                if (_config.updateItemsButtonConfig.attributes) {
+                    _config.updateItemsButtonConfig.attributes.forEach(function (attr) {
+                        $btn.attr(attr.name, attr.value);
+                    });
+                }
+            }
+
+            return $btn.dxButton({
+                icon: "edit",
+                hint: "Изменить",
+                disabled: false,
+                onClick: updateItems
+            });
+        }
+        
+        function createStore() {
+            return new DevExpress.data.CustomStore({
+                key: "key",
+                load: function (options) {
+                    var start = options.skip;
+                    var end = Math.min(_items.length, options.skip + options.take);
+                    return _items.slice(start, end);
+                },
+                insert: function (item) {
+                    _items.push(item);
+                    return item;
+                },
+                update: function (key, item) {
+                    var itemToUpdate = _items.find(function (x) { return x.key === key; });
+                    if (itemToUpdate) {
+                        itemToUpdate.value = item.value;
+                    }
+                    return item;
+                },
+                remove: function (key) {
+                    //var idx = items.findIndex(function (x) { return x.key === key; });
+                    //if (idx > -1) {
+                    //    items.splice(idx, 1);
+                    //}
+                    _items = _items.filter(function (x) { return x.key !== key; });
+                }
+            });
+        }
+
+        function createListElement(dataSource) {
+            return $("<div>").dxList({
+                height: _config.height,
+                dataSource: dataSource,
+                itemTemplate: function (data, _, $element) {
+                    $element.append($("<div>").text(data.value));
+                },
+                disabled: false,
+                allowItemDeleting: true,
+                //pageLoadMode: "scrollBottom",
+                pageLoadingText: "Загрузка...",
+                itemDeleteMode: "static",
+                onItemDeleted: onItemDeleted
+            });
+        }
+    }
+
+    function ComparisonComponent(config) {
+        var _config = Object.assign({
+            sign: undefined,
+            rightValue: undefined,
+            signDataSource: undefined,
+            onUpdate: undefined,
+        }, config);
+
+        var _$container = $("<div>");
+        var _$signDropDownBox = $("<div>");
+        var _$rightValueNumberBox = $("<div>");
+        var _rightValueValidator;
+
+        var _sign = _config.sign || (_config.signDataSource ? _config.signDataSource[0] : null);
+        var _rightValue = _config.rightValue;
+
+        this.getContainerElement = function() {
+            return _$container;
+        }
+
+        init();
+
+        function init() {
+            _$signDropDownBox = createSignDropDownBoxElement();
+            _$rightValueNumberBox = createRightValueNumberBoxElement();
+            _rightValueValidator = _$rightValueNumberBox.dxValidator("instance");
+
+            _$container = $("<div>").dxBox({
+                direction: "row",
+                items: [
+                    {
+                        baseSize: 40,
+                        ratio: 1,
+                        template: function (itemData, itemIndex, $item) {
+                            return _$signDropDownBox;
+                        }
+                    },
+                    {
+                        ratio: 4,
+                        template: function (itemData, itemIndex, $item) {
+                            return _$rightValueNumberBox;
+                        }
+                    },
+                ]
+            });
+        }
+
+        function createSignDropDownBoxElement() {
+            return $("<div>").dxDropDownBox({
+                dataSource: _config.signDataSource,
+                value: _sign,
+                //showClearButton: true,
+                contentTemplate: function (e) {
+                    var $list = $("<div>").dxList({
+                        dataSource: e.component.option("dataSource"),
+                        selectionMode: "single",
+                        onSelectionChanged: function (arg) {
+                            e.component.option("value", arg.addedItems[0]);
+                            e.component.close();
+                        }
+                    });
+                    return $list;
+                },
+                onValueChanged: updateSign
+            });
+        }
+
+        function createRightValueNumberBoxElement() {
+            return $("<div>").dxNumberBox({
+                min: 0,
+                value: _rightValue,
+                showClearButton: true,
+                onValueChanged: updateRightValue,
+            }).dxValidator({
+                validationRules: [
+                    {
+                        type: "pattern",
+                        pattern: /^\d*$/,
+                        message: " Значение должно быть целым числом."
+                    }
+                ]
+            });
+        }
+
+        function updateSign(data) {
+            _sign = data.value;
+            triggerUpdate();
+        }
+
+        function updateRightValue(data) {
+            _rightValue = data.value;
+            triggerUpdate();
+        }
+
+        function triggerUpdate() {
+            if (_config.onUpdate) {
+                var validationResult = _rightValueValidator.validate();
+                if (validationResult.isValid) {
+                    _config.onUpdate({ sign: _sign, rightValue: _rightValue });
+                }
+            }
+        }
+    }
+}((window.ct = window.ct || {}, window.ct.utils = window.ct.utils || {})));

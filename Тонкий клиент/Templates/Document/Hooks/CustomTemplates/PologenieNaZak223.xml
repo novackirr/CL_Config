@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<FieldsModify source="Положение о закупках 223ФЗ">
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_справочный_код" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Адрес" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Телефон" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОГРН" />
+			<CopyTable src="|Document|Способы_закупок" />
+			<CopyTable src="|Document|Основание_закупки_ед_поставщика" />
+			<CopyField src="|Document|Присоединение_к_положению_другой_организации" />
+			<CopyField src="|Document|Основание_присоединения_к_положению_другой_организации" />
+			<CopyField src="|Document|Реестровый_номер" />
+			<CopyField src="|Document|Название_положения" />
+			<CopyField src="|Document|Номер_редакции" />
+			<CopyField src="%key%" dst="|Document|ParentRK"/>
+			<SetField dst="|Document|Статус" value="Внесение изменений"/>
+			<CopyField src="|Document|Не_размещать_процедуру_по_ед_поставщику_в_ЕИС" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+		</FieldsModify>
+		<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Положение о закупках 223ФЗ" />
+		</LinksModify>
+
+		<OnDocumentCreated transaction="single"> 
+		<Aggregation>
+			<Select>			
+			</Select>
+			<Actions>																																			
+                <CalculateExpression targetFlow="{current}" targetField="|Document|Номер_редакции">
+                <Variables>
+                <Variable name="Номер_редакции" source="{current}" path="|Document|Номер_редакции"  />
+               </Variables>
+              <Expression value="$NullToZero({Номер_редакции})+1"/>
+               </CalculateExpression>
+			</Actions>
+			</Aggregation> 
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ' and doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС' and doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование = '{currentDocField=|Document|Организатор_закупки|Организатор_закупки_наименование}']" tag="Используемое положение" />
+				</Select>
+				<Actions>				
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnDocumentCreated>
+		<OnRegcardEdited transaction="single">
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ' and doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС' and doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование = '{currentDocField=|Document|Организатор_закупки|Организатор_закупки_наименование}']" tag="Используемое положение" />
+				</Select>
+				<Actions>
+	
+				</Actions>
+			</ConditionalActions>
+		</OnRegcardEdited>
+</Hooks>

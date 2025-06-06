@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		<row>
+				<column>
+					<field name="НМЦК" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|НМЦK" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|НМЦK" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+			</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Заявки на размещение закупки')  and (doc_RegCard/rc_Index/text_Способ_определения_поставщика_код = @sposob) and (doc_RegCard/rc_Index/text_Статус = 'Согласована') and ((doc_RegCard/rc_Index/money_НМЦK &gt;= @sumLotFrom) and (doc_RegCard/rc_Index/money_НМЦK &lt;= @sumLotTo)) " />
+	</search>
+</root>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugins>
+  <!-- Примеры подключения плагинов:
+  <plugin key="samplePlugin" class="LiteClient.Managers.PluginManager+PluginSample" />
+  <plugin key="sampleExternalPlugin" class="LiteClient.Plugins.SampleExternalPlugin, LiteClient.Plugins" />
+  -->
+  <plugin key="ApprovelListPlugin" class="LiteClient.Plugins.ReportPlugin, LiteClient.Plugins" locationType="DocumentView" objectType="Document" title="Лист согласования" view="ReportPlugin.cshtml"/>
+  <plugin key="AssignSogl" class="LiteClient.Plugins.CompleteActivity.CompleteActivityPlugin, LiteClient.Plugins" locationType="SearchResult, PerformerFolder, DocumentView, SystemFolder" objectType="Approval" title="Согласовать " view="CompleteActivityPlugin.cshtml"/>
+  <plugin key="AssignSoglBudget" class="LiteClient.Plugins.CompleteActivity.CompleteActivityPlugin, LiteClient.Plugins" locationType="SearchResult, PerformerFolder, DocumentView, SystemFolder" objectType="Approval" title="Согласовать " view="CompleteActivityPlugin.cshtml"/>
+  <plugin key="cancelNotice" class="LiteClient.Plugins.StartWorkflow.StartWorkflowPlugin, LiteClient.Plugins" locationType="DocumentView" objectType="Document" title="Отменить процедуру" view="StartWorkflowPlugin.cshtml"/>
+  <!-- <plugin key="cancelNoticeSberAST" class="LiteClient.Plugins.StartWorkflow.StartWorkflowPlugin, LiteClient.Plugins" locationType="DocumentView" objectType="Document" title="Отменить процедуру (лоты)" view="StartWorkflowPlugin.cshtml"/> -->
+  <plugin key="GoToIniciator" class="LiteClient.Plugins.CompleteActivity.CompleteActivityPlugin, LiteClient.Plugins" locationType="SearchResult, PerformerFolder, DocumentView, SystemFolder" objectType="Approval" title="Передать инициатору" view="CompleteActivityPlugin.cshtml"/>
+  <plugin key="AssignIniciator223" class="LiteClient.Plugins.CompleteActivity.CompleteActivityPlugin, LiteClient.Plugins" locationType="SearchResult, PerformerFolder, DocumentView" objectType="Task" title="Назначить сотрудников по документу" view="CompleteActivityPlugin.cshtml"/>
+</plugins>

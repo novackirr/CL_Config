@@ -1,0 +1,585 @@
+var dictionaryStrings = (function () {
+    return {
+        noDataText: "Отсутствуют данные для отображения",
+        formName: "Данные о контрагенте",
+        rootBreadcrumbName: "Все справочники",
+        subdictionariesSelectDialogTitle: "Подчиненные словари",
+        //subdictionariesSelectDialogOk: "Выбрать",
+        //subdictionariesSelectDialogCancel: "Отмена",
+        //deleteItemConfirmDialogText: "Вы уверены, что хотите удалить элемент?",
+        //deleteItemConfirmDialogOk: "Да",
+        //deleteItemConfirmDialogCancel: "Нет",
+        //customEditFormTitle: "Редактирование элемента",
+        //customEditFormSaveText: "Сохранить",
+        customEditFormCancelText: "Отмена",
+        //customEditFormSavingText: "Сохранение...",
+        customEditFormLoadingText: "Загрузка...",
+    };
+}());
+var StateManager = (function () {
+
+    function StateManager() { }
+
+    StateManager.prototype = {
+        getState: function getState() {
+            var location = window.location;
+            if (location.hash && location.hash !== "") {
+                var hash = location.hash.substring(1);
+                hash = decodeURIComponent(hash);
+                return JSON.parse(hash);
+            }
+            else
+                return this.getInitialState();
+        },
+
+        setState: function setState(state) {
+            var location = window.location;
+            var json = encodeURIComponent(JSON.stringify(state));
+            location.hash = json;
+        },
+
+        getInitialState: function getInitialState() {
+            return {
+                d: null,
+                s: [],
+                p: []
+            };
+        },
+
+        toQueryString: function toQueryString(state) {
+            if(!state)
+                state = this.getState();
+                
+            var subDictionariesEncodedQueries = $.map(state.s, function (current) {
+                return "&subDictionaryNames=" + encodeURIComponent(current);
+            });
+            if (subDictionariesEncodedQueries.length === 0)
+                subDictionariesEncodedQueries.push("&subDictionaryNames=");
+
+            return "?dictionaryName=" + encodeURIComponent(state.d) + subDictionariesEncodedQueries.join("")
+                + "&parent=" + (state.p.length > 0 ? state.p[state.p.length - 1].key : null);
+        }
+    };
+
+    return {
+        createInstance: function createInstance() {
+            return new StateManager();
+        }
+    }
+}());
+var dictApi = (function () {
+
+    function callApiLongOperation(url) {
+        var promise = callApi(url);
+        longRunningOperation(promise);
+        return promise;
+    }
+
+    function postApiLongOperation(url, data) {
+        var promise = postApi(url, data);
+        longRunningOperation(promise);
+        return promise;
+    }
+
+    function longRunningOperation(promise) {
+        waitingDialog.showWaiting();
+        return promise.always(function () {
+            waitingDialog.hide();
+        });
+    }
+
+    function callApi(url) {
+        var defer = jQuery.Deferred();
+        $.ajax({
+            url: url,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+        }).then(function (response) {
+            var data = JSON.parse(response);
+            if (data.status === "OK") {
+                var data = JSON.parse(data.responseMessage);
+                defer.resolve(data);
+            } else {
+                showCommonErrors([data.responseMessage]);
+                defer.reject(data.responseMessage);
+            }
+        }, function (error) {
+            showCommonErrors([error.responseText]);
+            defer.reject(error.responseText);
+        });
+
+        return defer.promise();
+    }
+
+    function postApi(url, data) {
+        var defer = jQuery.Deferred();
+
+        var formData = new FormData();
+        $.each(data, function (name, value) {
+            formData.append(name, value);
+        });
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            mimeType: "multipart/form-data",
+            cache: false,
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false
+        }).then(function (response) {
+            var data = JSON.parse(response);
+            if (data.status === "OK") {
+                defer.resolve();
+            } else {
+                showCommonErrors([data.responseMessage]);
+                defer.reject(data.responseMessage);
+            }
+        }, function (error) {
+            showCommonErrors([error.responseText]);
+            defer.reject(error.responseText);
+        });
+
+        return defer.promise();
+    }
+
+    return {
+        callApi: callApiLongOperation,
+        postApi: postApiLongOperation
+    };
+}());
+var dataSourceFactory = (function () {
+
+    function createDictionaryStore(stateManager) {
+        var state = stateManager.getState();
+        var queryParameters = stateManager.toQueryString(state);
+
+        var dataUrl = getRelativeUrl("/Administration/GetDictionaryItems") + queryParameters;
+        var deleteUrl = getRelativeUrl("/Administration/RemoveDictionaryItem") + queryParameters;
+        var updateUrl = getRelativeUrl("/Administration/UpdateDictionaryItem") + queryParameters;
+        var addUrl = getRelativeUrl("/Administration/AddDictionaryItem") + queryParameters;
+        
+
+        var store = DevExpress.data.AspNet.createStore({
+            key: "key",
+            loadUrl: dataUrl,
+            deleteUrl: deleteUrl,
+            deleteMethod: "POST",
+            updateUrl :updateUrl,
+            updateMethod: "POST",
+            insertUrl:addUrl,
+            insertMethod :"POST"
+        });
+
+        return store;
+    }
+
+    return {
+        createDictionaryStore: createDictionaryStore
+    };
+}());
+var actionBuilder = (function () {
+
+    function build(gridInstance) {
+
+        //gridInstance.option("onToolbarPreparing", function (args) {
+        //    var toolbarItems = args.toolbarOptions.items;
+        //    toolbarItems.push({
+        //        location: "after"
+        //    });
+        //});
+        //gridInstance.option("onToolbarPreparing", function (ev) { $.getScript("\\LiteClient\\Scripts\\Content\\data-grid.js", onDxToolbarPreparing(ev, gridInstance)); });
+
+        gridInstance.option("onToolbarPreparing", function (ev) { onDictToolbarPreparing(ev, gridInstance); });
+
+        var columns = gridInstance.option("columns");
+
+        gridInstance.option("columns", columns);
+    }
+
+
+    function onDictToolbarPreparing(ev, grid) {
+
+        addDictToolbarCustomColumnChooser(ev, grid);
+        addDxGridToolbarStateItems(ev, grid);
+        grid.option("export_url", getRelativeUrl("/GridExport/ExportSuppliers?fileName=Контрагенты"));
+        addCreateExportButton(ev, grid);
+    }
+
+
+
+    function addDictToolbarCustomColumnChooser(ev, grid) {
+        ev.toolbarOptions.items.unshift({
+                location: "after",
+                widget: "dxButton",
+                options: {
+                    hint: "Выбор столбцов",
+                    icon: "column-chooser",
+                    onClick: function (btn) { dictCustomColumnsChooser(ev, btn); }
+                }
+        });
+    }
+
+    // получение списка колонок грида для column chooser
+    function dictGetCustomChooserColumns(grid) {
+        var columns = [];
+        var checked = [];
+        var length = grid.columnCount();
+        for (var i = 0; i < length; i++) {
+            var col = grid.columnOption(i);
+            var dto = {
+                visible: true,
+                index: col.index,
+                caption: col.caption,
+                dataField: col.dataField
+            };
+
+            if (col.visible) {
+                checked.push(dto);
+            }
+            columns.push(dto);
+        }
+
+        return {
+            columns: columns,
+            checked: checked
+        }
+    }
+
+    // клик по кнопке пользовательского выбора столбцов
+    function dictCustomColumnsChooser(ev, btn) {
+        var grid = ev.component;
+
+        //инициализация popup для своего column chooser
+        var popup = grid.colChooserPopup;
+        if (!popup) {
+            popup = grid.colChooserPopup = $("#colChooserPopup_" + ev.element[0].id).dxPopup({
+                showCloseButton: true,
+                visible: false,
+                title: "Выбор столбцов",
+                width: 350,
+                height: 520,
+            });
+        }
+
+        var data = dictGetCustomChooserColumns(grid);
+
+        //инициализируем popup с перечнем столбцов
+        var popupContent = popup.find(".dx-popup-content");
+        var tooltips = popup.find("[data-item-tooltip]");
+        if (popupContent.is(':empty') && !tooltips.length) {
+            var listElement = document.createElement("div");
+            $(listElement).addClass("grid-columns-list");
+
+            var list = $(listElement).dxList({
+                items: data.columns,
+                selectionMode: "all",
+                selectedItems: data.checked,
+                showSelectionControls: true,
+                itemTemplate: function (itemData, itemIndex, itemElement) {
+                    appendTooltip("<span>" + itemData.caption + "</span>", itemElement);
+                    itemElement.append("<b>" + itemData.caption + "</b>");
+                },
+                onSelectionChanged: function (e) {
+                    grid.beginUpdate();
+
+                    var length = e.addedItems.length;
+                    for (var i = 0; i < length; i++) {
+                        grid.columnOption(e.addedItems[i].index, "visible", true);
+                    }
+
+                    var removedLength = e.removedItems.length;
+                    for (var i = 0; i < removedLength; i++) {
+                        grid.columnOption(e.removedItems[i].index, "visible", false);
+                    }
+
+                    grid.endUpdate();
+
+                    dxGridSortCustomChooserColumns(e.component);
+                    scaleWidthVisibleColumns(grid, ev.element);
+                },
+                onInitialized: function (e) {
+                    dxGridSortCustomChooserColumns(e.component);
+                }
+            }).dxList("instance");
+
+            var textElement = document.createElement("div");
+
+            var timeoutID = null;
+
+            $(textElement).dxTextBox({
+                value: "",
+                placeholder: "Поиск...",
+                showClearButton: true,
+                valueChangeEvent: "keyup",
+                onValueChanged: function (data) {
+
+                    if (timeoutID) {
+                        window.clearTimeout(timeoutID);
+                        timeoutID = null;
+                    }
+
+                    timeoutID = window.setTimeout(function () {
+                        var list = grid.colChooserList;
+                        var items = list.option("items");
+                        var length = items.length;
+
+                        // фильтрация колонок в column chooser
+                        for (var i = 0; i < length; i++) {
+                            var item = items[i];
+                            var searchQuery = data.value.toLowerCase();
+
+                            var visible = true;
+                            if (searchQuery && searchQuery.trim() !== "") {
+                                visible = item.caption.toLowerCase().search(data.value.toLowerCase()) >= 0;
+                            }
+
+                            item.visible = visible;
+                        }
+
+                        list.repaint();
+                    }, 200);
+                }
+            });
+
+            popupContent.append(textElement);
+            popupContent.append(listElement);
+
+            grid.colChooserList = list;
+        }
+
+        //делаем popup видимым
+        popup.dxPopup("instance").option({
+            showCloseButton: true,
+            visible: true,
+            position: {
+                my: "right top",
+                at: "left bottom",
+                of: btn.element
+            }
+        });
+    }
+
+
+    return {
+        build: build
+    };
+}());
+(function () {
+
+    //end stateManager
+
+    var _instance = null;
+    var _stateManager = StateManager.createInstance();
+
+    function init() {
+        DevExpress.localization.locale("ru");
+
+        var container = $("#dictionary-grid");
+        _instance = container.dxDataGrid({
+            editing: {
+                texts: {
+                    confirmDeleteMessage: ""
+                }
+            },
+            scrolling: {
+                columnRenderingMode: "virtual"
+            },
+            noDataText: dictionaryStrings.noDataText,
+        }).dxDataGrid("instance");
+
+
+        createGrid();
+    }
+
+    $(window).bind('hashchange', function () {
+        createGrid();
+    });
+
+    function createGrid() {
+
+        var promise = createDictionaryGrid();
+        return promise;
+    }
+
+    function createDictionaryGrid() {
+        var defer = jQuery.Deferred();
+
+        var state = _stateManager.getState();
+        state.d = "Контрагенты";
+        _stateManager.setState(state);
+
+        var url = getRelativeUrl("/Administration/GetDictionaryDetails?dictionaryName=Контрагенты&subDictionaryNames=");
+
+        _instance.refresh();
+
+        dictApi.callApi(url).then(function (details) {
+
+            var columns = jQuery.map(details.attributes, function (current, index) {
+                if (current.name === "code") {
+                    return {
+                        caption: state.d,
+                        dataField: "code",
+                        validationRules: [{ type: "required" }],
+                        allowEditing: false,
+                        allowSorting: true,
+                        allowFiltering: true,
+                        visible: current.visible
+                    }
+                }
+                return {
+                    caption: current.name,
+                    dataField: current.name,
+                    allowEditing: false,
+                    allowSorting: true,
+                    allowFiltering: true,
+                    visible: current.visible,
+                    minWidth: 200,
+                };
+            });
+
+            enableGridHoverable(true);
+
+            _instance.option("onRowClick", function (cellInfo) {
+                onCustomFormClickHandler(_instance, cellInfo, state.d, details.customForm);
+            });
+
+            _instance.option("columns", columns);
+            _instance.option("remoteOperations", true);
+            _instance.option("paging", {
+                enabled: true,
+                pageIndex: 0,
+                pageSize: 20
+            });
+
+            var filterRowOption = _instance.option("filterRow");
+            filterRowOption.visible = true;
+            _instance.option("filterRow", filterRowOption);
+
+            actionBuilder.build(_instance);
+
+            _instance.option("dataSource", dataSourceFactory.createDictionaryStore(_stateManager));
+            defer.resolve();
+        }, function(error) {
+                defer.reject(error);
+        });
+        return defer.promise();
+    }
+
+    function enableGridHoverable(enable) {
+        if (enable) {
+            _instance.option("hoverStateEnabled", true);
+            _instance.$element().addClass("grid-clickable");
+
+        } else {
+            _instance.option("hoverStateEnabled", false);
+            _instance.$element().removeClass("grid-clickable");
+        }
+    }
+
+
+    function onCustomFormClickHandler(gridInstance, cellInfo, dictName, customForm) {
+        openCustomForm(dictName, cellInfo.data["key"], customForm).then(function (data) {
+            gridInstance.beginUpdate();
+
+            $.each(data, function (name, value) {
+                gridInstance.cellValue(cellInfo.rowIndex, name, value);
+            });
+
+            gridInstance.endUpdate();
+        }, function () {
+
+        });
+    }
+
+
+    function openCustomForm(dictName, itemKey, customForm) {
+        var formUrl = getRelativeUrl("/Dictionary/GetDictionaryForm") + "?name=" + encodeURIComponent(dictName) + "&template=" + encodeURIComponent(customForm) + "&key=" + itemKey;
+        var defer = jQuery.Deferred();
+        var temp = $("<div>");
+
+        $("body").append(temp);
+        var popup = temp.dxPopup({
+            title: dictionaryStrings.formName,
+            position: "center",
+            resizeEnabled: false,
+            visible: false,
+            showCloseButton: false,
+
+            contentTemplate: function (contentElement) {
+                var scrollView = $("<div/>");
+
+                var loadingPanelElement = $("<div/>").dxLoadPanel({
+                    visible: false
+                });
+
+                var loadingPanel = loadingPanelElement.dxLoadPanel("instance");
+
+                var formBody = $("<div/>");
+
+                var buttonContainerElement = $("<div />").addClass("popup-buttons-container dictionary-item-form-buttons").hide();
+
+                buttonContainerElement.append(
+                    $("<div />").addClass("popup-button").dxButton({
+                        stylingMode: "contained",
+                        text: dictionaryStrings.customEditFormCancelText,
+                        type: "normal",
+                        width: 100,
+                        onClick: function () {
+                            defer.reject();
+                            popup.hide();
+                            temp.remove();
+                        }
+                    })
+                );
+
+                scrollView.append($("<div />"), formBody, loadingPanelElement, buttonContainerElement);
+                contentElement.append(scrollView);
+
+                scrollView.dxScrollView({
+                    height: '100%',
+                    width: '100%',
+                });
+
+
+                loadingPanel.option("message", dictionaryStrings.customEditFormLoadingText);
+                loadingPanel.show();
+                console.log(formUrl);
+                formBody.load(formUrl, function (response, status, xhr) {
+                    loadingPanel.hide();
+
+                    var resposeElement = $(response);
+                    if (resposeElement.find(".application-errors").length > 0 || resposeElement.find("input[name='login']").length > 0) {
+                        formBody.hide();
+                        window.location = formUrl;
+                    } else {
+                        buttonContainerElement.show();
+                        enableToolTips();
+                        updateDatepickers();
+                        fillDictDisplayValues();
+                        bindDictionaryDisplayField();
+                        addParsleyValidation(".dictionary-item-form");
+                    }
+                });
+            },
+        }).dxPopup("instance");
+
+        var bodyOverflow = $("body").css("overflow");
+        popup.on("showing", function () {
+            $("body").css("overflow", "hidden");
+        });
+
+        popup.on("hiding", function () {
+            $("body").css("overflow", bodyOverflow);
+        });
+
+        popup.show();
+
+        return defer.promise();
+    }
+
+    init();
+})();

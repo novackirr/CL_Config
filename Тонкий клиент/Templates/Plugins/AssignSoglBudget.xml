@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<options showComment="true" />
+	<flows>
+		<flow name="Позиции плана закупок 223ФЗ"/>
+	</flows>
+	<activities>
+		<activity name="Согласование новой потребности Бюджетным комитетом" type="Approval" action="normal"/>		
+	</activities>
+	<view showCurrentValues="false" >
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field name="Комментарий бюджетного комитета (Для карточки)" isLabel="true" edit-name="KomBudget"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Комментарий_бюджетного_комитета" name="Комментарий бюджетного комитета" valueType="longtext" isValue="true" edit-name="KomBudget" />
+					</column>
+				</row>
+			</rows>
+		</template>
+	</view>
+	<attachment sign="false">
+		<categories>
+			<category name="Протокол бюджетного комитета"/>			
+		</categories>
+	</attachment> 
+</root>

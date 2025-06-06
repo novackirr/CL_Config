@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<LinksModify>
+		<LinkCurrentDoc />
+		<LinkAllLinksWhereFlow name="Извещения о закупочной процедуре 223ФЗ" />
+	</LinksModify>
+
+	<!--
+	<OnDocumentCreated>
+		<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещения о закупочной процедуре 223ФЗ" /> 
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Поток1' and xn-in(doc_Id, {currentDocLinkList})]" tag="Поток1" />
+				</Select>
+				<Actions>
+					<ConditionalAction> 
+						<Conditions>
+							<And>
+								<WhenFieldsEquals  tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals  tag="{current}" path="|Document|Номер_редакции" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<CopyField sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|Номер_редакции" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+		</ConditionalActions>
+	</OnDocumentCreated>
+	-->
+	<OnDocumentCreated>
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Извещения о закупочной процедуре 223ФЗ" />
+			</Select>
+			<Actions>
+				<CopyField sourceFlow='Извещения о закупочной процедуре 223ФЗ' targetFlow="{current}" sourceField="|Document|Инициатор|Инициатор_ФИО" targetField="|Document|ФИО_ответственного" />
+			</Actions>
+		</Aggregation>
+	</OnDocumentCreated>
+
+
+
+
+	<FieldsModify source="Извещения о закупочной процедуре 223ФЗ">
+		<SetField  dst="|Document|Номер_редакции" value="222" />
+	</FieldsModify>	
+	
+	<FieldsModify>
+		<SetField  dst="|Document|Номер_редакции" value="1" />		
+	</FieldsModify>	
+
+
+	<OnDocumentCreated>
+	</OnDocumentCreated>
+	<OnRegcardEdited>			
+	</OnRegcardEdited>
+</Hooks>
+
+
+				

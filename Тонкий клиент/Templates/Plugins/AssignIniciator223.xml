@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<flows>
+		<flow name="Позиции плана закупок 223ФЗ"/>
+	</flows>
+	<activities>
+		<activity name="Назначить сотрудников по документу" type="Task" action="normal" />		
+	</activities>
+	<view showCurrentValues="true" >
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field name="Выберите Инициатора документа" isLabel="true" edit-name="IspName12"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Инициатор|Инициатор" name="Согласующий" isValue="true" valueType="addressbook"  edit-name="IspName12" address-book-tool ="IspName12" edit-addressbook-groups = ""   address-book-tool-selectable = "WorkGroup, Person, 'Инициаторы'|currentOrganization" edit-required="true" /> 
+					</column>
+				</row>
+				<row>
+					<column>
+						<field name="Отдел" isLabel="true" edit-name="registerPodIn"/>
+					</column>
+					<column>
+						<field name="Руководитель отдела" isLabel="true" edit-name="RukInic"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Подразделение инициатора" isValue="true" valueType="addressbook" edit-name="registerPodIn" address-book-tool ="registerPodIn" edit-addressbook-groups = "Department" addressbook-main-field="IspName12" addressbook-property="Department" edit-required="true"/>
+					</column>
+					<column>
+						<field fieldType="field" key="|Document|Руководитель_инициатора|Руководитель_инициатора" name="Руководитель инициатора" valueType="addressbook" isValue="true" edit-name="RukInic" address-book-tool ="RukInic" edit-addressbook-groups = "Person" addressbook-main-field="IspName12" addressbook-property="Chief" edit-required="true"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field name="Выберите Специалиста по закупкам" isLabel="true" edit-name="IspName1"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель" name="Согласующий" isValue="true" valueType="addressbook"  edit-name="IspName1" address-book-tool ="IspName1" edit-addressbook-groups = ""   address-book-tool-selectable = "WorkGroup, Person, 'Специалист по закупкам'|currentOrganization" edit-required="true"/> 
+					</column>
+				</row>
+			</rows>
+		</template>
+	</view>
+	<scripts>
+		<script file="\Scripts\Content\Plugins\AssignIniciator223.js" />
+	</scripts>
+</root>

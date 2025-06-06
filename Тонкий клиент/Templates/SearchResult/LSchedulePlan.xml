@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-filters-row="true" horizontall-scroll="true">
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Реестровый_номер_в_ЕИС" name="Реестровый номер в ЕИС" valueType="text" weight="22" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="text" weight="12" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_публикации" name="Дата публикации" valueType="datetime" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год" name="Год" valueType="double" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="15" />
+	</columns>
+	  <sort predicate="doc_CreateTime descending"/>
+</root>

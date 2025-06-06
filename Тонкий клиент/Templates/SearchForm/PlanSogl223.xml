@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>
+<row>
+				<column>
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"    edit-hidden="true"  edit-default-value="{currentOrganization}"  />
+				</column> 
+		</row>
+		<row>	
+		<!-- 	<column>
+				<field name="Организация заказчик" isLabel="true" />
+				<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" edit-readonly="true" dict-column-name="code" valueType="text"  isValue="true" edit-name="registerOrgZa"  is-select-one-level="1"  edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa" show-dict-column="false"/>			
+				<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" dict-column-name="Краткое наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="registerOrgZa"/>
+			</column>	 -->
+			<column>
+				<field name="Год" isLabel="true"/>
+				<block id="block1" name="block1"  height="300">		
+				<rows>
+					<row>
+						<column>
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Год" name="Год" valueType="text" isValue="true" edit-name="yearPlanFrom" />
+						</column>
+						<column>							
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Год" name="Год" valueType="text" isValue="true" edit-name="yearPlanTo" />
+						</column>						
+					</row>
+				</rows>								
+			</block>					
+			</column>			
+			<column>
+			  <field name="Номер в ЕИС" isLabel="true" />
+			  <field fieldType="field" key="|Document|Номер_в_ЕИС" name="Номер в ЕИС" valueType="text" isValue="true" edit-name="NumEIS" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Дата утверждения" isLabel="true"/>
+				<block id="block2" name="block2"  height="300">		
+				<rows>
+					<row>
+						<column>			
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_утверждения" name="Дата утверждения" valueType="date" value-db-type="date" isValue="true"  edit-name="statementDateFrom" weight="300"/>
+						</column>
+						<column>							
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_утверждения" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="statementDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>									
+			</column>
+			<column>
+				<field name="Дата размещения" isLabel="true"/>
+				<block id="block3" name="block3"  height="300">		
+				<rows>
+					<row>
+						<column>			
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата размещения" valueType="date" value-db-type="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+						</column>
+						<column>							
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="publicDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>									
+			</column>	
+			<column>
+				<field name="Дата регистрации" isLabel="true"/>
+				<block id="block4" name="block4" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="от" isLabel="true"/>
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+							</column>
+							<column>					
+								<field name="до" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+			</column>
+				
+		</row>	 
+	  
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Утвержден') and ((doc_RegCard/rc_Index/date_Дата_утверждения &gt;= @statementDateFrom) and (doc_RegCard/rc_Index/date_Дата_утверждения &lt;= @statementDateTo)) and ((doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения &lt;= @publicDateTo)) and (doc_RegCard/rc_Index/text_Организация_заказчик_наименование = @registerOrgZaName)  and ((doc_RegCard/rc_Index/text_Год &gt;= @yearPlanFrom) and (doc_RegCard/rc_Index/text_Год &lt;= @yearPlanTo)) and ((doc_RegCard/rc_Index/text_Номер_в_ЕИС = @NumEIS) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and (doc_RegCard/rc_Index/boolean_Расширенный_план = '0')" />
+  </search>
+</root>

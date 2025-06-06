@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<Setting name="Заявки">
+		<Flows>
+			<Flow name="Заявка на размещение закупки 223ФЗ" rootFolderName="Лоты">
+				<Rules>
+					<And>
+						
+					</And>
+				</Rules>
+				<FolderName>
+					<Name>|Document|ИД_извещения</Name>
+				</FolderName>
+				<ExcludeCategory>	
+						<Category>debug</Category>
+				</ExcludeCategory>	
+				<Flows>
+					<Flow name="Заявки участников 223ФЗ" rootFolderName="Заявки участников">
+						<Rules>
+							<And>
+								
+							</And>
+						</Rules>
+						<FolderName>
+							<Name>|Document|Номер_заявки</Name>
+						</FolderName>
+						<ExcludeCategory>	
+								<Category>debug</Category>
+						</ExcludeCategory>	
+						<ExcludeDocTypes>	
+								<DocType>debug</DocType>
+						</ExcludeDocTypes>	
+					</Flow>
+				</Flows>
+			</Flow>
+		</Flows>
+	</Setting> 
+	<Setting name="Заявки" flowName="Заявка на размещение закупки 223ФЗ">
+		<Flows>
+			<Flow name="Заявка на размещение закупки 223ФЗ" rootFolderName="Лоты">
+				<Rules>
+					<And>
+						
+					</And>
+				</Rules>
+				<FolderName>
+					<Name>|Document|ИД_извещения</Name>
+				</FolderName>
+				<ExcludeCategory>	
+						<Category>debug</Category>
+				</ExcludeCategory>	
+				<Flows>
+					<Flow name="Заявки участников 223ФЗ" rootFolderName="Заявки участников">
+						<Rules>
+							<And>
+								
+							</And>
+						</Rules>
+						<FolderName>
+							<Name>|Document|Номер_заявки</Name>
+						</FolderName>
+						<ExcludeCategory>	
+								<Category>debug</Category>
+						</ExcludeCategory>	
+						<ExcludeDocTypes>	
+								<DocType>debug</DocType>
+						</ExcludeDocTypes>	
+					</Flow>
+				</Flows>
+			</Flow>
+		</Flows>
+	</Setting> 
+</Settings> 

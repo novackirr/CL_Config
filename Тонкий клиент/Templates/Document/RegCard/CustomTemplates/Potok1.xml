@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+				
+					<block id="V1View" name="Общие сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="block11View" name="Регистрационные данные" view="true" >		 
+										<rows> 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Рег_номер" name="Регистрационный номер" valueType="text" />
+												</column>			
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>															
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Редакция" valueType="integer" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block12View" name="Ответственный по документу" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ФИО_ответственного" name="ФИО ответственного" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Группа" name="Группа" valueType="text" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block13View" name="Основные сведения" view="true" >		 
+										<rows>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Стоимость" name="Стоимость" valueType="integer" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Числовое_поле_4" name="Числовое поле 4" valueType="integer" />
+												</column>
+											</row>							
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Налог" name="Налог, %" valueType="integer" />						
+												
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Логическое_поле_1" name="Логическое поле 1" valueType="boolean" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="longtext" />
+												</column>
+												<column/>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block14View" name="Детализация" legend="true" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<table key="|Document|Таблица_П1" api-table-name="Таблица_П1" height="300" name="Позиции">
+														<column fieldType="field" key="|NUM" valueType="integer" name="№" headerNoEllipsis="true" />
+														<column fieldType="field" key="|Поле_таблицы_1" valueType="text"   name="Поле_таблицы_1" headerNoEllipsis="true" />
+														<column fieldType="field" key="|Поле_таблицы_2" valueType="text" name="Поле_таблицы_2"  headerNoEllipsis="true" />
+														<column fieldType="field" key="|Поле_таблицы_3" valueType="integer" name="Поле_таблицы_3" headerNoEllipsis="true" />
+													</table>
+													<!--
+													<table key="|Document|Позиции" api-table-name="Позиции" height="5" horizontall-scroll="true">
+														<column fieldType="field" key="|NUM" valueType="text" name="№" width="80" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Наименование_позиции" valueType="text" name="Наименование позиции" width="300" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|ОКПД2" valueType="text" name="ОКПД2" width="150" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" width="300" headerNoEllipsis="true"/>	
+														<column fieldType="field" key="|ОКВЭД2" valueType="text" name="ОКВЭД2" width="200" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Тип_объекта_закупки_наименование" valueType="text" name="Тип объекта закупки" width="100" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Количество" name="Количество" valueType="double"  width="200" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Единица_измерения" valueType="text" name="Единица измерения" width="150" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|ОКАТО_позиции" name="ОКТМО" valueType="text" width="200" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Регион_позиции" name="Регион" valueType="text" width="200" headerNoEllipsis="true"/>	
+														<column fieldType="field" key="|Цена_за_единицу" name="Цена за единицу" valueType="money" width="200" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Сумма_позиции" name="Сумма позиции" valueType="money" width="200" headerNoEllipsis="true"/>
+										                <column fieldType="field" key="|Невозможно_определить_количество" name="Невозможно определить кол-во" valueType="boolean" width="1" headerNoEllipsis="true" />
+													</table>
+													-->
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="V2View" name="Информация по согласованию">
+						<rows>
+							<row>
+								<column>
+									<block id="block21View" name="Согласование документа" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Логическое_поле_2" name="Логическое поле 2" valueType="boolean" />
+													<field fieldType="field" key="|Document|Логическое_поле_3" name="Логическое поле 3" valueType="boolean" />
+													<field fieldType="field" key="|Document|Согласующий" name="Согласующий" valueType="addressbook" />
+													<field fieldType="field" key="|Document|Текстовое_поле_5" name="Текстовое поле 5" valueType="text" />
+													<field fieldType="field" key="|Document|Дата_3" name="Дата 3" valueType="date" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="block22View" name="Дополнительная информация по согласованию" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Категория" name="Категория" valueType="text" />	
+													<field fieldType="field" key="|Document|Комментарий" name="Комментарий" valueType="longtext" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="ДокументПоток1{number}{RegDate}">
+				<field fieldType="field" key="|Document|Рег_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" variable-name="RegDate" variable-format=", {value}" />
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="V1Edit" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="block11" name="Регистрационные данные" view="true" >		 
+										<rows>	 
+											<row>
+												<column/>							
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Редакция" edit-name="numRedact" valueType="integer" />
+													<field fieldType="field" key="|Document|Статус" name="Статус" edit-name="status" edit-readonly="true" valueType="text" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+									<block id="block12" name="Ответственный по документу" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ФИО_ответственного" name="ФИО ответственного" edit-readonly="true" edit-name="answerable" valueType="text" edit-default-value="{currentUser}" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Группа" name="Группа" valueType="text" isValue="true" edit-name="groupPick" edit-hidden="true" edit-dictionary="Тип СМП" edit-dictionaryValue="Тип СМП" edit-default-value="Микропредприятие" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+									<block id="block13" name="Основные сведения" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" edit-name="long2" valueType="longtext" />
+													<field fieldType="field" key="|Document|Стоимость" name="Стоимость" edit-name="price" edit-required="true" valueType="integer" />
+													<field fieldType="field" key="|Document|Налог" name="Налог, %" edit-name="tax" edit-required="true" valueType="integer" />
+													<field fieldType="field" key="|Document|Числовое_поле_4" name="Числовое поле 4" edit-name="int4" valueType="integer" />
+													<field fieldType="field" key="|Document|Логическое_поле_1" name="Показать таблицу Детализация" edit-name="bool1" valueType="boolean" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+									<block id="block14" name="Детализация" legend="true" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<table key="|Document|Таблица_П1" edit-name="ItemTab" height="300" name="Позиции">
+														<column fieldType="field" key="|NUM" valueType="integer" isValue="true" edit-name="NUM" edit-hidden="true" />
+														<column fieldType="field" key="|Поле_таблицы_1" valueType="text"   name="Поле_таблицы_1" isValue="true" edit-name="tableField1" edit-required="true" title="Введите текст" width="310" headerNoEllipsis="true" />
+														<column fieldType="field" key="|Поле_таблицы_2" valueType="text" name="Поле_таблицы_2"  isValue="true" edit-name="tableField2"  edit-required="true" title="Введите текст" width="300" headerNoEllipsis="true" />
+														<column fieldType="field" key="|Поле_таблицы_3" valueType="integer" name="Поле_таблицы_3" isValue="true" edit-name="tableField3" edit-required="true" title="Введите число" width="300" headerNoEllipsis="true" />
+													</table>
+												</column>
+											</row>
+										</rows>	
+									</block>																										
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="V2Edit" name="Информация по согласованию">
+						<rows>
+							<row>
+								<column>
+									<block id="block21" name="Согласование документа" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Логическое_поле_2" name="Логическое поле 2" edit-name="bool2" valueType="boolean" />
+													<field fieldType="field" key="|Document|Логическое_поле_3" name="Логическое поле 3" edit-name="bool3" valueType="boolean" />
+													<field fieldType="field" key="|Document|Текстовое_поле_5" name="Текстовое поле 5" edit-name="text5" edit-readonly="true" valueType="text" />
+													<field fieldType="field" key="|Document|Согласующий" name="Согласующий" valueType="addressbook" isValue="true" edit-name="сoncordant" 
+													address-book-tool-selectable = "Department, Person,{allCurrentOrganizations}"
+													address-book-tool="concordant" edit-addressbook-groups = "" edit-readonly="true" edit-required="true" />
+													<field fieldType="field" key="|Document|Дата_3" name="Дата 3" edit-name="date3" valueType="date" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+									<block id="block22" name="Дополнительная информация по согласованию" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Категория" name="Категория" edit-readonly="true" edit-name="category" valueType="text" />	
+													<field fieldType="field" key="|Document|Комментарий" name="Комментарий" edit-name="comment" valueType="longtext" />
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля">
+						<rows>
+							<row>
+								<column>
+									<!-- МОИ: -->
+									<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date"  isValue="true" edit-name="dayCreate" edit-required="true" edit-default-value="{today}"/>
+									<field fieldType="field" key="|Document|Рег_номер" name="Регистрационный номер" edit-readonly="true" edit-name="regNumber" valueType="text" />	
+									<!-- КОНЕЦ СОЗДАННЫХ МНОЙ-->
+
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  isValue="true" edit-name="registerDate" edit-required="true" edit-default-value="{today}" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-default-value="{currentOrganization}" address-book-tool = "registerOrgZa" edit-addressbook-groups="" address-book-tool-selectable = "Department, Department, {allCurrentOrganizations}|withoutSubs" children-selection="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" isValue="true" edit-name="OrgZakupki" 
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=Name}" addressbook-main-field="registerOrgZa" addressbook-property="Name" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|ИД_заказчика_на_ЭТП" name="ИД заказчика на ЭТП" valueType="text" isValue="true" edit-name="customIdEtp" edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="orgzakINN" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}" addressbook-main-field="registerOrgZa" addressbook-property="INN"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="КПП" valueType="text"   isValue="true" edit-name="orgzakKPP" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}" addressbook-main-field="registerOrgZa" addressbook-property="KPP"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Адрес" name="Адрес" valueType="longtext"   isValue="true" edit-name="orgzakAdress" edit-default-value="{addressbook,value=registerOrgZa,attribute=Адрес}"	addressbook-main-field="registerOrgZa" addressbook-property="Адрес"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Телефон" name="Телефон" valueType="text"   isValue="true" edit-name="orgzakPhone" edit-default-value="{addressbook,value=registerOrgZa,attribute=Телефоны}" addressbook-main-field="registerOrgZa" addressbook-property="Телефоны"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" name="Электронная почта" valueType="text"   isValue="true" edit-name="orgzakElPost" edit-default-value="{addressbook,value=registerOrgZa,attribute=E-mail}" addressbook-main-field="registerOrgZa" addressbook-property="E-mail"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация_заказчик_ОГРН" valueType="text"   isValue="true" edit-name="orgzakOGRN" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}" addressbook-main-field="registerOrgZa" addressbook-property="OGRN"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="orgzakupkiINN" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="orgzakupkiKPP" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="OrgZakupkiEIS" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text" isValue="true" edit-name="orgzakupkiOGRN" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}"/>
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean"  isValue="true" edit-name="actual" edit-default-value="1"/>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="ДокументПоток1{number}{RegDate}">
+				<field fieldType="field" key="|Document|Рег_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" variable-name="RegDate" variable-format=", {value}" />
+			</variable>	
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/Potok1.js" />
+	</scripts>
+</root>

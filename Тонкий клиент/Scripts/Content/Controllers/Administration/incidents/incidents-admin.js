@@ -1,0 +1,128 @@
+﻿$(document).ready(function () {
+    var incidentsViewer = IncidentsViewer("viewincidents");
+    incidentsViewer.init();
+    var elem = document.getElementsByClassName('file-drop-area-title')[0];
+    elem.classList.remove('file-drop-area-title');
+});
+
+function addFormSubmitEvent() {
+   
+   
+};
+
+
+IncidentsViewer = function (incViewer) {
+    var _html = {
+        containerId: "inc-viewer-" + incViewer + "-container",
+        dataGridId: "inc-viewer-" + incViewer + "-datagrid",
+        startSelector: "#inc-viewer-" + incViewer + "-start",
+        endSelector: "#inc-viewer-" + incViewer + "-end",
+        refreshSelector: "#inc-viewer-" + incViewer + "-refresh",
+        containerSelector: "#inc-viewer-" + incViewer + "-container",
+        dataGridSelector: "#inc-viewer-" + incViewer + "-datagrid",
+        jsonInput: "#inc-viewer-json-" + incViewer
+    };
+
+
+    var _$logViewerContainer;
+    var _$logViewerDataGrid;
+    var _logViewer = incViewer;
+
+    var _store;
+    var _dataSource;
+    var _items = [];
+    function addEventHandlers() {
+     
+        addFormSubmitEvent();
+     
+    };
+
+    
+
+    function init() {
+        //addEventHandlers();
+        _$logViewerContainer = $(_html.containerSelector).dxResponsiveBox({
+            rows: [
+                { ratio: 1 }
+            ],
+            cols: [
+                { ratio: 1 }
+            ]
+        });
+        _dataSource =  {
+            load: function (options) {
+             
+                var d = $.Deferred();
+                $.ajax({
+                    url: getAbsoluteUrl("Administration/GetIncidentFiles"),
+                    type: "GET",
+                    cache: false,
+                    data: { filterText: options.searchValue },
+                    success: function (data) {
+                        d.resolve(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        showAlert("Ошибка полуечния групп доступа", errorThrown);
+                    }
+                });
+                return d.promise();
+            }
+        }
+
+        DevExpress.localization.locale("ru");
+        _$logViewerDataGrid = $(_html.dataGridSelector).dxDataGrid({
+            grouping: {
+                contextMenuEnabled: true,
+                expandMode: "buttonClick",
+                allowCollapsing: true
+            },
+            groupPanel: {
+                visible: false // or "auto"
+            },
+            columns: [
+                {
+                    caption: "Имя файла",
+                    dataField: "File",
+                    allowEditing: false,
+                    allowGrouping: true
+
+                },
+                {
+                    caption: "Сотрудник",
+                    dataField: "Person",
+                    allowEditing: false,
+                    allowGrouping: true
+
+                },                
+                {
+                    caption: "Дата закачки",
+                    dataField: "Date",
+                    allowEditing: false,
+                    allowGrouping: true
+
+                },
+                {
+                    caption: "Результат",
+                    dataField: "Result",
+                    allowEditing: false,
+                    allowGrouping: true
+
+                }
+
+            ],
+            dataSource: _dataSource,
+            paging: {
+                pageSize: 10
+            },
+            pager: {
+                showPageSizeSelector: true,
+                allowedPageSizes: [5, 10, 20],
+                showInfo: true
+            },
+            width: "100%"
+        });
+    }
+    return {
+        init: init
+    }
+};

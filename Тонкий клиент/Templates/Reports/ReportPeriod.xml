@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+  <edit>
+    <rows>
+		<row>
+			<column>
+			  <field name="Дата заключения от" isLabel="true" edit-name="from"/>
+			  <field fieldType="field" key="|От" name="Дата регистрации от" valueType="date" isValue="true" edit-name="from" edit-required="true" edit-default-value="{today}"></field>
+			</column>
+			<column>
+			  <field name="Дата заключения до" isLabel="true" edit-name="to"/>
+			  <field fieldType="field" key="|До" name="Дата регистрации до" valueType="date" isValue="true" edit-name="to" edit-required="true" edit-default-value="{today}"></field>
+			</column>
+		</row>
+    </rows>
+  </edit>
+</root>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<reportAccess reportName="Отчет о проведенных закупках" >
+		<workgroup name="Суперпользователи"/>       
+		<workgroup name="УЗД"/>
+		<workgroup name="УЗД по договорной деятельности"/>       
+		<workgroup name="УЗД по планированию"/>
+		<workgroup name="УЗД по проведению закупки"/>
+	</reportAccess>	
+	<reportAccess reportName="Отчет о заключенных договорах" >
+		<workgroup name="Суперпользователи"/>       
+		<workgroup name="УЗД"/>
+		<workgroup name="УЗД по договорной деятельности"/>       
+		<workgroup name="УЗД по планированию"/>
+		<workgroup name="УЗД по проведению закупки"/>
+	</reportAccess>	
+	<reportAccess reportName="Сводный отчёт по закупкам" >
+		<workgroup name="Суперпользователи"/>       
+		<workgroup name="УЗД"/>
+		<workgroup name="УЗД по договорной деятельности"/>       
+		<workgroup name="УЗД по планированию"/>
+		<workgroup name="УЗД по проведению закупки"/>
+	</reportAccess>	
+</root>

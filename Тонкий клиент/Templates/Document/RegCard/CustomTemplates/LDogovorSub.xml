@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view>
+    <rows>
+		<row>
+		  <column>
+			<block id="tlcInfo" name="Основные сведения">		 
+				<rows>
+				  <row>
+					<column>
+					  <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />					  
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Дата_создания_договора" name="Дата создания договора" valueType="date" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+					</column>
+				</row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Номер_основного_договора" name="Номер основного договора" valueType="text" />
+					</column>
+				</row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="text" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+					</column>
+				  </row>
+				<row>
+				  <column>
+					  <field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="text" />
+					</column>
+				  </row>
+				  <row>
+				  <column>
+					  <field fieldType="field" key="|Document|Сведения_о_договоре" name="Сведения о договоре" valueType="text" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Сумма" name="Сумма" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Курс_валюты" name="Курс валюты" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Цена_в_рублях" name="Цена в рублях" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Дата_заключения_договора" name="Дата заключения договора" valueType="date" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Срок_исполнения_договора" name="Срок исполнения договора" valueType="date" />
+					</column>
+				  </row>	
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Срок_окончания_работ" name="Срок окончания работ" valueType="date" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Пролонгация" name="Пролонгация" valueType="boolean" />
+					</column>
+				  </row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Не_публиковать_в_ЕИС" name="Не публиковать в ЕИС" valueType="boolean" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Окончание_договора" name="Прекращение обязательств в связи с окончанием срока действия" valueType="boolean" />
+					</column>
+				  </row>
+
+				<row>
+				  <column>
+					  <field fieldType="field" key="|Document|Сведения_о_сумме_договора" name="Сведения о сумме договора" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+				  <column>
+					  <field fieldType="field" key="|Document|Комментарий_к_сроку_исполнения" name="Комментарий к сроку исполнения" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+				  <column>
+					  <field fieldType="field" key="|Document|Дополнительные_сведения" name="Дополнительные сведения" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+				  <column>
+					  <field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="text" />
+					</column>
+				  </row>				   	  
+	  	    </rows>
+		</block>
+	</column>
+	</row>	
+	<row>
+		  <column>
+			<block id="tlcPurchase" name="Сведение о закупке">		 
+				<rows>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Номер_извещения" name="Номер извещения" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки" valueType="text" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Закупка_вследствие_аварии" name="Закупка вследствие аварии" valueType="boolean" />
+					</column>
+				</row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Субподрядчики_из_СМП" name="Субподрядчики из СМП" valueType="boolean" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Привлечены_субподрядчики" name="Привлечены субподрядчики" valueType="boolean" />
+					</column>
+				</row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Название_закупки" name="Название закупки" valueType="text" />
+					</column>
+				  </row>				
+				</rows>
+			</block>
+		</column>
+	</row>
+<row>
+		  <column>
+			<block id="tlcPost" name="Сведение о поставщике">		 
+				<rows>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация поставщик" valueType="text" />
+					</column>
+				  </row>	
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_ИНН" name="ИНН" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_КПП" name="КПП" valueType="text" />
+					</column>
+				  </row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_ОГРН" name="ОГРН" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_тип" name="Тип" valueType="text" />
+					</column>
+				  </row>		
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_СМП" name="СМП" valueType="boolean" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_нерезидент" name="Нерезидент" valueType="boolean" />
+					</column>
+				  </row>
+				<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_страна" name="Страна" valueType="text" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Огранизация_поставщик_индекс" name="Индекс" valueType="text" />
+					</column>
+				  </row>				  
+					<row>
+					<column>
+					  <field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_адрес" name="Адрес" valueType="text" />
+					</column>
+				  </row>				  
+				</rows>
+			</block>
+		</column>
+	</row>
+	<row>
+		  <column>
+			<block id="tlcExecution" name="Исполнение договора">		 
+				<rows>
+				<row>
+					<column>
+						<table key="|Document|Исполнение_договора" height="300">
+							<column fieldType="field" key="|NUM" valueType="text" name="№" width="50"/>
+							<column fieldType="field" key="|Дата_оплаты" valueType="date" name="Дата оплаты" width="100"/>
+							<column fieldType="field" key="|Сумма_оплаты" valueType="money" name="Сумма оплаты" width="100"/>
+							<column fieldType="field" key="|Валюта_табл" valueType="text" name="Валюта" width="150"/>
+							<column fieldType="field" key="|Курс_валюты_табл" valueType="money" name="Курс валюты" width="90"/>
+							<column fieldType="field" key="|Авансовый_платеж" valueType="boolean" name="Авансовый платеж" width="130"/>		
+						</table>
+					</column>
+				</row>
+				</rows>
+			</block>
+		</column>
+	</row>
+	<row>
+		  <column>
+			<block id="tlcCancel" name="Расторжение договора">		 
+				<rows>
+				   <row>
+					<column>
+					  <field fieldType="field" key="|Document|Расторжение_договора|Дата_расторжения_договора" name="Дата расторжения договора" valueType="date" />
+					</column>
+					<column>
+					  <field fieldType="field" key="|Document|Расторжение_договора|Начисление_неустоек" name="Начисление неустоек" valueType="boolean" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Расторжение_договора|Основание_расторжения" name="Основание расторжения" valueType="text" />
+					</column>
+				  </row>
+				  <row>
+					<column>
+					  <field fieldType="field" key="|Document|Расторжение_договора|Информация_о_неустойках" name="Информация о неустойках" valueType="text" />
+					</column>
+				  </row>
+				</rows>
+			</block>
+		</column>
+	</row>     
+    </rows>
+  </view>
+  <edit>
+    <rows>      
+    </rows>
+    <variables>
+      <variable variable-name="regNumber" variable-format="{number}">
+        
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+      </variable>
+    </variables>
+  </edit>
+    <scripts>
+		<script file="Scripts\Content\Document\RegCard\LDogovorSub.js" />
+	</scripts> 
+</root>

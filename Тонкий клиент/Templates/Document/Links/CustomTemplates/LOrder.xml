@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<table flow="Позиции">
+		<settings>
+			<setting key="canModify" value="true" />
+			<setting key="canCreateLinks" value="true" />
+			<setting key="terminalRoute"  value="Удаление позиции из заявки"/>
+		</settings>
+		<columns>
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" weight="15" isOptional="true" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_позиции" name="Наименование позиции" valueType="longtext" weight="35" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКПД2" name="ОКПД2" valueType="text" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество_всего" name="Количество" valueType="double" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Средняя_цена_за_единицу" name="Средняя цена за единицу" valueType="money" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Цена_запасных_частей" name="Цена запасных частей" valueType="money" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_выплат_всего" name="Сумма позиции" valueType="money" weight="25" />
+		</columns>
+	</table>
+</root>

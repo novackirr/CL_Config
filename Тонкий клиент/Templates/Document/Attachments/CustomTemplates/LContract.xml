@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <table>
+    <view>
+      <columns>
+	  <column fieldType="attribute" key="AttachmentDocument"  name="Вид документа"  valueType="text" weight="20" />
+	  <column fieldType="attribute" key="AttachmentNomerEIS"  name="Номер ЕИС"  valueType="text" weight="8" />
+	   <column fieldType="property" key="AttachmentTitle" name="Наименование файла" valueType="text" weight="30" />
+	  <column fieldType="attribute" key="AttachmentOpisanie"  name="Описание документа"  valueType="longtext" weight="17" />
+        <column fieldType="property" key="AttachmentLastModificator" name="Автор изменения" valueType="addressbook" weight="11" />
+        <column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="4" />
+        <column fieldType="property" key="AttachmentLastModify" name="Дата изменения" valueType="datetime" weight="10" />
+		<column fieldType="property" key="AttachmentSigner" name="Подписан" valueType="text" weight="15" />
+		<column fieldType="property" key="AttachmentSignatureDate" name="Дата подписания" valueType="text" weight="15" />
+      </columns>
+    </view>
+    <edit>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text"/>
+        <column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text" edit-required="true"/>
+	<column fieldType="attribute" key="AttachmentDocument" edit-name="attachmentVidDocument" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-autocomplete ="Вид документа контракта"/> 
+	<column fieldType="attribute" key="AttachmentOpisanie"  edit-name="attachmentOpisanieDoc" name="Описание документа"  valueType="longtext" isValue="true"/>
+      </columns>
+    </edit>
+  </table>
+</root>

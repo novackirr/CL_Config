@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<block id="111" name="Общие сведения">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организация разместившая сведения" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|url" name="Ссылка на документ в ЕИС-е" valueType="url" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="date"  />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="222" name="Сведения о расторжении договора">		 
+										<rows>		
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Номер_сведений_о_расторжении" name="Номер сведений о расторжении договора" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_расторжения_договора" name="Дата расторжения договора" valueType="datetime" />
+												</column>												
+											</row>	
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Основание_расторжения" name="Основание расторжения договора" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Документ_основание_расторжения" name="Документ-основание расторжения" valueType="longtext"  />
+												</column>
+											</row>	
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Документ_основание_расторжения_дата" name="Дата документа-основания расторжения договора" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Прекращение_обязательств_сторон_окончание_действия" name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" valueType="boolean" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Документ_основание_расторжения_номер" name="Номер документа-основания расторжения договора" valueType="longtext"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дополнительная_дата_документа_основания" name="Дополнительная дата документа-основания расторжения договора" valueType="date" />
+												</column>
+											</row>		
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Исполнение_завершено" name="Исполнение завершено" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Начисление_неустоек" name="Начисление неустоек" valueType="boolean" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Информация_о_неустойках" name="Информация о неустойках" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Не_публиковать_в_ЕИС" name="Не публиковать в ЕИС" valueType="boolean" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<field fieldType="field"  isLabel="true"  />
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="t2cInfo" name="Сведения о договоре">		 
+						<rows>
+							<row>
+								<column>
+									<block id="44" name="Сведения о договоре">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_договора" name="Номер договора" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_договора_в_ЕИС" name="Номер договора в ЕИС" valueType="text"  />
+												</column>
+											</row>	
+											
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения договора" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Цена_договора" name="Цена договора" valueType="money"/>
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация поставщик" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>	
+							
+						</rows>
+					</block>
+				</column>
+			</row>	
+			
+			<row>
+				<column>
+					<block id="t3cInfo" name="Изменения">		 
+						<rows>	
+							<row>
+								<column>
+									<block id="55" name="Сведения об изменениях">		 
+										<rows>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Причина_отмены_сведений" name="Причина отмены сведений" valueType="longtext" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>			
+						</rows>
+					</block>
+				</column>
+			</row>				
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Расторжение договора{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables> 
+	</view>
+	<edit>
+		<rows>			
+			<row>
+				<column>
+					<block id="t2cInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Основание расторжения договора" isLabel="true" edit-name="Osnovanie" title="Выберите основание расторжения договора"/>									
+								</column>
+								<column>
+									<field name="Документ-основание расторжения договора" isLabel="true" edit-name="DocOsnovanie" title="Выберите документ-основание расторжения договора"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Основание_расторжения_код" valueType="longtext" name="Основание расторжения" isValue="true"  edit-tool="Основания расторжения договора" dict-column-name="code" edit-name="Osnovanie"  edit-required="true" dict-edit-name="Osnovanie" show-dict-column="false" edit-readonly="true"/>
+									<field fieldType="field" key="|Document|Основание_расторжения" valueType="longtext" name="Основание расторжения наименование"  isValue="true"   edit-name="OsnovanieName"  dict-column-name="Наименование" edit-required="true"  dict-edit-name="Osnovanie"  display-field-part="true" edit-hidden="true" edit-readonly="true"/>	
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения_код" valueType="longtext" name="Документ-основание расторжения" isValue="true"  edit-tool="Документ основание расторжения договора" dict-column-name="code" edit-name="DocOsnovanie"  edit-required="true" dict-edit-name="DocOsnovanie" show-dict-column="false" edit-readonly="true"/>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения" valueType="longtext" name="Документ-основание расторжения наименование"  isValue="true"   edit-name="DocOsnovanieName"  dict-column-name="Наименование" edit-required="true"  dict-edit-name="DocOsnovanie"  display-field-part="true" edit-hidden="true" edit-readonly="true"/>	
+								</column>
+							</row>   
+							<row>
+							<column>
+					<block id="666" name="666">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Дата расторжения договора" isLabel="true" edit-name="DateRast" title="Выберите дату расторжения договора"/>									
+								</column>
+								<column>
+									<field name="Дата документа-основания расторжения договора" isLabel="true" edit-name="DateRastOsnovanie" title="Выберите дату документа-основания расторжения договора"/>
+								</column>
+							</row>
+							<!-- <row>
+								<column>
+									<field name="Дополнительная дата документа основания" isLabel="true" edit-name="DopDate" title="Выберите дополнительную дату документа основания"/>									
+								</column>
+								<column>					
+								</column>
+								</row> -->
+							</rows>
+						</block>
+					</column>
+								<column>
+									<field name="Номер документа-основания расторжения договора" isLabel="true" edit-name="NumberRastOsnovanie" title="Введите номер документа-основания расторжения договора"/>									
+								</column>
+							</row>
+							<row>
+							<column>
+					<block id="666" name="666">		 
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_расторжения_договора" valueType="datetime" name="Дата расторжения договора" isValue="true" edit-name="DateRast"  edit-required="true" edit-default-value="{now}"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения_дата" valueType="date" name="Дата документа-основания расторжения договора" isValue="true" edit-name="DateRastOsnovanie"  edit-required="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Дополнительная дата документа основания" isLabel="true" edit-name="DopDate" title="Выберите дополнительную дату документа основания"/>
+									<field fieldType="field" key="|Document|Дополнительная_дата_документа_основания" valueType="datetime" name="Дата расторжения договора" isValue="true" edit-name="DopDate"/>
+								</column>
+								<column>
+								</column>
+							</row>
+							</rows>
+						</block>
+					</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основание_расторжения_номер" valueType="longtext" name="Номер документа-основания расторжения договора" isValue="true" edit-name="NumberRastOsnovanie" />
+								</column>
+							</row>     
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="Prekr"/>									
+								</column>
+								<column>
+									<field name="" isLabel="true" edit-name="neust"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Прекращение_обязательств_сторон_окончание_действия" valueType="boolean" name="Прекращение обязательств сторон по договору в связи с окончанием срока действия договора" edit-name="Prekr" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Начисление_неустоек" valueType="boolean" name="Начисление неустоек" edit-name="neust"/>
+								</column>
+							</row>   
+							<row>
+								<column>
+									<field name="Информация о неустойках" isLabel="true" edit-name="neustName" title="Введите информацию о неустойках"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Информация_о_неустойках" valueType="longtext" name="Информация о неустойках" edit-name="neustName" isValue="true"/>
+								</column>
+							</row>  
+						</rows>
+					</block>
+				</column>
+			</row> 
+				<row>
+				<column>
+					<block id="t3cInfo" name="Изменения">		 
+						<rows>		
+							<row>
+								<column>
+									<field name="Обоснование изменений" isLabel="true" edit-name="Obosn" title="Введите обоснование изменений сведений об исполнении договора"/>									
+								</column>
+								<column>
+									<field name="Причина отмены сведений" isLabel="true" edit-name="Prich" title="Введите причину отмены сведений об исполнении договора"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование изменений" valueType="longtext" isValue="true"   edit-name="Obosn"  />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Причина_отмены_сведений" name="Причина отмены сведений" valueType="longtext" isValue="true"   edit-name="Prich"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>			
+							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}" edit-hidden="true" /> 
+									<field fieldType="field" key="|Document|Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" isValue="true"   edit-name="registerNomberEIS"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="files-header" edit-hidden="true" edit-value="Документы договора" />
+									<field fieldType="field" key="|FilesIntegration|header" valueType="text" isValue="true" edit-name="FilesIntegration-header" edit-hidden="true" edit-value="Файлы интеграции" />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Дополнительное соглашение"/>
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />																	
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД_в_ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_v_EIS" />
+									<field fieldType="field" key="|Document|ИД_в_ЕИС_изменение" name="ИД_в_ЕИС_изменение" valueType="longtext" isValue="true" edit-hidden="true" edit-name="ID_IES_Change"   />
+									<field fieldType="field" key="|Document|ИД_лота" name="ИД_лота" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_lot" />
+									<field fieldType="field" key="|Document|ИД_извещения" name="ИД_извещения" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_Notice" />
+									<field fieldType="field" key="|Document|ИД_договора" name="ИД_договора" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_Dogovor"   /> 
+									<field fieldType="field" key="|Document|Номер_лота" name="Номер_лота" valueType="text" isValue="true" edit-hidden="true" edit-name="Num_Lot"   />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="Status"  edit-hidden="true"  edit-default-value ="Черновик" /> 
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency" edit-default-value ="Российский рубль"/>
+									<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ_закупки_код" valueType="text" isValue="true" edit-hidden="true" edit-name="Sposob_code"   />
+									<field fieldType="field" key="|Document|Способ_закупки" name="Способ_закупки" valueType="text" isValue="true" edit-hidden="true" edit-name="Sposob"   />
+									<field fieldType="field" key="|Document|Способ_закупки_положение" name="Способ закупки положение" valueType="text" isValue="true" edit-name="SposobPosition" edit-hidden="true"  />	
+									<field fieldType="field" key="|Document|Номер_в_ЕИС" name="Номер_в_ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="Num_v_EIS" />
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true"  edit-name="naimETP" edit-hidden="true"/>						
+									<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"   isValue="true" edit-name="ID_ETP" edit-hidden="true" />		
+									<field fieldType="field" key="|Document|Адрес_ЭТП" name="Адрес ЭТП" valueType="text"   isValue="true" edit-name="naimETPName" edit-hidden="true"/>											
+									<field fieldType="field" key="|Document|ИД_на_ЭТП" name="ИД_на_ЭТП" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_on_ETP" />		
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="integer" isValue="true" edit-name="registerOrgZa" edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="Организация-заказчик ИНН" valueType="text" isValue="true" edit-name="registerOrgZaINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="Организация-заказчик КПП" valueType="text" isValue="true" edit-name="registerOrgZaKPP" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация-заказчик ОГРН" valueType="text" isValue="true" edit-name="registerOrgZaOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="ИНН" valueType="integer" isValue="true" edit-name="OrgZakupki" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="OrgZakupkiINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="OrgZakupkiKPP" edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text"   isValue="true" edit-name="OrgZakupkiOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text" isValue="true" edit-name="OrgZakupkiEISCode"  edit-hidden="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=EISCode223}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="longtext" isValue="true" edit-name="registerOrgZaName"  edit-required="true" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Наименование_организатора_закупки" valueType="longtext" isValue="true" edit-name="OrgZakupkiName"  edit-required="true" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация_поставщик_наименование" valueType="longtext" isValue="true" edit-name="postName" edit-required="true" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая_дата_размещения" valueType="datetime" isValue="true" edit-name="factRazmDate" /> 
+									<field fieldType="field" key="|Document|Исполнение_завершено" name="Исполнение_завершено" valueType="boolean" isValue="true" edit-name="IspFinish" edit-default-value="1"/> 
+									<field fieldType="field" key="|Document|Номер_договора_в_ЕИС" name="Номер_договора_в_ЕИС" valueType="text" isValue="true" edit-name="NumDogEIS"/> 
+									<field fieldType="field" key="|Document|Номер_договора" name="Номер_договора" valueType="text" isValue="true" edit-name="NumDog"/> 
+									<field fieldType="field" key="|Document|Предмет_договора" name="Предмет_договора" valueType="longtext" isValue="true" edit-name="predmetDog"/>
+									<field fieldType="field" key="|Document|Дата_заключения" name="Дата_заключения" valueType="date" isValue="true" edit-name="dateZakDog"/>
+									<field fieldType="field" key="|Document|Цена_договора" name="Цена договора" valueType="money" isValue="true" edit-name="priceDog"/>
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  edit-default-value ="Расторжение договора"/>
+									<field fieldType="field" key="|Document|Исполнитель|Исполнитель" name="Исполнитель" valueType="addressbook" isValue="true" edit-name="Iniciator" edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель" name="Ответственный исполнитель отдела закупок" valueType="addressbook" isValue="true" edit-hidden="true" edit-name="IspName1" />
+									<field fieldType="field" key="|Document|ИД_договора_на_ЭТП" name="ИД_договора_на_ЭТП" valueType="text" isValue="true" edit-name="IDDogETP" edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Номер_сведений_о_расторжении" valueType="text" name="Номер сведений о завершении договора" isValue="true" edit-name="NumberSved" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|url" name="url" valueType="longtext" isValue="true" edit-name="EISurl" edit-hidden="true" />
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" />
+									<field fieldType="field" key="|Document|Не_публиковать_в_ЕИС" name="Не публиковать в ЕИС" valueType="boolean"  edit-name="NotPublikIIS" edit-readonly="true" title="Автоматически проставляется при сохранении, если Позиция плана закупок не публиковалась в ЕИС-е"/>
+								</column>		
+							</row>	
+							
+						</rows>
+					</block>
+				</column>
+			</row>   
+			
+		</rows>
+		<variables>
+			<!-- <variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format="{value}" />		
+			</variable> -->
+			<variable variable-name="caption" variable-format="Расторжение договора{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LDopSogl223.js" />
+	</scripts> 
+</root>

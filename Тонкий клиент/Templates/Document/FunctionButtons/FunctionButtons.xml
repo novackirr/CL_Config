@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<flows>
+ <flow flowName="Лоты">
+    <actions>
+      <action buttonName="Показать извещение" documentKeySelector="|Document|ИД_извещения" showInNewTab="true"/>
+	  <action buttonName="Показать заявку" documentKeySelector="|Document|ИД_позиции_ПГ" showInNewTab="true"/>
+    </actions>
+  </flow>
+   <flow flowName="Заявки на закупку">
+    <actions>
+      <action buttonName="Показать извещение" documentKeySelector="|Document|ИД_извещения" showInNewTab="true"/>
+    </actions>
+  </flow>
+  <flow flowName="Извещения о закупочной процедуре">
+    <actions>
+      <action buttonName="Показать заявку" documentKeySelector="|Document|ИД_позиции_ПГ" showInNewTab="true"/>
+    </actions>
+  </flow>
+ <!-- <flow flowName="Лоты">
+    <actions>
+      <action buttonName="Показать заявку" documentKeySelector="|Document|ИД_позиции_ПГ" showInNewTab="true"/>
+    </actions>
+  </flow>
+
+  <flow flowName="Заявки участников">
+    <actions>
+      <action buttonName="Показать лот" documentKeySelector="|Document|ИД_лота" showInNewTab="true"/>
+    </actions>
+  </flow>
+
+  <flow flowName="Договоры">
+    <actions>
+      <action buttonName="Показать лот" documentKeySelector="|Document|ИД_лота" showInNewTab="true"/>
+    </actions>
+  </flow>
+
+  <flow flowName="Дополнительные соглашения">
+    <actions>
+      <action buttonName="Показать лот" documentKeySelector="|Document|ИД_лота" showInNewTab="true"/>
+      <action buttonName="Показать договор" documentKeySelector="|Document|ИД_договора" showInNewTab="true"/>
+    </actions>
+  </flow>-->
+</flows>

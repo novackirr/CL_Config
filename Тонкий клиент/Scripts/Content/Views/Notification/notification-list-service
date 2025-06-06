@@ -1,0 +1,54 @@
+//Сервис страницы уведомлений. Обновляет счетчики уведомлений в правом верхнем углу и в левом меню.
+var NotificationListService = (function ($) {
+    "use strict";
+
+    function NotificationListService() {
+    }
+
+    //Обновляет счетчики уведомлений в правом верхнем углу и в левом меню.
+    NotificationListService.prototype.UpdateGridAndCounters = function () {
+        var self = this || new NotificationListService();
+        var notificationService = new NotificationService();
+
+        notificationService.GetCount(false, false).then(function (count) {
+            notificationService.ShowEnvelopeCount(count);
+            self.UpdateLeftMenuBadge("Новые", count);
+        });
+
+        notificationService.GetCount(true, false).then(function (count) {
+            self.UpdateLeftMenuBadge("Прочитанные", count);
+        });
+
+        self.UpdateNotificationGrid();
+    }
+
+    NotificationListService.prototype.UpdateNotificationGrid = function () {
+        //Получаем Id текущего грида с уведомлениями
+        var gridId = $(".search-result-table").last().attr("data-grid-id");
+        //Обновляем данные в текущем гриде с уведомлениями
+        dxGridReloadData(gridId);
+    }
+
+    //Обновляет счетчик уведомлений в левом меню.
+    NotificationListService.prototype.UpdateLeftMenuBadge = function (badgeTitle, count) {
+        var countText = count ? count : "";
+
+        //Получаем пункт левого меню
+        var a = $(".search-menu-tabs a:contains('" + badgeTitle + "')");
+        if (a.length) {
+
+            //Получаем бэйдж пункта меню
+            var badge = a.children(".badge");
+            if (badge.length) {
+                //Если счетчик есть, обновляем текст
+                badge.text(countText);
+            } else {
+                //Если счетчика нет, то прицепляем его
+                a.append("<span></span><span class='badge'>" + countText + "</span>");
+            }
+        }
+    }
+
+    return NotificationListService;
+})($);
+

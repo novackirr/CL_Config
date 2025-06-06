@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="PlanPablik223" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" allow-create-excel="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<!-- Активные поля -->
+		<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="10" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год" name="Год" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Год" weight="6" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" valueType="longtext" weight="20" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" name="ИНН организации заказчика" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" valueType="integer" weight="10" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" name="Номер в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" weight="12" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" weight="10" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Инновационная_продукция" name="Инновационная продукция" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Инновационная_продукция" weight="10" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_утверждения" name="Дата утверждения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_утверждения" weight="13" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="5" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Необходимо_согласование" name="Необходимо согласование" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Необходимо_согласование" weight="10" isOptional="true"/>
+		<!-- Скрытые поля -->
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год_окончания" name="Год окончания" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Год_окончания" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_начала_действия_плана" name="Дата начала действия плана" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_начала_действия_плана" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_окончания_действия_плана" name="Дата окончания действия плана" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_окончания_действия_плана" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" name="Организатор закупки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок" name="Объем закупок" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок_СМП" name="Объем закупок СМП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок_СМП" weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок_исключенные" name="Объем закупок, исключенных при расчете" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок_исключенные" weight="15" defaultHide="true" isOptional="true"/>
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

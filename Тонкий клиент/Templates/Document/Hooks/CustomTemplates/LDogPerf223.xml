@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify>
+		<SetField dst="|Document|Имя_потока" value="Исполнение договора 223ФЗ" />		
+		<CopyField src="|Document|ИД_лота"  />
+		<CopyField src="%key%" dst="|Document|ИД_договора" />
+		<CopyField src="|Document|Номер_договора"  />
+		<CopyField src="|Document|Год_закупки" />
+		<CopyField src="|Document|Цена_с_НДС" dst="|Document|Цена_договора" />
+		<CopyField src="|Document|Дата_заключения" dst="|Document|Дата_заключения_договора" />
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_наименование" />
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_тип_СМП"/>
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_СМП" />
+		<CopyField src="|Document|Предмет_договора" />
+		<CopyField src="|Document|Номер_договора_в_ЕИС"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН"  />
+		<CopyField src="|Document|Категория_закупки_код"  />
+		<CopyField src="|Document|Субподрядчики_из_СМП"  />
+		<CopyField src="|Document|Участник_закупки_СМП"  />
+		<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель" />
+		<CopyField src="|Document|Исполнитель|Исполнитель" />
+		<CopyField src="|Document|ИД_ЭТП" dst="|Document|ИД_ЭТП" />	
+        <CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_договора_на_ЭТП" />	
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Аренда_недвижимости" /> 
+		<CopyField src="|Document|Закупка_коммунальных_услуг" />
+		<CopyField src="|Document|Не_публиковать_в_ЕИС" />
+		<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора" />
+		<CopyField src="|Document|Управление|Управление" />
+		<CopyField src="|Document|Руководитель_управления|Руководитель_управления" />
+		<CopyField src="|Document|Инициатор|Инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+	</FieldsModify>
+	
+	<FieldsModify source="Исполнение договора 223ФЗ">
+		<SetField dst="|Document|Имя_потока" value="Исполнение договора 223ФЗ" />
+		<CopyField src="%key%" dst="|Document|ParentRK" />
+		<CopyField src="|Document|ИД_лота"  />
+		<CopyField src="|Document|ИД_договора" />
+		<CopyField src="|Document|Номер_договора"  />
+		<CopyField src="|Document|Год_закупки" />
+		<CopyField src="|Document|Цена_договора" />
+		<CopyField src="|Document|Дата_заключения_договора" />
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_наименование" />
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_тип_СМП"/>
+		<CopyField src="|Document|Организация_поставщик|Организация_поставщик_СМП" />
+		<CopyField src="|Document|Предмет_договора" />
+		<CopyField src="|Document|Номер_договора_в_ЕИС"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН"  />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН"  />
+		<CopyField src="|Document|Категория_закупки_код"  />
+		<CopyField src="|Document|Субподрядчики_из_СМП"  />
+		<CopyField src="|Document|Участник_закупки_СМП"  />
+		<CopyField src="|Document|Организация_поставщик_СМП" />
+		<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель" />
+		<CopyField src="|Document|Исполнитель|Исполнитель" />
+		<CopyField src="|Document|ИД_в_ЕИС_первой_версии" />
+		<CopyField src="|Document|Номер_сведений" />
+		<CopyField src="|Document|Начисление_неустоеек" />
+		<CopyField src="|Document|Прекращение_обязательств" />
+		<CopyField src="|Document|Исполнение_завершено" />
+		<CopyField src="|Document|Информация_о_неустойках" />
+		<CopyField src="|Document|Итого" />
+		<CopyTable src="|Document|Позиции_сведений_об_исполнении" />
+		<CopyField src="|Document|ИД_ЭТП" />	
+        <CopyField src="|Document|ИД_договора_на_ЭТП"/>	
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Аренда_недвижимости" /> 
+		<CopyField src="|Document|Закупка_коммунальных_услуг" />
+		<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора" />
+		<CopyField src="|Document|Управление|Управление" />
+		<CopyField src="|Document|Руководитель_управления|Руководитель_управления" />
+		<CopyField src="|Document|Инициатор|Инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Не_публиковать_в_ЕИС" />
+	</FieldsModify>
+	
+	<LinksModify>
+		<LinkCurrentDoc />
+		<LinkAllLinksWhereFlow name="Исполнение договора 223ФЗ" />
+		<LinkAllLinksWhereFlow name="Договоры 223ФЗ" />
+	</LinksModify>
+	<OnDocumentCreated transaction="single">
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Договоры 223ФЗ"/>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and doc_RegCard/rc_Index/text_Статус = 'Неактуальный']" tag="ДоговорыНеАкт"/>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Договоры 223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Договоры 223ФЗ}/doc_Id])]" tag="Исполнение договора 223ФЗ" />	
+				<Select tag="Исполнение_договора_223ФЗ_текущий" joinTags="Исполнение договора 223ФЗ,{current}" />
+				<Select searchString="document[doc_Id = '{currentDocField=|Document|ParentRK}']" tag="Прошлая версия" />
+			</Select>
+			<Actions>
+				<!-- <TableRowsCountCheck sourceTag="{current}" tableName="|Document|Позиции_сведений_об_исполнении|1|Информация_об_оплате" operation="less" value="1" message="Необходимо внести информацию об оплате" />
+				<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Позиции_сведений_об_исполнении|1|Документы_об_исполнении_договора" operation="less" value="1"  message="Необходимо внести информацию о документах исполнения" /> -->
+				<LinksRemove sourceFlow="{current}" targetFlow="ДоговорыНеАкт" />
+				<CopyField  sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|ИД_лота" targetField="|Document|ИД_лота" />
+				<CopyField  sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Номер_договора" targetField="|Document|Номер_договора" />
+				<CopyField  sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Дата_заключения" targetField="|Document|Дата_заключения_договора" />
+				<CopyField  sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Номер_договора_в_ЕИС" targetField="|Document|Номер_договора_в_ЕИС" />
+				<CopyField  sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Предмет_договора" targetField="|Document|Предмет_договора" />
+				<CopyField  sourceFlow="{current}" targetFlow="Договоры 223ФЗ" sourceField="|Document|Исполнение_завершено" targetField="|Document|Договор_исполнен" />
+				<SetField  targetFlow="Прошлая версия" targetField="|Document|Актуальность" value="0"/>
+			</Actions>
+		</Aggregation>
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Договоры_223ФЗ"/>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Договоры_223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Договоры_223ФЗ}/doc_Id])]" tag="Исполнение договора 223ФЗ" />				
+				<Select tag="Исполнение_договора_223ФЗ_текущий" joinTags="Исполнение договора 223ФЗ,{current}" />
+			</Select>												 
+			<Actions>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Исполнение_завершено" value="1"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<SetField  targetFlow="Договоры_223ФЗ" targetField="|Document|Дата_завершения_договора" value="{today}"/> 							
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Статус" value="Черновик"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						<CopyField  sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|ИД_в_ЕИС_первой_версии" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Статус" value="Внесение изменений"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+					</Actions>
+				</ConditionalAction> 
+			</Actions>
+		</ConditionalActions>
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ' and doc_RegCard/rc_Index/text_ИД_в_ЕИС_первой_версии != '{currentDocField=|Document|ИД_в_ЕИС_первой_версии}' and xn-in(doc_Id, {currentDocLinkList})]" tag="Исполнение договора 223ФЗ не нужные"/>
+			</Select>
+			<Actions>
+				<LinksRemove sourceFlow="{current}" targetFlow="Исполнение договора 223ФЗ не нужные" />
+			</Actions>
+		</Aggregation>
+		<NamedConstants>
+			<Constant>
+				<Setting key="IncrementedElementPath" value="|Document|Регистрационный_номер"/>
+				<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+			</Constant>
+			<Constant>
+				<Conditions>
+					<Condition path="|Document|Номер_редакции" operation="eq" value="" />							
+				</Conditions>
+				<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+				<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|ИД_в_ЕИС_первой_версии})"/>
+			</Constant>	
+		</NamedConstants>
+	</OnDocumentCreated>
+	<OnRegcardEdited>
+	<Aggregation>
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Договоры_223ФЗ"/>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Договоры_223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Договоры_223ФЗ}/doc_Id])]" tag="Исполнение договора 223ФЗ" />	
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and doc_RegCard/rc_Index/text_Статус = 'Неактуальный']" tag="ДоговорыНеАкт"/>
+			<Select tag="Исполнение_договора_223ФЗ_текущий" joinTags="Исполнение договора 223ФЗ,{current}" />
+		</Select>
+		<Actions>
+			<!-- <TableRowsCountCheck sourceTag="{current}" tableName="|Document|Позиции_сведений_об_исполнении|1|Информация_об_оплате" operation="less" value="1" message="Необходимо внести информацию об оплате" />
+			<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Позиции_сведений_об_исполнении|1|Документы_об_исполнении_договора" operation="less" value="1"  message="Необходимо внести информацию о документах исполнения" /> -->
+			<LinksRemove sourceFlow="{current}" targetFlow="ДоговорыНеАкт" />
+			<CopyField sourceFlow="{current}" targetFlow="Договоры_223ФЗ" sourceField="|Document|Исполнение_завершено" targetField="|Document|Договор_исполнен" />
+		</Actions>
+	</Aggregation>
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Договоры_223ФЗ"/>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Исполнение договора 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Договоры_223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Договоры_223ФЗ}/doc_Id])]" tag="Исполнение договора 223ФЗ" />				
+				<Select tag="Исполнение_договора_223ФЗ_текущий" joinTags="Исполнение договора 223ФЗ,{current}" />
+			</Select>													 
+			<Actions>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Исполнение_завершено" value="1"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<SetField  targetFlow="Договоры_223ФЗ" targetField="|Document|Дата_завершения_договора" value="{today}"/> 							
+					</Actions>
+				</ConditionalAction>  
+			</Actions>
+		</ConditionalActions>		
+	</OnRegcardEdited>	
+</Hooks>

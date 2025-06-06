@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="property" key="documentObserver" name="Контролирующий" valueType="addressbook" />
+        </column>
+        <column>
+          <field fieldType="property" key="documentDueTime" name="Срок исполнения" valueType="datetime" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentPerformer" name="Ответственный" valueType="addressbook" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_ControlCard/cc_FinishTime" name="Фактическая дата исполнения" valueType="datetime" />
+        </column>
+      </row>
+    </rows>
+  </view>
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="property" key="documentPerformer" name="Ответственный" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentPerformer" name="Ответственный" valueType="addressbook" isValue="true" edit-name="performer" edit-addressbook-groups="person, role, position"/>
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentObserver" name="Контролирующий" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentObserver" name="Контролирующий" valueType="addressbook" isValue="true" edit-name="observer"  edit-addressbook-groups="observer, currentuser, role" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentDueTime" name="Срок исполнения" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="property" key="documentDueTime" name="Срок исполнения" valueType="date" isValue="true" edit-name="dueTime" />
+        </column>
+      </row>
+    </rows>
+  </edit>
+</root>

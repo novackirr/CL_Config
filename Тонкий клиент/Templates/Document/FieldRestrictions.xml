@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--
+  <field name="PreimKod">
+    <restrictions>
+      <restriction>
+        <restrictionEnabledValues>
+          <value>8445051</value>
+        </restrictionEnabledValues>
+        <conditions>
+          <condition>
+            <whenAllFieldsInList>
+              <fields>
+                <field type="Field" path="|Document|ОКПД2"/>
+              </fields>
+              <list>
+                <value>15.11.10.131</value>
+                <csv file="C:\Users\kondratyev\Desktop\values.csv"/>
+              </list>
+            </whenAllFieldsInList>
+            <restrictionText value="В соответствии с Приказом Министерства экономического развития РФ от 25.03.2014 № 155 при установлении преимущества «Участникам, заявки или окончательные предложения которых содержат предложения о поставке товаров в соответствии с приказом Минэкономразвития России № 155 от 25.03.2014» в объекте закупки должны содержаться товары, работы, услуги с кодами ОКПД2, соответствующими перечню из п.1 данного Приказа"/>
+          </condition>
+        </conditions>
+      </restriction>
+    </restrictions>
+  </field>-->
+</root>

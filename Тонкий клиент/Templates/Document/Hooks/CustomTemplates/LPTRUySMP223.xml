@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Перечни ТРУ 223ФЗ" />
+		</LinksModify>
+		<FieldsModify source="Перечни ТРУ 223ФЗ">
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyTable src="|Document|Перечень_ТРУ_у_СМП" />
+			<CopyField src="|Document|ИД_в_ЕИС" dst="|Document|parentId"/>
+			<CopyField src="%key%" dst="|Document|ParentRK"/>
+			<SetField dst="|Document|Имя_потока" value="Перечни ТРУ 223ФЗ" />
+			<SetField dst="|Document|Актуальность" value="1" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+		</FieldsModify>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Перечни ТРУ 223ФЗ" />
+			<SetField dst="|Document|Актуальность" value="1" />
+		</FieldsModify>
+		
+		<OnDocumentCreated transaction="single"> 
+			<NamedConstants>			
+				<Constant>
+					<Conditions>
+						<Condition path="|Document|Номер_редакции" operation="eq" value="" />							
+					</Conditions>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>		
+			</NamedConstants> 
+			<ConditionalActions>
+				 <Select>
+				    <Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Перечни ТРУ 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Номер_редакции &lt;'{currentDocField=|Document|Номер_редакции}']" tag="Перечни_ТРУ_у_СМП_223ФЗ_old" /> 
+				</Select> 
+				<Actions>
+					<ConditionalAction> <!-- новая ВЕРСИЯ документа -->
+						<Conditions>
+							<And>
+								<WhenFieldsNotEquals  tag="{current}" path="|Document|parentId" value=""/>
+							</And>
+						</Conditions>
+						<Actions>
+							<SetField targetFlow="{current}"  targetField="|Document|Статус" value="Внесение изменений"/>
+							<SetField targetFlow="Перечни_ТРУ_у_СМП_223ФЗ_old" targetField="|Document|Актуальность" value="0" /> 
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction> <!-- первая редакция документа -->
+						<Conditions>
+							<And>
+								<WhenFieldsEquals  tag="{current}" path="|Document|parentId" value=""/>
+							</And>
+						</Conditions>
+						<Actions>
+							<SetField targetFlow="{current}"  targetField="|Document|Статус" value="Черновик"/>
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+
+
+				</Actions>
+			</ConditionalActions>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+				</Select>
+				<Actions>
+					<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Перечень_ТРУ_у_СМП" operation="less" value="1" message="В таблице ОКПД2 число строк {operation} {value}" />
+				</Actions>
+			</Aggregation>
+
+		</OnDocumentCreated>
+		<OnRegcardEdited transaction="single"> 
+
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+				</Select>
+				<Actions>
+					<TableRowsCountCheck sourceTag="{current}" tableName="|Document|Перечень_ТРУ_у_СМП" operation="less" value="1" message="В таблице ОКПД2 число строк {operation} {value}" />
+				</Actions>
+			</Aggregation>
+
+		</OnRegcardEdited>
+</Hooks>

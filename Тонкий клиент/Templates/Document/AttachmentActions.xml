@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+	<Action name="Удалить">
+        <Visibility>
+            <Rules>
+				<Or>
+					<Or>
+						<WhenUserInWorkGroup name="Суперпользователи" />
+						<WhenUserInWorkGroup name="Специалист по закупкам"/>
+					</Or>
+					<Or>
+						<WhenDocumentFlow name="Договоры 223ФЗ"/>
+						<WhenDocumentFlow name="Запросы RFI"/>
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						<WhenDocumentFlow name="Исполнение договора 223ФЗ"/>
+						<WhenDocumentFlow name="Отчетность о договорах 223ФЗ"/>
+						<WhenDocumentFlow name="Переторжки"/>
+						<WhenDocumentFlow name="Планы закупок 223ФЗ"/>
+						<WhenDocumentFlow name="Положение о закупках 223ФЗ"/>
+						<WhenDocumentFlow name="Предквалификационный отбор"/>
+						<WhenDocumentFlow name="Протоколы 223ФЗ"/>
+						<WhenDocumentFlow name="Разъяснения положений документации 223ФЗ"/>
+						<WhenDocumentFlow name="Расторжения договора 223ФЗ"/>
+					</Or>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+						<Or>
+							<And> 
+								<Or>
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</Or>
+								<Or>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка документации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Согласована"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Отправлено на ЭТП"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка к публикации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На согласовании в УЗД"/>
+								</Or>
+							</And> 
+						</Or>
+					</And>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Позиции плана закупок 223ФЗ"/>
+						</And>
+						<And>
+							<Or>
+								<WhenUserInWorkGroup name="Инициаторы" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+							</Or>
+						</And>
+					</And>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Редактировать">
+        <Visibility>
+            <Rules>
+				<Or>
+					<Or>
+						<WhenUserInWorkGroup name="Суперпользователи" />
+						<WhenUserInWorkGroup name="Специалист по закупкам"/>
+					</Or>
+					<Or>
+						<WhenDocumentFlow name="Договоры 223ФЗ"/>
+						<WhenDocumentFlow name="Запросы RFI"/>
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						<WhenDocumentFlow name="Исполнение договора 223ФЗ"/>
+						<WhenDocumentFlow name="Отчетность о договорах 223ФЗ"/>
+						<WhenDocumentFlow name="Переторжки"/>
+						<WhenDocumentFlow name="Планы закупок 223ФЗ"/>
+						<WhenDocumentFlow name="Положение о закупках 223ФЗ"/>
+						<WhenDocumentFlow name="Предквалификационный отбор"/>
+						<WhenDocumentFlow name="Протоколы 223ФЗ"/>
+						<WhenDocumentFlow name="Разъяснения положений документации 223ФЗ"/>
+						<WhenDocumentFlow name="Расторжения договора 223ФЗ"/>
+					</Or>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+						<Or>
+							<And> 
+								<Or>
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</Or>
+								<Or>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка документации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Согласована"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Отправлено на ЭТП"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка к публикации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На согласовании в УЗД"/>
+								</Or>
+							</And> 
+						</Or>
+					</And>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Позиции плана закупок 223ФЗ"/>
+						</And>
+						<And>
+							<Or>
+								<WhenUserInWorkGroup name="Инициаторы" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+							</Or>
+						</And>
+					</And>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	<Action name="Создать версию">
+        <Visibility>
+            <Rules>
+				<Or>
+					<Or>
+						<WhenUserInWorkGroup name="Суперпользователи" />
+						<WhenUserInWorkGroup name="Специалист по закупкам"/>
+					</Or>
+					<Or>
+						<WhenDocumentFlow name="Договоры 223ФЗ"/>
+						<WhenDocumentFlow name="Запросы RFI"/>
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						<WhenDocumentFlow name="Исполнение договора 223ФЗ"/>
+						<WhenDocumentFlow name="Отчетность о договорах 223ФЗ"/>
+						<WhenDocumentFlow name="Переторжки"/>
+						<WhenDocumentFlow name="Планы закупок 223ФЗ"/>
+						<WhenDocumentFlow name="Положение о закупках 223ФЗ"/>
+						<WhenDocumentFlow name="Предквалификационный отбор"/>
+						<WhenDocumentFlow name="Протоколы 223ФЗ"/>
+						<WhenDocumentFlow name="Разъяснения положений документации 223ФЗ"/>
+						<WhenDocumentFlow name="Расторжения договора 223ФЗ"/>
+					</Or>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+						<Or>
+							<And> 
+								<Or>
+									<WhenUserInWorkGroup name="Специалист по закупкам"/>
+								</Or>
+								<Or>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Внесение изменений"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка документации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Согласована"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Отправлено на ЭТП"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="Подготовка к публикации"/>
+									<WhenDocumentFieldEquals path="|Document|Статус" value="На согласовании в УЗД"/>
+								</Or>
+							</And> 
+						</Or>
+					</And>
+					<And>
+						<And>  
+							<WhenDocumentFlow name="Позиции плана закупок 223ФЗ"/>
+						</And>
+						<And>
+							<Or>
+								<WhenUserInWorkGroup name="Инициаторы" />
+								<WhenUserInWorkGroup name="Специалист по закупкам"/>
+							</Or>
+							<Or>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldEquals path="|Document|Статус" value="На доработке"/>
+							</Or>
+						</And>
+					</And>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+</Actions>

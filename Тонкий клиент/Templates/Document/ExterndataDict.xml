@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+	<Profile key = "ЕЭТП" factory = "EetpRequestProviderFactory" >
+		<Params>
+			<!-- |Document|ИД_на_ЭТП -->
+			<Param key="eetpID" editName="naimETPID" />
+			<!-- |Document|Организатор_закупки|Организатор_закупки_ЕИС -->
+			<Param key="orgID" editName="OrgZakupkiEIS" />
+		</Params>
+		<Settings key="Перечень ПКО" action = "EetpRequestQualifiedList">
+			<Params/>
+			<DictColumns root = "result.list" total = "result.total">
+				<Column sourceName="id" visibleName="code" isCode="true" /> 
+				<Column sourceName="procedure_registry_number" visibleName="Номер на ЭТП" />
+				<Column sourceName="procedure_id" visibleName="ИД в квалификационном списке"   />
+				<Column sourceName="procedure_title" visibleName="Наименование" /> 																
+			</DictColumns> 
+		</Settings>
+	</Profile>
+</Data>
+
+
+
+
+
+
+
+
+
+

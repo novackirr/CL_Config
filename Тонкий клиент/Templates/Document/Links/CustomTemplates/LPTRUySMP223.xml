@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <table flow="Перечни ТРУ 223ФЗ"  name="Перечни ТРУ у СМП" allow-grouping="true">
+	<settings>
+		<setting key="canModify" value="false" />		
+	</settings>	    
+	<columns>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер версии" valueType="integer" weight="100" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_создания" name="Дата создания версии" valueType="datetime" weight="100" />
+	</columns>
+   </table>
+ 
+ 	
+ 
+</root>

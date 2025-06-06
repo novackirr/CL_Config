@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="22" name="Общие сведения">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />	
+												</column>										
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" />
+												</column>
+											</row>
+											<row>		
+												<column>
+													<field fieldType="field" key="|Document|Реестровый_номер" name="Реестровый номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата размещения" valueType="date" />
+												</column>
+											</row>
+											<row>		
+												<column>
+													<field fieldType="field" key="|Document|Дата_утверждения" name="Дата утверждения" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_вступления_в_силу" name="Дата вступления в силу" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Название_положения" name="Название положения" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_органа_утвердившего_положение" 
+													name="Наименование органа, утвердившего положение" valueType="text" />
+												</column>
+											</row>
+											<row>		
+												
+												<column>
+													<field fieldType="field" key="|Document|Присоединение_к_положению_другой_организации" name="Используется положение другой организации" valueType="boolean"/>
+												</column>
+											</row>
+											<row>		
+												<column>
+													<field fieldType="field" key="|Document|Дополнительные_сведения" 
+													name="Дополнительные сведения" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" />
+												</column>
+											</row>
+											<row>	
+											<column>
+													<field fieldType="field" key="|Document|Порядок_заключения_и_исполнения_договоров" 
+													name="Порядок заключения и исполнения договоров" valueType="longtext" />
+											</column>
+											<column>
+											</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							</rows>
+						</block>
+					</column>
+				</row>
+				<row>
+					<column>
+						<block id="112" name="Способы закупки">
+							<rows>
+							<row>
+								<column>
+									<block id="20" name="Сведения о способах закупки">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Способы_закупок" height="300">							
+														<column fieldType="field" key="|Код_способа_закупки" valueType="integer" 
+														name="Код способа закупки" width="150" headerNoEllipsis="true"/>
+
+														<column fieldType="field" key="|Наименование_способа_закупки" 
+														valueType="longtext" name="Наименование способа закупки" width="380" 
+														headerNoEllipsis="true"/>
+
+														<column fieldType="field" key="|Закупка_в_электронной_форме" 
+														name="Закупка в электронной форме" valueType="boolean" width="150" 
+														headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Многоэтапная" name="Многоэтапная" valueType="boolean" edit-name="Mnogoetap" width="150" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Количество_этапов_закупки" valueType="integer" name="Количество этапов закупки" edit-name="KolvoEtap" width="150" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Условия_применения_способа_закупки" valueType="longtext" name="Условия применения способа закупки" edit-name="Uslprimsp" width="400" headerNoEllipsis="true"/>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							</rows>
+						</block>
+					</column>
+				</row>
+                <row>
+					<column>
+						<block id="113" name="Основания закупки у единственного поставщика">
+							<rows>
+							<row>
+								<column>
+									<block id="20" name="Сведения об основаниях закупки у единственного поставщика">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Основание_закупки_ед_поставщика" height="300">							
+														<column fieldType="field" key="|Код_основания" valueType="longtext" name="Код основания" width="150" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Наименование_основания" valueType="longtext" name="Наименование основания" width="350" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Основание_для_несостоявшейся" valueType="boolean" name="Применяется при несостоявшейся закупке" width="150" headerNoEllipsis="true"/>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>							
+						</rows>
+					</block>
+				</column>
+			</row>	
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Положение о закупках{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows> 
+							<row>
+								<column>
+									<field name="Организация-заказчик" isLabel="true" edit-name="registerPodIn" title="Заполняется автоматически"/>   								
+								</column>
+								<column>
+									<block id="block2" name="block2">
+										<rows> 	
+											<row>
+												<column>
+													<field name="Номер положения" isLabel="true" edit-name="reestnumber" /> 
+												</column>
+												<column>
+													<field name="Дата размещения" isLabel="true" edit-name="dateraz" /> 
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+							</row>        
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-default-value="{currentOrganization}" address-book-tool = "organization" edit-addressbook-groups="" address-book-tool-selectable = "Department, Department, {currentOrganizationGRBS}|onlyOrganization" children-selection="true"/>
+								</column>
+								<column>
+									<block id="block2" name="block2">
+										<rows> 	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Реестровый_номер" name="Реестровый номер" valueType="text" isValue="true" edit-name="reestnumber" edit-required="true" /> 
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата размещения" valueType="date" isValue="true" edit-name="dateraz" edit-required="true" />
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="armSposob" />
+								</column>
+								<column>
+									<field name="" isLabel="true" edit-name="Ispdrpol" /> 
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Заполнить_способы_закупок" name="Заполнить способы закупок" valueType="boolean" edit-name="armSposob" edit-default-value="0" /> 
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Присоединение_к_положению_другой_организации" name="Используется положение другой организации" valueType="boolean" edit-name="Ispdrpol" edit-default-value="0" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Способы_закупок" edit-name="Spzak" height="300" >							
+										<column fieldType="field" key="|Код_способа_закупки" valueType="text" isValue="true" name="Код способа закупки" edit-name="registerSpZakup" edit-readonly="true"  width="150" headerNoEllipsis="true" />
+										<column fieldType="field" key="|Наименование_способа_закупки" valueType="longtext" isValue="true" name="Наименование способа закупки" edit-name="namesposzak" width="650" headerNoEllipsis="true" />
+										<column fieldType="field" key="|Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" isValue="true" edit-name="ZakElForm" width="150" />
+										<column fieldType="field" key="|Многоэтапная" name="Многоэтапная" valueType="boolean" isValue="true" edit-name="Mnogoetap" width="150" />
+										<column fieldType="field" key="|Количество_этапов_закупки" valueType="integer" isValue="true" name="Количество этапов закупки" edit-name="KolvoEtap" width="150" edit-readonly="true" />
+										<column fieldType="field" key="|Условия_применения_способа_закупки" valueType="longtext" isValue="true" name="Условия применения способа закупки" edit-name="Uslprimsp" width="150"/>
+										<column fieldType="field" key="|Закупка_в_электронной_форме_да_нет" name="Электронная форма" valueType="text" isValue="true" edit-name="ZakElFormYN" width="150" />
+									</table>	
+								</column>
+							</row>
+
+
+							<row>
+								<column>
+									<field name="" isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Основание_закупки_ед_поставщика" edit-name="OsnOneWinner" height="300">							
+										<column fieldType="field" key="|Код_основания" valueType="integer" isValue="true" name="Код основания" title="Введите код основания закупки у единственного поставщика" edit-name="OsnCode" width="150"  headerNoEllipsis="true" display-field-part="true" />
+										<column fieldType="field" key="|Наименование_основания" valueType="longtext"  isValue="true" dict-column-width-percentage="80" name="Наименование основания закупки у единственного поставщика" title="Введите наименование основания закупки у единственного поставщика" edit-name="NameOsn" width="650" headerNoEllipsis="true"/>
+										<column fieldType="field" key="|Основание_для_несостоявшейся" name="Применяется при несостоявшейся закупке" valueType="boolean" isValue="true" edit-name="Nesos" width="300" headerNoEllipsis="true"/>
+									</table>	
+								</column>
+							</row>
+							
+							
+							
+							
+						</rows>
+					</block>
+				</column>
+			</row>
+				<row>
+					<column>
+						<block id="hidden" name="Скрытые поля"> 
+							<rows>		
+							<row>
+							<column>
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Дата_утверждения" name="Дата утверждения" valueType="date" isValue="true" edit-name="DateUtver" edit-hidden="true" />
+									<field fieldType="field" key="|Document|ParentRK" name="ParentRK" valueType="text"  isValue="true" edit-name="ParentRK" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер_редакции" valueType="integer"  isValue="true" edit-name="numberRed" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Реестровый_номер_положения_головной_организации" name="Реестровый номер положения головной организации" valueType="text"  isValue="true" edit-name="reestrgglavorg" edit-hidden="true" />
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД в ЕИС" valueType="text" isValue="true" edit-name="IdEis" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-name="namepotok" edit-hidden="true"/>
+									
+										
+
+									<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext"  isValue="true" edit-name="Obosvnesizm" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Дата_вступления_в_силу" name="Дата вступления в силу" valueType="date" isValue="true" edit-name="Datevsilu" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Название_положения" name="Наименование положения" 
+									valueType="text"  isValue="true" edit-name="Namepol" edit-hidden="true" />
+
+									<field fieldType="field" key="|Document|Наименование_органа_утвердившего_положение" 
+									name="Наименование ограна, утвердившего положения" valueType="text" isValue="true" 
+									edit-name="approverName" edit-hidden="true" />	
+
+									<field fieldType="field" key="|Document|Порядок_заключения_и_исполнения_договоров" 
+								name="Порядок заключения и исполнения договоров" valueType="longtext"  isValue="true" edit-name="pordog" />
+
+									<field fieldType="field" key="|Document|Дополнительные_сведения" name="Дополнительные сведения" 
+									valueType="longtext"  isValue="true" edit-name="additionalInfo"  />
+
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="ИНН" 
+									valueType="text" isValue="true" edit-name="orgzakINN"  
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}"
+									addressbook-main-field="registerOrgZa" addressbook-property="INN"/>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" 
+									name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" 
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}"
+									addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_справочный_код" 
+									name="Организация-заказчик" valueType="text"  isValue="true" edit-name="OrgZakKodSprav"  
+									edit-readonly="true" dict-column-name="code" is-select-one-level="1" 
+									edit-tool = "Организации заказчики223" dict-edit-name="OrgZakKodSprav" edit-isInvisible="true" /> 
+									
+									
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="КПП" 
+									valueType="text"   isValue="true" edit-name="orgzakKPP"  
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}"
+									addressbook-main-field="registerOrgZa" addressbook-property="KPP"/>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Адрес" name="Адрес" 
+									valueType="longtext"   isValue="true" edit-name="orgzakAdress"  
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=Адрес}"
+									addressbook-main-field="registerOrgZa" addressbook-property="Адрес"/>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Телефон" 
+									name="Телефон" valueType="text"   isValue="true" edit-name="orgzakPhone" 
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=Телефоны}"
+									addressbook-main-field="registerOrgZa" addressbook-property="Телефоны"/>
+									
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" name="Электронная почта" 
+									valueType="text"   isValue="true" edit-name="orgzakElPost"  
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=E-mail}"
+									addressbook-main-field="registerOrgZa" addressbook-property="E-mail"/>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация_заказчик_ОГРН" 
+									valueType="text"   isValue="true" edit-name="orgzakOGRN"  
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}"
+									addressbook-main-field="registerOrgZa" addressbook-property="OGRN"/>
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" address-book-tool="GRBS" addressbook-main-field="registerOrgZa" edit-default-value="{addressbook,value=registerOrgZa,attribute=GRBS}" addressbook-property="GRBS" />
+																		
+							</column>
+							</row>
+							</rows>
+						</block>
+					</column>
+				</row>
+		</rows>
+		<variables>
+			<!-- <variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format="{value}" />		
+			</variable> -->
+			<variable variable-name="caption" variable-format="Положение о закупках{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/PologenieNaZak223.js" />
+	</scripts>
+</root>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-filters-row="true" horizontall-scroll="true">
+	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" weight="15" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКПД2" name="ОКПД2" valueType="text" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_КВР" name="КВР" valueType="text" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_позиции" name="Наименование позиции" valueType="longtext" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год_финансирования" name="Год финансирования" valueType="integer" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/real_Количество_всего" name="Количество_всего" valueType="text" weight="15" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_выплат_всего" name="Сумма выплат всего" valueType="money" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="40" />
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

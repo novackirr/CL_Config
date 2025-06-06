@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+	<edit>
+		<rows>
+		  <row>
+			<column>
+				<field name="Год" isLabel="true" edit-name="from"/>
+				<field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true" edit-name="from" edit-required="true"/>
+			</column>		
+			<column>	
+			</column>					
+			<column>			
+			</column>							
+		  </row>
+		</rows>
+	</edit>
+    <scripts>
+		<script file="Scripts\Content\Reports\ReportMonitoring.js" />
+	</scripts>
+</root>

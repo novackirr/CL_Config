@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Запросы RFI') and (doc_RegCard/rc_Index/text_Статус = 'Подведение итогов')" />
+	</search>
+	<scripts>
+		<script file="~/Scripts/Content/SearchForm/PologenieNaZak223.js" />
+	</scripts>
+</root>

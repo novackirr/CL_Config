@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="act" allow-create-excel="true" allowAllActions="false" allowSingleActions="true" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true">
+		<column fieldType="property" key="ActivityName" name="Название" valueType="text" sortPredicate="act_Name" weight="15" />
+		<column fieldType="attribute" key="act_Creator" name="Автор" valueType="addressbook" weight="15" sortPredicate="act_Creator" isOptional="true"/>
+		<column fieldType="attribute" key="act_powerPerformer/actual" name="Исполнитель" sortPredicate="act_powerPerformer/actual" valueType="addressbook" weight="15" />
+		<column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15" />
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="act_Text" name="Текст" valueType="text" sortPredicate="act_Text" weight="25" isOptional="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/money_Сумма_всего" name="Сумма документа" sortPredicate="doc_RegCard/rc_Index/money_Сумма_всего" valueType="money" weight="20" />
+	</columns>
+</root>

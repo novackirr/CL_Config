@@ -1,0 +1,391 @@
+var AdminPages = function (_users, _organizations, _isApprovePage, _accountPermissionInfoUrl, _lawSwitcherEnabled, _actionURL, _deleteActionURL, _deleteEventHandler, _initDeactivatedPersons) {
+    
+    var approve = {
+        
+        users: [],
+
+        organizations: [],
+
+        isApprovePage: true,
+
+        accountPermissionInfoUrl: '',
+
+        lawSwitcherEnabled: true,
+
+        actionURL: '',
+
+        deleteActionURL: '',
+
+        deleteEventHandler: null,
+
+        organizationsInited: false,
+
+        usersInited: false,
+
+        initDeactivatedPersons: false,
+
+        orgsAndUsersInited: false,
+
+        init: function (_users, _organizations, _isApprovePage, _accountPermissionInfoUrl, _lawSwitcherEnabled, _actionURL, _deleteActionURL, _deleteEventHandler, _initDeactivatedPersons) {
+            
+            this.users = _users;
+            this.organizations = _organizations;
+            this.isApprovePage = _isApprovePage;
+            this.accountPermissionInfoUrl = _accountPermissionInfoUrl;
+            this.lawSwitcherEnabled = _lawSwitcherEnabled;
+            this.actionURL = _actionURL;
+            this.deleteActionURL = _deleteActionURL;
+            this.deleteEventHandler = _deleteEventHandler;
+            this.initDeactivatedPersons = _initDeactivatedPersons;
+            addParsleyValidation("form");
+            this.addEventHandlers();
+            this.initChosenSelects();
+            this.resetControls();
+        },
+
+        addEventHandlers: function() {
+
+            this.addUserChangeEvent();
+            this.addFormSubmitEvent();
+            this.addDeleteClick();
+            this.addUserClickEvent();
+        },
+
+        initChosenSelects: function() {
+
+            $('#User').prop('disabled', true);
+            $('.chosen-select').chosen({ search_contains: true });            
+            var workGroupArr = $('#WorkGroup option[data-isfz44]').size() == 0 ? [] : [1];
+            this.toggleRowElem(workGroupArr, $(".workGroup-ctl"));
+            var roleArr = $('#Role option[data-isfz44]').size() == 0 ? [] : [1];
+            this.toggleRowElem(roleArr, $(".role-ctl"));
+            this.toggleRowElem(roleArr, $(".accessGroup-ctl"));
+        },
+
+        resetControls: function() {
+
+            $("#Organization").val("");
+            $("#Organization_chosen span").html("");
+            $("#Department").val("");
+            $("#Department_chosen span").html("");
+            $("#Role").val("");
+            $('.chosen-select.custom-multiselect').val('').trigger('chosen:updated');
+        },
+
+        toggleRowElem: function(data, elem) {
+            if (data != null && data.length > 0 && elem.find("option[data-isfz44]").size() > 0) {
+                elem.show();
+            } else {
+                elem.hide();                                        
+            }  
+        },
+
+        initOrganizationsAndUsers: function () {
+            var it = this;
+
+            if (it.orgsAndUsersInited) {
+
+                return $.Deferred();
+            } else {
+
+                waitingDialog.show("Загрузка пользователей...");
+                
+                return $.ajax({
+                    url: getRelativeUrl("Account/GetOrganizationsAndUsers?initDeactivatedPersons=" + it.initDeactivatedPersons),
+                    type: "GET",
+                    cache: false,
+                    success: function (res) {
+                        
+                        if (res.success) {
+                            var data = res.data;
+                            var users = data.users;
+                            it.users = users;
+                            it.organizations = data.organizations;
+
+                            var options = "";
+                            var prevOrg = "";
+                            for (var i = 0; i < users.length; i++) {
+
+                                var u = users[i];
+                                if (u.Organization !== prevOrg) {
+
+                                    if (prevOrg !== "")
+                                        options += '</optgroup>';
+
+
+                                    prevOrg = u.Organization;
+
+                                    if (u.OrganizationTitle != null)
+                                        options += '<optgroup label=\"' + u.OrganizationTitle.replace(/"/g, '\'\'') + '\">';
+                                    else
+                                        options += '<optgroup label=\"' + u.OrganizationTitle + '\">';
+                                }
+
+                                options += '<option value=\"' + u.Id + '\">' + u.Name + '</option>';
+                            }
+
+                            $("#User").append(options).prop('disabled', false).trigger("chosen:updated");
+                            
+                            it.orgsAndUsersInited = true;
+                        }
+
+                        waitingDialog.hide();
+
+                        if (!res.success) {
+                            showCommonErrors(res.message);
+                        }
+                    },
+                    error: function (error) {
+
+                        waitingDialog.hide();
+                        showCommonErrors(error);
+                    }
+                });
+            }
+
+        },
+
+        addUserClickEvent: function () {
+            
+            var it = this;
+
+            $("body").on("click", "#User_chosen", function () {
+
+                it.initOrganizationsAndUsers().then(function () {
+
+                    $("#User_chosen").trigger('mousedown');
+                });
+            });
+        },
+
+        addUserChangeEvent: function() {
+
+            var it = this;            
+            var user = $("#User");
+            user.change(function() {
+
+                var userId = user.val();
+                if (userId) {
+
+                    var userItem = $.grep(it.users, function(e) { return e.Id == userId })[0];
+                    var orgKey = userItem.Organization;
+                  
+                    var depKey = userItem.Department;
+                    var depName = userItem.DepartmentTitle;
+                 
+                    var org = it.getOrganization(orgKey);                   
+                    if (it.lawSwitcherEnabled) {
+                        $("option[data-isfz44]").hide();
+                        if (org.IsLaw44) {
+                            $("#isFz44").prop('checked', true);
+                            $("[data-IsHidden='False'][data-isfz44='True']").css("display", "list-item");
+                        } else {
+                            $("#isFz44").prop('checked', false);
+                        }
+                        if (org.IsLaw223) {
+                            $("#isFz223").prop('checked', true);
+                            $("[data-IsHidden='False'][data-isfz223='True']").css("display", "list-item");
+                        } else {
+                            $("#isFz223").prop('checked', false);
+                        }
+
+                        if (org.GRBS) {
+                            $("#isGRBS").prop('checked', true);
+                            $("[data-IsHidden='False'][data-isgrbs='True']").css("display", "list-item");
+                        } else {
+                            $("#isGRBS").prop('checked', false);
+                        }
+                    }
+
+                    if (!it.isApprovePage) {
+
+                        waitingDialog.showWaiting();
+
+                        $.ajax({
+                            url: it.accountPermissionInfoUrl,
+                            type: "GET",
+                            cache: false,
+                            data: { userId: userId },
+                            success: function (data) {
+
+                                if (data) {
+                                    $('#AccessGroup').val(data.AccessGroups).trigger('chosen:updated');
+                                    $('#Role').val(data.Role);
+                                    it.toggleRowElem(data.Role, $(".role-ctl"));
+                                    $('#WorkGroup').val(data.WorkGroups).trigger('chosen:updated');
+                                    it.toggleRowElem(data.WorkGroups, $(".workGroup-ctl"));
+                                    it.toggleRowElem(data.WorkGroups, $(".accessGroup-ctl"));
+                                }
+
+                                waitingDialog.hide();
+                            },
+                            error: function () {
+
+                                waitingDialog.hide();
+                            }
+                        });
+                    } else {
+
+                        it.resetControls();
+                    }
+
+                    if (org) {
+
+                        $("#Organization").val(org.Name);
+                        $("#Organization_chosen span").html(org.Name);
+                    }
+
+                    if (depKey) {
+
+                        $("#Department").val(depKey);
+                        $("#Department_chosen span").html(depName);
+                    }
+
+                }
+            });
+        },
+
+        getOrganization: function (orgKey) {
+            
+            return $.grep(this.organizations, function (e) { return e.Id === orgKey; })[0];
+        },
+
+        chosenSelectValidation: function(delay) {
+
+            if (!delay)
+                delay = 100;
+
+            setTimeout(function() {
+
+                    //Кастомная подсветка валидации мультиселекта
+                    var selectDiv = $(".chosen-select.parsley-error").next().next();
+                    var selectLabel = $(".chosen-select.parsley-error").parent().prev();
+
+                    selectDiv.addClass("custom-error");
+                    selectLabel.addClass("custom-error-label");
+
+                    selectDiv = $(".chosen-select:not(.parsley-error)").next().next();
+                    selectLabel = $(".chosen-select:not(.parsley-error)").parent().prev();
+
+                    selectDiv.removeClass("custom-error");
+                    selectLabel.removeClass("custom-error-label");
+
+                },
+                delay);
+        },
+
+        addFormSubmitEvent: function() {
+            
+            var it = this;
+            $(".btn-approve").click(function() {
+
+                it.chosenSelectValidation();
+
+                var form = $("form");
+                form
+                    .parsley()
+                    .whenValidate()
+                    .done(function() {
+
+                        if (it.persmissionValidation()) {
+
+                            form.attr("action", it.actionURL);
+                            form.submit();
+                            it.disableAndShowLoading();
+                        }
+                    });
+            });
+        },
+
+        addDeleteClick: function() {
+
+            var it = this;
+            $(".btn-delete").click(function() {
+
+                if (it.deleteEventHandler != null) {
+                    if (it.userValidation()) {
+                        it.deleteEventHandler();
+                        return;
+                    }
+                }
+
+                it.chosenSelectValidation();
+                var form = $("form");
+                form.parsley().validate();
+                it.hidePermissionError();
+
+                if (it.userValidation()) {
+                    
+                    form.attr("action",  it.deleteActionURL);
+                    form.submit();
+                    it.disableAndShowLoading();
+                }
+            });
+        },
+
+        userValidation: function() {
+
+            if ($("#User").val()) {
+                return true;
+            }
+            return false;
+        },
+
+        getPermissionElement: function() {
+
+            return $(".permission-validation-error");
+        },
+
+        hidePermissionError: function() {
+
+            var permissionElement = this.getPermissionElement();
+
+            if (!permissionElement.hasClass("hidden")) {
+                permissionElement.addClass("hidden");
+            }
+        },
+
+        showPermissionError: function() {
+
+            var permissionElement = this.getPermissionElement();
+
+            if (permissionElement.hasClass("hidden")) {
+                permissionElement.removeClass("hidden");
+            }
+        },
+
+        persmissionValidation: function() {
+
+            //Одно из полей "Группа доступа", "Рабочие группы", "Роль" обязательно для заполнения
+            var hasAnyPermission =
+                $("#AccessGroup_chosen .chosen-choices .search-choice-close").length > 0 ||
+                    $("#WorkGroup_chosen .chosen-choices .search-choice-close").length > 0;
+            //    $("#Role").val() !== "";
+
+            if (!hasAnyPermission) {
+                this.showPermissionError();
+            } else {
+                this.hidePermissionError();
+            }
+
+            return hasAnyPermission;
+        },
+
+        disableButtons: function() {
+
+            $(".btn").prop('disabled', true);
+        },
+
+        disableAndShowLoading: function() {
+
+            //Делаем невозожным множественное нажатие кнопки
+            this.disableButtons();
+            //Отображаем лоадинг при submit'е формы
+            showLoadingIndicator("#content-approve-loading-image");
+        }
+    }
+    
+    approve.init(_users, _organizations, _isApprovePage, _accountPermissionInfoUrl, _lawSwitcherEnabled, _actionURL, _deleteActionURL, _deleteEventHandler, _initDeactivatedPersons);
+};
+
+ 

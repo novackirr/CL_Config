@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <flows>
+    <flow name="Позиции плана-графика"/>
+  </flows>
+  <process name="Рассмотрение заявки"/>
+  <requisities>
+    <requisite path="|Document|Отправка_уведомления" value="1"/>
+    <requisite path="|Document|Статус" value="Ожидание ответа"/>
+  </requisities>
+</root>

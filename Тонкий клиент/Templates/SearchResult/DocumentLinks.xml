@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="DocumentLinks" allow-filters-row="true" horizontall-scroll="true">
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" sortPredicate="doc_RegCard/rc_Index/text_Регистрационный_номер" valueType="text" weight="15" />
+    <column fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" sortPredicate="doc_RegCard/rc_FlowKey" valueType="flow" weight="20" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" sortPredicate="doc_RegCard/rc_Index/longtext_Краткое_содержание" valueType="text" weight="65" />    
+  </columns>
+    <sort predicate="doc_CreateTime descending"/>
+</root>

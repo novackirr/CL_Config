@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field name="Название шаблона" isLabel="true" />
+					<field fieldType="field" key="|Document|Название_шаблона" name="Название шаблона" valueType="text" isValue="true" edit-name="templateName" />
+				</column>
+				<column>
+					<field name="Поток" isLabel="true" />
+					<field fieldType="field" key="|Document|Поток" name="Поток" edit-name="flowName" valueType="text" isValue="true" edit-dictionary="#Потоки" edit-dictionaryValue="Название" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-isMultiple ="false" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Дата создания" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+							<rows>
+								<row>
+									<column>		
+										<field name="c" isLabel="true" />
+									</column>
+									<column>								
+										<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" value-db-type="date" isValue="true"  edit-name="createdDateFrom" weight="300"/>
+									</column>
+									<column>								
+										<field name="по" isLabel="true" />
+									</column>
+									<column>								
+										<field fieldType="field" key="|Document|Дата_создания" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="createdDateTo"  />
+									</column>						
+								</row>
+							</rows>								
+					</block>		
+				</column>				
+				<column>	
+					<field name="Организация-заказчик" isLabel="true" edit-name="registerOrgZaName"/>					
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="addressbook" isValue="true" edit-name="registerOrgZaName" address-book-tool= "registerOrgZaName" edit-addressbook-groups = "Department" edit-isMultiple="true" />
+				</column>								
+			</row>
+			<row>				
+				<column>
+					<field name="Описание шаблона" isLabel="true" />
+					<field fieldType="field" key="|Document|Описание_шаблона" name="Описание шаблона" valueType="longtext" edit-name="descr" isValue="true" />
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Печатные формы') and (doc_RegCard/rc_Index/text_Название_шаблона = @templateName) and (doc_RegCard/rc_Index/longtext_Описание_шаблона = @descr) and (doc_RegCard/rc_Index/text_Поток = @flowName) and (xn-in(doc_RegCard/rc_Index/integer_Организация_заказчик, @registerOrgZaName)) and ((doc_RegCard/rc_Index/date_Дата_создания &gt;= @createdDateFrom) and (doc_RegCard/rc_Index/date_Дата_создания &lt;= @createdDateTo))" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

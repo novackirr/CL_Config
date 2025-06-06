@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Предквалификационный отбор') and (doc_RegCard/rc_Index/text_Статус = 'Прием заявок')" />
+	</search>
+	<scripts>
+		<script file="~/Scripts/Content/SearchForm/PologenieNaZak223.js" />
+	</scripts>
+</root>

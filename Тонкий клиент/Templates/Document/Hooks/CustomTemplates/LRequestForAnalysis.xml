@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Анализ рынка" />
+			<CopyField src="%key%" dst="|Document|ParentRK"/>
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Порядок_формирования_цены_договора" />
+			<CopyField src="|Document|ОКАТО" />
+			<CopyField src="|Document|Регион" />
+			<CopyTable src="|Document|Позиции" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Год_закупки" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email" dictionary="Контактное лицо" key="1" attribute="E-mail" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон" dictionary="Контактное лицо" key="1" attribute="Телефон" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон_ЕЭТП" dictionary="Контактное лицо" key="1" attribute="Телефон" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			
+			
+		</FieldsModify>
+		
+		<FieldsModify source="Позиции плана закупок 223ФЗ" >
+			<SetField dst="|Document|Имя_потока" value="Анализ рынка" />
+			<SetField dst="|Document|На_основе_ППЗ" value="1" />
+			<CopyField src="%key%" dst="|Document|ParentRK"/>
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Порядок_формирования_цены_договора" />
+			<CopyField src="|Document|ОКАТО" />
+			<CopyField src="|Document|Регион" />
+			<CopyTable src="|Document|Позиции" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Год_закупки" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email" dictionary="Контактное лицо" key="1" attribute="E-mail" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон" dictionary="Контактное лицо" key="1" attribute="Телефон" />
+			<SetFieldFromDictionary dst="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон_ЕЭТП" dictionary="Контактное лицо" key="1" attribute="Телефон" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			
+		</FieldsModify>
+		
+		<OnDocumentCreated>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_запроса"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока})"/>
+				</Constant>	
+			</NamedConstants> 
+		</OnDocumentCreated>
+</Hooks>

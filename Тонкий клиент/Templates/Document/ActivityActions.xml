@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+	<Action name="Обработать исключение">
+		<Visibility>
+			<Rules>
+				<Or><!-- 
+					<WhenProcessNameEquals name="1234"/> -->
+					<WhenUserInWorkGroup name="Суперпользователи"/>	
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Запросить доп. согласование">
+		<Visibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+					<!-- <WhenUserInWorkGroup name="Суперпользователи"/>	 -->
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Отозвать доп. согласование">
+		<Visibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+					<!-- <WhenUserInWorkGroup name="Суперпользователи"/>	 -->
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Делегировать">
+		<Visibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+					<!-- <WhenUserInWorkGroup name="Суперпользователи"/>	 -->
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	<Action name="Снять с контроля">
+		<Visibility>
+			<Rules>
+				<Or><!-- 
+					<WhenProcessNameEquals name="1234"/> -->
+					<WhenUserInWorkGroup name="Суперпользователи"/>	
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<!-- В ExtraParams настраивается количество выводимых исполнителей. При Type = 0 выводятся все пользователи системы -->
+	<Action name="Сменить исполнителя">
+		<ExtraParams>
+			<Param tag="abQuery">Type = 0</Param> 
+		</ExtraParams>
+		<Visibility>
+			<Rules>
+				<!-- <Or>
+					<WhenProcessNameEquals name="1234"/>
+				</Or> -->
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Добавить запись">
+		<Visibility>
+			<Rules>
+				<Or>
+					<WhenProcessNameEquals name="1234"/>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Создать подзадачу">
+		<Visibility>
+			<Rules>
+				<Or>
+					<WhenProcessNameEquals name="1234"/>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Отчитаться об исполнении">
+		<Invisibility>
+			<Rules>
+				<Or>
+					<Or>
+						<WhenProcessNameEquals name="Создание протокола первых частей"/>
+						<WhenProcessNameEquals name="Создание протокола этапа"/>
+						<WhenProcessNameEquals name="Создание протокола рассмотрения заявок"/>
+						<WhenProcessNameEquals name="Создание протокола вторых частей"/>
+						<WhenProcessNameEquals name="Создание протокола подведения итогов"/>
+						<WhenActivityNameEquals name="Отправить ответ"/>
+						<WhenActivityNameEquals name="Включить ППЗ в План закупок"/>
+						<WhenActivityNameEquals name="Опубликовать отмену заявки на закупку"/>
+						<WhenActivityNameEquals name="Опубликовать протокол на ЭТП"/>
+						<WhenActivityNameEquals name="Опубликовать исполнение"/>
+						<WhenProcessNameEquals name="Создание договора"/>
+						<WhenActivityNameEquals name="Назначить сотрудников по документу"/>
+					</Or>
+					<And>
+						<And>
+							<WhenProcessNameEquals name="Согласование отмены процедуры(лотов)"/>
+						</And>
+						<Or>
+							<WhenActivityNameEquals name="Отправить на ЭТП"/>
+						</Or>
+					</And>
+				</Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+	<Action name="Отклонить согласование" displayName="Отменить">
+		<Visibility>
+			<Rules>
+				<Or>
+					<And>
+						<And>
+							<WhenProcessNameEquals name="Согласование отмены процедуры(лотов)"/>
+						</And>
+						<Or>
+							<WhenActivityNameEquals name="Согласование у руководителя инициатора"/>
+						</Or>
+					</And>
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	
+	<Action name="Отказаться от исполнения" displayName="Отменить">
+		<Invisibility>
+			<Rules>			
+				<Or>
+					<WhenActivityNameEquals name="Включить ППЗ в План закупок"/>
+					<WhenActivityNameEquals name="Внести изменения в потребность"/>
+					<WhenActivityNameEquals name="Опубликовать исполнение"/>
+					<WhenProcessNameEquals name="Создание протокола первых частей"/>
+					<WhenProcessNameEquals name="Создание протокола этапа"/>
+					<WhenProcessNameEquals name="Создание протокола рассмотрения заявок"/>
+					<WhenProcessNameEquals name="Создание протокола вторых частей"/>
+					<WhenProcessNameEquals name="Создание протокола подведения итогов"/>
+					<WhenProcessNameEquals name="Создание договора"/>
+					<WhenActivityNameEquals name="Назначить сотрудников по документу"/>
+				</Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+	<Action name="Принять к исполнению">
+		<Visibility>
+			<Rules>
+				<Or>
+					<WhenActivityNameEquals name="Согласование новой потребности Специалистом по закупкам"/>
+				</Or>
+			</Rules>
+		</Visibility>
+    </Action>
+	
+	<Action name="Отправить согласование на доработку" displayName="Вернуть на доработку">
+		<Invisibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+				</Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+    <Action name="Одобрить согласование" displayName="Согласовать">
+		<Invisibility>
+			<Rules>
+               	<Or>
+					<WhenActivityNameEquals name="Согласование новой потребности Специалистом по закупкам"/>
+					<WhenActivityNameEquals name="Согласование новой потребности Бюджетным комитетом"/>
+                </Or>	
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+    <Action name="Согласовать ">
+		<Visibility>
+			<Rules>
+               	<Or>
+					<WhenActivityNameEquals name="Согласование новой потребности Специалистом по закупкам"/>
+					<WhenActivityNameEquals name="Согласование новой потребности Бюджетным комитетом"/>
+                </Or>	
+			</Rules>
+		</Visibility>
+		<Accessibility>
+			<AccessibilityRulesGroup>
+				<Rules>
+					<Or>
+						<And>
+							<WhenProcessNameEquals name="Согласование ППЗ"/>
+							<WhenActivityNameEquals name="Согласование новой потребности Специалистом по закупкам"/>
+							<WhenDocumentFieldEquals path ="|Document|Статус" value= "На согласовании у специалистов по закупкам"/>
+							<WhenDocumentFieldNotEquals path ="|Document|Способ_закупки" value= ""/>
+						</And>
+						<And>
+							<WhenProcessNameEquals name="Согласование ППЗ"/>
+							<WhenActivityNameEquals name="Согласование новой потребности Бюджетным комитетом"/>
+						</And>
+					</Or>
+				</Rules>
+				<NotAccessibleMessage value="Необходимо указать Способ закупки"/>
+			</AccessibilityRulesGroup>
+		</Accessibility>
+	</Action>
+    
+    <Action name="Утвердить утверждение" displayName="Утвердить">
+		<Invisibility>
+			<Rules>
+            	<Or>	
+                </Or>	
+			</Rules>
+		</Invisibility>
+	</Action>
+    
+    <Action name="Отклонить утверждение" displayName="Отклонить">
+		<Invisibility> 
+			<Rules>
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+    <Action name="Отправить утверждение на доработку" displayName="Вернуть на доработку">
+		<Invisibility>
+			<Rules>
+				<Or>
+				</Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+</Actions>

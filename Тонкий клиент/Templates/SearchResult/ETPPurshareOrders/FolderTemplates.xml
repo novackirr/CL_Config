@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <folders>
+    <!--пример структуры-->
+    <!--<folder name="Общие папки" template="Common.xml">
+      <folder name="12" template="12.xml"/>
+    </folder>-->
+	<folder name="Общие папки" template="Common.xml">
+      <folder name="Мои лоты" template="CustomTemplates/FolderLot.xml"/>
+	  <folder name="Мои позиции" template="CustomTemplates/FolderItem.xml"/>
+	  <folder name="Мои заявки на закупку" template="CustomTemplates/FolderPurchase.xml"/>
+	  <folder name="Мои извещения" template="CustomTemplates/FolderNotice.xml"/>
+	  <folder name="Мои договоры" template="CustomTemplates/FolderDogovor.xml"/>
+    </folder>
+  </folders>
+</root>

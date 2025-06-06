@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<LinksModify>
+		<LinkCurrentDoc />
+		<LinkAllLinksWhereFlow name="Позиции плана закупок 223ФЗ" />
+	</LinksModify>
+	<FieldsModify>
+		<SetField dst="|Document|Имя_потока" value="Позиции плана закупок 223ФЗ" />
+		<SetField dst="|Document|Актуальность" value="1" />
+		<SetField dst="|Document|Планируемый_год" value="{budgetYear}" />
+		<SetField dst="|Document|Инновационная_продукция" value="{InnProd}" />
+	</FieldsModify>
+	<FieldsModify source="Позиции плана закупок 223ФЗ">
+		<SetField dst="|Document|Имя_потока" value="Позиции плана закупок 223ФЗ" />
+		<SetField dst="|Document|Актуальность" value="1" />
+		<CopyField src="|Document|Номер_основного_договора" />
+		<CopyField src="|Document|Юр_лицо_основного_договора" />
+		<CopyField src="|Document|Внутренний_номер" />
+		<CopyField src="|Document|Плановая_дата_размещения" />
+		<CopyField src="|Document|Плановая_дата_окончания_исполнения" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_справочный_код" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Адрес" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Телефон" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП" />
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОГРН" />
+		<CopyField src="|Document|Исполнитель|Исполнитель_ФИО" />
+		<CopyField src="|Document|Способ_закупки_код" />
+		<CopyField src="|Document|Способ_закупки" />
+		<CopyField src="|Document|Закупка_в_электронной_форме" />
+		<CopyField src="|Document|Инновационная_продукция" />
+		<CopyField src="|Document|Субподрядчики_из_СМП" />
+		<CopyField src="|Document|Участник_закупки_СМП" />
+		<CopyField src="|Document|Долгосрочный" />
+		<CopyField src="|Document|Рамочный_договор" />
+		<CopyField src="|Document|Закупка_не_учитывается" />
+		<CopyField src="|Document|Торги_за_единицу_товара" />
+		<CopyField src="|Document|Начальная_цена_комплекта" />
+		<CopyField src="|Document|Торги_на_процент_снижения" />
+		<CopyField src="|Document|Категория_закупки_код" />
+		<CopyField src="|Document|Категория_закупки" />
+		<CopyField src="|Document|Предмет_договора" />
+		<CopyField src="|Document|Порядок_формирования_цены_договора" />
+		<CopyField src="|Document|Сведения_о_НМЦ" />
+		<CopyField src="|Document|Минимально_необходимые_требования" />
+		<CopyField src="|Document|Код_валюты" />
+		<CopyField src="|Document|Валюта" />
+		<CopyField src="|Document|Цифровой_код_валюты" />
+		<CopyField src="|Document|НМЦ_с_НДС" />
+		<CopyField src="|Document|НМЦД_в_рублях" />
+		<CopyField src="|Document|Курс_валюты" />
+		<CopyField src="|Document|Дата_курс_валюты" />
+		<CopyField src="|Document|Цена_отсечения" />
+		<CopyTable src="|Document|Позиции" />
+		<CopyField src="|Document|Условия_поставки" />
+		<CopyField src="|Document|Объем_поставки" />
+		<CopyField src="|Document|Порядок_поставки" />
+		<CopyField src="|Document|Порядок_оплаты" />
+		<CopyField src="|Document|Место_поставки" />
+		<CopyField src="|Document|ОКАТО" />
+		<CopyField src="|Document|Регион" />
+		<CopyField src="|Document|Победитель|Победитель" />
+		<CopyField src="|Document|Победитель|Победитель_наименование" />
+		<CopyField src="|Document|Победитель|Победитель_ИНН" />
+		<CopyField src="|Document|Победитель|Победитель_КПП" />
+		<CopyField src="|Document|Победитель|Победитель_ОГРН" />
+		<CopyField src="|Document|Победитель|Победитель_тип" />
+		<CopyField src="|Document|Победитель|Победитель_тип_код" />
+		<CopyField src="|Document|Победитель|Победитель_ОКОПФ" />
+		<CopyField src="|Document|Победитель|Победитель_ОКПО" />
+		<CopyField src="|Document|Победитель|Победитель_идентификационный_номер" />
+		<CopyField src="|Document|Победитель|Победитель_доп_идентификационный_номер" />
+		<CopyField src="|Document|Победитель|Победитель_дата_постановки" />
+		<CopyField src="|Document|Победитель|Победитель_СМП" />
+		<CopyField src="|Document|Победитель|Победитель_отсутствует_в_РНП" />
+		<CopyField src="|Document|Победитель|Победитель_нерезидент" />
+		<CopyField src="|Document|Победитель|Преддоговорные_переговоры" />
+		<CopyField src="|Document|Победитель|Фактическая_цена_закупки_с_НДС" />
+		<CopyField src="|Document|Победитель|Фактическая_цена_закупки_без_НДС" />
+		<CopyField src="|Document|Победитель|Победитель_состоит_на_учете" />
+		<CopyField src="|Document|Фактическая_дата_заключения_договора" />
+		<CopyField src="|Document|Победитель|Победитель_email" />
+		<CopyField src="|Document|Победитель|Победитель_телефон" />
+		<CopyField src="|Document|Победитель|Победитель_страна" />
+		<CopyField src="|Document|Победитель|Победитель_страна_код" />
+		<CopyField src="|Document|Победитель|Победитель_регион_код" />
+		<CopyField src="|Document|Победитель|Победитель_регион" />
+		<CopyField src="|Document|Победитель|Победитель_город" />
+		<CopyField src="|Document|Победитель|Победитель_населенный_пункт" />
+		<CopyField src="|Document|Победитель|Победитель_район" />
+		<CopyField src="|Document|Победитель|Победитель_индекс" />
+		<CopyField src="|Document|Победитель|Победитель_улица" />
+		<CopyField src="|Document|Победитель|Победитель_дом" />
+		<CopyField src="|Document|Победитель|Победитель_корпус" />
+		<CopyField src="|Document|Победитель|Победитель_офис" />
+		<CopyField src="|Document|Победитель|Победитель_фирменное_наименование"/>		
+		<CopyField src="|Document|Победитель|Победитель_ОКТМО"/>		
+		<CopyField src="|Document|Победитель|Победитель_ОКОПФ_наименование"/>		
+		<CopyField src="|Document|Победитель|Победитель_доп_информация"/>	
+		<CopyField src="|Document|Победитель|Победитель_статус"/>
+		<CopyField src="|Document|Победитель|Победитель_тип_СМП"/>
+		<CopyTable src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" />
+		<CopyTable src="|Document|Информация_об_объемах_привлечения_СМП|Планируемые_платежи_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Код_валюты_платежа" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Валюта_платежа" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Цифровой_код_валюты_платежа" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Курс_валюты_долгосрочный" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Дата_курса_долгосрочный" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Код_валюты_платежа_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Валюта_платежа_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Цифровой_код_валюты_платежа_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Курс_валюты_СМП" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Дата_курса_СМП" />
+		<CopyField src="|Document|Вид_документа" />
+		<CopyField src="|Document|Изменение" />
+		<CopyField src="|Document|Фактическая_дата_размещения" />
+		<CopyField src="|Document|Загружен_из_ЕИС" />
+		<CopyField src="|Document|Форма_переторжек" />
+		<CopyField src="|Document|Количество_заявок" />
+		<CopyField src="|Document|Количество_переторжек" />
+		<CopyField src="|Document|Количество_запросов_на_разъяснение" />
+		<CopyField src="|Document|Укрупненный" />
+		<CopyField src="|Document|Повторная_закупка" />
+		<CopyField src="|Document|Совместная_закупка" />			
+		<CopyField src="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" />
+		<CopyField src="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" />
+		<CopyField src="|Document|Документ_основание_цены" />
+		<CopyField src="|Document|Примечание" />
+		<CopyField src="|Document|Плановая_дата_подведения_итогов" />
+		<CopyField src="|Document|Плановая_дата_заключения_договора" />
+		<CopyField src="|Document|ИД_ППЗ_долгосрочной" />
+		<CopyField src="|Document|Планируемый_год" />
+		<CopyField src="|Document|Планируемый_месяц_наименование" />
+		<CopyField src="|Document|Планируемый_квартал" />
+		<CopyField src="|Document|Планируемый_месяц" />
+		<CopyField src="|Document|Год_закупки" />
+		<CopyField src="|Document|Позиция_в_нескольких_планах" />
+		<CopyField src="|Document|Признак_адреса_ППЗ" />
+		<CopyField src="|Document|Количество_этапов" />
+		<CopyField src="|Document|Для_инновационного_плана" />
+		<CopyField src="|Document|Созданна_иновационная_позиция" />
+		<CopyField src="|Document|Год_плана" />
+		<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель" />
+		<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" />
+		<CopyField src="|Document|Инициатор|Инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора" />
+		<CopyField src="|Document|okpdCheckView" />
+		<CopyField src="|Document|okpdCheck" />
+		<CopyField src="|Document|Проверка_окпд" />
+		<CopyField src="|Document|Дополнительные_сведения" />
+		<CopyField src="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года_в_рублях" />
+		<CopyField src="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_в_рублях_СМП" />
+		<CopyField src="|Document|Основание_закупки_у_ЕП_код" />
+		<CopyField src="|Document|Основание_закупки_у_ЕП_наименование" />
+		<CopyField src="|Document|Основание_ПБ_закупки_код" />
+		<CopyField src="|Document|Основание_ПБ_закупки_наименование" />
+		<CopyField src="|Document|Комментарий" />
+		<CopyField src="|Document|Выбрать_позицию_из_справочника" />
+		<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_добавочный"/>	
+		<CopyField src="|Document|Ввести_сумму_по_строке"/>	
+		<CopyField src="|Document|Малая_закупка"/>	
+		<CopyField src="|Document|Закупка_не_включена_в_план_закупки"/>
+		<CopyField src="|Document|Не_включать_не_публиковать"/>	
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Не_включать_не_публиковать"/>
+		<CopyField src="|Document|Внутренний_номер_лота"/>
+		<CopyField src="|Document|Внутренний_номер_зз"/>
+		<CopyField src="|Document|Внутренний_номер_договора"/>
+		<CopyField src="|Document|Номер_для_счётчика"/>
+		<CopyField src="|Document|ИД_первой_версии_плана"/>
+		<CopyField src="|Document|Источник_финансирования"/>
+		<CopyField src="|Document|Курирующий_зам_пред|Курирующий_зам_пред"/>
+		<CopyField src="|Document|Запрос_цен"/>
+	</FieldsModify>
+	<OnDocumentCreated transaction="single">
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/text_Статус = 'Закупка завершена') and (not(doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС))]" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/text_Статус = 'Заявка отозвана') and not(doc_RegCard/rc_Index/text_Статус = 'Закупка завершена') and (not(doc_RegCard/rc_Index/text_Номер_в_ЕИС))]" tag="Извещения о закупочной процедуре 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Позиции_плана_закупок_223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Позиции_плана_закупок_223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Позиции_плана_закупок_223ФЗ}/doc_Id])]" tag="Заявки_223ФЗ_связанные" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Позиции_плана_закупок_223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Позиции_плана_закупок_223ФЗ}/doc_Id])]" tag="Извещения_223ФЗ_связанные" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Извещения_223ФЗ_связанные}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Извещения_223ФЗ_связанные}/doc_Id])]" tag="Позиции_223ФЗ_связанные_с_извещением" />
+				
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_Id = '{currentDocField=|Document|ParentRK}']" tag="ППЗРодитель" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗРодитель}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗРодитель}/doc_Id])]" tag="ЛотДляКорректировки" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗРодитель}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗРодитель}/doc_Id])]" tag="ЗнЗДляКорректировки" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗРодитель}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗРодитель}/doc_Id])]" tag="ДоговорДляКорректировки" />
+				<!-- <Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ЗнЗДляКорректировки}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ЗнЗДляКорректировки}/doc_Id])]" tag="Позиции_223ФЗ_связанные_с_извещением" /> -->
+			</Select>
+			<Actions>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_первой_редакции" value="" />
+							<WhenFieldsEquals  tag="{current}" path="|Document|Статус" value="Внесение изменений" />
+							<WhenDocsExist tag="ППЗРодитель"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="ППЗРодитель" targetFlow="{current}" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|ИД_первой_редакции" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_первой_редакции" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_первой_редакции" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Закупка_аннулирована" value="1" />
+							<WhenFieldsEquals tag="{current}" path="|Document|Количество_связанных_лотов" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetField targetFlow="Позиции_плана_закупок_223ФЗ" targetField="|Document|Актуальность" value="0" />
+						<SetField targetFlow="Заявки_223ФЗ_связанные" targetField="|Document|Статус" value="В архиве" />
+						<SetField targetFlow="Позиции_плана_закупок_223ФЗ" targetField="|Document|Статус" value="В архиве" />
+						<SetField targetFlow="Извещения_223ФЗ_связанные" targetField="|Document|Статус" value="В архиве" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Закупка_аннулирована" value="1" />
+							<WhenFieldsNotEquals tag="{current}" path="|Document|Количество_связанных_лотов" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetField targetFlow="Позиции_плана_закупок_223ФЗ" targetField="|Document|Актуальность" value="0" />
+						<SetField targetFlow="Заявки_223ФЗ_связанные" targetField="|Document|Статус" value="В архиве" />
+						<SetField targetFlow="Позиции_плана_закупок_223ФЗ" targetField="|Document|Статус" value="В архиве" />
+						<LinksRemove targetFlow="Извещения_223ФЗ_связанные" sourceFlow="Заявки_223ФЗ_связанные"/>
+						<LinksRemove targetFlow="Извещения_223ФЗ_связанные" sourceFlow="Позиции_плана_закупок_223ФЗ"/>
+						<CalculateExpression targetFlow="Извещения_223ФЗ_связанные" targetField="|Document|Количество_связанных_лотов">
+							<Variables>                          
+								<Variable name="Количество" source="Заявки_223ФЗ_связанные"  aggregation="Count"/>			
+							</Variables>
+							<Expression value="{Количество}=0 ? 0 : {Количество} "/>
+						</CalculateExpression>
+						<CopyField sourceFlow="Извещения_223ФЗ_связанные" targetFlow="Позиции_223ФЗ_связанные_с_извещением" sourceField="|Document|Количество_связанных_лотов" targetField="|Document|Количество_связанных_лотов" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Позиции_плана_закупок_223ФЗ"/>
+							<WhenFieldsEquals tag="Позиции_плана_закупок_223ФЗ" path="|Document|Статус_публикации_в_ЕИС" value="Опубликовано в ЕИС" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetField targetFlow="{current}" targetField="|Document|Публикация_старой_версии" value="1" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Позиции_плана_закупок_223ФЗ"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="Позиции_плана_закупок_223ФЗ" sourceField="%key%" targetField="|Document|ИД_ППЗ_НОВОЕ" />
+						<CopyField sourceFlow="Позиции_плана_закупок_223ФЗ" targetFlow="{current}" sourceField="%key%" targetField="|Document|ИДППЗРОД" />
+						<CopyField sourceFlow="Позиции_плана_закупок_223ФЗ" targetFlow="{current}" sourceField="|Document|Количество_связанных_лотов" targetField="|Document|Количество_связанных_лотов" />
+						<CopyField sourceFlow="Позиции_плана_закупок_223ФЗ" targetFlow="{current}" sourceField="|Document|ИД_извещения" targetField="|Document|ИД_извещения" />
+						<CopyField sourceFlow="Позиции_плана_закупок_223ФЗ" targetFlow="{current}" sourceField="|Document|ИД_лота" targetField="|Document|ИД_лота" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="ППЗРодитель"/>
+							<WhenFieldsEquals tag="{current}" path="|Document|Корректировка" value="1" />
+							<WhenFieldsEquals tag="{current}" path="|Document|Статус" value="Внесение изменений" />
+						</And>
+					</Conditions>
+					<Actions>
+						<AddLink target="{current}" link="ЛотДляКорректировки"/>
+						<AddLink target="{current}" link="ЗнЗДляКорректировки"/>
+						<AddLink target="{current}" link="ДоговорДляКорректировки"/>
+						<LinksRemove sourceFlow="ППЗРодитель" targetFlow="ЛотДляКорректировки" />
+						<LinksRemove sourceFlow="ППЗРодитель" targetFlow="ЗнЗДляКорректировки" />
+						<LinksRemove sourceFlow="ППЗРодитель" targetFlow="ДоговорДляКорректировки" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_позиции_плана" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_позиции_плана" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Долгосрочный" value="1" />
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ППЗ_долгосрочной" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|ИД_позиции_плана" targetField="|Document|ИД_ППЗ_долгосрочной" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals  tag="{current}" path="|Document|Участник_закупки_СМП" value="1" />
+						</And>
+					</Conditions>
+					<Actions>
+						<VerifyExpression>
+							<Variables>
+								<Variable name="НМЦ с НДС" source="{current}" path="|Document|НМЦ_с_НДС"/>
+							</Variables>
+								<Expression value="($NullToZero({НМЦ с НДС}) &lt;= 400000000)"/>
+							<FailtureText value="Если участник закупки - МСП, то НМЦ с НДС не должна превышать 400 млн."/>
+						</VerifyExpression>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Способ_закупки_код" targetField="|Document|Способ_закупки_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Способ_закупки" targetField="|Document|Способ_закупки" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Участник_закупки_СМП" targetField="|Document|Участник_закупки_СМП" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_код" targetField="|Document|Основание_закупки_у_ЕП_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_наименование" targetField="|Document|Основание_закупки_у_ЕП_наименование" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Номер_несостоявшейся_процедуры" targetField="|Document|Номер_несостоявшейся_процедуры" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|НМЦ_с_НДС" targetField="|Document|НМЦ_с_НДС" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|НМЦД_в_рублях" targetField="|Document|НМЦД_в_рублях" />
+						<SetField targetFlow="Заявка на размещение закупки 223ФЗ" targetField="|Document|НМЦ_без_НДС" value="" />
+						<SetField targetFlow="Заявка на размещение закупки 223ФЗ" targetField="|Document|Размер_НДС" value="" />
+						<ClearTable source="Заявка на размещение закупки 223ФЗ" tablePath="|Document|Позиции"/>
+						<TableConsolidation>
+							<SourceTable flow="{current}" tableName="|Document|Позиции">
+								<Column name="NUM" />
+								<Column name="Наименование_позиции" />
+								<Column name="Позиция_из_справочника" />
+								<Column name="Наименование_позиции_из_справочника" />
+								<Column name="ОКПД2_наименование_из_справочника" />
+								<Column name="ОКВЭД2_наименование_из_справочника" />
+								<Column name="ОКПД2" />
+								<Column name="ОКПД2_наименование" />
+								<Column name="Перечни_ТРУ" />
+								<Column name="ОКПД2_код" />
+								<Column name="ОКПД2_наименование_код" />
+								<Column name="ОКВЭД2" />
+								<Column name="ОКВЭД2_наименование" />
+								<Column name="Закупочная_категория_код" />
+								<Column name="Закупочная_категория" />
+								<Column name="Централизованная_категория" />
+								<Column name="Тип_объекта_закупки" />
+								<Column name="Тип_объекта_закупки_наименование" />
+								<Column name="Количество" />
+								<Column name="ОКЕИ" />
+								<Column name="Единица_измерения" />
+								<Column name="ОКАТО_позиции" />
+								<Column name="Регион_позиции" />
+								<Column name="ИД_позиции_лота" />
+								<Column name="Цена_за_единицу" />
+								<Column name="Цена_за_единицу_ТРУ" />
+								<Column name="Сумма_позиции" />
+								<Column name="Невозможно_определить_количество" />
+							</SourceTable>
+							<TargetTable flow="Заявка на размещение закупки 223ФЗ" tableName="|Document|Позиции">
+								<Column name="NUM" />
+								<Column name="Наименование_позиции" />
+								<Column name="Позиция_из_справочника" />
+								<Column name="Наименование_позиции_из_справочника" />
+								<Column name="ОКПД2_наименование_из_справочника" />
+								<Column name="ОКВЭД2_наименование_из_справочника" />
+								<Column name="ОКПД2" />
+								<Column name="ОКПД2_наименование" />
+								<Column name="Перечни_ТРУ" />
+								<Column name="ОКПД2_код" />
+								<Column name="ОКПД2_наименование_код" />
+								<Column name="ОКВЭД2" />
+								<Column name="ОКВЭД2_наименование" />
+								<Column name="Закупочная_категория_код" />
+								<Column name="Закупочная_категория" />
+								<Column name="Централизованная_категория" />
+								<Column name="Тип_объекта_закупки" />
+								<Column name="Тип_объекта_закупки_наименование" />
+								<Column name="Количество" />
+								<Column name="ОКЕИ" />
+								<Column name="Единица_измерения" />
+								<Column name="ОКАТО_позиции" />
+								<Column name="Регион_позиции" />
+								<Column name="ИД_позиции_лота" />
+								<Column name="Цена_за_единицу" />
+								<Column name="Цена_за_единицу_ТРУ" />
+								<Column name="Сумма_позиции" />
+								<Column name="Невозможно_определить_количество" />
+							</TargetTable>
+						</TableConsolidation>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Способ_закупки_код" targetField="|Document|Способ_закупки_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Способ_закупки" targetField="|Document|Способ_закупки" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Участник_закупки_СМП" targetField="|Document|Участник_закупки_СМП" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_код" targetField="|Document|Основание_закупки_у_ЕП_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_наименование" targetField="|Document|Основание_закупки_у_ЕП_наименование" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Номер_несостоявшейся_процедуры" targetField="|Document|Номер_несостоявшейся_процедуры" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|НМЦ_с_НДС" targetField="|Document|НМЦ_с_НДС" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|НМЦД_в_рублях" targetField="|Document|НМЦД_в_рублях" />
+					</Actions>
+				</ConditionalAction>
+			</Actions>
+		</ConditionalActions>		
+		<NamedConstants>			
+			<Constant>
+				<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+				<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|ИД_первой_редакции})"/>
+			</Constant>		
+		</NamedConstants> 
+		<Aggregation>
+			<Select>
+			</Select>
+			<Actions>
+				<CopyField sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|Закупка_не_включена_в_план_закупки" targetField="|Document|Не_включать_не_публиковать" />
+				<TableFieldOperations sourceTag="{current}" targetTag="{current}" targetTable="|Document|Позиции" targetRowFilter="{ИД_позиции_лота}=null" >
+					<Action column="ИД_позиции_лота" formula="$NewGuid({})"/>
+				</TableFieldOperations> 	
+				<VerifyExpression>
+					<Variables>
+						<Variable name="Изменение_ТРУ_и_сроков" source="{current}" path="|Document|Изменение_ТРУ_и_сроков"/>
+						<Variable name="Изменение_более_чем_на_10_процентов_НМЦД" source="{current}" path="|Document|Изменение_более_чем_на_10_процентов_НМЦД"/>
+						<Variable name="Иные_случаи_изменения" source="{current}" path="|Document|Иные_случаи_изменения"/>
+						<Variable name="Статус" source="{current}" path="|Document|Статус"/>
+					</Variables>
+					<Expression value="({Изменение_ТРУ_и_сроков}=1 or {Изменение_более_чем_на_10_процентов_НМЦД}=1 or {Иные_случаи_изменения}=1) or ({Статус}!=&quot;Внесение изменений&quot; and {Статус}!=&quot;Внесение изменений в проект плана закупок&quot;)"/>
+					<FailtureText value="Выберите основание изменения на вкладке Изменения(Иные случаи изменения, Изменения ТРУ и сроков или Изменение более чем на 10 процентов НМЦД)"/>
+				</VerifyExpression>
+				<VerifyExpression>
+					<Variables>
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС"/>
+						<Variable name="Долгосрочный" source="{current}" path="|Document|Долгосрочный"/>
+						<Variable name="Объем_оплаты_за_все_года" source="{current}" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года"/>
+					</Variables>
+					<Expression value="(($NullToZero({Долгосрочный})=0) or ($NullToZero({Долгосрочный})= 1 and ($NullToZero({НМЦ_с_НДС})=$NullToZero({Объем_оплаты_за_все_года}))))"/>
+					<FailtureText value="Сумма по оплате по долгосрочному договору должна быть равна НМЦ, руб"/>
+				</VerifyExpression>
+				<VerifyExpression>
+					<Variables>
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС"/>
+						<Variable name="Долгосрочный" source="{current}" path="|Document|Долгосрочный"/>
+						<Variable name="Участник_закупки_СМП" source="{current}" path="|Document|Участник_закупки_СМП"/>
+						<Variable name="Объем_оплаты_за_все_года_СМП" source="{current}" path="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_СМП"/>
+					</Variables>
+					<Expression value="(($NullToZero({Долгосрочный})=0) or ($NullToZero({Участник_закупки_СМП})=0) or ($NullToZero({Долгосрочный})= 1 and $NullToZero({Участник_закупки_СМП})=1  and ($NullToZero({НМЦ_с_НДС})=$NullToZero({Объем_оплаты_за_все_года_СМП}))))"/>
+					<FailtureText value="Сумма по оплате по долгосрочному договору по МСП должна быть равна НМЦ, руб"/>
+				</VerifyExpression>
+				<CalculateExpression targetFlow="{current}" targetField="|Document|Краткое_содержание">
+					<Variables>
+						<Variable name="Способ_закупки" source="{current}" path="|Document|Способ_закупки" />
+						<Variable name="Внутренний_номер" source="{current}" path="|Document|Внутренний_номер" />
+						<Variable name="Предмет_договора" source="{current}" path="|Document|Предмет_договора" />
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС" />
+					</Variables>
+					<Expression value="&quot;&#xD;&#xA;Способ закупки: &quot; + {Способ_закупки} + &quot;&#xD;&#xA;НМЦ: &quot; + &quot;{НМЦ_с_НДС}&quot; + &quot;&#xD;&#xA;Предмет договора: &quot; + {Предмет_договора}"/>
+				</CalculateExpression>
+			</Actions>
+		</Aggregation> 
+	</OnDocumentCreated>		
+	<OnRegcardEdited transaction="single">
+		<Aggregation>
+			<Select/>
+			<Actions>
+				<CopyField sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|Закупка_не_включена_в_план_закупки" targetField="|Document|Не_включать_не_публиковать" />
+				<TableFieldOperations sourceTag="{current}" targetTag="{current}" targetTable="|Document|Позиции" targetRowFilter="{ИД_позиции_лота}=null" >
+					<Action column="ИД_позиции_лота" formula="$NewGuid({})"/>
+				</TableFieldOperations> 
+				<VerifyExpression>
+					<Variables>
+						<Variable name="Изменение_ТРУ_и_сроков" source="{current}" path="|Document|Изменение_ТРУ_и_сроков"/>
+						<Variable name="Изменение_более_чем_на_10_процентов_НМЦД" source="{current}" path="|Document|Изменение_более_чем_на_10_процентов_НМЦД"/>
+						<Variable name="Иные_случаи_изменения" source="{current}" path="|Document|Иные_случаи_изменения"/>
+						<Variable name="Статус" source="{current}" path="|Document|Статус"/>
+					</Variables>
+					<Expression value="({Изменение_ТРУ_и_сроков}=1 or {Изменение_более_чем_на_10_процентов_НМЦД}=1 or {Иные_случаи_изменения}=1) or ({Статус}!=&quot;Внесение изменений&quot; and {Статус}!=&quot;Внесение изменений в проект плана закупок&quot;)"/>
+					<FailtureText value="Выберите основание изменения на вкладке Изменения(Иные случаи изменения, Изменения ТРУ и сроков или Изменение более чем на 10 процентов НМЦД)"/>
+				</VerifyExpression>
+				<VerifyExpression>
+					<Variables>
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС"/>
+						<Variable name="Долгосрочный" source="{current}" path="|Document|Долгосрочный"/>
+						<Variable name="Объем_оплаты_за_все_года" source="{current}" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Объем_оплаты_за_все_года"/>
+					</Variables>
+					<Expression value="(($NullToZero({Долгосрочный})=0) or ($NullToZero({Долгосрочный})= 1 and ($NullToZero({НМЦ_с_НДС})=$NullToZero({Объем_оплаты_за_все_года}))))"/>
+					<FailtureText value="Сумма по оплате по долгосрочному договору должна быть равна НМЦ, руб"/>
+				</VerifyExpression>
+				<VerifyExpression>
+					<Variables>
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС"/>
+						<Variable name="Долгосрочный" source="{current}" path="|Document|Долгосрочный"/>
+						<Variable name="Участник_закупки_СМП" source="{current}" path="|Document|Участник_закупки_СМП"/>
+						<Variable name="Объем_оплаты_за_все_года_СМП" source="{current}" path="|Document|Информация_об_объемах_привлечения_СМП|Объем_оплаты_за_все_года_СМП"/>
+					</Variables>
+					<Expression value="(($NullToZero({Долгосрочный})=0) or ($NullToZero({Участник_закупки_СМП})=0) or ($NullToZero({Долгосрочный})= 1 and $NullToZero({Участник_закупки_СМП})=1  and ($NullToZero({НМЦ_с_НДС})=$NullToZero({Объем_оплаты_за_все_года_СМП}))))"/>
+					<FailtureText value="Сумма по оплате по долгосрочному договору по МСП должна быть равна НМЦ, руб"/>
+				</VerifyExpression>
+				<CalculateExpression targetFlow="{current}" targetField="|Document|Краткое_содержание">
+					<Variables>
+						<Variable name="Способ_закупки" source="{current}" path="|Document|Способ_закупки" />
+						<Variable name="Внутренний_номер" source="{current}" path="|Document|Внутренний_номер" />
+						<Variable name="Предмет_договора" source="{current}" path="|Document|Предмет_договора" />
+						<Variable name="НМЦ_с_НДС" source="{current}" path="|Document|НМЦ_с_НДС" />
+					</Variables>
+					<Expression value="&quot;&#xD;&#xA;Способ закупки: &quot; + {Способ_закупки} + &quot;&#xD;&#xA;НМЦ: &quot; + &quot;{НМЦ_с_НДС}&quot; + &quot;&#xD;&#xA;Предмет договора: &quot; + {Предмет_договора}"/>
+				</CalculateExpression>
+			</Actions>
+		</Aggregation>
+		<ConditionalActions>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/text_Статус = 'Закупка завершена') and (not(doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС))]" tag="Заявка на размещение закупки 223ФЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/text_Статус = 'Заявка отозвана') and not(doc_RegCard/rc_Index/text_Статус = 'Закупка завершена') and (not(doc_RegCard/rc_Index/text_Номер_в_ЕИС))]" tag="Извещения о закупочной процедуре 223ФЗ" />
+			</Select>
+			<Actions>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Долгосрочный" value="1" />
+							<WhenFieldsEquals tag="{current}" path="|Document|ИД_ППЗ_долгосрочной" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="{current}" sourceField="|Document|ИД_позиции_плана" targetField="|Document|ИД_ППЗ_долгосрочной" />
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Способ_закупки_код" targetField="|Document|Способ_закупки_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Способ_закупки" targetField="|Document|Способ_закупки" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Участник_закупки_СМП" targetField="|Document|Участник_закупки_СМП" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_код" targetField="|Document|Основание_закупки_у_ЕП_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_наименование" targetField="|Document|Основание_закупки_у_ЕП_наименование" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|Номер_несостоявшейся_процедуры" targetField="|Document|Номер_несостоявшейся_процедуры" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|НМЦ_с_НДС" targetField="|Document|НМЦ_с_НДС" />
+						<CopyField sourceFlow="{current}" targetFlow="Заявка на размещение закупки 223ФЗ" sourceField="|Document|НМЦД_в_рублях" targetField="|Document|НМЦД_в_рублях" />
+						<SetField targetFlow="Заявка на размещение закупки 223ФЗ" targetField="|Document|НМЦ_без_НДС" value="" />
+						<SetField targetFlow="Заявка на размещение закупки 223ФЗ" targetField="|Document|Размер_НДС" value="" />
+						<ClearTable source="Заявка на размещение закупки 223ФЗ" tablePath="|Document|Позиции"/>
+						<TableConsolidation>
+							<SourceTable flow="{current}" tableName="|Document|Позиции">
+								<Column name="NUM" />
+								<Column name="Наименование_позиции" />
+								<Column name="Позиция_из_справочника" />
+								<Column name="Наименование_позиции_из_справочника" />
+								<Column name="ОКПД2_наименование_из_справочника" />
+								<Column name="ОКВЭД2_наименование_из_справочника" />
+								<Column name="ОКПД2" />
+								<Column name="ОКПД2_наименование" />
+								<Column name="Перечни_ТРУ" />
+								<Column name="ОКПД2_код" />
+								<Column name="ОКПД2_наименование_код" />
+								<Column name="ОКВЭД2" />
+								<Column name="ОКВЭД2_наименование" />
+								<Column name="Закупочная_категория_код" />
+								<Column name="Закупочная_категория" />
+								<Column name="Централизованная_категория" />
+								<Column name="Тип_объекта_закупки" />
+								<Column name="Тип_объекта_закупки_наименование" />
+								<Column name="Количество" />
+								<Column name="ОКЕИ" />
+								<Column name="Единица_измерения" />
+								<Column name="ОКАТО_позиции" />
+								<Column name="Регион_позиции" />
+								<Column name="ИД_позиции_лота" />
+								<Column name="Цена_за_единицу" />
+								<Column name="Цена_за_единицу_ТРУ" />
+								<Column name="Сумма_позиции" />
+								<Column name="Невозможно_определить_количество" />
+							</SourceTable>
+							<TargetTable flow="Заявка на размещение закупки 223ФЗ" tableName="|Document|Позиции">
+								<Column name="NUM" />
+								<Column name="Наименование_позиции" />
+								<Column name="Позиция_из_справочника" />
+								<Column name="Наименование_позиции_из_справочника" />
+								<Column name="ОКПД2_наименование_из_справочника" />
+								<Column name="ОКВЭД2_наименование_из_справочника" />
+								<Column name="ОКПД2" />
+								<Column name="ОКПД2_наименование" />
+								<Column name="Перечни_ТРУ" />
+								<Column name="ОКПД2_код" />
+								<Column name="ОКПД2_наименование_код" />
+								<Column name="ОКВЭД2" />
+								<Column name="ОКВЭД2_наименование" />
+								<Column name="Закупочная_категория_код" />
+								<Column name="Закупочная_категория" />
+								<Column name="Централизованная_категория" />
+								<Column name="Тип_объекта_закупки" />
+								<Column name="Тип_объекта_закупки_наименование" />
+								<Column name="Количество" />
+								<Column name="ОКЕИ" />
+								<Column name="Единица_измерения" />
+								<Column name="ОКАТО_позиции" />
+								<Column name="Регион_позиции" />
+								<Column name="ИД_позиции_лота" />
+								<Column name="Цена_за_единицу" />
+								<Column name="Цена_за_единицу_ТРУ" />
+								<Column name="Сумма_позиции" />
+								<Column name="Невозможно_определить_количество" />
+							</TargetTable>
+						</TableConsolidation>
+					</Actions>
+				</ConditionalAction>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenDocsExist tag="Извещения о закупочной процедуре 223ФЗ"/>
+						</And>
+					</Conditions>
+					<Actions>
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Способ_закупки_код" targetField="|Document|Способ_закупки_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Способ_закупки" targetField="|Document|Способ_закупки" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Участник_закупки_СМП" targetField="|Document|Участник_закупки_СМП" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_код" targetField="|Document|Основание_закупки_у_ЕП_код" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Основание_закупки_у_ЕП_наименование" targetField="|Document|Основание_закупки_у_ЕП_наименование" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|Номер_несостоявшейся_процедуры" targetField="|Document|Номер_несостоявшейся_процедуры" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|НМЦ_с_НДС" targetField="|Document|НМЦ_с_НДС" />
+						<CopyField sourceFlow="{current}" targetFlow="Извещения о закупочной процедуре 223ФЗ" sourceField="|Document|НМЦД_в_рублях" targetField="|Document|НМЦД_в_рублях" />
+					</Actions>
+				</ConditionalAction>
+			</Actions>
+		</ConditionalActions>	
+	</OnRegcardEdited>
+	<OnDocumentDeleted transaction="single"> 
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and (doc_Id = '{currentDocField=|Document|ИДППЗРОД}') and (doc_RegCard/rc_Index/text_Статус = 'В архиве' or doc_RegCard/rc_Index/text_Статус = 'Неактуальная')]" tag="Версия_удаляемой_ППЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={Версия_удаляемой_ППЗ}] or doc_Id = document[doc_Links/doc_Link/link_Owner={Версия_удаляемой_ППЗ}])]" tag="Лот_версии_удаляемой_ППЗ" />
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (xn-in(doc_Id, {currentDocLinkList}))]" tag="Лот_удаляемой_ППЗ" />
+			</Select>
+			<Actions>
+				<SetField targetFlow="Версия_удаляемой_ППЗ" targetField="|Document|Статус" value="Опубликовано в ЕИС" />
+				<SetField targetFlow="Лот_версии_удаляемой_ППЗ" targetField="|Document|Статус" value="Черновик" />
+				<SetField targetFlow="Лот_удаляемой_ППЗ" targetField="|Document|Статус" value="В архиве" />
+				<SetField targetFlow="Лот_удаляемой_ППЗ" targetField="|Document|Актуальность" value="0" />
+				<SetField targetFlow="Версия_удаляемой_ППЗ" targetField="|Document|Актуальность" value="1" />
+				<SetField targetFlow="Лот_версии_удаляемой_ППЗ" targetField="|Document|Актуальность" value="1" />
+			</Actions>
+		</Aggregation>
+	</OnDocumentDeleted> 
+</Hooks>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Номер контракт" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_контракт" name="Номер контракт" valueType="text" isValue="true" edit-name="regNum" />
+				</column>
+				<column>
+					<field name="Этап контракта" isLabel="true" />
+					<field fieldType="field" key="|Document|Этап_контракта" name="Этап контракта" valueType="text" isValue="true" edit-name="EtContr" />
+				</column>
+				</row>
+				<row>
+				<column>
+					<field name="Номер исполнения" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_исполнения" name="Номер исполнения" valueType="text" isValue="true" edit-name="EtIsp" />
+				</column>
+				<column>
+					
+				</column>
+				
+			</row>
+			
+			
+			
+			<row>
+				<column>
+					<field name="Дата заключения" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения"  valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+								</column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Дата_заключения" name="по" valueType="date" isValue="true" edit-name="publicDateTo" />
+								
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row>
+			
+			
+			<!-- <row>
+				<column>
+					<field name="Цена контракта, руб." isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Цена_контракта" name="Цена контракта с НДС" valueType="money" isValue="true"  edit-name="sumFrom" weight="300"/>
+								</column>			
+
+								<column>
+									<field name="до" isLabel="true" />
+								</column>			
+
+								<column>
+									<field fieldType="field" key="|Document|Цена_контракта" name="до" valueType="money" isValue="true" edit-name="sumTo"  />
+								
+							</column>
+						</row>
+					</rows>								
+				</block>
+			</column>	
+		</row> -->
+
+
+					
+
+
+	</rows>
+</edit>	 
+<search>
+	<field fieldValue="(doc_RegCard/rc_FlowName = 'Исполнения контрактов')  and (doc_RegCard/rc_Index/text_Номер_контракт = @regNum) and (doc_RegCard/rc_Index/text_Этап_контракта = @EtContr) and (doc_RegCard/rc_Index/text_Номер_исполнения = @EtIsp) and ((doc_RegCard/rc_Index/date_Дата_заключения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения &lt;= @publicDateTo))  " />
+</search>
+</root>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>	
+				<column>
+					<field name="Год" isLabel="true"/>
+					<field name="от" isLabel="true"/>
+					<field fieldType="field" key="|Document|Год" name="Год" valueType="integer" isValue="true" edit-name="year"   />
+					<field name="до" isLabel="true" />
+					<field fieldType="field" key="|Document|Год" name="Год" valueType="integer" isValue="true" edit-name="yearTo"   />
+				</column>	
+				<column>
+				</column>	
+				<column>
+				</column>
+				<column>
+				</column>
+			</row>		
+			<row>
+				<column>
+					<field name="Реестровый номер в ЕИС" isLabel="true"/>
+					<field fieldType="field" key="|Document|Реестровый_номер_в_ЕИС" name="Реестровый номер в ЕИС" valueType="text" isValue="true"  edit-name="Regnumber" />
+				</column>
+				<column>				
+					<field name="Статус" isLabel="true"/>
+					<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Статусы плана" dict-edit-name="Status" display-field-part="true"/>
+				</column>
+				<column>
+				</column>	
+				<column>
+				</column>
+			</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Планы-графики') and (doc_RegCard/rc_Index/text_Статус = @status)  and (doc_RegCard/rc_Index/text_Реестровый_номер_в_ЕИС = @Regnumber) and ((doc_RegCard/rc_Index/integer_Год &gt;= @year) and (doc_RegCard/rc_Index/integer_Год &lt;= @yearTo)) " />
+	</search>
+</root>

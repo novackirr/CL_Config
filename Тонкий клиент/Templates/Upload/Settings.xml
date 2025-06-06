@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <settings>
+    <metadata>.metadata</metadata>
+    <lock>.lock</lock>
+    <location>C:\_tempUpload</location>
+  </settings>
+  
+  <category>
+    <title>Загрузить файлы</title>
+    <multiple>true</multiple>
+    <location>/default</location>
+    <metadata>
+      <setting key="category" value="{request,category}"/>
+      <setting key="documentKey" value="{request,documentKey}"/>
+    </metadata>
+  </category>
+
+  <category name="plan">
+    <title>Загрузить план</title>
+    <multiple>false</multiple>
+    <location>/plans</location>
+    <metadata>
+      <setting key="category" value="{request,category}"/>
+      <setting key="documentKey" value="{request,documentKey}"/>
+    </metadata>
+  </category>
+  
+  <category name="fact">
+    <title>Загрузить факт</title>
+    <multiple>false</multiple>
+    <location>/facts</location>
+    <metadata>
+      <setting key="category" value="{request,category}"/>
+      <setting key="documentKey" value="{request,documentKey}"/>
+    </metadata>
+  </category>
+  
+  <category name="purchase">
+    <title>Загрузить заявки</title>
+    <multiple>false</multiple>
+    <location>/purchases</location>
+    <metadata>
+      <setting key="category" value="{request,category}"/>
+      <setting key="documentKey" value="{request,documentKey}"/>
+    </metadata>
+  </category>
+  
+  <category name="dogovor">
+    <title>Загрузить договоры</title>
+    <multiple>false</multiple>
+    <location>/dogovors</location>
+    <metadata>
+      <setting key="category" value="{request,category}"/>
+      <setting key="documentKey" value="{request,documentKey}"/>
+    </metadata>
+  </category>
+</root>

@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основание сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="15" name="Общие сведения">
+										<rows>
+
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_реестровой_записи_жалобы" name="Номер реестровой записи жалобы, сформированный контрольным органом" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Орган осуществлявший рассмотрение" valueType="text" />
+												</column>
+
+												<column>
+													<field fieldType="field" key="|Document|Тип_подачи_жалобы" name="Тип подачи жалобы" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_поступления_жалобы" name="Дата поступления жалобы" valueType="date" />
+												</column>
+
+												<column>
+													<field fieldType="field" key="|Document|Предмет_жалобы" name="Предмет жалобы" valueType="text" />
+												</column>
+											</row>
+
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_извещения" name="Номер извещения о проведении" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_извещения" name="Номер лота" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_извещения" name="Номер извещения о проведении" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_лота_в_извещении" name="Номер лота" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Описание_лота" name="Описание лота" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Описание_плана_закупок" name="Описание Плана закупок" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Период_планирования" name="Период планирование" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Описание_плана_графика" name="Описание Плана-графика" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="1" name="Основание сведения"> 
+						<rows>	
+							<row>							
+								<column>
+									<field name="Орган осуществлявший рассмотрение" isLabel="true" edit-name="registerOrganizator"/>                 
+								</column>  	
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организатор закупки" valueType="text"  isValue="true" edit-name="registerOrganizator"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrganizator" show-dict-column="false" edit-required="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организатор закупки наименование" valueType="text" isValue="true" edit-name="registerOrganizatorName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrganizator" display-field-part="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Организация-заказчик СПЗ" valueType="text" isValue="true" edit-name="registerOrgZaSPZ"    edit-readonly="true"  edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Организация_заказчик_код_по_СР" valueType="text" isValue="true" edit-name="registerOrgZaSr"   edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="ОКОПФ_заказчика" valueType="text" isValue="true" edit-name="registerOrgZaOKPF" edit-hidden="true" />
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field name="Номер реестровой записи жалобы" isLabel="true" edit-name="numberReestr" />	>
+								</column>								
+								<column>	
+									<field name="Тип подачи жалобы" isLabel="true" edit-name="tip"/>
+								</column>
+								<column>				
+									<field name="Предмет жалобы" isLabel="true"  edit-name="predgaolob"/>
+								</column>	
+								<column>
+									<block id="21" name="21">
+										<rows>
+											<row>	
+
+												<column>
+													<field name="Дата поступления жалобы" isLabel="true" edit-name="dategalob"/>                 
+												</column> 	
+												<column> 	
+													<field name="Период планирование" isLabel="true"  edit-name="PeriodPlan"/>
+												</column> 	
+											</row>
+										</rows>
+									</block>
+								</column>
+
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Номер_реестровой_записи_жалобы" name="Номер реестровой записи жалобы" valueType="integer" isValue="true" edit-name="numberReestr" edit-required="true"  />
+								</column>								
+								<column>	
+									<field fieldType="field" key="|Document|Тип_подачи_жалобы_код" name="Тип подачи жалобы код" valueType="text"  isValue="true" edit-name="tip"   dict-column-name="code"  edit-tool = "Тип подачи жалобы"   edit-default-value="RUB" dictionary-selection-start-level="1"  edit-readonly="true"  dict-edit-name="tip" show-dict-column="false" edit-required="true"/>
+									<field fieldType="field" key="|Document|Тип_подачи_жалобы" name="Тип подачи жалобы" valueType="text" isValue="true" edit-name="tipName"   edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="tip" edit-required="true"/>
+								</column>
+								<column>				
+									<field fieldType="field" key="|Document|Предмет_жалобы" name="Предмет жалобы" valueType="text" isValue="true" edit-readonly="true" edit-name="predgaolob"  dict-column-name="code"   edit-tool = "Предмет жалобы" display-field-part="true"  dict-edit-name="predgaolob" />
+								</column>
+								<column>
+									<block id="21" name="21">
+										<rows>
+											<row>
+
+												<column>
+													<field fieldType="field" key="|Document|Дата_поступления_жалобы" valueType="date" isValue="true" edit-name="dategalob"  edit-required="true"  />
+												</column> 	
+												<column> 	
+													<field fieldType="field" key="|Document|Период_планирования" name="Период планирование"  isValue="true"  valueType="date" edit-name="PeriodPlan"  />	         
+												</column> 	
+											</row>
+										</rows>
+									</block>
+								</column>
+
+							</row>
+						
+							<row>
+											
+								<column>		
+									<block id="25" name="25">
+										<rows>
+										<row>
+										<column>	
+									<field name="Номер извещения" isLabel="true"  edit-name="NumIzvesh"/>
+								</column>
+								<column>	
+									<field name="Номер лота" isLabel="true"  edit-name="Numlot"/>
+								</column>
+								</row>
+							
+										</rows>
+									</block>
+								</column>
+							
+								
+								<column>				
+									<field name="Описание лота" isLabel="true"  edit-name="OpisLot"/>
+								</column>
+								
+							</row>
+							<row>
+							<column>		
+									<block id="26" name="26">
+										<rows>
+<row>
+										<column>	
+								<field fieldType="field" key="|Document|Номер_извещения" name="Номер извещения" isValue="true"  valueType="integer" edit-name="NumIzvesh" />	
+								</column>
+								
+								<column>	
+									<field fieldType="field" key="|Document|Номер_лота_в_извещении" name="Номер лота"  isValue="true"  valueType="integer" edit-name="Numlot" />	
+								</column>
+								</row>
+							
+										</rows>
+									</block>
+								</column>
+							
+								<column>	
+									<field fieldType="field" key="|Document|Описание_лота" name="Описание лота" isValue="true"  valueType="longtext" edit-name="OpisLot" />	
+								</column>
+								
+							</row>
+							<row>
+								<column>	
+									<field name="Описание Плана закупок" isLabel="true"  edit-name="OpisPlanZak"/>
+								</column>
+								<column>	
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>	
+									<field fieldType="field" key="|Document|Описание_плана_закупок" name="Описание Плана закупок" isValue="true"  valueType="longtext" edit-name="OpisPlanZak" />	
+								</column>
+								<column>	
+								</column>
+							</row>
+							<row>
+								<column>	
+									<field name="Описание Плана-графика" isLabel="true"  edit-name="OpisPlanGraph"/>
+								</column>
+								<column>	
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>	
+									<field fieldType="field" key="|Document|Описание_плана_графика" name="Описание Плана-графика" isValue="true"  valueType="longtext" edit-name="OpisPlanGraph" />	
+								</column>
+								<column>	
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+ <row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1" />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowname" /> 
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}" edit-hidden="true" /> 		
+									<field fieldType="field" key="|Document|Статус" valueType="text" isValue="true" edit-name="Status" edit-hidden="true" edit-default-value="Черновик" />									
+								</column>
+							</row>	
+							</rows>
+					</block>
+				</column>
+			</row> 
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="Scripts\Content\Document\RegCard\LComplaint.js" />
+	</scripts>
+</root>

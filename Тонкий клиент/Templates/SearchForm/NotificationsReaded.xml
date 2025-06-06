@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Тема" isLabel="true"/>
+					<field fieldType="field" key="subject" name="Тема" valueType="text" isValue="true" edit-name="subject" />
+				</column>
+				<column>
+					<field name="Сообщение" isLabel="true"/>
+					<field fieldType="field" key="text" name="Сообщение" valueType="text" isValue="true" edit-name="text" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="readed" name="readed" valueType="boolean" isValue="true" edit-name="readed"  edit-hidden="true"  edit-default-value="true" />				
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(xn-contains(data/subject ,@subject) and xn-contains(data/text ,@text))" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

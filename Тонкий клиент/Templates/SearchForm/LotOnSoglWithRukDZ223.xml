@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'На согласовании с Руководителем ДЗ') and (doc_RegCard/rc_Index/boolean_Актуальность = '1')" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/PologenieNaZak223.js" />
+	</scripts>
+
+</root>

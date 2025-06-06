@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field name="ИКЗ" isLabel="true" /> 
+					<field fieldType="field" key="|Document|ИКЗ" name="ИКЗ" valueType="text" isValue="true" edit-name="IKZ"  /> 
+				</column> 
+			</row>
+			<row>
+				<column>
+					<field name="Наименование объекта закупки" isLabel="true" /> 
+					<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" isValue="true" edit-name="Namezak"  /> 
+				</column> 
+			</row>
+			<row>
+				<column>
+					<field name="Способ определения поставщика" isLabel="true" />
+					<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Способ определения поставщика" valueType="text"  isValue="true" edit-name="sposob"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Способ определения поставщика" dict-edit-name="sposob" />
+					<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика наименование" valueType="text" isValue="true" edit-name="sposobName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="sposob" display-field-part="true" edit-hidden="true"/>
+				</column>
+			</row>
+			<row>	
+				<column>
+					<field name="ОКПД2" isLabel="true" />	
+					<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+				</column>
+				<column>
+					<field name="ОКПД2 наименование" isLabel="true" />	
+					<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="text" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="6"   display-field-part="false" dict-edit-name="registerOKDP" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="НМЦК" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|НМЦK" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|НМЦK" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+			</row>
+			<row>
+				<column>
+					<field name="Планируемый срок размещения" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Планируемый_срок_размещения" name="Планируемый срок размещения" valueType="date" isValue="true"  edit-name="PlanSrockRazmFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Планируемый_срок_размещения" name="до" valueType="date" isValue="true" edit-name="PlanSrockRazmTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+			</row>
+			<row>
+				<column>
+					<field name="Планируемый срок исполнения" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Планируемый_срок_исполнения" name="Планируемый срок исполнения" valueType="date" isValue="true"  edit-name="PlanSrockIspFrom" weight="300"/>
+								</column>
+								<column>								
+									<field name="до" isLabel="true" />
+								</column>
+								<column>								
+									<field fieldType="field" key="|Document|Планируемый_срок_исполнения" name="до" valueType="date" isValue="true" edit-name="PlanSrockIspTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>	
+			</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана-графика')  and (doc_RegCard/rc_Index/text_Способ_определения_поставщика_код = @sposob) and (doc_RegCard/rc_Index/text_Статус = 'Включена в опубликованный план-график') and (doc_RegCard/rc_Index/text_Наименование_объекта_закупки = @Namezak) and (doc_RegCard/rc_Index/text_ИКЗ = @IKZ) and (doc_RegCard/rc_Index/integer_ОКПД2 = @registerOKDP) and ((doc_RegCard/rc_Index/money_НМЦK &gt;= @sumLotFrom) and (doc_RegCard/rc_Index/money_НМЦK &lt;= @sumLotTo)) and ((doc_RegCard/rc_Index/date_Планируемый_срок_размещения &gt;= @PlanSrockRazmFrom) and (doc_RegCard/rc_Index/date_Планируемый_срок_размещения &lt;= @PlanSrockRazmTo)) and ((doc_RegCard/rc_Index/date_Планируемый_срок_исполнения &gt;= @PlanSrockIspFrom) and (doc_RegCard/rc_Index/date_Планируемый_срок_исполнения &lt;= @PlanSrockIspTo))" />
+	</search>
+</root>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>
+		<column>
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZaName" edit-hidden="true"  edit-default-value="{currentOrganization}"  />
+			<field name="Название закупки" isLabel="true" />
+			<field fieldType="field" key="|Document|Название_закупки" name="Название закупки" valueType="longtext" isValue="true" edit-name="noticeName" />
+        </column>
+		<column>
+			<field name="Внутренний номер" isLabel="true"/>
+			<block id="block10" name="block0" height="300">
+				<rows>
+					<row>
+						<column>
+							<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний номер" valueType="text" isValue="true"  edit-name="vnutrNumber" />
+						</column>						
+					</row>
+				</rows>							
+			</block>
+			<block id="block11" name="block11"  height="300">
+				<rows>
+					<row>
+						<column>
+							 <field name="НМЦД" isLabel="true"/>
+						</column>						
+					</row>
+				</rows>								
+			</block>
+			<block id="block12" name="block12"  height="300">		
+				<rows>
+					<row>
+						<column>		
+							<field name="от" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+						</column>
+						<column>								
+							<field name="до" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>
+		</column>
+    </row> 
+	 <row>		 
+		<column>
+			<field name="Плановая дата размещения" isLabel="true"/>
+			<block id="block3" name="block3"  height="300">		
+				<rows>
+					<row>
+						<column>				
+							<field name="с" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Плановая_дата_размещения" name="Плановая дата размещения" valueType="date" value-db-type="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+						</column>
+						<column>								
+							<field name="по" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Плановая_дата_размещения" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="publicDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>	
+        </column>
+		<column>
+			<field name="Дата окончания подачи заявок" isLabel="true"/>
+			<block id="block4" name="block4"  height="300">		
+				<rows>
+					<row>
+						<column>					
+							<field name="с" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_окончания_подачи_заявок" name="Дата окончания подачи заявок" valueType="date" value-db-type="date" isValue="true"  edit-name="finishDateFrom" weight="300"/>
+						</column>
+						<column>								
+							<field name="по" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_окончания_подачи_заявок" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="finishDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>	
+        </column>	
+		<column>
+			<field name="Дата подведения итогов" isLabel="true"/>
+			<block id="block6" name="block6"  height="300">		
+				<rows>
+					<row>
+						<column>		
+							<field name="с" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_подведения_итогов" name="Дата подведения итогов" valueType="date" value-db-type="date" isValue="true"  edit-name="itogDateFrom" weight="300"/>
+						</column>
+						<column>								
+							<field name="по" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_подведения_итогов" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="itogDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>					
+        </column>			
+     </row>	
+	 </rows>
+  </edit>	 
+  
+  <extraSearchForm>
+	<rows>
+		<row>
+			<column>
+				<field name="Квалификационного отбор" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Отсутствие участника в РНП" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Квалификационный_отбор" name="" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение"  edit-name="kvalotb"  />		
+			</column>
+			<column>  
+				<field fieldType="field" key="|Document|Отсутствие_участника_в_РНП" name=""  valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="DropRNP"  />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Адрес" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Организация контактного лица" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Адрес" name="Адрес" valueType="longtext" isValue="true" edit-name="kontadress"  />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо_организация" name="Организация контактного лица" valueType="text"  isValue="true" edit-name="orgkont" dict-column-name="code" edit-readonly="true" is-select-one-level="1" edit-tool = "Организации заказчики223" dict-edit-name="orgkont" show-dict-column="false"/>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо_организация_наименование" name="Организация контактного лица наименование" valueType="text" isValue="true" edit-name="orgkontName"  edit-readonly="true" dict-column-name="Краткое наименование" edit-hidden="true" display-field-part="true" dict-edit-name="orgkont" dict-column-width-percentage="70"/>
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Фамилия контактного лица" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Имя контактного лица" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Отчество контактного лица" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Электронная почта" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо" name="Контактное лицо" valueType="addressbook" isValue="true" edit-name="kont_FIO" edit-addressbook-groups="person" edit-required="true"   edit-default-value="{currentUser}" edit-readonly="true" edit-hidden="true"/>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_фамилия" name="Контактное лицо Ф" valueType="text" isValue="true" edit-name="kont_F"  />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_имя" name="Контактное лицо И" valueType="text" isValue="true" edit-name="kont_I"  />
+			</column>								
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_отчество" name="Контактное лицо О" valueType="text" isValue="true" edit-name="kont_O"   />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email" name="Электронная почта" valueType="text" isValue="true" edit-name="kontEmail" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Место рассмотрения предложений" isLabel="true" />
+				<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Место_рассмотрения_предложений" name="Место рассмотрения предложений" valueType="longtext" isValue="true" edit-name="mestorasmpredl" />
+			</column>
+			<column>
+				<block id="block1" name="block1" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="Конкурентный способ" isLabel="true" />	
+							</column>
+							<column>							
+								<field name="Этап вскрытие конвертов" isLabel="true" />	
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block2" name="block2" height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Конкурентный_способ" name="Конкурентный способ" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Konksposob" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Этап_вскрытие_конвертов" name="Этап вскрытие конвертов" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="VskKonvertov" />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block3" name="block3" height="300">
+					<rows>
+						<row>
+							<column>
+								<field name="Этап рассмотрения заявок" isLabel="true" />
+							</column>
+							<column>							
+								<field name="Этап подведения итогов" isLabel="true" />	
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block4" name="block4" height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Этап_рассмотрение_заявок" name="Этап рассмотрение заявок" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="RasmZay" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Этап_подведения_итогов" name="Этап подведения итогов" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="PodvItog" />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Место подачи заявок" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Место проведения торгов" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>								
+				<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Место_подачи_заявок" name="Место подачи заявок" valueType="longtext" isValue="true" edit-name="mestopodzay" />
+			</column>
+			<column>								
+				<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Место_проведения_торгов" name="Место проведения торгов" valueType="longtext" isValue="true" edit-name="mestoprovtorg" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Место рассмотрения заявок" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Место подведения итогов" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>								
+				<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Место_рассмотрения_заявок" name="Место рассмотрения заявок" valueType="longtext" isValue="true"   edit-name="mestorasm" />
+			</column>
+			<column>								
+				<field fieldType="field" key="|Document|Порядок_проведения_процедуры|Место_подведения_итогов" name="Место подведения итогов" valueType="longtext" isValue="true" edit-name="mestopodvitog" />
+			</column>
+		</row>
+	</rows>
+</extraSearchForm>
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ') and ((doc_RegCard/rc_Index/text_Статус = 'Закупка не состоялась(нет заявок)') or (doc_RegCard/rc_Index/text_Статус = 'Закупка не состоялась') or (doc_RegCard/rc_Index/text_Статус = 'Отказ от заключения договора')) and (doc_RegCard/rc_Index/boolean_Актуальность = '1')" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

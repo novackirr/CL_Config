@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>
+	<row>
+		
+		<column>
+          <field name="Наименование заявки" isLabel="true" />		  
+          <field fieldType="field" key="|Document|Наименование_заявки" name="Наименование заявки" valueType="longtext" isValue="true" edit-name="OrderName" />
+        </column>     
+<!-- <column>
+          <field name="Обоснование" isLabel="true" />		  
+          <field fieldType="field" key="|Document|Обоснование" name="Обоснование" valueType="longtext" isValue="true" edit-name="OrderRat" />
+        </column>      		
+    </row>
+	
+	<row>
+	<column>
+          <field name="Статус" isLabel="true"/>
+          <field fieldType="field" key="Статусы заявки" name="Статус" edit-name="status" valueType="text"  isValue="true" edit-tool="Статусы заявки" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" display-field-part="true" dict-edit-name="status" />
+        </column>	 -->
+    
+
+    
+  </row>
+		
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="doc_RegCard/rc_FlowName ='Заявки на закупку'" />
+  </search>
+</root>

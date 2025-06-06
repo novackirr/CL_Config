@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="MatchProcedureTypeAll" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allow-create-excel="true">
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" weight="10" isOptional="true" />
+		
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Организатор_закупки" name="Организация" sortPredicate="doc_RegCard/rc_Index/integer_Организатор_закупки" valueType="addressbook" weight="15"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Инициатор" name="Инициатор" sortPredicate="doc_RegCard/rc_Index/integer_Инициатор" valueType="addressbook" weight="15"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_ЭТП" name="Наименование ЭТП" sortPredicate="doc_RegCard/rc_Index/text_Наименование_ЭТП" valueType="text" weight="15"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Адрес_ЭТП" name="Адрес ЭТП" sortPredicate="doc_RegCard/rc_Index/text_Адрес_ЭТП" valueType="url" weight="15"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" sortPredicate="doc_RegCard/rc_Index/text_Статус" valueType="text" weight="15"  />
+	</columns>
+</root>

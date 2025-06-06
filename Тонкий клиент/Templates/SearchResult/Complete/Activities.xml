@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="CompleteActivities" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allowAllActions="true" allowSingleActions="false" allowSelection="false" >
+    <column fieldType="property" key="ActivityName" name="Название" sortPredicate="act_Name" valueType="text" weight="25" />
+    <column fieldType="attribute" key="act_Creator" name="Автор" sortPredicate="act_Creator" valueType="addressbook" weight="17" />
+    <column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="text" weight="34" />
+	<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="date" sortPredicate="act_DueTime" weight="11" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" sortPredicate="doc_RegCard/rc_Index/longtext_Краткое_содержание" valueType="longtext" weight="35" defaultHide="true"/>
+	<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="11" defaultHide="true"/>
+    <column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Отдел" sortPredicate="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" valueType="longtext" weight="22" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_FlowTitle" name="Поток" sortPredicate="doc_RegCard/rc_FlowKey" valueType="text" weight="20" />
+  </columns>
+</root>

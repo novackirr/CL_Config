@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>	
+	<dictionary name="Контрагенты" customForm="Supplier.xml">
+        <columns>
+            <column name="Наименование"/>
+            <column name="Фирменное наименование"/>
+            <column name="ИНН"/>
+            <column name="КПП"/>
+        </columns>
+        <access>
+            <view>
+                <workGroup name="Суперпользователи"/>
+				<workGroup name="Департамент закупок"/>
+				<workGroup name="Департамент закупок ЦХД"/>
+				<workGroup name="Руководитель ДЗ"/>
+            </view>
+            <edit>
+                <workGroup name="Суперпользователи"/>
+				<workGroup name="Департамент закупок"/>
+				<workGroup name="Департамент закупок ЦХД"/>
+				<workGroup name="Руководитель ДЗ"/>
+            </edit>
+            <create>
+                <workGroup name="Суперпользователи"/>
+				<workGroup name="Департамент закупок"/>
+				<workGroup name="Департамент закупок ЦХД"/>
+				<workGroup name="Руководитель ДЗ"/>
+            </create>
+            <delete>
+                <workGroup name="Суперпользователи"/>
+				<workGroup name="Департамент закупок"/>
+				<workGroup name="Департамент закупок ЦХД"/>
+				<workGroup name="Руководитель ДЗ"/>
+            </delete>
+        </access>
+    </dictionary>	
+</root>

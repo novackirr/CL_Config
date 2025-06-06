@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+        </column>
+	</row>
+	<row>
+		<column>
+          <field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" name="Подразделение инициатор" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Наименование_заявки" name="Наименование заявки" valueType="longtext" />
+        </column>
+      </row>
+	  <row>
+	  <column>
+          <field fieldType="field" key="|Document|Сумма" name="Сумма" valueType="money" />
+        </column>
+		<column>
+          <field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+        </column>
+	  </row>
+	  <row>
+        <column>
+          <field fieldType="field" key="|Document|Срок_исполнения_договора_с" name="Срок исполнения договора с" valueType="date" />
+        </column>	
+		<column>
+          <field fieldType="field" key="|Document|Срок_исполнения_договора_по" name="Срок исполнения договора по" valueType="date" />
+        </column>
+      </row>	  
+	  <row>
+		<column>
+          <field fieldType="field" key="|Document|Обоснование" name="Обоснование" valueType="longtext" />
+        </column>
+      </row>  
+    </rows>
+  </view>
+  <edit>
+    <rows>
+	  <row>
+        <column>
+          <field name="Подразделение инициатор" isLabel="true" />
+        </column>
+      </row>
+	  <row>
+		<column>
+		  <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate"  edit-hidden="true" edit-default-value="{today}" />
+		  <field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="registerStat"  edit-hidden="true" edit-default-value="Черновик" />
+		  <field fieldType="field" key="|Document|Вид_документа" name="Статус" valueType="text" isValue="true" edit-name="registerType"  edit-hidden="true" edit-default-value="Заявка на закупку" />			  
+		  <field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Подразделение-инициатор код" isValue="true" valueType="addressbook" edit-name="registerOrgId" edit-addressbook-groups = "Department"/>		  
+		  <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="text" isValue="true" edit-name="registerName" edit-isCalculated="true" />
+		  <field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="document-header" edit-hidden="true" edit-value="Заявка на закупку"/>
+		  <field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="links-header" edit-hidden="true" edit-value="Позиции"/>
+		  <field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="Files-header" edit-hidden="true" edit-value="Документация"/>
+		</column>
+	  </row>
+	  <row>
+        <column>
+          <field name="Наименование заявки" isLabel="true" />
+        </column>
+      </row>
+	  <row>
+		<column>
+		  <field fieldType="field" key="|Document|Наименование_заявки" name="Наименование заявки" valueType="longtext" isValue="true" edit-name="registerName" edit-required="true" />
+		</column>
+	  </row>
+	  <row>
+        <column>
+          <field name="Валюта" isLabel="true" />
+        </column>
+      </row>
+	  <row>
+	  <column>
+		  <field fieldType="field" key="|Document|Сумма" name="Сумма" valueType="money" isValue="true" edit-name="registerSum" edit-hidden="true"/>
+		  <field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="registerCur" edit-hidden="true" edit-dictionary = "Валюта" edit-dictionaryValue="Наименование" edit-default-value="Российский рубль" edit-dictionaryGroup="info2"/>
+		  <field fieldType="field" key="|Document|Цифровой_код_валюты" name="Цифровой код валюты" valueType="text" isValue="true" edit-name="registerCurCode"  edit-isInvisible="true" edit-dictionary = "Валюта" edit-dictionaryValue="Цифровой код"  edit-dictionaryGroup="info2"  edit-default-value="643"/> 
+		  <field fieldType="field" key="|Document|Код_валюты" name="Код валюты" valueType="text" isValue="true" edit-name="registerCurId"  edit-isInvisible="true" edit-dictionary = "Валюта" edit-dictionaryGroup="info2" edit-default-value="RUB"/>
+		  <field fieldType="field" key="|Document|Срок_исполнения_договора_с" name="Срок исполнения договора с" valueType="date"  isValue="true" edit-name="registerStart" edit-hidden="true"/>
+		  <field fieldType="field" key="|Document|Срок_исполнения_договора_по" name="Срок исполнения договора по" valueType="date"  isValue="true" edit-name="registerFinish" edit-hidden="true"/>
+		</column>
+	  </row> 
+	  <row>
+        <column>
+          <field name="Обоснование" isLabel="true" />
+        </column>
+      </row>	  
+	  <row>
+		<column>
+		  <field fieldType="field" key="|Document|Обоснование" name="Обоснование" valueType="longtext" isValue="true" edit-name="registerText"/>
+		</column>
+	  </row> 	
+    </rows>
+    <variables>
+      <variable variable-name="regNumber" variable-format="{number}">
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+      </variable>
+    </variables>
+  </edit>
+    <scripts>
+		<script file="Scripts\Content\Document\RegCard\LPurchaseOrder.js" />
+	</scripts> 
+</root>

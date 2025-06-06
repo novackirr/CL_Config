@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<LinksModify>
+		<LinkCurrentDoc />
+	</LinksModify>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Расторжения договора 223ФЗ" />
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Номер_договора" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик_наименование" />			
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код" />
+			<CopyField src="|Document|Способ_закупки_положение"  />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Номер_извещения" />
+			<CopyField src="|Document|ИД_извещения" />
+			<CopyField src="|Document|ИД_лота" />
+			<CopyField src="|Document|Номер_лота" />
+			<CopyField src="%key%" dst="|Document|ИД_договора" />
+			<CopyField src="|Document|Дата_заключения" dst="|Document|Дата_заключения" />
+			<CopyField src="|Document|Цена_с_НДС" dst="|Document|Цена_договора" />
+			<CopyField src="|Document|Наименование_ЭТП" />
+			<CopyField src="|Document|ИД_ЭТП" />
+			<CopyField src="|Document|Адрес_ЭТП" />			
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН"  />
+			<CopyField src="|Document|Номер_договора_в_ЕИС" dst="|Document|Номер_договора_в_ЕИС" />
+			<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель" />
+			<CopyField src="|Document|Исполнитель|Исполнитель" />
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_договора_на_ЭТП" />
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|Не_публиковать_в_ЕИС" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+		</FieldsModify>		
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Договоры 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="Договоры 223ФЗ"/>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Links/doc_Link/link_Document, {currentDocLinkList})]" tag="Позиции плана закупок 223ФЗ"/>
+				</Select>
+				<Actions>
+					<!-- <SetField targetFlow="Договоры 223ФЗ" targetField="|Document|Статус" value="Договор расторгнут" />
+					<SetField targetFlow="Позиции плана закупок 223ФЗ" targetField="|Document|Статус" value="Договор расторгнут" />
+					<SetField targetFlow="Договоры 223ФЗ" targetField="|Document|Договор_исполнен" value="1" /> -->
+					<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+					<CopyField sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="%key%" targetField="|Document|ИД_договора" />
+					<CopyField sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Номер_лота" targetField="|Document|Номер_лота" />
+					<CopyField sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|ИД_лота" targetField="|Document|ИД_лота" />
+					<CopyField sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|ИД_извещения" targetField="|Document|ИД_извещения" />
+					<CopyField sourceFlow="Договоры 223ФЗ" targetFlow="{current}" sourceField="|Document|Номер_извещения" targetField="|Document|Номер_извещения" />
+					<CopyField sourceFlow="{current}" targetFlow="Договоры 223ФЗ" sourceField="|Document|Дата_расторжения_договора" targetField="|Document|Дата_завершения_договора" />
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Регистрационный_номер"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>	
+			</NamedConstants>
+		</OnDocumentCreated>
+</Hooks>

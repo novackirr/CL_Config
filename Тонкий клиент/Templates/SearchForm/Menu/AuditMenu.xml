@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<block name="Отчетность о договорах">
+		<field name="LDogReport" value="Договоры по результатам закупок" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+		<field name="LDogReportEP" value="Договоры, заключенные по результатам закупки у единственного поставщика (исполнителя, подрядчика)" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access> 
+		</field>
+		<!-- <field name="LDogReportSMP" value="Договоры, заключенные по результатам закупки у субъектов малого и среднего предпринимательства" >
+			<access>
+				<workgroup name="Суперпользователи"/>       
+				<workgroup name="Департамент закупок"/>
+				<workgroup name="Руководитель ДЗ"/>   
+				
+			</access> 
+		</field> -->
+		<field name="LDogReportEPnesost" value="Договоры, заключенные заказчиком с единственным поставщиком (исполнителем, подрядчиком) по результатам несостоявшейся конкурентной закупки" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access> 
+		</field>
+		<field name="LDogReportSMPYear" value="Годовые отчеты о закупке товаров, работ, услуг у субъектов малого и среднего предпринимательства" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access> 
+		</field>
+		<field name="LDogReportInnovationYear" value="Годовой отчет о закупке инновационной продукции, высокотехнологичной продукции" >
+			<access>
+				<workgroup name="Инициаторы"/> 
+				<workgroup name="Бюджетный комитет"/> 
+				<workgroup name="Комиссия по закупкам"/> 
+				<workgroup name="Курирующий Зам Пред"/> 
+				<workgroup name="Руководитель инициатора"/> 
+				<workgroup name="Специалист по закупкам"/> 
+				<workgroup name="Суперпользователи"/> 
+				<workgroup name="Управление бюджетирования"/>
+				<workgroup name="Юридический департамент"/>
+			</access>
+		</field>
+	</block>
+	
+	<scripts>
+	
+	</scripts>
+</root>

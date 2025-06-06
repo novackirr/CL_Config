@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_ContextActionLayout.cshtml";
+
+    ViewBag.Title = "Формирование ППЗ";
+    ViewBag.ActionUrl = Url.Action("Register", "Search");
+    ViewBag.Method = "get";
+
+    var actionId = ViewBag.ActionId as string;
+    var budgetFlowKey = ViewBag.BudgetFlowKey as string;
+    var currentYear = DateTime.Now.Year;
+    var nextYear = DateTime.Now.Year + 1;
+    var nextNextYear = DateTime.Now.Year + 2;
+    var selectedYear = currentYear;
+}
+
+<div class="create-plan-settings-content">
+    <input type="hidden" name="searchTemplateName" value="@ViewBag.SearchTemplateName" />
+    <input name="flowKey" type="hidden" value="@budgetFlowKey"/>
+    <input name="actionId" type="hidden" value="@actionId" />
+
+    <div class="form-group clearfix create-plan-settings-content__years">
+        <span class="control-label">Год ППЗ:</span>
+        <div class="radio">
+            <label>
+                <input type="radio" data-name="curYear" name="budgetYear" value="@currentYear" @(currentYear == selectedYear ? "checked" : "")/>
+                <span>@currentYear</span>
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" data-name="nextYear" name="budgetYear" value="@nextYear" @(nextYear == selectedYear ? "checked" : "")/>
+                <span>@nextYear</span>
+            </label>
+        </div>
+        @*<div class="radio">
+            <label>
+                <input type="radio" data-name="nextNextYear" name="budgetYear" value="@nextNextYear" @(nextNextYear == selectedYear ? "checked" : "")/>
+                <span>@nextNextYear</span>
+            </label>
+        </div>*@
+		<div class="checkbox">
+            <label class="control-label">
+                <input type="checkbox" name="InnProd" title="Инновационный"/>
+                <span>Инновационная продукция</span>
+            </label>
+        </div>
+    </div>
+</div>

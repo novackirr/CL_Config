@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Buttons>
+	<Location name="SearchResult">
+		<Button name="Создать позицию ПЗ">
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldsEquals path="|Document|Статус"/>
+							<WhenFieldsStartsWith path="|Document|ОКПД2" length="5"/>
+							<WhenFieldsEquals path="|Document|КВР"/>
+							<WhenFieldsEquals path="|Document|Год_финансирования" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="У выбранных документов должны совпадать ОКПД2,КВР и Год финансирования"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Создать позицию ПГ">
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldsEquals path="|Document|Статус"/>
+							<WhenFieldsEquals path="|Document|ИКЗ" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="У выбранных документов должны совпадать ИКЗ"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Создать заявку на размещение">
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldsEquals path="|Document|Статус"/>
+							<WhenFieldsEquals path="|Document|Способ_определения_поставщика" />
+							<WhenFieldsEquals path="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+							<WhenFieldsEquals path="|Document|Планируемый_год_размещения" />
+							<WhenFieldsEquals path="|Document|Планируемый_месяц_размещения" />
+							<WhenFieldsEquals path="|Document|Совместные_торги" />
+							<WhenFieldsEquals path="|Document|Централизованная_закупка" />
+							<WhenFieldsEquals path="|Document|Лекарственный_препарат" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="У выбранных документов должны совпадать Способ определения поставщика, Организатор закупки, Год и Месяц закупки, наличие Совместных торгов, Централизованной закупки и Лекарственных препаратов"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Создать заявку на закупку">
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldsEquals path="|Document|Статус"/>
+							<WhenFieldsEquals path="|Document|Способ_закупки" />
+							<WhenFieldsEquals path="|Document|Планируемый_год" />
+							<WhenFieldsEquals path="|Document|Валюта" />
+							<WhenFieldsEquals path="|Document|Заказчик_подразделение|Заказчик_подразделение_наименование" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="У выбранных документов должны совпадать способ закупки, валюта, планируемый год и организация заказчик."/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+		<Button name="Создать заявку на размещение223111">
+			<Accessibility>
+				<AccessibilityRulesGroup>
+					<Rules>
+						<And>
+							<WhenFieldsEquals path="|Document|Статус"/>
+							<WhenFieldsEquals path="|Document|Способ_закупки" />
+							<WhenFieldsEquals path="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+							<WhenFieldsEquals path="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+							<WhenFieldsEquals path="|Document|ОКАТО" />
+							<WhenFieldsEquals path="|Document|Место_поставки" />
+						</And>
+					</Rules>
+					<NotAccessibleMessage value="У выбранных документов должны совпадать Способ закупки, Организатор закупки, Организация заказчик, ОКАТО, Место поставки"/>
+				</AccessibilityRulesGroup>
+			</Accessibility>
+		</Button>
+	</Location>
+	<Location name="DocumentLinks">
+		<Button name="Удалить">
+			<Action type="Predefined"/>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenHasAnyLink flowName="Планы закупок 223ФЗ" path ="|Document|Статус" values= "На доработке; Проект" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Исполнитель управления правового сопровождения договорной и закупочной деятельности" />
+							<WhenUserInWorkGroup name="Начальник управления правового сопровождения договорной и закупочной деятельности" />
+						</Or>
+					</And>
+				</Rules>
+			</Visibility>
+		</Button>
+		
+		<Button name="На доработку ппз" displayName="На доработку">
+			<Action type="RunRoute">
+				<RouteName value="Доработка ППЗ"/>
+			</Action>
+			<Visibility>
+				<Rules>
+					<And>
+						<And>
+							<WhenInternalChecks />
+							<WhenFlow name="Позиции плана закупок 223ФЗ" />
+							<WhenFieldEquals path="|Document|Статус" value="Включена в проект плана закупок"/>
+							<WhenHasAnyLink flowName="Планы закупок 223ФЗ" path ="|Document|Статус" values= "На доработке" />
+						</And>
+						<Or>
+							<WhenUserInWorkGroup name="Исполнитель управления правового сопровождения договорной и закупочной деятельности" />
+							<WhenUserInWorkGroup name="Начальник управления правового сопровождения договорной и закупочной деятельности" />
+						</Or>
+					</And> 
+				</Rules>
+			</Visibility>
+		</Button>
+		
+	</Location>
+</Buttons>

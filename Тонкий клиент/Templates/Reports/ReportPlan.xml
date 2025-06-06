@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+  <edit>
+    <rows>
+	  <row>
+	  <column>
+	  <field name="Год" isLabel="true" edit-name="year"/>
+          <field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true" edit-name="year" edit-required="true" ></field>
+        </column> 	
+		 <column>
+	  <field name="Организация-заказчик" isLabel="true" edit-name="orgzak"/>
+		<field fieldType="field" key="|Организация_заказчик" name="Организация заказчик" valueType="text"  isValue="true" edit-name="orgzak"   dict-column-name="code"  edit-tool = "Организации заказчики" is-select-one-level="1"   show-dict-column="false" dict-edit-name="orgzak" />
+		<field fieldType="field" key="|Организация_заказчик_наименование" name="Организация заказчик наименование" valueType="text" isValue="true" edit-name="orgzakName"   dict-column-name="Полное наименование" edit-hidden="true" display-field-part="true" dict-edit-name="orgzak" dict-column-width-percentage="100"/>
+        </column> 	
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Составитель" name="Составитель" valueType="text" isValue="true" edit-name="creator" edit-hidden="true" edit-default-value="{currentUser}"></field>
+        </column>
+		<column>
+          <field fieldType="field" key="|Год2" name="Год2" valueType="text" isValue="true" edit-hidden="true" edit-name="year2" />
+        </column>
+		<column>
+		<field fieldType="field" key="|Организация_заказчик_ИНН" name="Организация заказчик ИНН" valueType="text" isValue="true" edit-name="orgzakINN" edit-hidden="true"  dict-column-name="ИНН"  show-dict-column="false" dict-edit-name="orgzak" />
+	  </column> 
+	  <column>
+		<field fieldType="field" key="|Организация_заказчик_КПП" name="Организация заказчик КПП" valueType="text" isValue="true" edit-name="orgzakKPP" edit-hidden="true"  dict-column-name="КПП"  show-dict-column="false" dict-edit-name="orgzak" />
+	  </column>
+	  <column>
+		<field fieldType="field" key="|Организация_заказчик_ОКОПФ" name="Организация заказчик ОКОПФ" valueType="text" isValue="true" edit-name="orgzakOKOPF" edit-hidden="true"  dict-column-name="ОКОПФ"  show-dict-column="false" dict-edit-name="orgzak" />
+	  </column>
+	  <column>
+		<field fieldType="field" key="|Организация_заказчик_ОКПО" name="Организация заказчик ОКПО" valueType="text" isValue="true" edit-name="orgzakOKPO" edit-hidden="true"  dict-column-name="ОКПО"  show-dict-column="false" dict-edit-name="orgzak" />
+	  </column>
+	  	  <column>
+		<field fieldType="field" key="|Организация_заказчик_ОКТМО" name="Организация заказчик ОКТМО" valueType="text" isValue="true" edit-name="orgzakOKTMO" edit-hidden="true"  dict-column-name="ОКТМО" show-dict-column="false" dict-edit-name="orgzak" />
+	  </column>
+      </row>
+    </rows>
+  </edit>
+   <scripts>
+    <script file="Scripts\Content\Reports\ReportPlan.js" />
+  </scripts>
+</root>

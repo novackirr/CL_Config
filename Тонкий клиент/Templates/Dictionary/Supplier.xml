@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field name="Тип контрагента" isLabel="true" edit-name="Type" />
+					<field fieldType="field" key="Тип контрагента" name="Тип контрагента" valueType="text" isValue="true" edit-name="Type" dict-column-name="code" dict-edit-name="Type" edit-tool = "Тип Контрагента" edit-readonly="true" edit-required="true" show-dict-column="false"/>
+					<field fieldType="field" key="Тип контрагента наименование" name="Тип контрагента наименование" valueType="text" isValue="true" edit-name="TypeName" display-field-part="true" dict-column-name="Наименование" dict-edit-name="Type"  edit-hidden="true"/>
+				</column>
+				<column>
+					<field name="" isLabel="true" edit-name="nerezident" />
+					<field fieldType="field" key="Нерезидент" name="Нерезидент РФ" valueType="boolean" edit-name="nerezident" edit-hidden="true" edit-default-value="0"/>
+				</column>
+				<!-- <column>
+					<field name="Статус поставщика" isLabel="true" edit-name="Statuscode" />
+					<field fieldType="field" key="Код статуса" name="Код статуса" valueType="text" isValue="true" edit-name="Statuscode" dict-column-name="code" dict-edit-name="Statuscode" edit-readonly="true" edit-tool = "Статус контрагента" show-dict-column="false"/>
+					<field fieldType="field" key="Статус поставщика" name="Статус поставщика" valueType="text" isValue="true" edit-name="StatusName"  display-field-part="true" dict-column-name="Наименование"  dict-edit-name="Statuscode" edit-hidden="true"/>
+				</column> -->
+			</row>		
+			<row>
+				<column>
+					<field name="Наименование" isLabel="true"  edit-name="nameagent"/>
+					<field fieldType="field" key="Наименование" name="Наименование" valueType="longtext" isValue="true" edit-name="nameagent" edit-required="true"/>
+				</column>	
+				<column>
+					<field name="Фирменное наименование" isLabel="true" />
+					<field fieldType="field" key="Фирменное наименование" name="Фирменное наименование" valueType="longtext" isValue="true" edit-name="BrandName" />
+				</column>
+			</row>
+			<row>
+				<column>		
+					<field name="" isLabel="true" edit-name="sostuch" />
+					<field fieldType="field" key="Состоит на учете в налоговых органах" name="Состоит на учете в налоговых органах" valueType="boolean" edit-name="sostuch" edit-hidden="true" edit-default-value="0"/>
+				</column>	
+				<column>		
+					<field name="Дата постановки в НО" isLabel="true" edit-name="TaxDate" />									
+					<field fieldType="field" key="Дата постановки в НО" name="Дата постановки в НО" valueType="date" isValue="true"  edit-name="TaxDate" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="ИНН" isLabel="true" edit-name="inn" title="Введите от 1 до 20 символов" />
+					<field fieldType="field" key="ИНН" name="ИНН" valueType="text" isValue="true" edit-name="inn" edit-required="true"/>
+				</column>	
+				<column>
+					<field name="КПП" isLabel="true" edit-name="kpp" title="Введите 9 символов" />
+					<field fieldType="field" key="КПП" name="КПП" valueType="text" isValue="true" edit-name="kpp" />
+				</column>
+			</row>
+			<row>			
+				<column>
+					<field name="Идентификационный код налогоплательщика" isLabel="true" edit-name="IdNumber" />
+					<field fieldType="field" key="Идентификационный номер" name="Идентификационный номер" valueType="text" isValue="true" edit-name="IdNumber" />
+				</column>				
+				<column>
+					<field name="Дополнительный идентификационный номер" isLabel="true" edit-name="DopIdNumber" />
+					<field fieldType="field" key="Дополнительный идентификационный номер" name="Дополнительный идентификационный номер" valueType="text" isValue="true" edit-name="DopIdNumber" />
+				</column>				
+			</row>			
+			<row>
+				<column>
+					<field name="ОКПО" isLabel="true"  edit-name="okpo" />
+					<field fieldType="field" key="ОКПО" name="ОКПО" valueType="text" isValue="true" edit-name="okpo" />
+				</column>	
+				<column>
+					<field name="ОКОПФ" isLabel="true" edit-name="okopf" />
+					<field fieldType="field" key="ОКОПФ" name="ОКОПФ" valueType="text" isValue="true" edit-name="okopf" dict-column-name="code" dict-edit-name="okopf" edit-readonly="true" edit-tool = "ОКОПФ" display-field-part="true" edit-required="true" />
+					<field fieldType="field" key="ОКОПФ наименование" name="ОКОПФ наименование" valueType="text" isValue="true" edit-name="okopfName"  display-field-part="false" dict-column-name="Наименование" dict-edit-name="okopf" edit-hidden="true"  />
+				</column>
+			</row>
+			<row>				
+				<column>
+					<field name="ОГРН" isLabel="true" edit-name="ogrn"/>
+					<field fieldType="field" key="ОГРН" name="ОГРН" valueType="text" isValue="true" edit-name="ogrn" />
+				</column>
+				<column>
+					<field name="ОКТМО" isLabel="true" edit-name="oktmocode"/>
+					<!-- <field fieldType="field" key="ОКТМО код" name="ОКТМО код" valueType="text" isValue="true" edit-name="oktmocode" dict-column-name="code" dict-edit-name="oktmocode" edit-readonly="true" edit-tool = "ОКТМО" display-field-part="true"/>
+					<field fieldType="field" key="ОКТМО" name="ОКТМО" valueType="text" isValue="true" edit-name="oktmo" display-field-part="true" dict-column-name="Наименование" dict-edit-name="oktmocode"  edit-hidden="true"/> -->
+					<field fieldType="field" key="ОКТМО код" name="ОКТМО код" valueType="text" isValue="true" edit-name="oktmocode" />
+				</column>				
+			</row>	
+			<row>
+				<column>
+					<field name="Страна" isLabel="true" edit-name="Strana" />
+					<field fieldType="field" key="Страна код" name="Страна код" valueType="text" isValue="true" edit-name="Strana" dict-column-name="code" edit-tool = "ОКСМ" dict-edit-name="Strana"  edit-readonly="True" show-dict-column="false" edit-required="true"/>
+					<field fieldType="field" key="Страна" name="Страна" valueType="text" isValue="true" edit-name="StranaCode" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="Strana" display-field-part="true" edit-hidden="true" />
+				</column>	
+				<column>
+					<field name="Индекс" isLabel="true"  edit-name="indeks"/>
+					<field fieldType="field" key="Индекс" name="Индекс" valueType="text" isValue="true" edit-name="indeks" edit-required="true"/>
+				</column>			
+			</row>		
+			<row>			
+				<column>
+					<field name="Регион" isLabel="true" edit-name="regionCodee"/>
+					<field fieldType="field" key="Регион код" name="Код региона" valueType="text" isValue="true" edit-name="regionCodee" dict-column-name="code" dict-edit-name="regionCodee" edit-readonly="true" edit-tool = "Коды регионов" display-field-part="false" edit-required="true"/>
+					<field fieldType="field" key="Регион" name="Регион" valueType="text" isValue="true" edit-name="region"  display-field-part="true" dict-column-name="Наименование" dict-edit-name="regionCodee" edit-hidden="true"  />
+				</column>
+				<column>
+					<field name="Район" isLabel="true" edit-name="area" />
+					<field fieldType="field" key="Район" name="Район" valueType="text" isValue="true" edit-name="area" edit-required="true"/>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Город" isLabel="true" edit-name="city"/>
+					<field fieldType="field" key="Город" name="Город" valueType="text" isValue="true" edit-name="city" />
+				</column>
+				<column>
+					<field name="Населенный пункт" isLabel="true"  edit-name="punct"/>
+					<field fieldType="field" key="Населенный пункт" name="Населенный пункт" valueType="text" isValue="true" edit-name="punct" />
+				</column>			
+				<column>
+					<field name="Улица" isLabel="true" edit-name="street"/>
+					<field fieldType="field" key="Улица" name="Улица" valueType="text" isValue="true" edit-name="street" />
+				</column>			
+			</row>
+			<row>
+				<column>
+					<field name="Дом" isLabel="true" edit-name="house"/>
+					<field fieldType="field" key="Дом" name="Дом" valueType="text" isValue="true" edit-name="house" edit-required="true"/>
+				</column>			
+				<column>
+					<field name="Корпус" isLabel="true" edit-name="corpus"/>
+					<field fieldType="field" key="Корпус" name="Корпус" valueType="text" isValue="true" edit-name="corpus" />
+				</column>
+				<column>
+					<field name="Офис" isLabel="true" edit-name="office"/>
+					<field fieldType="field" key="Офис" name="Офис" valueType="text" isValue="true" edit-name="office" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Фамилия контактного лица" isLabel="true"  edit-name="surname"/>
+					<field fieldType="field" key="Фамилия" name="Фамилия" valueType="text" isValue="true" edit-name="surname"  />
+				</column>
+				<column>
+					<field name="Имя контактного лица" isLabel="true" edit-name="name"/>
+					<field fieldType="field" key="Имя" name="Имя" valueType="text" isValue="true" edit-name="name"  />
+				</column>	
+				<column>
+					<field name="Отчество контактного лица" isLabel="true"  edit-name="patronymic"/>
+					<field fieldType="field" key="Отчество" name="Отчество" valueType="text" isValue="true" edit-name="patronymic" />
+				</column>	
+			</row>	
+			<!-- <row>				
+				<column>
+					<field name="Код страны" isLabel="true" />
+					<field fieldType="field" key="Код страны" name="Код страны" valueType="text" isValue="true" edit-name="CountryCode" />
+				</column>
+				<column>
+					<field name="Код региона" isLabel="true" />
+					<field fieldType="field" key="Код региона" name="Код региона" valueType="text" isValue="true" edit-name="RegionCode" />
+				</column>	
+				<column>
+					<field name="Телефон" isLabel="true" />
+					<field fieldType="field" key="Номер телефона" name="Номер телефона" valueType="text" isValue="true" edit-name="NumberPhone" edit-required="true"/>
+				</column>
+				<column>
+					<field name="Добавочный" isLabel="true" />
+					<field fieldType="field" key="Добавочный" name="Добавочный" valueType="text" isValue="true" edit-name="AddPhone" />
+				</column>
+			</row> -->
+			<row>
+				<column>
+					<field name="Email" isLabel="true" edit-name="Email"/>
+					<field fieldType="field" key="Email" name="Email" valueType="text" isValue="true" edit-name="Email" edit-required="true"/>
+				</column>
+				<column>
+					<field name="Телефон" isLabel="true" edit-name="Pnone"/>
+					<field fieldType="field" key="Телефон" name="Телефон" valueType="text" isValue="true" edit-name="Pnone" edit-required="true"/>
+				</column>
+				<column>
+					<field name="" isLabel="true" />
+					<field fieldType="field" key="Почтовый адрес совпадает с фактическим" name="Почтовый совпадает" valueType="boolean" edit-name="PriznakAddress" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Дополнительная информация" isLabel="true" edit-name="AdditionalInfo"/>
+					<field fieldType="field" key="Дополнительная информация" name="Дополнительная информация" valueType="Longtext" isValue="true" edit-name="AdditionalInfo" />
+				</column>		
+				<column>
+					<field name="Фактический адрес" isLabel="true" edit-name="ActualAddress"/>
+					<field fieldType="field" key="Фактический адрес" name="Фактический адрес" valueType="longtext" isValue="true" edit-name="ActualAddress" />
+				</column>			
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="Почтовый адрес" name="Почтовый адрес" valueType="longtext" isValue="true" edit-name="MailAddress" edit-isInvisible="true"/>
+				</column>
+				<column>
+					<!-- <field fieldType="field" key="Телефон" name="Телефон" valueType="text" isValue="true" edit-name="Pnone" edit-isInvisible="true"/> -->
+				</column>
+			</row>
+			<row>		
+				<column>					
+					<field fieldType="field" key="СМП" name="СМП" valueType="boolean" edit-name="smp" edit-default-value="0"/>
+				</column>
+				<column>
+					<field name="Категория СМП" isLabel="true" edit-name="catSMP"/>
+					<field fieldType="field" key="Категория СМП" name="Категория СМП" valueType="text" isValue="true" edit-name="catSMP" dict-column-name="code" dict-edit-name="catSMP" edit-readonly="true" edit-tool = "Тип СМП" display-field-part="true"/>
+				</column>
+			</row>		
+			<row>		
+				<column>					
+					<field fieldType="field" key="Контрагенты" name="Контрагенты" valueType="text" isValue="true" edit-name="code" edit-hidden="true"/>
+				</column>
+			</row>				
+		</rows>
+	</edit>	 
+	<scripts>
+		<script file="Scripts\Content\Dictionary\Supplier.js" />
+	</scripts>
+</root>

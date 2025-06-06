@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <flows>
+    <flow name="Заявка на размещение закупки 223ФЗ"/>
+  </flows>
+  <view showCurrentValues="true" >
+    <template>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcPoz" name="Особенности размещения">
+						<rows> 
+							<row>
+								<column>
+									<field name="НМЦ с НДС" isLabel="true" edit-name="registerNMCS" title="Рассчитывается автоматически в зависимости от НДС"/>
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="Начальная(максимальная) цена договора(с НДС), в руб." valueType="money"  isValue="true" edit-name="registerNMCS" edit-required="true"  edit-readonly="true" />
+								</column>
+								<column>
+									<field name="НМЦ без НДС" isLabel="true" edit-name="NMCDnoNDS" title="Заполняется автоматически из Позиции плана закупок"/>
+									<field fieldType="field" key="|Document|НМЦ_без_НДС" name="НМЦ (без НДС)" valueType="money" isValue="true" edit-name="NMCDnoNDS" edit-required="true" edit-readonly="true" />
+								</column>
+								<column>
+									<field name="Ставка НДС, %" isLabel="true" edit-name="RazmNDS" title="Введите ставку НДС, %"/>
+									<field fieldType="field" key="|Document|Размер_НДС" name="Размер НДС" valueType="double" isValue="true" edit-name="RazmNDS" edit-required="true" edit-default-value="20" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="Валюта" isLabel="true" edit-name="Currency_kodOb" title="Заполняется автоматически из Позиции плана закупок"/>
+									<field fieldType="field" key="|Document|Код_валюты" name="Валюта" valueType="text" isValue="true" edit-name="Currency_kodOb" dict-column-name="code"  edit-tool = "Валюта" is-select-one-level="1" edit-readonly="true" show-dict-column="false" dict-edit-name="Currency_kodOb" />
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="CurrencyOb" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Currency_kodOb" dict-column-width-percentage="100"/>
+									<field fieldType="field" key="|Document|Цифровой_код_валюты" name="Цифровой_код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency_dig_kodOb" edit-readonly="true" dict-column-name="Цифровой код" dict-edit-name="Currency_kodOb" show-dict-column="false" />	
+								</column>
+								<column>	
+									<field name="Курс валюты" isLabel="true" edit-name="curs" title="Введите курс валюты"/>
+									<field fieldType="field" key="|Document|Курс_валюты" name="Курс валюты" valueType="double"  isValue="true" edit-name="curs" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="НМЦ с НДС (в рублях)" isLabel="true" edit-name="NMCD" title="Заполняется автоматически из Позиции плана закупок"/>
+									<field fieldType="field" key="|Document|НМЦД_в_рублях" name="НМЦ (с НДС)" valueType="money" edit-readonly="true" isValue="true" edit-name="NMCD" />
+								</column>
+								<column>	
+									<field name="Дата курс валюты" isLabel="true" edit-name="dateCurs" title="Введите дату курса валюты"/>
+									<field fieldType="field" key="|Document|Дата_курс_валюты" name="Дата_курс_валюты" valueType="date"  isValue="true" edit-name="dateCurs"/>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Первоначальная_НМЦ" name="Первоначальная НМЦ" valueType="money"  isValue="true" edit-name="FirstNMC" edit-readonly="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|ИД_плана_в_ЕИС" name="ИД_плана_в_ЕИС" valueType="text" isValue="true" edit-name="ID_Plan_IIS" edit-hidden="true" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="Передать на ЭТП цену с НДС" isLabel="true"  edit-name="initialSumWithVAT"/>   
+									<field fieldType="field" key="|Document|С_учетом_НДС" valueType="boolean"  edit-name="initialSumWithVAT" />
+								</column>
+								<column></column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="registerSpZakup"  edit-required="true" edit-readonly="true" edit-hidden="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true" edit-readonly="true" edit-name="naimETP" edit-hidden="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Редактируется_из_плагина" name="Редактируется_из_плагина" valueType="boolean" isValue="true" edit-readonly="true" edit-name="EditFromPlugin1" edit-hidden="true"/>
+								</column>
+							</row>	
+						</rows> 
+					</block>
+				</column>
+			</row>
+		</rows>
+    </template>
+  </view>
+	<scripts>
+		<script file="\Scripts\Content\Plugins\LotMNCD.js" />
+	</scripts>
+</root>

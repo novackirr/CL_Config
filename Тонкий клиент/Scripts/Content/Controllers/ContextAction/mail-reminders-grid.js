@@ -1,0 +1,152 @@
+﻿; (function () { }(window.ct = window.ct || {}));
+
+; (function (mailReminders) {
+    var _html = {
+        containerId: "mail-reminders-container",
+        dataGridId: "mail-reminders-datagrid",
+
+        containerSelector: "#mail-reminders-container",
+        dataGridSelector: "#mail-reminders-datagrid"
+    };
+
+    var _$mailRemindersContainer;
+    var _$mailRemindersDataGrid;
+    var _mailRemindersApiService;
+
+    init();
+
+    var _store;
+    var _dataSource;
+    var _items = [];
+
+    function init() {
+        var mailRemindersUrl = $(_html.containerSelector).attr("data-base-url");
+        _mailRemindersApiService = ct.api.MailRemindersApiService.create(mailRemindersUrl);
+        _$mailRemindersContainer = $(_html.containerSelector).dxResponsiveBox({
+            rows: [
+                { ratio: 1 }
+            ],
+            cols: [
+                { ratio: 1 }
+            ]
+        });
+
+        _store = new DevExpress.data.CustomStore({
+            key: "id",
+            load: function (options) {
+                return _mailRemindersApiService.getItems().then(function (itemsResult) {
+                    _items = itemsResult.data;
+                    return itemsResult.data;
+                });
+            },
+            remove: function (key) {
+                _mailRemindersApiService.removeItem(key).then(function () {
+                    $(_html.dataGridSelector).dxDataGrid("instance").refresh();
+                });
+            }
+        });
+
+        _dataSource = new DevExpress.data.DataSource({
+            store: _store,
+            pageSize: 3
+        });
+
+        DevExpress.localization.locale("ru");
+        _$mailRemindersDataGrid = $(_html.dataGridSelector).dxDataGrid({
+            columns: [
+                {
+                    caption: "Дата создания",
+                    dataField: "createDateTime",
+                    dataType: "date",
+                    calculateCellValue: function (rowData) {
+                        return moment(rowData.createDateTime, "YYYY-MM-DDTHH:mm:ss").format("DD.MM.YYYY HH:mm");
+                    },
+                    cellTemplate: createCellTemplate(),
+                    allowEditing: false,
+                    width: "15%"
+                },
+                {
+                    caption: "Дата доставки",
+                    dataField: "deliveryDateTime",
+                    dataType: "date",
+                    calculateCellValue: function (rowData) {
+                        return moment(rowData.deliveryDateTime, "YYYY-MM-DDTHH:mm:ss").format("DD.MM.YYYY HH:mm");
+                    },
+                    cellTemplate: createCellTemplate(),
+                    allowEditing: false,
+                    width: "15%"
+                },
+                {
+                    caption: "Документ",
+                    dataField: "docUrl",
+                    cellTemplate: createCellTemplate(),
+                    allowEditing: false,
+                    width: "auto"
+                },
+                {
+                    caption: "Сообщение",
+                    dataField: "message",
+                    cellTemplate: createCellTemplate(),
+                    allowEditing: false
+                },
+                {
+                    cellTemplate: function (container, options) {
+                        $('<div title="Удалить" style="text-align: center"><div class="glyphicon glyphicon-remove-circle" style="cursor:pointer; text-align: center"/></div>').on('dxclick', function () {
+                                options.component.deleteRow(options.rowIndex);
+                        })
+                            .appendTo(container);
+                    },
+                    width: "40",
+                    allowResizing: false,
+                    allowReordering: false,
+                    allowGrouping: false,
+                    allowSorting: false
+                }
+            ],
+            dataSource: _dataSource,
+            remoteOperations: {
+                paging: false
+            },
+            editing: {
+                texts: {
+                    confirmDeleteMessage: ""
+                }
+            },
+            scrolling: {
+                mode: "infinite",
+                rowRenderingMode: "virtual"
+            },
+            selection: {
+                mode: "none"
+            },
+            repaintChangesOnly: true,
+            allowColumnReordering: true,
+            allowColumnResizing: true,
+            hoverStateEnabled: true,
+            cellHintEnabled: true,
+            filterRow: {
+                visible: true,
+                applyFilter: "auto"
+            },
+            grouping: {
+                contextMenuEnabled: true
+            },
+            groupPanel: {
+                visible: true
+            },
+            onRowClick: function(ev) {
+                 ev.rowElement.toggleClass("dx-datagrid-wrap");
+            }
+        });
+
+        function createCellTemplate() {
+            return function (container, options) {
+                $("<a>" + options.value + "</a>")
+                    .addClass("search-result-cell-value")
+                    .attr("href", options.data.docUrl)
+                    .appendTo(container);
+            }
+        }
+    }
+
+}((window.ct = window.ct || {}, window.ct.utils = window.ct.utils || {})));

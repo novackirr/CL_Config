@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Извещение о закупочной деятельности-->
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<block id="tlcInfo" name="Общие сведения">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<!-- <field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" />	 -->
+													<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организация" valueType="addressbook" />	
+												</column>							
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Адрес_ЭТП" name="Адрес ЭТП" valueType="url" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="tlcInfo1" name="Сведения о типе процедуры">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Форма_торгов" name="Форма торгов" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Способ|Способ_наименование" name="Способ закупки" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Конкурентная|Конкурентная_наименование" name="Конкурентная" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Вариант_проведения|Вариант_проведения_наименование" name="Вариант проведения" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Алгоритм_расчета|Алгоритм_расчета_наименование" name="Алгоритм расчета даты и времени начала торгов при создании Аукциона в ЕИС" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Контроль_по_датам|Контроль_по_датам_наименование" name="Выполнять автоматизированный контроль по датам в извещении" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Активная" name="Активная" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="Protocols" name="Протоколы">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Протоколы" api-table-name="Protocols" height="100" >
+														<column fieldType="field" key="|ИД_протокола_на_ЭТП" valueType="text"  isValue="true" name="Тип протокола на площадке" headerNoEllipsis="true" width="300" />
+														<column fieldType="field" key="|Наименование_протокола_на_ЭТП" valueType="text"  isValue="true" name="Наименование протокола на ЭТП" headerNoEllipsis="true" width="300" />
+														<column fieldType="field" key="|ИД_протокола_в_ЕИС" valueType="longtext"  isValue="true" name="Тип протокола в ЕИС" headerNoEllipsis="true"  width="300" />
+														<column fieldType="field" key="|Наименование_протокола_в_ЕИС" valueType="text"  isValue="true" name="Наименование протокола в ЕИС" headerNoEllipsis="true"  width="300" />
+														<column fieldType="field" key="|Активный_протокол" valueType="text"  isValue="true" name="Активная" headerNoEllipsis="true"  width="300" />
+														<column fieldType="field" key="|Направить_протокол_в_ЕИС" valueType="text"  isValue="true" name="Направить в ЕИС" headerNoEllipsis="true"  width="300" />
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="{FlowName}{RegDate}">
+				<field fieldType="field" key="|Document|Имя_потока" name="Имя_потока" valueType="text" variable-name="FlowName" variable-format="{value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" />
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows> 		
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Организация" isLabel="true" edit-name="registerOrgZa" title="Заполняется автоматически организацией пользователя"/>	
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-readonly="true" edit-default-value="{currentOrganization}" edit-required = "true" address-book-tool = "registerOrgZa" edit-addressbook-groups="" address-book-tool-selectable = "Department, Department, {allCurrentOrganizations}|onlyOrganization" />
+								</column>
+								<column>
+									<field name="Наименование ЭТП" isLabel="true" edit-name="naimETP" title="Выберите наименование электронной торгововй площадки, по которой будет происходить сопоставление типов процедур"/>			
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true"  dictionary-selection-start-level="1"  edit-readonly="true" edit-tool = "Электронные площадки"  edit-name="naimETP"  is-select-one-level="1"  dict-column-name="code" edit-required = "true"  display-field-part="true"  dict-edit-name="naimETP" edit-default-value='АО "Сбербанк - АСТ"' />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Код способа в ЕИС" isLabel="true" edit-name="BuPurchaseTypeEisCode"/>		
+									<field fieldType="field" key="|Document|Способ|Способ_код" name="Код способа в ЕИС" valueType="text"  isValue="true" edit-name="BuPurchaseTypeEisCode"  edit-readonly="true" edit-tool = "formdata:Способы закупок"  dict-column-name="code" dict-edit-name="BuPurchaseTypeEisCode" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Способ|Способ_наименование" name="Способ_наименование" valueType="text" isValue="true" edit-name="BuPurchaseTypeEisName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BuPurchaseTypeEisCode"  dict-column-width-percentage="70"/>
+								</column>
+								<column>
+									<field name="Конкурентная" isLabel="true" edit-name="BuPurchaseTypeCompetitive"/>		
+									<field fieldType="field" key="|Document|Конкурентная|Конкурентная_код" name="Конкурентная" valueType="text"  isValue="true" edit-name="BuPurchaseTypeCompetitive"  edit-readonly="true" edit-tool = "formdata:Конкурентная"  dict-column-name="code" dict-edit-name="BuPurchaseTypeCompetitive" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Конкурентная|Конкурентная_наименование" name="Конкурентная" valueType="text" isValue="true" edit-name="BuPurchaseTypeCompetitiveName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BuPurchaseTypeCompetitive"  dict-column-width-percentage="70"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Вариант проведения" isLabel="true" edit-name="BuPurchaseTypeAccessLevel"/>		
+									<field fieldType="field" key="|Document|Вариант_проведения|Вариант_проведения_код" name="Конкурентная" valueType="text"  isValue="true" edit-name="BuPurchaseTypeAccessLevel"  edit-readonly="true" edit-tool = "formdata:Вариант проведения"  dict-column-name="code" dict-edit-name="BuPurchaseTypeAccessLevel" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Вариант_проведения|Вариант_проведения_наименование" name="Конкурентная" valueType="text" isValue="true" edit-name="BuPurchaseTypeAccessLevelName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BuPurchaseTypeAccessLevel"  dict-column-width-percentage="70"/>
+								</column>
+								<column>
+									<field name="Форма подачи заявки" isLabel="true" edit-name="BuPurchaseTypeRequestForm"/>		
+									<field fieldType="field" key="|Document|Форма_подачи|Форма_подачи_код" name="Конкурентная" valueType="text"  isValue="true" edit-name="BuPurchaseTypeRequestForm"  edit-readonly="true" edit-tool = "formdata:Форма подачи заявки"  dict-column-name="code" dict-edit-name="BuPurchaseTypeRequestForm" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Форма_подачи|Форма_подачи_наименование" name="Конкурентная" valueType="text" isValue="true" edit-name="BuPurchaseTypeRequestFormName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BuPurchaseTypeRequestForm"  dict-column-width-percentage="70"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Выполнять автоматизированный контроль по датам в извещении" isLabel="true" edit-name="BuPurchaseTypeControlDate"/>		
+									<field fieldType="field" key="|Document|Контроль_по_датам|Контроль_по_датам_код" name="Конкурентная" valueType="text"  isValue="true" edit-name="BuPurchaseTypeControlDate"  edit-readonly="true" edit-tool = "formdata:Контроль по датам"  dict-column-name="code" dict-edit-name="BuPurchaseTypeControlDate" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Контроль_по_датам|Контроль_по_датам_наименование" name="Конкурентная" valueType="text" isValue="true" edit-name="BuPurchaseTypeControlDateName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="BuPurchaseTypeControlDate"  dict-column-width-percentage="70"/>
+								</column>
+								<column>
+									<field name="Алгоритм расчета даты и времени начала торгов при создании Аукциона в ЕИС" isLabel="true" edit-name="auctiondatemethodcalculate"/>		
+									<field fieldType="field" key="|Document|Алгоритм_расчета|Алгоритм_расчета_код" name="Алгоритм_расчета_код" valueType="text"  isValue="true" edit-name="auctiondatemethodcalculate"  edit-readonly="true" edit-tool = "Алгоритм расчета даты и времени начала торгов при создании Аукциона в ЕИС"  dict-column-name="code" dict-edit-name="auctiondatemethodcalculate" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Алгоритм_расчета|Алгоритм_расчета_наименование" name="Алгоритм_расчета_код" valueType="text" isValue="true" edit-name="auctiondatemethodcalculateName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="auctiondatemethodcalculate"  dict-column-width-percentage="70"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Активная" isLabel="true" edit-name="bupurchasetypestatusidname"/>		
+									<field fieldType="field" key="|Document|Активная" name="Активная" valueType="text"  isValue="true" edit-name="bupurchasetypestatusidname"  edit-readonly="true" edit-tool = "formdata:Выбор значения" dict-column-name="Выбор значения" dict-edit-name="bupurchasetypestatusidname" display-field-part="true"/>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Протоколы"  name="Протоколы" edit-name="Protocols" height="1000" >									
+										<column fieldType="field" key="|ИД_протокола_на_ЭТП" name="Тип протокола на площадке" valueType="text" width="100"  isValue="true" edit-name="BuProtocolTypeProtocolTypeId"/> 
+										<column fieldType="field" key="|Наименование_протокола_на_ЭТП" name="Наименование протокола на ЭТП" valueType="text" width="400"  isValue="true" edit-name="BuProtocolTypeProtocolTypeName"/> 
+										<column fieldType="field" key="|ИД_протокола_в_ЕИС" name="Тип протокола в ЕИС" valueType="text"  isValue="true" width="100" edit-name="BuProtocolTypeEisCode"/>
+										<column fieldType="field" key="|Наименование_протокола_в_ЕИС" name="Наименование в ЕИС" valueType="text" width="400"  isValue="true" edit-name="BuProtocolTypeEisName"/> 
+										<column fieldType="field" key="|Активный_протокол" name="Активная" valueType="text"  isValue="true" width="150" edit-name="BuProtocolTypeStatusIdName" edit-readonly="true" edit-tool = "formdata:Выбор значения" dict-column-name="Выбор значения" dict-edit-name="BuProtocolTypeStatusIdName" display-field-part="true"/>
+										<column fieldType="field" key="|Направить_протокол_в_ЕИС" name="Наименование протокола в ЕИС" valueType="text"  isValue="true" width="150" edit-name="BuProtocolTypeIntegrationTypeName" edit-readonly="true" edit-tool = "formdata:Выбор значения" dict-column-name="Выбор значения" dict-edit-name="BuProtocolTypeIntegrationTypeName" display-field-part="true"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>		
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>		
+							<!--Не видимые для редактирования-->
+							<row>
+								<column>
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Договор" />
+									<field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="LNoticeLoT-header" edit-hidden="true" edit-value="Связки" />
+									<field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="FilesNotice-header" edit-hidden="true" edit-value="Документация" />
+									<field fieldType="field" key="|FilesIntegration|header" valueType="text" isValue="true" edit-name="FilesIntegration-header" edit-hidden="true" edit-value="Файлы интеграции" />
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" isValue="true" edit-name="numRed" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean"  isValue="true" edit-name="actual" edit-default-value="1" />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />	
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="statusnotice" edit-default-value="Черновик" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Адрес_ЭТП" name="Адрес ЭТП" valueType="text"   isValue="true" edit-name="naimETPName"  dict-column-name="Адрес" edit-readonly="true" dict-edit-name="naimETP" edit-default-value='https://utp.sberbank-ast.ru/'/>
+									<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"   isValue="true" edit-name="naimETPID"  dict-column-name="Идентификатор" edit-hidden="true" dict-edit-name="naimETP" show-dict-column="false" edit-default-value='2'/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="Организация-заказчик ИНН" valueType="text" isValue="true" edit-name="orgzakINN" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="Организация-заказчик КПП" valueType="text" isValue="true" edit-name="registerOrgZaKPP" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация-заказчик ОГРН" valueType="text" isValue="true" edit-name="registerOrgZaOGRN"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"  edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" isValue="true" edit-name="orgzakEISCode"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="OrgZakupkiINN" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}" addressbook-main-field="registerOrgZa" addressbook-property="INN"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="OrgZakupkiKPP"   edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}" addressbook-main-field="registerOrgZa" addressbook-property="KPP"/>	
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text"   isValue="true" edit-name="OrgZakupkiOGRN" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}" addressbook-main-field="registerOrgZa" addressbook-property="OGRN"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Ид_организации_на_ЭТП" name="Ид_организации_на_ЭТП" valueType="text"   isValue="true" edit-name="IDOrganETP"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="OrgZakupkiEIS" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС_справочный" name="Организатор_закупки_ЕИС_справочный" valueType="text"   isValue="true" edit-name="OrgZakupkiEISSprav" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+									<field fieldType="field" key="|Document|Форма_торгов_код" name="Форма торгов" valueType="text"  isValue="true" edit-name="formTorg"  edit-readonly="true"  is-select-one-level="2" one-level-parent="naimETP"  edit-tool = "Электронные площадки"  dict-column-name="code" dict-edit-name="formTorg" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Форма_торгов" name="Форма торгов имя" valueType="text" isValue="true" edit-name="formTorgName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="formTorg"  dict-column-width-percentage="70"/>
+									<field fieldType="field" key="|Document|МСП" name="МСП" valueType="text" isValue="true" edit-name="MSP" />
+									<field fieldType="field" key="|Document|Кастомная_форма" name="Кастомная форма" valueType="boolean" isValue="true" edit-name="CustomProcedure" />
+									<field fieldType="field" key="|Document|ИД_на_ЭТП" name="ИД на ЭТП" valueType="text" isValue="true" edit-name="IdNaETP" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>   
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="{FlowName}{RegDate}">
+				<field fieldType="field" key="|Document|Имя_потока" name="Имя_потока" valueType="text" variable-name="FlowName" variable-format="{value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/ProcedureType.js" />
+	</scripts>
+</root>

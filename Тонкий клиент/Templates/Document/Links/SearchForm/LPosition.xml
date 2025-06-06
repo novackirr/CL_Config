@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <derivedFields>
+   <field edit-name="OKPD2" fieldType="field" key="|Document|ОКПД2" isValue="true" valueType="text"/>
+   <field edit-name="KVR" fieldType="field" key="|Document|КВР" isValue="true" valueType="text"/>
+	<field edit-name="KVRCheck" fieldType="field" key="|Document|Значение_КВР_неопределено" isValue="true" valueType="boolean"/>  
+   <field edit-name="godrazm" fieldType="field" key="|Document|Планируемый_год_размещения" isValue="true" valueType="text"/>
+   <field edit-name="OrgZakup" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" isValue="true" valueType="text"/>
+ </derivedFields> 
+  <edit>
+   <rows>
+    <row>
+		          <column>
+				     <field name="Наименование объекта закупки" isLabel="true" edit-name="Namezak"  />
+				  </column>
+            </row>
+	       <row>
+		          <column>
+				 	 <field fieldType="field" key="|Document|Наименование_позиции" name="Наименование объекта закупки" valueType="longtext"  isValue="true" edit-name="Namezak" />
+					 <field fieldType="field" key="|Document|ИД_позиции_ПЗ" name="ИД_позиции_ПЗ" valueType="text" isValue="true" edit-name="IDNotice" edit-hidden="true"  />
+				  </column>
+            </row>
+			 <row>	
+				<column>
+					<field name="ОКПД2" isLabel="true" />	
+					<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+				</column>
+				<column>
+					<field name="ОКПД2 наименование" isLabel="true" />	
+					<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="text" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="6"   display-field-part="false" dict-edit-name="registerOKDP" />
+				</column>
+	</row>
+	 </rows> 
+  </edit>
+  <search>
+   <field fieldValue="doc_RegCard/rc_FlowName = 'Позиции' and doc_RegCard/rc_Index/text_ОКПД2 = @OKPD2 and doc_RegCard/rc_Index/text_КВР = @KVR and doc_RegCard/rc_Index/boolean_Значение_КВР_неопределено = @KVRCheck and doc_RegCard/rc_Index/integer_Год_финансирования = @godrazm and doc_RegCard/rc_Index/longtext_Наименование_позиции = @Namezak  and not(doc_RegCard/rc_Index/text_ИД_позиции_ПЗ)  and (doc_RegCard/rc_Index/text_Организация_заказчик= @OrgZakup )"  /> 
+   </search>
+</root>

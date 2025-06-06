@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfView" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация заказчик" valueType="addressbook" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfEEdit" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="block1" name="Основные сведения" view="true" >		 
+										<rows>	 
+											<row>
+												<column>
+								
+												</column>
+											</row>
+										</rows>	
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля">
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  isValue="true" edit-name="registerDate" edit-required="true" edit-default-value="{today}" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-default-value="{currentOrganization}" address-book-tool = "registerOrgZa" edit-addressbook-groups="" address-book-tool-selectable = "Department, Department, {allCurrentOrganizations}|withoutSubs" children-selection="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" isValue="true" edit-name="OrgZakupki" 
+									edit-default-value="{addressbook,value=registerOrgZa,attribute=Name}" addressbook-main-field="registerOrgZa" addressbook-property="Name" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|ИД_заказчика_на_ЭТП" name="ИД заказчика на ЭТП" valueType="text" isValue="true" edit-name="customIdEtp" edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="orgzakINN" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}" addressbook-main-field="registerOrgZa" addressbook-property="INN"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="КПП" valueType="text"   isValue="true" edit-name="orgzakKPP" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}" addressbook-main-field="registerOrgZa" addressbook-property="KPP"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Адрес" name="Адрес" valueType="longtext"   isValue="true" edit-name="orgzakAdress" edit-default-value="{addressbook,value=registerOrgZa,attribute=Адрес}"	addressbook-main-field="registerOrgZa" addressbook-property="Адрес"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Телефон" name="Телефон" valueType="text"   isValue="true" edit-name="orgzakPhone" edit-default-value="{addressbook,value=registerOrgZa,attribute=Телефоны}" addressbook-main-field="registerOrgZa" addressbook-property="Телефоны"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" name="Электронная почта" valueType="text"   isValue="true" edit-name="orgzakElPost" edit-default-value="{addressbook,value=registerOrgZa,attribute=E-mail}" addressbook-main-field="registerOrgZa" addressbook-property="E-mail"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация_заказчик_ОГРН" valueType="text"   isValue="true" edit-name="orgzakOGRN" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}" addressbook-main-field="registerOrgZa" addressbook-property="OGRN"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="orgzakupkiINN" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="orgzakupkiKPP" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="OrgZakupkiEIS" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text" isValue="true" edit-name="orgzakupkiOGRN" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}"/>
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean"  isValue="true" edit-name="actual" edit-default-value="1"/>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/ResultExec.js" />
+	</scripts>
+</root>

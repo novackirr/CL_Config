@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="ProtocolAll223" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" allow-create-excel="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<!-- Активные поля -->
+		<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="10"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="15" />	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Наименование_протокола" name="Наименование протокола" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Наименование_протокола" weight="25" isOptional="true" />	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="text" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" weight="8" isOptional="true" />	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_подписания_протокола" name="Дата подписания" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_подписания_протокола" weight="15" isOptional="true" />	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" name="Дата размещения" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="13"/>
+		<!-- Скрытые поля -->
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" min-width="150" weight="12" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" name="Организатор закупки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" min-width="150" weight="12" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_протокола_в_ЕИС" name="Номер в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_протокола_в_ЕИС" weight="13" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Форма_торгов" name="Форма торгов" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Форма_торгов" weight="13" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" weight="13" isOptional="true" defaultHide="true" />	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Причина_признания_несостоявшейся" name="Причина признания несостоявшейся" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Причина_признания_несостоявшейся" weight="13" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Код_протокола" name="Код_протокола" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Код_протокола" weight="13" isOptional="true" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_признания_несостоявшейся" name="Дата признания несостоявшейся" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_признания_несостоявшейся" weight="10" defaultHide="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Закупка_не_состоялась" name="Закупка не состоялась" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Закупка_не_состоялась" weight="13" isOptional="true" defaultHide="true" />
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

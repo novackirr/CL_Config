@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Поток" isLabel="true"/>
+          <field fieldType="field" key="|Поток" name="Поток" edit-name="flowKey" valueType="text"  isValue="true" edit-dictionary="#Потоки" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-isMultiple ="true" />
+        </column>		
+        <column>
+          <field name="Регистрационный номер" isLabel="true" />
+		  <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" isValue="true" edit-name="regNum" />
+        </column>
+     </row>
+	 <row>
+	    <column>
+			<field name="Дата регистрации" isLabel="true"/>
+			<block id="block2" name="block2" height="300">
+				<rows>
+					<row>
+						<column>				
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+						</column>
+						<column>							
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+						</column>						
+					</row>
+				</rows>					
+			</block>
+        </column>
+		<column>
+			<field name="Автор" isLabel="true" />
+			<field fieldType="field" key="|Document|Автор" name="Автор"  valueType="addressbook" isValue="true" edit-name="creator" edit-isMultiple="true" address-book-tool = "creator" edit-addressbook-groups = "person, AccessGroup, Role"  />
+        </column>
+    <!--  <column>
+       <field name="Краткое содержание" isLabel="true" />
+       <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="text" isValue="true" edit-name="description" list="content-addressbook-suggestions" />
+     </column>
+		<column>
+			<field name="Регистратор" isLabel="true" />		
+			<field fieldType="field" key="|Document|Регистратор" name="Регистратор" valueType="AddressBook" isValue="true"  edit-name="registrator"  edit-isMultiple ="true" address-book-tool = "registrator" edit-addressbook-groups = "person, AccessGroup, Role"  />
+        </column> -->
+   </row>
+     <!-- <row>
+        <column>
+		  <field name="Поиск по контексту" isLabel="true" />
+          <field fieldType="field" key="|Document|Поиск_по_контексту" name="Поиск по контексту" valueType="longtext" isValue="true" edit-name="context"  />
+        </column>
+      </row>-->
+	 </rows>
+  </edit>	 
+  <search>
+   <field fieldValue="doc_RegCard/rc_FlowKey and (doc_RegCard/rc_Index/text_Регистрационный_номер = @regNum) and xn-in(doc_RegCard/rc_FlowKey, @flowKey) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo) and xn-in(doc_Creator, @creator) "/>
+  </search>
+</root>
+
+<!-- and xn-contains(doc_RegCard/rc_Index/longtext_Краткое_содержание ,@description) and xn-in(doc_Registrator, @registrator) -->

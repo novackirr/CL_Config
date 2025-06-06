@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+   <columns state-key="PlanOnSogl223" allowAllActions="true" allowSingleActions="false" allowSelection="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true">
+	<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="12"  />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год" name="Год" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Год" weight="7" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" valueType="longtext" weight="25" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" name="Номер в ЕИС" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_плана_в_ЕИС" weight="10" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" weight="10" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Инновационная_продукция" name="Инновационная продукция" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Инновационная_продукция" weight="10" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_утверждения" name="Дата утверждения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_утверждения" weight="10" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" name="Дата размещения"  valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" weight="10" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="15" />
+	
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Год_окончания" name="Год окончания" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Год_окончания" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_начала_действия_плана" name="Дата начала действия плана" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_начала_действия_плана" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_окончания_действия_плана" name="Дата окончания действия плана" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_окончания_действия_плана" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" name="Организатор закупки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организатор_закупки_наименование" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок" name="Объем закупок" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок_СМП" name="Объем закупок СМП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок_СМП" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Объем_закупок_исключенные" name="Объем закупок, исключенных при расчете" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Объем_закупок_исключенные" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Количество_лотов" name="Количество ППЗ" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Количество_лотов" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Требуется_согласование" name="Требуется согласование" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Требуется_согласование" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Утвердивший_ФИО" name="Утвердивший" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Утвердивший_ФИО" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Согласующий_ФИО" name="Согласующий" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Согласующий_ФИО" weight="15" defaultHide="true" />
+	
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Регистрационный_номер" weight="15" defaultHide="true" />
+	
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_СГОЗ_за_предыдущий_год" name="Совокупный годовой объем договоров, заключенных по результатам закупки товаров, работ, услуг" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_СГОЗ_за_предыдущий_год" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_за_предыдущий_год" name="Совокупный годовой объем договоров, заключенных по результатам закупки инновационной продукции, высокотехнологичной продукции" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_за_предыдущий_год" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_МСП_за_предыдущий_год" name="Совокупный годовой объем договоров, заключенных по результатам закупки инновационной продукции, высокотехнологичной продукции у субъектов МСП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_МСП_за_предыдущий_год" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_Сумма" name="Сумма СГОЗ ИПВП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_Сумма" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_Доля" name="Доля СГОЗ ИПВП" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_Доля" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_Увеличение" name="Увеличение СГОЗ ИПВП" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_Увеличение" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_МСП_Сумма" name="Сумма СГОЗ ИПВП СМП" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_СГОЗ_ИПВП_МСП_Сумма" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_МСП_Доля" name="Доля СГОЗ ИПВП СМП" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_МСП_Доля" weight="15" defaultHide="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_МСП_Увеличение" name="Увеличение СГОЗ ИПВП СМП" valueType="double" sortPredicate="doc_RegCard/rc_Index/real_СГОЗ_ИПВП_МСП_Увеличение" weight="15" defaultHide="true" />
+  </columns>
+  <sort predicate="doc_CreateTime descending"/>
+</root>

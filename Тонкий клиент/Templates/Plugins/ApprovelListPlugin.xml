@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <!-- <options showComment="true" />
+	<flows>
+        <flow name="Извещения о закупочной процедуре 223ФЗ"/>
+    </flows>  -->   
+    <view showCurrentValues="false">        
+    </view>
+	<reports>
+		<report folder="Отчеты" name="Лист согласования" format="Word2007"> 		
+			<params>
+				<param name="Ключ_документа" value="doc_id"/>
+				<param name="Внутренний_номер" value="|Document|Внутренний_номер"/>
+			</params>
+		</report>		
+	</reports>
+	<scripts>		
+	</scripts>	
+</root>

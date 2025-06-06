@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<query name="query" value=""/>
+	<folderOrder>
+		<folder name="На исполнении" />
+		<folder name="На контроле" />				
+		<!-- <folder name="Общие отчеты" /> -->
+	</folderOrder>
+</root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Контрагенты" />
+		</FieldsModify>
+		<OnDocumentCreated transaction="single">
+			<Aggregation>
+				<Select>		
+				</Select>	
+				<Actions>					
+					
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Код_контрагента">
+						<Variables>                          
+							<Variable name="Код_контрагента" source="{current}" path="|Document|Код_контрагента" />			
+						</Variables>
+						<Expression value="iif({Код_контрагента}=null || {Код_контрагента}=&quot;&quot; , (Guid.NewGuid()).ToString() , {Код_контрагента} )"/>
+					</CalculateExpression>					
+					
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Код_контрагента">
+						<Variables>                          
+							<Variable name="Код_контрагента" source="{current}" path="|Document|Код_контрагента" />			
+							<Variable name="ИНН" source="{current}" path="|Document|ИНН" />	
+							<Variable name="КПП" source="{current}" path="|Document|КПП" />	
+						</Variables>
+						<Expression value="iif( {ИНН}!=null and {ИНН}!=&quot;&quot; and {КПП}!=null and {КПП}!=&quot;&quot; , $NullToEmpty({ИНН})+$NullToEmpty({КПП}), {Код_контрагента} )"/>
+					</CalculateExpression>							
+					
+				</Actions>
+			</Aggregation>			
+		</OnDocumentCreated>
+		<OnRegcardEdited transaction="single">	
+			<Aggregation>
+				<Select>		
+				</Select>	
+				<Actions>					
+					
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Код_контрагента">
+						<Variables>                          
+							<Variable name="Код_контрагента" source="{current}" path="|Document|Код_контрагента" />			
+						</Variables>
+						<Expression value="iif({Код_контрагента}=null || {Код_контрагента}=&quot;&quot; , (Guid.NewGuid()).ToString() , {Код_контрагента} )"/>
+					</CalculateExpression>					
+					
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Код_контрагента">
+						<Variables>                          
+							<Variable name="Код_контрагента" source="{current}" path="|Document|Код_контрагента" />			
+							<Variable name="ИНН" source="{current}" path="|Document|ИНН" />	
+							<Variable name="КПП" source="{current}" path="|Document|КПП" />	
+						</Variables>
+						<Expression value="iif( {ИНН}!=null and {ИНН}!=&quot;&quot; and {КПП}!=null and {КПП}!=&quot;&quot; , $NullToEmpty({ИНН})+$NullToEmpty({КПП}), {Код_контрагента} )"/>
+					</CalculateExpression>						
+				</Actions>
+			</Aggregation>			
+		</OnRegcardEdited>
+</Hooks>

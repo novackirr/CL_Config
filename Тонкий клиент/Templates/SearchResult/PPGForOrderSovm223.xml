@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--  <columns allowAllActions="true" allowSingleActions="false" allowSelection="false">-->
+	
+    <columns state-key="PPGForOrder223" allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true">  
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" weight="8" isOptional="true" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" weight="16" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Предмет_договора" weight="30" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="НМЦ (с НДС), руб." valueType="money" sortPredicate="doc_RegCard/rc_Index/money_НМЦ_с_НДС" weight="14" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_размещения" name="Дата размещения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Плановая_дата_размещения" weight="10" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_заключения_договора" name="Дата заключения договора" sortPredicate="doc_RegCard/rc_Index/date_Дата_заключения_договора" valueType="date" weight="10" />	
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="15" />
+  </columns>
+  <sort predicate="doc_CreateTime descending"/>
+</root>

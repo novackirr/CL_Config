@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+		<columns state-key="SKTRU" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true" allow-create-excel="true">
+			<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="12"  />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" sortPredicate="doc_RegCard/rc_Index/text_Статус" valueType="text" weight="30"  />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер версии" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции" valueType="integer" weight="30"  />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_создания" name="Дата создания текущей версии" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_создания" valueType="datetime" weight="30" />
+		</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>
+

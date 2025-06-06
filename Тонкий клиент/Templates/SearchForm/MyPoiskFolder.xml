@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Год" name="Год" valueType="integer" isValue="true" edit-name="god" edit-hidden="true"  edit-default-value="{currentYear}"  />
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ') and not(doc_RegCard/rc_Index/text_Статус = 'Неактуальный') and (doc_RegCard/rc_Index/integer_Год = @god)" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/PologenieNaZak223.js" />
+	</scripts>
+	
+</root>

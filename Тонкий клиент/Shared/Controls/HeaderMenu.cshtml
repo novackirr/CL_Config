@@ -1,0 +1,131 @@
+@using LiteClient.Core.ObjectProperties
+@using LiteClient.Models.Documents
+@using Cognitive.Data.Helpers
+@{
+    const string activeClassText = "class=\"active\"";
+    var controllerName = (string) ViewContext.RouteData.Values["Controller"];
+    var actionName = (string) ViewContext.RouteData.Values["Action"];
+}
+<ul class="nav navbar-nav">   
+	 @*@Html.Partial("Controls/FoldersVerticalMenu")  *@                         
+    <li @Html.Raw(controllerName == "Performer" || controllerName == "Control"  ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Index", "Performer")"><span>Мои задачи</span></a>
+    </li>
+    
+    @*@Html.Partial("Controls/FoldersMenu")*@
+
+    @*<li @Html.Raw(controllerName == "Performer" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Index", "Performer")"><span>На исполнении</span><span class="loading-image-small @(controllerName == "Performer" ? "loading-image-active" : "") loading-image-shown" data-badge-url="@Url.Action("PerformerItemsCount", "Search")"></span></a>
+    </li>
+    <li @Html.Raw(controllerName == "Control" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Index", "Control")"><span>На контроле</span><span class="loading-image-small @(controllerName == "Control" ? "loading-image-active" : "") loading-image-shown" data-badge-url="@Url.Action("ControlItemsCount", "Search")"></span></a>
+    </li> *@
+@*    @if (Model.CanViewPurshareOrders)
+    {
+        <li @Html.Raw(controllerName == "PurshareOrders" && actionName != "New" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "PurshareOrders")"><span>Мои заявки</span><span class="loading-image-small @(controllerName == "PurshareOrders" && actionName != "New" ? "loading-image-active" : "") loading-image-shown" data-badge-url="@Url.Action("PurshareOrderItemsCount", "Search")"></span></a>
+        </li>
+    }
+    @if (Model.CanViewPositions)
+    {
+        <li @Html.Raw(controllerName == "Positions" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "Positions")"><span>Мои позиции</span><span class="loading-image-small @(controllerName == "Positions" ? "loading-image-active" : "") loading-image-shown" data-badge-url="@Url.Action("PositionItemsCount", "Search")"></span></a>
+        </li>
+    }*@
+
+    @{
+        //TODO: сделать нормально
+        DocumentViewSourceType viewSourceType;
+        
+        var viewSourceTypeRaw = Context.Request.Query["viewSourceType"].FirstOrDefault();
+        if (!EnumParser.TryParseEnum(viewSourceTypeRaw, out viewSourceType))
+        {
+            viewSourceType = DocumentViewSourceType.MainView;
+        }
+
+        var searchTemplateNameRaw = Context.Request.Query["searchTemplateName"].FirstOrDefault();
+        
+        var isInPlanning = controllerName == "Search" ||  viewSourceType == DocumentViewSourceType.SearchView && controllerName == "Document";
+    }
+
+@*    <li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "SearchMenu2" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="SearchMenu2" })"><span>Планирование123</span></a>
+    </li>*@
+    
+@if (Model.HasAccessSearchMenu("SearchMenu"))
+{
+    <li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "SearchMenu" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="SearchMenu"})"><span>Планирование</span></a>
+    </li> }
+	@if (Model.HasAccessSearchMenu("ProcedureMenu"))
+{
+	    <li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "ProcedureMenu" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="ProcedureMenu" })"><span>Осуществление закупок</span></a>
+    </li>
+	}
+		 @if (Model.HasAccessSearchMenu("ContractMenu"))
+{
+	   <li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "ContractMenu" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="ContractMenu" })"><span>Реестр договоров</span></a>
+    </li>
+	} 
+	@if (Model.HasAccessSearchMenu("OrganizationsMenu"))
+	{
+	    <li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "OrganizationsMenu" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="OrganizationsMenu" })"><span>Контрагенты</span></a>
+    </li>
+	}	
+@*	@if (Model.HasAccessSearchMenu("AuditMenu"))
+	{
+		<li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "AuditMenu" ? activeClassText : string.Empty)>
+			<a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="AuditMenu" })"><span>Мониторинг, аудит</span></a>
+		</li>   
+	}*@
+		@*<li @Html.Raw(isInPlanning && !string.IsNullOrEmpty(searchTemplateNameRaw) && searchTemplateNameRaw == "SearchingMenu" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Search", "Search", new{searchType=string.Empty, searchTemplateName="SearchingMenu" })"><span>Поиск</span></a>
+    </li>*@
+	    @*<li @Html.Raw(controllerName == "Folders" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Index", "Folders")"><span>Папки</span></a>
+    </li>*@
+@*    @if (Model.CanRegisterPurshareOrders)
+    {
+        <li @Html.Raw(controllerName == "PurshareOrders" && actionName == "New" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("New", "PurshareOrders")"><span>Новая заявка</span></a>
+        </li>
+    }*@
+@*    @if (Model.CanRegisterAnyFlows)
+    {
+        <li @Html.Raw(controllerName == "Register" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "Register")"><span>Новый документ</span></a>
+        </li>
+    }*@
+	 
+        <li @Html.Raw(controllerName == "DictionaryMenu" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "DictionaryMenu")"><span>Справочники</span></a>
+        </li>
+   
+	<li @Html.Raw(controllerName == "Reports" ? activeClassText : string.Empty)>
+        <a href="@Url.Action("Index", "Reports")"><span>Отчетность</span></a>
+    </li>
+    @if (Model.CanViewAdministration)
+    {
+        <li @Html.Raw(controllerName == "Administration" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "Administration")"><span>Администрирование</span></a>
+        </li>
+    }
+   
+	@if (Model.CanViewDocumentation)
+    {
+        <li @Html.Raw(controllerName == "Documentation" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "Documentation")"><span>Документация</span></a>
+        </li>
+    }
+    
+@*    @if (!Model.CanViewSuppliers)
+    {
+        <li @Html.Raw(controllerName == "Suppliers" ? activeClassText : string.Empty)>
+            <a href="@Url.Action("Index", "Suppliers")"><span>Контрагенты</span></a>
+        </li>
+    }*@
+	
+</ul>

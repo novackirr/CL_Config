@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<istfa value="false"/>
+	<delaytime minutes="5" /><!--по умолчанию значение равно 5-ти минутам-->
+	<email>
+		<host value="mail.cognitive.ru"/>
+		<port value="25" />
+		<domain value="" />
+		<user value="" />
+		<password value="" />
+		<enablessl value="true" />
+		<emailfrom value="" />
+	</email>
+</root>

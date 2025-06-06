@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+	<Action name="Удалить">
+        <Invisibility>
+            <Rules>
+				<Or>
+					<And> 	
+						<And>
+							<WhenAttachmentCategory name="Документация"/>  
+							<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+						<Or>
+							<And>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="На доработке"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Ожидает ответа от заказчика"/>
+							</And>
+							<And>
+								<WhenUserNotInWorkGroup name="Инициатор" />
+							</And>
+						</Or>
+					</And>
+					<And> 		
+						<WhenAttachmentCategory name="Форма заявки"/>  
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+                    </And>
+					<And> 		
+						<WhenAttachmentCategory name="Документация"/>  
+						<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						<WhenDocumentFieldEquals path="|Document|Статус" value="В архиве"/>
+                    </And>
+                </Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+	
+	<Action name="Редактировать">
+        <Invisibility>
+            <Rules>
+                <Or>
+					<And> 	
+						<And>
+							<WhenAttachmentCategory name="Документация"/>  
+							<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+						<Or>
+							<And>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="На доработке"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Ожидает ответа от заказчика"/>
+							</And>
+							<And>
+								<WhenUserNotInWorkGroup name="Инициатор" />
+							</And>
+						</Or>
+					</And>
+					<And> 		
+						<WhenAttachmentCategory name="Форма заявки"/>  
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+                    </And>
+					<And> 		
+						<WhenAttachmentCategory name="Документация"/>  
+						<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						<WhenDocumentFieldEquals path="|Document|Статус" value="В архиве"/>
+                    </And>
+                </Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+	<Action name="Создать версию">
+        <Invisibility>
+            <Rules>
+				<Or>
+					<And> 	
+						<And>
+							<WhenAttachmentCategory name="Документация"/>  
+							<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+						</And>
+						<Or>
+							<And>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Черновик"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="На доработке"/>
+								<WhenDocumentFieldNotEquals path="|Document|Статус" value="Ожидает ответа от заказчика"/>
+							</And>
+							<And>
+								<WhenUserNotInWorkGroup name="Инициатор" />
+							</And>
+						</Or>
+					</And>
+					<And> 		
+						<WhenAttachmentCategory name="Форма заявки"/>  
+						<WhenDocumentFlow name="Заявка на размещение закупки 223ФЗ"/>
+                    </And>
+					<And> 		
+						<WhenAttachmentCategory name="Документация"/>  
+						<WhenDocumentFlow name="Извещения о закупочной процедуре 223ФЗ"/>
+						<WhenDocumentFieldEquals path="|Document|Статус" value="В архиве"/>
+                    </And>
+                </Or>
+			</Rules>
+		</Invisibility>
+	</Action>
+</Actions>

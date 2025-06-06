@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_контракта" name="Номер контракта" valueType="text" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_заключения" name="Дата заключения" valueType="date" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_начала_исполнения_контракта" name="Дата начала исполнения контракта" valueType="date" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_окончания_исполнения_контракта" name="Дата окончания исполнения контракта" valueType="date" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Цена_контракта" name="Цена контракта" valueType="text" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="40" />
+	</columns>
+	  <sort predicate="doc_CreateTime descending"/>
+</root>

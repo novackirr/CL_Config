@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	<row>
+		<column>
+			<field name="Организация заказчик" isLabel="true" />
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" edit-readonly="true" dict-column-name="code" valueType="text"  isValue="true" edit-name="registerOrgZa"  is-select-one-level="1"  edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa"/>			
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" dict-column-name="Краткое наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="registerOrgZa"/>
+		</column>
+        <column>
+          <field name="Наименование" isLabel="true" />		  
+          <field fieldType="field" key="|Document|Наименование_лота" name="Наименование лота" valueType="text" isValue="true" edit-name="lotName" />
+        </column>	
+    </row>
+	<row>	
+		<column>
+		  <field name="Способ закупки" isLabel="true" />
+		  <field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="sposzak" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Способы закупок" dict-edit-name="sposzak"/>
+		  <field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="sposzakName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="sposzak"/>
+        </column>	
+     <column>
+      <field name="НМЦ (с НДС), руб." isLabel="true"/>
+      <table key="table1" edit-name="table1" height="300">
+        <field name="от" isLabel="true" />
+        <field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+        <field name="до" isLabel="true" />
+        <field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+      </table>
+    </column>
+    <column>
+      <field name="Плановая дата размещения" isLabel="true"/>
+      <table key="table2" edit-name="table2" height="300">
+        <field name="с" isLabel="true" />
+        <field fieldType="field" key="|Document|Плановая_дата_размещения" name="Плановая дата размещения" valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+        <field name="по" isLabel="true" />
+        <field fieldType="field" key="|Document|Плановая_дата_размещения" name="по" valueType="date" isValue="true" edit-name="publicDateTo"  />
+      </table>
+    </column>
+    </row>
+	<row>
+         <column>
+			<field name="Статус" isLabel="true"/>			
+			<field fieldType="field" key="Статусы лота" name="Статус" edit-name="status" valueType="text"  isValue="true" edit-tool="Статусы лота" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" display-field-part="true" dict-edit-name="status" />				  
+        </column>  
+ <column>
+       <field name="Плановая дата начала исполнения" isLabel="true"/>
+       <table key="table3" edit-name="table3" height="300">
+         <field name="с" isLabel="true" />
+         <field fieldType="field" key="|Document|Плановая_дата_начала_исполнения" name="Плановая дата начала исполнения" valueType="date" isValue="true"  edit-name="startDateFrom" weight="300"/>
+         <field name="по" isLabel="true" />
+         <field fieldType="field" key="|Document|Плановая_дата_начала_исполнения" name="по" valueType="date" isValue="true" edit-name="startDateTo"  />
+       </table>
+     </column>		
+     <column>
+       <field name="Плановая дата окончания исполнения" isLabel="true"/>
+       <table key="table4" edit-name="table4" height="300">
+         <field name="с" isLabel="true" />
+         <field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="Плановая дата окончания исполнения" valueType="date" isValue="true"  edit-name="finishDateFrom" weight="300"/>
+         <field name="по" isLabel="true" />
+         <field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="по" valueType="date" isValue="true" edit-name="finishDateTo"  />
+       </table>
+     </column>
+   
+  </row>
+ 	 <row>
+		 <column>
+			<field fieldType="field" edit-hidden="true" valueType="Text" isValue="true" edit-name="purchaseYear" edit-default-value="{currentYear}"/>
+		 </column>
+	</row>     
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Лоты') and (doc_RegCard/rc_Index/text_Организация_заказчик = @registerOrgZa) and (doc_RegCard/rc_Index/text_Год_закупки = @purchaseYear) and (doc_RegCard/rc_Index/text_Статус = @status) and (doc_RegCard/rc_Index/text_Способ_закупки_положение = @sposzak) and ((doc_RegCard/rc_Index/date_Плановая_дата_размещения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Плановая_дата_размещения &lt;= @publicDateTo)) and ((doc_RegCard/rc_Index/date_Плановая_дата_начала_исполнения &gt;= @startDateFrom) and (doc_RegCard/rc_Index/date_Плановая_дата_начала_исполнения &lt;= @startDateTo)) and ((doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения &gt;= @finishDateFrom) and (doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения &lt;= @finishDateTo))  and ((doc_RegCard/rc_Index/money_НМЦ_с_НДС &gt;= @sumLotFrom) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &lt;= @sumLotTo))  and (xn-contains(doc_RegCard/rc_Index/longtext_Наименование_лота ,@lotName))" />
+  </search>
+</root>

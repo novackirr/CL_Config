@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <derivedFields>
+   <field edit-name="registerSposobLotDerived" fieldType="field" key="|Document|Способ_определения_поставщика_код" isValue="true" valueType="text"/>
+		<field edit-name="registerGodLotDerived" fieldType="field" key="|Document|Планируемый_год_размещения" isValue="true" valueType="integer" />
+		<field edit-name="registerMonthLotDerived" fieldType="field" key="|Document|Планируемый_месяц_размещения" isValue="true" valueType="text"/> 
+		<field edit-name="SovTorgCheck" fieldType="field" key="|Document|Совместные_торги" isValue="true" valueType="boolean"/>
+		<field edit-name="CentrTorgCheck" fieldType="field" key="|Document|Централизованная_закупка" isValue="true" valueType="boolean"/> 
+		<field edit-name="OrgZakup" fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" isValue="true" valueType="text"/>
+		
+  </derivedFields>
+  <edit>
+     <rows>
+	       <row>
+		          <column>
+				  
+                     <field name="Наименование объекта закупки" isLabel="true" />
+                 
+                     <field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext"  isValue="true" edit-name="NameObZak" />
+					 <field fieldType="field" key="|Document|ИД_извещения" name="Ид извещения" valueType="text" isValue="true" edit-name="IDNotice" edit-hidden="true"  />
+				  </column>
+            </row>
+	       
+	 </rows>
+  </edit>
+  <search>
+   <field fieldValue="doc_RegCard/rc_FlowName = 'Заявки на размещение закупки' and ((doc_RegCard/rc_FlowKey = @flowKey) and (doc_RegCard/rc_Index/text_Способ_определения_поставщика_код = @registerSposobLotDerived) and (doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @registerGodLotDerived) and (doc_RegCard/rc_Index/text_Планируемый_месяц_размещения = @registerMonthLotDerived) and (doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки= @NameObZak ) and (doc_RegCard/rc_Index/boolean_Совместные_торги= @SovTorgCheck ) and (doc_RegCard/rc_Index/boolean_Централизованная_закупка= @CentrTorgCheck )  and (doc_RegCard/rc_Index/text_Организатор_закупки= @OrgZakup )  and not(doc_RegCard/rc_Index/text_ИД_извещения))" /> 
+
+   </search>
+</root>

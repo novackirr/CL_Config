@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns>
+    <column fieldType="property" key="ActivityName" name="Название" valueType="text" sortPredicate="act_Name" weight="15" />
+    <column fieldType="attribute" key="act_Creator" name="Автор" valueType="addressbook" sortPredicate="act_Creator" weight="15" isOptional="true"/>
+    <column fieldType="attribute" key="act_powerPerformer/actual" name="Исполнитель" valueType="addressbook" sortPredicate="act_powerPerformer/actual" weight="15" />
+    <column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15" />
+    <column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" />
+    <column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" valueType="text" sortPredicate="doc_RegCard/rc_Index/longtext_Краткое_содержание" weight="35" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/money_Сумма_всего" name="Сумма документа" valueType="money" sortPredicate="doc_RegCard/rc_Index/money_Сумма_всего" weight="20" />
+	<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" valueType="datetime" sortPredicate="act_StartTime" weight="15" />	
+  </columns>
+</root>

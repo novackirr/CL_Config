@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="FDogovor223" allow-create-excel="true" allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<column fieldType="property" key="ActivityName" name="Название задачи" valueType="text" sortPredicate="act_Name" weight="25" />
+		<column fieldType="attribute" key="act_Creator" name="Назначил задачу" valueType="addressbook" weight="15" sortPredicate="act_Creator" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="property" key="activityState" name="Статус задачи" valueType="text" sortPredicate="activityState" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="15" isOptional="true" defaultHide="true"/>
+		
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" sortPredicate="document$doc_RegCard/rc_Index/date_Дата_регистрации" valueType="date" horizontalAlignment="center" weight="15" defaultHide="true"/>	
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Статус" name="Статус документа" sortPredicate="document$doc_RegCard/rc_Index/text_Статус" valueType="text" weight="15" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ФИО_инициатора" name="Автор" sortPredicate="document$doc_RegCard/rc_Index/text_ФИО_инициатора" valueType="text" weight="10" defaultHide="true"/>			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Код_ПФМ_исполняющего_подразделения" name="Код исполняющего подразделения" valueType="text" weight="15" isOptional="true"  sortPredicate= "doc_RegCard/rc_Index/text_Подразделение" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Код_ПФМ_закупающего_подразделения" name="Код закупающего подразделения" sortPredicate="doc_RegCard/rc_Index/text_Код_ПФМ_закупающего_подразделения" valueType="text" weight="10" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подразделение" name="Исполняющее подразделение" valueType="text" weight="16" isOptional="true"  sortPredicate= "document$doc_RegCard/rc_Index/text_Подразделение" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Закупающее_подразделение_наименование" name="Закупающее подразделение" valueType="text" weight="15" isOptional="true"  sortPredicate= "document$doc_RegCard/rc_Index/text_Закупающее_подразделение_наименование" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" sortPredicate="document$doc_RegCard/rc_Index/longtext_Предмет_договора" valueType="longtext" weight="20" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная (максимальная) цена" sortPredicate="document$doc_RegCard/rc_Index/money_НМЦ_с_НДС" valueType="money" weight="15" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Валюта" weight="10" defaultHide="true"/>
+		
+		<!-- <column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" sortPredicate="document$doc_RegCard/rc_Index/integer_Номер_редакции" valueType="integer" weight="10" defaultHide="true"/>		 -->
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Менеджер_закупки_ФИО" name="Менеджер закупки" sortPredicate="document$doc_RegCard/rc_Index/text_Менеджер_закупки_ФИО" valueType="text" weight="15"  defaultHide="true" />			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Менеджер_договора_ФИО" name="Менеджер договора" sortPredicate="document$doc_RegCard/rc_Index/text_Менеджер_договора_ФИО" valueType="text" weight="15"  defaultHide="true" />			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подписант_договора_ФИО" name="Подписант договора" sortPredicate="document$doc_RegCard/rc_Index/text_Подписант_договора_ФИО" valueType="text" weight="15"  defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_Рамочный_договор" name="Рамочный договор" valueType="boolean" sortPredicate="document$doc_RegCard/rc_Index/boolean_Рамочный_договор" weight="8" defaultHide="true" />		
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_Типовой_договор" name="Типовой договор" valueType="boolean" sortPredicate="document$doc_RegCard/rc_Index/boolean_Типовой_договор" weight="8" defaultHide="true" />	
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_ВЗЛ" name="ВЗЛ" valueType="boolean" weight="8" defaultHide="true" sortPredicate= "document$doc_RegCard/rc_Index/boolean_ВЗЛ" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_Долгосрочный" name="Долгосрочный договор" valueType="boolean" sortPredicate="document$doc_RegCard/rc_Index/boolean_Долгосрочный" weight="10" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_Срочная_закупка" name="Срочная закупка" valueType="boolean" sortPredicate="document$doc_RegCard/rc_Index/boolean_Срочная_закупка" weight="15" isOptional="true" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Победитель_наименование" name="Организация поставщик" valueType="text" weight="25" defaultHide="true" sortPredicate= "document$doc_RegCard/rc_Index/text_Победитель_наименование"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" sortPredicate="document$doc_RegCard/rc_Index/text_Способ_закупки" valueType="text" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Название_закупки" name="Название закупки" sortPredicate="document$doc_RegCard/rc_Index/longtext_Название_закупки" valueType="longtext" weight="20" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" name="Закупка среди СМСП" valueType="boolean" sortPredicate="document$doc_RegCard/rc_Index/boolean_Участник_закупки_СМП" weight="8" defaultHide="true" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_МВП" name="МВП" sortPredicate="doc_RegCard/rc_Index/text_МВП" valueType="text" weight="10" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Номер_доп_соглашения" name="Номер дополнительного соглашения" sortPredicate="doc_RegCard/rc_Index/text_Номер_доп_соглашения" valueType="text" weight="10" />
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Внутренний_номер_договора" name="Внешний номер договора" sortPredicate="doc_RegCard/rc_Index/text_Внутренний_номер_договора" valueType="text" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Номер_договора" name="Регистрационный номер договора" sortPredicate="doc_RegCard/rc_Index/text_Номер_договора" valueType="text" weight="15" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ИД_САП_ДС" name="Номер ДС в SAP УВХД" sortPredicate="doc_RegCard/rc_Index/text_ИД_САП_ДС" valueType="text" weight="15" /> 
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ИД_САП" name="Номер договора в SAP УВХД" sortPredicate="doc_RegCard/rc_Index/text_ИД_САП" valueType="text" weight="15" defaultHide="true"/>
+	</columns>
+</root>

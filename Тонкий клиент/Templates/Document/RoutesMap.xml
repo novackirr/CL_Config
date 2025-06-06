@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns>
+		<column fieldType="property" key="Number"           name="Этап"                    valueType="text" weight="10" />
+		<column fieldType="property" key="Name" 			name="Наименование этапа" 		valueType="text" 		weight="15" />
+		<column fieldType="property" key="IsVisa" 			name="Получена положительная Виза" 				valueType="text" 	weight="15" />
+		<column fieldType="property" key="Performer" 		name="Согласующие лица" 		valueType="addressbook" 		weight="15" />
+	</columns>
+</root>

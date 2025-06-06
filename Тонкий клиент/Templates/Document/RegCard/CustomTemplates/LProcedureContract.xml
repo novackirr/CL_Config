@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Протокол-->
+<root>
+  <view>
+    <rows>
+		<row>
+			<column>
+			  <block id="tlcInfo" name="Основные сведения">		 
+				 <rows>
+					<row>
+                          <column>
+                          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+                          </column>
+                           <column>
+                         <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" edit-default-value="{today}" valueType="date"  />
+                         </column>
+			        </row>
+			        <row>
+			            <column>
+                           <field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="text" />
+                        </column>
+                          <column>
+                           <field fieldType="field" key="|Document|Дата_публикации" name="Дата публикации" valueType="date" />
+                        </column>
+			        </row>
+				    <row>
+                         <column>
+                          <field fieldType="field" key="|Document|Тип_документа" name="Тип документа" valueType="text" />
+                         </column>
+                         <column>
+                           <field fieldType="field" key="|Document|Этап_завершен" name="Этап_завершен" valueType="boolean"  />
+                         </column>
+						 
+			        </row>
+					
+					<row>
+							
+							<column>
+
+							  <field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" />
+							</column>
+					</row>
+					<row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Номер_реестровой_записи" name="Номер реестровой записи" valueType="text" />
+							</column>
+							<column>
+							  <field fieldType="field" key="|Document|Цена_контракта" name="Цена контракта" valueType="money" />
+							</column>
+					</row>
+					<row>
+                          
+                          <column>
+                            <field fieldType="field" key="|Document|Номер_контракта" name="Номер контракта" valueType="text"  />
+                         </column>
+                          <column>
+                            <field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения контракта" valueType="text"  />
+                         </column>
+			        </row>
+					<row>
+							
+							<column>
+							  <field fieldType="field" key="|Document|Этап_контракта" name="Этап контракта" valueType="text" />
+							</column>
+							<column>
+							  <field fieldType="field" key="|Document|Номер_исполнения" name="Номер исполнения" valueType="text" />
+							</column>
+					</row>
+				 </rows>
+			   </block>
+			</column>			
+					  
+												
+		</row>		
+	
+	<row>
+			<column>
+				<block id="tlcCrit" name="Исполнение контракта">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Исполнение_контракта" height="200">
+						  <column fieldType="field" key="|Тип_документа_исполнения" valueType="text" name="Тип документа" width="15"/>
+						  <column fieldType="field" key="|Дата_документа" valueType="date" name="Дата документа" width="40"/>
+                          <column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" width="40"/>
+						  <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" width="40"/>
+						  <column fieldType="field" key="|Фактически_оплачено" valueType="money" name="Фактически оплачено" width="15"/>
+						  <column fieldType="field" key="|Валюта_платежа" valueType="text" name="Валюта" width="70"/>
+						  <column fieldType="field" key="|Сведения_о_ненадлежащем_исполнении_обязательств" valueType="text" name="Ненадлежащее исполнение" width="70"/>
+						  <view>
+											<rows>
+												<row>
+													<column>
+														<field name="Объем поставленного товара" isLabel="true" />
+														<table key="|Объем_товаров" edit-name="SvedTab" height="300">							
+															<column fieldType="field" key="|Наиемнование_товара_поставки" valueType="text"   name="Наименование товара"  width="320"/>
+															<column fieldType="field" key="|ОКПД2_поставки" name="ОКПД2" valueType="text" width="180" />
+															<column fieldType="field" key="|Единица_измерения_поставки" name="Единица измерения" valueType="text" width="180" />
+															<column fieldType="field" key="|Количество_поставки" name="Количество" valueType="integer"  width="180"/>
+														</table> 
+													</column>
+												</row>
+											</rows>
+										</view>
+						    </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>	
+			
+		<row>
+			<column>
+				<block id="tlcTermination" name="Расторжение контракта">		 
+					<rows>
+						 <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Расторжение|Дата_расторжения" name="Дата расторжения" valueType="date"  />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения" name="Документ расторжения" valueType="text"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения_дата" name="Дата документа расторжения " valueType="date"  />
+						  </column>
+						    <column>
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения_номер" name="Номер документа расторжения " valueType="text"  />
+						  </column>
+						 </row>	
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Расторжение|Основание_расторжения" name="Основание расторжения" valueType="longtext"  />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Расторжение|Причина_расторжения" name="Причина расторжения" valueType="text"  />
+						  </column>
+						   <column>
+						   <field fieldType="field" key="|Document|Расторжение|Оплачено_заказчиком_в_рублях" name="Фактически оплачено" valueType="money"  />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Расторжение|Дата_уведомления_или_вступления_в_силу_судебного_решения" name="Дата уведомления или вступления в силу судебного решения" valueType="date"  />
+						  </column>
+						 </row>		
+					     <row>
+						 <column>
+						  <table key="|Document|Суммы_возмещения_ущерба" height="200">
+						  <column fieldType="field" key="|Документ_ущерба" valueType="text" name="Документ ущерба" width="15"/>
+						  <column fieldType="field" key="|Наименование_документа_ущерба" valueType="text" name="Наименование_документа_ущерба" width="40"/>
+                          <column fieldType="field" key="|Дата_документа_ущерба" valueType="date" name="Дата документа ущерба" width="40"/>
+						  <column fieldType="field" key="|Номер_документа_ущерба" valueType="text" name="Номер документа ущерба" width="40"/>
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>	
+		<row>
+			<column>
+				<block id="tlcBank" name="Банковская гарантия">		 
+					<rows>
+						 <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Реестровый_номер_БГ" name="Реестровый номер БГ" valueType="text"  />
+						  </column>
+						  </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Прекращение_банковской_гарантии" name="Прекращение банковской гарантии" valueType="boolean"  />
+						  </column>
+						  </row>	
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Дата_прекращения_БГ" name="Дата прекращения БГ" valueType="date"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Основание_прекращения_БГ" name="Основание прекращенияБГ" valueType="longtext"  />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Дата_требований" name="Дата требований" valueType="date"  />
+						  </column>
+						   <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_требований" name="Сумма требований" valueType="money"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Валюта_требований" name="Валюта требований" valueType="text"  />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_требований_руб" name="Сумма требований (в рублях)" valueType="money"  />
+						  </column>
+						 </row>	
+						 	  <row>
+						 <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_возврата_аванса" name="Сумма возврата аванса" valueType="money"  />
+						  </column>
+						   <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_неустоек" name="Сумма неустоек" valueType="money"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_убытков" name="Сумма убытков" valueType="money"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_возмещения_убытков" name="Сумма возмещения убытков" valueType="money"  />
+						  </column>
+						  <column>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Иные_суммы" name="Иные суммы" valueType="money"  />
+						  </column>
+						 </row>		
+					     <row>
+						 <column>
+						  <table key="|Document|Факт_оплаты_БГ" height="200">
+						  <column fieldType="field" key="|Наиемнвоание_пл_документа_БГ" valueType="text" name="Наименование платежного документа БГ" width="15"/>
+						  <column fieldType="field" key="|Дата_пл_документа_БГ" valueType="date" name="Дата платежного документа БГ" width="40"/>
+                          <column fieldType="field" key="|Номер_пл_документа_БГ" valueType="text" name="Номер платежного документа БГ" width="40"/>
+						  <column fieldType="field" key="|Сумма_банк_руб" valueType="money" name="Сумма (в рублях)" width="40"/>
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>	
+		<row>
+			<column>
+				<block id="tlcPenalty" name="Неустойки (штрафы, пени)">		 
+					<rows>
+						 <row>
+						 <column>
+						  <table key="|Document|Начисление_неустойки" height="200">
+						  <column fieldType="field" key="|Сторона_начисления_неустойки" valueType="text" name="Сторона начисления неустойки" width="15"/>
+						  <column fieldType="field" key="|Причина_начисления_неустоек" valueType="text" name="Причина начисления" width="40"/>
+                          <column fieldType="field" key="|Тип_взыскания" valueType="text" name="Тип взыскания" width="40"/>
+						  <column fieldType="field" key="|Документ_требования_начисления_неустоек" valueType="text" name="Документ требования" width="40"/>
+						  <column fieldType="field" key="|Дата_документа_требования_начисления_неустоек" valueType="date" name="Дата документа" width="40"/>
+						  <column fieldType="field" key="|Номер_документа_требования_начисления_неустоек" valueType="text" name="Номер документа" width="40"/>
+						  <column fieldType="field" key="|Размер_неустойки_в_рублевом_эквиваленте" valueType="money" name="Размер неустойки (в руб.)" width="40"/>
+						  <view>
+											<rows>
+												<row>
+													<column>
+														<table key="|Оплата_неустойки" height="300">							
+															<column fieldType="field" key="|Наименование_документа_оплаты_неустойки" valueType="text"   name="Наименование документа"  width="320"/>
+															<column fieldType="field" key="|Дата_документа_оплаты_неустойки" name="Дата документа" valueType="date" width="180" />
+															<column fieldType="field" key="|Номер_документа_оплаты_неустойки" name="Номер документа" valueType="text" width="180" />
+															<column fieldType="field" key="|Размер_неустойки_в_руб_на_момент_оплаты_неустойки" name="Размер неуйстойки на момент оплаты" valueType="money"  width="180"/>
+															<column fieldType="field" key="|Итого_оплачено_неустойки_в_рублевом_эквиваленте" name="Итого оплачено (в руб.)" valueType="money"  width="180"/>
+														</table> 
+													</column>
+												</row>
+											</rows>
+										</view>
+						  </table>
+						  </column>
+						 </row>		
+						 <row>
+						 <column>
+						  <table key="|Document|Возврат_лишней_неустойки" height="200">
+						  <column fieldType="field" key="|Наименование_документа_возврата" valueType="text" name="Наименование документа" width="15"/>
+						  <column fieldType="field" key="|Номер_документа_возврата" valueType="text" name="Номер документа" width="40"/>
+                          <column fieldType="field" key="|Дата_документа_возврата" valueType="date" name="Дата документа" width="40"/>
+						  <column fieldType="field" key="|Размер_излишне_оплаченной_неустойки" valueType="money" name="Размер излишне оплаченной неустойки" width="40"/>
+						    <view>
+											<rows>
+												<row>
+													<column>
+														<table key="|Оплата_лишней_неустойки" height="300">							
+															<column fieldType="field" key="|Наименвоание_документа_оплаты_возврата" valueType="text"   name="Наименование документа"  width="320"/>
+															<column fieldType="field" key="|Дата_документа_оплаты_возврата" name="Дата документа" valueType="date" width="180" />
+															<column fieldType="field" key="|Номер_документа_оплаты_возврата" name="Номер документа" valueType="text" width="180" />
+															<column fieldType="field" key="|Сумма_оплаты_возврата" name="Сумма оплаты возврата" valueType="money"  width="180"/>
+														</table> 
+													</column>
+												</row>
+											</rows>
+							</view>
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>		
+		<!-- <row>
+			<column>
+				<block id="tlcKom" name="Критерии оценки заявки">		 
+					<rows>
+					    <row>
+						 <column>
+						  <table key="|Document|Критерии_оценки_заявки_участников" height="200">
+						  <column fieldType="field" key="|Код_критерия" valueType="text" name="Код критерия" width="30"/>
+                          <column fieldType="field" key="|Значимость_критерия" valueType="text" name="Значимость критерия" width="50"/>
+						  <column fieldType="field" key="|Дополнение_критерия" valueType="text" name="Дополнение критерия" width="50"/>
+						  <column fieldType="field" key="|Лимит_критерия" valueType="text" name="Лимит критерия" width="40"/>
+						  <column fieldType="field" key="|Порядок_оценки_критерия" valueType="text" name="Порядок оценки критерия" width="50"/>
+						    </table>
+						  </column>
+						 </row>		
+											
+					</rows>
+				</block>
+			</column>
+		</row>		 -->		
+						
+		<!-- <row>
+			<column>
+				<block id="tlcDocs" name="Изменения">		 
+					<rows>
+					    <row>
+							  <column>
+								   <field fieldType="field" key="|Document|Изменения" name="Изменения" valueType="boolean" />								
+							  </column>
+							 							  
+						</row>
+						<row>
+                          <column>
+                             <table key="|Document|Внесение_изменений" height="200">
+                                 <column fieldType="field" key="|NUM" valueType="text" name="№" width="50"/>
+                                 <column fieldType="field" key="|Обоснование_внесения_изменений_протокола" valueType="text" name="Обоснование внесения изменений протокола" width="150"/>
+				                <column fieldType="field" key="|Краткое_описание_изменения" valueType="text" name="Краткое описание изменения" width="150"/>
+					             <column fieldType="field" key="|Дата_принятия_решения" valueType="datetime" name="Дата принятия решения" width="150"/>
+					             <column fieldType="field" key="|Предписание_отсутствует_в_реестре_результатов_контроля" valueType="boolean" name="Предписание отсутствует в реестре результатов контроля" width="150"/>
+					             <column fieldType="field" key="|Номер_результата_контроля_по_предписанию" valueType="text" name="Номер результата контроля по предписанию" width="150"/>
+					             <column fieldType="field" key="|Наименование_органа" valueType="text" name="Наименование органа" width="150"/>
+					             <column fieldType="field" key="|Вид_органа" valueType="text" name="Вид органа" width="150"/>
+					             <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" width="150"/>
+					             <column fieldType="field" key="|Дата_документа" valueType="datetime" name="Дата документа" width="150"/>
+                                 <column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" width="150"/>
+					             <column fieldType="field" key="|Новое_изменение" valueType="text" name="Новое изменение" width="150"/>
+                                 
+                             </table>
+                          </column>
+				        </row>		  
+					</rows>
+				</block>
+			</column>
+		</row>	 -->
+    </rows>
+	<variables>
+		<variable variable-name="caption" variable-format="Исполнение{number}{RegDate}">
+			<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+			<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+		</variable>
+    </variables>
+  </view>
+<!--Блок на редактирование-->
+  <edit>
+    <rows> 
+
+	<row>
+		<column>
+			<block id="tlcInfo" name="Основные сведения">		 
+				<rows>
+					<row>
+				   <column>
+                        <!-- <field fieldType="field" key="|Document|Номер_контракта" name="" valueType="text"  isValue="true" edit-name="IdNotice" edit-hidden="true" /> -->
+						<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text" isValue="true" edit-name="Orgzakup"  edit-hidden="true"/>
+						<field fieldType="field" key="|Document|Роль_организатора_закупки" name="Роль организатора закупки" isValue="true" valueType="text"  edit-name="RoleOrg" edit-hidden="true"/>
+						 <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerRegDate"  edit-hidden="true" edit-default-value="{today}" />
+               
+                 </column>   
+			  	</row>
+					
+							<row>
+								<column>
+									<field name="Тип документа" isLabel="true" edit-name="Tipdoc" />
+								</column>
+							</row>
+		        <row>
+				   <column>
+                        <field fieldType="field" key="|Document|Тип_документа" name="Тип документа" valueType="text"  isValue="true" edit-name="Tipdoc" edit-required="true"  edit-readonly="true" dict-edit-name="Tipdoc" edit-dictionary ="Тип исполнения" />
+                     </column>
+					 <column>
+					       <field fieldType="field" key="|Document|Этап_завершен" name="Этап завершен" valueType="boolean" edit-name="EndEtapClose" edit-default-value="0" />
+                     </column>
+					</row>
+					<row>
+							<!-- <column>
+							 <field name="Организация заказчик" isLabel="true" />
+								  <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true" edit-default-value="{addressbook,value=IDIniciatora,attribute=Department}" edit-required="true" />
+							</column> -->
+					</row>
+					<!--  <column>
+					 			 					 					 
+					 	<field name="Вид протокола" isLabel="true" />
+						<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Код способа" valueType="text"  isValue="true" edit-name="Protocol"  edit-readonly="true"   dict-column-name="code" is-select-one-level="1" edit-tool ="Способ определения поставщика" edit-required="true" dict-edit-name="Protocol" display-field-part="true" />
+						<field fieldType="field" key="|Document|Вид_протокола_код" valueType="text" name="Вид протокола код" edit-name="ProtocolType" isValue="true" edit-tool="Способ определения поставщика" dict-column-name="Протокол" edit-readonly="true" dict-edit-name="ProtocolTypeName" one-level-parent="Protocol" is-select-one-level="2" dict-subdictionary="Протокол"/>
+						<field fieldType="field" key="|Document|Вид_протокола" name="Вид протокола" valueType="text" isValue="true" edit-name="ProtocolTypeName" dict-column-name="Наименование" edit-readonly="true"  dict-edit-name="ProtocolType" weight="3"  display-field-part="true"  edit-hidden="true" />
+					 </column>
+               </row>  -->
+			  	<row>
+								<column>
+									<field name="Номер реестровой записи" isLabel="true"  edit-name="reestrnumber"/>
+								</column>
+							</row>
+			  	<row>
+				   <column>
+                         <field fieldType="field" key="|Document|Номер_реестровой_записи" name="Номер реестровой записи" valueType="text"  isValue="true" edit-name="reestrnumber" edit-required="true" />
+                 </column>   
+			  	</row> 	 
+			  	<row>
+				   <column>
+                    <field name="Номер контракта" isLabel="true" edit-name="kontractnumber"/>
+                    <field fieldType="field" key="|Document|Номер_контракта" name="Номер контракта" valueType="text"  isValue="true" edit-name="kontractnumber" edit-required="true" display-field-part="true" />
+                 </column>   
+                  <column>
+                    <field name="Дата заключения" isLabel="true" edit-name="kontractdate"/>
+                    <field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения" valueType="date"  isValue="true" edit-name="kontractdate" edit-required="true" />
+                 </column>   
+			  	</row> 	 
+			  	<row>
+				   <column>
+                    <field name="Этап контракта" isLabel="true" edit-name="etapkontract"/>
+                    <field fieldType="field" key="|Document|Этап_контракта" name="Этап контракта" valueType="text"  isValue="true" edit-name="etapkontract" edit-required="true"  />
+                 </column>   
+                 <column>
+                    <field name="Номер исполнения" isLabel="true" edit-name="numberisp"/>
+                    <field fieldType="field" key="|Document|Номер_исполнения" name="Номер исполнения" valueType="text"  isValue="true" edit-name="numberisp" edit-required="true" />
+                 </column>   
+			  	</row> 
+			  </rows>
+			</block>
+		</column>
+	</row>		  
+
+	 <row>
+		<column>
+			<block id="tlcCrit" name="Исполнение контракта">		 
+				<rows>
+					 <row>
+						 <column>
+						  <table key="|Document|Исполнение_контракта" edit-name="Ispdocument" height="200">
+						  <column fieldType="field" key="|Тип_документа_исполнения" valueType="text" name="Тип документа" width="180" edit-name="Tipispdoc" isValue="true" edit-readonly="true" dict-edit-name="TipIsp" edit-dictionary = "Тип документа об исполнении" edit-dictionaryValue="Наименование" />
+						  <column fieldType="field" key="|Код_типа_документа" valueType="text" name="Код типа документа исполнения" isValue="true" edit-name="Kodtipaisp" edit-readonly="true"  dict-edit-name="TipIsp" edit-dictionaryValue="Тип документа об исполнении" edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" width="180"  isValue="true" edit-name="namedocisp" edit-readonly="true" />
+						  <column fieldType="field" key="|Дата_документа" valueType="date" name="Дата документа" width="100"  isValue="true" edit-name="datedocisp"/>
+                          <column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" width="70"  isValue="true" edit-name="nomerdocberisp"/>
+						   <column fieldType="field" key="|Фактически_оплачено" valueType="money" name="Фактически оплачено" width="100"  isValue="true" edit-name="paiddocisp"/>
+						  <!-- <column fieldType="field" key="|Код_валюты_платежа" valueType="text" name="Код валюты платежа"  isValue="true" edit-name="registerCurId"  edit-required="true" dict-column-name="code"  edit-tool = "Валюта"   edit-default-value="RUB" dictionary-selection-start-level="1"  width="80" edit-readonly="true"  dict-edit-name="registerCurId" show-dict-column="false" /> -->
+						  <column fieldType="field" key="|Валюта_платежа" valueType="text" name="Валюта" width="100"  isValue="true" edit-name="registerCur"  edit-readonly="true"  dict-column-name="Наименование"  dict-edit-name="registerCur"  edit-tool = "Валюта" display-field-part="true"/> 
+						  <column fieldType="field" key="|Код_валюты_платежа" valueType="text" name="Код валюты платежа"  isValue="true" edit-name="registerCurId"  dict-column-name="code"   edit-readonly="true"  dict-edit-name="registerCur" edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Сведения_о_ненадлежащем_исполнении_обязательств" valueType="text" name="Ненадлежащее исполнение" width="150"  isValue="true" edit-name="badisp"/>
+						   <edit>
+											<rows>
+												<row>
+													<column>
+														<field name="Объем товаров" isLabel="true" />
+														<table key="|Объем_товаров" edit-name="SvedTab" height="300">							
+															<column fieldType="field" key="|Наиемнование_товара_поставки" valueType="text"  isValue="true" name="Наименование товара" edit-name="Nametovar"  width="320" />
+															<column fieldType="field" key="|Код_ОКПД2_поставки" name="Код ОКПД2" valueType="text" isValue="true" edit-name="okpd2"  width="180" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "ОКПД2" display-field-part="true" dict-edit-name="okpd2" />
+															<column fieldType="field" key="|ОКПД2_поставки" name="ОКПД2" valueType="text" isValue="true" edit-name="okpd2_kod"  width="180" edit-readonly="true" dict-column-name="Наименование"  dict-edit-name="okpd2" edit-isInvisible="true"/>
+															<column fieldType="field" key="|Единица_измерения_поставки" name="Единица измерения" valueType="text" isValue="true" edit-name="edizm"  width="180" dictionary-selection-start-level="1" edit-tool = "ОКЕИ" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="edizm" display-field-part="true"/>
+															<column fieldType="field" key="|Код_ОКЕИ_поставки" name="Код_ОКЕИ_поставки" valueType="text" isValue="true" edit-name="edizmkod"  width="180" dict-edit-name="edizm"  dict-column-name="code" edit-isInvisible="true"/>
+														
+															<column fieldType="field" key="|Количество_поставки" name="Количество" valueType="integer" isValue="true" edit-name="ColVo"   width="180"/>
+														</table> 
+													</column>
+												</row>
+											</rows>
+										</edit>
+						    </table>
+						  </column>
+						 </row>		
+					 </rows>
+			</block>
+		</column>
+	</row>		  
+	<row>
+		<column>
+				<block id="tlcTermination" name="Расторжение контракта">		 
+					<rows>
+						 <row>
+						 <column>
+						 	<field name="Дата расторжения" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Дата_расторжения" name="Дата расторжения" valueType="date" isValue="true" edit-name="datetermination" />
+						 </column>
+						 </row>	
+						 <row>
+						 <column>
+						 	<field name="Основание расторжения" isLabel="true" />
+						 	<field fieldType="field" key="|Document|Расторжение|Основание_расторжения_код" name="Основание_расторжения_код" valueType="text" isValue="true" edit-name="basisterminationKod" dict-column-name="code" edit-tool = "Основание расторжения контракта" edit-readonly="true" show-dict-column="false" dict-edit-name="basisterminationKod" />
+						   <field fieldType="field" key="|Document|Расторжение|Основание_расторжения" name="Основание расторжения" valueType="longtext"  isValue="true" edit-name="basistermination"  dict-column-name="Наименование основания" edit-readonly="true" dict-edit-name="basisterminationKod" edit-hidden="true" display-field-part="true" is-select-one-level="1"/>
+						   	
+						  </column>
+
+						 </row>			
+						  <row>
+						 <column>
+						 	<field name="Документ расторжения" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения" name="Документ расторжения" valueType="text" edit-name="doctermination" edit-tool = "Основание расторжения контракта" isValue="true"  dict-edit-name="doctermination" is-select-one-level="2" dict-subdictionary="Расторжение" edit-readonly="true" dict-column-name="Наименование документа расторжения" one-level-parent="basistermination" display-field-part="true"/>
+
+						  
+
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения_код" name="Документ_расторжения_код" valueType="text"  isValue="true" edit-name="docterminationKod" dict-edit-name="doctermination" edit-readonly="true" dict-column-name="code" edit-isInvisible="true" />
+						  </column>
+						  <column>
+						  	<field name="Дата документа расторжения" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения_дата" name="Дата документа расторжения" valueType="date" isValue="true" edit-name="docdatetermination" />
+						  </column>
+						    <column>
+						    	<field name="Номер документа расторжения " isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Документ_расторжения_номер" name="Номер документа расторжения " valueType="text" isValue="true" edit-name="docnumtermination" />
+						  </column>
+						 </row>	
+						  <row>
+						 <column>
+						 	<field name="Причина расторжения" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Причина_расторжения" name="Причина расторжения" valueType="longtext" isValue="true" edit-name="reasontermination" />
+						  </column>
+						   <column>
+						   	<field name="Фактически оплачено" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Оплачено_заказчиком_в_рублях" name="Фактически оплачено" valueType="money" isValue="true" edit-name="realypaid" />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						 	<field name="Дата уведомления или вступления в силу судебного решения" isLabel="true" />
+						   <field fieldType="field" key="|Document|Расторжение|Дата_уведомления_или_вступления_в_силу_судебного_решения" name="Дата уведомления или вступления в силу судебного решения" valueType="date" isValue="true" edit-name="suddatetermination" />
+						  </column>
+						 </row>		
+					     <row>
+						 <column>
+						  <table key="|Document|Суммы_возмещения_ущерба" edit-name="Sumdamage" height="200">
+						  <column fieldType="field" key="|Документ_ущерба" valueType="text" name="Документ ущерба" edit-name="docDamage" edit-tool = "Основание расторжения контракта" isValue="true"  dict-edit-name="docDamage" is-select-one-level="2" dict-subdictionary="Начисления за ущерб" edit-readonly="true" dict-column-name="Наименование документа начисления за ущерб" one-level-parent="basistermination" display-field-part="true"/>
+						   <column fieldType="field" key="|Код_документа_ущерба" valueType="text" name="Код_документа_ущерба" edit-name="docDamageKod" isValue="true"  dict-edit-name="docDamage" edit-readonly="true" dict-column-name="Начисления за ущерб"  edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Наименование_документа_ущерба" valueType="text" name="Наименование_документа_ущерба"  edit-name="nameDocDamage" isValue="true" />
+                          <column fieldType="field" key="|Дата_документа_ущерба" valueType="date" name="Дата документа ущерба"  edit-name="dateDocDamage"  isValue="true" />
+						  <column fieldType="field" key="|Номер_документа_ущерба" valueType="text" name="Номер документа ущерба"  edit-name="numDocDamage" isValue="true" />
+						  <column fieldType="field" key="|Сумма_ущерба_в_руб" valueType="text" name="Сумма ущерба (в руб.)"  edit-name="SumDocDamage" isValue="true" />
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>	
+		
+	<row>
+			<column>
+				<block id="tlcBank" name="Банковская гарантия" edit-name="BG">		 
+					<rows>
+						 <row>
+						 <column>
+						 	<field name="Реестровый номер БГ" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Реестровый_номер_БГ" name="Реестровый номер БГ" valueType="text" edit-name="reestrNumberBG" isValue="true" />
+						  </column>
+						  </row>		
+						  <row>
+						 <column>
+						 	<!-- <field name="Прекращение банковской гарантии" isLabel="true" /> -->
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Прекращение_банковской_гарантии" name="Прекращение банковской гарантии" valueType="boolean"  edit-name="BGend" />
+						  </column>
+						   <column>
+						 	<field name="Дата прекращения БГ" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Дата_прекращения_БГ" name="Дата прекращения БГ" valueType="date" edit-name="dateEndBG" isValue="true" />
+						  </column>
+						  <column>
+						  	<field name="Основание прекращения БГ" isLabel="true" edit-name="basisEndBG"/>
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Основание_прекращения_БГ" name="Основание прекращения БГ" valueType="longtext" edit-name="basisEndBG" isValue="true" />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						 	<field name="Дата требований" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Дата_требований" name="Дата требований" valueType="date" edit-name="dateNeeds" isValue="true" />
+						  </column>
+						   <column>
+						   	<field name="Сумма требований" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_требований" name="Сумма требований" valueType="money" edit-name="sumNeeds" isValue="true" />
+						  </column>
+						  <column>
+						  	<field name="Валюта требований" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Валюта_требований" name="Валюта требований" valueType="text" edit-name="CashNeeds" isValue="true" edit-readonly="true"  dict-column-name="Наименование"  dict-edit-name="CashNeeds"  edit-tool = "Валюта" display-field-part="true"/>
+
+						<column fieldType="field" key="|Код_валюты_требований" valueType="text" name="Код валюты платежа"  isValue="true" edit-name="CashNeedsId"  dict-column-name="code"   edit-readonly="true"  dict-edit-name="CashNeeds" edit-isInvisible="true"/> 
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						 	<field name="Сумма требований (в рублях)" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_требований_руб" name="Сумма требований (в рублях)" valueType="money" edit-name="sumNeedsRub" isValue="true" />
+						  </column>
+						 </row>	
+						 	  <row>
+						 <column>
+						 	<field name="Сумма возврата аванса" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_возврата_аванса" name="Сумма возврата аванса" valueType="money" edit-name="sumAdvanceBack" isValue="true" />
+						  </column>
+						   <column>
+						   	<field name="Сумма неустоек" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_неустоек" name="Сумма неустоек" valueType="money"  edit-name="sumPenalty" isValue="true" />
+						  </column>
+						  <column>
+						  	<field name="Сумма убытков" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_убытков" name="Сумма убытков" valueType="money" edit-name="sumLoss" isValue="true" />
+						  </column>
+						  <column>
+						  	<field name="Сумма возмещения убытков" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Сумма_возмещения_убытков" name="Сумма возмещения убытков" valueType="money" edit-name="sumLossBack" isValue="true" />
+						  </column>
+						  <column>
+						  	<field name="Иные суммы" isLabel="true" />
+						   <field fieldType="field" key="|Document|Банковская_гарантия|Иные_суммы" name="Иные суммы" valueType="money" edit-name="sumOther" isValue="true" />
+						  </column>
+						 </row>		
+					     <row>
+						 <column>
+						  <table key="|Document|Факт_оплаты_БГ" height="200" edit-name="payBG">
+						  <column fieldType="field" key="|Наиемнвоание_пл_документа_БГ" valueType="text" name="Наименование платежного документа БГ"  edit-name="namePaymentBG" isValue="true"/>
+						  <column fieldType="field" key="|Дата_пл_документа_БГ" valueType="date" name="Дата платежного документа БГ" edit-name="datePaymentBG" isValue="true"/>
+                          <column fieldType="field" key="|Номер_пл_документа_БГ" valueType="text" name="Номер платежного документа БГ" edit-name="numberPaymentBG" isValue="true"/>
+						  <column fieldType="field" key="|Сумма_банк_руб" valueType="money" name="Сумма (в рублях)" edit-name="sumPaymentRub" isValue="true"/>
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>		
+		<row>
+			<column>
+				<block id="tlcPenalty" name="Неустойки (штрафы, пени)">		 
+					<rows>
+						 <row>
+						 <column>
+						 	<field name="Начисление неустойки" isLabel="true" />
+						  </column>
+						 </row>	
+						 <row>
+						 <column>
+						  <table key="|Document|Начисление_неустойки" edit-name="Penalty" height="200">
+						  <column fieldType="field" key="|Сторона_начисления_неустойки" valueType="text" name="Сторона начисления неустойки"  edit-name="penaltySide" isValue="true" edit-readonly="true" dict-edit-name="penaltySide" edit-dictionary ="Сторона контракта" edit-dictionaryValue="Наименование"/>
+						   <column fieldType="field" key="|Сторона_начисления_неустойки_код" valueType="text" name="Сторона_начисления_неустойки_код"  edit-name="penaltySideKod" isValue="true" edit-readonly="true" dict-edit-name="penaltySide" edit-dictionaryValue="Сторона контракта" edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Причина_начисления_неустоек" valueType="text" name="Причина начисления" edit-name="penaltyReason" isValue="true" edit-readonly="true" dict-edit-name="penaltyReason" edit-dictionary ="Причины начисления неустоек" edit-dictionaryValue="Наименование"/>
+						   <column fieldType="field" key="|Причина_начисления_неустоек_код" valueType="text" name="Причина начисления" edit-name="penaltyReasonKod" isValue="true" edit-readonly="true" dict-edit-name="penaltyReason"  edit-dictionaryValue="Причины начисления неустоек" edit-isInvisible="true"/>
+                          <column fieldType="field" key="|Тип_взыскания" valueType="text" name="Тип взыскания" edit-name="typeEnf" isValue="true" edit-readonly="true" dict-edit-name="typeEnf" edit-dictionary ="Тип взыскания" edit-dictionaryValue="Наименование"/>
+                          <column fieldType="field" key="|Тип_взыскания_код" valueType="text" name="Тип_взыскания_код" edit-name="typeEnfKod" isValue="true" edit-readonly="true" dict-edit-name="typeEnf" edit-dictionaryValue="Тип взыскания"  edit-isInvisible="true"/>
+						  <column fieldType="field" key="|Документ_требования_начисления_неустоек" valueType="text" name="Документ требования"  edit-name="docPenalty" isValue="true"/>
+						  <column fieldType="field" key="|Дата_документа_требования_начисления_неустоек" valueType="date" name="Дата документа"  edit-name="datePenalty" isValue="true"/>
+						  <column fieldType="field" key="|Номер_документа_требования_начисления_неустоек" valueType="text" name="Номер документа" edit-name="numPenalty" isValue="true"/>
+						  <column fieldType="field" key="|Размер_неустойки_в_рублевом_эквиваленте" valueType="money" name="Размер неустойки (в руб.)"  edit-name="sumPenalty" isValue="true"/>
+						  	<edit>
+											<rows>
+												<row>
+													<column>
+														<table key="|Оплата_неустойки" edit-name="PenaltyPay" height="300">							
+															<column fieldType="field" key="|Наименование_документа_оплаты_неустойки" valueType="text"   name="Наименование документа"  edit-name="docPenaltyPay" isValue="true"/>
+															<column fieldType="field" key="|Дата_документа_оплаты_неустойки" name="Дата документа" valueType="date" edit-name="datePenaltyPay" isValue="true"/>
+															<column fieldType="field" key="|Номер_документа_оплаты_неустойки" name="Номер документа" valueType="text"  edit-name="numPenaltyPay" isValue="true"/>
+															<column fieldType="field" key="|Размер_неустойки_в_руб_на_момент_оплаты_неустойки" name="Сумма оплаты (в руб.)" valueType="money"   edit-name="sumPenaltynow" isValue="true"/>
+														</table> 
+													</column>
+												</row>
+								<row>
+						   <column>
+						  	<field name="Итого оплачено неустойки (в руб.)" isLabel="true" />
+						   <field fieldType="field" key="|Document|Начисление_неустойки|Итого_оплачено_неустойки_в_рублевом_эквиваленте" name="Итого_оплачено_неустойки_в_рублевом_эквиваленте" valueType="money" edit-name="sumItogPenalty" isValue="true" width="100" />
+						  </column>
+						 </row>	
+											</rows>
+							</edit>
+						  </table>
+
+
+						  </column>
+						  </row>	
+						  
+
+						 <row>
+						 <column>
+						 	<field name="Возврат излишне уплаченной неустойки" isLabel="true" />
+						  </column>
+						 </row>		
+						  <row>
+						 <column>
+						  <table key="|Document|Возврат_лишней_неустойки" edit-name="penaltyBack" height="200">
+						  <column fieldType="field" key="|Наименование_документа_возврата" valueType="text" name="Наименование документа" edit-name="docpenaltyBack" isValue="true"/>
+						  <column fieldType="field" key="|Дата_документа_возврата" valueType="date" name="Дата документа" edit-name="datepenaltyBack" isValue="true"/>
+						  <column fieldType="field" key="|Номер_документа_возврата" valueType="text" name="Номер документа" edit-name="numpenaltyBack" isValue="true"/>
+						  <column fieldType="field" key="|Размер_излишне_оплаченной_неустойки" valueType="money" name="Размер излишне оплаченной неустойки" edit-name="sumpenaltyBack" isValue="true"/>
+						    <edit>
+								<rows>
+									<row>
+										<column>
+											<table key="|Оплата_лишней_неустойки" edit-name="penaltyBackPay" height="300">							
+												<column fieldType="field" key="|Наименвоание_документа_оплаты_возврата" valueType="text"   name="Наименование документа"   edit-name="docpenaltyBackPay" isValue="true"/>
+												<column fieldType="field" key="|Дата_документа_оплаты_возврата" name="Дата документа" valueType="date" edit-name="datepenaltyBackPay" isValue="true"/>
+												<column fieldType="field" key="|Номер_документа_оплаты_возврата" name="Номер документа" valueType="text" edit-name="numpenaltyBackPay" isValue="true"/>
+												<column fieldType="field" key="|Сумма_оплаты_возврата" name="Сумма оплаты возврата" valueType="money"  edit-name="sumpenaltyBackPay" isValue="true"/>
+											</table> 
+										</column>
+									</row>
+								</rows>
+							</edit>
+						  </table>
+						  </column>
+						 </row>		
+					</rows>
+				</block>
+			</column>
+		</row>		
+	<row>
+		<column>
+		  <block id="tlcDocs" name="Изменения">		 
+			<rows>
+			 <row>
+			      <column>
+                    <field fieldType="field" key="|Document|Изменения" name="Изменения" valueType="boolean"  edit-name="ChangeNotice" edit-default-value="0" width="400"/>
+                   
+				  </column>
+			</row>
+			  <row>
+                <column>
+                  <!-- <table key="|Document|Внесение_изменений" edit-name="Izmeneniyz" height="300">
+                 	<column fieldType="field" key="|Обоснование_внесения_изменений_протокола" name="Обоснование внесения изменений протокола" valueType="text" isValue="true" edit-name="ObosnVnesIzm"  edit-readonly="true"    dict-column-name="code"  edit-tool = "Обоснование внесения изменений протокола"  dict-edit-name="ObosnVnesIzm" display-field-part="true"  width="200" />
+					<column fieldType="field" key="|Краткое_описание_изменения" valueType="text" name="Краткое описание изменения" edit-name="TOpisIzm" isValue="true" edit-required="true" width="200"/>
+                    <column fieldType="field" key="|Дата_принятия_решения" valueType="date" name="Дата принятия решения" edit-name="TDatePrinResh" isValue="true" width="200"/>
+				    <column fieldType="field" key="|Предписание_отсутствует_в_реестре_результатов_контроля" valueType="boolean" name="Предписание отсутствует в реестре" edit-name="TPredpisOtsut" isValue="true" edit-default-value="0" width="100"/>
+				    <column fieldType="field" key="|Номер_результата_контроля_по_предписанию" valueType="text" name="Номер результата контроля по предписанию" edit-name="TNomRes" isValue="true" width="200"/>
+                    <column fieldType="field" key="|Наименование_органа" valueType="text" name="Наименование органа" edit-name="TNaimOrg" isValue="true" width="200"/>
+					<column fieldType="field" key="|Вид_органа_код" name="Вид органа" valueType="text" isValue="true" edit-name="TVidOrgana" dict-edit-name="TVidOrgana" edit-tool="Вид уполномоченного органа"  dictionary-selection-start-level="1"  dict-column-name="code" edit-readonly="true" width="200"/>
+					 <column fieldType="field" key="|Вид_органа" name="Вид органа наимнование" valueType="text" isValue="true" edit-name="TVidOrganaName" edit-readonly="true"  dict-column-name="Наименование"  dict-edit-name="TVidOrgana"  display-field-part="true"  edit-hidden="true"  />
+					 <column fieldType="field" key="|Наименование_документа" valueType="text" name="Наименование документа" edit-name="TNaimDok" isValue="true" width="200"/>
+                    <column fieldType="field" key="|Дата_документа" valueType="date" name="Дата документа" edit-name="TDateDokum" isValue="true" width="200"/>
+					<column fieldType="field" key="|Номер_документа" valueType="text" name="Номер документа" edit-name="TNomDokumenta" isValue="true" width="100"/>
+				    <column fieldType="field" key="|Новое_изменение" valueType="text" name="Новое изменение" edit-name="TNovoeIzm" isValue="true" edit-default-value="Да" edit-readonly="true" width="200"/>
+				  </table> -->
+                </column>
+              </row>		  
+			</rows>
+		</block>
+			</column>
+		</row>	
+		
+		
+		</rows>
+				
+	  
+		
+    
+    <variables>
+      <variable variable-name="regNumber" variable-format="{number}">
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+      </variable>
+	  <variable variable-name="caption" variable-format="Исполнение{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>	
+    </variables>
+  </edit> 
+  	<scripts>
+		<script file="\Scripts\Content\Document\RegCard\LProcedureContract.js" />
+	</scripts>
+</root>

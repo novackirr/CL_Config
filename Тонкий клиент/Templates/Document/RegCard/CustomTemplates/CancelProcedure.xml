@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Извещение о закупочной деятельности-->
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcDocs" name="Сведения об отмене">
+						<rows>
+							<row>
+								<column>
+									<block id="tlcInfo" name="Общие сведения">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+													<!-- <field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_документа_на_ЭТП" name="ИД_документа_на_ЭТП" valueType="text" /> -->
+												</column>
+											</row>
+											<row>	
+												<column>
+													<field fieldType="field" key="|Document|Номер_на_ЭТП" name="Номер на ЭТП" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_в_ЕИС" name="Номер в ЕИС" valueType="text" />
+												</column>
+											</row>		
+											<!-- <row>												
+												<column>
+													<field fieldType="field" key="|Document|Дата_последнего_обновления" name="Дата последнего обновления" valueType="datetime"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Ссылка_на_торговой_площадке" name="Ссылка на торговой площадке" valueType="url" />		
+												</column>
+											</row> -->
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="34" name="Сведения об изменениях закупки">		 
+										<rows>
+											<!-- <row>
+												<column>
+													<field fieldType="field" key="|Document|Отмена_закупки" name="Отмена закупки" valueType="boolean" />
+												</column>
+											</row> -->
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_принятия_решения_отмена" name="Дата принятия решения об отмене" valueType="datetime" />
+												</column> 
+												<column>
+													<field fieldType="field" key="|Document|Основание_принятия_решения_отмена" name="Основание принятия решения об отмене" valueType="longtext"/>
+												</column> 
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Отмена_процедуры|Отмена_процедуры_в_целом" name="Отменить процедуру в целом" valueType="text"/>
+												</column> 
+												<column>
+													<field fieldType="field" key="|Document|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_наименование" name="Орган, выдавший решение об отмене процедуры" valueType="text" />
+												</column> 
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Закупка_отменяется_в_следствии_непреодолимой_силы" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" valueType="boolean" />
+												</column>
+												<column>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="201" name="Сведения об отмене лотов">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Лоты" height="300" api-table-name="Лоты"  horizontall-scroll="true">
+														<column fieldType="field" key="|Лот_Номер_лота_в_извещении" valueType="text" name="Номер лота" headerNoEllipsis="true" min-width="50" />
+														<column fieldType="field" key="|Лот_Предмет_договора" valueType="text"  name="Предмет договора" headerNoEllipsis="true" min-width="300" />
+														<column fieldType="field" key="|Лот_Отменить_лот" valueType="text"  name="Отменить лот" headerNoEllipsis="true" min-width="100" />
+														<column fieldType="field" key="|Лот_Дата_отмены_лота" valueType="date"  name="Дата отмены лота" headerNoEllipsis="true" min-width="200" />
+														<column fieldType="field" key="|Лот_Причина_отмены_лота"  valueType="text" name="Причина отмены лота" headerNoEllipsis="true" min-width="300" />
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="tlcInfo" name="Сведения о процедуре">		 
+						<rows>
+							<row>
+								<column>
+									<block id="tlcInfo" name="Сведения о закупке">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Управление|Управление" name="Управление" valueType="addressbook" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Руководитель_управления|Руководитель_управления" name="Начальник управления" valueType="addressbook" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Отдел" valueType="addressbook" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Руководитель_инициатора|Руководитель_инициатора" name="Начальник отдела" valueType="addressbook" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Инициатор|Инициатор" name="Инициатор" valueType="addressbook" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_отдела_планирования|Ответственный_отдела_планирования" name="Ответственный отдела планирования" valueType="addressbook" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки" valueType="text" />							  
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Название_закупки" name="Название закупки" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row>		
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Отмена процедуры(лотов){Vnut_nomber}{RegDate}">
+				<!--	<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний_номер" valueType="text" variable-name="Vnut_nomber" variable-format=", {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows> 		
+			<row>
+				<column>
+					<block id="BaseInfo" name="Сведения об отмене">		 
+						<rows>
+							<row>
+								<column>
+									<block id="CancelInfo" name="Сведения об отмене" view="true" >		 
+										<rows>
+											<row>
+												<column>
+													<field isLabel="true" name="Дата принятия решения" edit-name="datereshenie1" title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+													<field fieldType="field" key="|Document|Дата_принятия_решения_отмена" name="Дата принятия решения" valueType="datetime" isValue="true" edit-name="datereshenie1"/>
+													<field fieldType="field" key="|Document|Отмена_закупки" name="Отмена закупки" valueType="boolean" edit-name="otmena1" edit-default-value="1" edit-hidden="true"/>
+												</column> 
+												<column>
+													
+												</column>
+											</row>
+											<row>
+												<column>
+													<field isLabel="true" name="Основание для отказа" edit-name="osnovreshenie1"  title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+													<field fieldType="field" key="|Document|Основание_принятия_решения_отмена" name="Основания для отказа" valueType="longtext" isValue="true" edit-name="osnovreshenie1"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field isLabel="true" name="Орган, выдавший решение об отмене процедуры" edit-name="cancelsupervisorcode"  />
+													<field fieldType="field" key="|Document|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_код" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="cancelsupervisorcode" edit-readonly="true" edit-required="true"  dict-column-name="code" edit-tool="Formdata:Орган, выдавший решение об отмене процедуры" dict-edit-name="cancelsupervisorcode"  show-dict-column="false" edit-default-value="customer"/>
+													<field fieldType="field" key="|Document|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_наименование" name="Решение по закупке" valueType="text"  isValue="true" edit-name="cancelsupervisorName" edit-readonly="true" dict-column-name="Наименование" dict-edit-name="cancelsupervisorcode"  display-field-part="true"  edit-hidden="true" edit-default-value="по решению Заказчика"/>
+													<field fieldType="field" key="|Document|Отмена_процедуры|Орган_выдавший_решение|Орган_выдавший_решение_ИД_на_ЭТП" name="Решение по закупке" valueType="text"  isValue="true" edit-name="cancelsupervisorID" edit-readonly="true" dict-column-name="ИД на ЭТП" dict-edit-name="cancelsupervisorcode" show-dict-column="false"   edit-hidden="true" edit-default-value="179380"/>
+												</column>
+												<column>
+													<field isLabel="true" name="Отменить процедуру в целом" edit-name="purchasetotalcancel"  />
+													<field fieldType="field" key="|Document|Отмена_процедуры|Отмена_процедуры_в_целом" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="purchasetotalcancel" dict-column-name="Выбор значения" edit-required="true"  edit-tool = "Formdata:Выбор значения" dict-edit-name="purchasetotalcancel"  display-field-part="true" edit-readonly="true"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<!-- <field isLabel="true" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" edit-name="Emergency1"  /> -->
+													<field fieldType="field" key="|Document|Закупка_отменяется_в_следствии_непреодолимой_силы" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" valueType="boolean"   edit-name="Emergency1"/>
+												</column>
+											</row>
+											<!-- <row>
+												<column>									
+													<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"   isValue="true" edit-name="naimETPID1"/>
+												</column>
+											</row> -->
+											<!-- <row>
+												<column>
+													<field fieldType="field" key="|Document|Согласование_закупочной_комиссией" name="Согласование закупочной комиссией" valueType="boolean" edit-name="ApproveCommission" edit-default-value="0" edit-readonly="true"/>
+												</column>
+											</row> -->
+											<!-- <row>
+												<column>
+													<field fieldType="field" key="|Document|Согласование_руководителем_инициатора" name="Согласование руководителем инициатора" valueType="boolean"  edit-name="ApproveLeader" edit-default-value="1" edit-readonly="true"/>
+												</column>
+											</row> -->
+											<row>
+												<column>
+													<table key="|Document|Лоты" edit-name="LotsTab" height="300" name="Лоты" horizontall-scroll="true">
+														<column fieldType="field" key="|Лот_Статус" valueType="text"  isValue="true" name="Лот_Статус" edit-name="Lot_Status"  width="150"  headerNoEllipsis="true" edit-hidden="true"/>
+														<column fieldType="field" key="|Лот_Отмена_лота" valueType="boolean"  isValue="true" name="Лот_Отмена_лота" edit-name="Lot_IsCancel"  width="150"  headerNoEllipsis="true" edit-hidden="true"/>
+														<column fieldType="field" key="|Лот_docId" valueType="text"  isValue="true" name="Лот_docId" edit-name="Lot_docId"  width="150"  headerNoEllipsis="true" edit-hidden="true"/>
+														<column fieldType="field" key="|Лот_ИД_Лота_на_ЭТП" valueType="text"  isValue="true" name="Лот_ИД_Лота_на_ЭТП" edit-name="Lot_IDonETP"  width="150" headerNoEllipsis="true" edit-hidden="true"/>
+														<column fieldType="field" key="|Лот_Номер_лота_в_извещении" valueType="text"  isValue="true" name="Номер лота" edit-name="Lot_NumberInPurchsase"  width="120" headerNoEllipsis="true" edit-readonly="true"/>
+														<column fieldType="field" key="|Лот_Предмет_договора" valueType="Longtext"  isValue="true" name="Предмет договора" edit-name="Lot_PurchsaseName"  width="450" headerNoEllipsis="true" edit-readonly="true" />
+														<column fieldType="field" key="|Лот_Отменить_лот" valueType="text"  isValue="true" name="Отменить лот" edit-name="Lot_CancelLot"  width="200" dict-column-name="Выбор значения"  edit-tool = "Formdata:Выбор значения" dict-edit-name="Lot_CancelLot"  display-field-part="true" edit-readonly="true" title='Доступно для редактирования и обязательно, если значение поля "Отменить процедуру в целом" = "Да"'/>
+														<column fieldType="field" key="|Лот_Дата_отмены_лота" valueType="date"  isValue="true" name="Дата отмены лота" edit-name="Lot_DateCancelLot"  width="160" headerNoEllipsis="true" title='Доступно для редактирования и обязательно, если значение столбца "Отменить лот" = "Да"'/>
+														<column fieldType="field" key="|Лот_Причина_отмены_лота" valueType="Longtext"  isValue="true" name="Причина отмены лота" edit-name="Lot_ReasonCancelLot"  width="350" headerNoEllipsis="true" title='Доступно для редактирования и обязательно, если значение столбца "Отменить лот" = "Да"'/>
+														
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>		
+							<!--Не видимые для редактирования-->
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />								
+									
+									<field fieldType="field" key="|Document|Год_закупки" name="Год закупки" valueType="integer" isValue="true" edit-isInvisible="true" edit-name="God_zak"   />					 		 							
+
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Договор" />
+									<field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="LNoticeLoT-header" edit-hidden="true" edit-value="Связки" />
+									<field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="FilesNotice-header" edit-hidden="true" edit-value="Документация" />
+									<field fieldType="field" key="|FilesIntegration|header" valueType="text" isValue="true" edit-name="FilesIntegration-header" edit-hidden="true" edit-value="Файлы интеграции" />
+
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" isValue="true" edit-name="numRed" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="statusnotice" edit-default-value="Черновик" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Номер_на_ЭТП" name="Номер на ЭТП" valueType="text" isValue="true" edit-name="numETP" edit-readonly="true" />
+									<field fieldType="field" key="|Document|ИД_на_ЭТП" name="ИД на ЭТП" valueType="text" isValue="true"   edit-name="registerIdETP"   edit-isInvisible="true" />
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="Организация-заказчик ИНН" valueType="text" isValue="true" edit-name="registerOrgZaINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="Организация-заказчик КПП" valueType="text" isValue="true" edit-name="registerOrgZaKPP" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация-заказчик ОГРН" valueType="text" isValue="true" edit-name="registerOrgZaOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"  edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" isValue="true" edit-name="orgzakEISCode"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" isValue="true" edit-name="OrgZakupki" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="OrgZakupkiINN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="КПП" valueType="text"   isValue="true" edit-name="OrgZakupkiKPP" edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОРГН" name="ОГРН" valueType="text"   isValue="true" edit-name="OrgZakupkiOGRN" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Ид_организации_на_ЭТП" name="Ид_организации_на_ЭТП" valueType="text"   isValue="true" edit-name="IDOrganETP" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="OrgZakupkiEIS" edit-default-value="{addressbook,value=OrgZakupki,attribute=EISCode223}"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС_справочный" name="Организатор_закупки_ЕИС_справочный" valueType="text"   isValue="true" edit-name="OrgZakupkiEISSprav"/>
+
+									<field fieldType="field" key="|Document|Актуальность" valueType="boolean" isValue="true" edit-name="actual" edit-hidden="true" />
+									<table key="|Document|Заказчик_права_таблица" edit-name="CustomerTab" height="300">
+										<column fieldType="field" key="|Заказчик_код_права"  name="Заказчики" valueType="addressbook" isValue="true" edit-addressbook-groups = "Department" edit-name="customertable" address-book-tool ="customertable" width="150"/>
+										<column fieldType="field" key="|Заказчик_наименование_права"  name="Заказчики" valueType="addressbook" isValue="true" edit-addressbook-groups = "Department" edit-name="customertablename" address-book-tool ="customertable" width="150"/>
+									</table>
+									<field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Подразделение инициатора" valueType="addressbook" isValue="true" edit-name="IniciatorDep" address-book-tool="IniciatorDep" edit-addressbook-groups = "" address-book-tool-selectable = ""/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_справочный_код" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="OrgZakKodSprav"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_id" name="Организатор_закупки_id" valueType="integer"  isValue="true" edit-name="OrgZakid"  edit-hidden="true" />
+									
+
+									<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="predmetDog"  />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_документа_на_ЭТП" isValue="true" name="ИД_документа_на_ЭТП" valueType="integer" edit-name="IdDocumentOnSber"/> <!-- Ид документа до публикации черновика -->
+									<field fieldType="field" key="|Document|Дата_последнего_обновления" isValue="true" name="Дата_последнего_обновления" valueType="datetime" edit-name="LastUpdateDate"/>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  isValue="true" edit-name="registerDate"  edit-default-value="{today}" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Руководитель_инициатора|Руководитель_инициатора" name="Руководитель" valueType="addressbook" isValue="true" edit-addressbook-groups = "Person" edit-name="Performer_fio" address-book-tool ="Performer_fio" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Управление|Управление" name="Управление" valueType="addressbook" isValue="true" edit-name="Upravl" address-book-tool="Upravl" edit-addressbook-groups = "" addressbook-main-field="Iniciator" />
+									<field fieldType="field" key="|Document|Руководитель_управления|Руководитель_управления" name="Руководитель управления" valueType="addressbook" isValue="true" address-book-tool="RukUpr" edit-name="RukUpr"  edit-addressbook-groups = "" address-book-tool-selectable = "Person, Person, {currentOrganization}"/>
+									<field fieldType="field" key="|Document|Инициатор|Инициатор" name="Инициатор" valueType="addressbook" isValue="true" address-book-tool="Iniciator" edit-addressbook-groups = "" address-book-tool-selectable = "Person, Person, {currentOrganization}" edit-name="Iniciator" edit-readonly="true"  />
+									<field fieldType="field" key="|Document|Ответственный_отдела_планирования|Ответственный_отдела_планирования" name="Ответственный отдела планирования" valueType="addressbook" isValue="true" edit-name="OtvPlan" edit-addressbook-groups="" address-book-tool ="OtvPlan" address-book-tool-selectable = "WorkGroup, Person, 'УЗД по планированию'"/>
+									<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="registerSpZakup"  edit-readonly="true" />
+									<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="registerSpZakupName" edit-readonly="true"  />
+									<field fieldType="field" key="|Document|Название_закупки" name="Название закупки" valueType="longtext" isValue="true" edit-name="nazzak"/>
+									<field fieldType="field" key="|Document|Ответственный_отдела_закупки|Ответственный_отдела_закупки" name="Ответственный отдела закупки" valueType="addressbook" isValue="true" edit-name="OtvZak" edit-addressbook-groups="" address-book-tool ="OtvZak" address-book-tool-selectable = "WorkGroup, Person, 'УЗД по проведению закупки'"/>
+									<field fieldType="field" key="|Document|Номер_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" isValue="true"   edit-name="registerNomberEIS"   />
+									<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"   isValue="true" edit-name="naimETPID"   />
+									<field fieldType="field" key="|Document|Наименование_ЭТП" name="Наименование ЭТП" valueType="text" isValue="true" edit-name="naimETP"   />
+									<field fieldType="field" key="|Document|Форма_торгов_код" name="Форма торгов" valueType="text"  isValue="true" edit-name="formTorg"  edit-readonly="true"  is-select-one-level="2" one-level-parent="naimETP"  edit-tool = "Электронные площадки"  dict-column-name="code" dict-edit-name="formTorg" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Форма_торгов" name="Форма торгов имя" valueType="text" isValue="true" edit-name="formTorgName"   edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="formTorg"  dict-column-width-percentage="70"/>
+									<field fieldType="field" key="|Document|Обязательность_этапов" name="Обязательность этапов" valueType="text" isValue="true" edit-name="Obetap" edit-readonly="true" dict-column-name="Обязательность этапов" edit-hidden="true" dict-edit-name="formTorg" show-dict-column="false" />	
+									<field fieldType="field" key="|Document|ИД_извещения_на_ЭТП" name="ИД_извещения_на_ЭТП" valueType="text" isValue="true" edit-name="ProcedureIdOnETP" />	
+									<field fieldType="field" key="|Document|Статус_извещения_на_ЭТП" name="ИД_извещения_на_ЭТП" valueType="text" isValue="true" edit-name="ProcedureStatusOnETP" />	
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>   			
+		</rows>
+		<variables>
+			<!--	<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format="{value}" />		
+			</variable> -->
+			<variable variable-name="caption" variable-format="Заявка на закупку{Vnut_nomber}{RegDate}">		
+				<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний_номер" valueType="text" variable-name="Vnut_nomber" variable-format=", {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/CancelProcedure.js" />
+	</scripts>
+</root>

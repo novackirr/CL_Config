@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>	
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="15" name="Общие сведения">
+										<rows>
+
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>																								
+											</row>
+
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Сведения о закупке">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|КТРУ_код" name="КТРУ код" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|КТРУ_наименование" name="КТРУ наименование" valueType="longtext" />
+												</column>
+											</row>
+					
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" />
+												</column>
+											</row>	
+										
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_товара" name="Наименование товара" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Технические_характеристики" name="Технические характеристики" valueType="text" />
+												</column>								
+											</row>	
+										
+											<row>								
+												<column>
+													<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Средняя_цена_за_единицу" name="Средняя цена за единицу" valueType="money" />
+												</column>
+											</row>							
+								
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Количество">
+										<rows>							
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Количество" name="Количество" valueType="text" />
+												</column>
+											
+											</row>														
+											
+											<row>
+											
+												<column>
+													<field fieldType="field" key="|Document|Единица_измерения" name="Единица измерения" valueType="text" />
+												</column>
+											</row>
+											
+										</rows>
+									</block>
+								</column>
+							</row>
+						
+						</rows>
+					</block>	
+				</column>	
+			</row>
+
+
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="t2cInfo" name="Основные сведения">
+						<rows>		
+
+											
+											
+						<row>	
+								<column>
+									<field name="КТРУ код" isLabel="true"  edit-name="registerKTRU"/>	
+								</column>
+							
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|КТРУ_код" name="КТРУ_код" valueType="text" isValue="true" edit-name="registerKTRU"  edit-isScriptValue="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "КТРУ_код" edit-required="true"  display-field-part="true" dict-edit-name="registerKTRU" />
+								</column>
+							
+							</row>								
+							<row>
+								<column>
+									<field name="КТРУ наименование" isLabel="true"  edit-name="registerKTRUName"/>	
+								</column>
+															
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field"  key="|Document|КТРУ_наименование" name="КТРУ наименование" valueType="longtext" isValue="true" edit-name="registerKTRUName" edit-isScriptValue="true" dict-column-name="Наименование"  dictionary-selection-start-level="last"  display-field-part="false" dict-edit-name="registerKTRU" />
+								</column>	
+													
+							</row>
+	
+											
+											
+											
+
+							<row>	
+								<column>
+									<field name="ОКПД2" isLabel="true"  edit-name="registerOKDP"/>	
+								</column>
+							
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-isScriptValue="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+								</column>
+							
+							</row>								
+							<row>
+								<column>
+									<field name="ОКПД2 наименование" isLabel="true"  edit-name="registerOKDPName"/>	
+								</column>
+															
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" isValue="true" edit-name="registerOKDPName" edit-isScriptValue="true" dict-column-name="Наименование"  dictionary-selection-start-level="last"  display-field-part="false" dict-edit-name="registerOKDP" />
+								</column>	
+													
+							</row>
+
+
+
+
+
+
+
+
+
+							<row>	
+								<column>
+									<field name="Наименование товара" isLabel="true"  edit-name="Name"/>	
+								</column>		
+								<column>
+									<field name="Технические характеристики" isLabel="true"  edit-name="expKind"/>	
+								</column>										
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field"  key="|Document|Наименование_товара" name="Наименование товара" valueType="longtext" isValue="true" edit-name="Name" edit-required="true"     />
+								</column>		
+								<column>
+									<field fieldType="field"  key="|Document|Технические_характеристики" name="Технические характеристики" valueType="longtext" isValue="true" edit-required="true"  edit-name="expKind"     />
+								</column>										
+							</row>	
+							<row>									
+								<column>
+									<field name="Валюта" isLabel="true"  edit-name="registerCurId"/>
+								</column>	
+								<column>
+									<field name="Средняя цена за единицу" isLabel="true"  edit-name="PriceMid"/>	
+									
+								</column>
+								
+																										
+							</row>								
+							<row>									
+								<column>
+									<field fieldType="field" key="|Document|Код_валюты" name="Код валюты" valueType="text" isValue="true" edit-name="registerCurId"    edit-default-value="RUB" dict-edit-name="registerCurId" edit-tool="Валюта" dictionary-selection-start-level="1" dict-column-name="code" edit-isScriptValue="true" show-dict-column="true" />	
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-name="registerCur" edit-isScriptValue="true"  dict-column-name="Наименование" edit-default-value="Российский рубль" dict-edit-name="registerCurId"  display-field-part="true" edit-hidden="true"  />
+								</column>	
+								<column>
+									<field fieldType="field"  key="|Document|Средняя_цена_за_единицу" name="Средняя цена за единицу" valueType="money" isValue="true" edit-name="PriceMid" dict-column-name="Цена"   dict-edit-name="KTRU"     />
+								</column>		
+							
+							
+								<!-- <column>
+									<field fieldType="field" key="|Document|ОКЕИ_КТРУ" name="ОКЕИ КТРУ" valueType="text" isValue="true" edit-name="okeiKTRU"   edit-isScriptValue="true" dict-column-name="ОКЕИ" dict-edit-name="KTRU" show-dict-column="false"   />
+									<field fieldType="field"  key="|Document|Ед_изм_КТРУ" name="Единица измерения КТРУ" valueType="text" isValue="true" edit-name="EDKTRU" edit-isScriptValue="true" dict-column-name="Единица измерения"    dict-edit-name="KTRU" />
+								</column>	 -->
+																								
+							</row>								
+							<row>								
+								<column>	
+									<field name="Количество" isLabel="true"  edit-name="colcur"/>								
+								</column>
+								<column>						
+									<field name="Единица измерения" isLabel="true"  edit-name="okei"/>
+								
+								</column>
+								
+							</row>															
+							<row>								
+								<column>								
+									<field fieldType="field" key="|Document|Количество" name="Количество" isValue="true" valueType="double" edit-name="colcur" edit-required="true" />	
+								</column>
+								<column>						
+									<field fieldType="field" key="|Document|ОКЕИ" name="ОКЕИ" valueType="text" isValue="true" edit-name="okei"  dictionary-selection-start-level="1" edit-tool = "ОКЕИ" edit-isScriptValue="true" dict-column-name="code" dict-edit-name="okei" show-dict-column="false"  />
+									<field fieldType="field" key="|Document|Единица_измерения" name="Единица измерения" valueType="text" isValue="true"    edit-name="okeiName" edit-isScriptValue="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="okei" />
+									
+								</column>
+							</row>																													
+									
+						</rows>
+					</block>
+				</column>
+			</row>			
+			
+		
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>									
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+							
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+								
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" /> 									
+									
+								
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row> 						
+		</rows>			
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="\Scripts\Content\Document\RegCard\LPosition.js" />
+	</scripts>
+</root>

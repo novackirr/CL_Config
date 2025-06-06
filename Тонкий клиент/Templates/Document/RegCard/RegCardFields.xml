@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<location type="ApproveActivity">
+		<field name="|Key"/>
+        <field name="|Document|Плановая_дата_размещения"/>
+        <field name="|Document|Регистрационный_номер"/>
+	</location>
+</root>

@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view> <!-- Блок для просмотра-->
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="Общие сведения" name="Общие сведения">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_поступления" name="Дата поступления" valueType="date"  />
+												</column>
+											</row>
+											<row>
+												
+												<column>
+													<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" />
+												</column>
+
+											</row> 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Планируемый_год_размещения" name="Планируемый год размещения" valueType="text"  />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Организационные данные" name="Организационные данные">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Роль_организатора_закупки" name="Роль организатора закупки" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="text"  />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_наименование" name="Организатор совместных торгов" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Ответственное_лицо_ОргСовмТорг|Ответственное_лицо_ОргСовмТорг_ФИО" name="Ответственное лицо Организатора совместных торгов" valueType="text" />
+												</column>
+											</row>
+											<row>
+											<column>
+											<field fieldType="field" key="|Document|Требуется_согласование" name="Требуется согласование" valueType="boolean" />
+											</column>
+											</row>
+											<row>
+											<column>
+											<field fieldType="field" key="|Document|Согласующий|Согласующий_ФИО" name="Согласующий" valueType="text" />
+											</column>
+									<!--		<column>
+													<field fieldType="field" key="|Document|Согласующий_ГРБС|Согласующий_ГРБС_ФИО" name="Согласующий ГРБС" valueType="text" />
+												</column>-->
+											<column>
+											<field fieldType="field" key="|Document|Утвердивший|Утвердивший_ФИО" name="Утверждающий" valueType="text" />
+											</column>
+											</row>
+											<row>
+												<!-- <column>
+									<field fieldType="field" key="|Document|Ответственный_руководитель|Ответственный_руководитель_ФИО" name="Начальник отдела планирования" valueType="text" />
+								</column> -->
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_исполнитель_планирования|Ответственный_исполнитель_планирования_ФИО" name="Ответственный исполнитель отдела планирования" valueType="text" />
+												</column> 
+
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" name="Ответственный исполнитель отдела закупок" valueType="text"  />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Сведения о закупке" name="Сведения о закупке">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта" valueType="longtext" />
+												</column>
+
+												<column>
+													<field fieldType="field" key="|Document|Описание_объекта_закупки" name="Описание объекта" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+<column>
+													<field fieldType="field" key="|Document|Источник_финансирования" name="Источник финансирования" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|НМЦК" name="НМЦК" valueType="money" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+												</column>
+											</row>											
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|За_счет_межбюджетного_трансферта" name="За счет межбюджетного трансферта" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Общественное_обсуждение" name="Общественное обсуждение" valueType="boolean" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Совместные_торги" name="Совместные торги" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Централизованная_закупка" name="Централизованная закупка" valueType="boolean" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="20" name="Контрольная информация">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Срок_внесения_изменений" name="Срок внесения изменений" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Срок_отмены_закупки" name="Срок отмены закупки" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Срок_подачи_заявки_на_разъяснение" name="Срок подачи заявки на разъяснение" valueType="date" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>	
+							</row>	
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcItem" name="Особенности размещения">
+						<rows>
+							<!--   <row>
+								<column>
+									<field fieldType="field" key="|Document|Ограничения_участия_в_определении_поставщика" name="Ограничения участия в определении поставщика (подрядчика, исполнителя), установленное в соответствии с ФЗ №44 (согласно пункту 4 статьи 42 ФЗ №44)" valueType="longtext" />
+								</column>
+							</row> -->
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Ограничения_допуска_товаров" name="Условия, запреты и ограничения допуска товаров, происходящих из иностранного государства или группы иностранных государств, работ, услуг, сооответсвенно выполняемых, оказываемых иностранным лицам" valueType="longtext" />
+								</column>
+							</row>
+							<row>
+							<column>
+									<field fieldType="field" key="|Document|Наличие_утвержденной_документации" name="Наличие утвержденной проектной, сметной документации" valueType="longtext" />
+								</column>
+									<column>
+									<field fieldType="field" key="|Document|Наличие_гос_экспертизы" name="Наличие заключения государственной экспертизы проектной документации, номер и дата заключения государственной экспертизы" valueType="longtext" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_изменения_условий_контракта" name="Информация о возможности изменить условия контракта" valueType="longtext" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_контракт_с_несколькими_участниками" name="Информация о возможности заключить контракты с несколькими участниками" valueType="longtext" />
+								</column>
+							</row>
+								<row>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_одностороннего_отказа" name="Информация о возможности одностороннего отказа от исполнения контракта" valueType="longtext" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дополнительная_информация" name="Иные сведения" valueType="longtext" />
+								</column>
+							</row>
+
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcContacts" name="Контактная информация">		 
+						<rows>
+							<row>
+								<column>		
+									<block id="Контактное лицо" name="Контактное лицо">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_ФИО" name="Контактное лицо" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email" name="Электронная почта" valueType="text" />
+												</column>
+
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон" name="Телефон" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_факс" name="Факс" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Почтовый_адрес" name="Почтовый адрес" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Адрес_местонахождения" name="Адрес местонахождения" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+											<column>
+													<field fieldType="field" key="|Document|Информация_о_контрактной_службе" name="Информация о контрактной службе (контакты)" valueType="longtext" />
+												</column>
+											<column>
+													<field fieldType="field" key="|Document|Контактное_лицо|Дополнительная_контактная_информация" name="Дополнительная контактная информация" valueType="longtext" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Контрактная служба" name="Контрактная служба">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Руководитель_контрактной_службы_должность" name="Должность руководителя контрактной службы" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Руководитель_контрактной_службы_ФИО" name="ФИО руководителя контрактной службы" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Ответст_за_заключение_контракта_должность" name="Должность ответственного за заключение контракта" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Ответст_за_заключение_контракта_ФИО" name="ФИО ответственного за заключение контракта" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Ответственный исполнитель" name="Ответственный исполнитель">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_исполнитель_должность" name="Должность ответственного исполнителя" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_исполнитель_ФИО" name="ФИО ответственного исполнителя" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Ответственный_исполнитель_телефон" name="Телефон ответственного исполнителя" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcZamechanie" name="Замечания">
+						<rows>
+							<row>
+								<column>		
+									<block id="Отправка уведомлений" name="Отправка уведомлений">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_устранения_замечания" name="Дата устранения замечания" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Замечание" name="Замечание" valueType="longtext" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Возврат заявки" name="Возврат заявки">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Причина_возврата_заявки" name="Причина возврата заявки" valueType="longtext" />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row> 
+
+
+
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Заявка на размещение закупки {number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>	
+	</view>
+	<edit> <!-- Блок для редактирования-->
+		<rows>
+			<row>
+				<column>
+
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|Статус" valueType="text" isValue="true" edit-name="Status" edit-hidden="true" edit-default-value="Черновик"  />
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="longtext" isValue="true" edit-name="ktatkoe" edit-hidden="true" edit-default-value="Заявки на размещение"/>	
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="viddoc" edit-hidden="true" edit-value="Лот"/>	
+									<field fieldType="field" key="|Document|Номер_лота_в_извещении" name="Номер лота в извещении" valueType="text" isValue="true"   edit-name="registerNomberLotinIzv"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Лот" />
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя_потока" valueType="text" isValue="true"   edit-name="NamePok"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_потока" name="ИД_потока" valueType="text" isValue="true"   edit-name="IdPotok"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_регистратора" name="ИД_регистратора" valueType="text" isValue="true"   edit-name="Idregistrator"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_извещения" name="ИД_извещения" valueType="text" isValue="true"   edit-name="IdIzv"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД_в_ЕИС" valueType="text" isValue="true"   edit-name="IdEis"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-isInvisible="true" edit-name="Currency" edit-default-value ="Российский рубль"/>
+									<field fieldType="field" key="|Document|Код_валюты" name="Код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency_kod" edit-default-value ="RUB"/>			
+									<field fieldType="field" key="|Document|Основание_единственный_поставщик" name="Основание_единственный_поставщик" valueType="longtext" isValue="true" edit-hidden="true" edit-name="OsnEdPos" />
+									<field fieldType="field" key="|Document|Основание_единственный_поставщик_код" name="Основание_единственный_поставщик_код" valueType="text" isValue="true" edit-hidden="true" edit-name="OsnEdPozKod" />
+									<field fieldType="field" key="|Document|НМЦК" name="НМЦК" valueType="money" isValue="true" edit-name="NMCK" edit-hidden="true" /> 
+									<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер_закупки_в_ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="NomZakEis" />
+									<field fieldType="field" key="|Document|Планируемый_месяц_размещения" name="Планируемый_месяц_размещения" valueType="text" isValue="true" edit-hidden="true" edit-name="PlanMonthRazm" />
+									<field fieldType="field" key="|Document|Планируемый_срок_размещения" name="Планируемый срок размещения" valueType="date"  isValue="true" edit-name="PlanSrokRaz" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Планируемый_год_размещения" name="Планируемый_год_размещения" valueType="integer" edit-hidden="true" isValue="true" edit-name="PlanGodRazm"  />
+																		
+									<field fieldType="field" key="|Document|Способ_определения_поставщика_код" name="Способ определения поставщика код" valueType="text"  isValue="true" edit-name="SpOprPostKod" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" isValue="true" edit-name="SpOprPostKodName" edit-required="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки наименование" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizatorName" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки наименование" valueType="text"  edit-hidden="true" isValue="true" edit-name="Organizator" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" name="Организатор закупки СПЗ" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizatorSPS" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация_заказчик" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizakKod" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация_заказчик_наименование" valueType="text"  edit-hidden="true" isValue="true" edit-name="Organizak" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_местонахождение" name="Организация_заказчик_местонахождение" valueType="longtext"  edit-hidden="true" isValue="true" edit-name="OrganizakPlace" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="Организация_заказчик_ИНН" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizakINN" />
+									<field fieldType="field" key="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов" name="Организатор совместных торгов" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizatorSovm" />
+									<field fieldType="field" key="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_наименование" name="Организатор совместных торгов наименование" valueType="text"  edit-hidden="true" isValue="true" edit-name="OrganizatorSovmName" />
+									<field fieldType="field" key="|Document|Роль_организатора_закупки" name="Роль_организатора_закупки" valueType="text" isValue="true" edit-hidden="true" edit-name="Rol" />
+									<field fieldType="field" key="|Document|Роль_организатора_закупки_код" name="Роль_организатора_закупки_код" valueType="text" isValue="true" edit-hidden="true" edit-name="RolCode" />
+									<field fieldType="field" key="|Document|Совместные_торги" name="Совместные_торги" valueType="boolean" isValue="true" edit-hidden="true" edit-name="ST"/>
+									<field fieldType="field" key="|Document|Централизованная_закупка" name="Централизованная_закупка" valueType="boolean" isValue="true" edit-hidden="true" edit-name="CentrZak" />
+									<field fieldType="field" key="|Document|Ответственное_лицо_ОргСовмТорг|Ответственное_лицо_ОргСовмТорг" name="Ответственное_лицо_ОргСовмТорг" valueType="text" isValue="true" edit-hidden="true" edit-name="OtvOrgST" />
+									<field fieldType="field" key="|Document|Ответственное_лицо_ОргСовмТорг|Ответственное_лицо_ОргСовмТорг_ФИО" name="Ответственное_лицо_ОргСовмТорг_ФИО" valueType="text" isValue="true" edit-hidden="true" edit-name="OtvOrgSTFIO" />
+									<field fieldType="field" key="|Document|Дата_поступления" name="Дата поступления" valueType="date"  isValue="true" edit-name="DatePostyplenia" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Определение_дня" name="Определение дня" valueType="text"  isValue="true" edit-name="registerDate"  edit-readonly="true" edit-default-value="0:00:00" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Остаток_срока" name="Остаток_срока" valueType="text" isValue="true" edit-hidden="true" edit-name="OstatokSroka" />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" edit-name="DateReg" isValue="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Лекарственный_препарат" name="Лекарственный препарат" valueType="boolean" edit-name="LekPr" isValue="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Ответственный_руководитель|Ответственный_руководитель_ФИО" name="Ответсвенный руководитель УО ФИО" valueType="addressbook" isValue="true"  edit-hidden="true" edit-name="OtvRukFio" />
+									<field fieldType="field" key="|Document|Срок_отмены_закупки" name="Срок_отмены_закупки" valueType="date" isValue="true" edit-name="SrokOtmeni"  edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|Срок_внесения_изменений" name="Срок_внесения_изменений" valueType="date" isValue="true" edit-name="SrokIzm"  edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|Срок_подачи_заявки_на_разъяснение" name="Срок_подачи_заявки_на_разъяснение" valueType="date" isValue="true" edit-name="SrokRazyasn"  edit-isInvisible="true" />
+									<!--<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-hidden="true" edit-name="GRBS" />-->
+									<field fieldType="field" key="|Document|ГРБС|ГРБС_наименование" name="ГРБС наименование" valueType="addressbook" isValue="true" edit-hidden="true" edit-name="GRBSName" /> 
+									<field fieldType="field" key="|Document|Требуется_согласование_ГРБС" name="Требуется_согласование_ГРБС"  valueType="boolean" edit-name="FlafTrebSoglGrbs" edit-default-value="0" edit-isInvisible="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Инициатор_заявки|Инициатор_заявки_ФИО" name="ИД Инициатора" isValue="true"  valueType="addressbook" edit-name="IDIniciatoraOrder"   edit-default-value="{currentUser}" address-book-tool ="IDIniciatora" edit-addressbook-groups="person" edit-hidden="true" />
+								</column>	
+							</row>
+							<row>
+							<column>
+							<block id="333" name="333">
+						          <rows>
+								  <row>	
+								<column>
+									<field name="" isLabel="true" edit-name="soglasovanie" />                  
+								</column>
+								<column>
+									<field name="Согласующий" isLabel="true" edit-name="soglasPerson"/>                  
+								</column>
+								</row>
+								     </rows>
+								</block>
+								</column>
+								<column>
+								<block id="222" name="222">
+						          <rows>
+								  <row>	
+								<column>
+									<field name="Утверждающий" isLabel="true" edit-name="utverPerson" />                  
+								</column>
+						<!--	<column>
+									<field name="Согласующий ГРБС" isLabel="true" edit-name="SoglGRBS" />                  
+								</column>-->
+								  </row>
+								     </rows>
+								</block>
+								</column>
+							</row>		
+								<row>
+							<column>
+							<block id="333" name="333">
+						          <rows>
+								 <row>	
+								<column>
+							<field fieldType="field" key="|Document|Требуется_согласование" name="Требуется согласование" valueType="boolean" edit-name="soglasovanie" />
+							</column>
+							<column>
+								  <field fieldType="field" key="|Document|Согласующий|Согласующий_ФИО" name="Согласующий" valueType="addressbook" isValue="true" edit-name="soglasPerson" address-book-tool ="soglasPerson" address-book-tool-selectable = "Department, Person,{currentUserParents}"/>
+								  
+								<!--  <field fieldType="field" key="|Document|ГРБС|ГРБС_наименование" name="GRBS" valueType="addressbook" isValue="true" edit-name="GRBSName" edit-default-value="{addressbook,value=IDIniciatora,attribute=GRBS}" edit-readonly="true"   />
+								  <field fieldType="field" key="|Document|Согласующий_ГРБС|Согласующий_ГРБС_ФИО" name="ГРБС ФИО" isValue="true"  valueType="addressbook" edit-name="SoglGRBS" edit-addressbook-groups = "" address-book-tool = "Address"  address-book-tool-selectable = "Department,Person, {GRBSNameId}"/>
+								  
+								  -->
+								  </column>	
+								  </row>	
+							</rows>
+								</block>
+						</column>
+							<column>
+								<block id="222" name="222">
+						          <rows>
+								  <row>							
+							<column>
+							<field fieldType="field" key="|Document|Утвердивший|Утвердивший_ФИО" name="Утверждающий" valueType="addressbook" isValue="true" edit-required="true" edit-name="utverPerson" address-book-tool ="utverPerson" edit-addressbook-groups="person"/>
+							</column>
+							<!--<column>
+									<field fieldType="field" key="|Document|Согласующий_ГРБС|Согласующий_ГРБС_ФИО" name="ГРБС ФИО" isValue="true"  valueType="addressbook" edit-name="SoglGRBS"  address-book-tool = "SoglGRBS"  address-book-tool-selectable = "Department,Person, {|Document|ГРБС|ГРБС}"/>
+								</column> -->
+								 </row>
+								     </rows>
+								</block>
+								</column>
+							</row>																				
+							<row>				  
+								<column>
+									<field name="Наименование объекта закупки" isLabel="true" edit-name="NameObZak" />                  
+								</column>
+								<column>
+									<field name="Описание объекта закупки" isLabel="true" edit-name="OpisObZak" />                  
+								</column>
+							</row>
+							<row>				  
+								<column>
+									<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наимнование объекта закупки" valueType="longtext"  isValue="true" edit-name="NameObZak" edit-required="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Описание_объекта_закупки" name="Описание объекта закупки" valueType="longtext"  isValue="true" edit-name="OpisObZak" edit-required="true" />
+								</column>
+							</row>	
+							<!-- <row>
+                  <column>
+                     <field name="Номер типового контракта" isLabel="true" />
+                     	<field fieldType="field" key="|Document|Номер_типового_контракта" name="Номер_типового_контракта" valueType="text"  isValue="true" edit-name="NomTipKontr" />
+				  </column>
+                </row> -->
+							<!-- <row>				  
+					 <column>
+						 <field name="Обоснование НМЦК" isLabel="true" edit-name="ObMetOprNMCK" />                
+					 </column>
+                </row>
+				<row>
+					 <column>
+						 <field fieldType="field" key="|Document|Обоснование_НМЦК" name="Обоснование НМЦК" valueType="longtext"  isValue="true" edit-name="ObMetOprNMCK"  edit-required="true"/>
+					 </column>
+                </row> -->
+							<row>
+								<column>
+									<field name="Источник финансирования" isLabel="true" edit-name="IstFin" />
+								</column>
+								<column>
+								<block id="111" name="111">
+						<rows> 
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="IstFin" />
+								</column>
+								</row>
+								<row>
+								<column>
+									<field name="" isLabel="true" edit-name="IstFin" />
+								</column>
+								</row>
+							</rows>
+					</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Источник_финансирования" name="Источник финансирования" valueType="longtext"  isValue="true" edit-name="IstFin" edit-required="true" />
+								</column>
+								<column>
+								<block id="111" name="111">
+						<rows> 
+							<row>
+								<column>
+									<field name="" isLabel="true" />
+									<field fieldType="field"  key="|Document|За_счет_межбюджетного_трансферта" name="За счет межбюджетного трансферта" valueType="boolean"   edit-name="SchetBud"  edit-default-value="0"/>
+								</column>
+								</row>
+								<row>
+								<column>
+									<field name="" isLabel="true" />
+									<field fieldType="field"  key="|Document|Общественное_обсуждение" name="Общественное обсуждение" valueType="boolean"   edit-name="ObcPit"  edit-default-value="0"/>
+								</column>
+							</row>
+							</rows>
+					</block>
+				</column>
+			</row>
+
+						</rows>
+					</block>
+				</column>
+			</row>
+
+			<row>
+				<column>
+					<block id="tlcPoz" name="Особенности размещения">
+						<rows> 
+							<row>
+								<!-- <column>
+									<field name="Ограничения участия в определении поставщика (подрядчика, исполнителя), установленное в соответствии с ФЗ №44 (согласно пункту 4 статьи 42 ФЗ №44)" isLabel="true" edit-name="OgrUch" />
+								</column> -->
+								
+								<column>
+									<field name="Условия, запреты и ограничения допуска товаров, происходящих из иностранного государства или группы иностранных государств, работ, услуг, соответсвенно выполняемых, оказываемых иностранным лицам" isLabel="true" edit-name="OgrTov" />
+								</column>
+							</row>
+							<row>
+								<!-- <column>
+									<field fieldType="field" key="|Document|Ограничения_участия_в_определении_поставщика" name="Ограничения участия в определении поставщика (подрядчика, исполнителя), установленное в соответствии с ФЗ №44 (согласно пункту 4 статьи 42 ФЗ №44)" valueType="longtext"  isValue="true" edit-name="OgrUch" edit-required="true"/>
+								</column> -->
+								<column>
+									<field fieldType="field" key="|Document|Ограничения_допуска_товаров" name="Условия, запреты и ограничения допуска товаров, происходящих из иностранного государства или группы иностранных государств, работ, услуг, сооответсвенно выполняемых, оказываемых иностранным лицам" valueType="longtext"  isValue="true" edit-name="OgrTov" edit-required="false" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Наличие утвержденной проектной, сметной документации" isLabel="true" edit-name="nalichie" />
+								</column>
+								<column>
+									<field name="Наличие заключения государственной экспертизы проектной документации, номер и дата заключения государственной экспертизы" isLabel="true" edit-name="nalichiegos" />
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Наличие_утвержденной_документации" name="Наличие утвержденной проектной, сметной документации" valueType="longtext" isValue="true" edit-name="nalichie"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Наличие_гос_экспертизы" name="Наличие заключения государственной экспертизы проектной документации, номер и дата заключения государственной экспертизы" valueType="longtext" isValue="true" edit-name="nalichiegos" />
+								</column>
+								</row>
+								<row>
+								<column>
+									<field name="Информация о возможности изменить условия контракта" isLabel="true" dit-name="vozUsl" />
+								</column>
+								<column>
+									<field name="Информация о возможности заключить контракты с несколькими участниками" isLabel="true" dit-name="vozNesk" />
+								</column>
+								</row>
+								<row>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_изменения_условий_контракта" name="Информация о возможности изменить условия контракта" valueType="longtext" isValue="true" edit-name="vozUsl" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_контракт_с_несколькими_участниками" name="Информация о возможности заключить контракты с несколькими участниками" valueType="longtext" isValue="true" edit-name="vozNesk" />
+								</column>
+							</row>
+							<row>
+							<column>
+									<field name="Информация о возможности одностороннего отказа от исполнения контракта" isLabel="true" dit-name="vozOtkaz" />
+								</column>
+								<column>
+									<field name="Иные сведения" isLabel="true" dit-name="DopInfo" />
+								</column>
+								</row>
+								<row>
+								<column>
+									<field fieldType="field" key="|Document|Возможность_одностороннего_отказа" name="Информация о возможности одностороннего отказа от исполнения контракта" valueType="longtext"  isValue="true" edit-name="vozOtkaz"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дополнительная_информация" name="Иные сведения" valueType="longtext" isValue="true" edit-name="DopInfo" />
+								</column>
+							</row>
+						</rows> 
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcContacts" name="Контактная информация">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Контактное лицо" isLabel="true" edit-name="KontactName" />
+								</column>
+								<column>
+									<field name="Электронная почта" isLabel="true" edit-name="KontactEmail" />
+								</column>
+								</row>
+								<row>
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_ФИО" name="Контактное лицо" valueType="addressbook" isValue="true" edit-name="KontactName" edit-addressbook-groups="person" edit-required="true"  edit-default-value="{currentUser}" edit-readonly="true" edit-hidden="false"   />
+								</column>  
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email" name="Электронная почта" valueType="text" isValue="true" edit-name="KontactEmail" edit-default-value="{addressbook,value=KontactName,attribute=Email}" edit-required="true" />
+								</column>	
+								</row>
+								<row>
+								<column>
+									<field name="Телефон" isLabel="true" edit-name="KontactTel" />
+								</column>
+								<column>
+									<field name="Факс" isLabel="true" edit-name="KontactFax" />
+								</column>
+							</row>
+							<row>						
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон" name="Телефон" valueType="text" isValue="true" edit-name="KontactTel" edit-required="true" edit-default-value="{addressbook,value=KontactName,attribute=Telephone}"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_факс" name="Факс" valueType="text" isValue="true" edit-name="KontactFax" edit-required="true" edit-default-value="{addressbook,value=KontactName,attribute=Fax}"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Почтовый адрес" isLabel="true" edit-name="PochtAddress" />
+								</column>
+								<column>
+									<field name="Адрес местонахождения" isLabel="true" edit-name="AddressMesta"/>
+								</column>
+							</row>							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Почтовый_адрес" name="Почтовый адрес" valueType="longtext"  isValue="true" edit-required="true" edit-name="PochtAddress" edit-default-value="{addressbook,value=KontactName,attribute=Room}" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Адрес_местонахождения" name="Адрес местонахождения" valueType="longtext"  isValue="true" edit-required="true" edit-name="AddressMesta" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Информация о контрактной службе (контакты)" isLabel="true" edit-name="InformContract"/>
+								</column>
+								<column>
+									<field name="Дополнительная контактная информация" isLabel="true" edit-name="DopKontInf"/>
+								</column>
+							</row>	
+							<row>
+								<column>
+								<field fieldType="field" key="|Document|Информация_о_контрактной_службе" name="Информация о контрактной службе (контакты)" valueType="longtext" isValue="true" edit-required="true" edit-name="InformContract" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Контактное_лицо|Дополнительная_контактная_информация" name="Дополнительная контактная информация" valueType="longtext" edit-required="true" isValue="true" edit-name="DopKontInf" edit-default-value="{addressbook,value=KontactName,attribute=Remark}" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Должность руководителя контрактной службы" isLabel="true" edit-name="DolgRukKontSl" />
+								</column>
+								<column>
+									<field name="ФИО руководителя контрактной службы" isLabel="true" edit-name="FioRukKontSl"/>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Руководитель_контрактной_службы_должность" name="Должность руководителя контрактной службы" valueType="text"  isValue="true" edit-name="DolgRukKontSl" edit-required="true"  />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Руководитель_контрактной_службы_ФИО" name="ФИО руководителя контрактной службы" valueType="text" edit-required="true" isValue="true" edit-name="FioRukKontSl" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Должность ответственного за заключение контракта" isLabel="true" edit-name="DolgOtvets" />
+								</column>
+								<column>
+									<field name="ФИО ответственного за заключение контракта" isLabel="true" edit-name="FioOtvets" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Ответст_за_заключение_контракта_должность" name="Должность отственного за заключение контракта" valueType="text"  isValue="true" edit-name="DolgOtvets" edit-required="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Ответст_за_заключение_контракта_ФИО" name="ФИО ответственного за заключение контракта" valueType="text" edit-required="true" isValue="true" edit-name="FioOtvets" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Должность ответственного исполнителя" isLabel="true" edit-name="DolgOtvetsIsp" />
+								</column>
+								<column>
+									<field name="ФИО ответственного исполнителя" isLabel="true" edit-name="FioOtvetsIsp" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Ответственный_исполнитель_должность" name="Должность ответственного исполнителя" valueType="text"  isValue="true" edit-name="DolgOtvetsIsp" edit-required="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Ответственный_исполнитель_ФИО" name="ФИО ответственного исполнителя" valueType="text" edit-required="true" isValue="true" edit-name="FioOtvetsIsp" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Телефон ответственного исполнителя" isLabel="true" edit-name="TelOtvetsIsp" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Ответственный_исполнитель_телефон" name="Телефон ответственного исполнителя" valueType="text"  isValue="true" edit-name="TelOtvetsIsp" edit-required="true" />
+								</column>
+								<column>
+
+								</column> 
+
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="tlcZamechania" name="Замечания">
+						<rows>
+							<row>
+								<column>
+									<field name="Дата устранения замечания" isLabel="true" edit-name="DateYstrZam" />
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Дата_устранения_замечания" name="Дата_устранения_замечания" valueType="date" isValue="true" edit-name="DateYstrZam" />
+								</column>
+							</row> 
+							<row>
+								<column>
+									<field name="Замечение" isLabel="true" edit-name="Zamech" />
+								</column>
+								<column>
+									<field name="Причина возврата заявки" isLabel="true" edit-name="PrichinaVozvr" />
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Замечание" name="Замечание" valueType="longtext" isValue="true" edit-name="Zamech" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Причина_возврата_заявки" name="Причина_возврата_заявки" valueType="longtext" isValue="true" edit-name="PrichinaVozvr" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+
+		</rows>  
+
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+			<variable variable-name="caption" variable-format="Заявка на размещение закупки {number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>	
+		</variables>
+
+	</edit> 
+<scripts>
+		<script file="Scripts\Content\Document\RegCard\LLotOrder.js" />
+	</scripts>
+</root>

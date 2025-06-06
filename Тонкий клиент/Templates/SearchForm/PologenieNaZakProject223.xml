@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" 
+					name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" 
+					edit-default-value="{currentOrganization}" address-book-tool = "bookZak" 
+					edit-addressbook-groups="" 
+					address-book-tool-selectable = "Department, Department, {currentUserParents}" 
+					children-selection="true"/>
+				</column> 
+			</row>
+			
+			<row>
+				<column>
+					<field name="Дата вступления в силу" isLabel="true"  />
+				</column>
+				<column>
+					<field name="Дата регистрации" isLabel="true"  />
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_вступления_в_силу" name="Дата вступления в силу" valueType="date" isValue="true" edit-name="DatevsiluFrom" />
+								</column>
+								<column>
+									<field name="до" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_вступления_в_силу" name="Дата вступления в силу" valueType="date" isValue="true" edit-name="DatevsiluTo" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+				<column>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="RegDateFrom" />
+								</column>
+								<column>
+									<field name="до" isLabel="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="RegDateTo" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<field name="Наименование положения" isLabel="true"  />   								
+				</column>
+				<column>
+					<field name="Наименование ограна, утвердившего положения" isLabel="true"  />   								
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Название_положения" name="Наименование положения" valueType="text"  isValue="true" edit-name="Namepol" />	
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Наименование_органа_утвердившего_положение" name="Наименование ограна, утвердившего положения" valueType="text"  isValue="true" edit-name="approverName" />	
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Требуется согласование" isLabel="true" />									  
+				</column>
+				<column>
+					<field name="Утверждающий" isLabel="true" />                  
+				</column>
+				<column>
+					<field name="Согласующий" isLabel="true" />                  
+				</column>
+				<column>
+					<field name="" isLabel="true" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Требуется_согласование" name="Требуется согласование" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="trebSogl" />									
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Утверждающий|Утверждающий" name="Утверждающий" isValue="true"  valueType="addressbook" edit-name="utverPerson" address-book-tool ="utverPerson" edit-addressbook-groups = ""  address-book-tool-selectable = "WorkGroup, Person, 'Утверждающий заказчика 223-ФЗ'|currentOrganization"/>
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Согласующий|Согласующий" name="Согласующий" isValue="true" valueType="addressbook"  edit-name="Sogl" address-book-tool ="Sogl" edit-addressbook-groups = ""   address-book-tool-selectable = "WorkGroup, Person, 'Согласующий заказчика 223-ФЗ'|currentOrganization"/> 
+				</column>
+				<column>								  
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<field name="Наименование способа закупки" isLabel="true"  />   								
+				</column>
+				<column>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="Закупка в электронной форме" isLabel="true"  />   								
+								</column>
+								<column>
+									<field name="Многоэтапная" isLabel="true"  />   								
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Способы_закупок|Код_способа_закупки" valueType="text" isValue="true" name="Код способа закупки" edit-name="registerSpZakup" edit-readonly="true" dict-column-name="code"  is-select-one-level="1" edit-tool="Способы закупок" dict-edit-name="registerSpZakup" />
+					<field fieldType="field" key="|Document|Способы_закупок|Наименование_способа_закупки" valueType="longtext"  isValue="true" name="Наименование способа закупки" edit-readonly="true" edit-name="namesposzak" display-field-part="true" dict-column-name="Наименование" dict-edit-name="registerSpZakup" edit-hidden="true" />
+				</column>
+				<column>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Способы_закупок|Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="ZakElForm"  />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Способы_закупок|Многоэтапная" name="Многоэтапная" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Mnogoetap" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<extraSearchForm>
+		<rows>
+			<row>
+				<column>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="Количество этапов закупки" isLabel="true"  />   								
+								</column>
+								<column>
+									<field name="Квалификационный отбор" isLabel="true"  />   								
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+				<column>
+					<field name="Условия применения способа закупки" isLabel="true"  />   								
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Способы_закупок|Количество_этапов_закупки" valueType="integer" isValue="true" name="Количество этапов закупки" edit-name="KolvoEtap" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Способы_закупок|Квалификационный_отбор" name="Квалификационный отбор" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Kvalotbor" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Способы_закупок|Условия_применения_способа_закупки" valueType="longtext" isValue="true" name="Условия применения способа закупки" edit-name="Uslprimsp" />
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<field name="Порядок заключения и исполнения договоров" isLabel="true"  />   								
+				</column>
+				<column>
+					<field name="Дополнительные сведения" isLabel="true"  />   								
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Порядок_заключения_и_исполнения_договоров" name="Порядок заключения и исполнения договоров" valueType="longtext"  isValue="true" edit-name="pordog" />	
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Дополнительные_сведения" name="Дополнительные сведения" valueType="longtext"  isValue="true" edit-name="additionalInfo" />	
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<field name="Обоснование внесения изменений" isLabel="true"  />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext"  isValue="true" edit-name="Obosvnesizm"/>	
+				</column>	
+			</row>
+		</rows>
+	</extraSearchForm>	 
+	<search>
+		<!-- <field fieldValue="(doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ') and 
+		(doc_RegCard/rc_Index/integer_Организация_заказчик = @registerOrgZa)"/> -->
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ')"/>
+	</search>
+  <scripts>
+	<script file="~/Scripts/Content/SearchForm/PologenieNaZak223.js" />
+  </scripts>
+</root>

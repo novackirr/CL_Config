@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>
+	    <column>
+			<field name="Организация заказчик" isLabel="true" />
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" edit-readonly="true" dict-column-name="code" valueType="text"  isValue="true" edit-name="registerOrgZa"  is-select-one-level="1"  edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa"/>			
+			<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" dict-column-name="Краткое наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="registerOrgZa"/>
+		</column>
+		<column>
+			<field name="Организация поставщик" isLabel="true" />
+			<field fieldType="field" key="Document|Организация_поставщик|Организация_поставщик" name="Организация поставщик" valueType="text"  dict-column-name="code" isValue="true" edit-name="post2" edit-readonly="true" dictionary-selection-start-level="1" edit-tool = "Контрагенты" dict-edit-name="post2"  />
+			<field fieldType="field" key="|Document|Организация_поставщик|Организация_поставщик_наименование" name="Организация поставщик наименование"  dict-column-name="Наименование"  valueType="text" isValue="true" edit-name="post2Name"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="post2"  />
+        </column>	
+		
+    </row>
+	<row>	
+		<column>
+			<field name="Предмет договора" isLabel="true" />
+			<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="text" isValue="true" edit-name="dogovorName" />
+        </column>
+		 <column>		
+			<field name="Номер основного договора" isLabel="true" />
+			<field fieldType="field" key="|Document|Номер_основного_договора" name="Номер основного договора" valueType="text" isValue="true" edit-name="regNumDogovor" />
+        </column>			
+    </row>
+	<row>
+		<column>		
+			<field name="Номер дополнительного соглашения" isLabel="true" />
+			<field fieldType="field" key="|Document|Номер_дополнительного_соглашения" name="Номер дополнительного соглашения" valueType="text" isValue="true" edit-name="regNumDopSogl" />
+        </column>	
+		<column>
+			<field name="Дата заключения договора" isLabel="true"/>
+			<table key="table2" edit-name="table2" height="300">			
+				<field name="с" isLabel="true" />
+				<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения" valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+				<field name="по" isLabel="true" />
+				<field fieldType="field" key="|Document|Дата_заключения" name="по" valueType="date" isValue="true" edit-name="publicDateTo"  />
+			</table>
+        </column>
+		<column>
+		    <field name="Статус" isLabel="true"/>
+			<field fieldType="field" key="Статусы договора" name="Статусы договора" edit-name="status" valueType="text"  isValue="true" edit-tool="Статусы договора" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" display-field-part="true" dict-edit-name="status" />
+        </column>		
+			
+    </row> 
+		
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Дополнительные соглашения') and (doc_RegCard/rc_Index/text_Организация_заказчик = @registerOrgZa) and (doc_RegCard/rc_Index/text_Номер_дополнительного_соглашения = @regNumDopSogl) and (doc_RegCard/rc_Index/text_Номер_основного_договора = @regNumDogovor) and (doc_RegCard/rc_Index/text_Статус = @status) and (doc_RegCard/rc_Index/text_Организация_поставщик = @post2) and ((doc_RegCard/rc_Index/date_Дата_заключения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения &lt;= @publicDateTo)) and (xn-contains(doc_RegCard/rc_Index/longtext_Предмет_договора ,@dogovorName)) " />
+  </search>
+</root>

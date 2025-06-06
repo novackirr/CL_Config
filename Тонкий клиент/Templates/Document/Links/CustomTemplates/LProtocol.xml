@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+   <table flow="Заявки на размещение закупки" childLinksFlow="Позиции плана-графика" allow-filters-row="true">
+		<settings>
+			<setting key="addButtonText"  value="Добавить заявку"/>
+			<setting key="canModify" condition="(doc_RegCard/rc_Index/text_Статус = 'Черновик')" value="true" />
+			<setting key="canCreateLinks" condition="(doc_RegCard/rc_Index/text_Статус = 'Черновик')" value="true" />
+			<setting key="terminalRoute"  value="Удаление заявки на размещение из извещения"/>
+		</settings>
+		<columns>
+		
+		    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_лота_в_извещении" name="Номер лота" valueType="text" weight="15" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" weight="30" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_определения_поставщика" name="Способ определения поставщика" valueType="text" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦК" name="НМЦК" valueType="money" weight="20" />
+			<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Планируемый_срок_размещения" name="Плановая дата размещения" valueType="date" weight="15" />
+		</columns>
+		<sorts>
+	<sort key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" direction="ascending"/>
+    <sort key="doc_RegCard/rc_Index/money_НМЦК" direction="descending"/>
+</sorts>
+	</table>
+  <table flow="Заявки участников">
+    <settings>
+	<setting key="addButtonText"  value="Добавить заявку"/>
+      <setting key="canModify" condition="(doc_RegCard/rc_Index/text_Статус = 'Черновик')" value="true" />
+    </settings>
+    <columns>
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_заявки" name="Номер заявки" valueType="text" weight="5" isOptional="true" headerNoEllipsis="true"/>
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_подачи_заявки" name="Дата и время подачи заявки" valueType="datetime" weight="15" headerNoEllipsis="true"/>
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Поставщики_наименование" name="Участник заявки" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Поставщики_наименование" weight="30"/>	
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Результат" name="Результат оценки заявки" valueType="text" weight="15" headerNoEllipsis="true"/>
+	   <column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_результат" name="Порядковый номер по результатам" valueType="integer" weight="10" headerNoEllipsis="true"/> 
+     <!--  <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Участник_заявки_наименование" name="Участник заявки наименование" valueType="text" weight="100" isOptional="true" /> -->
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Цена_участника" name="Предполагаемая цена" valueType="money" weight="10" isOptional="true" headerNoEllipsis="true"/>
+	   <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Валюта" name="Валюта" valueType="text" weight="15" headerNoEllipsis="true"/>   
+    </columns>
+	<sorts>
+	<sort key="doc_RegCard/rc_Index/text_Номер_заявки" direction="ascending"/>
+    <sort key="doc_RegCard/rc_Index/text_Участник_заявки_наименование" direction="ascending"/>
+	<sort key="doc_RegCard/rc_Index/money_Цена_участника" direction="descending"/>
+</sorts>
+  </table>
+ <table flow="Протоколы" name="Версии протокола">
+		<columns>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_протокола" name="Номер протокола" valueType="text" weight="50" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="50" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="date" weight="60" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Вид_протокола" name="Вид протокола" valueType="text" weight="140" />
+		<sorts>
+            <sort key="doc_RegCard/rc_Index/date_Фактическая_дата_размещения" direction="ascending"/>
+        </sorts>
+		</columns>
+	</table>
+
+   
+ 
+</root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify>
+		<Select>			
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}') and not(doc_RegCard/rc_Index/text_Статус = 'Отменен(-а)') and not(doc_RegCard/rc_Index/boolean_Отмена_лота = '1')]" tag="Лоты" />
+		</Select>
+		<Actions>
+			<SetField  dst="|Document|Актуальность" value="1" />
+			<CopyField src="|Document|Управление|Управление" />
+			
+			<SetField dst="|Document|Имя_потока" value="Отмена процедуры" />
+			<CopyField src="|Document|Инициатор|Инициатор" />
+			<CopyField src="|Document|Номер_на_ЭТП" />
+			<CopyField src="|Document|Номер_в_ЕИС" />
+			<CopyField src="|Document|ИД_ЭТП" />
+			<CopyField src="|Document|Форма_торгов_код" />
+			<CopyField src="|Document|Форма_торгов" />
+			<CopyField src="|Document|Обязательность_этапов" />
+			<CopyField src="|Document|Наименование_ЭТП" />
+			<CopyField src="|Document|Руководитель_управления|Руководитель_управления" />
+			<CopyField src="|Document|Организация_документации|Организация_документации" />
+			<CopyField src="|Document|Организация_документации|Организация_документации_наименование" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="%key%" dst="|Document|ИД_извещения" />
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_извещения_на_ЭТП" />
+			<CopyField src="|Document|Статус" dst="|Document|Статус_извещения_на_ЭТП" />
+			<CopyField src="|Document|Курс_валюты" />
+			<CopyField src="|Document|Дата_курс_валюты" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код" />
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Название_закупки" />
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор"  />
+			<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора"  />
+			<CopyField src="|Document|Ответственный_отдела_закупки|Ответственный_отдела_закупки"  />
+			<CopyField src="|Document|Ответственный_отдела_планирования|Ответственный_отдела_планирования"  />
+			
+			<!-- Организация_заказчик -->
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ИНН"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_КПП"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОГРН"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ЕИС" />
+			<!-- Организатор_закупки -->
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ОРГН"  />
+			<CopyField src="|Document|Организатор_закупки|Ид_организации_на_ЭТП"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС_справочный"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+			<CreateTable dst="|Document|Лоты" srcDocs="Лоты">
+				<Column src="|Document|Номер_лота_в_извещении" dst="|Лот_Номер_лота_в_извещении" />
+				<Column src="|Document|ИД_на_ЭТП" dst="|Лот_ИД_Лота_на_ЭТП" />
+				<Column src="|Document|Предмет_договора" dst="|Лот_Предмет_договора" />
+				<Column src="|Document|Статус" dst="|Лот_Статус" />
+				<Column src="|Document|Отмена_лота" dst="|Лот_Отмена_лота" />
+			</CreateTable>
+		</Actions>
+	</FieldsModify>
+	
+	<LinksModify>
+		<LinkAllLinksWhereFlow name="Заявка на размещение закупки 223ФЗ" />
+		<LinkCurrentDoc />
+	</LinksModify>
+	
+	<OnDocumentCreated transaction="single">
+		
+	</OnDocumentCreated>
+	
+	<OnRegcardEdited transaction="single"> 
+	
+	</OnRegcardEdited>
+	
+	<OnLinkAdded>
+	
+	</OnLinkAdded>
+	
+	<OnLinkDeleted>
+	
+	</OnLinkDeleted>
+</Hooks>

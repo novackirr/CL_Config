@@ -1,0 +1,320 @@
+; (function () { }(window.ct = window.ct || {}));
+
+; (function (ui) {
+    /**
+     * Отображает сообщение в модальном окне.
+     * @param {string} title Заголовок сообщения.
+     * @param {string} message Текст сообщения.
+     */
+    ui.alert = function (title, message) {
+        return DevExpress.ui.dialog.alert(message, title);
+    };
+
+    /**
+     * Отображает высплывающее уведомление.
+     * @param {string} message Текст уведомления.
+     * @param {"info"|"warning"|"error"|"success"} type Тип уведомления.
+     * @param {number} displayTime Длительность отображения уведомления (в мс).
+     */
+    ui.notify = function (message, type, displayTime) {
+        var opts = {
+            closeOnClick: true,
+            message: message
+        };
+        return DevExpress.ui.notify(opts, type, displayTime);
+    };
+
+    ui.checkboxThreeStates = function(cb) {
+        if (cb.readOnly) cb.checked = cb.readOnly = false;
+        else if (!cb.checked) cb.readOnly = cb.indeterminate = true;
+        cb.value = cb.checked ? "on" : cb.indeterminate ? "" : "off";
+    }
+
+    ui.checkboxTwoStates = function (cb) {
+        cb.value = cb.checked ? "on" : "off";
+    }
+
+    $(document).ready(function () {
+        ui.sideNavigation = new SideNavigation(".sidenav-display-button", [".search-menu-tabs", ".build-report-tabs"], [".search-menu-content", ".build-report-content"]);
+    });
+
+    function SideNavigation(toggleButtonContainerSelector, menuSelectors, contentSelectors) {
+        // Набор костылей для скрытия бокового меню с навигацией. Магические константы, лютый колхоз, вот это вот всё. Но вроде даже работает.
+        var self = this;
+        var _isOpened = true;
+
+        var _menuInfo = [];
+        var _contentInfo = [];
+
+        var $sidenavContainer = $(".sidenav-container");
+
+        init();
+
+        this.open = function () {
+            updateToggleButton("spinleft", "Скрыть меню");
+
+            $sidenavContainer.removeClass("sidenav-menu-hidden");
+            $sidenavContainer.addClass("sidenav-menu-visible");
+
+            for (var i in _menuInfo) {
+                _menuInfo[i].$element.css("display", "block");
+            }
+            for (var i in _contentInfo) {
+                _contentInfo[i].$element.removeClass("sidenav-menu-hidden");
+            }
+            
+            _isOpened = true;
+        }
+
+        this.close = function () {
+            updateToggleButton("spinright", "Показать меню");
+
+            $sidenavContainer.removeClass("sidenav-menu-visible");
+            $sidenavContainer.addClass("sidenav-menu-hidden");
+
+            for (var i in _menuInfo) {
+                _menuInfo[i].$element.css("display", "none");
+            }
+            for (var i in _contentInfo) {
+                _contentInfo[i].$element.addClass("sidenav-menu-hidden");
+            }
+
+            _isOpened = false;
+        }
+
+        this.toggle = function () {
+            if (_isOpened) {
+                self.close();
+            } else {
+                self.open();
+            }
+        }
+
+        function updateToggleButton(icon, hint, height) {
+            var $toggleButton = $(".sidenav-display-button");
+            $toggleButton.dxButton({
+                focusStateEnabled: false,
+                icon: icon,
+                hint: hint,
+            });
+
+            if (height) {
+                $toggleButton.dxButton("instance").option("height", height);
+            }
+
+            // Костылик, чтобы сбросить hover при смещении кнопки (т.к. dx работает асинхронно).
+            setTimeout(function () {
+                $toggleButton.removeClass("dx-state-hover");
+            }, 5);
+        }
+
+        function init() {
+            for (var i = 0; i <= menuSelectors.length; i++) {
+                var $menu = $(menuSelectors[i]);
+                if ($menu.length) {
+                    _menuInfo[menuSelectors[i]] = {
+                        width: $menu.width(),
+                        $element: $menu
+                    };
+                }
+            }
+    
+            for (var i = 0; i <= contentSelectors.length; i++) {
+                var $content = $(contentSelectors[i]);
+                if ($content.length) {
+                    _contentInfo[contentSelectors[i]] = {
+                        paddingLeft: $content.css("padding-left"),
+                        $element: $content
+                    };
+                }
+            }
+            
+            $(".sidenav-display-button")
+                .dxButton({
+                    focusStateEnabled: false,
+                    icon: "spinleft",
+                    hint: "Скрыть меню",
+                    onClick: function() {
+                        ct.ui.sideNavigation.toggle();
+                    }
+                });
+        }
+    }
+}((window.ct = window.ct || {}, window.ct.ui = window.ct.ui || {})));
+; (function () { }(window.ct = window.ct || {}));
+
+; (function (ui) {
+    /**
+     * Колхоз основной панели с вертикальными вкладками.
+     */
+    ui.VerticalTabPanel = VerticalTabPanel;
+    
+    function VerticalTabPanel(config) {
+        var self = this;
+        var SELECTED_ITEM_CLASS = "active";
+        var HANDLERS = {
+            ON_INITIALIZED: "onInitialized",
+            ON_SELECTION_CHANGED: "onSelectionChanged"
+        };
+        var _config = $.extend({
+            selector: null,
+            tabs: [],
+            selectedTabKey: null,
+            tabContentTemplate: null,
+            onInitialized: null,
+            onSelectionChanged: null
+        }, config);
+
+        var _$widget = _config.selector ? $(_config.selector) : $("<div />");
+        var _$container = $("<div />").addClass("search-menu-tabs");
+        var _$tabsList = $("<ul />").addClass("nav nav-tabs tabs-left");
+        var _$tabsContainer = $("<div />").addClass("nav nav-tabs tabs-left panel-collapse collapse in report-element");
+        var _$contentContainer = $("<div />").addClass("tab-content search-menu-content");
+        var _$content = _config.tabContentTemplate ? $(_config.tabContentTemplate) : $("<div />");
+        var _tabs = _config.tabs.map(createTab);
+        var _selectedTab;
+
+        /**
+         * jQuery-объект с контейнером компонента.
+         */
+        this.$widget = function() {
+            return _$container;
+        }
+
+        /**
+         * Возвращает выбранную вкладку.
+         */
+        this.getSelectedTab = function() {
+            return _selectedTab;
+        }
+
+        /**
+         * Выбрать вкладку.
+         * @param {number} key Идентификатор (ключ) вкладки.
+         */
+        this.selectTab = function (key) {
+            deselectTab(_selectedTab);
+            var tabToSelect = _tabs.find(function (x) { return x.key === key; });
+            selectTab(tabToSelect);
+        }
+
+        /**
+         * Убрать выбор с вкладки.
+         * @param {number} key Идентификатор (ключ) вкладки.
+         */
+        this.deselectTab = function (key) {
+            var tabToDeselect = _tabs.find(function (x) { return x.key === key; });
+            deselectTab(tabToDeselect);
+        }
+
+        /**
+         * Обработчик, выполняющийся после инициализации компонента.
+         */
+        this[HANDLERS.ON_INITIALIZED] = _config[HANDLERS.ON_INITIALIZED];
+
+        /**
+         * Обработчик, выполняющийся после смены выделения.
+         */
+        this[HANDLERS.ON_SELECTION_CHANGED] = _config[HANDLERS.ON_SELECTION_CHANGED];
+
+        init();
+
+        function init() {
+            _$container.append(_$tabsList);
+            _$tabsList.append(_$tabsContainer);
+            _tabs.forEach(function (tab) {
+                _$tabsContainer.append(tab.$template);
+            });
+            if (_config.id) {
+                _$widget.attr("id", _config.id);
+            }
+            _$widget.append(_$container);
+            _$widget.append(_$contentContainer);
+
+            if (_tabs.length) {
+                var tabToSelect = _config.selectedTabKey
+                    ? _tabs.find(function (x) { return x.key === _config.selectedTabKey; }) || _tabs[0]
+                    : _tabs[0];
+                selectTab(tabToSelect);
+            }
+
+            invokeHandler(HANDLERS.ON_INITIALIZED, { component: self });
+        }
+
+        function selectTab(tab) {
+            if (_selectedTab) {
+                deselectTab(_selectedTab);
+            }
+            setTabSelected(tab);
+            _selectedTab = tab;
+
+            if (_selectedTab.$content) {
+                renderContent(_selectedTab.$content);
+            } else {
+                renderContent(_$content);
+            }
+
+            invokeHandler(HANDLERS.ON_SELECTION_CHANGED, { component: self, selectedTab: _selectedTab });
+        }
+
+        function deselectTab(tab) {
+            if (tab) {
+                setTabDeselected(tab);
+                _selectedTab = null;
+            }
+        }
+
+        function setTabSelected(tab) {
+            if (tab && !isTabSelected(tab)) {
+                tab.$template.addClass(SELECTED_ITEM_CLASS);
+            }
+        }
+
+        function setTabDeselected(tab) {
+            if (tab && isTabSelected(tab)) {
+                tab.$template.removeClass(SELECTED_ITEM_CLASS);
+            }
+        }
+
+        function isTabSelected(tab) {
+            if (!tab) return false;
+            return tab.$template.hasClass(SELECTED_ITEM_CLASS);
+        }
+
+        function createTab(data) {
+            var tab = {
+                key: data.key,
+                title: data.title,
+                $content: data.contentTemplate ? $(data.contentTemplate) : null
+            };
+            tab.$template = $("<li />").attr("role", "presentation")
+                .append($("<a>").attr("href", "#").attr("title", tab.title).text(tab.title).click(tab, onTabClick));
+            return tab;
+        }
+
+        function onTabClick(e) {
+            e.preventDefault();
+            selectTab(e.data);
+        }
+
+        function renderContent($content) {
+            _$contentContainer.children().detach();
+            _$contentContainer.append($content);
+        }
+
+        /**
+         * Вызывает методы жизненного цикла объекта (если они есть).
+         * @param {string} handlerName Название обработчика (из HANDLERS).
+         * @param {*} payload Параметры, передаваемые в обработчик.
+         */
+        function invokeHandler(handlerName, payload) {
+            if (self[handlerName]) {
+                self[handlerName](payload);
+            }
+        }
+    }
+
+    VerticalTabPanel.create = function (config) {
+        return new VerticalTabPanel(config);
+    }
+}((window.ct = window.ct || {}, window.ct.ui = window.ct.ui || {})));

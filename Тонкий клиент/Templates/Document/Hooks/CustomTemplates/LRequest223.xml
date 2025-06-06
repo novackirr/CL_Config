@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify source="Извещения о закупочной процедуре 223ФЗ">
+		<!-- <CopyField src="|Document|ИД_документа_изв" dst="|Document|ИД_запроса" /> -->
+		<CopyField src="%key%" dst="|Document|ИД_запроса_лот"/>
+		<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП"/>
+		<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_процедуры"/>
+		<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_извещения_на_ЭТП"/>
+		<CopyField src="|Document|ИД_ЭТП" dst="|Document|ИД_ЭТП"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки" dst="|Document|Организатор_закупки|Организатор_закупки"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" dst="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" dst="|Document|Организатор_закупки|Организатор_закупки_ЕИС"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+		<CopyField src="|Document|Год_закупки" />
+		<!-- <SetField dst="|Document|Создана_в_Е1" value="1"/> --> <!-- при необходимости проставлять через кнопку -->
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Название_закупки" dst="|Document|Предмет_договора"/>
+		<CopyField src="|Document|Форма_торгов" dst="|Document|Форма_торгов"/>
+		<CopyField src="|Document|Форма_торгов_код" dst="|Document|Форма_торгов_код"/>
+		<CopyField src="|Document|Название_закупки" dst="|Document|Название_закупки" />
+		<CopyField src="|Document|Номер_в_ЕИС" dst="|Document|Номер_извещения_в_ЕИС" />
+		<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_извещения"/>
+		<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки_в_ЕИС"/>
+	</FieldsModify>
+	<FieldsModify source="Заявка на размещение закупки 223ФЗ">
+		<Select>			
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and (doc_Links/doc_Link/link_Document='{baseDocumentsKeys}' or doc_Links/doc_Link/link_Owner='{baseDocumentsKeys}')  and not(doc_RegCard/rc_Index/text_Статус = 'В архиве')]" tag="Извещения о закупочной процедуре 223ФЗ" /> 
+		</Select>
+		<Actions>
+			<CopyField src="|Document|ИД_документа_изв" dst="|Document|ИД_запроса" />
+			<CopyField src="%key%" dst="|Document|ИД_запроса_лот"/>
+			<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП"/>
+			<CopyField src="|Document|ИД_извещения_на_ЭТП" dst="|Document|ИД_процедуры"/>
+			<CopyField src="|Document|ИД_извещения_на_ЭТП" dst="|Document|ИД_извещения_на_ЭТП"/>
+			<CopyField src="|Document|Номер_лота_в_извещении" dst="|Document|Номер_лота_в_извещении"/>
+			<CopyField src="|Document|ИД_ЭТП" dst="|Document|ИД_ЭТП"/>
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" dst="|Document|Организатор_закупки|Организатор_закупки"/>
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" dst="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" dst="|Document|Организатор_закупки|Организатор_закупки_ЕИС"/>
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+			<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+			<CopyField src="|Document|Год_закупки" />
+			<SetField dst="|Document|Создана_в_Е1" value="1"/> 	
+			<CopyField src="|Document|ГРБС|ГРБС" />
+			<CopyField src="|Document|Предмет_договора" dst="|Document|Предмет_договора"/>
+			<CopyField src="|Document|Форма_торгов" dst="|Document|Форма_торгов"/>
+			<CopyField src="|Document|Форма_торгов_код" dst="|Document|Форма_торгов_код"/>
+			<CopyField src="|Document|Название_закупки" dst="|Document|Название_закупки" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|Номер_в_ЕИС" dst="|Document|Номер_извещения_в_ЕИС" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_извещения" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+			<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки_в_ЕИС" srcDocs="Извещения о закупочной процедуре 223ФЗ"/>
+		</Actions>
+	</FieldsModify>
+	<FieldsModify source="Запросы RFI">
+		<CopyField src="%key%" dst="|Document|ИД_запроса" />
+		<CopyField src="%key%" dst="|Document|ИД_запроса_лот"/>
+		<CopyField src="|Document|ИД_лота_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП"/>
+		<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки_в_ЕИС"/>
+		<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_процедуры"/>
+		<CopyField src="|Document|ИД_ЭТП" dst="|Document|ИД_ЭТП"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки" dst="|Document|Организатор_закупки|Организатор_закупки"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" dst="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" dst="|Document|Организатор_закупки|Организатор_закупки_ЕИС"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+		<CopyField src="|Document|Год_закупки" />
+		<SetField dst="|Document|Создана_в_Е1" value="1"/> 	
+		<CopyField src="|Document|ГРБС|ГРБС" />
+	</FieldsModify>
+	<FieldsModify source="Предквалификационный отбор">
+		<CopyField src="%key%" dst="|Document|ИД_запроса" />
+		<CopyField src="%key%" dst="|Document|ИД_запроса_лот"/>
+		<CopyField src="|Document|ИД_лота_на_ЭТП" dst="|Document|ИД_лота_на_ЭТП"/>
+		<CopyField src="|Document|Номер_на_ЭТП" dst="|Document|Номер_закупки_в_ЕИС"/>
+		<CopyField src="|Document|ИД_на_ЭТП" dst="|Document|ИД_процедуры"/>
+		<CopyField src="|Document|ИД_ЭТП" dst="|Document|ИД_ЭТП"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки" dst="|Document|Организатор_закупки|Организатор_закупки"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" dst="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС" dst="|Document|Организатор_закупки|Организатор_закупки_ЕИС"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+		<CopyField src="|Document|Год_закупки" />
+		<SetField dst="|Document|Создана_в_Е1" value="1"/> 	
+		<CopyField src="|Document|ГРБС|ГРБС" />
+	</FieldsModify>
+	<FieldsModify source="Разъяснения положений документации 223ФЗ">
+		<CopyField src="%key%" dst="|Document|ParentRK" />
+		<CopyField src="|Document|ИД_лота_на_ЭТП"/>
+		<CopyField src="|Document|Номер_закупки_в_ЕИС"/>
+		<CopyField src="|Document|ИД_процедуры"/>
+		<CopyField src="|Document|ИД_ЭТП"/>
+		<CopyField src="|Document|ИД_на_ЭТП"/>
+		<CopyField src="|Document|ИД_запроса_ЕЭТП"/>
+		<CopyField src="|Document|ИД_извещения_на_ЭТП"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"/>
+		<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС"/>
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+		<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор" />
+		<CopyField src="|Document|Подразделение_инициатор|Подразделение_инициатор_наименование" />
+		<CopyField src="|Document|Год_закупки" />
+		<CopyField src="|Document|ГРБС|ГРБС" />
+		<CopyField src="|Document|Создана_в_Е1" />
+		<CopyField src="|Document|Разъяснение_без_запроса" />
+		<CopyField src="|Document|Guid_редакции" />
+		<CopyField src="|Document|Название_закупки" />
+		<CopyField src="|Document|Предмет_договора" />
+		<CopyField src="|Document|Форма_торгов" />
+		<CopyField src="|Document|Форма_торгов_код" />
+		<CopyField src="|Document|Номер_извещения_в_ЕИС" />
+		<CopyField src="|Document|Номер_извещения" />
+		<CopyField src="|Document|Дата_публикации_разъяснения" />
+		<CopyField src="|Document|Сбербанк_АСТ|Тема_разъяснения" />
+		<CopyField src="|Document|Сбербанк_АСТ|Сведения_о_предмете_запроса" />
+	</FieldsModify>
+	<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Извещения о закупочной процедуре 223ФЗ" />
+			<LinkAllLinksWhereFlow name="Заявка на размещение закупки 223ФЗ" />
+	</LinksModify>
+	<OnDocumentCreated transaction="single">
+		<ConditionalActions>
+			<Select>
+			</Select>
+			<Actions>
+				<ConditionalAction>
+					<Conditions>
+						<And>
+							<WhenFieldsEquals tag="{current}" path="|Document|Guid_редакции" value="" />
+						</And>
+					</Conditions>
+					<Actions>
+						<SetFieldGuid targetFlow="{current}" targetField="|Document|Guid_редакции" />
+					</Actions>
+				</ConditionalAction>
+			</Actions>
+		</ConditionalActions>	
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Разъяснения положений документации 223ФЗ' and doc_Id = '{NullToZero({currentDocField=|Document|ParentRK})}']" tag="Родитель" />
+			</Select>
+			<Actions>
+				<AddLink target="{current}" link="Родитель"/>
+			</Actions>
+		</Aggregation>
+		<NamedConstants>
+			<Constant>
+				<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+				<Setting key="CounterNameFormat" value="({|Document|Guid_редакции})"/>
+			</Constant>		
+		</NamedConstants>
+		
+	</OnDocumentCreated>
+	
+	<!-- <OnRegcardEdited transaction="single">	
+			<Aggregation>
+				<Select>	
+					<Select searchString="document[doc_Id = '2602']" tag="AN" />
+					
+				</Select>	
+				<Actions>										
+					<AddLink target="{current}" link="AN"/> 
+			
+					<AddLink target="{current}" link="Подразделения_подчиненные"/>
+					<AddLink target="{current}" link="Подразделение_родитель"/>
+		
+				</Actions>
+			</Aggregation>			
+		</OnRegcardEdited> -->
+</Hooks>

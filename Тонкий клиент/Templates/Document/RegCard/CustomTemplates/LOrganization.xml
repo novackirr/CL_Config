@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<block id="1" name="Общие сведения">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Наименование" name="Наименование" valueType="text" />													
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фирменное_наименование" name="Фирменное наименование" valueType="longtext" />
+												</column>		
+											</row>																		
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Код_клиента_в_ПКБ" name="Код клиента в ПКБ" valueType="text" />
+												</column>
+												<column>									
+													<field fieldType="field" key="|Document|Код_клиента_в_SAP" name="Код клиента в SAP" valueType="text" />	
+												</column>
+											</row>											
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Код_клиента_в_СДО" name="Код клиента в СДО" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Тип_контрагента" name="Тип контрагента" valueType="text" />
+													<field fieldType="field" key="|Document|Тип_контрагента_код" name="Тип_контрагента_код" valueType="text" />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|КПП" name="КПП" valueType="text" />
+												</column>
+											</row>												
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|ОГРН" name="ОГРН/ОГРНИП" valueType="text" />
+												</column>
+												<column>									
+													<field fieldType="field" key="|Document|ОКПО" name="ОКПО" valueType="text" />
+												</column>												
+											</row>
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|ОКВЭД" name="ОКВЭД" valueType="text" />
+												</column>
+												<column>									
+													<field fieldType="field" key="|Document|ОКТМО" name="ОКТМО" valueType="text" />
+												</column>												
+											</row>											
+											<row>
+												<column>													
+													<field fieldType="field" key="|Document|ОКОПФ_наименование" name="ОКОПФ" valueType="text" />
+												</column>	
+												<column>		
+													<field fieldType="field" key="|Document|Дата_постановки_в_НО" name="Дата постановки на учет в НО" valueType="date" />											
+												</column>																							
+											</row>			
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Нерезидент" name="Нерезидент" valueType="boolean" />
+												</column>										
+												<column>													
+													<field fieldType="field" key="|Document|ИП" name="Индивидуальный предприниматель" valueType="boolean" />
+												</column>
+											</row>											
+											<row>
+												<column>													
+													<field fieldType="field" key="|Document|СМП" name="СМП" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Категория_СМП_наименование" name="Категория СМП" valueType="text" />
+												</column>
+											</row>						
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ВЗЛ" name="ВЗЛ по ПоЗ" valueType="boolean" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|ВЗЛ_ПКБ" name="ВЗЛ ПКБ" valueType="boolean" />
+												</column>
+											</row>																						
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Идентификационный_номер" name="Идентификационный код налогоплательщика" valueType="text" />	
+												</column>
+												<column>									
+													<field fieldType="field" key="|Document|Дополнительный_идентификационный_номер" name="Дополнительный идентификационный номер" valueType="text" />	
+												</column>
+											</row>
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Дата_регистрации_в_системе_источнике" name="Дата регистрации в системе-источнике" valueType="date" />	
+												</column>											
+												<column>																									
+													<field fieldType="field" key="|Document|Дата_последнего_изменения" name="Дата последнего изменения" valueType="date" />	
+												</column>																							
+											</row>															
+											<row>									
+												<column>									
+													<field fieldType="field" key="|Document|Дата_последней_проверки_в_ДОБ" name="Дата последней проверки в ДОБ" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="longtext" />
+												</column>														
+											</row>																							
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="2" name="Контактная информация">
+										<rows>										
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Телефон" name="Телефон" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Email" name="Email" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Ссылка_на_контрагента" name="Ссылка на контрагента" valueType="longtext" />
+												</column>
+												<column>													
+												</column>												
+											</row>											
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="3" name="Сведения о местонахождении контрагента">
+										<rows>
+											<row>
+												<column>  
+													<field fieldType="field" key="|Document|Почтовый_адрес" name="Почтовый адрес" valueType="longtext"   />									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Фактический_адрес" name="Фактический адрес" valueType="longtext"  />									
+												</column>
+											</row>		
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Индекс" name="Индекс" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Страна" name="Страна" valueType="text" />
+												</column>												
+											</row>										
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Регион" name="Регион" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Город" name="Город" valueType="text" />
+												</column>
+											</row>			 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Населенный_пункт" name="Населеный пункт" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Район" name="Район" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Улица" name="Улица" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дом" name="Дом" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Корпус" name="Корпус" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Офис" name="Офис" valueType="text" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+				<column>
+					<block id="History" name="История" >
+						<rows>
+							<row>
+								<column>
+									<block id="7" name="Договоры" >
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Договоры" api-table-name="Договоры" height="300">
+														<!-- <column fieldType="field" key="|ИД_договора" valueType="text" name="ИД договора" width="300" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+													<!-- 	<column fieldType="field" key="|Тип_связи" valueType="text" name="Тип связи" width="300" headerNoEllipsis="true" horizontalAlignment="center"/>
+													 -->	<column fieldType="field" key="|Заголовок" valueType="longtext" name="Заголовок" width="300" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Номер_договора" valueType="longtext" name="Номер договора" width="150" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Сумма_договора" valueType="double" name="Сумма договора" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Валюта" valueType="text" name="Валюта" headerNoEllipsis="true" width="75" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Дата_регистрации" valueType="date" name="Дата регистрации" width="75"  headerNoEllipsis="true" horizontalAlignment="center"/>
+														<!-- <column fieldType="field" key="|Название_контрагента_в_закупке" valueType="longtext" name="Название контрагента в закупке" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Название_контрагента_в_договоре" valueType="longtext" name="Название контрагента в договоре" headerNoEllipsis="true" horizontalAlignment="center"/>
+														 --><column fieldType="field" key="|Способ_закупки" valueType="longtext" name="Способ закупки" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>
+														 <column fieldType="field" key="|Ссылка_на_объект_СДО" valueType="url" name="Ссылка на объект" width="200" headerNoEllipsis="true" horizontalAlignment="center"/>
+														
+													</table>
+												</column>
+												
+											</row>
+										</rows>
+									</block>
+									</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="8" name="Закупки" >
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Закупки" api-table-name="Закупки" height="300">
+														<!-- <column fieldType="field" key="|ИД_закупки" valueType="text" name="ИД закупки" width="300" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+														<!-- <column fieldType="field" key="|Тип_связи" valueType="text" name="Тип связи" width="300" headerNoEllipsis="true" horizontalAlignment="center"/>
+													 -->	<column fieldType="field" key="|Заголовок" valueType="longtext" name="Заголовок" width="300" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Номер_закупки" valueType="longtext" name="Номер закупки" width="150" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Дата_создания_закупки" valueType="date" name="Дата регистрации закупки" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>													
+														<column fieldType="field" key="|Способ_закупки" valueType="longtext" name="Способ закупки" width="200" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Ссылка_на_объект_СДО" valueType="url" name="Ссылка на объект" width="250" headerNoEllipsis="true" horizontalAlignment="center"/>
+														
+													</table>
+												</column>
+												
+											</row>
+										</rows>
+									</block>
+									</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="9" name="СЗ на проверку" >
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|СЗ_на_проверку" api-table-name="СЗ" height="300">
+														<!-- <column fieldType="field" key="|ИД_СЗ" valueType="text" name="ИД СЗ" width="300" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+														<!-- <column fieldType="field" key="|Тип_связи" valueType="text" name="Тип связи" width="300" headerNoEllipsis="true" horizontalAlignment="center"/>
+													 -->	<column fieldType="field" key="|Заголовок" valueType="longtext" name="Заголовок" width="200" headerNoEllipsis="true" horizontalAlignment="center"/>
+															<column fieldType="field" key="|Номер_СЗ" valueType="longtext" name="Номер СЗ" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Дата_регистрации_СЗ" valueType="date" name="Дата регистрации СЗ" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>													
+														<column fieldType="field" key="|Ссылка_на_объект_СДО" valueType="url" name="Ссылка на объект" width="150" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<!-- <column fieldType="field" key="|ИД_СЗ_о_результатах" valueType="text" name="ИД СЗ о результатах" width="300" headerNoEllipsis="true" horizontalAlignment="center"/> -->														
+														<column fieldType="field" key="|Заголовок_ответа" valueType="longtext" name="Заголовок ответа" width="200" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Номер_ответной_СЗ" valueType="longtext" name="Номер ответной СЗ" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|Дата_регистрации_ответной_СЗ" valueType="date" name="Дата регистрации ответной СЗ" width="100" headerNoEllipsis="true" horizontalAlignment="center"/>		
+														<!-- <column fieldType="field" key="|Ссылка_на_ответ_в_СДО" valueType="url" name="Ссылка на ответ в СДО" width="150" headerNoEllipsis="true" horizontalAlignment="center"/> -->
+													
+													</table>
+												</column>
+												
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>		
+			<variable variable-name="caption" variable-format="{Name}">
+				<field fieldType="field" key="|Document|Наименование" name="Наименование" valueType="text"  variable-name="Name" variable-format="{value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>     
+			<row>
+				<column>
+					<block id="4" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<block id="5" name="Общие сведения" view="true">
+										<rows>
+											<row>
+												<column> 
+													<field name="Наименование" isLabel="true" edit-name="KratkoeName" title="Введите наименование" />
+												</column>
+
+												<column>									
+													<field name="Фирменное наименование" isLabel="true" edit-name="FullName" title="Введите фирменное наименование" />	
+												</column>
+											</row>
+											<row>
+												<column>
+													<block id="6" name="6">
+														<rows>
+
+															<row>
+																<column>  
+																	<field fieldType="field" key="|Document|Наименование" name="Наименование" valueType="text" isValue="true" edit-name="KratkoeName" edit-required="true"  />								
+																</column>
+															</row>	
+															<row>
+																<column>									
+																	<field name="Тип контрагента" isLabel="true" edit-name="TipUrLico" title="Выберите тип контрагента" />
+																</column>	
+															</row>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Тип_контрагента_код" name="Тип контрагента" valueType="text" isValue="true" edit-name="TipUrLico" dict-column-name="code" dict-edit-name="TipUrLico" edit-tool = "Тип Контрагента" edit-readonly="true" show-dict-column="false" edit-required="true"/>
+																	<field fieldType="field" key="|Document|Тип_контрагента" name="Тип контрагента наименование" valueType="text" isValue="true" edit-name="TipUrLicoName" display-field-part="true" dict-column-name="Наименование" dict-edit-name="TipUrLico"  edit-hidden="true"/>
+																</column>
+															</row>															
+														</rows>
+													</block>									
+												</column>
+												<column>									
+													<field fieldType="field" key="|Document|Фирменное_наименование" name="Фирменное_наименование" valueType="longtext" isValue="true" edit-name="FullName"  />
+												</column>
+											</row>
+											<row>								
+												<column>
+													<block id="7" name="7">
+														<rows>
+															<row>
+																<column>
+																	<field name="ИНН" isLabel="true" edit-name="INN" title="Введите идентификационный номер налогоплательщика" />
+																</column>
+																<column>
+																	<field name="КПП" isLabel="true" edit-name="KPP" title="Введите код причины постановки на учет в налоговый орган" />
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="7" name="7">
+														<rows>
+															<row>
+																<column>
+																	<field name="ОГРН-ОГРНИП" isLabel="true" edit-name="OGRN" title="Введите основной государственный регистрационный номер" />
+																</column>	
+																<column>
+																	<field name="ОКПО" isLabel="true" edit-name="OKPO" title="Введите код общероссийского классификатора предприятий и организаций" />
+																</column>																
+															</row>
+														</rows>
+													</block>
+												</column>								
+											</row>
+											<row>
+												<column>
+													<block id="7" name="7">
+														<rows>
+															<row>
+																<column>													
+																	<field fieldType="field" key="|Document|ИНН" name="ИНН" valueType="text" isValue="true" edit-name="INN" />	
+																</column>
+																<column>													
+																	<field fieldType="field" key="|Document|КПП" name="КПП" valueType="text" isValue="true" edit-name="KPP"  />	
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="7" name="7">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|ОГРН" name="OGRN" valueType="text" isValue="true" edit-name="OGRN"  />
+																</column>	
+																<column>
+																	<field fieldType="field" key="|Document|ОКПО" name="ОКПО" valueType="text" isValue="true" edit-name="OKPO" />
+																</column>																
+															</row>
+														</rows>
+													</block>
+												</column>
+											</row>
+											<row>								
+												<column>
+													<block id="8" name="8">
+														<rows>
+															<row>
+																<column>
+																	<field name="ОКОПФ" isLabel="true" edit-name="OKOPF" title="Выберите код из общероссийского классификатора организационно-правовых форм" />
+																</column>																
+																<column>									
+																	<field name="ОКТМО" isLabel="true"  edit-name="oktmocode" title="Введите ОКТМО" />	
+																</column>																
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="9" name="9">
+														<rows>
+															<row>																
+																<column>
+																	<field name="ОКВЭД" isLabel="true"  edit-name="OKVED"  />																	
+																</column>															
+<!-- 																<column>
+																	<field name="Статус поставщика" isLabel="true" edit-name="Statuscode" />																
+																</column>	 -->																
+															</row>
+														</rows>
+													</block>								
+												</column>	
+											</row>
+											<row>
+												<column>
+													<block id="8_" name="8_">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|ОКОПФ" name="ОКОПФ" valueType="text" isValue="true" edit-name="OKOPF"  edit-tool = "ОКОПФ" edit-readonly="true" dict-column-name="code"  dict-edit-name="OKOPF" show-dict-column="false" display-field-part="false"  />
+																	<field fieldType="field" key="|Document|ОКОПФ_наименование" name="ОКОПФ_наименование" valueType="text" isValue="true" edit-name="OKOPFName" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="OKOPF" dict-column-width-percentage="100"  />										
+																</column>
+																<column>																	
+																	<field fieldType="field" key="|Document|ОКТМО_код" name="ОКТМО код" valueType="text" isValue="true" edit-name="oktmocode" dict-column-name="code" dict-edit-name="oktmocode" edit-tool = "ОКТМО" edit-readonly="true" />
+																	<field fieldType="field" key="|Document|ОКТМО" name="ОКТМО" valueType="text" isValue="true" edit-name="oktmo" display-field-part="true" dict-column-name="Наименование" dict-edit-name="oktmocode"  edit-hidden="true"/>																									
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="9_" name="9_">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|ОКВЭД" name="ОКВЭД" valueType="text" isValue="true" edit-name="OKVED"   />										
+																</column>
+																<column>																	
+<!-- 																	<field fieldType="field" key="|Document|Код_статуса" name="Код статуса" valueType="text" isValue="true" edit-name="Statuscode" dict-column-name="code" dict-edit-name="Statuscode" edit-readonly="true" edit-tool = "Статус контрагента" show-dict-column="false"/>
+																	<field fieldType="field" key="|Document|Статус_поставщика" name="Статус поставщика" valueType="text" isValue="true" edit-name="StatusName"  display-field-part="true" dict-column-name="Наименование"  dict-edit-name="Statuscode" edit-hidden="true"/> -->
+																</column> 
+															</row>
+														</rows>
+													</block>								
+												</column>
+											</row>
+											
+											<row>
+												<column>
+													<block id="90" name="90">
+														<rows>
+															<row>
+																<column>									
+																	<field name="Идентификационный код налогоплательщика" isLabel="true" edit-name="ICodeNalog" title="Введите идентификационный код налогоплательщика" />	
+																</column>
+																<column>
+																	<field name="Дополнительный идентификационный номер" isLabel="true" edit-name="DopIdNumber"  title="Введите дополнительный идентификационный номер налогоплательщика" />
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="100" name="100">
+														<rows>
+															<row>
+																<column>
+																	<field name="" isLabel="true" />
+																</column>																
+																<column>
+																	<field name="Дата постановки на учет в НО" isLabel="true" edit-name="datepostnauch" title="Введите дату поставноки на учет в налоговый орган" />
+																</column>																
+															</row>
+														</rows>
+													</block>
+												</column>
+											</row>											
+											
+											<row>
+												<column>
+													<block id="9" name="9">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Идентификационный_номер" name="Идентификационный код налогоплательщика" valueType="text" isValue="true" edit-name="ICodeNalog"   />
+																</column>
+																<column>
+																	<field fieldType="field" key="|Document|Дополнительный_идентификационный_номер" name="Дополнительный идентификационный номер" valueType="text" isValue="true"  edit-name="DopIdNumber"   />
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="10" name="10">
+														<rows>
+															<row>
+																<column>	
+																	<field fieldType="field" key="|Document|Состоит_на_учете" name="Состоит на учете в налоговых органах РФ" valueType="boolean"  edit-name="UchetNO" />
+																</column>																
+																<column>
+																	<field fieldType="field" key="|Document|Дата_постановки_в_НО" name="Дата постановки на учет в НО" valueType="date" isValue="true" edit-name="datepostnauch"  />
+																</column>																	
+															</row>
+														</rows>
+													</block>
+												</column>
+											</row>											
+																						
+											<row>
+												<column>									
+													<field fieldType="field" key="|Document|Нерезидент" name="Нерезидент" valueType="boolean"  edit-name="nerez"  edit-default-value="0" edit-readonly="true" />
+												</column>								
+												<column>									
+													<field fieldType="field" key="|Document|ИП" name="Индивидуальный предприниматель" valueType="boolean"  edit-name="ip"  edit-default-value="0" />
+												</column>
+												<column>
+													<block id="11" name="11">
+														<rows>
+															<row>
+																<column>									
+																	<field fieldType="field" key="|Document|ВЗЛ" name="ВЗЛ по ПоЗ" valueType="boolean"  edit-name="VZL"   edit-default-value="0" />
+																</column>
+																<column>
+																	<field fieldType="field" key="|Document|ВЗЛ_ПКБ" name="ВЗЛ ПКБ" valueType="boolean" edit-name="VZL_PKB" edit-default-value="0"  />
+																</column>															
+															</row>
+														</rows>
+													</block>
+												</column>												
+												<column>								
+													<field fieldType="field" key="|Document|СМП" name="СМП" valueType="boolean"  edit-name="SMP"  edit-default-value="0" />
+												</column>
+											</row>
+											<row>
+												<column>	
+													<field name="Дополнительная информация" isLabel="true" edit-name="AdditionalInfo" />												
+												</column>
+												<column>
+													<field name="Категория СМП" isLabel="true" edit-name="CategMSP" />														
+												</column>												
+											</row>
+											<row>
+												<column>	
+													<field fieldType="field" key="|Document|Дополнительная_информация" name="Дополнительная информация" valueType="Longtext" isValue="true" edit-name="AdditionalInfo"   />
+												</column>											
+												<column>									
+													<field fieldType="field" key="|Document|Категория_СМП" name="Категория СМП" valueType="text" isValue="true" edit-name="CategMSP" dict-column-name="code" dict-edit-name="CategMSP" edit-tool = "Категория СМП" edit-readonly="true" show-dict-column="true" />
+													<field fieldType="field" key="|Document|Категория_СМП_наименование" name="Категория СМП" valueType="text" isValue="true" edit-name="CategMSPName" dict-column-name="Наименование" dict-edit-name="CategMSP"   show-dict-column="true" display-field-part="true"  edit-hidden="true" />													
+												</column>								
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+						</rows>
+						<rows>
+							<row>
+								<column>
+									<block id="t1cInfo" name="Контактная информация" view="true">
+										<rows>
+
+											<row>
+												<column>
+													<block id="9" name="9" >
+														<rows>
+															<row>
+																<column>
+																	<field name="Код страны" isLabel="true" edit-name="CountryCodeTel" title="Введите телефонный код страны контактного лица"/>
+																</column>
+																<column>
+																	<field name="Код региона" isLabel="true" edit-name="CityCodeTel" title="Введите телефонный код региона контактного лица"/>
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="9" name="9">
+														<rows>
+															<row>
+																<column>
+																	<field name="Телефон" isLabel="true" edit-name="Telefon" title="Заполняется автоматически из кодов страны, региона, номеров телефона и добавочного" />	
+																</column>												
+															</row>
+														</rows>
+													</block>
+												</column>								
+											</row>
+											<row>
+												<column>
+													<block id="9" name="9">
+														<rows>
+															<row>
+																<column>													
+																	<field fieldType="field" key="|Document|Код_страны" name="Код страны"  valueType="text" isValue="true" edit-name="CountryCodeTel" />	
+																</column>
+																<column>													
+																	<field fieldType="field" key="|Document|Код_города" name="Код региона"  valueType="text" isValue="true" edit-name="CityCodeTel"  />
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="9" name="9">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Телефон" name="Телефон" valueType="text" isValue="true" edit-name="Telefon" edit-readonly="true" />
+																</column>												
+															</row>
+														</rows>
+													</block>
+												</column>
+											</row>
+											<row>								
+												<column>
+													<block id="10" name="10">
+														<rows>
+															<row>
+																<column>
+																	<field name="Номер телефона" isLabel="true" edit-name="Tel" title="Введите номер телефона контактного лица"/>
+																</column>
+																<column>
+																	<field name="Добавочный" isLabel="true" edit-name="AdditionalTel" title="Введите добавочный номер контактного лица"/>
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="10" name="10">
+														<rows>
+															<row>
+																<column>
+																	<field name="Email" isLabel="true" edit-name="Email" title="Введите электронную почту контактного лица"/>	
+																</column>												
+															</row>
+														</rows>
+													</block>
+												</column>								
+											</row>
+											<row>
+												<column>
+													<block id="10" name="10">
+														<rows>
+															<row>
+																<column>													
+																	<field fieldType="field" key="|Document|Телефон_номер" name="Телефон"  valueType="text" isValue="true" edit-name="Tel" />	
+																</column>
+																<column>													
+																	<field fieldType="field" key="|Document|Добавочный" name="Добавочный"  valueType="text"  isValue="true" edit-name="AdditionalTel" />
+																</column>
+															</row>
+														</rows>
+													</block>								
+												</column>
+												<column>
+													<block id="10" name="10">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Email" name="Email" valueType="text" isValue="true" edit-name="Email" />
+																</column>												
+															</row>
+														</rows>
+													</block>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Ссылка на контрагента" isLabel="true" edit-name="linkOrg" title="" />
+												</column>
+												<column>
+												</column>
+											</row>
+											<row>
+												<column>													
+													<field fieldType="field" key="|Document|Ссылка_на_контрагента" name="Ссылка на контрагента" valueType="longtext" isValue="true" edit-name="linkOrg" edit-readonly="true" />
+												</column>
+												<column>
+												</column>
+											</row>											
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+						</rows>
+						<rows>
+							<row>
+								<column>
+									<block id="11" name="Сведения о местонахождении контрагента" view="true">
+										<rows>
+											<row>
+												<column>									
+													<field name="Почтовый адрес" isLabel="true" edit-name="postAddress" title="Введите почтовый адрес" />
+												</column>
+												<column>									
+													<field name="Фактический адрес" isLabel="true" edit-name="factoAddress" title="Введите фактический адрес" />	
+												</column>
+											</row>											
+											<row>
+												<column>  
+													<field fieldType="field" key="|Document|Почтовый_адрес" name="Почтовый_адрес" valueType="longtext" isValue="true" edit-name="postAddress"  />									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Фактический_адрес" name="Фактический_адрес" valueType="longtext" isValue="true" edit-name="factoAddress" />									
+												</column>
+											</row>											
+										
+											<row>
+												<column>									
+													<field name="Индекс" isLabel="true" edit-name="Index" title="Введите индекс" />
+												</column>
+												<column>									
+													<field name="Страна" isLabel="true" edit-name="Strana" title="Выберите страну" />
+												</column>
+											</row>
+											<row>
+												<column>  
+													<field fieldType="field" key="|Document|Индекс" name="Индекс" valueType="text" isValue="true" edit-name="Index" />									
+												</column>
+												<column> 						
+													<field fieldType="field" key="|Document|Страна_код" name="Код страны" valueType="text" isValue="true" edit-name="Strana"  edit-tool = "ОКСМ" edit-readonly="true" dict-column-name="code" dict-edit-name="Strana" show-dict-column="false" />
+													<field fieldType="field" key="|Document|Страна" name="Страна" valueType="text" isValue="true" edit-name="StranaName" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Strana" dict-column-width-percentage="100"/>
+												</column>
+											</row>
+											<row>								
+												<column>									
+													<field name="Регион" isLabel="true" edit-name="Region" title="Выберите регион" />	
+												</column>
+												<column>									
+													<field name="Город" isLabel="true" edit-name="Gorod" title="Введите город" />
+												</column>
+											</row>
+											<row>								
+												<column> 
+													<field fieldType="field" key="|Document|Регион_код" name="Код региона" valueType="text" isValue="true" edit-name="Region"  edit-tool = "Коды регионов" edit-readonly="true" dict-column-name="code" dict-edit-name="Region" show-dict-column="false" />
+													<field fieldType="field" key="|Document|Регион" name="Регион" valueType="text" isValue="true" edit-name="RegionName" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Region" dict-column-width-percentage="100"/>									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Город" name="Город" valueType="text" isValue="true" edit-name="Gorod"  />									
+												</column>
+											</row>
+											<row>								
+												<column>									
+													<field name="Населенный пункт" isLabel="true" edit-name="NaselPunk" title="Введите населенный пункт" />	
+												</column>
+												<column>  
+													<field name="Район" isLabel="true" edit-name="Raion" title="Введите регион" />									
+												</column>
+											</row>
+											<row>								
+												<column>  
+													<field fieldType="field" key="|Document|Населенный_пункт" name="Населенный_пункт" valueType="text" isValue="true" edit-name="NaselPunk" />									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Район" name="Район" valueType="text" isValue="true" edit-name="Raion" />									
+												</column>
+											</row>
+											<row>
+												<column>									
+													<field name="Улица" isLabel="true" edit-name="Street" title="Введите улицу" />
+												</column>
+												<column>									
+													<field name="Дом" isLabel="true" edit-name="NumHouse" title="Введите номер дома (владения)" />	
+												</column>
+											</row>
+											<row>
+												<column>  
+													<field fieldType="field" key="|Document|Улица" name="Улица" valueType="text" isValue="true" edit-name="Street"  />									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Дом" name="Дом" valueType="text" isValue="true" edit-name="NumHouse" />									
+												</column>
+											</row>
+											<row>
+												<column>									
+													<field name="Корпус" isLabel="true" edit-name="korpus" title="Введите номер корпуса (строения)" />
+												</column>
+												<column>									
+													<field name="Офис" isLabel="true" edit-name="ofice" title="Введите номер офиса (квартиры)" />	
+												</column>
+											</row>
+											<row>
+												<column>  
+													<field fieldType="field" key="|Document|Корпус" name="Корпус" valueType="text" isValue="true" edit-name="korpus"  />									
+												</column>
+												<column>  
+													<field fieldType="field" key="|Document|Офис" name="офис" valueType="text" isValue="true" edit-name="ofice" />									
+												</column>
+											</row>
+									
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>		  
+							<row>
+								<column>
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Контрагент" />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" edit-value="Контрагент"/>	
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"   edit-default-value ="Контрагент" />									
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowNameI" />							
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-hidden="true" edit-name="regstatus" />
+									<field fieldType="field" key="|Document|Код_контрагента" name="Код_контрагента" valueType="text" isValue="true" edit-hidden="true" edit-name="OrgCode" />	
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>	
+			<variable variable-name="caption" variable-format="{Name}">
+				<field fieldType="field" key="|Document|Наименование" name="Наименование" valueType="text"  variable-name="Name" variable-format="{value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LOrganization.js" />
+	</scripts> 
+</root>

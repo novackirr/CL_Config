@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="CompleteDocuments" allow-filters-row="true" horizontall-scroll="true">
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Регистрационный_номер" weight="15" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" sortPredicate="doc_RegCard/rc_FlowKey" weight="15" />
+    <column fieldType="attribute" key="doc_Creator" name="Автор" valueType="addressbook" sortPredicate="doc_Creator" weight="20" />
+    <column fieldType="attribute" key="doc_ControlCard/cc_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="doc_ControlCard/cc_DueTime" weight="15" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" valueType="text" sortPredicate="doc_RegCard/rc_Index/longtext_Краткое_содержание" weight="35" />
+  </columns>
+</root>

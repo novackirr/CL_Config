@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<FieldsModify>
+		<SetField  dst="|Document|Актуальность" value="1" />
+		<SetField dst="|Document|Имя_потока" value="Сопоставление типов процедур" />
+	</FieldsModify>
+	
+	<LinksModify>
+		<LinkCurrentDoc />
+	</LinksModify>
+	
+	<OnDocumentCreated transaction="single">
+		<NamedConstants>
+			<Constant>
+<!-- 				<Conditions>
+					<Condition path="|Document|Номер_редакции" operation="eq" value="" />							
+				</Conditions> -->
+				<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+				<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Организатор_закупки|Организатор_закупки})"/>
+			</Constant>		
+		</NamedConstants>
+		<Aggregation>
+			<Select>
+				<Select searchString="document[doc_RegCard/rc_FlowName = 'Сопоставление типов процедур' and doc_RegCard/rc_Index/integer_Организатор_закупки = '{currentDocField=|Document|Организатор_закупки|Организатор_закупки}']" tag="Сопоставление_типов_процедур" />
+			</Select>
+			<Actions>
+				<DocsCountCheck sourceTag="Сопоставление_типов_процедур" operation="notEmpty" message="Формирование нового документа недоступно при созданной версии сопоставления типов процедур выбранной организации в базе" />
+			</Actions>
+		</Aggregation>
+	</OnDocumentCreated>
+	
+	<OnRegcardEdited transaction="single"> 
+	</OnRegcardEdited>
+</Hooks>

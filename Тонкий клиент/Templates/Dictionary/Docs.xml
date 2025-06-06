@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		    <row>
+				<column>
+					<field name="Наименование" isLabel="true"  edit-name="NameDocs"/>
+					<field fieldType="field" key="Наименование" name="Наименование" valueType="longtext" isValue="true" edit-name="NameDoc" edit-required="true"/>
+				</column>	
+			</row>		
+			<row>
+				<column>
+					<field name="Группа" isLabel="true" />
+					<field fieldType="field" key="Группа" name="Группа" valueType="text" isValue="true" edit-name="GroupDoc" edit-readonly="true" edit-tool = "Группы документов" dict-column-name="code" dict-edit-name="GroupDoc" display-field-part="true"  show-dict-column="true"/>
+
+				</column>
+			</row>		
+			<row>		
+				<column>					
+					<field fieldType="field" key="Требуемые документы" name="Требуемые документы" valueType="text" isValue="true" edit-name="code" edit-hidden="true"/>
+				</column>
+			</row>				
+		</rows>
+	</edit>	 
+	<scripts>
+		 <script file="Scripts\Content\Dictionary\Docs.js" /> 
+	</scripts>
+</root>

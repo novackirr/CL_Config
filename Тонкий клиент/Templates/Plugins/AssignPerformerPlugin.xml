@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- <access>
+    <item name="Назначить исполнителя" type="AccessGroup"/>
+  </access> -->
+  <flows>
+    <flow name="Заявки на размещение закупки"/>
+  </flows>
+  <task template="Назначить исполнителя"/>
+  <view>
+    <template>
+      <rows>
+        <row>
+          <column>
+            <field name="Выберите исполнителя отдела закупок" isLabel="true" />
+          </column>
+        </row>
+        <row>
+          <column>
+            <field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" name="Ответственный исполнитель" isValue="true"  valueType="addressbook" edit-name="IspName" edit-addressbook-groups = "" address-book-tool-selectable = "Department,Person, {currentUserParents}" address-book-tool = "Address" />
+            <field fieldType="field" key="|Document|Доступ_отзыва" edit-value="1" isValue="true"  valueType="boolean" edit-hidden="true" edit-name="DostupOtz"/> 
+            <!-- <field fieldType="field" key="|Document|Возврат_заявки" edit-value="1" isValue="true"  valueType="boolean" edit-hidden="true" edit-name="Vozvrat"/>  -->
+           
+          </column>
+        </row>
+      </rows>
+    </template>
+  </view>
+</root>

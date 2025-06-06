@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_Creator" name="Автор" valueType="addressbook" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="longtext" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Ознакомление с документом" isLabel="true" />
+          <table key="|Document|Таблица_с_документом_ознакомить">
+            <column fieldType="field" key="|Структурное_подразделение" name="Структурное подразделение" valueType="text" />
+            <column fieldType="field" key="|Структура_ФИО|ИД_ФИО" name="ФИО" valueType="addressbook" />
+            <column fieldType="field" key="|Структура_ФИО|Должность_ФИО" name="Должность" valueType="text" />
+            <column fieldType="field" key="|Дата" name="Дата" valueType="date" />
+            <column fieldType="field" key="|Примечание_к_ознакомлению" name="Примечание" valueType="text" />
+          </table>
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Таблица резолюций" isLabel="true" />
+          <table key="|Document|Резолюции">
+            <column fieldType="field" key="|Дата_наложения_резолюции" name="Дата наложения" valueType="datetime" />
+            <column fieldType="field" key="|Автор_резолюции|ИД_Автор_резолюции" name="Автор резолюции" valueType="addressbook" />
+            <column fieldType="field" key="|Исполнитель_по_резолюции|ИД_Исполнитель_резолюции" name="Исполнитель" valueType="addressbook" />
+            <column fieldType="field" key="|Соисполнитель_резолюции|Соисполнитель_резолюции" name="Соисполнители" valueType="text" />
+          </table>
+        </column>
+      </row>
+      <!-- Пример дополнительного отображения данных для выбранной строки таблицы (подтаблицы и невключенные в колонки поля)
+      <row>
+        <column>
+          <field name="Годовые сметы" isLabel="true" />
+          <table key="|Document|Смета|Годовые_сметы">
+            <column fieldType="field" key="|Код" name="Код" valueType="text" />
+            <column fieldType="field" key="|Наименование_позиции" name="Наименование" valueType="text" />
+            <column fieldType="field" key="|Сумма_сметы_за_год" name="Итоговая сумма" valueType="text" />
+            <column fieldType="field" key="|Год" name="Год" valueType="text" />
+            <view>
+              <rows>
+                <row>
+                  <column>
+                    <field name="Статьи" isLabel="true" />
+                    <table key="|Статьи_расхода_годовой_сметы">
+                      <column fieldType="field" key="|Статья_сметы_табл" name="Статья сметы код" valueType="text" />
+                      <column fieldType="field" key="|Подстатья_сметы_табл" name="Статья сметы описание" valueType="text" />
+                      <column fieldType="field" key="|Статьи_КЭК_код" name="Статья КЭК код" valueType="text" />
+                      <column fieldType="field" key="|Статья_КЭК_описание" name="Статья КЭК описание" valueType="text" />
+                      <column fieldType="field" key="|Сумма_по_статье_КЭК" name="Сумма по статье КЭК" valueType="text" />
+                    </table>
+                  </column>
+                </row>
+              </rows>
+            </view>
+          </table>
+        </column>
+      </row>
+      -->
+    </rows>
+  </view>
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Регистрационный номер" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" isValue="true" edit-name="prefix" edit-autocomplete="Prefix" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" isValue="true" edit-name="regnum" edit-disabled="true" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" isValue="true" edit-name="suffix" edit-autocomplete="Suffix" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Краткое содержание" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="longtext" isValue="true" edit-name="description" edit-required="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-hidden="true" edit-required="true" edit-default-value="{today}" />
+          <field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="document-header" edit-hidden="true" edit-value="Документ" />
+          <field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="links-header" edit-hidden="true" edit-value="Связки" />
+          <field fieldType="field" key="|Control|header" valueType="text" isValue="true" edit-name="control-header" edit-hidden="true" edit-value="Контроль" />
+        </column>
+      </row>
+    </rows>
+    <variables>
+      <variable variable-name="regNumber" variable-format="{prefix}{number}{suffix}">
+        <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" variable-name="prefix" variable-format="{value}-" />
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+        <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" variable-name="suffix" variable-format="-{value}" />
+      </variable>
+    </variables>
+  </edit>
+</root>

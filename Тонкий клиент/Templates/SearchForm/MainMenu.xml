@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FolderNew name="common">
+  <field name="Мои задачи" query="">
+    <field name="На исполнении" query="activity[((act_State = '1') and act_type = 1 and not(act_UserActivityType = 3))]">
+      <field name="Все" query="activity[((act_State = '1') and act_type = '1') and not(act_UserActivityType = 3)]" />
+    </field>
+    <field name="На контроле" query="activity[((act_State = '1') and act_type = '1' and not(act_UserActivityType = 3))]">
+      <field name="Все" query="activity[(act_State = '1') and (act_type = '1') and not(act_UserActivityType = 3) ]" />
+	</field>
+  </field>
+</FolderNew>

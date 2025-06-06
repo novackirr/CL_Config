@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Разъяснения положений документации 223ФЗ" />
+			<LinkAllLinksWhereFlow name="Заявки участников 223ФЗ" />
+			<LinkAllLinksWhereFlow name="Протоколы 223ФЗ" />
+		</LinksModify>
+		<FieldsModify>
+			<SetField  dst="|Document|Актуальность" value="1" />
+			<SetField dst="|Document|Форма_торгов" value="Запросы RFI" />
+			<SetField dst="|Document|Форма_торгов_код" value="6" />
+			<SetField dst="|Document|Имя_потока" value="Запросы RFI" />
+			<CopyField src="%key%" dst="|Document|ParentRK"/>
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Порядок_формирования_цены_договора" />
+			<CopyField src="|Document|ОКАТО" />
+			<CopyField src="|Document|Регион" />
+			<CopyTable src="|Document|Позиции" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|НМЦ_с_НДС" />
+			<CopyField src="|Document|Способ_закупки_код" />
+			<CopyField src="|Document|Способ_закупки" />
+		</FieldsModify>
+		<FieldsModify source="Запросы RFI">
+			<SetField dst="|Document|Имя_потока" value="Запросы RFI" />
+			<SetField  dst="|Document|Актуальность" value="1" />
+			<CopyField src="|Document|Предмет_договора"  />
+			<CopyField src="|Document|Наименование_процедуры"  />
+			<CopyField src="|Document|Цифровой_код_валюты"  />
+			<CopyField src="|Document|Код_валюты"  />
+			<CopyField src="|Document|Валюта"  />
+			<CopyField src="|Document|Курс_валюты"  />
+			<CopyField src="|Document|Дата_курс_валюты"  />
+			<CopyField src="|Document|Сведения_о_цене_код"  />
+			<CopyField src="|Document|Сведения_о_цене"  />
+			<CopyField src="|Document|Формула_цены"  />
+			<CopyField src="|Document|Цена_единицы_тру"  />
+			<CopyField src="|Document|НМЦ_с_НДС"  />
+			<CopyField src="|Document|НМЦ_без_НДС"  />
+			<CopyField src="|Document|Размер_НДС"  />
+			<CopyField src="|Document|НМЦД_в_рублях"  />
+			<CopyField src="|Document|Торги_за_единицу"  />
+			<CopyField src="|Document|Требование_подписания_NDA"  />
+			<CopyField src="|Document|Закупка_не_включена_в_план"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_фамилия"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_имя"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_отчество"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_email"  />
+			<CopyField src="|Document|Плановая_дата_размещения"  />
+			<CopyField src="|Document|Дата_истечения_срока_действия"  />
+			<CopyField src="|Document|Дата_начала_приема_заявок"  />
+			<CopyField src="|Document|Дата_окончания_подачи_заявок"  />
+			<CopyField src="|Document|Порядок_приема_заявок"  />
+			<CopyField src="|Document|Дата_подведения_итогов"  />
+			<CopyField src="|Document|Порядок_подведения_итогов"  />
+			<CopyField src="|Document|Место_подведения_итогов"  />
+			<CopyField src="|Document|Заявки_МСП"  />
+			<CopyField src="|Document|Привлечение_субподрядчиков"  />
+			<CopyTable src="|Document|Позиции"/>
+			<CopyTable src="|Document|Участники_комиссии"/>
+			<CopyField src="|Document|Название_комиссии_код"  />
+			<CopyField src="|Document|Название_комиссии"  />
+			<CopyField src="|Document|Объем_поставки"  />
+			<CopyField src="|Document|Условия_поставки"  />
+			<CopyField src="|Document|Место_поставки"  />
+			<CopyField src="|Document|Дата_отправки_на_согласование"  />
+			<CopyField src="|Document|Планируемая_дата_после_первого_круга_согласования"  />
+			<CopyField src="|Document|Планируемая_дата_устранения_замечаний"  />
+			<CopyField src="|Document|Планируемая_дата_после_второго_круга_согласования"  />
+			<CopyField src="|Document|Руководитель_инициатора|Руководитель_инициатора"  />
+			<CopyField src="|Document|Дата_создания"  />
+			<CopyField src="|Document|Имя_потока"  />
+			<CopyField src="|Document|Инициатор|ИД_Инициатора"  />
+			<CopyField src="|Document|ИД_на_ЭТП"  />
+			<CopyField src="|Document|ИД_лота_на_ЭТП"  />
+			<CopyField src="|Document|ИД_ЭТП"  />
+			<CopyField src="|Document|Организатор_закупки|Ид_организации_на_ЭТП"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ЕИС_справочный"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_адрес"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_ИНН"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_КПП"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_справочный_код"  />
+			<CopyField src="|Document|ИД_круга"  />
+			<CopyField src="|Document|Круг_согласования"  />
+			<CopyField src="|Document|Способ_закупки_код"  />
+			<CopyField src="|Document|Способ_закупки"  />
+			<CopyField src="|Document|Контактное_лицо|Контактное_лицо|Контактное_лицо_телефон_ЕЭТП"  />
+			<CopyField src="|Document|Организация_документации|Организация_документации"  />
+			<CopyField src="|Document|Отработка_ответов_закупщика"  />
+			<CopyField src="|Document|Коммерческая_организация" />
+			<CopyField src="|Document|ИД_в_ЕИС" />
+			<CopyField src="|Document|Дата_публикации_процедуры" />
+			<CopyField src="|Document|Ссылка_на_процедуру" />
+			<CopyField src="|Document|Форма_торгов_код" />
+			<CopyField src="|Document|Форма_торгов" />
+			<CopyField src="|Document|Год_закупки" />
+			<CopyField src="|Document|Начальная_цена_комплекта_без_НДС" />
+			<CopyField src="|Document|Валюта_комплекта" />
+			<CopyField src="|Document|ГРБС|ГРБС" />
+		</FieldsModify>
+		<OnDocumentCreated>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Запросы RFI' and xn-in(doc_Id, {currentDocLinkList})]" tag="Запросы RFI" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals  tag="{current}" path="|Document|ИД_на_ЭТП" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<CopyField sourceFlow='{current}' targetFlow="{current}" sourceField="%key%" targetField="|Document|ИД_документа" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="{current}" path="|Document|ИД_круга" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_круга" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+			<NamedConstants>			
+				<Constant>
+					<Conditions>
+						<Condition path="|Document|Круг_согласования" operation="eq" value="" />							
+					</Conditions>
+					<Setting key="IncrementedElementPath" value="|Document|Круг_согласования"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|ИД_круга})"/>
+				</Constant>		
+			</NamedConstants>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Запросы RFI' and xn-in(doc_Id, {currentDocLinkList})]" tag="Запросы RFI" />
+				</Select>
+				<Actions>
+					<CopyAttachments sourceFlow="Запросы RFI" targetFlow="{current}" sourceCategory="Документация" targetCategory="Документация" copyAttributes="true"/>
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_запроса"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|ИД_в_ЕИС})"/>
+				</Constant>	
+			</NamedConstants>
+		</OnDocumentCreated>
+</Hooks>

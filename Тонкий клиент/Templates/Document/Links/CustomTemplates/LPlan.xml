@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ 
+  <table flow="Позиции плана закупок">
+    <settings>
+      <setting key="canModify" value="true" />
+	  <setting key="canCreateLinks" value="true" />
+	  	<setting key="addButtonText" value="Добавить ППЗ" />
+        <setting key="terminalRoute"  value="Удаление ппз из пз"/>
+    </settings>
+    <columns>
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" weight="15" isOptional="true" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" weight="35" />
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_всего" name="Сумма" valueType="money" weight="25" />
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Тип_особой_закупки" name="Особая закупка" valueType="text" weight="20" />
+	  <column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Планируемый_год_размещения" name="Год размещения" valueType="integer" weight="20" />
+      <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="20" />
+	</columns>
+	<sorts>
+            <sort key="doc_RegCard/rc_Index/text_Статус" direction="ascending" priorityValues="Согласована; Включена в проект плана закупок; Внесение изменений"/>
+        </sorts>
+  </table>
+  
+  
+</root>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <view></view>
+  <edit>
+    <rows>
+     <!-- <row>
+        <column>
+          <field name="Дата регистрации от" isLabel="true"/>
+          <field fieldType="field" key="|От" name="Дата регистрации от" valueType="date" isValue="true" edit-name="from" edit-required="true" edit-default-value="{today}"/>
+        </column>
+        <column>
+          <field name="Дата регистрации до" isLabel="true"/>
+          <field fieldType="field" key="|До" name="Дата регистрации до" valueType="date" isValue="true" edit-name="to" edit-required="true" edit-default-value="{today}"/>
+        </column>
+      </row>
+	  <row>
+       
+        <column>
+          <field name="Организация-заказчик" isLabel="true"/>
+          
+        </column>
+      </row> 
+      <row>
+        <column>
+   <field fieldType="field" key="|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa" related-field-name="|Организация_заказчик"  edit-required="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики"  />
+   <field fieldType="field"  key="|Организация_заказчик_наименование" name="Организация_заказчик_наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-required="true"   edit-readonly="true"  dict-column-name="Полное наименование" edit-hidden="false" display-field-part="true"  />
+        </column> 
+	  <row>  -->
+	<!--	<column>
+   <field fieldType="field" key="|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa" edit-required="true" edit-default-value="0204005039020401001"/>
+   <field fieldType="field"  key="|Организация_заказчик_наименование" name="Организация_заказчик_наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"  edit-required="true"   edit-readonly="true"  dict-column-name="Полное наименование" edit-hidden="false" display-field-part="true"  />
+        </column>
+      </row>-->
+    <!--  <row>
+        <column>
+          <field fieldType="field" key="|Составитель" name="Составитель" valueType="text" isValue="true" edit-name="creator" edit-hidden="true" edit-default-value="{currentUser}"/>
+        </column>
+      </row>   -->
+    </rows>
+  </edit>
+</root>

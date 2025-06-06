@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <derivedFields>
+	<field edit-name="innov" fieldType="field" key="|Document|Инновационная_продукция" isValue="true" valueType="text"/>
+	<field edit-name="OrgZakup" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" isValue="true" valueType="text"/>
+	<field edit-name="god" fieldType="field" key="|Document|Год" isValue="true" valueType="text"/>
+	<field edit-name="orgzakINN" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" isValue="true" valueType="text"/>
+  </derivedFields>
+  <edit>
+     <!--<rows>
+		<row>
+			<column>
+				<field name="Предмет договора" isLabel="true"/>
+                <field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext"  isValue="true" edit-name="NameObZak" />
+			</column>
+			<column>	
+				<field name="Способ закупки" isLabel="true"/> -->
+				<!-- <field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  
+				isValue="true" edit-name="registerSpZakup"  edit-required="true" dict-column-name="code"  
+				edit-tool = "Организации заказчики223" is-select-one-level="2" edit-readonly="true" 
+				one-level-parent="OrgZakKodSprav" dict-edit-name="registerSpZakup" show-dict-column="false"/> -->
+				 <!--<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  
+				isValue="true" edit-name="registerSpZakup"  edit-required="true" dict-column-name="code"  
+				edit-tool = "formdata:Способы закупок"  edit-readonly="true" 
+				dict-edit-name="registerSpZakup"/>
+
+				<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" 
+				valueType="text" isValue="true" edit-name="registerSpZakupName"  edit-required="true" 
+				edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" 
+				dict-edit-name="registerSpZakup" dict-column-width-percentage="70"/>
+
+				<field fieldType="field" key="|Document|Количество_этапов" name="Количество этапов" valueType="integer" isValue="true" edit-name="registerCountEtap"  edit-hidden="true"  edit-readonly="true" dict-column-name="Количество этапов" dict-edit-name="registerSpZakup" show-dict-column="false"/>	
+				<field fieldType="field" key="|Document|Закупка_в_электронной_форме_да_нет" name="Электронная форма" valueType="text" edit-name="registerZakElFormYN" dict-column-name="Электронная форма" dict-edit-name="registerSpZakup" edit-readonly="true" title="Заполняется автоматически в зависимости от выбранного способа закупки" edit-hidden="true" isValue="true"/>
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="НМЦ, руб." isLabel="true"/>
+				<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>
+								<field name="от" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="NMCfrom" weight="300"/>
+							</column>
+							<column>							
+								<field name="до" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="NMCto"  />
+							</column>						
+						</row>
+					</rows>								
+				</block>
+			</column>
+			<column>
+				<field name="Срок исполнения договора" isLabel="true"/>
+				<block id="block2" name="block2"  height="300">		
+					<rows>
+						<row>
+							<column>
+								<field name="от" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="НМЦ" valueType="date" isValue="true"  edit-name="srokFrom" weight="300"/>
+							</column>
+							<column>							
+								<field name="до" isLabel="true" />
+							</column>
+							<column>							
+								<field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="до" valueType="date" isValue="true" edit-name="srokTo"  />
+							</column>	
+						</row>
+					</rows>								
+				</block>
+			</column>
+			<column>       
+				<field name="Участник закупки МCП" isLabel="true"/>	
+				<field fieldType="field" key="|Document|Участник_закупки_СМП" name="Участник закупки МCП" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerUchZakSMP" weight="100"/>											
+			</column>
+		</row>
+	 </rows> -->
+  </edit>
+  <search>
+<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and ( doc_RegCard/rc_Index/integer_Организация_заказчик = @OrgZakup) and ( doc_RegCard/rc_Index/boolean_Для_инновационного_плана = @innov) and ( doc_RegCard/rc_Index/integer_Год_закупки = @god ) and (doc_RegCard/rc_Index/text_ОКПД2 = @registerOKDP) and (doc_RegCard/rc_Index/longtext_ОКПД2_наименование = @registerOKDPName)  and (doc_RegCard/rc_Index/text_ОКВЭД2 = @registerOKVED) and (doc_RegCard/rc_Index/longtext_ОКВЭД2_наименование = @registerOKVEDName) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &gt;= @NMCfrom) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &lt;= @NMCto)  and (doc_RegCard/rc_Index/date_Фактическая_дата_размещения &gt;= @dateFrom) and (doc_RegCard/rc_Index/date_Фактическая_дата_размещения &lt;= @dateTo) and (doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения &gt;= @srokFrom) and (doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения &lt;= @srokTo) and (doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = @registerUchZakSMP) and (doc_RegCard/rc_Index/text_Способ_закупки_код = @registerSpZakup) and ( doc_RegCard/rc_Index/longtext_Место_поставки = @MestoPost) and ( doc_RegCard/rc_Index/longtext_Предмет_договора = @NameObZak) and ((doc_RegCard/rc_Index/text_Статус = 'Внесение изменений') or (doc_RegCard/rc_Index/text_Статус = 'Согласована') or (doc_RegCard/rc_Index/text_Статус = 'Аннулирование утверждено')) and (doc_RegCard/rc_Index/boolean_Актуальность= '1') and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1' or doc_RegCard/rc_Index/boolean_Закупка_не_включена_в_план_закупки ='1' or doc_RegCard/rc_Index/boolean_Малая_закупка ='1' or doc_RegCard/rc_Index/boolean_Аренда_недвижимости ='1' or doc_RegCard/rc_Index/boolean_Закупка_электроэнергии_с_гарантирующим_поставщиком ='1'))" /> 
+   </search>    
+</root>

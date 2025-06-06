@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+
+		<row>
+			<column>
+				 <field name="Организация-заказчик" isLabel="true" />
+                     <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"   dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrgZa" show-dict-column="false" />
+                     <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"    edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZa" display-field-part="true" edit-hidden="true"/>
+				
+			</column>
+			
+						
+		</row>
+		<row>
+			<column>
+				<field name="Дата заключения" isLabel="true"/>	
+				<block id="block1" name="block1"  height="300">		
+					<rows>
+						<row>
+							<column>		
+								<field name="c" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_заключения" name="Дата_заключения" valueType="date" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+							</column>
+							<column>								
+								<field name="по" isLabel="true" />
+							</column>
+							<column>								
+								<field fieldType="field" key="|Document|Дата_заключения" name="до" valueType="date" isValue="true" edit-name="publicDateTo"  />
+							</column>						
+						</row>
+					</rows>								
+				</block>	
+			</column>
+				</row>	
+		<row>
+			<column>
+				<field name="Статус" isLabel="true" />
+				<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Статусы заявки" dict-edit-name="Status" display-field-part="true"/>
+			</column>
+			<column>
+				<field name="" isLabel="true" />
+				
+			</column>
+		</row>
+		
+			
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Соглашения') and (doc_RegCard/rc_Index/text_Организация_заказчик = @registerOrgZa) and ((doc_RegCard/rc_Index/date_Дата_заключения &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/date_Дата_заключения &lt;= @publicDateTo)) and (doc_RegCard/rc_Index/text_Статус =  @Status)" />
+	</search>
+  <scripts>
+    <script file="Scripts/Content/SearchForm/LotsForNotice1.js" />
+  </scripts>
+</root>

@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>	
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="15" name="Общие сведения">
+										<rows>
+
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="datetime" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Номер версии" valueType="integer" />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата публикации" valueType="datetime" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Тип_перечня" name="Тип перечня ТРУ" valueType="text" />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+												<!-- <column>
+													<field fieldType="field" key="|Document|Согласующий|Согласующий_ФИО" name="Согласующий" valueType="text" />
+												</column> -->																								
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки" valueType="longtext" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Причина_изменения" name="Причина изменений перечня ТРУ " valueType="longtext" />
+												</column>
+												<column>
+
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="15" name="Перечень товаров, работ, услуг">
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Перечень_ТРУ_у_СМП" api-table-name="Перечень_ТРУ_у_СМП" height="300">
+														<column fieldType="field" key="|Номер_позиции" valueType="text" name="№" width="20" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|ОКПД2" valueType="text" name="ОКПД2" width="50" headerNoEllipsis="true" horizontalAlignment="center"/>
+														<column fieldType="field" key="|ОКПД2_наименование" valueType="longtext" name="ОКПД2 наименование" width="150" headerNoEllipsis="true" horizontalAlignment="center"/>
+
+													</table>
+												</column>
+											</row>				
+
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+
+
+						</rows>
+					</block>	
+				</column>	
+			</row>
+
+
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Перечень товаров, работ и услуг, {version}{publdate}">
+				<field fieldType="field" key="|Document|Номер_редакции" name="вид_плана" valueType="integer"  variable-name="version" variable-format="версии {value}" /> 
+				<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Год" valueType="date"  variable-name="publdate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="t2cInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<!-- <column>
+									<block id="block1" name="block1">
+										<rows> 	
+											<row>
+												<column>
+													<field name="Дата создания" isLabel="true" edit-name="registerCreate" />
+												</column>
+
+												<column>
+													<field name="Согласующий" isLabel="true" edit-name="Sogl" title="Выберите сотрудника, согласующего заявку на размещение закупки"/> 
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column> -->
+								<column>
+									<block id="block1" name="block1">
+										<rows> 	
+											<row>
+												<column>
+													<field name="Дата создания" isLabel="true" edit-name="registerCreate" />
+												</column>
+												<column>
+													<field name="Дата размещения" isLabel="true" edit-name="DatePubl" />
+												</column>
+
+												<column>
+													<field name="Тип перечня ТРУ" isLabel="true" edit-name="Type" title="Выберите тип перечня товаров, работ и услуг"/> 
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+							</row>
+
+							<row>
+								<!-- <column>
+									<block id="block2" name="block2">
+										<rows> 	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="datetime"  isValue="true" edit-name="registerCreate" edit-required="true"  edit-default-value="{today}" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Согласующий|Согласующий" name="Согласующий" isValue="true" valueType="addressbook"  edit-name="Sogl" address-book-tool ="Sogl" edit-addressbook-groups = ""   address-book-tool-selectable = "WorkGroup, Person, 'Начальник ООТП'|currentOrganization" edit-required="true" />
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column> -->
+								<column>
+									<block id="block2" name="block2">
+										<rows> 	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="datetime"  isValue="true" edit-name="registerCreate" edit-required="true"  edit-default-value="{today}" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата размещения" valueType="datetime"  isValue="true" edit-name="DatePubl" edit-required="true"  edit-default-value="{today}" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Тип_перечня" name="Тип перечня ТРУ" valueType="text"  isValue="true" edit-name="Type" edit-required="true" edit-tool = "Типы перечня ТРУ"  dict-column-name="code"  display-field-part="true"  dict-edit-name="Type" edit-readonly="true" edit-default-value="Субъектов малого и среднего предпринимательства"/>
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+							</row>
+
+							<row>
+								<column>
+									<field name="Организация-заказчик" isLabel="true" edit-name="registerOrgZa" title="Заполняется автоматически организацией, в которой состоит текущий пользователь"/>
+								</column>
+								<column>
+									<field name="Организатор закупки" isLabel="true" edit-name="OrgZakupki" title="Заполняется автоматически организацией, в которой состоит текущий пользователь"/>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-readonly="true" edit-default-value="{currentOrganization}" address-book-tool ="registerOrgZa" edit-addressbook-groups="Department" edit-required="true" />
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="orgzakINN" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="КПП" valueType="text"   isValue="true" edit-name="orgzakKPP" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация_заказчик_ОГРН" valueType="text"   isValue="true" edit-name="orgzakOGRN" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}"/>
+								</column>	
+								<column>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Владелец плана закупок" valueType="addressbook"  isValue="true" edit-name="OrgZakupki"  edit-readonly="true" edit-required="true"  edit-default-value="{currentOrganization}"  address-book-tool ="OrgZakupki" edit-addressbook-groups="Department" /> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiInn"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=INN}"  addressbook-main-field="OrgZakupki" addressbook-property="INN" edit-hidden="true" /> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiKPP"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=KPP}"  addressbook-main-field="OrgZakupki" addressbook-property="KPP" edit-hidden="true"/> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОГРН" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiOgrn"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=OGRN}" addressbook-main-field="OrgZakupki" addressbook-property="OGRN" edit-hidden="true"/> 
+								</column>
+							</row>
+							<!-- <row>
+								<column>
+									<field name="Организатор закупки" isLabel="true" edit-name="OrgZakupki" title="Заполняется автоматически организацией, в которой состоит текущий пользователь"/>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Владелец плана закупок" valueType="addressbook"  isValue="true" edit-name="OrgZakupki"  edit-readonly="true" edit-required="true"  edit-default-value="{currentOrganization}"  address-book-tool ="OrgZakupki" edit-addressbook-groups="Department" /> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ИНН" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiInn"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=INN}"  addressbook-main-field="OrgZakupki" addressbook-property="INN" edit-hidden="true" /> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_КПП" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiKPP"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=KPP}"  addressbook-main-field="OrgZakupki" addressbook-property="KPP" edit-hidden="true"/> 
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ОГРН" name="Владелец плана закупок" valueType="text"  isValue="true" edit-name="OrgZakupkiOgrn"  edit-readonly="true" edit-default-value="{addressbook,value=OrgZakupki,attribute=OGRN}" addressbook-main-field="OrgZakupki" addressbook-property="OGRN" edit-hidden="true"/> 
+								</column>	
+							</row> -->
+							<row>
+								<column>
+									<field name="Причины изменений перечня ТРУ" isLabel="true" edit-name="modification" />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Причина_изменения" name="Владелец плана закупок" valueType="longtext" isValue="true" edit-name="modification" /> 
+
+								</column>	
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Перечень_ТРУ_у_СМП" edit-name="PositionsTRY"  height="500">
+										<column fieldType="field" key="|Номер_позиции" name="№ позиции" valueType="integer" isValue="true" edit-name="NumPos" edit-readonly="true" width="60" headerNoEllipsis="true" horizontalAlignment="center"/>
+										<column fieldType="field" key="|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="2" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP"  title="Выберите код товара, работы или услуги по ОКПД2" width="200" headerNoEllipsis="true"/>	
+										<column fieldType="field" key="|ОКПД2_наименование" name="ОКПД2 наименование" valueType="longtext" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"    display-field-part="false" dict-edit-name="registerOKDP" width="850" /> 
+									</table>
+								</column>
+							</row>
+
+						</rows>
+					</block>
+				</column>
+			</row>			
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>									
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  /> 
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<!-- <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" /> -->
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД в ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_IIS" />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status" />
+									<field fieldType="field" key="|Document|ParentRK" name="ParentRK" valueType="text"  isValue="true" edit-name="ParentRK"/>
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean"  isValue="true" edit-name="actual"/>
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер версии" valueType="integer"  isValue="true" edit-name="NumVersii"  />
+									<field fieldType="field" key="|Document|Требуется_согласование" name="Требуется согласование" valueType="boolean" isValue="true" edit-name="TrebSogl" edit-default-value="1" />
+									<!-- <field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="date" isValue="true"   edit-name="Fact_date_razm"   edit-isInvisible="true" /> -->
+									<field fieldType="field" key="|Document|parentId" name="ИД предыдущей версии" valueType="text" isValue="true"   edit-name="parentId" />
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" address-book-tool="GRBS" addressbook-main-field="registerOrgZa" edit-default-value="{addressbook,value=registerOrgZa,attribute=GRBS}" addressbook-property="GRBS" />
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row> 						
+		</rows>			
+		<variables>
+			<variable variable-name="caption" variable-format="Перечень товаров, работ и услуг, {version}{publdate}">
+				<field fieldType="field" key="|Document|Номер_редакции" name="вид_плана" valueType="integer"  variable-name="version" variable-format="версии {value}" /> 
+				<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Год" valueType="date"  variable-name="publdate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="\Scripts\Content\Document\RegCard\LPTRUySMP223.js" />
+	</scripts>
+</root>

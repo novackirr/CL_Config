@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Название_шаблона" name="Название шаблона" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Поток" name="Поток" valueType="text" />
+								</column>									
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="datetime" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" />
+								</column>				  
+							</row>
+							<row>															
+								<column>
+									<field fieldType="field" key="|Document|Описание_шаблона" name="Описание шаблона" valueType="text" />
+								</column>				  
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<field name="Название шаблона" isLabel="true" edit-name="TemplateName" title="Введите название шаблона"/>								
+								</column>
+								<column>						
+									<field name="Организация-заказчик" isLabel="true" edit-name="registerOrgZaName" title="Заполняется автоматически организацией, которая является инициатором"/>									
+								</column>								
+
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Название_шаблона" name="Название_шаблона" valueType="text"  isValue="true" edit-name="TemplateName" edit-required="true" />
+								</column>
+								<column>															
+									<!-- <field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="longtext" isValue="true" edit-name="registerOrgZaName" address-book-tool= "registerOrgZaName" edit-default-value="{currentOrganization}" edit-addressbook-groups = "Department" /> -->
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик код" valueType="addressbook"  isValue="true" edit-name="registerOrgZa"  	edit-readonly="true"  address-book-tool= "registerOrgZa" edit-default-value="{currentOrganization}" edit-addressbook-groups = "Department"  />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Организация-заказчик СПЗ" valueType="text" isValue="true" edit-name="registerOrgZaSPZ"   edit-default-value="{addressbook,value=registerOrgZa,attribute=SPZCode}" edit-hidden="true" edit-value="{addressbook,value=registerOrgZa,attribute=SPZCode}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Организация_заказчик_код_по_СР" valueType="text" isValue="true" edit-name="registerOrgZaSr" edit-readonly="true"  edit-default-value="{addressbook,value=registerOrgZa,attribute=SRCode}"  edit-hidden="true" edit-value="{addressbook,value=registerOrgZa,attribute=SRCode}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Код_в_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode}" edit-value="{addressbook,value=registerOrgZa,attribute=EISCode}"/>
+								</column>								
+							</row>
+							<row>
+								<column>
+										<block id="block4" name="block4">
+											<rows> 	
+												<row>
+													<column>
+														<field name="Дата создания" isLabel="true" edit-name="DateCreate" title="Введите дату создания. Заполняется автоматически текущей датой"/>								
+													</column>
+													<column>						
+														<field name="Поток" isLabel="true" edit-name="flowName" title="Выберите поток"/>									
+													</column>													
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Дата_создания" name="Дата_создания" valueType="date"  isValue="true" edit-name="DateCreate" edit-default-value="{today}" />
+													</column>
+													<column>
+														<field fieldType="field" key="|Document|Поток" name="Поток" edit-name="flowName" valueType="text"  isValue="true" edit-dictionary="#Потоки" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-required="true"/>
+													</column>
+												</row>
+							
+											</rows> 
+										</block>
+								</column>
+								<column>
+								</column>	
+							</row>
+							<row>
+								<column>
+									<field name="Описание шаблона" isLabel="true" edit-name="Templateopis" title="Введите описание шаблона"/>								
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Описание_шаблона" name="Описание_шаблона" valueType="longtext"  isValue="true" edit-name="Templateopis" />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+			
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>																		
+									<!-- <field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   /> -->
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-default-value="Шаблон типового документа" />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" edit-default-value="Шаблон типового документа"/>	
+								
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  edit-default-value="Шаблон типового документа"/>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" /> 									
+									</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row> 	 
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{prefix}{number}{suffix}">
+				<field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" variable-name="prefix" variable-format="{value}-" />
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера"	valueType="text" variable-name="number" variable-format="{value}" />
+				<field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера"	valueType="text" variable-name="suffix" variable-format="-{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="Scripts\Content\Document\RegCard\LPrintForm.js" />
+	</scripts>
+</root>	
+

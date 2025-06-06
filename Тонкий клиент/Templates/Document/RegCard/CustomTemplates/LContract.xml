@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>	
+							<row>
+								<column>
+									<block id="123" name="Общие сведения">		 
+										<rows>
+										<row>
+										<column>
+											<field fieldType="field" key="|Document|Позиции_не_учитывать" name="Позиции_не_учитывать" valueType="boolean" />	
+												</column>
+												<column>
+											<field fieldType="field" key="|ИД_регистратора" name="Key" valueType="text" />	
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />					  
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус_в_ЕИС" name="Статус в ЕИС" valueType="text" />					  
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_контракта" name="Номер контракта" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Вид_документа" name="Вид документа" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="datetime" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_реестровой_записи" name="Номер реестровой записи" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номер_по_гос.оборонному_заказу" name="Номер по гос.оборонному заказу" valueType="text" />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ИКЗ" name="ИКЗ" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|ИД_в_РК_РБГ" name="ИД в РК РБГ" valueType="text" />
+												</column>
+											</row>				
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="456" name="Сведения о закупке">		 
+										<rows>
+										<row>
+											<column>
+													<field fieldType="field" key="|Document|Номер_закупки" name="Номер закупки" valueType="text" />
+											</column>
+											<column>
+													<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_протокола" name="Дата определения поставщика" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика " valueType="text" />
+												</column>
+											</row>					
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Основание_единственный_поставщик" name="Основание заключения с ед поставщиком" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Документ_основания" name="Документ, подтверждающий основание заключения контракта с единственным поставщиком" valueType="longtext" />
+												</column>
+											</row>
+										</rows>
+									</block> 
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="23" name="Информация о контракте">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения контракта" valueType="date" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_начала_исполнения_контракта" name="Дата начала исполнения контракта" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_окончания_исполнения_контракта" name="Дата окончания исполнения контракта" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Роль_организации_разместившей_контракт" name="Роль организации разместившей контракт" valueType="text" />
+												</column>
+											</row>												
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Организатор_опубликовавшая_контракт_наименование" name="Организация опубликовавшая контракт" valueType="text" />
+												</column>								
+												<column>
+													<field fieldType="field" key="|Document|Роль_организатора_закупки" name="Роль организации опубликовавшей контракт" valueType="text" />
+												</column>
+											</row>			
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Способ_указания_цены" name="Способ указания цены" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Цена_контракта" name="Цена контракта" valueType="money" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|НДС" name="НДС" valueType="double" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Курс_валюты" name="Курс валюты" valueType="double" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Номинал_валюты" name="Номинал валюты" valueType="integer" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Цена_контракта_в_рублях" name="Цена контракта в руб." valueType="money" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|НДС_в_рублях" name="НДС в руб." valueType="double" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Объем_привлечения_субподрядчика" name="Объем привлечения субподрядчика в %" valueType="double" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Объем_в_рублевом_эквиваленте" name="Объем привлечения субподрядчика в руб." valueType="money" />
+												</column>
+												</row>
+												<row>
+												<column>
+													<field fieldType="field" key="|Document|Формула_цены" name="Формула цены" valueType="longtext" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>	
+							<row>
+								<column>
+									<block id="Postav" name="Сведения о поставщике">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Поставщики" height="300">
+														<column fieldType="field" key="|Поставщики_наименование" valueType="longtext" name="Наименование" width="300"/>
+														<column fieldType="field" key="|Поставщики_тип" valueType="text" name="Тип" width="150"/>
+														<column fieldType="field" key="|Поставщики_ИНН" valueType="text" name="ИНН" width="120"/>
+														<column fieldType="field" key="|Поставщики_КПП" valueType="text" name="КПП" width="100"/>
+														<column fieldType="field" key="|Поставщики_ОКПО" valueType="text" name="ОКПО" width="100"/>
+														<column fieldType="field" key="|Дата_постановки_в_НО" valueType="text" name="Постановка на учет" width="100"/>
+														<column fieldType="field" key="|Поставщики_ОКОПФ" valueType="text" name="ОКОПФ" width="100"/>
+														<column fieldType="field" key="|Поставщики_ОКТМО" valueType="text" name="ОКТМО" width="120"/>
+														<column fieldType="field" key="|Поставщик_Владимирской_области" valueType="text" name="Поставщик Владимирской области" width="200"/>
+														<column fieldType="field" key="|Поставщики_адрес" valueType="text" name="Адрес" width="230"/>	
+														<column fieldType="field" key="|Поставщики_код_нерезидента" valueType="text" name="Код нерезидента" width="120"/>	
+														<column fieldType="field" key="|Поставщики_страна" valueType="text" name="Страна" width="150"/>	  
+														<column fieldType="field" key="|Статус_поставщика" valueType="text" name="Статус" width="200"/>	
+														<column fieldType="field" key="|Поставщики_контактное_лицо_фамилия" name="Фамилия" valueType="text"  width="120"/>
+														<column fieldType="field" key="|Поставщики_контактное_лицо_имя" name="Имя" valueType="text"  width="120"/>
+														<column fieldType="field" key="|Поставщики_контактное_лицо_отчество" name="Отчество" valueType="text" width="120"/>
+														<column fieldType="field" key="|Поставщики_контактное_лицо_email" name="E-mail" valueType="text" width="120"/>
+														<column fieldType="field" key="|Поставщики_контактное_лицо_телефон" name="Телефон" valueType="text" width="100"/>
+													</table>
+												</column>
+											</row>
+											
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="Obespechnie" name="Обеспечение исполнения">		 
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Требование_об_обеспечении_исполнения_контракта" name="Требование об обеспечении исполнения контракта" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия_выданная_банком" name="Банковская гарантия, выданная банком в соответствии со статьей 45 Федерального закона" valueType="boolean" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств_на_счет" name="Внесение денежных средств на указанный заказчиком счет" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="15" name="Банковская гарантия">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|РН_банковской_гарантии" name="Реестровый номер банковской гарантии" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|Сумма_банковской_гарантии" name="Сумма банковской гарантии" valueType="money" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|Валюта_банковской_гарантии" name="Валюта БГ" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|Номер_документа_реестровой_записи_БГ" name="Номер документа реестровой записи БГ" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|Курс_валюты_гарантии" name="Курс валюты БГ" valueType="double" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Банковская_гарантия|Сумма_банковской_гарантии_в_рублевом_эквиваленте" name="Сумма банковской гарантии в руб." valueType="money" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="16" name="Внесение денежных средств">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Внесение_денежных_средств|Размер_обеспечения_контракта" name="Размер обеспечения" valueType="money" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Внесение_денежных_средств|Валюта_обеспечения_исполнения" name="Валюта обеспечения исполнения" valueType="text" />
+												</column>
+											</row>								
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Внесение_денежных_средств|Курс_валюты_исполнения" name="Курс валюты исполнения" valueType="double" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Внесение_денежных_средств|Размер_обеспечения_в_рублевом_эквиваленте" name="Размер обеспечения в руб." valueType="money" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+					
+					<block id="financ" name="Финансирование">		 
+						<rows>
+							<row>
+								<column>
+									<block id="budjet" name="За счет бюджетных средств">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Бюджет_наименование" name="Бюджет наименование" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|ОКТМО" name="ОКТМО" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Уровень_бюджета_наименование" name="Уровень бюджета" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Уровень_бюджета_фонда" name="Уровень бюджета фонда" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_финансирования_бюджетных_средств" name="Сумма финансирования бюджетных средств" valueType="money" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Этапы исполнения" isLabel="true" />
+													<table key="|Document|Этапы_исполнения_бюджетные_средства" height="200">
+														<column fieldType="field" key="|Дата_окончания_этапа_бюджетные_средства" valueType="date" name="Дата окончания этапа" width="100"/>
+														<column fieldType="field" key="|Сумма_платежей_этапа_БС" name="Сумма платежей этапа" valueType="money" width="100" />
+														<view>
+															<rows>
+																<row>
+																	<column>
+																		<field name="Платежи этапа" isLabel="true" />
+																		<table key="|Платежи_этапа_бюджетные_средства" height="300">
+																			<column fieldType="field" key="|КБК_бюджетные_средства" valueType="text" name="КБК" width="100"/>
+																			<column fieldType="field" key="|Примечание_БС" valueType="longtext" name="Примечание" width="200"/>
+																			<column fieldType="field" key="|Месяц_платежа_бюджетные_средства" valueType="text" name="Месяц" width="100"/>
+																			<column fieldType="field" key="|Год_платежа_бюджетные_средства" valueType="integer" name="Год" width="100"/>
+																			<column fieldType="field" key="|Сумма_платежа_бюджетные_средства" valueType="money" name="Сумма в валюте контракта" width="100"/>
+																			<column fieldType="field" key="|Сумма_платежа_в_рублях_БС" valueType="money" name="Сумма в рублевом эквиваленте" width="100"/>
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</view>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="budjet" name="За счет внебюджетных средств">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Вид_внебюджетных_средств" name="Вид внебюджетных средств" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_финансирования_внебюджетных_средств" name="Сумма финансирования внебюджетных средств" valueType="money" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Этапы исполнения" isLabel="true" />
+													<table key="|Document|Этапы_исполнения_внебюджетные_средства" height="200">
+														<column fieldType="field" key="|Дата_окончания_этапа_внебюджетные_средства" valueType="date" name="Дата окончания этапа" width="100"/>
+														<column fieldType="field" key="|Сумма_платежей_этапа_ВС" name="Сумма платежей этапа" valueType="money" width="100"/>
+														<view>
+															<rows>
+																<row>
+																	<column>
+																		<field name="Платежи этапа" isLabel="true" />
+																		<table key="|Платежи_этапа_внебюджетные_средства" height="300">
+																			<column fieldType="field" key="|КВР_внебюджетные_средства" valueType="text" name="КВР" width="100"/>
+																			<column fieldType="field" key="|Примечание_ВС" valueType="longtext" name="Примечание" width="200"/>
+																			<column fieldType="field" key="|Месяц_платежа_внебюджетные_средства" valueType="text" name="Месяц" width="100"/>
+																			<column fieldType="field" key="|Год_платежа_внебюджетные_средства" valueType="integer" name="Год" width="100"/>
+																			<column fieldType="field" key="|Сумма_платежа_внебюджетные_средства" valueType="money" name="Сумма в валюте контракта" width="100"/>
+																			<column fieldType="field" key="|Сумма_платежа_в_рублях_ВС" valueType="money" name="Сумма в рублевом эквиваленте" width="100"/>
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</view>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="Ispolnenie" name="Исполнение">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Этапы исполнения контракта" isLabel="true" />
+									<table key="|Document|Этапы_исполнения_контракта" height="200">
+										<column fieldType="field" key="|Дата_окончания_этапа_контракта" valueType="date" name="Дата окончания этапа" width="100"/>
+										<column fieldType="field" key="|Сумма_платежей_этапа_контракта" valueType="money" name="Сумма платежей" width="100"/>
+										<column fieldType="field" key="|Фактическая_оплата_по_этапу" valueType="money" name="Фактическая оплата" width="100"/>
+										<column fieldType="field" key="|Остаток_платежей_по_этапу" valueType="money" name="Остаток платежей" width="100"/>
+										<column fieldType="field" key="|Этап_закрыт_контракта" valueType="boolean" name="Этап закрыт" width="100"/>
+										<view>
+											<rows>
+												<row>
+													<column>
+														<field name="исполнение в рамках этапа" isLabel="true" />
+														<table key="|Платежи_этапа" height="200">
+															<column fieldType="field" key="|Номер_исполнения" valueType="text" name="Номер исполнения" width="100"/>
+															<column fieldType="field" key="|Фактически_оплачено" valueType="money" name="Фактически оплачено" width="150"/>
+															<column fieldType="field" key="|Фактически_оплачено_в_рублях" valueType="money" name="Фактически оплачено в рублях" width="150"/>
+														</table>
+													</column>
+												</row>
+											</rows>
+										</view>
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Фактическая_сумма_оплаты" name="Фактическая сумма оплаты" valueType="money" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Остаток_по_контракту" name="Остаток по контракту" valueType="money" />
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="Izmenenia" name="Изменения">		 
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_дата" name="Дата документа основания изменения" valueType="date" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Корректировка_ошибок_в_контракте" name="Корректировка ошибок в контракте" valueType="boolean" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_контракта" name="Документ основания изменения контракта"  valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_реквизиты" name="Реквизиты документа основания изменения" valueType="longtext" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Причина_изменений_контракта" name="Причина изменений контракта" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Основание_для_изменений" name="Основание для изменений" valueType="longtext" />
+								</column>
+								
+							</row>
+							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Изменение_объектов_закупки" name="Изменение объектов закупки" valueType="longtext" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Основание_прекращения_БГ" name="Основание прекращения банковской гарантии" valueType="longtext" />
+								</column>
+							</row>
+							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Прекращение_банковской_гарантии" name="Прекращение банковской гарантии" valueType="boolean" />
+									</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_прекращения_БГ" name="Дата прекращения банковской гарантии" valueType="date" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Возмещение фактически понесенного ущерба" isLabel="true" />
+									<table key="|Document|Возмещение_фактически_понесенного_ущерба" height="300">
+										<column fieldType="field" key="|Дата_документа_возмещения_ущерба" valueType="date" name="Дата документа" width="100"/>
+										<column fieldType="field" key="|Номер_документа_возмещения_ущерба" valueType="text" name="Номер документа" width="100"/>
+										<column fieldType="field" key="|Наименование_документа_возмещения_ущерба" valueType="text" name="Наименование документа" width="200"/>
+										<column fieldType="field" key="|Сумма_возмещения_ущерба" valueType="money" name="Сумма возмещения" width="100"/>
+										<column fieldType="field" key="|Валюта_возмещения_ущерба" valueType="text" name="Валюта" width="100"/>
+										<column fieldType="field" key="|Курс_валюты_возмещения_ущерба" valueType="double" name="Курс валюты" width="100"/>
+										<column fieldType="field" key="|Сумма_возмещения_ущерба_в_рублях" valueType="money" name="Сумма возмещения в руб." width="100"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>					
+				</column>
+			</row>						
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Контракт{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+<edit>
+		<rows>      
+			
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+						<row>
+								<column>
+									<field name="Позиции_не_учитывать" isLabel="true" edit-name="NotPos"/>	
+								</column>
+								</row>
+								<row>
+										<column>
+										<field fieldType="field" key="|Document|Позиции_не_учитывать" name="Позиции_не_учитывать" valueType="boolean" isValue="true"  edit-name="NotPos" edit-readonly="true"/>		
+												</column>
+											</row>
+											
+							<row>
+								<column>
+									<field name="Дата регистрации" isLabel="true" edit-name="regdate"/>	
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" edit-default-value="{today}" edit-name="regdate" isValue="true" edit-readonly="true" />
+								</column>
+								<column>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Номер контракта" isLabel="true" edit-name="nomercont" />
+								</column>
+								<column>
+									<field name="Номер закупки в ЕИС" isLabel="true"  edit-name="nomerzak"/>
+								</column>								
+								<column>
+									<field name="Номер реестровой записи" isLabel="true" edit-name="nomerreestr" />
+								</column>
+								<column>
+									<field name="Номер по гос.оборонному заказу" isLabel="true"  edit-name="nomergos" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Номер_контракта" name="Номер контракта" valueType="text" isValue="true" edit-name="nomercont" edit-required="true"  />
+								</column>
+								<column>
+								<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" isValue="true" edit-name="nomerzak"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Номер_реестровой_записи" name="Номер реестровой записи" valueType="text" isValue="true" edit-name="nomerreestr"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Номер_по_гос.оборонному_заказу" name="Номер по гос.оборонному заказу" valueType="text" isValue="true" edit-name="nomergos" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Вид документа" isLabel="true"  edit-name="viddocument"/>
+								</column> 
+								<column>
+									<block id="block4" name="block4">	
+										<rows>
+											<row>
+												<column>
+													<field name="Дата заключения контракта" isLabel="true" edit-name="datezaklcontr"/>
+												</column>
+												<column>
+													<field name="Дата определения поставщика" isLabel="true"  edit-name="dateprotocol"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+									<block id="block5" name="block5">	
+										<rows>
+											<row>
+												<column>
+													<field name="Дата начала исполнения контракта" isLabel="true" edit-name="datestart"/>
+												</column>
+												<column>
+													<field name="Дата окончания исполнения контракта" isLabel="true"  edit-name="datefinish"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Вид_документа" name="Вид документа" valueType="text" isValue="true" edit-name="viddocument"  edit-default-value="Основное" dict-column-name="code" dictionary-selection-start-level="1" edit-tool =  "Вид документа" display-field-part="true" dict-edit-name="viddocument" />
+								</column>
+								<column>
+									<block id="block1" name="block1">	
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения контракта" valueType="date"  isValue="true" edit-name="datezaklcontr" edit-required="true"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_протокола" name="Дата определения поставщика" valueType="date"  isValue="true" edit-name="dateprotocol" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+									<block id="block2" name="block2">	
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_начала_исполнения_контракта" name="Дата начала исполнения контракта" valueType="date"  isValue="true" edit-name="datestart" edit-required="true"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_окончания_исполнения_контракта" name="Дата окончания исполнения контракта" valueType="date"  isValue="true" edit-name="datefinish" edit-required="true"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Организация опубликовавшая контракт" isLabel="true" edit-name="organiz"/>
+								</column>
+								<column>
+									<field name="Роль организации разместившей контракт" isLabel="true" edit-name="rolorganiz"/>
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Организатор_опубликовавшая_контракт" name="Организация опубликовавшая контракт" valueType="text"  isValue="true" edit-name="organiz"   dict-column-name="code"  edit-tool = "Организации заказчики" is-select-one-level="1" edit-readonly="true"   show-dict-column="false" dict-edit-name="organiz" />
+									<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Организатор_опубликовавшая_контракт_наименование" name="Организация опубликовавшая контракт наименование" valueType="text" isValue="true" edit-name="organizName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="organiz" dict-column-width-percentage="100"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Роль_организации_разместившей_контракт_код" name="Роль организации разместившей контракт" valueType="text"  isValue="true" edit-name="rolorganiz"   dict-column-name="code"  edit-tool = "Роль организатора закупки контракт" is-select-one-level="1" edit-readonly="true"   show-dict-column="false" dict-edit-name="rolorganiz" />
+									<field fieldType="field" key="|Document|Роль_организации_разместившей_контракт" name="Роль организации разместившей контракт наименование" valueType="text" isValue="true" edit-name="rolorganizName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="rolorganiz" dict-column-width-percentage="100"/>
+								</column>	
+							</row>
+							<row>
+								<column>
+									<field name="Основание заключения с ед поставщиком" isLabel="true" edit-name="osnovanie"/>
+								</column>
+								<column>
+									<field name="Документ, подтверждающий основание заключения контракта с единственным поставщиком" isLabel="true" edit-name="docosn"/>
+								</column>
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Документы_основание_ед_поставщик_код" name="Основание заключения с ед поставщиком" valueType="longtext"  isValue="true" edit-name="osnovanie"   dict-column-name="code"  edit-tool = "Документы основание единственный поставщик" is-select-one-level="2" edit-readonly="true"   show-dict-column="false" dict-edit-name="osnovanie" />
+									<field fieldType="field" key="|Document|Документы_основание_ед_поставщик_наименование" name="Основание заключения с ед поставщиком наименование" valueType="longtext" isValue="true" edit-name="osnovanieName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="osnovanie" dict-column-width-percentage="200"/>
+								</column>			
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания" name="Документ, подтверждающий основание заключения контракта с единственным поставщиком" valueType="longtext" isValue="true" edit-name="docosn"  dict-column-name="code" dictionary-selection-start-level="1" edit-tool =  "Документы основание единственный поставщик" display-field-part="true" dict-edit-name="docosn" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field  name="Формула цены" isLabel="true" edit-name="formula"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Формула_цены" name="Формула цены" valueType="longtext" isValue="true" edit-name="formula"/>
+								</column>
+							</row>														
+							<row>
+								<column>
+									<field name="Способ указания цены" isLabel="true" edit-name="sposob"/>
+								</column>
+								<column>
+									<field name="Валюта" isLabel="true" edit-name="currency" />
+								</column>
+								<column>
+									<field name="Цена контракта" isLabel="true" edit-name="price"/>
+								</column>
+								<column>
+									<field name="НДС" isLabel="true" edit-name="nds"/>
+								</column>
+							</row>
+							
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Способ_указания_цены_код" name="Способ указания цены" valueType="text"  isValue="true" edit-name="sposob" edit-required="true"  dict-column-name="code"  edit-tool = "Способ указания цены" is-select-one-level="1" edit-readonly="true"   show-dict-column="false" dict-edit-name="sposob" />
+									<field fieldType="field" key="|Document|Способ_указания_цены" name="Способ указания цены наименование" valueType="text" isValue="true" edit-name="sposobName"  edit-readonly="true" edit-required="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="sposob" dict-column-width-percentage="80"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Код_валюты" name="Валюта" valueType="text"  isValue="true" edit-name="currency" edit-required="true"  edit-default-value="RUB" dict-column-name="code"  edit-tool = "Валюта" is-select-one-level="1" edit-readonly="true" show-dict-column="false" dict-edit-name="currency" />
+									<field fieldType="field" key="|Document|Валюта" name="Валюта наименование" valueType="text" isValue="true" edit-name="currencyName"  edit-readonly="true" edit-default-value="Российский рубль" edit-required="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="currency" dict-column-width-percentage="80"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Цена_контракта" name="Цена контракта" valueType="money" isValue="true" edit-required="true" edit-name="price"  />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|НДС" name="НДС" valueType="double" isValue="true" edit-name="nds" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Курс валюты" isLabel="true" edit-name="curs" />
+								</column>
+								<column>
+									<field name="Номинал валюты" isLabel="true" edit-name="nominal"/>
+								</column>
+								<column>
+									<field name="Цена контракта в руб." isLabel="true" edit-name="pricerub"/>
+								</column>
+								<column>
+									<field name="НДС в руб." isLabel="true" edit-name="ndsrub"/>
+								</column>
+							</row>
+							<row>
+							    <column>
+									
+									<field fieldType="field" key="|Document|Курс_валюты" name="Курс валюты" valueType="double" isValue="true" edit-name="curs" />
+								</column>
+								<column>
+									
+									<field fieldType="field" key="|Document|Номинал_валюты" name="Номинал валюты" valueType="integer" isValue="true" edit-default-value="1" edit-name="nominal" />
+								</column>
+								<column>
+									
+									<field fieldType="field" key="|Document|Цена_контракта_в_рублях" name="Цена контракта в руб." valueType="money" isValue="true" edit-name="pricerub" />
+								</column>
+								<column>
+									
+									<field fieldType="field" key="|Document|НДС_в_рублях" name="НДС в руб." valueType="double" isValue="true" edit-name="ndsrub" />
+								</column>
+								
+							</row>
+							<row>
+								<column>
+									<field name="Объем привлечения субподрядчика в %" isLabel="true" edit-name="obem"/>
+								</column>
+								<column>
+									<field name="Объем привлечения субподрядчика в руб." isLabel="true" edit-name="obemrub"/>
+								</column>
+								<column>					
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Объем_привлечения_субподрядчика" name="Объем привлечения субподрядчика в %" valueType="double" isValue="true" edit-name="obem" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Объем_в_рублевом_эквиваленте" name="Объем привлечения субподрядчика в руб." valueType="money" isValue="true" edit-name="obemrub" />
+								</column>								
+								<column>
+								</column>
+								<column>
+								</column>
+							</row>							
+							<row>
+								<column>
+									<field name="Сведения о поставщике" isLabel="true" />
+									<table key="|Document|Поставщики" edit-name="Post" height="300">		
+										<column fieldType="field" key="|Поставщики" name="Наименование" valueType="longtext" isValue="true" edit-name="Postavschik" edit-required="true" edit-readonly="true" dict-column-name="code"  dictionary-selection-start-level="1" edit-tool = "Контрагенты"  dict-edit-name="Postavschik" show-dict-column="false" width="300"  />							
+										<column fieldType="field" key="|Поставщики_наименование" name="Поставщик_наименование" valueType="text" isValue="true"  edit-name="PostavschikName" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true"  display-field-part="true" dict-edit-name="Postavschik"  dict-column-width-percentage="70" />		
+										<column fieldType="field" key="|Поставщики_тип" name="Тип" valueType="text" isValue="true" edit-name="TipPostav" edit-required="true" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Тип Контрагента"  dict-edit-name="TipPostav" show-dict-column="false" width="200"  />							
+										<column fieldType="field" key="|Поставщики_тип_наименование" name="Тип_код" valueType="text" isValue="true"  edit-name="TipPostavName" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" edit-required="true" display-field-part="true"  dict-edit-name="TipPostav"  width="100" />												
+                                        <column fieldType="field" key="|Поставщики_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="INNPostav"  dict-column-name="ИНН" dict-edit-name="Postavschik"  dict-column-width-percentage="15" width="150"/>										
+										<column fieldType="field" key="|Поставщики_КПП" name="КПП" valueType="text" isValue="true" edit-name="KPPPostav" dict-column-name="КПП"  edit-required="true"  dict-edit-name="Postavschik"  dict-column-width-percentage="15"/>
+										<column fieldType="field" key="|Поставщики_ОКПО" name="ОКПО" valueType="text" isValue="true" edit-name="OKPOPostav"  dict-column-name="ОКПО"  dict-edit-name="Postavschik" show-dict-column="false" width="100"/>							
+										<column fieldType="field" key="|Дата_постановки_в_НО" name="Постановка на учет" valueType="date"  isValue="true" edit-name="Postanovka" dict-column-name="Дата постановки на учет" dict-edit-name="Postavschik" show-dict-column="false" width="120"/>
+										<column fieldType="field" key="|Поставщики_ОКОПФ" name="ОКОПФ" valueType="text" isValue="true" edit-name="OKOPFPostav"  edit-required="true" dict-column-name="ОКОПФ" dict-edit-name="Postavschik" show-dict-column="false" width="100" />
+										<column fieldType="field" key="|Поставщики_ОКТМО" name="ОКТМО" valueType="text" isValue="true" edit-name="OKTMOPostav"  dict-column-name="ОКТМО"  dict-edit-name="Postavschik" show-dict-column="false" width="150" />
+										<column fieldType="field" key="|Поставщик_Владимирской_области" name="Поставщик Владимирской области" valueType="text" isValue="true" edit-name="PostavVladimir" edit-required="true"  dict-column-name="code"  dictionary-selection-start-level="1" edit-tool = "Отношение поставщика к региону" display-field-part="true" dict-edit-name="PostavVladimir" width="300" />	
+										<column fieldType="field" key="|Поставщики_адрес" name="Адрес" valueType="text" isValue="true" edit-name="PostavAdres" edit-required="true" dict-column-name="Адрес"  dict-edit-name="Postavschik" show-dict-column="false" width="260" />	
+										<column fieldType="field" key="|Поставщики_код_нерезидента" name="Код нерезидента" valueType="text" isValue="true" edit-name="CodeNerezident"  dict-column-name="Код нерезидента" dict-edit-name="Postavschik" show-dict-column="false" width="120" />	
+										<column fieldType="field" key="|Цифровой_код_страны" name="Код страны" valueType="text" isValue="true" edit-name="CodeCountry" dict-column-name="Страна код"  dict-edit-name="Postavschik" show-dict-column="false" edit-isInvisible="true" width="20"/>							
+										<column fieldType="field" key="|Поставщики_страна" name="Страна" valueType="text" isValue="true" edit-name="Country" dict-column-name="Страна"   dict-edit-name="Postavschik" show-dict-column="false" width="150" />		
+										<column fieldType="field" key="|Статус_поставщика" name="Статус" valueType="text" isValue="true" edit-name="StatusPostav"  dict-column-name="Статус поставщика"  dict-edit-name="Postavschik" show-dict-column="false" width="200" />									
+										<column fieldType="field" key="|Поставщики_контактное_лицо_фамилия" name="Фамилия" valueType="text" isValue="true" edit-required="true" edit-name="ContactFam" width="120"/>
+										<column fieldType="field" key="|Поставщики_контактное_лицо_имя" name="Имя" valueType="text" isValue="true" edit-required="true" edit-name="ContactImya" width="120"/>
+										<column fieldType="field" key="|Поставщики_контактное_лицо_отчество" name="Отчество" valueType="text" isValue="true"  edit-name="ContactOtchestvo" width="120"/>
+										<column fieldType="field" key="|Поставщики_контактное_лицо_email" name="E-mail" valueType="text" isValue="true" edit-required="true" edit-name="ContactEmail" width="120"/>
+										<column fieldType="field" key="|Поставщики_контактное_лицо_телефон" name="Телефон" valueType="text" isValue="true" edit-required="true" edit-name="ContactPhone" width="120"/>
+										
+										<column fieldType="field" key="|Поставщики_ИП" name="ИП" valueType="boolean" isValue="true" edit-hidden="true" edit-name="ContactIP"/>
+										<column fieldType="field" key="|Поставщики_тип_код" name="Тип код" valueType="text" isValue="true" edit-name="Tip"  edit-hidden="true" dict-column-name="Тип код" dict-edit-name="Postavschik"  show-dict-column="false"/>
+										<column fieldType="field" key="|Поставщики_телефон" name="Телефон" valueType="text" isValue="true" edit-hidden="true" edit-name="PostPhone"  dict-column-name="Телефон" dict-edit-name="Postavschik"  show-dict-column="false"/>
+										<column fieldType="field" key="|Поставщики_октмо_код" name="ОКТМО" valueType="text" isValue="true" edit-hidden="true" edit-name="PostOKTMO"  dict-column-name="Код ОКТМО" dict-edit-name="Postavschik"  show-dict-column="false"/>
+										<column fieldType="field" key="|Электронная_почта" name="Электронная почта" valueType="text" isValue="true" edit-hidden="true" edit-name="ElectPochta"  dict-column-name="Электронная почта" dict-edit-name="Postavschik"  show-dict-column="false"/>
+										<column fieldType="field" key="|Поставщики_ОКОПФ_наименование" name="ОКОПФ наименование" valueType="text" isValue="true" edit-hidden="true" edit-name="PostOKOPF"  dict-column-name="ОКОПФ наименование" dict-edit-name="Postavschik"  show-dict-column="false"/>
+										<column fieldType="field" key="|Поставщик_культурных_ценностей" name="Поставщик культурных ценностей" valueType="boolean" isValue="true" edit-hidden="true" edit-name="PostCulture"/>
+										<column fieldType="field" key="|Поставщики_дата_постановки_на_учет" name="Дата постановки на учет" valueType="text" isValue="true" edit-hidden="true" edit-name="PostData"/>
+									</table>
+								</column>
+							</row>		
+						</rows>
+					</block>
+				<block id="Obespechnie" name="Обеспечение исполнения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="trebov"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Требование_об_обеспечении_исполнения_контракта" name="Требование об обеспечении исполнения контракта" valueType="boolean"   edit-name="trebov"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="bankgarantia"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия_выданная_банком" name="Банковская гарантия, выданная банком в соответствии со статьей 45 Федерального закона" valueType="boolean"  edit-name="bankgarantia"/>
+								</column>
+							</row>				
+							<row>
+								<column>
+									
+									
+								</column>
+								
+								<column>
+									<field name="" isLabel="true" edit-name="vnesenieds" />
+								</column>
+							</row>
+							<row>
+								<column>
+									
+									
+								</column>
+								
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств_на_счет" name="Внесение денежных средств на указанный заказчиком счет" valueType="boolean"  edit-name="vnesenieds"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Реестровый номер банковской гарантии" isLabel="true" edit-name="reestrnumber"/>
+								</column>
+								<column>
+									<field name="Сумма банковской гарантии" isLabel="true" edit-name="sumbank"/>
+								</column>
+								
+								
+								<column>
+									<field name="Валюта БГ" isLabel="true" edit-name="CodeValut"/>			  
+								</column>
+								<column>
+									<field name="Номер документа реестровой записи БГ" isLabel="true" edit-name="nomerdocreestr"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|РН_банковской_гарантии" name="Реестровый номер банковской гарантии" valueType="text" isValue="true" edit-name="reestrnumber" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Сумма_банковской_гарантии" name="Сумма банковской гарантии" valueType="money" isValue="true" edit-name="sumbank" />
+								</column>
+								
+								
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Валюта_банковской_гарантии_код" name="Код валюты" valueType="text"  isValue="true" edit-name="CodeValut" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Валюта" dict-edit-name="CodeValut" show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Валюта_банковской_гарантии" name="Валюта БГ" valueType="text" isValue="true" edit-name="ValutName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="CodeValut" dict-column-width-percentage="50"/>				  
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Номер_документа_реестровой_записи_БГ" name="Номер документа реестровой записи БГ" valueType="text" isValue="true" edit-name="nomerdocreestr" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Курс валюты БГ" isLabel="true" edit-name="kursvalut"/>
+								</column>
+								<column>
+									<field name="Сумма банковской гарантии в руб." isLabel="true" edit-name="sumbankrub" />
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Курс_валюты_гарантии" name="Курс валюты БГ" valueType="double" isValue="true" edit-name="kursvalut" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Банковская_гарантия|Сумма_банковской_гарантии_в_рублевом_эквиваленте" name="Сумма банковской гарантии в руб." valueType="money" isValue="true" edit-name="sumbankrub" />
+								</column>
+								<column>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Размер обеспечения" isLabel="true" edit-name="razmerobes"/>
+								</column>
+								<column>
+									<field name="Валюта обеспечения исполнения" isLabel="true" edit-name="valuta"/>
+								</column>
+								<column>
+									<field name="Курс валюты исполнения" isLabel="true" edit-name="kursvaluta" />
+								</column>
+								<column>
+									<field name="Размер обеспечения в руб." isLabel="true" edit-name="razmerobesrub"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств|Размер_обеспечения_контракта" name="Размер обеспечения" valueType="money" isValue="true" edit-name="razmerobes" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств|Валюта_обеспечения_исполнения_код" name="Код валюты" valueType="text"  isValue="true" edit-name="valuta" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Валюта" dict-edit-name="valuta" show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств|Валюта_обеспечения_исполнения" name="Валюта обеспечения исполнения" valueType="text" isValue="true" edit-name="ValutaName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="valuta" dict-column-width-percentage="50"/>				  
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств|Курс_валюты_исполнения" name="Курс валюты исполнения" valueType="double" isValue="true" edit-name="kursvaluta" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Внесение_денежных_средств|Размер_обеспечения_в_рублевом_эквиваленте" name="Размер обеспечения в руб." valueType="money" isValue="true" edit-name="razmerobesrub" />
+								</column>
+							</row>
+						</rows>
+					</block>
+					
+					<block id="financ" name="Финансирование">		 
+						<rows>
+							<row>
+								<column>
+									<block id="budjet" name="За счет бюджетных средств">		 
+										<rows>
+											<row>
+												<column>
+													<field name="Бюджет наименование" isLabel="true" edit-name="Codebudjet"/>
+												</column>	
+												<column>
+													<field name="ОКТМО" isLabel="true" edit-name="OKTMObudjet"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Бюджет_код" name="Код бюджета" valueType="text"  isValue="true" edit-name="Codebudjet"   dict-column-name="code"  edit-tool = "Организации заказчики" is-select-one-level="2" edit-readonly="true" one-level-parent="budjet" dict-subdictionary= "Бюджеты" show-dict-column="false" dict-edit-name="Codebudjet" />
+													<field fieldType="field" key="|Document|Бюджет_наименование" name="Бюджет наименование" valueType="text" isValue="true" edit-name="CodebudjetName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Codebudjet" dict-column-width-percentage="50"/>
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|ОКТМО" name="ОКТМО" valueType="text" isValue="true" edit-name="OKTMObudjet"  dict-column-name="code" dictionary-selection-start-level="1" edit-tool =  "ОКТМО" display-field-part="true" dict-edit-name="OKTMObudjet" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field name="Уровень бюджета" isLabel="true" edit-name="urovenbudjet"/>
+												</column>					 
+												<column>
+													<field name="Уровень бюджета фонда" isLabel="true" edit-name="urovenbudjetfond"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Уровень_бюджета_код" name="Уровень бюджета" valueType="text"  isValue="true" edit-name="urovenbudjet"  dict-column-name="code" is-select-one-level="1" edit-tool = "Уровни бюджета" edit-readonly="true" dict-edit-name="urovenbudjet" />
+													<field fieldType="field" key="|Document|Уровень_бюджета_наименование" name="Уровень бюджета наименование" valueType="text" isValue="true" edit-name="urovenbudjetName"    edit-readonly="true" dict-column-name="Наименование"   edit-hidden="true" display-field-part="true" dict-edit-name="urovenbudjet" dict-column-width-percentage="70"/>
+												</column>					 
+												<column>
+													<field fieldType="field" key="|Document|Уровень_бюджета_фонда_код" name="Уровень бюджета фонда" valueType="text"  isValue="true" edit-name="urovenbudjetfond"  dict-column-name="code" is-select-one-level="1" edit-tool = "Уровень бюджета фонда" edit-readonly="true" dict-edit-name="urovenbudjetfond" />
+													<field fieldType="field" key="|Document|Уровень_бюджета_фонда" name="Уровень бюджета фонда наименование" valueType="text" isValue="true" edit-name="urovenbudjetfondName"    edit-readonly="true" dict-column-name="Наименование фонда"   edit-hidden="true" display-field-part="true" dict-edit-name="urovenbudjetfond" dict-column-width-percentage="70"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Сумма финансирования бюджетных средств" isLabel="true" edit-name="sumfinanbudjet"/>
+												</column>
+												<column>
+													<field name="" isLabel="true" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_финансирования_бюджетных_средств" name="Сумма финансирования бюджетных средств" valueType="money" isValue="true" edit-readonly="true" edit-name="sumfinanbudjet" />
+												</column>
+												<column>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Этапы исполнения" isLabel="true" />
+													<table key="|Document|Этапы_исполнения_бюджетные_средства" edit-name="Etapbudjet" height="100">
+														<column fieldType="field" key="|Дата_окончания_этапа_бюджетные_средства" name="Дата окончания этапа" valueType="date" isValue="true" edit-name="DateFinishbudjet" edit-required="true" width-percentage="30"/>
+														<column fieldType="field" key="|Сумма_платежей_этапа_БС" name="Сумма платежей этапа" valueType="money" isValue="true"  edit-name="SumPlatejEtap" edit-readonly="true" width-percentage="30"/>
+														<edit>
+															<rows>
+																<row>
+																	<column>
+																		<field name="Платежи этапа" isLabel="true" />
+																		<table key="|Платежи_этапа_бюджетные_средства" edit-name="PlatejEtapbudjet" height="300">
+																			<column fieldType="field" key="|КБК_бюджетные_средства" name="КБК" valueType="text"  isValue="true" edit-name="KBKBudjet"  dict-column-name="code" is-select-one-level="1" edit-tool = "Коды бюджетной классификации" edit-readonly="true" display-field-part="true"  dict-edit-name="KBKBudjet"  width="270"/>
+																			<column fieldType="field" key="|Примечание_БС" name="Примечание" valueType="longtext" isValue="true" edit-name="PrimechanieBudjet" width="400" />
+																			<column fieldType="field" key="|Месяц_платежа_бюджетные_средства" name="Месяц" valueType="text"  isValue="true" edit-name="Month"  dict-column-name="code" is-select-one-level="1" edit-tool = "Месяцы" edit-readonly="true"  show-dict-column="false"  dict-edit-name="Month"  width="190"/>
+																			<column fieldType="field" key="|Месяц_платежа_бюджетные_средства_наименование" name="Месяц наименование" valueType="text" isValue="true" edit-name="MonthName"    edit-readonly="true" dict-column-name="Наименование"   edit-hidden="true" display-field-part="true"  dict-edit-name="Month" show-dict-column="true" dict-column-width-percentage="190"/>
+																			<column fieldType="field" key="|Год_платежа_бюджетные_средства" name="Год" valueType="integer" isValue="true" edit-name="YearBudjet" edit-required="true" width="120" />		
+																			<column fieldType="field" key="|Сумма_платежа_бюджетные_средства" name="Сумма в валюте контракта" valueType="money" isValue="true" edit-name="SumPlatejBudjet" width="200" />
+																			<column fieldType="field" key="|Сумма_платежа_в_рублях_БС" name="Сумма в рублевом эквиваленте" valueType="money" isValue="true" edit-name="SumPlatejBudjetRub" width="200" />
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</edit>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>						
+							</row>
+							
+							<row>
+								<column>
+									<block id="Vnebudjet" name="За счет внебюджетных средств">		 
+										<rows>
+											<row>
+												<column>
+													<field name="Вид внебюджетных средств" isLabel="true" edit-name="CodeVnebudjet"/>
+												</column>	
+												<column>
+													<field name="" isLabel="true" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Вид_внебюджетных_средств_код" name="Код внебюджет" valueType="text"  isValue="true" edit-name="CodeVnebudjet"   dict-column-name="code"  edit-tool = "Виды внебюджетных средств" is-select-one-level="2" edit-readonly="true" one-level-parent="Vnebudjet"  show-dict-column="false" dict-edit-name="CodeVnebudjet" />
+													<field fieldType="field" key="|Document|Вид_внебюджетных_средств" name="Внебюджет наименование" valueType="text" isValue="true" edit-name="CodeVnebudjetName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="CodeVnebudjet" dict-column-width-percentage="50"/>
+												</column>	
+												<column>
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field name="Сумма финансирования внебюджетных средств" isLabel="true" edit-name="sumfinanvnebudjet"/>
+												</column>
+												<column>
+													<field name="" isLabel="true" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Сумма_финансирования_внебюджетных_средств" name="Сумма финансирования внебюджетных средств" valueType="money" isValue="true" edit-readonly="true" edit-name="sumfinanvnebudjet" />
+												</column>
+												<column>
+												</column>
+											</row>							
+											<row>
+												<column>
+													<field name="Этапы исполнения" isLabel="true" />
+													<table key="|Document|Этапы_исполнения_внебюджетные_средства" edit-name="EtapVnebudjet" height="80">
+														<column fieldType="field" key="|Дата_окончания_этапа_внебюджетные_средства" name="Дата окончания этапа" valueType="date" isValue="true" edit-required="true"  edit-name="DateFinishVnebudjet"  width="100"/>
+														<column fieldType="field" key="|Сумма_платежей_этапа_ВС" name="Сумма платежей этапа" valueType="money" isValue="true" edit-readonly="true" edit-name="SumPlatejEtapVnebudjet" width="100"/>
+														<edit>
+															<rows>
+																<row>
+																	<column>
+																		<field name="Платежи этапа" isLabel="true" />
+																		<table key="|Платежи_этапа_внебюджетные_средства" edit-name="PlatejEtapVnebudjet" height="300">
+																			<column fieldType="field" key="|КВР_внебюджетные_средства" name="КВР" valueType="text"  isValue="true" edit-name="KVRVnebudjet"  dict-column-name="code" is-select-one-level="1" edit-tool = "Коды видов расходов" edit-readonly="true" display-field-part="true" show-dict-column="true" dict-edit-name="KVRVnebudjet"  width="270" dict-column-width-percentage="20"/>
+				
+																			<column fieldType="field" key="|КВР_внебюджетные_средства_наименование" name="КВР наименование" valueType="text" isValue="true" edit-name="KVRVnebudjetName" edit-hidden="true"  edit-readonly="true" dict-column-name="Наименование"  dict-edit-name="KVRVnebudjet" show-dict-column="true" dict-column-width-percentage="80"/>
+																			<column fieldType="field" key="|Примечание_ВС" name="Примечание" valueType="longtext" isValue="true" edit-name="PrimechanieVneBudjet" width="400" />
+																			<column fieldType="field" key="|Месяц_платежа_внебюджетные_средства" name="Месяц" valueType="text"  isValue="true" edit-name="MonthVne"  dict-column-name="code" is-select-one-level="1" edit-tool = "Месяцы" edit-readonly="true"  show-dict-column="false"  dict-edit-name="MonthVne"  width="190"/>
+																			<column fieldType="field" key="|Месяц_платежа_внебюджетные_средства_наименование" name="Месяц наименование" valueType="text" isValue="true" edit-name="MonthVneName"    edit-readonly="true" dict-column-name="Наименование"   edit-hidden="true" display-field-part="true"  dict-edit-name="MonthVne" show-dict-column="true" dict-column-width-percentage="190"/>
+																			<column fieldType="field" key="|Год_платежа_внебюджетные_средства" name="Год" valueType="integer" isValue="true" edit-name="YearVnebudjet" edit-required="true" width="120" />		
+																			<column fieldType="field" key="|Сумма_платежа_внебюджетные_средства" name="Сумма в валюте контракта" valueType="money" isValue="true" edit-name="SumPlatejVnebudjet" width="180" />
+																			<column fieldType="field" key="|Сумма_платежа_в_рублях_ВС" name="Сумма в рублевом эквиваленте" valueType="money" isValue="true" edit-name="SumPlatejVnebudjetRub" width="200" />
+																		</table>
+																	</column>
+																</row>
+															</rows>
+														</edit>
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>						
+							</row>
+						</rows>
+					</block>
+					<block id="Ispolnenie" name="Исполнение">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Этапы исполнения контракта" isLabel="true" />
+									<table key="|Document|Этапы_исполнения_контракта" edit-name="EtapIspolnenie" height="200">					    
+										<column fieldType="field" key="|Дата_окончания_этапа_контракта" name="Дата окончания этапа" valueType="date" isValue="true" edit-name="DateFinishIspolnenie" edit-readonly="true" width="140"/>	
+										<column fieldType="field" key="|Сумма_платежей_этапа_контракта" name="Сумма платежей" valueType="money"  isValue="true" edit-name="SumPlatejIspolnenie"  width="350" edit-readonly="true"/>
+										<column fieldType="field" key="|Фактическая_оплата_по_этапу" name="Фактическая оплата" valueType="money" isValue="true"  edit-name="FactOplata" edit-readonly="true" width="350" />
+										<column fieldType="field" key="|Остаток_платежей_по_этапу" name="Остаток платежей" valueType="money" isValue="true"  edit-name="Ostatok" edit-readonly="true" width="350" />
+										<column fieldType="field" key="|Этап_закрыт_контракта" name="Этап закрыт" valueType="boolean" isValue="true" edit-name="EtapZakryt" edit-readonly="true" width="100" />
+										<edit>
+											<rows>
+												<row>
+													<column>
+														<field name="Исполнение в рамках этапа" isLabel="true" />
+														<table key="|Платежи_этапа" edit-name="PlatejiEtap" height="200">					    
+															<column fieldType="field" key="|Номер_исполнения" name="Номер исполнения" valueType="text" isValue="true" edit-name="NumberIspolnenie"  width="150" />	
+															<column fieldType="field" key="|Фактически_оплачено" name="Фактически оплачено" valueType="money" isValue="true" edit-name="FactOplacheno"  width="300" />
+															<column fieldType="field" key="|Фактически_оплачено_в_рублях" name="Фактически оплачено в рублях" valueType="money" isValue="true" edit-name="FactOplachenoRub" width="300" />
+														</table>
+													</column>
+												</row>
+											</rows>
+										</edit>
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Фактическая сумма оплаты" isLabel="true" edit-name="FactSumOplata"/>
+								</column>
+								<column>
+									<field name="Остаток по контракту" isLabel="true" edit-name="OstatokContract"/>
+								</column>
+								<column>
+									<field name="" isLabel="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Фактическая_сумма_оплаты" name="Фактическая сумма оплаты" valueType="money" isValue="true"  edit-name="FactSumOplata" edit-readonly="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Остаток_по_контракту" name="Остаток по контракту" valueType="money" isValue="true" edit-name="OstatokContract"  edit-readonly="true"/>
+								</column>
+								<column>
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="Izmenenia" name="Изменения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Дата документа основания изменения" isLabel="true" edit-name="DateDocIzmen"/>
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_дата" name="Дата документа основания изменения" valueType="date" isValue="true" edit-name="DateDocIzmen" />
+								</column>								
+								<column>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true" edit-name="CorrectMistake" />
+								</column>
+								<column>
+									<field name="" isLabel="true" edit-name="PrekraschenieBG" />
+								</column>
+								<column>
+									<field name="Дата прекращения банковской гарантии" isLabel="true" edit-name="DatePrekraschenieBG"/>
+								</column>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Корректировка_ошибок_в_контракте" name="Корректировка ошибок в контракте" valueType="boolean"  edit-name="CorrectMistake" />
+								</column>							
+								<column>
+									<field fieldType="field" key="|Document|Прекращение_банковской_гарантии" name="Прекращение банковской гарантии" valueType="boolean"   edit-name="PrekraschenieBG" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Дата_прекращения_БГ" name="Дата прекращения банковской гарантии" valueType="date" isValue="true" edit-name="DatePrekraschenieBG" />
+								</column>
+								<column>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="Документ основания изменения контракта" isLabel="true" edit-name="CodeDocOsnovanie"/>
+								</column>
+								<column>
+									<field name="Причина изменений контракта" isLabel="true" edit-name="Prichina"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_контракта_код" name="Документ основания изменения контракта" valueType="text"  isValue="true" edit-name="CodeDocOsnovanie"   dict-column-name="code"  edit-tool = "Причины изменений контракта" is-select-one-level="2" edit-readonly="true" one-level-parent="Prichina"  show-dict-column="true" dict-edit-name="CodeDocOsnovanie" />
+									<field fieldType="field" key="|Document|Документ_основания_изменения_контракта" name="Документ основания изменения контракта наименование" valueType="text" isValue="true" edit-name="CodeDocOsnovanieName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="CodeDocOsnovanie" dict-column-width-percentage="50"/>                   
+								</column>	
+								<column>
+									<field fieldType="field" key="|Document|Причина_изменений_контракта_код" name="Причина изменений контракта" valueType="text"  isValue="true" edit-name="Prichina"  dict-column-name="code" is-select-one-level="1" edit-tool = "Причины изменений контракта" edit-readonly="true" dict-edit-name="Prichina" />
+									<field fieldType="field" key="|Document|Причина_изменений_контракта" name="Причина изменений контракта наименование" valueType="text" isValue="true" edit-name="PrichinaName"    edit-readonly="true" dict-column-name="Наименование причины"   edit-hidden="true" display-field-part="true" dict-edit-name="Prichina" dict-column-width-percentage="70"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Реквизиты документа основания изменения" isLabel="true" edit-name="IzmenenieRekvizity"/>
+								</column>
+								<column>
+									<field name="Основание для изменений" isLabel="true" edit-name="IzmenenieOsnovanie"/>
+								</column>	
+							</row>
+							<row>	
+								<column>
+									<field fieldType="field" key="|Document|Документ_основания_изменения_реквизиты" name="Реквизиты документа основания изменения" valueType="longtext" isValue="true"  edit-name="IzmenenieRekvizity" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Основание_для_изменений" name="Основание для изменений" valueType="longtext" isValue="true" edit-name="IzmenenieOsnovanie"  edit-readonly="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Основание прекращения банковской гарантии" isLabel="true" edit-name="OsnovanieBG" />
+								</column>
+								<column>
+									<field name="Изменение объектов закупки" isLabel="true" edit-name="IzmenenieObject" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Основание_прекращения_БГ" name="Основание прекращения банковской гарантии" valueType="longtext" isValue="true" edit-name="OsnovanieBG" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Изменение_объектов_закупки" name="Изменение объектов закупки" valueType="longtext" isValue="true" edit-name="IzmenenieObject" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Возмещение фактически понесенного ущерба" isLabel="true" />
+									<table key="|Document|Возмещение_фактически_понесенного_ущерба" edit-name="Vozmeschenie" height="300">					    
+										<column fieldType="field" key="|Дата_документа_возмещения_ущерба" name="Дата документа" valueType="date" isValue="true" edit-name="DateDocument" edit-required="true" width="120" />	
+										<column fieldType="field" key="|Номер_документа_возмещения_ущерба" name="Номер документа" valueType="text" isValue="true" edit-name="NumberDocument" edit-required="true" width="130" />
+										<column fieldType="field" key="|Наименование_документа_возмещения_ущерба" name="Наименование документа" valueType="text" isValue="true" edit-name="NameDocument" edit-required="true" width="300" />
+										<column fieldType="field" key="|Сумма_возмещения_ущерба" valueType="money" name="Сумма возмещения" isValue="true" edit-name="SummaDocument" edit-required="true" width="200"/>
+										<column fieldType="field" key="|Код_валюты_возмещения_ущерба" name="Валюта" valueType="text"  isValue="true" edit-name="ValutaDocument" edit-required="true" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Валюта" dict-edit-name="ValutaDocument" edit-default-value="RUB" show-dict-column="false" width="200"/>
+										<column fieldType="field" key="|Валюта_возмещения_ущерба" name="Валюта наименование" valueType="text" isValue="true" edit-name="ValutaDocumentName" edit-required="true" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="ValutaDocument" edit-default-value="Российский рубль" dict-column-width-percentage="50" width="70"/>		
+										<column fieldType="field" key="|Курс_валюты_возмещения_ущерба" name="Курс валюты" valueType="double" isValue="true" edit-name="KursDocument"  width="100" />
+										<column fieldType="field" key="|Сумма_возмещения_ущерба_в_рублях" name="Сумма возмещения в руб." valueType="money" isValue="true" edit-name="SummaDocumentRub"  width="200" />
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>
+							<row>
+								<column>
+									
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true"/>	
+									<field fieldType="field" key="|Document|Статус_в_ЕИС" name="Статус в ЕИС" valueType="text" isValue="true"  edit-name="regstatusEIS"  edit-hidden="true"/>		
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" isValue="true" edit-name="nomerred" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Номер_закупки" name="Номер_закупки" valueType="integer" isValue="true" edit-name="nomerzakupki" edit-hidden="true"/>
+									
+									<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая дата размещения" valueType="datetime" isValue="true"  edit-name="FactDate"  edit-hidden="true"/> 
+									<field fieldType="field" key="|Document|ИКЗ" name="ИКЗ" valueType="text" isValue="true"  edit-name="IKZ"  edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Способ_определения_поставщика" name="Способ определения поставщика " valueType="text" isValue="true"  edit-name="SposobPost" edit-required="true" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Номер_лота_в_извещении" name="Номер лота" valueType="integer" isValue="true"  edit-name="Numberlot"  edit-hidden="true"/>
+									<field fieldType="field" key="|Document|ИД_в_РК_РБГ" name="ИД в РК РБГ" valueType="text" isValue="true"  edit-name="IDRK"  edit-hidden="true" />		
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="Zakazchik" edit-required="true" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Организации заказчики" dict-edit-name="Zakazchik" edit-hidden="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="ZakazchikName" edit-required="true" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="Zakazchik" dict-column-width-percentage="50" />
+									
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Код по СПЗ" valueType="text" isValue="true" edit-hidden="true" edit-name="KodSPZ"  dict-column-name="Код по СПЗ" dict-edit-name="Zakazchik"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Код по СР" valueType="text" isValue="true" edit-hidden="true" edit-name="KodSR"  dict-column-name="Код по Сводному реестру" dict-edit-name="Zakazchik"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Полное_наименование" name="Полное наименование" valueType="text" isValue="true" edit-hidden="true" edit-name="PolnNaim"  dict-column-name="Полное наименование" dict-edit-name="Zakazchik"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="ОКОПФ" valueType="text" isValue="true" edit-hidden="true" edit-name="ZakazOKOPF"  dict-column-name="ОКОПФ" dict-edit-name="Zakazchik"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет" name="Дата постановки на учет" valueType="text" isValue="true" edit-hidden="true" edit-name="ZakazData" />
+									<field fieldType="field" key="|Document|ОКТМО_контракт_наименование" name="ОКТМО контракт наименование" valueType="text" isValue="true"  edit-name="OKTMONaimen" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Роль_организатора_закупки_код" name="Роль организации опубликовавшей контракт" valueType="text"  isValue="true" edit-name="RolOrg" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Роль организатора закупки" dict-edit-name="RolOrg" edit-hidden="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Роль_организатора_закупки" name="Роль организации опубликовавшей контракт наименование" valueType="text" isValue="true" edit-name="RolOrgName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="RolOrg" dict-column-width-percentage="50" />
+									<field fieldType="field" key="|Document|Основание_единственный_поставщик_код" name="Основание единственный поставщик" valueType="text"  isValue="true" edit-name="OsnEdPost" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Основание единственный поставщик" dict-edit-name="OsnEdPost" edit-hidden="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Основание_единственный_поставщик" name="Основание единственный поставщик наименование" valueType="text" isValue="true" edit-name="OsnEdPostName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true"  dict-edit-name="OsnEdPost" dict-column-width-percentage="50" />
+									
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="text"  isValue="true" edit-name="OrgZakupki"  dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Организации заказчики" dict-edit-name="OrgZakupki" edit-hidden="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор закупки наименование" valueType="text" isValue="true" edit-name="OrgZakupkiName"   dict-column-name="Наименование" edit-hidden="true"  dict-edit-name="OrgZakupki" dict-column-width-percentage="50" />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" name="Код по СПЗ" valueType="text" isValue="true" edit-hidden="true" edit-name="ORGZakSPZ"  dict-column-name="Код по СПЗ" dict-edit-name="OrgZakupki"  show-dict-column="false"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" name="Код по СР" valueType="text" isValue="true" edit-hidden="true" edit-name="ORGZakSR"  dict-column-name="Код по Сводному реестру" dict-edit-name="OrgZakupki"  show-dict-column="false"/>
+									
+									<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Организатор_опубликовавшая_контракт_код_по_СПЗ" name="Код по СПЗ" valueType="text" isValue="true" edit-name="organizSPZ"  edit-readonly="true"  dict-column-name="Код по СПЗ" edit-hidden="true" dict-edit-name="organiz" dict-column-width-percentage="20"/>
+									<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Организация_опубликовавшая_код_СР" name="Код по СР" valueType="text" isValue="true" edit-name="organizSR"   dict-column-name="Код по Сводному реестру" edit-hidden="true"  dict-edit-name="organiz" dict-column-width-percentage="20"/>
+									<field fieldType="field" key="|Document|Организация_опубликовавшая_контракт|Опубликовавшая_полное_наименование" name="Полное наименование" valueType="text" isValue="true" edit-name="organizFullName"  edit-readonly="true"  dict-column-name="Полное наименование" edit-hidden="true"  dict-edit-name="organiz" dict-column-width-percentage="20"/>
+									<field fieldType="field" key="|Document|Контракт_исполнен" name="Контракт исполнен" valueType="boolean" isValue="true" edit-hidden="true" edit-name="ContractIsp"/>
+									<field fieldType="field" key="|Document|Документы_основание_ед_поставщик_пункт" name="Документы основание ед поставщик пункт" valueType="text" isValue="true" edit-name="osnovaniePunkt"  edit-readonly="true"  dict-column-name="Пункт" edit-hidden="true" dict-edit-name="osnovanie" dict-column-width-percentage="30"/>
+									
+									<field fieldType="field" key="|Document|ОКПД2_tmp" name="ОКПД2 скрытое" valueType="text" isValue="true" edit-hidden="true" edit-name="OKPD2Hide"/>
+									
+								</column> 
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>	
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+			<variable variable-name="caption" variable-format="Контракт{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>	
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LContract.js" />
+	</scripts>
+	
+</root>

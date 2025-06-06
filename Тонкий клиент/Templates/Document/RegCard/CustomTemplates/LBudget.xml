@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="text" />
+								</column>				  
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Бюджеты" edit-name="ist_fin" height="300">							
+										<column fieldType="field" key="|Источник_бюджета" valueType="text"  isValue="true" name="Источник финансирования" edit-name="ist_budget"  width="150"/>
+										<column fieldType="field" key="|КБК_бюджетные_средства" name="КБК_бюджетные_средства" valueType="text" isValue="true" edit-name="КБК_бюджетные_средства"  width="200" />
+										<column fieldType="field" key="|КВР_код" name="КВР_код" valueType="text"  isValue="true" edit-name="КВР_Код" width="100"/>
+	<column fieldType="field" key="|Год_финансирования" name="Год_финансирования" valueType="date"  isValue="true" edit-name="god_finans" width="100"/>
+										<column fieldType="field" key="|Сумма_лимита" name="Сумма_лимита" valueType="money"  isValue="true" edit-name="limit" width="100"/>
+										<column fieldType="field" key="|Запланировано" name="Запланировано" valueType="money"  isValue="true" edit-name="plan" width="100"/>
+										<column fieldType="field" key="|Остаток" name="Остаток" valueType="money"  isValue="true" edit-name="ostatok" width="100"/>
+										<column fieldType="field" key="|Экономия" name="Экономия" valueType="money"  isValue="true" edit-name="ekonom" width="100"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>
+									<field name="Организация-заказчик" isLabel="true" />
+								 <field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="ФИО инициатора" valueType="text"  isValue="true" edit-name="IDIniciatora" edit-addressbook-groups="person" edit-required="true"  edit-default-value="{currentUser}" address-book-tool ="IDIniciatora" edit-readonly="true" edit-isInvisible="true"/> 
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="registerOrgZaName" show-dict-column="false" display-field-part="true" edit-isInvisible="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="registerOrgZaName" display-field-part="true" edit-default-value="{addressbook,value=IDIniciatora,attribute=Department}" edit-required="true"/> 
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Организация-заказчик СПЗ" valueType="text" isValue="true" edit-name="registerOrgZaSPZ"    edit-readonly="true"  dict-column-name="Код по СПЗ" is-select-one-level="1" dict-edit-name="registerOrgZaName" display-field-part="true" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Организация_заказчик_код_по_СР" valueType="text" isValue="true" edit-name="registerOrgZaSr"    edit-readonly="true"  dict-column-name="Код по Сводному реестру" is-select-one-level="1" dict-edit-name="registerOrgZaName" display-field-part="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="ОКОПФ_заказчика" valueType="text" isValue="true" edit-name="registerOrgZaOKPF" edit-hidden="true" dict-column-name="ОКОПФ" dict-edit-name="registerOrgZaName" is-select-one-level="1" display-field-part="true" /> 
+
+								</column>
+							</row>
+
+							<row>
+								<column>
+									<table key="|Document|Бюджеты" edit-name="ist_fin"  height="500">
+									
+										<column fieldType="field" key="|Источник_бюджета" name="Источник финансирования" valueType="text" isValue="true" edit-name="registerOrgZaBudget" edit-readonly="true" dict-column-name="code"  edit-tool = "Организации заказчики" is-select-one-level="2"   display-field-part="true" dict-subdictionary="Бюджеты" edit-required="true" one-level-parent="registerOrgZaName" dict-edit-name="registerOrgZaBudget"  width="200" />
+										<column fieldType="field" key="|КБК_бюджета_код" name="КБК по статье расхода" valueType="text" isValue="true" edit-name="registerKBK"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Коды бюджетной классификации"  display-field-part="true" dict-edit-name="registerKBK" edit-required="true" />	
+										<column fieldType="field" key="|КВР_бюджета_код" name="КВР" valueType="text" isValue="true" edit-name="registerKVR"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="last" edit-tool = "Коды видов расходов"   display-field-part="true" dict-edit-name="registerKVR" show-dict-column="false" edit-required="true"  />
+										<column fieldType="field"  key="|КВР_бюджета" name="КВР по статье расхода" valueType="longtext" isValue="true" edit-name="registerKVRName" edit-readonly="true" dict-column-name="Наименование" dictionary-selection-start-level="last" display-field-part="true"  dict-edit-name="registerKVR" />	  
+										<column fieldType="field" key="|Год_финансирования_бюджета" name="Год финансирования" valueType="integer"  isValue="true" edit-name="god_finans" width="100" edit-required="true" />
+										<column fieldType="field" key="|Сумма_лимита" name="Сумма лимита" valueType="money"  isValue="true" edit-name="limit" width="100" edit-required="true" />
+										<column fieldType="field" key="|Запланировано" name="Запланировано" valueType="money"  isValue="true" edit-name="plan" width="100" edit-required="false"/>
+										<column fieldType="field" key="|Остаток" name="Остаток" valueType="money"  isValue="true" edit-name="ostatok" width="100" edit-required="false"/>
+										<column fieldType="field" key="|Экономия" name="Экономия" valueType="money"  isValue="true" edit-name="ekonom" width="100" edit-required="false"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{prefix}{number}{suffix}">
+				<field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" variable-name="prefix" variable-format="{value}-" />
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера"	valueType="text" variable-name="number" variable-format="{value}" />
+				<field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера"	valueType="text" variable-name="suffix" variable-format="-{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="Scripts\Content\Document\RegCard\LBudget.js" />
+	</scripts>
+</root>	
+<!--
+<E name="Организация_заказчик" datatype="dictionary(Организации заказчики(Наименование),text)@Наименование" displayname="Организация_заказчик" required="true"/></S>
+<S name="Источники_финансирования"><A name="Источники_финансирования"><S name="Источники_финансирования">
+<E name="КБК_бюджетные_средства" datatype="dictionary(Коды бюджетной классификации,text)" required="true" displayname="КБК_бюджетные_средства"/>
+<E name="КВР_Код" datatype="dictionary(Коды видов расходов,text)@Коды видов расходов" displayname="КВР_Код" required="true"/>
+<E name="КВР_внебюджетные_средства" datatype="dictionary(Коды видов расходов,text)@Наименование" displayname="КВР_внебюджетные_средства" required="true"/>
+<E name="Год_финансирования" datatype="text" required="true" displayname="Год_финансирования"/>
+<E name="Сумма_лимита" datatype="text" required="true" default="0.00" displayname="Сумма_лимита"/>
+<E name="Запланировано" datatype="text" displayname="Запланировано"/>
+<E name="Остаток" datatype="text" value="Сумма_лимита-Запланировано" required="" displayname="Остаток"/>
+<E name="Экономия" datatype="text" displayname="Экономия"/>
+<E name="Источник_финансирования" datatype="dictionary(Источники финансирования,text)" required="true" displayname="Источник_финансирования"/>
+-->

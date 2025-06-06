@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+	<rows>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Инициатор|Инициатор" name="ИД_инициатора" valueType="addressbook" isValue="true" edit-name="IDIniciatora" address-book-tool ="IDIniciatora" edit-addressbook-groups = ""  edit-required="false" address-book-tool-selectable = "" edit-hidden="false" edit-readonly="true" edit-default-value="{currentUser}" />
+			</column> 
+		</row>
+	</rows>
+</edit>
+<extraSearchForm>
+	<rows>
+		<row>						
+			<column>		
+				<field name="Не публиковать в ЕИС" isLabel="true" />								
+			</column>
+			<column>	
+				<field name="Рамочный договор" isLabel="true" />													
+			</column>
+			<column>		
+				<field name="Привлечены субподрядчики" isLabel="true" />								
+			</column>
+			<column>	
+				<field name="Государственная тайна" isLabel="true" />													
+			</column>
+		</row>
+		<row>						
+			<column>		
+				<field fieldType="field" key="|Document|Не_публиковать_в_ЕИС" name="Не публиковать в ЕИС" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="Not_in_IIS" />								
+			</column>
+			<column>	
+				<field fieldType="field" key="|Document|Рамочный_договор" name="Рамочный договор"  valueType="boolean"	isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="RamDog" />
+			</column>							
+			<column>
+				<field fieldType="field" key="|Document|Привлечены_субподрядчики" name="Привлечены субподрядчики" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="subpodr" />									
+			</column>
+			<column>		
+				<field fieldType="field" key="|Document|Государственная_тайна" name="Государственная тайна" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="gos" />	
+			</column>
+		</row>
+		<row>
+			<column>
+				<field name="Сведения о сроке окончания договора" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Реквизиты документа обоснования" isLabel="true" />									
+			</column>
+		</row>		
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Сведения_о_сроке_окончания" name="Сведения о сроке окончания" valueType="longtext" isValue="true" edit-name="InfEndDate"  />
+			</column>
+			<column>									
+				<field fieldType="field" key="|Document|Реквизиты_документа_основания" name="Реквизиты документа обоснования" valueType="longtext"  isValue="true" edit-name="recdocosn" />
+			</column>
+		</row>	
+		<row>
+			<column>
+				<field name="Обоснование внесения изменений" isLabel="true" />
+				<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" isValue="true" edit-name="obosnvnizm"  />
+			</column>
+			<column>
+				<field name="Количество договоров с субподрядчиками СМП" isLabel="true" />
+				<block id="block3" name="block3" height="300">	
+					<rows>
+						<row>
+							<column>
+								<field name="от" isLabel="true" />
+							</column>
+							<column>
+								<field fieldType="field" key="|Document|Количество_договоров_с_субподрядчиками" name="Количество договоров с субподрядчиками" valueType="integer"  isValue="true" edit-name="dogsmpcolFrom" />
+							</column>
+							<column>
+								<field name="до" isLabel="true" />
+							</column>
+							<column>
+								<field fieldType="field" key="|Document|Количество_договоров_с_субподрядчиками" name="Количество договоров с субподрядчиками" valueType="integer"  isValue="true" edit-name="dogsmpcolTo" />
+							</column>
+						</row>
+					</rows>
+				</block>
+				<block id="block4" name="block4" height="300">	
+					<rows>
+						<row>
+							<column>
+								<field name="Стоимость договоров с субподрядчиками СМП" isLabel="true" />
+							</column>
+						</row>
+					</rows>
+				</block>
+				<block id="block5" name="block5" height="300">	
+					<rows>
+						<row>
+							<column>
+								<field name="от" isLabel="true" />
+							</column>
+							<column>
+								<field fieldType="field" key="|Document|Стоимость_договоров_с_субподрядчиками" name="Стоимость договоров с субподрядчиками СМП" valueType="money" isValue="true" edit-name="subpodrCostFrom"/>
+							</column>
+							<column>
+								<field name="до" isLabel="true" />
+							</column>
+							<column>
+								<field fieldType="field" key="|Document|Стоимость_договоров_с_субподрядчиками" name="Стоимость договоров с субподрядчиками СМП" valueType="money" isValue="true" edit-name="subpodrCostTo"/>
+							</column>
+						</row>
+					</rows>
+				</block>
+			</column>
+		</row>
+	</rows>
+</extraSearchForm>	 
+<search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Договоры 223ФЗ') and (doc_RegCard/rc_Index/integer_Инициатор = @IDIniciatora)"/>
+</search>
+<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

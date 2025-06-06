@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>	
+				<column>
+					<field name="Текущий финансовый год" isLabel="true"/>
+					<field name="от" isLabel="true"/>
+					<field fieldType="field" key="|Document|Текущий_финансовый_год" name="Текущий финансовый год" valueType="integer" isValue="true" edit-name="yearPlanCurFrom"   />
+					<field name="до" isLabel="true" />
+					<field fieldType="field" key="|Document|Текущий_финансовый_год" name="Текущий финансовый год" valueType="integer" isValue="true" edit-name="yearPlanCurTo"   />
+				</column>	
+				<column>
+					<field name="Первый плановый год" isLabel="true"/>
+					<field name="от" isLabel="true"/>
+					<field fieldType="field" key="|Document|Первый_плановый_год" name="Первый плановый год" valueType="integer" isValue="true" edit-name="yearPlanFirstFrom" />
+					<field name="до" isLabel="true" />
+					<field fieldType="field" key="|Document|Первый_плановый_год" name="Первый плановый год" valueType="integer" isValue="true" edit-name="yearPlanFirstTo"  />
+				</column>
+				<column>
+					<field name="Второй плановый год" isLabel="true"/>
+					<field name="от" isLabel="true"/>
+					<field fieldType="field" key="|Document|Второй_плановый_год" name="Второй плановый год" valueType="integer" isValue="true" edit-name="yearPlanSecondFrom"  />
+					<field name="до" isLabel="true" />
+					<field fieldType="field" key="|Document|Второй_плановый_год" name="Второй плановый год" valueType="integer" isValue="true" edit-name="yearPlanSecondTo" />
+				</column>
+				<column>
+				</column>
+			</row>
+			<row>	
+				<column>
+					<field name="Реестровый номер в ЕИС" isLabel="true"/>
+					<field fieldType="field" key="|Document|Реестровый_номер_в_ЕИС" name="Реестровый номер в ЕИС" valueType="text" isValue="true"  edit-name="Regnumber" />
+					<field name="Статус" isLabel="true"/>
+					<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status"  edit-readonly="true" dict-column-name="code" is-select-one-level="1" edit-tool = "Статусы плана" dict-edit-name="Status" display-field-part="true"/>
+				</column>
+				<column>
+				</column>	
+				<column>
+				</column>
+				<column>
+				</column>
+			</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Планы закупок') and (doc_RegCard/rc_Index/text_Статус = @status)  and (doc_RegCard/rc_Index/text_Реестровый_номер_в_ЕИС = @Regnumber) and ((doc_RegCard/rc_Index/date_Дата_утверждения &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_утверждения &lt;= @registerDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_публикации &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_публикации &lt;= @publicDateTo))  and ((doc_RegCard/rc_Index/integer_Текущий_финансовый_год &gt;= @yearPlanCurFrom) and (doc_RegCard/rc_Index/integer_Текущий_финансовый_год &lt;= @yearPlanCurTo))  and ((doc_RegCard/rc_Index/integer_Первый_плановый_год &gt;= @yearPlanFirstFrom) and (doc_RegCard/rc_Index/integer_Первый_плановый_год &lt;= @yearPlanFirstTo)) and ((doc_RegCard/rc_Index/integer_Второй_плановый_год &gt;= @yearPlanSecondFrom) and (doc_RegCard/rc_Index/integer_Второй_плановый_год &lt;= @yearPlanSecondTo))" />
+	</search>
+</root>

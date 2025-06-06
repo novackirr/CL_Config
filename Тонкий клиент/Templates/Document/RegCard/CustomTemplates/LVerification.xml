@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основание сведения">
+						<rows>
+
+							<row>
+								<column>		
+									<block id="15" name="Общие сведения">
+										<rows>
+
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Вид_проверки" name="Вид проверки" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_реестровой_записи_плана" name="Номер реестровой записи плана" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_утверждения" name="Дата утверждения" valueType="date" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_публикации" name="Дата публикации" valueType="date" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>	
+						</rows>
+					</block>
+				</column>
+			</row>
+
+
+			<row>
+				<column>		
+					<block id="15" name="Плановые проверки">
+						<rows>
+
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_владелец_плана|Организация_владелец_плана_наименование" name="Организация-владелец плана" valueType="text" />
+								</column>
+								<column>
+
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Месяц_начала_периода" name="Месяц начала периода" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Год_начала_периода" name="Год начала периода" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Месяц_окончания_периода" name="Месяц окончания периода" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Год_окончания_периода" name="Год окончания периода" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Список_проверок" height="300" name ="НПА">
+										<column fieldType="field" key="|Номер_проверки_в_составе_плана_проверок" valueType="text" name="Номер проверки" width="100"/>
+										<column fieldType="field" key="|Вид_планового_контрольного_мероприятия" valueType="text" name="Вид планового контрольного мероприятия" width="150"/>
+										<column fieldType="field" key="|Вид_планового_обследования" valueType="text" name="Вид планового обследования" width="150"/>
+										<column fieldType="field" key="|Вид_плановой_проверки" valueType="text" name="Вид плановой проверки" width="100"/>
+										<column fieldType="field" key="|Тип_субъекта_проверки" valueType="text" name="Тип субъекта проверки" width="150"/>
+										<column fieldType="field" key="|Месяц_начала_проверки" valueType="text" name="Месяц начала проверки" width="150"/>
+										<column fieldType="field" key="|Год_начала_проверки" valueType="text" name="Год начала проверки" width="150"/>
+										<column fieldType="field" key="|Цель_и_основание_проверки" valueType="text" name="Цель и основание проверки" width="100"/>
+										<column fieldType="field" key="|Дата_публикация_сведений_о_проверке" valueType="date" name="Дата публикация сведений о проверке" width="150"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+
+			<row>
+				<column>		
+					<block id="16" name="Внеплановые проверки">
+						<rows>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Проверяемый_период_с" name="Проверяемый период с" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Проверяемый_период_по" name="Проверяемый период по" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Дата_и_время_проведения_проверки" name="Дата и вермя проведения проверки" valueType="datetime" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Тип_субъекта_проверки" name="Тип субъекта проверки" valueType="text" />
+								</column>
+							</row>
+							<row>
+								<column>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Орган_проверки|Орган_проверки_наименование" name="Орган, осуществляющий проведение проверки" valueType="text" />
+								</column>
+
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Цель_и_основание_внеплановой_проверки" name="Цель и основание внеплановой проверки" valueType="text" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Описание_предмета_проверки" name="Описание предмета проверки" valueType="text" />
+								</column>
+							</row>
+
+						</rows>
+					</block>
+				</column>
+			</row>
+
+		</rows>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="3" name="Основные сведения"> 
+						<rows>	
+							<row>							
+								<column>
+									<field name="Вид проверки" isLabel="true" edit-name="VidProverki"/>   
+								</column>
+								<column>
+									<field name="Номер реестровой записи плана" isLabel="true" edit-name="NumReeestr"/>         									
+								</column>
+								<column>		
+									<block id="14" name="14">
+										<rows>
+											<row>
+												<column>
+													<field name="Дата создания" isLabel="true" edit-name="DateCreate"/>                 
+												</column> 
+												<column>
+													<field name="Дата утверждения" isLabel="true" edit-name="DateUtv"/>                 
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+								<column>		
+									<block id="13" name="13">
+										<rows>
+											<row>
+												<column>
+													<field name="Дата публикации" isLabel="true" edit-name="DatePubl"/>                 
+												</column> 
+												<column>
+													<field name="" isLabel="true" />                 
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Вид_проверки" name="Вид проверки" valueType="text" isValue="true" edit-readonly="true" edit-name="VidProverki"  dict-column-name="code"   edit-tool = "Проверки" display-field-part="true"  dict-edit-name="VidProverki" edit-required="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Номер_реестровой_записи_плана" name="Номер реестровой записи плана" valueType="integer" isValue="true"  edit-name="NumReeestr"  edit-required="true"  />
+								</column>
+								<column>		
+									<block id="14" name="14">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="date" isValue="true"  edit-name="DateCreate"  edit-required="true" />             
+												</column> 
+												<column>
+													<field fieldType="field" key="|Document|Дата_утверждения" name="Дата утверждения" valueType="date" isValue="true"  edit-name="DateUtv"  />             
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+								<column>		
+									<block id="13" name="13">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_публикации" name="Дата публикации" valueType="date" isValue="true"  edit-name="DatePubl"   />             
+												</column> 
+												<column>
+
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+
+
+
+
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="1" name="Плановые проверки"> 
+						<rows>	
+							<row>
+								<column>		
+									<block id="15" name="15">
+										<rows>
+											<row>
+												<column>
+													<field name="Месяц начала периода" isLabel="true" edit-name="MesNachZak"/>                 
+												</column> 
+												<column>
+													<field name="Год начала периода" isLabel="true" edit-name="CodNachZak"/>                 
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+								<column>
+									<block id="16" name="16">
+										<rows>
+											<row>
+												<column>
+													<field name="Месяц окончания периода" isLabel="true" edit-name="MesOkonZak"/>                 
+												</column> 
+												<column>
+													<field name="Год окончания периода" isLabel="true" edit-name="CodOkonZak"/>                 
+												</column> 
+											</row>									
+										</rows>
+									</block>
+								</column>
+							</row>
+
+							<row>
+								<column>		
+									<block id="15" name="15">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Месяц_начала_периода_код" name="Месяц финансирования" valueType="text" isValue="true" edit-name="MesNachZakkod" dictionary-selection-start-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="MesNachZakkod"  show-dict-column="false"/>
+													<field fieldType="field" key="|Document|Месяц_начала_периода" name="Месяц начала периода наименование" valueType="text" isValue="true" edit-name="MesNachZak" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="MesNachZakkod" dict-column-width-percentage="70"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Год_начала_периода" name="Год начала периода" valueType="integer" isValue="true"  edit-name="CodNachZak"   />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+								<column>		
+									<block id="16" name="16">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Месяц_окончания_периода_код" name="Месяц окончания периода" valueType="text" isValue="true" edit-name="MesOkonZakkod" dictionary-selection-start-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="MesOkonZakkod"   show-dict-column="false"/>
+													<field fieldType="field" key="|Document|Месяц_окончания_периода" name="Месяц окончания периода наименование" valueType="text" isValue="true" edit-name="MesOkonZak" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="MesOkonZakkod"  dict-column-width-percentage="70"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Год_окончания_периода" name="Год окончания периода" valueType="integer" isValue="true"  edit-name="CodOkonZak"   />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>							
+								<column>
+									<field name="Организация-владелец плана" isLabel="true" edit-name="VladPlana"/>                 
+								</column>  	
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_владелец_плана|Организация_владелец_плана" name="Организация-владелец плана" valueType="text"  isValue="true" edit-name="VladPlana"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="VladPlana" show-dict-column="false"  />
+									<field fieldType="field" key="|Document|Организация_владелец_плана|Организация_владелец_плана_наименование" name="Организация_владелец_плана_наименование" valueType="text" isValue="true" edit-name="VladPlanaName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="VladPlana" display-field-part="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Организация_владелец_плана|Организация_владелец_плана_код_по_СПЗ" name="Организация_владелец_плана_код_по_СПЗ" valueType="text" isValue="true" edit-name="VladPlanaZaSPZ"    edit-readonly="true"  dict-column-name="Код по СПЗ" is-select-one-level="1" dict-edit-name="VladPlana" display-field-part="false" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_владелец_плана|Организация_владелец_плана_код_по_СР" name="Организация_владелец_плана_код_по_СР" valueType="text" isValue="true" edit-name="VladPlanaSr"    edit-readonly="true"  dict-column-name="Код по Сводному реестру" is-select-one-level="1" dict-edit-name="VladPlana" display-field-part="false" edit-hidden="true"/>
+								</column>
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Список_проверок" edit-name="ItemTab" height="300">							
+										<column fieldType="field" key="|Номер_проверки_в_составе_плана_проверок" name="Номер проверки в составе плана проверок" valueType="text"  isValue="true" edit-name="NumProv"   width="100"/>
+										<column fieldType="field" key="|Год_начала_проверки" name="Год начала проверки" valueType="integer"  isValue="true" edit-name="Godrov"   width="100"/>
+										<column fieldType="field" key="|Вид_плановой_проверки_код" name="Вид плановой проверки код" valueType="text" isValue="true" edit-name="VidPlanProvKod"  dict-column-name="code"  edit-tool = "Вид плановой проверки"  dict-edit-name="VidPlanProvKod" show-dict-column="false" edit-readonly="true" />
+										<column fieldType="field"  key="|Вид_плановой_проверки" name="Вид плановой проверки" valueType="longtext" isValue="true" edit-name="VidPlanProv" dict-column-name="Наименование"   dict-edit-name="VidPlanProvKod"  display-field-part="true" edit-hidden="true"   edit-readonly="true"/>
+										<column fieldType="field" key="|Вид_планового_обследования_код" name="Вид планового обследования код" valueType="text" isValue="true" edit-name="VidPlanObslKod"  dict-column-name="code"  edit-tool = "Вид планового обследования"  dict-edit-name="VidPlanObslKod" show-dict-column="false" edit-readonly="true" />
+										<column fieldType="field"  key="|Вид_планового_обследования" name="Вид планового обследования" valueType="longtext" isValue="true" edit-name="VidPlanObsl" dict-column-name="Наименование"   dict-edit-name="VidPlanObslKod"  display-field-part="true" edit-hidden="true"   edit-readonly="true"/>
+										<column fieldType="field" key="|Вид_планового_контрольного_мероприятия_код" name="Вид планового контрольного мероприятия код" valueType="text" isValue="true" edit-name="VidPlanKontrKod"  dict-column-name="code"  edit-tool = "Вид планового контрольного мероприятия"  dict-edit-name="VidPlanKontrKod" show-dict-column="false" edit-readonly="true" />
+										<column fieldType="field"  key="|Вид_планового_контрольного_мероприятия" name="Вид планового контрольного мероприятия" valueType="longtext" isValue="true" edit-name="VidPlanKontr" dict-column-name="Наименование"   dict-edit-name="VidPlanKontrKod"  display-field-part="true" edit-hidden="true"   edit-readonly="true"/>
+										<column  fieldType="field" key="|Тип_субъекта_проверки" name="Тип субъекта проверки" valueType="text" isValue="true" edit-readonly="true" edit-name="TipSubProverka"  dict-column-name="code"   edit-tool = "Тип субъекта проверки" display-field-part="true"  dict-edit-name="TipSubProverka"  />
+										<column  fieldType="field" key="|Месяц_начала_проверки_код" name="Месяц начала проверки" valueType="text" isValue="true" edit-name="MesNachPerkod" dictionary-selection-start-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="MesNachPerkod" edit-required="false" show-dict-column="false"/>
+										<column fieldType="field" key="|Месяц_начала_проверки" name="Месяц начала проверки наименование" valueType="text" isValue="true" edit-name="MesNachPer" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="MesNachPerkod" edit-required="false" dict-column-width-percentage="70"  />
+										<column fieldType="field" key="|Цель_и_основание_проверки" name="Цель и основание проверки" valueType="text" isValue="true" edit-name="CelOsn" width="150" />
+										<column fieldType="field" key="|Дата_публикация_сведений_о_проверке" name="Дата публикация сведений о проверке" valueType="date"  isValue="true" edit-name="DatePublSv"   width="100"/>
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="2" name="Внеплановые проверки"> 
+						<rows>	
+
+							<row>
+								<column>		
+									<block id="20" name="20">
+										<rows>
+											<row>
+												<column>		
+													<block id="17" name="17">
+														<rows>
+															<row>
+																<column>
+																	<field name="Проверяемый период с" isLabel="true" edit-name="ProvPeriodS"/>                 
+																</column> 
+																<column>
+																	<field name="Проверяемый период по" isLabel="true" edit-name="ProvPeriodPo"/>                 
+																</column> 
+															</row>	
+														</rows>
+													</block>
+												</column>
+												<column>
+													<field name="Дата и время проведения проверки" isLabel="true" edit-name="DateTimeProv"/>                 
+												</column> 
+												<column>
+													<field name="Тип субъекта проверки" isLabel="true" edit-name="TipSubProv"/>                 
+												</column> 
+											</row>	
+										</rows>
+									</block>
+								</column>
+
+							</row>
+
+							<row>
+								<column>		
+									<block id="20" name="20">
+										<rows>
+											<row>
+												<column>		
+													<block id="18" name="18">
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Проверяемый_период_с" name="Проверяемый период с" valueType="date" isValue="true"  edit-name="ProvPeriodS"   />
+																</column>
+																<column>
+																	<field fieldType="field" key="|Document|Проверяемый_период_по" name="Проверяемый период по" valueType="date" isValue="true"  edit-name="ProvPeriodPo"   />
+																</column>
+															</row>	
+														</rows>
+													</block>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_и_время_проведения_проверки" name="Дата и время проведения проверки" valueType="datetime" isValue="true"  edit-name="DateTimeProv"   />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Тип_субъекта_проверки" name="Тип субъекта проверки" valueType="text" isValue="true" edit-readonly="true" edit-name="TipSubProv"  dict-column-name="code"   edit-tool = "Тип субъекта проверки" display-field-part="true"  dict-edit-name="TipSubProv"  />
+												</column>
+											</row>	
+										</rows>
+									</block>
+								</column>
+
+							</row>
+							<row>							
+								<column>
+									<field name="Орган, осуществляющий проведение проверки" isLabel="true" edit-name="OrgProv"/>                 
+								</column>  	
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Орган_проверки|Орган_проверки" name="Орган проверки" valueType="text"  isValue="true" edit-name="OrgProv"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики" dict-edit-name="OrgProv" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Орган_проверки|Орган_проверки_наименование" name="Орган проверки наименование" valueType="text" isValue="true" edit-name="OrgProvName"   edit-readonly="true"  dict-column-name="Полное наименование" dict-edit-name="OrgProv" display-field-part="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Орган_проверки|Орган_проверки_код_по_СПЗ" name="Орган_проверки_код_по_СПЗ" valueType="text" isValue="true" edit-name="OrgProvSPZ"    edit-readonly="true"  dict-column-name="Код по СПЗ" is-select-one-level="1" dict-edit-name="OrgProv" display-field-part="false" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Орган_проверки|Орган_проверки_код_по_СР" name="Орган_проверки_код_по_СР" valueType="text" isValue="true" edit-name="OrgProvSr"    edit-readonly="true"  dict-column-name="Код по Сводному реестру" is-select-one-level="1" dict-edit-name="OrgProv" display-field-part="false" edit-hidden="true"/>
+								</column>
+							</row>
+							<row>							
+								<column>
+									<field name="Цель и основание внеплановой проверки" isLabel="true" edit-name="CelProv"/>   
+								</column>
+								<column>
+									<field name="Описание предмета проверки" isLabel="true" edit-name="OpisPredZak"/>         									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Цель_и_основание_внеплановой_проверки" name="Цель и основание внеплановой проверки" valueType="longtext" isValue="true"  edit-name="CelProv"   />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Описание_предмета_проверки" name="Описание предмета проверки" valueType="longtext" isValue="true"  edit-name="OpisPredZak"   />
+								</column>
+							</row>	
+
+						</rows>
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1" />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowname" /> 
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}" edit-hidden="true" /> 		
+									<field fieldType="field" key="|Document|Статус" valueType="text" isValue="true" edit-name="Status" edit-hidden="true" edit-default-value="Черновик" />									
+								</column>
+							</row>	
+						</rows>
+					</block>
+				</column>
+			</row> 
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="Scripts\Content\Document\RegCard\LVerification.js" />
+	</scripts>
+</root>

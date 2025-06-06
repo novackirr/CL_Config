@@ -1,0 +1,11 @@
+﻿@using LiteClient.Core.Conf
+@{
+    var selYear = Context.Request.Query["selectedYear"];
+	int maxYear = DateTime.Today.Year;
+}
+
+@for (int i = maxYear; i >= 2022; i--) //TODO в конфиге года
+{
+    <span class='search-year @(selYear == i.ToString() ?  "current-year" : string.Empty)' onclick="switchYear(@i)">@i</span>
+}
+<span class='search-year @(string.IsNullOrEmpty(selYear) ?  "current-year" : string.Empty)' onclick="switchYear('')">Все годы</span>

@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+	<Flow name="Заявки на закупку">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на закупку" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на закупку}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции" targetFlow="Заявки на закупку" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_выплат_всего" />  
+					<CopyField sourceFlow="Заявки на закупку" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_заявки" />      
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на закупку" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на закупку}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Заявки на закупку" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_выплат_всего" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на закупку" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на закупку}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Заявки на закупку" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_выплат_всего" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted>
+	</Flow>
+	<Flow name="Позиции">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки на закупку' and doc_Links/doc_Link/link_Document='{current_Id}']" tag="Заявки на закупку">
+						<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на закупку}/doc_Id]]" tag="Позиции" />
+					</Select>
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции" targetFlow="Заявки на закупку" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_выплат_всего" />  
+					<CopyField sourceFlow="Заявки на закупку" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_заявки" />      
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>   
+		<OnRegcardEdited>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки на закупку' and doc_Links/doc_Link/link_Document='{current_Id}']" tag="Заявки на закупку">
+						<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на закупку}/doc_Id]]" tag="Позиции" />
+					</Select>
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Заявки на закупку" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_выплат_всего" />
+					<CopyField sourceFlow="Заявки на закупку" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_заявки" />
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>   
+	</Flow>
+	<Flow name="Позиции плана закупок">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<FieldsModify> 
+			<CopyField src="|Document|Наименование_позиции"  dst="|Document|Наименование_объекта_закупки" /> 		
+			<CopyField src="|Document|Год_финансирования"  dst="|Document|Планируемый_год_размещения" /> 
+			<CopyField src="|Document|КВР"  /> 
+			<CopyField src="|Document|КВР_наименование"   />
+			<CopyField src="|Document|Значение_КВР_неопределено"  />
+			<CopyField src="|Document|ОКПД2"   />
+			<CopyField src="|Document|ОКПД2_наименование"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет"  />
+			<CopyField src="|Document|Организация_заказчик|ОКТМО"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО"   />
+			<SumField src="|Document|Сумма_выплат_текущего_года"  dst="|Document|Сумма_текущий_год" />
+			<SumField src="|Document|Сумма_выплат_первого_года"  dst="|Document|Сумма_первый_плановый_год" />
+			<SumField src="|Document|Сумма_выплат_второго_года"  dst="|Document|Сумма_второй_плановый_год" />
+			<SumField src="|Document|Сумма_выплат_последующих_годов"  dst="|Document|Сумма_последующие_годы" />
+			<SumField src="|Document|Сумма_выплат_всего"  dst="|Document|Сумма_всего" /> 
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана закупок}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />  
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_позиции_ПЗ" />      
+					<SetField targetFlow="Позиции" targetField="|Document|Статус" value="Включена в позицию плана закупок" />
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки" targetField="|Document|Тип_особой_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки_код" targetField="|Document|Тип_особой_закупки_код" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки" targetField="|Document|Периодичность_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки_код" targetField="|Document|Периодичность_закупки_код" /> 
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_закупки_в_ПЗ_порядковый"/>
+					<Setting key="CounterNameFormat" value="({|Document|Планируемый_год_размещения}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>
+			</NamedConstants>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана закупок}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="Позиции плана закупок" path="|Document|ИКЗ" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetIKZPPZ targetFlow="Позиции плана закупок" targetField="|Document|ИКЗ" />
+							<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|ИКЗ" targetField="|Document|ИКЗ" />  
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnDocumentCreated>  
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана закупок}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />	
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки" targetField="|Document|Тип_особой_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки_код" targetField="|Document|Тип_особой_закупки_код" /> 
+					<SetIKZPPZ targetFlow="Позиции плана закупок" targetField="|Document|ИКЗ" />
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|ИКЗ" targetField="|Document|ИКЗ" />  
+						<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки" targetField="|Document|Периодичность_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки_код" targetField="|Document|Периодичность_закупки_код" /> 
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана закупок}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />	
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки" targetField="|Document|Тип_особой_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Тип_особой_закупки_код" targetField="|Document|Тип_особой_закупки_код" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки" targetField="|Document|Периодичность_закупки" /> 
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|Периодичность_закупки_код" targetField="|Document|Периодичность_закупки_код" /> 
+					<SetIKZPPZ targetFlow="Позиции плана закупок" targetField="|Document|ИКЗ" />
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="|Document|ИКЗ" targetField="|Document|ИКЗ" /> 		
+					<CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_позиции_ПЗ" />		
+					<SetField targetFlow="Позиции" targetField="|Document|Статус" value="Включена в позицию плана закупок" />					
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана закупок}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана закупок" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />					
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow>
+	<Flow name="Позиции плана-графика">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<FieldsModify>  
+			<CopyField src="|Document|Наименование_позиции"  dst="|Document|Наименование_объекта_закупки" /> 
+			<CopyField src="|Document|Год_финансирования"  dst="|Document|Планируемый_год_размещения" /> 
+			<CopyField src="|Document|Месяц_финансирования"  dst="|Document|Планируемый_месяц_размещения" />
+			<CopyField src="|Document|КВР"  dst="|Document|КВР" /> 
+			<CopyField src="|Document|Значение_КВР_неопределено"  />
+			<CopyField src="|Document|ИД_позиции_ПЗ"  /> 
+			<CopyField src="|Document|ИКЗ"  dst="|Document|ИКЗ_позиции_ПЗ" /> 
+			<CopyField src="|Document|КВР_наименование"  />
+			<CopyField src="|Document|ОКПД2"  />
+			<CopyField src="|Document|ОКПД2_наименование"  />
+			<CopyField src="|Document|Тип_особой_закупки_код"  />
+			<CopyField src="|Document|Тип_особой_закупки"  />
+			<CopyField src="|Document|Валюта"  />
+			<CopyField src="|Document|Код_валюты"  />
+			<CopyField src="|Document|ОКЕИ"   />
+			<CopyField src="|Document|Периодичность_закупки"   />
+			<CopyField src="|Document|Периодичность_закупки_код"   />
+			<CopyField src="|Document|Единица_измерения"  />
+			<CopyField src="|Document|Невозможно_определить_количество"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СР"   />
+			<CopyField src="|Document|Организация_заказчик|ОКТМО"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"   />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки"   />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<SumField src="|Document|Количество_текущего_года"  dst="|Document|Количество_текущий_год" />
+			<SumField src="|Document|Количество_первого_планового_года"  dst="|Document|Количество_первый_плановый_год" />
+			<SumField src="|Document|Количество_второго_планового_года"  dst="|Document|Количество_второй_плановый_год" /> 
+			<SumField src="|Document|Количество_последующих_годов"  dst="|Document|Количество_последующие_годы" />
+			<SumField src="|Document|Количество_всего"  dst="|Document|Количество" />
+			<SumField src="|Document|Сумма_выплат_текущего_года"  dst="|Document|Сумма_текущий_год" />
+			<SumField src="|Document|Сумма_выплат_первого_года"  dst="|Document|Сумма_первый_плановый_год" />
+			<SumField src="|Document|Сумма_выплат_второго_года"  dst="|Document|Сумма_второй_плановый_год" />
+			<SumField src="|Document|Сумма_выплат_последующих_годов"  dst="|Document|Сумма_последующие_годы" />
+			<SumField src="|Document|Сумма_выплат_всего"  dst="|Document|Сумма_всего" /> 
+			<SumField src="|Document|Сумма_выплат_всего"  dst="|Document|НМЦК" /> 
+			<SumField src="|Document|Цена_запасных_частей"   /> 
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана-графика" />
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции') and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана-графика}/doc_Id]]" tag="Позиции" />
+					<SelectLink  flow="Позиции">
+						<SelectLink flow="Позиции плана закупок" tag="Позиции плана закупок"/>
+					</SelectLink>  
+				</Select>
+				<Actions>  
+					<CopyField sourceFlow="Позиции плана-графика" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_позиции_ПГ" />     
+					<!-- <CopyField sourceFlow="Позиции плана закупок" targetFlow="Позиции плана-графика" sourceField="|Document|Периодичность_закупки" targetField="|Document|Периодичность_закупки" />  --> 					
+					<SetField targetFlow="Позиции" targetField="|Document|Статус" value="Включена в позицию план-графика" />
+					<AddLink target="Позиции плана-графика" link="Позиции плана закупок" /> 
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_закупки_в_ПГ_порядковый"/>
+					<Setting key="CounterNameFormat" value="({|Document|Планируемый_год_размещения}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>
+			</NamedConstants> 
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="Позиции плана-графика" path="|Document|ИКЗ" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetIKZPPG targetFlow="Позиции плана-графика" targetField="|Document|ИКЗ" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnDocumentCreated>  
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана-графика" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана-графика}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_всего" targetField="|Document|Количество" />  
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_первого_планового_года" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_второго_планового_года" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_последующих_годов" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_текущего_года" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />	
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана-графика" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана-графика}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_всего" targetField="|Document|Количество" />
+					<CopyField sourceFlow="Позиции плана-графика" targetFlow="Позиции" sourceField="%key%" targetField="|Document|ИД_позиции_ПГ" />		
+					<SetField targetFlow="Позиции" targetField="|Document|Статус" value="Включена в позицию план-графика" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_всего" targetField="|Document|Количество" />  
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_первого_планового_года" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_второго_планового_года" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_последующих_годов" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_текущего_года" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />	
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Позиции плана-графика" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции' and doc_Id = document[doc_Links/doc_Link/link_Document={Позиции плана-графика}/doc_Id]]" tag="Позиции" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_всего" targetField="|Document|Количество" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_первого_планового_года" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_второго_планового_года" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_последующих_годов" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Количество_текущего_года" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Сумма_всего" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_текущего_года"  targetField="|Document|Сумма_текущий_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_первого_года"  targetField="|Document|Сумма_первый_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_второго_года"  targetField="|Document|Сумма_второй_плановый_год" />
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_последующих_годов"  targetField="|Document|Сумма_последующие_годы" />	
+					<Sum sourceFlow="Позиции" targetFlow="Позиции плана-графика" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow>
+
+	<Flow name="Заявки на размещение закупки">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<FieldsModify>  
+			<CopyField src="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Наименование_объекта_закупки" />
+			<CopyField src="|Document|Описание_объекта_закупки" />
+			<CopyField src="|Document|НМЦК" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Планируемый_месяц_размещения" />
+			<CopyField src="|Document|Планируемый_год_размещения" />
+			<CopyField src="|Document|Планируемый_срок_размещения" />
+			<CopyField src="|Document|Планируемый_срок_исполнения" dst="|Document|Сроки_доставки_товара" /> 
+			<CopyField src="|Document|Роль_организатора_закупки" />
+			<CopyField src="|Document|Роль_организатора_закупки_код" /> 
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СР"   />
+			<CopyField src="|Document|Организация_заказчик|ОКТМО"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<CopyField src="|Document|Централизованная_закупка" />
+			<CopyField src="|Document|Совместные_торги" />
+			<CopyField src="|Document|Ответственное_лицо_ОргСовмТорг|Ответственное_лицо_ОргСовмТорг"/>
+			<CopyField src="|Document|Ответственное_лицо_ОргСовмТорг|Ответственное_лицо_ОргСовмТорг_ФИО"/> 
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов"/>
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_наименование"/>
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_код_по_СПЗ"/>
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_код_по_СР"/>
+			<CopyField src="|Document|ГРБС|ГРБС"/>
+			<CopyField src="|Document|ГРБС|ГРБС_наименование"/>
+			<CopyField src="|Document|Лекарственный_препарат" />
+			<CopyField src="|Document|Общественное_обсуждение" />
+			<CopyField src="|Document|Требуется_согласование_ГРБС" />
+			
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на размещение закупки" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на размещение закупки}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Заявки на размещение закупки" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+					<CopyField sourceFlow="Заявки на размещение закупки" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_заявки" />    
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в заявку на размещение закупки" />
+					<CopyAttachments sourceFlow="Позиции плана-графика" targetFlow="Заявки на размещение закупки" sourceCategory="Документация" targetCategory="Документация"/>
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>  
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на размещение закупки" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на размещение закупки}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>  
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Заявки на размещение закупки" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />  
+					<CopyField sourceFlow="Заявки на размещение закупки" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_заявки" />  
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на размещение закупки" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на размещение закупки}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Заявки на размещение закупки" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+					<CopyField sourceFlow="Заявки на размещение закупки" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_заявки" />      
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в заявку на размещение закупки" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки на размещение закупки" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки на размещение закупки}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Заявки на размещение закупки" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow>
+
+	<Flow name="Извещения о закупочной процедуре">
+
+	<LinksModify>
+    <LinkCurrentDoc />
+    <LinkAllLinksWhereFlow name="Позиции плана-графика" />
+  </LinksModify>
+		<FieldsModify>
+			<CopyField src="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Наименование_объекта_закупки" />
+			<CopyField src="|Document|НМЦК" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" /> 
+			<CopyField src="|Document|Роль_организатора_закупки" />
+			<CopyField src="|Document|Роль_организатора_закупки_код" /> 
+			<CopyField src="|Document|Планируемый_месяц_размещения" />
+			<CopyField src="|Document|Планируемый_год_размещения" />	
+			<CopyField src="|Document|Планируемый_срок_размещения" />
+			<CopyField src="|Document|Инициатор_заявки|Инициатор_заявки"/>
+			<CopyField src="|Document|Инициатор_заявки|Инициатор_заявки_ФИО"/>
+			<CopyField src="|Document|Централизованная_закупка" />
+			<CopyField src="|Document|Совместные_торги" />
+			<!-- <CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель"/>
+			<CopyField src="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО"/> -->
+		</FieldsModify>
+
+			<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<SelectLink source="Извещения о закупочной процедуре" flow="Заявки на размещение закупки" tag="Заявки на размещение закупки"/>
+                    <SelectLink source="Извещения о закупочной процедуре" flow="Позиции плана-графика" tag="Позиции плана-графика"/>
+				</Select>		
+				<Actions>
+					<!--<AddLink target="Извещения о закупочной процедуре" link="Позиции плана-графика" />-->
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Подготовка извещения" />
+					<CopyField targetFlow="Позиции плана-графика" targetField="|Document|ИД_извещения" sourceFlow="Извещения о закупочной процедуре" sourceField ="%key%" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|ИД_извещения" sourceFlow="Извещения о закупочной процедуре" sourceField ="%key%" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Дата_окончания_подачи_заявок" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" />
+					<Sum sourceFlow="Заявки на размещение закупки" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+					<SetField targetFlow="Заявки на размещение закупки" targetField="|Document|Статус" value="Подготовка извещения" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_отмены_закупки" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_отмены_закупки" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_внесения_изменений" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_внесения_изменений" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_подачи_заявки_на_разъяснение" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_подачи_заявки_на_разъяснение" />
+					<CopyAttachments sourceFlow="Заявки на размещение закупки" targetFlow="Извещения о закупочной процедуре" sourceCategory="Документация" targetCategory="Документация"/>
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+			
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<SelectLink source="Извещения о закупочной процедуре" flow="Заявки на размещение закупки" tag="Заявки на размещение закупки"/>
+                    <SelectLink source="Извещения о закупочной процедуре" flow="Позиции плана-графика" tag="Позиции плана-графика"/>
+				</Select>
+				<Actions>  
+					<CopyField targetFlow="Позиции плана-графика" targetField="|Document|ИД_извещения" sourceFlow="Извещения о закупочной процедуре" sourceField ="%key%" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Дата_окончания_подачи_заявок" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Порядок_проведения_процедуры|Дата_окончания_подачи_заявок" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_отмены_закупки" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_отмены_закупки" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_внесения_изменений" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_внесения_изменений" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Срок_подачи_заявки_на_разъяснение" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Срок_подачи_заявки_на_разъяснение" />
+					<CopyField targetFlow="Заявки на размещение закупки" targetField="|Document|Номер_лота_в_извещении" sourceFlow="Извещения о закупочной процедуре" sourceField ="|Document|Номер_лота_в_извещении" />
+					<Sum sourceFlow="Заявки на размещение закупки" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />					
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+
+		<OnLinkAdded>
+		   	<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<SelectLink flow="Заявки на размещение закупки" tag="Связанная заявка на размещение">
+						<SelectLink flow="Позиции плана-графика" tag="Позиции плана-графика"/>
+                    </SelectLink>
+				</Select>
+				<Actions>
+					<AddLink target="Извещения о закупочной процедуре" link="Позиции плана-графика" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Подготовка извещения" />
+					<CopyField targetFlow="Позиции плана-графика" targetField="|Document|ИД_извещения" sourceFlow="Извещения о закупочной процедуре" sourceField ="%key%" />
+					<Sum sourceFlow="Связанная заявка на размещение" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+					<SetField targetFlow="Связанная заявка на размещение" targetField="|Document|Статус" value="Подготовка извещения" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+				
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки на размещение закупки' and doc_Id = document[doc_Links/doc_Link/link_Document={Извещения о закупочной процедуре}/doc_Id]]" tag="Заявки на размещение закупки" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Заявки на размещение закупки" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted>
+	</Flow> 
+
+	<Flow name="Соглашения">
+		<FieldsModify>
+			<CopyField src="|Document|%key%"  dst="|Document|ИД_позиции_ПГ" />
+			<CopyField src="|Document|Наименование_объекта_закупки"  dst="|Document|Предмет_контракта" />
+				<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СР"   />
+			<CopyField src="|Document|Организация_заказчик|ОКТМО"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКТМОППО"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"   />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки"   />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<CopyField src="|Document|ИКЗ" /> 
+		</FieldsModify>
+
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify> 
+
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Соглашения" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Соглашения}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<CopyField sourceFlow="Позиции плана-графика" targetFlow="Соглашения" sourceField="%key%" targetField="|Document|ИД_позиции_ПГ" />
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+	</Flow>	
+	<Flow name="Протоколы">
+		<FieldsModify>
+			<CopyField src="|Document|Номер_закупки_в_ЕИС" />
+			<CopyField src="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" /> 
+			<CopyField src="|Document|Роль_организатора_закупки" dst="|Document|Организатор_закупки|Роль_организатора_закупки_протокол" />
+			<CopyField src="|Document|Роль_организатора_закупки_код"  dst="|Document|Организатор_закупки|Роль_организатора_закупки_протокол_код" />
+			<CopyField src="|Document|Порядок_проведения_процедуры|Место_рассмотрения_заявок"  dst="|Document|Место_рассмотрения_заявок" />
+		</FieldsModify>
+
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify> 
+
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Протоколы" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре' and doc_Id = document[doc_Links/doc_Link/link_Document={Протоколы}/doc_Id]]" tag="Извещения о закупочной процедуре" />
+				</Select>
+				<Actions>
+					<CopyField sourceFlow="Извещения о закупочной процедуре" targetFlow="Протоколы" sourceField="%key%" targetField="|Document|ИД_извещения" />
+
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+	</Flow>	
+	<Flow name="Заявки участников">
+		<FieldsModify>
+
+			<CopyField src="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Номер_протокола" />
+
+		</FieldsModify>
+
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Заявки участников" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы' and doc_Id = document[doc_Links/doc_Link/link_Document={Заявки участников}/doc_Id]]" tag="Протоколы" />
+					<SelectLink  flow="Протоколы" tag="Протоколы"/>
+				</Select>
+				<Actions>
+					<CopyField sourceFlow="Протоколы" targetFlow="Заявки участников" sourceField="%key%" targetField="|Document|ИД_протокола" />
+					<TableConsolidation>
+						<SourceTable flow="Протоколы" tableName="|Document|Список_документов">
+							<Column name="Порядковый_номер" />
+							<Column name="Наименование_документа" />
+							<Column name="Обязательность_предоставления" />
+						</SourceTable>
+						<TargetTable flow="{current}" tableName="|Document|Список_документов">
+							<Column name="Порядковый_номер"  findExisting="true"/>  
+							<Column name="Наименование_документа" /> 
+							<Column name="Обязательность_предоставления" />
+						</TargetTable>
+					</TableConsolidation>
+					<TableConsolidation>
+						<SourceTable flow="Протоколы" tableName="|Document|Участники_комиссии">
+							<Column name="Номер" />
+							<Column name="Участники_комиссии_фамилия" />
+							<Column name="Участники_комиссии_имя" />
+							<Column name="Участники_комиссии_отчество" />
+						</SourceTable>
+						<TargetTable flow="{current}" tableName="|Document|Выбор_комиссии">
+							<Column name="Номер_комиссии"  findExisting="true"/>  
+							<Column name="Фамилия" /> 
+							<Column name="Имя" />
+							<Column name="Отчество" />
+						</TargetTable>
+					</TableConsolidation>
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+
+		<OnRegcardEdited transaction="single">
+			<Aggregation>
+				<Actions>
+					<TableConsolidation>
+						<SourceTable flow="{current}" tableName="|Document|Список_документов">
+							<Column name="Порядковый_номер" />
+							<Column name="Наименование_документа" />
+							<Column name="Обязательность_предоставления" />
+						</SourceTable>
+						<TargetTable flow="{current}" tableName="|Document|Список_документов">
+							<Column name="Порядковый_номер"  findExisting="true"/>  
+							<Column name="Наименование_документа" /> 
+							<Column name="Обязательность_предоставления" />
+
+						</TargetTable>
+					</TableConsolidation>
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited> 
+	</Flow>	
+
+	<Flow name="Контракты">
+		<FieldsModify>
+			<CopyField src="|Document|Позиции_не_учитывать"	dst="|Document|Позиции_не_учитывать" />
+			<CopyField src="|Document|Дата_публикации"	dst="|Document|Фактическая_дата_размещения" />
+			<CopyField src="%key%" dst="|Document|ИД_позиции_ПГ" />
+			<CopyField src="|Document|ИКЗ" dst="|Document|ИКЗ" />
+			<!-- <CopyField src="|Document|Номер_закупки"  /> -->
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ"   />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_код_по_СР"  />
+			<CopyField src="|Document|Организация_заказчик|ОКТМО"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ"  />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_Дата_постановки_на_учет"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"  />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ"   />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<CopyField src="|Document|Способ_определения_поставщика_код"   />
+			<CopyField src="|Document|Способ_определения_поставщика"  />
+			<CopyField src="|Document|Валюта"  />
+			<CopyField src="|Document|Код_валюты"   />
+			<!-- 	<CopyField src="|Document|Номер_лота"   /> -->
+			<CopyField src="|Document|Документы_основание_ед_поставщик_пункт" />
+			<CopyField src="|Document|Документы_основание_ед_поставщик_наименование"   />
+			<CopyField src="|Document|Документы_основание_ед_поставщик_код"   />
+			<CopyField src="|Document|Роль_организатора_закупки" dst="|Document|Роль_организации_разместившей_контракт" />
+			<CopyField src="|Document|Роль_организатора_закупки_код" dst="|Document|Роль_организации_разместившей_контракт_код" />
+			<Sum src="|Document|Сумма_выплат_всего" dst="|Document|Цена_контракта" />
+
+		</FieldsModify>
+		<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Позиции" />
+		</LinksModify>
+
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Контракты" />
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции плана-графика') and doc_Id = document[doc_Links/doc_Link/link_Document={Контракты}/doc_Id]]" tag="Позиции плана-графика" /> 
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции') and doc_Id = document[doc_Links/doc_Link/link_Document={Контракты}/doc_Id]]" tag="Позиции" />
+
+
+				</Select>
+				<Actions>  
+					<CopyField sourceFlow="Контракты" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_позиции_ПГ" />      
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Заключение контракта" /> 
+					<SetFieldGuid targetFlow="Контракты" targetField="|Document|ИД_в_ЕИС" />
+					<CopyField sourceFlow="Позиции плана-графика" targetFlow="Контракты" sourceField="|Document|Регистрационный_номер" targetField="|Document|Номер_закупки" /> 	
+						<CopyField targetFlow="Позиции плана-графика" targetField="|Document|ИД_контракта" sourceFlow="Контракты" sourceField ="%key%" />
+
+					<CopyField targetFlow="Позиции" targetField="|Document|ИД_контракта" sourceFlow="Контракты" sourceField ="%key%" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Заключение контракта" /> 
+					<Sum sourceFlow="Позиции" targetFlow="Контракты" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Цена_контракта" />
+					<TableConsolidation>
+						<SourceTable flow="{current}" tableName="|Document|Этапы_исполнения_бюджетные_средства">
+							<Column name="Дата_окончания_этапа_бюджетные_средства" />
+							<Column name="Сумма_платежей_этапа_БС" />
+						</SourceTable>
+						<SourceTable flow="{current}" tableName="|Document|Этапы_исполнения_внебюджетные_средства">
+							<Column name="Дата_окончания_этапа_внебюджетные_средства" />
+							<Column name="Сумма_платежей_этапа_ВС" />
+						</SourceTable>
+						<TargetTable flow="{current}" tableName="|Document|Этапы_исполнения_контракта">
+							<Column name="Дата_окончания_этапа_контракта" findExisting="true" />
+							<Column name="Сумма_платежей_этапа_контракта" aggregate="sumMoney" />
+						</TargetTable>
+					</TableConsolidation>
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>  
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Контракты" />
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции плана-графика') and doc_Id = document[doc_Links/doc_Link/link_Document={Контракты}/doc_Id]]" tag="Позиции плана-графика" /> 
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции') and doc_Id = document[doc_Links/doc_Link/link_Document={Контракты}/doc_Id]]" tag="Позиции" />
+
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции" targetFlow="Контракты" sourceField="|Document|Сумма_выплат_всего" targetField="|Document|Цена_контракта" />
+					<Sum sourceFlow="Позиции" targetFlow="Контракты" sourceField="|Document|Дата_публикации" targetField="|Document|Фактическая_дата_размещения" />
+					<TableConsolidation>
+						<SourceTable flow="{current}" tableName="|Document|Этапы_исполнения_бюджетные_средства">
+							<Column name="Дата_окончания_этапа_бюджетные_средства" />
+							<Column name="Сумма_платежей_этапа_БС" />
+						</SourceTable>
+						<SourceTable flow="{current}" tableName="|Document|Этапы_исполнения_внебюджетные_средства">
+							<Column name="Дата_окончания_этапа_внебюджетные_средства" />
+							<Column name="Сумма_платежей_этапа_ВС" />
+						</SourceTable>
+						<TargetTable flow="{current}" tableName="|Document|Этапы_исполнения_контракта">
+							<Column name="Дата_окончания_этапа_контракта" findExisting="true" />
+							<Column name="Сумма_платежей_этапа_контракта" aggregate="sumMoney" />
+						</TargetTable>
+					</TableConsolidation>
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+	</Flow>
+
+	<Flow name="Дополнительные соглашения">
+		<FieldsModify>
+			<CopyField src="|Document|Предмет_договора" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик_наименование" />
+			<CopyField src="|Document|Организация_заказчик|Организация_заказчик" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик_наименование" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик_ИНН" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик_КПП" />
+			<CopyField src="|Document|Организация_поставщик|Организация_поставщик_СМП" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Закупка_в_электронной_форме" />
+			<CopyField src="|Document|Номер_извещения" />
+			<CopyField src="|Document|Название_закупки" />
+			<CopyField src="|Document|ИД_извещения" />
+			<CopyField src="|Document|ИД_лота" />
+			<CopyField src="|Document|Номер_лота" />
+			<CopyField src="%key%" dst="|Document|ИД_договора" />
+			<CopyField src="|Document|Номер_договора" dst="|Document|Номер_основного_договора" />
+			<CopyField src="|Document|Дата_заключения_договора" dst="|Document|Дата_основного_договора" />
+		</FieldsModify>
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<CurrentDoc />
+					<Link flow="Контракты" />
+				</Select>
+				<Actions>
+					<SetField targetFlow="Контракты" targetField="|Document|Статус" value="Заключение договора" />
+					<SetFieldGuid targetFlow="current" targetField="|Document|ИД_в_ЕИС" />
+					<CopyField sourceFlow="Контракты" targetFlow="current" sourceField="%key%" targetField="|Document|ИД_договора" />
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+	</Flow>
+	<Flow name="Планы закупок">
+		<FieldsModify>
+			<PurchasePlanFieldsModify>
+				<ThrowIfExist message="Формирование нового плана не доступно при не размещенной версии плана закупок в базе"/>
+			</PurchasePlanFieldsModify>
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<!-- <CurrentDoc /> -->
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы закупок" />
+				</Select>
+				<Actions>
+
+					<SetFieldGuid targetFlow="Планы закупок" targetField="|Document|ИД_в_ЕИС" />
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_редакции_порядковый"/>
+					<Setting key="CounterNameFormat" value="({|Document|Текущий_финансовый_год}/{|Document|Второй_плановый_год}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>
+			</NamedConstants>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы закупок" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="Планы закупок" path="|Document|Номер_редакции_порядковый" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetField targetFlow="Планы закупок" targetField="|Document|Номер_редакции" value="{{|Document|Номер_редакции_порядковый}-1}" />	
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnDocumentCreated>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок' and doc_Id = document[doc_Links/doc_Link/link_Document={Планы закупок}/doc_Id]]" tag="Позиции плана закупок" />
+				</Select>
+				<Actions>
+					<SetField targetFlow="Позиции плана закупок" targetField="|Document|Статус" value="Включена в проект плана закупок" />					
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы закупок" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок' and doc_Id = document[doc_Links/doc_Link/link_Document={Планы закупок}/doc_Id]]" tag="Позиции плана закупок" />
+
+				</Select>
+				<Actions>
+
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow>
+	<Flow name="Планы-графики">
+		<FieldsModify>
+			<TenderPlanFieldsModify>
+				<ThrowIfExist message="Формирование нового плана не доступно при не размещенной версии плана-графика в базе"/>
+				<CalcField target="|Document|Совокупный_годовой_объем_закупок"
+                   query="document[doc_RegCard/rc_Index/text_Статус in list ('Исполнение','Завершен', 'Отправлен в ЕИС') and doc_RegCard/rc_FlowName='Контракты' ]"
+                   function="SUM(source[|Document|Этапы_исполнения_бюджетные_средства|Платежи_этапа_бюджетные_средства], source[Сумма_платежа_бюджетные_средства], source[Год_платежа_бюджетные_средства] = target[|Document|Год]) + SUM(source[|Document|Этапы_исполнения_внебюджетные_средства|Платежи_этапа_внебюджетные_средства], source[Сумма_платежа_внебюджетные_средства],source[Год_платежа_внебюджетные_средства] = target[|Document|Год])"/>
+			</TenderPlanFieldsModify>
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<CurrentDoc />
+				</Select>
+				<Actions>
+					<!-- <SetFieldGuid targetFlow="Планы-графики" targetField="|Document|ИД_в_ЕИС" /> -->
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_редакции_порядковый"/>
+					<Setting key="CounterNameFormat" value="({|Document|Год}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>
+			</NamedConstants>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы-графики" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals tag="Планы-графики" path="|Document|Номер_редакции_порядковый" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetField targetFlow="Планы-графики" targetField="|Document|Номер_редакции" value="{{|Document|Номер_редакции_порядковый}-1}" />	
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnDocumentCreated>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы-графики" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Планы-графики}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в проект плана-графика" />					
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Планы-графики" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Планы-графики}/doc_Id]]" tag="Позиции плана-графика" />
+
+				</Select>
+				<Actions>
+
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow> 
+	<Flow name="Исполнения контрактов">
+		<FieldsModify>
+			<CopyField src="|Document|Номер_закупки_в_ЕИС" />
+			<CopyField src="|Document|Номер_по_гос.оборонному_заказу" />
+			<CopyField src="|Document|Цена_контракта" />
+			<CopyField src="|Document|Дата_заключения" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Номер_реестровой_записи" />
+			<CopyField src="|Document|Номер_контракта" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" /> 
+
+			<CopyField src="|Document|Роль_организатора_закупки" dst="|Document|Роль_организатора_закупки_протокол" />
+			<CopyField src="|Document|Роль_организатора_закупки_код"  dst="|Document|Роль_организатора_закупки_протокол_код" />
+			<CopyField src="|Document|Банковская_гарантия|РН_банковской_гарантии" dst="|Document|Банковская_гарантия|Реестровый_номер_БГ" />
+			<CopyField src="|Document|Банковская_гарантия|Валюта_банковской_гарантии" dst="|Document|Банковская_гарантия|Валюта_требований" />
+			<CopyField src="|Document|Банковская_гарантия|Валюта_банковской_гарантии_код" dst="|Document|Банковская_гарантия|Код_валюты_требований" />
+			<CopyField src="|Document|Банковская_гарантия|Сумма_банковской_гарантии" dst="|Document|Банковская_гарантия|Сумма_требований" />
+			<CopyField src="|Document|Банковская_гарантия|Сумма_банковской_гарантии_в_рублевом_эквиваленте" dst="|Document|Банковская_гарантия|Сумма_требований_руб" />
+			<CopyField src="|Document|Банковская_гарантия|Номер_документа_реестровой_записи_БГ" dst="|Document|Банковская_гарантия|Номер_документа_требований" />
+		</FieldsModify>
+
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify> 
+
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Исполнения контрактов" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Контракты' and doc_Id = document[doc_Links/doc_Link/link_Document={Исполнения контрактов}/doc_Id]]" tag="Контракты" />
+				</Select>
+				<Actions>
+					<CopyField sourceFlow="Контракты" targetFlow="Исполнения контрактов" sourceField="%key%" targetField="|Document|Номер_контракта" />
+
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>
+	</Flow>	
+
+
+	<!-- <Flow name="Лоты">
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+		<FieldsModify>  
+			<CopyField src="|Document|Наименование_объекта_закупки"  dst="|Document|Наименование_объекта_закупки" /> 
+			<CopyField src="|Document|Описание_объекта_закупки"  dst="|Document|Описание_объекта_закупки" /> 
+			<CopyField src="|Document|Валюта"  dst="|Document|Валюта" />
+			<CopyField src="|Document|Код_валюты"  dst="|Document|Код_валюты" />
+			<SumField src="|Document|НМЦК"  dst="|Document|НМЦК" /> 
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_наименование"  dst="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_наименование" />
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов"  dst="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов" />
+			<CopyField src="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_код_по_СПЗ"  dst="|Document|Организатор_совместных_торгов|Организатор_совместных_торгов_код_по_СПЗ" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"  dst="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки"  dst="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ"  dst="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР"  dst="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<CopyField src="|Document|Организатор_закупки|РС_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|РС_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|БИК_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|БИК_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|ЛС_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|ЛС_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Банк_закупки"  dst="|Document|Организатор_закупки|Банк_закупки" />
+			<CopyField src="|Document|Планируемый_месяц_размещения"  dst="|Document|Планируемый_месяц_размещения" />
+			<CopyField src="|Document|Планируемый_год_размещения"  dst="|Document|Планируемый_год_размещения" />
+			<CopyField src="|Document|Планируемый_срок_размещения"  dst="|Document|Планируемый_срок_размещения" />
+			<CopyField src="|Document|Способ_определения_поставщика_код"  dst="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика"  dst="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Обоснование_способа_определения_поставщика"  dst="|Document|Обоснование_способа_определения_поставщика" />
+			<SumField src="|Document|Количество_текущий_год"  dst="|Document|Количество_текущий_год" />
+			<SumField src="|Document|Количество_первый_плановый_год"  dst="|Document|Количество_первый_плановый_год" />
+			<SumField src="|Document|Количество_второй_плановый_год"  dst="|Document|Количество_второй_плановый_год" /> 
+			<SumField src="|Document|Количество_последующие_годы"  dst="|Document|Количество_последующие_годы" />
+			<SumField src="|Document|Количество"  dst="|Document|Количество" />
+			<CopyField src="|Document|Совместные_торги"  dst="|Document|Совместные_торги" />
+			<CopyField src="|Document|Централизованная_закупка"  dst="|Document|Централизованная_закупка" />
+			<CopyField src="|Document|Роль_организатора_закупки"  dst="|Document|Роль_организатора_закупки" />
+			<CopyField src="|Document|Роль_организатора_закупки_код"  dst="|Document|Роль_организатора_закупки_код" /> 
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Лоты" />
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции плана-графика') and doc_Id = document[doc_Links/doc_Link/link_Document={Лоты}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>  
+					<CopyField sourceFlow="Лоты" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_лота_позиции" />      
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в лот" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Номер_лота" sourceFlow="Лоты" value="Число_регномера" />
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>  
+		<OnRegcardEdited> 
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Лоты" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Лоты}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество" targetField="|Document|Количество" />  
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_первый_плановый_год" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_второй_плановый_год" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_последующие_годы" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_текущий_год" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Лоты" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Лоты}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество" targetField="|Document|Количество" />
+					<CopyField sourceFlow="Лоты" targetFlow="Позиции плана-графика" sourceField="%key%" targetField="|Document|ИД_лота_позиции" />		
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в лот" />
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество" targetField="|Document|Количество" />  
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_первый_плановый_год" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_второй_плановый_год" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_последующие_годы" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_текущий_год" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Включена в лот" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Лоты" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана-графика' and doc_Id = document[doc_Links/doc_Link/link_Document={Лоты}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество" targetField="|Document|Количество" />  
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_первый_плановый_год" targetField="|Document|Количество_первый_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_второй_плановый_год" targetField="|Document|Количество_второй_плановый_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_последующие_годы" targetField="|Document|Количество_последующие_годы" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|Количество_текущий_год" targetField="|Document|Количество_текущий_год" /> 
+					<Sum sourceFlow="Позиции плана-графика" targetFlow="Лоты" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow> -->
+	<!-- <Flow name="Извещения о закупочной процедуре">
+		<LinksModify>
+			<LinkCurrentDoc />
+			<LinkAllLinksWhereFlow name="Позиции плана-графика" />
+		</LinksModify>
+		<FieldsModify>
+			<CopyField src="|Document|Наименование_объекта_закупки"  dst="|Document|Наименование_объекта_закупки" /> 
+			<SumField src="|Document|НМЦК"  dst="|Document|НМЦК" /> 
+			<CopyField src="|Document|Валюта"  dst="|Document|Валюта" />
+			<CopyField src="|Document|Код_валюты"  dst="|Document|Код_валюты" />
+			<CopyField src="|Document|Способ_определения_поставщика_код"  dst="|Document|Способ_определения_поставщика_код" />
+			<CopyField src="|Document|Способ_определения_поставщика"  dst="|Document|Способ_определения_поставщика" />
+			<CopyField src="|Document|Роль_организатора_закупки"  dst="|Document|Роль_организатора_закупки" />
+			<CopyField src="|Document|Роль_организатора_закупки_код"  dst="|Document|Роль_организатора_закупки_код" /> 
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_наименование"  dst="|Document|Организатор_закупки|Организатор_закупки_наименование" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки"  dst="|Document|Организатор_закупки|Организатор_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ"  dst="|Document|Организатор_закупки|Организатор_закупки_код_по_СПЗ" />
+			<CopyField src="|Document|Организатор_закупки|Организатор_закупки_код_по_СР"  dst="|Document|Организатор_закупки|Организатор_закупки_код_по_СР" />
+			<CopyField src="|Document|Организатор_закупки|РС_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|РС_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|БИК_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|БИК_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|ЛС_обеспечение_контракта_закупки"  dst="|Document|Организатор_закупки|ЛС_обеспечение_контракта_закупки" />
+			<CopyField src="|Document|Организатор_закупки|Банк_закупки"  dst="|Document|Организатор_закупки|Банк_закупки" />
+			<CopyField src="|Document|Планируемый_месяц_размещения"  dst="|Document|Планируемый_месяц_размещения" />
+			<CopyField src="|Document|Планируемый_год_размещения"  dst="|Document|Планируемый_год_размещения" />
+			<CopyField src="|Document|Планируемый_срок_размещения"  dst="|Document|Планируемый_срок_размещения" />
+		</FieldsModify>
+		<OnDocumentCreated>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Лоты') and doc_Id = document[doc_Links/doc_Link/link_Document={Извещения о закупочной процедуре}/doc_Id]]" tag="Лоты" /> 
+					<Select searchString="document[(doc_RegCard/rc_FlowName = 'Позиции плана-графика') and doc_Id = document[doc_Links/doc_Link/link_Document={Извещения о закупочной процедуре}/doc_Id]]" tag="Позиции плана-графика" />
+				</Select>
+				<Actions>  
+					<CopyField sourceFlow="Извещения о закупочной процедуре" targetFlow="Лоты" sourceField="%key%" targetField="|Document|ИД_извещения" />      
+					<SetField targetFlow="Лоты" targetField="|Document|Статус" value="Подготовка извещения" /> 
+					<CopyField targetFlow="Позиции плана-графика" targetField="|Document|ИД_извещения" sourceFlow="Извещения о закупочной процедуре" sourceField ="%key%" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Подготовка извещения" />
+					<Sum sourceFlow="Лоты" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnDocumentCreated>  
+		<OnLinkAdded>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Лоты' and doc_Id = document[doc_Links/doc_Link/link_Document={Извещения о закупочной процедуре}/doc_Id]]" tag="Лоты" />
+				</Select>
+				<Actions>
+					<SumField src="|Document|НМЦК"  dst="|Document|НМЦК" /> 
+					<SetField targetFlow="Лоты" targetField="|Document|Статус" value="Подготовка извещения" />
+					<SetField targetFlow="Позиции плана-графика" targetField="|Document|Статус" value="Подготовка извещения" />
+				</Actions>
+			</Aggregation>
+		</OnLinkAdded>
+		<OnLinkDeleted>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_Id = '{current_Id}']" tag="Извещения о закупочной процедуре" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Лоты' and doc_Id = document[doc_Links/doc_Link/link_Document={Извещения о закупочной процедуре}/doc_Id]]" tag="Лоты" />
+				</Select>
+				<Actions>
+					<Sum sourceFlow="Лоты" targetFlow="Извещения о закупочной процедуре" sourceField="|Document|НМЦК" targetField="|Document|НМЦК" />
+				</Actions>
+			</Aggregation>
+		</OnLinkDeleted> 
+	</Flow> -->
+	<!-- 	<Flow name="Заявки участников">
+		<FieldsModify>
+			<CopyField src="%key%" dst="|Document|ИД_лота" />
+			<CopyField src="|Document|Регистрационный_номер" dst="|Document|Номер_лота" />
+			<CopyField src="|Document|Валюта" />
+			<CopyField src="|Document|Цифровой_код_валюты" />
+			<CopyField src="|Document|Код_валюты" />
+			<CopyField src="|Document|Наименование_лота" />
+			<CopyField src="|Document|Номер_извещения_в_ЕИС" />
+			<CopyField src="|Document|Номер_лота_в_извещении" />
+			<CopyField src="|Document|Фактическая_дата_размещения" />
+			<CopyField src="|Document|Способ_закупки" />
+			<CopyField src="|Document|Способ_закупки_код" />
+		</FieldsModify>
+		<LinksModify>
+			<LinkCurrentDoc />
+		</LinksModify>
+	</Flow> -->
+
+</Hooks>

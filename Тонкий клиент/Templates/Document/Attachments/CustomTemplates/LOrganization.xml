@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <table category="Документация" api-table-name="Контрагенты" >
+    <view>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="50" horizontalAlignment="center"/>
+		<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" horizontalAlignment="center"/>
+		<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="18" horizontalAlignment="center"/>
+        <column fieldType="property" key="AttachmentLastModify" name="Дата последнего изменения" valueType="datetime" weight="18" horizontalAlignment="center"/>
+		<column fieldType="property" key="AttachmentDocType" name="Вид документа"  valueType="text" weight="20" headerNoEllipsis="true" horizontalAlignment="center"/>
+      </columns>
+    </view>
+    <edit>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text" edit-required="true" />
+        <column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+		<column fieldType="property" key="AttachmentDocType" edit-name="attachmentVidDocument" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-autocomplete ="Вид документа"/>
+      </columns>
+    </edit>
+  </table>
+  <createTable>
+		<columns>
+		  <column fieldType="property" key="AttachmentFileName" edit-name="attachmentTitle" name="Название файла" isValue="true" valueType="text" edit-required="true" />
+		  <column fieldType="property" key="AttachmentDocType" edit-name="attachmentVidDocument" name="Вид документа" valueType="text" isValue="true" dict-column-name="code" is-select-one-level="1" dict-edit-name="viddoc" display-field-part="true" edit-autocomplete ="Вид документа"/>
+		</columns>
+	 </createTable>
+  </root>

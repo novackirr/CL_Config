@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-hidden="true"  edit-default-value="{currentOrganization}"  />
+					<field name="Предмет договора" isLabel="true" />		  
+					<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="lotName" />
+				</column>
+				<column>
+					<field name="Дата регистрации" isLabel="true"/>
+					<block id="block11" name="block11" height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+								</column>
+								<column>					
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+								</column>						
+							</row>
+						</rows>							
+					</block>
+					<block id="block0" name="block0"  height="300">
+						<rows>
+							<row>
+								<column>
+									 <field name="НМЦД" isLabel="true"/>
+								</column>						
+							</row>
+						</rows>								
+					</block>
+					<block id="block4" name="block4"  height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+								</column>
+								<column>							
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+			</row>
+			<row>							
+				<column>
+					<field name="Способ закупки" isLabel="true"  />
+					<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="registerSpZakup"  edit-required="true" dict-column-name="code"  edit-tool = "Организации заказчики223" is-select-one-level="2" edit-readonly="true" one-level-parent="OrgZakKodSprav" dict-edit-name="registerSpZakup" show-dict-column="false"/>
+					<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="registerSpZakupName"  edit-required="true" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="registerSpZakup" dict-column-width-percentage="50"/>
+				</column>
+				<column>
+					<field name="Сведения о начальной (максимальной) цене договора (цене заявки)" isLabel="true" />	
+					<field fieldType="field" key="|Document|Сведения_о_цене_код" name="Сведения о начальной (максимальной) цене договора (цене заявки)" valueType="text" isValue="true" edit-name="Kodcen" dict-column-name="code" edit-tool = "Сведения о цене лота" edit-readonly="true" dict-edit-name="Kodcen" show-dict-column="true" />
+					<field fieldType="field" key="|Document|Сведения_о_цене" name="Сведения_о_цене" valueType="text"  isValue="true" edit-name="cen" edit-required="true" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Kodcen" dict-column-width-percentage="50" />
+				</column>
+			</row>
+		</rows>
+	</edit>	 
+	<extraSearchForm>
+		<rows>
+			<row>
+				<column>
+					<field name="Порядок формирования цены договора" isLabel="true" />									
+				</column>
+				<column>
+					<block id="block22" name="block2" height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="Закупка в электронной форме" isLabel="true" />									
+								</column>
+								<column>
+									<field name="Требование об отсутствии в РНП" isLabel="true" />									
+								</column>
+							</row>
+						</rows>							
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Порядок_формирования_цены_договора" name="Порядок формирования цены договора" valueType="longtext"  isValue="true" edit-name="PriceOrderForm"/>
+				</column>
+				<column>
+					<block id="block33" name="block33" height="300">
+						<rows>
+							<row>
+								<column> 		
+									<field fieldType="field" key="|Document|Закупка_в_электронной_форме" name="" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerZakElForm" />																  
+								</column>
+								<column>  
+									<field fieldType="field" key="|Document|Требование_РНП" name=""  valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="DropRNP"  />
+								</column>						
+							</row>
+						</rows>							
+					</block>
+					<block id="block44" name="block44"  height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="Обеспечение заявки" isLabel="true" />									
+								</column>
+								<column>
+									<field name="Обеспечение исполнения договора" isLabel="true" />									
+								</column>
+							</row>
+						</rows>								
+					</block>
+					<block id="block4" name="block4"  height="300">
+						<rows>
+							<row>
+								<column>             
+									<field fieldType="field" key="|Document|Обеспечение_заявки" name="" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerObZa"/>									
+								</column>
+								<column>    
+									<field fieldType="field" key="|Document|Обеспечение_исполнения_договора" name="" valueType="boolean"  isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerObDog" />									
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+			</row>
+		</rows>
+	</extraSearchForm>
+ <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ')  and ((doc_RegCard/rc_Index/money_НМЦ_с_НДС &gt;= @sumLotFrom) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &lt;= @sumLotTo))  and (doc_RegCard/rc_Index/longtext_Предмет_договора = @lotName) and (doc_RegCard/rc_Index/text_Способ_закупки = @registerSpZakupName) and ((doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and (doc_RegCard/rc_Index/longtext_Порядок_формирования_цены_договора = @PriceOrderForm) and (doc_RegCard/rc_Index/boolean_Закупка_в_электронной_форме = @registerZakElForm) and (doc_RegCard/rc_Index/boolean_Требование_РНП = @DropRNP) and (doc_RegCard/rc_Index/text_Сведения_о_цене_код = @Kodcen) and (doc_RegCard/rc_Index/boolean_Обеспечение_заявки = @registerObZa) and (doc_RegCard/rc_Index/boolean_Обеспечение_исполнения_договора = @registerObDog)" />
+  </search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+  </root>

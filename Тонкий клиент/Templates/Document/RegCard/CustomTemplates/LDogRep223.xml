@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<block id="22" name="Общие сведения">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата создания" valueType="date"  />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  /> 
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="integer" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Дата размещения" valueType="datetime"  />
+												</column>	
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Тип_отчетности" name="Тип отчетности" valueType="text"  /> 
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text"/>
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Месяц_сведений" name="Месяц сдачи отчетности" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Год_сведений" name="Год сдачи отчетности" valueType="integer" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|url" name="Ссылка на документ в ЕИС-е" valueType="url" />
+												</column>
+											</row>											
+										</rows>
+									</block>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="33" name="Организационные сведения">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация заказчик" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность_наименование" name="Организация создавшая отчетность" valueType="longtext" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>		
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="33" name="Сведения о договорах">		 
+										<rows>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Количество_договоров" name="Количество заключенных договоров" valueType="integer" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Стоимость_договоров" name="Общая стоимость заключенных договоров" valueType="money" />
+												</column>
+											</row>		
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Количество_договоров_инновационные" name="Количество заключенных договоров, предусматривающих закупки инновационной продукции" valueType="integer" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Стоимость_договоров_инновационные" name="Общая стоимость заключенных договоров, предусматривающих закупки инновационной продукции" valueType="money" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>	
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<block id="88" name="I. Сведения о закупке у субъектов малого и среднего предпринимательства по итогам года">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Показатели"  name="Показатели"  height="1000"> 										
+														<column fieldType="field" key="|Код_показателя" name="№ п/п" valueType="text"  isValue="true" headerNoEllipsis="true" width="100" />																	        														
+														<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" headerNoEllipsis="true" width="800"/> 							
+														<column fieldType="field" key="|Стоимостной_объем" name="Общий стоимостной объем договоров, заключенных по результатам закупок в отчётном году(тыс. рублей)" isValue="true" valueType="double" headerNoEllipsis="true" width="300"/>
+														<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество договоров, заключенных по результатам закупок в отчётном году(единиц)" isValue="true" headerNoEllipsis="true" width="300"/> 
+														<column fieldType="field" key="|Стоимостной_объем_за_отчетный_год" valueType="double" name="Стоимостной объем оплаты в отчётном году (с учётом объема оплаты в отчётном году договоров, срок исполнения которых превышает один календарный год, в том числе заключенных в предыдущие отчётные периоды)(тыс. рублей)"  isValue="true" headerNoEllipsis="true" width="300"/>																
+														<column fieldType="field" key="|Количество_договоров_за_предыдущие_отчетные_периоды" valueType="integer" name="Количество договоров, срок исполнения которых превышает один календарный год, заключенных в предыдущие отчётные периоды(единиц)"  isValue="true" headerNoEllipsis="true" width="300"/>										
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<block id="99" name="II. Сведения о годовом объеме закупки у субъектов малого и среднего предпринимательства">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Показатели_проценты"  name="Показатели_проценты" height="500" >										
+														<column fieldType="field" key="|Код_показателя" name="№ п/п" valueType="text"  isValue="true" headerNoEllipsis="true" width="100"/> 		
+														<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" width="800" headerNoEllipsis="true"/> 							
+														<column fieldType="field" key="|Доля_в_процентах" name="Доля (процент)" isValue="true" valueType="double" headerNoEllipsis="true" width="300"/>										
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<block id="100" name="I. Сведения о закупке инновационной продукции, высокотехнологичной продукции по итогам года">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Показатели_инновационные"  name="Показатели_инновационные" height="500" >										
+														<column fieldType="field" key="|Номер_в_списке" name="№ п/п" valueType="text"  isValue="true" headerNoEllipsis="true" width="100"/> 		
+														<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" width="800" headerNoEllipsis="true"/><column fieldType="field" key="|Стоимостной_объем" name="Общая стоимость (тыс. рублей)" isValue="true" valueType="double" headerNoEllipsis="true" width="300"/>
+														<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество (единиц)" isValue="true" headerNoEllipsis="true" width="150"/> 
+														<column fieldType="field" key="|Доля_закупки" valueType="double" name="Значение доли в % по показателю" isValue="true" headerNoEllipsis="true" width="150"/>  																	
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<block id="111" name="II. Сведения о закупке инновационной продукции, высокотехнологичной продукции у субъектов малого и среднего предпринимательства по итогам отчетного года">		 
+										<rows>
+											<row>
+												<column>
+													<table key="|Document|Показатели_инновационные_смп"  name="Показатели_инновационные_смп" height="500" >										
+														<column fieldType="field" key="|Номер_в_списке" name="№ п/п" valueType="text"  isValue="true" headerNoEllipsis="true" width="100"/> 		
+														<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" width="800" headerNoEllipsis="true"/>
+														<column fieldType="field" key="|Стоимостной_объем" name="Общая стоимость (тыс. рублей)" isValue="true" valueType="double" headerNoEllipsis="true" width="300"/>
+														<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество (единиц)" isValue="true" headerNoEllipsis="true" width="150"/> 
+														<column fieldType="field" key="|Доля_закупки" valueType="double" name="Значение доли в % по показателю" isValue="true" headerNoEllipsis="true" width="150"/>  																	
+													</table>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row>					
+			
+			<row>
+				<column>
+					<block id="t3cInfo" name="Изменения">		 
+						<rows>	
+							<row>
+								<column>
+									<block id="55" name="Сведения об изменениях">		 
+										<rows>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>			
+						</rows>
+					</block>
+				</column>
+			</row>				
+			
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Отчетность о договорах{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>  			
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">		 
+						<rows>
+							<row>
+								<column>
+									<field name="Месяц сдачи отчетности" isLabel="true" edit-name="Month_kod" title="Выберите месяц сдачи отчетности. По умолчанию заполняется предыдущим месяцем. Недоступно для редактирования при внесении изменений"/>   								
+								</column>
+								<column>
+									<field name="Год сдачи отчетности" isLabel="true" edit-name="Year" title="Введите год сдачи отчетности. По умолчанию заполняется текущим годом. Недоступно для редактирования при внесении изменений"/>   								
+								</column>
+								<column>
+									<field name="" isLabel="true" edit-name="auto"/>   								
+								</column>
+								<column>
+									<field name="" isLabel="true"/>     								
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Месяц_сведений_код" name="Месяц_сведений_код" valueType="text" isValue="true" edit-name="Month_kod" edit-readonly="true" is-select-one-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="Month_kod" edit-required="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Месяц_сведений" name="Месяц_сведений" valueType="text" isValue="true" edit-name="Month" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="Month_kod"/>
+								</column>	
+								<column>
+									<field fieldType="field" key="|Document|Год_сведений" name="Год_сведений" valueType="integer" isValue="true" edit-name="Year" edit-required="true"/>
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Заполнить_автоматически" name="Заполнить автоматически" valueType="boolean" edit-name="auto" edit-default-value="1"/>
+								</column>
+								<column>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="Тип отчетности" isLabel="true" edit-name="RepType_kod" title="Выберите тип отчетности. Недоступно для редактирования при внесении изменений"/>   								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Тип_отчетности_код" name="Тип отчетности код" valueType="text" isValue="true" edit-name="RepType_kod" edit-readonly="true" is-select-one-level="1" edit-tool = "Тип отчетности о договорах" dict-column-name="code" dict-edit-name="RepType_kod" edit-required="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Тип_отчетности" name="Тип отчетности" valueType="text" isValue="true" edit-name="RepType" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="RepType_kod"/>
+								</column>			
+							</row>
+							<row>
+								<column>
+									<field name="Количество заключенных договоров" isLabel="true" edit-name="CoutDog" title="Введите количество заключенных договоров"/>   								
+								</column>
+								<column>
+									<field name="Общая стоимость заключенных договоров" isLabel="true" edit-name="SumDog" title="Введите общую стоимость заключенных договоров"/>   								
+								</column>
+								<column>
+									<field name="Количество заключенных договоров, предусматривающих закупки инновационной продукции" isLabel="true" edit-name="CoutInnDog" title="Введите количество заключенных договоров, предусматривающих закупки инновационной продукции"/>   								
+								</column>
+								<column>
+									<field name="Общая стоимость заключенных договоров, предусматривающих закупки инновационной продукции" isLabel="true" edit-name="SumInnDog" title="Введите общую стоимость заключенных договоров, предусматривающих закупки инновационной продукции"/>   								
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Количество_договоров" name="Количество договоров" valueType="integer"  isValue="true"   edit-name="CoutDog" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Стоимость_договоров" name="Общая стоимость договоров" valueType="money" isValue="true"   edit-name="SumDog" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Количество_договоров_инновационные" name="Количество договоров, предусматривающих закупки инновационной продукции" valueType="integer"  isValue="true"   edit-name="CoutInnDog" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Стоимость_договоров_инновационные" name="Общая стоимость договоров, предусматривающих закупки инновационной продукции" valueType="money" isValue="true"   edit-name="SumInnDog"  />
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="I. Сведения о закупке у субъектов малого и среднего предпринимательства по итогам года" edit-name="SvedSMP"  isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Показатели"  name="Показатели" edit-name="SvedSMP" height="500">
+										<column fieldType="field" key="|Номер_в_списке" valueType="text" name="№"   isValue="true" edit-name="Num" width="60" edit-readonly="true" edit-hidden="true"/> 										
+										<column fieldType="field" key="|Код_показателя" name="№ п/п" valueType="text"  isValue="true" edit-name="PokCode" dict-column-name="code"  edit-tool = "Показатели годового отчета 223" is-select-one-level="1" edit-readonly="true" dict-edit-name="PokCode" show-dict-column="false" headerNoEllipsis="true" width="100" display-field-part="true" title="Заполняется автоматически кодами показателей из справочника Показатели годового отчета"/> 																	        														
+										<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" edit-name="PokName" width="800" title="Заполняется автоматически наименованиями показателей из справочника Показатели годового отчета" dict-edit-name="PokCode" dict-column-name="Наименование" edit-readonly="true" headerNoEllipsis="true"/> 							
+										<column fieldType="field" key="|Стоимостной_объем" name="Общий стоимостной объем договоров, заключенных по результатам закупок в отчётном году(тыс. рублей)" isValue="true" valueType="double" edit-name="StoimVolume" headerNoEllipsis="true" width="300" title="Введите общий стоимостной объем договоров, заключенных заказчиком по результатам закупок в отчётном году в тыс. рублей"/>
+										<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество договоров, заключенных по результатам закупок в отчётном году(единиц)" isValue="true" edit-name="ColDogovor" headerNoEllipsis="true" width="300" title="Введите количество договоров, заключенных заказчиком по результатам закупок в отчётном году в числовом эквиваленте"/> 
+										<column fieldType="field" key="|Стоимостной_объем_за_отчетный_год" valueType="double" name="Стоимостной объем оплаты в отчётном году (с учётом объема оплаты в отчётном году договоров, срок исполнения которых превышает один календарный год, в том числе заключенных в предыдущие отчётные периоды)(тыс. рублей)"  isValue="true" edit-name="StoimVolumeOtchet" headerNoEllipsis="true" width="300" title="Введите стоимостной объем оплаты в отчётном году (с учётом объема оплаты в отчётном году договоров, срок исполнения которых превышает один календарный год, в том числе заключенных в предыдущие отчётные периоды) в тыс. рублей"/>																
+										<column fieldType="field" key="|Количество_договоров_за_предыдущие_отчетные_периоды" valueType="integer" name="Количество договоров, срок исполнения которых превышает один календарный год, заключенных в предыдущие отчётные периоды(единиц)"  isValue="true" edit-name="ColDogovorOtchet" headerNoEllipsis="true" width="300" title="Введите количество договоров, срок исполнения которых превышает один календарный год, заключенных в предыдущие отчётные периоды в числовом эквиваленте"/>										
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<field name="II. Сведения о годовом объеме закупки у субъектов малого и среднего предпринимательства" edit-name="SvedSMPPercent"  isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Показатели_проценты"  name="Показатели_проценты" edit-name="SvedSMPPercent" height="500" >
+										<column fieldType="field" key="|Номер_в_списке" valueType="text" name="№"   isValue="true" edit-name="Num" width="60" edit-readonly="true" edit-hidden="true" /> 										
+										<column fieldType="field" key="|Код_показателя" name="№ п/п" valueType="text"  isValue="true" edit-name="PokCode" dict-column-name="code"  edit-tool = "Показатели годового отчета 223" is-select-one-level="1" edit-readonly="true" dict-edit-name="PokCode" show-dict-column="false" headerNoEllipsis="true" width="100" display-field-part="true" title="Заполняется автоматически кодами показателей из справочника Показатели годового отчета"/> 		
+										<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" edit-name="PokName" width="800" title="Заполняется автоматически наименованиями показателей из справочника Показатели годового отчета" dict-edit-name="PokCode" dict-column-name="Наименование" edit-readonly="true" headerNoEllipsis="true"/> 							
+										<column fieldType="field" key="|Доля_в_процентах" name="Доля (процент)" isValue="true" valueType="double" edit-name="PartPercent" headerNoEllipsis="true" width="300" title="Рассчитывается автоматически в соответствии со значениями заполненными в таблицы Показатели" edit-readonly="true"/>										
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="I. Сведения о закупке инновационной продукции, высокотехнологичной продукции по итогам года" edit-name="SvedInnov"  isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Показатели_инновационные"  name="Показатели_инновационные" edit-name="SvedInnov" height="500">
+										<column fieldType="field" key="|Номер_в_списке" valueType="text" name="№"   isValue="true" edit-name="NumInnov" width="60" edit-readonly="true"/>
+										<column fieldType="field" key="|Код_показателя" name="Код_показателя" valueType="text"  isValue="true" edit-name="PokCodeIn" headerNoEllipsis="true" width="1" edit-isInvisible="true"/> 	 																	        														
+										<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" edit-name="PokNameInnov" width="800" title="Заполняется автоматически" edit-readonly="true" headerNoEllipsis="true"/> 							
+										<column fieldType="field" key="|Стоимостной_объем" name="Общая стоимость (тыс. рублей)" isValue="true" valueType="double" edit-name="StoimVolumeInnov" headerNoEllipsis="true" width="300" title="Введите общую стоимость в тыс. рублей"/>
+										<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество (единиц)" isValue="true" edit-name="ColDogovorInnov" headerNoEllipsis="true" width="250" title="Введите количество в числовом эквиваленте"/> 
+										<column fieldType="field" key="|Доля_закупки" valueType="double" name="Значение доли в % по показателю" isValue="true" edit-name="DolyInnov" headerNoEllipsis="true" width="250" title="Введите pначение доли в % по показателю"/> 
+									</table>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<field name="II. Сведения о закупке инновационной продукции, высокотехнологичной продукции у субъектов малого и среднего предпринимательства по итогам отчетного года" edit-name="SvedSMPInnovac"  isLabel="true"  /> 								
+								</column>			
+							</row>
+							<row>
+								<column>
+									<table key="|Document|Показатели_инновационные_смп"  name="Показатели_инновационные_смп" edit-name="SvedSMPInnovac" height="500" >
+										<column fieldType="field" key="|Номер_в_списке" valueType="text" name="№"   isValue="true" edit-name="NumInnovacSMP" width="60" edit-readonly="true" /> 
+										<column fieldType="field" key="|Код_показателя" name="Код_показателя" valueType="text"  isValue="true" edit-name="PokCodeInSMP" headerNoEllipsis="true" width="1" edit-isInvisible="true"/>											
+										<column fieldType="field" key="|Показатель_отчетности" name="Наименование показателя" isValue="true"  valueType="longtext" edit-name="PokNameInnovSMP" width="800" title="Заполняется автоматически" edit-readonly="true" headerNoEllipsis="true"/> 							
+										<column fieldType="field" key="|Стоимостной_объем" name="Общая стоимость (тыс. рублей)" isValue="true" valueType="double" edit-name="StoimVolumeInnovSMP" headerNoEllipsis="true" width="300" title="Введите общую стоимость в тыс. рублей"/>
+										<column fieldType="field" key="|Количество_договоров" valueType="integer" name="Количество (единиц)" isValue="true" edit-name="ColDogovorInnovSMP" headerNoEllipsis="true" width="250" title="Введите количество в числовом эквиваленте"/>
+ 										<column fieldType="field" key="|Доля_закупки" valueType="double" name="Значение доли в % по показателю" isValue="true" edit-name="DolyInnovSMP" headerNoEllipsis="true" width="250" title="Введите значение доли в % по показателю"/> 
+									</table>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>	
+			<row>
+				<column>
+					<block id="t3cInfo" name="Изменения">		 
+						<rows>	
+							<row>
+								<column>
+									<field name="Обоснование внесения изменений" isLabel="true" edit-name="Obosn" title="Введите обоснование внесения изменений"/>									
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext" isValue="true"   edit-name="Obosn"  />
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>			
+			<row>
+				<column>
+					<block id="hidden" name="Скрытые поля"> 
+						<rows>								
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик" valueType="longtext" isValue="true" edit-name="registerOrgZaName" edit-default-value="{addressbook,value=registerOrgZa,attribute=Name}"/>
+									<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность_наименование" name="Организация_создавшая_отчетность_наименование" valueType="longtext"  isValue="true" edit-name="OrgPublName" edit-readonly="true"  edit-default-value="{addressbook,value=OrgPubl,attribute=Name}" />	
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик код" valueType="addressbook"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true" edit-default-value="{currentOrganization}" />	
+									<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность" name="Организация_создавшая_отчетность" valueType="addressbook"  isValue="true" edit-name="OrgPubl"  edit-readonly="true"  edit-hidden="true" edit-default-value="{currentOrganization}"/>	
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ИНН" name="ИНН" valueType="text" isValue="true" edit-name="registerOrgZaINN" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=INN}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_КПП" name="КПП" valueType="text"   isValue="true" edit-name="registerOrgZaKPP" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=KPP}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОГРН" name="Организация_заказчик_ОГРН" valueType="text"  isValue="true" edit-name="registerOrgZaOGRN" edit-hidden="true" edit-default-value="{addressbook,value=registerOrgZa,attribute=OGRN}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_адрес" name="Организация_заказчик_адрес" valueType="longtext"  isValue="true" edit-name="PochtAddress" edit-default-value="{addressbook,value=registerOrgZa,attribute=Адрес}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="Организация_заказчик_ОКОПФ" valueType="text"  isValue="true" edit-name="OKOPF" edit-default-value="{addressbook,value=registerOrgZa,attribute=OKOPF}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Телефон" name="Организация_заказчик_Телефон" valueType="text"  isValue="true" edit-name="Phone" edit-default-value="{addressbook,value=registerOrgZa,attribute=Телефоны}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_Электронная_почта" name="Организация_заказчик_Электронная_почта" valueType="text"  isValue="true" edit-name="E-mail" edit-default-value="{addressbook,value=registerOrgZa,attribute=E-mail}" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ_наименование" name="Организация_заказчик_ОКОПФ_наименование" valueType="text"  isValue="true" edit-name="OKOPFName" edit-default-value="{addressbook,value=registerOrgZa,attribute=OKOPFName}" />
+									<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность_ИНН" name="Организация_создавшая_отчетность_ИНН" valueType="text" isValue="true" edit-name="orgzakINN" edit-hidden="true" edit-default-value="{addressbook,value=OrgPubl,attribute=INN}" />
+									<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность_КПП" name="Организация_создавшая_отчетность_КПП" valueType="text"   isValue="true" edit-name="orgzakKPP" edit-hidden="true" edit-default-value="{addressbook,value=OrgPubl,attribute=KPP}"/>
+									<field fieldType="field" key="|Document|Организация_создавшая_отчетность|Организация_создавшая_отчетность_ОГРН" name="Организация_создавшая_отчетность_ОГРН" valueType="text"   isValue="true" edit-name="orgzakOGRN" edit-hidden="true" edit-default-value="{addressbook,value=OrgPubl,attribute=OGRN}"/>
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}" edit-hidden="true" />
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|ИД_последний_редактор" valueType="text" isValue="true" edit-name="ID_last_editor" edit-hidden="true"  />
+									<field fieldType="field" key="|Имя_последний_редактор" valueType="text" isValue="true" edit-name="Name_last_editor" edit-hidden="true"   />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true" edit-value="Отчетность о договорах" />
+									<field fieldType="field" key="|Files|header" valueType="text" isValue="true" edit-name="files-header" edit-hidden="true" edit-value="Документация" />
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />								
+									<field fieldType="field" key="|Document|ИД_в_ЕИС" name="ИД_в_ЕИС" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_v_EIS" />
+									<field fieldType="field" key="|Document|ИД_в_ЕИС_ParentRK" name="ИД_в_ЕИС_изменение" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_IES_Change" />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-default-value= "Черновик" edit-name="regstatus"  edit-readonly="true" edit-hidden="true" /> 
+									<field fieldType="field" key="|Document|Валюта" name="Валюта" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency" edit-default-value ="Российский рубль"/>
+									<field fieldType="field" key="|Document|Код_валюты" name="Код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency_kod" edit-default-value ="RUB"/>
+									<field fieldType="field" key="|Document|Цифровой_код_валюты" name="Цифровой_код_валюты" valueType="text" isValue="true" edit-hidden="true" edit-name="Currency_dig_kod" edit-default-value ="643"/>
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер_редакции" valueType="text" isValue="true" edit-hidden="true" edit-name="Revision"  edit-default-value="1" />
+									<field fieldType="field" key="|Document|Фактическая_дата_размещения" name="Фактическая_дата_размещения" valueType="datetime" isValue="true" edit-hidden="true" edit-name="Date_of_placement_actual" />
+									<field fieldType="field" key="|Document|ParentRK" name="ParentRK" valueType="text" isValue="true" edit-hidden="true" edit-name="ParentRK" />
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean" isValue="true" edit-hidden="true" edit-name="Actual" />
+									<field fieldType="field" key="|Document|Период_сведений_с" name="Период_сведений_с" valueType="date" isValue="true" edit-name="DateFrom" edit-required="true" />
+									<field fieldType="field" key="|Document|Период_сведений_по" name="Период_сведений_по" valueType="date" isValue="true" edit-name="DateTo" edit-required="true" />
+									<field fieldType="field" key="|Document|Предшествующий_период_с" name="Предшествующий_период_с" valueType="date" isValue="true" edit-name="DateFromPrevious" />
+									<field fieldType="field" key="|Document|Предшествующий_период_по" name="Предшествующий_период_по" valueType="date" isValue="true" edit-name="DateToPrevious" />
+									<field fieldType="field" key="|Document|url" name="url" valueType="longtext" isValue="true" edit-name="EISurl" edit-hidden="true" />
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" address-book-tool="GRBS" edit-addressbook-groups = "" edit-default-value="{addressbook,value=registerOrgZa,attribute=GRBS}" address-book-tool-selectable = "Department,Department,{currentOrganizationWithChilds}"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ЕИС" name="Организация_заказчик_Код_в_ЕИС" valueType="text"   isValue="true" edit-name="orgzakEISCode" edit-default-value="{addressbook,value=registerOrgZa,attribute=EISCode223}" addressbook-main-field="registerOrgZa" addressbook-property="EISCode223"/>
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row>  					
+		</rows>
+		<variables>
+			<!-- <variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format="{value}" />		
+			</variable> -->
+			<variable variable-name="caption" variable-format="Отчетность о договорах{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+	<scripts>
+		<script file="~/Scripts/Content/Document/RegCard/LDogRep223.js" />
+	</scripts> 
+</root>

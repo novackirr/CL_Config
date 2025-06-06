@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+   <!--  <table category="Документация" allowedExtensions="pdf,doc,docx,rtf,xls,xlsx,jpg,jpeg,bmp,tif,tiff,txt,zip,rar,gif,csv,odp,odf,ods,odt,sxc,sxw,html,htm,xml">
+    <view>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="55" headerNoEllipsis="true"/>
+		<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" headerNoEllipsis="true"/>
+		<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="15" headerNoEllipsis="true"/>
+        <column fieldType="property" key="AttachmentLastModify" name="Дата изменения" valueType="datetime" weight="15" headerNoEllipsis="true"/>
+      </columns>
+    </view>
+    <edit>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text" edit-required="true" />
+        <column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+      </columns>
+    </edit>
+	<table category="Проект договора" allowedExtensions="pdf,doc,docx,rtf,xls,xlsx,jpg,jpeg,bmp,tif,tiff,txt,zip,rar,gif,csv,odp,odf,ods,odt,sxc,sxw,html,htm,xml">
+    <view>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="55" headerNoEllipsis="true" horizontalAlignment="center"/>
+		<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>
+		<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>
+        <column fieldType="property" key="AttachmentLastModify" name="Дата изменения" valueType="datetime" weight="15" headerNoEllipsis="true" horizontalAlignment="center"/>
+      </columns>
+    </view>
+    <edit>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text" edit-required="true" />
+        <column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+      </columns>
+    </edit>
+  </table> -->
+  <table category="Документы по отмене лота" allowedExtensions="pdf,doc,docx,rtf,xls,xlsx,jpg,jpeg,txt,zip,rar,gif,7z,png">
+		<visibility>
+			<Rules>
+				<And>
+					<WhenFieldEquals path="|Document|Отмена_лота" value="1"/>
+				</And>
+			</Rules>
+		</visibility>
+		<view>
+			<columns>
+				<column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="55" />
+				<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" />
+				<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="15" />
+				<column fieldType="property" key="AttachmentLastModify" name="Дата последнего изменения" valueType="datetime" weight="15" />
+			</columns>
+		</view>
+		<edit>
+			<columns>
+				<column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text" edit-required="true"/>
+				<column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+			</columns>
+		</edit>
+	</table>
+ </root>
+ 

@@ -1,0 +1,2204 @@
+;(function () {
+    //already loaded
+    if(window.cadesplugin)
+        return;
+
+    var pluginObject;
+    var plugin_resolved = 0;
+    var plugin_reject;
+    var plugin_resolve;
+    var isOpera = 0;
+    var isFireFox = 0;
+    var isSafari = 0;
+    var isYandex = 0;
+    var canPromise = !!window.Promise;
+    var cadesplugin_loaded_event_recieved = false;
+    var cadesplugin;
+
+    if(canPromise)
+    {
+        cadesplugin = new Promise(function(resolve, reject)
+        {
+            plugin_resolve = resolve;
+            plugin_reject = reject;
+        });
+    } else
+    {
+        cadesplugin = {};
+    }
+
+    function check_browser() {
+        var ua= navigator.userAgent, tem, M= ua.match(/(opera|yabrowser|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1])){
+            tem =  /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return { name:'IE', version:(tem[1] || '')};
+        }
+        if(M[1] === 'Chrome'){
+            tem = ua.match(/\b(OPR|Edg|YaBrowser)\/(\d+)/);
+            if (tem != null)
+                return { name: tem[1].replace('OPR', 'Opera'), version: tem[2] };
+        }
+        M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null)
+            M.splice(1, 1, tem[1]);
+        return {name:M[0],version:M[1]};
+    }
+    var browserSpecs = check_browser();
+
+    function cpcsp_console_log(level, msg){
+        //IE9 не может писать в консоль если не открыта вкладка developer tools
+        if(typeof(console) === 'undefined')
+            return;
+        if (level <= cadesplugin.current_log_level ){
+            if (level === cadesplugin.LOG_LEVEL_DEBUG)
+                console.log("DEBUG: %s", msg);
+            if (level === cadesplugin.LOG_LEVEL_INFO)
+                console.info("INFO: %s", msg);
+            if (level === cadesplugin.LOG_LEVEL_ERROR)
+                console.error("ERROR: %s", msg);
+            return;
+        }
+    }
+
+    function set_log_level(level){
+        if (!((level === cadesplugin.LOG_LEVEL_DEBUG) ||
+            (level === cadesplugin.LOG_LEVEL_INFO) ||
+            (level === cadesplugin.LOG_LEVEL_ERROR))){
+            cpcsp_console_log(cadesplugin.LOG_LEVEL_ERROR, "cadesplugin_api.js: Incorrect log_level: " + level);
+            return;
+        }
+        cadesplugin.current_log_level = level;
+        if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_DEBUG)
+            cpcsp_console_log(cadesplugin.LOG_LEVEL_INFO, "cadesplugin_api.js: log_level = DEBUG");
+        if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_INFO)
+            cpcsp_console_log(cadesplugin.LOG_LEVEL_INFO, "cadesplugin_api.js: log_level = INFO");
+        if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_ERROR)
+            cpcsp_console_log(cadesplugin.LOG_LEVEL_INFO, "cadesplugin_api.js: log_level = ERROR");
+        if(isNativeMessageSupported())
+        {
+            if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_DEBUG)
+                window.postMessage("set_log_level=debug", "*");
+            if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_INFO)
+                window.postMessage("set_log_level=info", "*");
+            if (cadesplugin.current_log_level === cadesplugin.LOG_LEVEL_ERROR)
+                window.postMessage("set_log_level=error", "*");
+        }
+    }
+
+    function set_constantValues()
+    {
+        cadesplugin.CAPICOM_MEMORY_STORE = 0;
+        cadesplugin.CAPICOM_LOCAL_MACHINE_STORE = 1;
+        cadesplugin.CAPICOM_CURRENT_USER_STORE = 2;
+        cadesplugin.CADESCOM_MEMORY_STORE = 0;
+        cadesplugin.CADESCOM_LOCAL_MACHINE_STORE = 1;
+        cadesplugin.CADESCOM_CURRENT_USER_STORE = 2;
+        cadesplugin.CADESCOM_CONTAINER_STORE = 100;
+
+        cadesplugin.CAPICOM_MY_STORE = "My";
+
+        cadesplugin.CAPICOM_STORE_OPEN_MAXIMUM_ALLOWED = 2;
+
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_SUBJECT_NAME = 1;
+
+        cadesplugin.CADESCOM_XML_SIGNATURE_TYPE_ENVELOPED = 0;
+        cadesplugin.CADESCOM_XML_SIGNATURE_TYPE_ENVELOPING = 1;
+        cadesplugin.CADESCOM_XML_SIGNATURE_TYPE_TEMPLATE = 2;
+
+        cadesplugin.CADESCOM_XADES_DEFAULT = 0x00000010;
+        cadesplugin.CADESCOM_XADES_BES = 0x00000020;
+        cadesplugin.CADESCOM_XADES_T = 0x00000050;
+        cadesplugin.CADESCOM_XADES_X_LONG_TYPE_1 = 0x000005d0;
+        cadesplugin.CADESCOM_XMLDSIG_TYPE = 0x00000000;
+
+        cadesplugin.XmlDsigGost3410UrlObsolete = "http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411";
+        cadesplugin.XmlDsigGost3411UrlObsolete = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
+        cadesplugin.XmlDsigGost3410Url = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102001-gostr3411";
+        cadesplugin.XmlDsigGost3411Url = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr3411";
+        
+        cadesplugin.XmlDsigGost3411Url2012256 = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256";
+        cadesplugin.XmlDsigGost3410Url2012256 = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256";
+        cadesplugin.XmlDsigGost3411Url2012512 = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-512";
+        cadesplugin.XmlDsigGost3410Url2012512 = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-512";
+
+        cadesplugin.CADESCOM_CADES_DEFAULT = 0;
+        cadesplugin.CADESCOM_CADES_BES = 1;
+        cadesplugin.CADESCOM_CADES_T = 0x5;
+        cadesplugin.CADESCOM_CADES_X_LONG_TYPE_1 = 0x5d;
+        cadesplugin.CADESCOM_PKCS7_TYPE = 0xffff;
+
+        cadesplugin.CADESCOM_ENCODE_BASE64 = 0;
+        cadesplugin.CADESCOM_ENCODE_BINARY = 1;
+        cadesplugin.CADESCOM_ENCODE_ANY = -1;
+
+        cadesplugin.CAPICOM_CERTIFICATE_INCLUDE_CHAIN_EXCEPT_ROOT = 0;
+        cadesplugin.CAPICOM_CERTIFICATE_INCLUDE_WHOLE_CHAIN = 1;
+        cadesplugin.CAPICOM_CERTIFICATE_INCLUDE_END_ENTITY_ONLY = 2;
+
+        cadesplugin.CAPICOM_CERT_INFO_SUBJECT_SIMPLE_NAME = 0;
+        cadesplugin.CAPICOM_CERT_INFO_ISSUER_SIMPLE_NAME = 1;
+
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_SHA1_HASH = 0;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_SUBJECT_NAME = 1;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_ISSUER_NAME = 2;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_ROOT_NAME = 3;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_TEMPLATE_NAME = 4;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_EXTENSION = 5;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_EXTENDED_PROPERTY = 6;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_APPLICATION_POLICY = 7;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_CERTIFICATE_POLICY = 8;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_TIME_VALID = 9;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_TIME_NOT_YET_VALID = 10;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_TIME_EXPIRED = 11;
+        cadesplugin.CAPICOM_CERTIFICATE_FIND_KEY_USAGE = 12;
+
+        cadesplugin.CAPICOM_DIGITAL_SIGNATURE_KEY_USAGE = 128;
+
+        cadesplugin.CAPICOM_PROPID_ENHKEY_USAGE = 9;
+
+        cadesplugin.CAPICOM_OID_OTHER = 0;
+        cadesplugin.CAPICOM_OID_KEY_USAGE_EXTENSION = 10;
+
+        cadesplugin.CAPICOM_EKU_CLIENT_AUTH = 2;
+        cadesplugin.CAPICOM_EKU_SMARTCARD_LOGON = 5;
+        cadesplugin.CAPICOM_EKU_OTHER = 0;
+
+        cadesplugin.CAPICOM_AUTHENTICATED_ATTRIBUTE_SIGNING_TIME = 0;
+        cadesplugin.CAPICOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_NAME = 1;
+        cadesplugin.CAPICOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_DESCRIPTION = 2;
+        cadesplugin.CADESCOM_AUTHENTICATED_ATTRIBUTE_SIGNING_TIME = 0;
+        cadesplugin.CADESCOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_NAME = 1;
+        cadesplugin.CADESCOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_DESCRIPTION = 2;
+        cadesplugin.CADESCOM_ATTRIBUTE_OTHER = -1;
+
+        cadesplugin.CADESCOM_STRING_TO_UCS2LE = 0;
+        cadesplugin.CADESCOM_BASE64_TO_BINARY = 1;
+
+        cadesplugin.CADESCOM_DISPLAY_DATA_NONE = 0;
+        cadesplugin.CADESCOM_DISPLAY_DATA_CONTENT = 1;
+        cadesplugin.CADESCOM_DISPLAY_DATA_ATTRIBUTE = 2;
+
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_RC2 = 0;
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_RC4 = 1;
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_DES = 2;
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_3DES = 3;
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_AES = 4;
+        cadesplugin.CADESCOM_ENCRYPTION_ALGORITHM_GOST_28147_89 = 25;
+
+        cadesplugin.CADESCOM_HASH_ALGORITHM_SHA1 = 0;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_MD2 = 1;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_MD4 = 2;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_MD5 = 3;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_SHA_256 = 4;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_SHA_384 = 5;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_SHA_512 = 6;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411 = 100;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256 = 101;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512 = 102;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411_HMAC = 110;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256_HMAC = 111;
+        cadesplugin.CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512_HMAC = 112;
+
+        cadesplugin.LOG_LEVEL_DEBUG = 4;
+        cadesplugin.LOG_LEVEL_INFO = 2;
+        cadesplugin.LOG_LEVEL_ERROR = 1;
+
+        cadesplugin.CADESCOM_AllowNone = 0;
+        cadesplugin.CADESCOM_AllowNoOutstandingRequest = 0x1;
+        cadesplugin.CADESCOM_AllowUntrustedCertificate = 0x2;
+        cadesplugin.CADESCOM_AllowUntrustedRoot = 0x4;
+        cadesplugin.CADESCOM_SkipInstallToStore = 0x10000000;
+
+        cadesplugin.ENABLE_CARRIER_TYPE_CSP = 0x01;
+        cadesplugin.ENABLE_CARRIER_TYPE_FKC_NO_SM = 0x02;
+        cadesplugin.ENABLE_CARRIER_TYPE_FKC_SM = 0x04;
+        cadesplugin.ENABLE_ANY_CARRIER_TYPE = 0x07;
+
+        cadesplugin.DISABLE_EVERY_CARRIER_OPERATION = 0x00;
+        cadesplugin.ENABLE_CARRIER_OPEN_ENUM = 0x01;
+        cadesplugin.ENABLE_CARRIER_CREATE = 0x02;
+        cadesplugin.ENABLE_ANY_OPERATION = 0x03;
+
+        cadesplugin.CADESCOM_PRODUCT_CSP = 0;
+        cadesplugin.CADESCOM_PRODUCT_OCSP = 1;
+        cadesplugin.CADESCOM_PRODUCT_TSP = 2;
+
+        cadesplugin.MEDIA_TYPE_REGISTRY = 0x00000001;
+        cadesplugin.MEDIA_TYPE_HDIMAGE = 0x00000002;
+        cadesplugin.MEDIA_TYPE_CLOUD = 0x00000004;
+        cadesplugin.MEDIA_TYPE_SCARD = 0x00000008;
+
+        cadesplugin.XCN_CRYPT_STRING_BASE64HEADER = 0;
+        cadesplugin.AT_KEYEXCHANGE = 1;
+        cadesplugin.AT_SIGNATURE = 2;
+    }
+
+    function async_spawn(generatorFunc) {
+        function continuer(verb, arg) {
+            var result;
+            try {
+                result = generator[verb](arg);
+            } catch (err) {
+                return Promise.reject(err);
+            }
+            if (result.done) {
+                return result.value;
+            } else {
+                return Promise.resolve(result.value).then(onFulfilled, onRejected);
+            }
+        }
+        var generator = generatorFunc(Array.prototype.slice.call(arguments, 1));
+        var onFulfilled = continuer.bind(continuer, "next");
+        var onRejected = continuer.bind(continuer, "throw");
+        return onFulfilled();
+    }
+
+    function isIE() {
+        // var retVal = (("Microsoft Internet Explorer" == navigator.appName) || // IE < 11
+        //     navigator.userAgent.match(/Trident\/./i)); // IE 11
+        return (browserSpecs.name === 'IE' || browserSpecs.name === 'MSIE');
+    }
+
+    function isIOS() {
+        return (navigator.userAgent.match(/ipod/i) ||
+            navigator.userAgent.match(/ipad/i) ||
+            navigator.userAgent.match(/iphone/i));
+    }
+
+    function isNativeMessageSupported()
+    {
+        // В IE работаем через NPAPI
+        if(isIE())
+            return false;
+        // В Edge работаем через NativeMessage
+        if (browserSpecs.name === 'Edg') {
+            return true;
+        }
+        if (browserSpecs.name === 'YaBrowser') {
+            isYandex = true;
+            return true;
+        }
+        // В Chrome, Firefox, Safari и Opera работаем через асинхронную версию в зависимости от версии
+        if(browserSpecs.name === 'Opera') {
+            isOpera = true;
+            if(browserSpecs.version >= 33){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        if(browserSpecs.name === 'Firefox') {
+            isFireFox = true;
+            if(browserSpecs.version >= 52){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        if(browserSpecs.name === 'Chrome') {
+            if(browserSpecs.version >= 42){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        //В Сафари начиная с 12 версии нет NPAPI
+        if(browserSpecs.name === 'Safari') {
+            isSafari = true;
+            if(browserSpecs.version >= 12) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    // Функция активации объектов КриптоПро ЭЦП Browser plug-in
+    function CreateObject(name) {
+        if (isIOS()) {
+            // На iOS для создания объектов используется функция
+            // call_ru_cryptopro_npcades_10_native_bridge, определенная в IOS_npcades_supp.js
+            return call_ru_cryptopro_npcades_10_native_bridge("CreateObject", [name]);
+        }
+        if (isIE()) {
+            // В Internet Explorer создаются COM-объекты
+            if (name.match(/X509Enrollment/i)) {
+                try {
+                    // Объекты CertEnroll пробуем создавать через нашу фабрику,
+                    // если не получилось то через CX509EnrollmentWebClassFactory
+                    var objCertEnrollClassFactory = document.getElementById("webClassFactory");
+                    return objCertEnrollClassFactory.CreateObject(name);
+                }
+                catch (e) {
+                    try {
+                        var objWebClassFactory = document.getElementById("certEnrollClassFactory");
+                        return objWebClassFactory.CreateObject(name);
+                    }
+                    catch (err) {
+                        throw ("Для создания обьектов X509Enrollment следует настроить веб-узел на использование проверки подлинности по протоколу HTTPS");
+                    }
+                }
+            }
+            // Объекты CAPICOM и CAdESCOM создаются через CAdESCOM.WebClassFactory
+            try {
+                var objWebClassFactory = document.getElementById("webClassFactory");
+                return objWebClassFactory.CreateObject(name);
+            }
+            catch (e) {
+                // Для версий плагина ниже 2.0.12538
+                return new ActiveXObject(name);
+            }
+        }
+        // создаются объекты NPAPI
+        return pluginObject.CreateObject(name);
+    }
+
+    function decimalToHexString(number) {
+        if (number < 0) {
+            number = 0xFFFFFFFF + number + 1;
+        }
+
+        return number.toString(16).toUpperCase();
+    }
+
+    function GetMessageFromException(e) {
+        var err = e.message;
+        if (!err) {
+            err = e;
+        } else if (e.number) {
+            err += " (0x" + decimalToHexString(e.number) + ")";
+        }
+        return err;
+    }
+
+    function getLastError(exception) {
+        if(isNativeMessageSupported() || isIE() || isIOS() ) {
+            return GetMessageFromException(exception);
+        }
+
+        try {
+            return pluginObject.getLastError();
+        } catch(e) {
+            return GetMessageFromException(exception);
+        }
+    }
+
+    // Функция для удаления созданных объектов
+    function ReleasePluginObjects() {
+        return cpcsp_chrome_nmcades.ReleasePluginObjects();
+    }
+
+    // Функция активации асинхронных объектов КриптоПро ЭЦП Browser plug-in
+    function CreateObjectAsync(name) {
+        return pluginObject.CreateObjectAsync(name);
+    }
+
+    //Функции для IOS
+    var ru_cryptopro_npcades_10_native_bridge = {
+        callbacksCount : 1,
+        callbacks : {},
+
+        // Automatically called by native layer when a result is available
+        resultForCallback : function resultForCallback(callbackId, resultArray) {
+            var callback = ru_cryptopro_npcades_10_native_bridge.callbacks[callbackId];
+            if (!callback) return;
+            callback.apply(null,resultArray);
+        },
+
+        // Use this in javascript to request native objective-c code
+        // functionName : string (I think the name is explicit :p)
+        // args : array of arguments
+        // callback : function with n-arguments that is going to be called when the native code returned
+        call : function call(functionName, args, callback) {
+            var hasCallback = callback && typeof callback === "function";
+            var callbackId = hasCallback ? ru_cryptopro_npcades_10_native_bridge.callbacksCount++ : 0;
+
+            if (hasCallback)
+                ru_cryptopro_npcades_10_native_bridge.callbacks[callbackId] = callback;
+
+            var iframe = document.createElement("IFRAME");
+            var arrObjs = new Array("_CPNP_handle");
+            try{
+                iframe.setAttribute("src", "cpnp-js-call:" + functionName + ":" + callbackId+ ":" + encodeURIComponent(JSON.stringify(args, arrObjs)));
+            } catch(e){
+                alert(e);
+            }
+            document.documentElement.appendChild(iframe);
+            iframe.parentNode.removeChild(iframe);
+            iframe = null;
+        }
+    };
+
+    function call_ru_cryptopro_npcades_10_native_bridge(functionName, array){
+        var tmpobj;
+        var ex;
+        ru_cryptopro_npcades_10_native_bridge.call(functionName, array, function(e, response){
+            ex = e;
+            var str='tmpobj='+response;
+            eval(str);
+            if (typeof (tmpobj) === "string"){
+                tmpobj = tmpobj.replace(/\\\n/gm, "\n");
+                tmpobj = tmpobj.replace(/\\\r/gm, "\r");
+            }
+        });
+        if(ex)
+            throw ex;
+        return tmpobj;
+    }
+
+    function show_firefox_missing_extension_dialog()
+    {
+        if (!window.cadesplugin_skip_extension_install)
+        {
+            var ovr = document.createElement('div');
+            ovr.id = "cadesplugin_ovr";
+            ovr.style = "visibility: hidden; position: fixed; left: 0px; top: 0px; width:100%; height:100%; background-color: rgba(0,0,0,0.7)";
+            ovr.innerHTML = "<div id='cadesplugin_ovr_item' style='position:relative; width:400px; margin:100px auto; background-color:#fff; border:2px solid #000; padding:10px; text-align:center; opacity: 1; z-index: 1500'>" +
+                "<button id='cadesplugin_close_install' style='float: right; font-size: 10px; background: transparent; border: 1; margin: -5px'>X</button>" +
+                "<p>Для работы КриптоПро ЭЦП Browser plugin на данном сайте необходимо расширение для браузера. Убедитесь, что оно у Вас включено или установите его." +
+                "<p><a href='https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi'>Скачать расширение</a></p>" +
+                "</div>";
+            document.getElementsByTagName("Body")[0].appendChild(ovr);
+            document.getElementById("cadesplugin_close_install").addEventListener('click',function()
+            {
+                plugin_loaded_error("Плагин недоступен");
+                document.getElementById("cadesplugin_ovr").style.visibility = 'hidden';
+            });
+
+            ovr.addEventListener('click',function()
+            {
+                plugin_loaded_error("Плагин недоступен");
+                document.getElementById("cadesplugin_ovr").style.visibility = 'hidden';
+            });
+            ovr.style.visibility="visible";
+        }
+    }
+    function firefox_or_safari_nmcades_onload() {
+        cpcsp_chrome_nmcades.check_chrome_plugin(plugin_loaded, plugin_loaded_error);
+    }
+
+    function nmcades_api_onload () {
+        window.postMessage("cadesplugin_echo_request", "*");
+        window.addEventListener("message", function (event){
+            if (typeof(event.data) !== "string" || !event.data.match("cadesplugin_loaded"))
+                return;
+            if (cadesplugin_loaded_event_recieved)
+                return;
+            if(isFireFox || isSafari)
+            {
+                // Для Firefox, Сафари вместе с сообщением cadesplugin_loaded прилетает url для загрузки nmcades_plugin_api.js
+                var url = event.data.substring(event.data.indexOf("url:") + 4);
+                if (!url.match("^moz-extension://[a-zA-Z0-9-]+/nmcades_plugin_api.js$")
+                    && !url.match("^safari-extension://[a-zA-Z0-9-]+/[a-zA-Z0-9]+/nmcades_plugin_api.js$"))
+                {
+                    cpcsp_console_log(cadesplugin.LOG_LEVEL_ERROR, "Bad url \"" + url + "\" for load CryptoPro Extension for CAdES Browser plug-in");
+                    plugin_loaded_error();
+                    return;
+                }
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type", "text/javascript");
+                fileref.setAttribute("src", url);
+                fileref.onerror = plugin_loaded_error;
+                fileref.onload = firefox_or_safari_nmcades_onload;
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }else {
+                cpcsp_chrome_nmcades.check_chrome_plugin(plugin_loaded, plugin_loaded_error);
+            }
+            cadesplugin_loaded_event_recieved = true;
+        }, false);
+    }
+
+    //Загружаем расширения для Chrome, Opera, YaBrowser, FireFox, Edge, Safari
+    function load_extension()
+    {
+        if(isFireFox || isSafari){
+            // вызываем callback руками т.к. нам нужно узнать ID расширения. Он уникальный для браузера.
+            nmcades_api_onload();
+        } else {
+            // в асинхронном варианте для Yandex и Opera подключаем расширение из Opera store.
+            if (isOpera || isYandex) {
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type", "text/javascript");
+                fileref.setAttribute("src", "chrome-extension://epebfcehmdedogndhlcacafjaacknbcm/nmcades_plugin_api.js");
+                fileref.onerror = plugin_loaded_error;
+                fileref.onload = nmcades_api_onload;
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            } else {
+                // для Chrome, Chromium, Chromium Edge расширение из Chrome store
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type", "text/javascript");
+                fileref.setAttribute("src", "chrome-extension://iifchhfnnmpdbibifmljnfjhpififfog/nmcades_plugin_api.js");
+                fileref.onerror = plugin_loaded_error;
+                fileref.onload = nmcades_api_onload;
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+        }
+    }
+
+    //Загружаем плагин для NPAPI
+    function load_npapi_plugin()
+    {
+        var elem = document.createElement('object');
+        elem.setAttribute("id", "cadesplugin_object");
+        elem.setAttribute("type", "application/x-cades");
+        elem.setAttribute("style", "visibility: hidden");
+        document.getElementsByTagName("body")[0].appendChild(elem);
+        pluginObject = document.getElementById("cadesplugin_object");
+        if(isIE())
+        {
+            var elem1 = document.createElement('object');
+            elem1.setAttribute("id", "certEnrollClassFactory");
+            elem1.setAttribute("classid", "clsid:884e2049-217d-11da-b2a4-000e7bbb2b09");
+            elem1.setAttribute("style", "visibility: hidden");
+            document.getElementsByTagName("body")[0].appendChild(elem1);
+            var elem2 = document.createElement('object');
+            elem2.setAttribute("id", "webClassFactory");
+            elem2.setAttribute("classid", "clsid:B04C8637-10BD-484E-B0DA-B8A039F60024");
+            elem2.setAttribute("style", "visibility: hidden");
+            document.getElementsByTagName("body")[0].appendChild(elem2);
+        }
+    }
+
+    //Отправляем событие что все ок.
+    function plugin_loaded()
+    {
+        plugin_resolved = 1;
+        if(canPromise)
+        {
+            plugin_resolve();
+        }else {
+            window.postMessage("cadesplugin_loaded", "*");
+        }
+    }
+
+    //Отправляем событие что сломались.
+    function plugin_loaded_error(msg)
+    {
+        if(typeof(msg) === 'undefined' || typeof(msg) === 'object')
+            msg = "Плагин недоступен";
+        plugin_resolved = 1;
+        if(canPromise)
+        {
+            plugin_reject(msg);
+        } else {
+            window.postMessage("cadesplugin_load_error", "*");
+        }
+    }
+
+    //проверяем что у нас хоть какое то событие ушло, и если не уходило кидаем еще раз ошибку
+    function check_load_timeout()
+    {
+        if(plugin_resolved === 1)
+            return;
+        if(isFireFox)
+        {
+            show_firefox_missing_extension_dialog();
+        }
+        plugin_resolved = 1;
+        if(canPromise)
+        {
+            plugin_reject("Истекло время ожидания загрузки плагина");
+        } else {
+            window.postMessage("cadesplugin_load_error", "*");
+        }
+
+    }
+
+    //Вспомогательная функция для NPAPI
+    function createPromise(arg)
+    {
+        return new Promise(arg);
+    }
+
+    function check_npapi_plugin (){
+        try {
+            var oAbout = CreateObject("CAdESCOM.About");
+            plugin_loaded();
+        }
+        catch (err) {
+            document.getElementById("cadesplugin_object").style.display = 'none';
+            // Объект создать не удалось, проверим, установлен ли
+            // вообще плагин. Такая возможность есть не во всех браузерах
+            var mimetype = navigator.mimeTypes["application/x-cades"];
+            if (mimetype) {
+                var plugin = mimetype.enabledPlugin;
+                if (plugin) {
+                    plugin_loaded_error("Плагин загружен, но не создаются обьекты");
+                }else
+                {
+                    plugin_loaded_error("Ошибка при загрузке плагина");
+                }
+            }else
+            {
+                plugin_loaded_error("Плагин недоступен");
+            }
+        }
+    }
+
+    //Проверяем работает ли плагин
+    function check_plugin_working()
+    {
+        var div = document.createElement("div");
+        div.innerHTML = "<!--[if lt IE 9]><i></i><![endif]-->";
+        var isIeLessThan9 = (div.getElementsByTagName("i").length === 1);
+        if (isIeLessThan9) {
+            plugin_loaded_error("Internet Explorer версии 8 и ниже не поддерживается");
+            return;
+        }
+
+        if(isNativeMessageSupported())
+        {
+            load_extension();
+        }else if(!canPromise) {
+            window.addEventListener("message", function (event){
+                    if (event.data !== "cadesplugin_echo_request")
+                        return;
+                    load_npapi_plugin();
+                    check_npapi_plugin();
+                },
+                false);
+        }else
+        {
+            if(document.readyState === "complete"){
+                load_npapi_plugin();
+                check_npapi_plugin();
+            } else {
+                window.addEventListener("load", function (event) {
+                    load_npapi_plugin();
+                    check_npapi_plugin();
+                }, false);
+            }
+        }
+    }
+
+    function set_pluginObject(obj)
+    {
+        pluginObject = obj;
+    }
+
+    function is_capilite_enabled()
+    {
+        if ((typeof (cadesplugin.EnableInternalCSP) !== 'undefined') && cadesplugin.EnableInternalCSP)
+            return true;
+        return false;
+    };
+
+    //Export
+    cadesplugin.JSModuleVersion = "2.3.1";
+    cadesplugin.async_spawn = async_spawn;
+    cadesplugin.set = set_pluginObject;
+    cadesplugin.set_log_level = set_log_level;
+    cadesplugin.getLastError = getLastError;
+    cadesplugin.is_capilite_enabled = is_capilite_enabled;
+
+    if(isNativeMessageSupported())
+    {
+        cadesplugin.CreateObjectAsync = CreateObjectAsync;
+        cadesplugin.ReleasePluginObjects = ReleasePluginObjects;
+    }
+
+    if(!isNativeMessageSupported())
+    {
+        cadesplugin.CreateObject = CreateObject;
+    }
+
+    if(window.cadesplugin_load_timeout)
+    {
+        setTimeout(check_load_timeout, window.cadesplugin_load_timeout);
+    }
+    else
+    {
+        setTimeout(check_load_timeout, 20000);
+    }
+
+    set_constantValues();
+
+    cadesplugin.current_log_level = cadesplugin.LOG_LEVEL_ERROR;
+    window.cadesplugin = cadesplugin;
+    check_plugin_working();
+}());
+
+EDS = (function () {
+    var CERTIFICATES = [];
+    var CADESCOM_CADES_BES = 1;
+    var CAPICOM_CURRENT_USER_STORE = 2;
+    var CAPICOM_MY_STORE = "My";
+    var CAPICOM_STORE_OPEN_MAXIMUM_ALLOWED = 2;
+    var CAPICOM_CERTIFICATE_FIND_SUBJECT_NAME = 1;
+    var CADESCOM_BASE64_TO_BINARY = 1;
+    var CADESCOM_CADES_X_LONG_TYPE_1 = 0x5d;
+    var CADESCOM_HASH_ALGORITHM_CP_GOST_3411 = 100;
+    var CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256 = 101;
+    var CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512 = 102;
+    var CADESCOM_HASH_ALGORITHM_SHA1 = 0;
+
+    var isAttachEDS = $('[name="isAttachEDS"]').is(':checked');
+    var cleandataUrl = $("[data-name='documentHashUrl']").val();
+    var activitySignUrl = $("[data-name='activitySignature']").val();
+    var documentHashUrl;
+    var targetUrl;
+    var isSignAllAttachment;
+    var signatures = [];
+    var hashAlg;
+    var hashAlgorithm;
+
+    //Сервисные функции
+	
+	function chunkSubstr(str, size){
+		var numChunks = Math.ceil(str.length/size);
+		var chunks = new Array(numChunks);
+		
+		for(var i = 0, o = 0; i < numChunks; ++i, o += size){
+			chunks[i] = str.substr(o,size);
+		}
+		return chunks;
+	}
+
+
+    function isChromiumBased() {
+        var retVal_chrome = navigator.userAgent.match(/chrome/i);
+        //некоторых версиях IE8 с подключенным плагином chromeframe он определяется как
+        //Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; chromeframe/29.0.1547.67;
+        // и может попадать в ветку Chrome
+        var retVal_chromeframe = navigator.userAgent.match(/chromeframe/i);
+        isOpera = navigator.userAgent.match(/opr/i);
+        isYaBrowser = navigator.userAgent.match(/YaBrowser/i);
+
+        if (retVal_chrome == null) // В Firefox и IE работаем через NPAPI
+            return false;
+        else {
+            // В Chrome и Opera работаем через асинхронную версию
+            if (retVal_chrome.length > 0 || isOpera != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    if (isChromiumBased()) {
+        var d = new Date();
+        var ver = "?v=" + d.getDate() + "" +  d.getMonth() + "" + d.getFullYear();
+        var scriptUrl = "<script language=\"javascript\" src=\"" + $("[name = 'digitalSignatureChromeUrl']").val() + ver + "\"></scr" + "ipt>";
+        document.write(scriptUrl);
+    }
+
+    $(document).ready(function () {
+        if (isChromiumBased()) {
+            EDS = EDS_async;
+        } 
+    });
+
+    var SignDocumentWithAtachments = function (callbackFn, messageFn, hideResultDialog, onFinish) {
+
+        if (!onFinish) {
+            onFinish = function () {
+                if (callbackFn !== undefined) {
+                    callbackFn();
+                }
+            };
+        }
+
+
+        activitySignUrl = $("[data-name='activitySignature']").val();
+
+        var onMessage = function (message, isError) {
+            if (messageFn !== undefined) {
+                messageFn(message, isError);
+            }
+            else if (isError) {
+                $('[name="signInfo"]').html("<FONT color='red'>" + message + "</FONT>");
+            }
+            else {
+                $('[name="signInfo"]').html("<FONT color='green'>" + message + "</FONT>");
+            }
+        }
+
+        //$('[name="edsProgressbar"]').removeAttr('hidden');
+
+        cleandataUrl = $("[data-name='documentHashUrl']").val();
+
+        InitCertHashAlgorithm();
+
+        documentHashUrl = 'GetDocumentHashCode';
+        var getSignTypeUrl = cleandataUrl.replace(documentHashUrl, 'GetSignType');
+
+        var signType;
+        //Получаем тип подписи
+        $.ajax({
+            url: getSignTypeUrl,
+            type: "get",
+            async: false,
+            data: { edsSend: false },
+            success: function (type) {
+                signType = type;
+            },
+            error: function () {
+
+            }
+        });
+
+        //Получаем Хэш документа и подписываем его
+        $.ajax({
+            url: cleandataUrl,
+            type: "GET",
+            cache: false,
+            async: false,
+            data: { edsSend: false },
+            success: function (dataToSign) {
+                Sign(dataToSign, signType, callbackFn, messageFn);
+            },
+            error: function () {
+
+            }
+        });
+
+        documentHashUrl = 'GetAttachmentHashes';
+
+        //n.volosatov: костыля, если есть activitySignUrl, ибо cleandataUrl перезаписывается в Sign методе
+        if (activitySignUrl) {
+            cleandataUrl = $("[data-name='documentHashUrl']").val();
+            InitCertHashAlgorithm();
+            activitySignUrl = undefined;
+            $("[data-name='activitySignature']").remove();
+        }
+
+        cleandataUrl = cleandataUrl.replace('GetDocumentHashCode', documentHashUrl);
+
+        isAttachEDS = true;
+        isSignAllAttachment = true;
+        //Получаем Хэши файлов и подписываем их
+        $.ajax({
+            url: cleandataUrl,
+            type: "get",
+            async: false,
+            cache: false,
+            data: { edsSend: false },
+            success: function (dataToSign) {
+                $.each(dataToSign, function (key, signsParam) {
+                    var sign = {
+                        Hash: signsParam.Hash,
+                        AttachmentKey: signsParam.AttachmentKey
+                    }
+                    signatures.push(sign);
+                    Sign(signsParam.Hash, signType, callbackFn, messageFn);
+                });
+
+                if (signatures.length > 0) {
+                    var targetUrl = cleandataUrl.replace(documentHashUrl, "SignAllAttachmentHandler");
+                    targetUrl = targetUrl.replace("ContextAction", "Attachment");
+
+                    $.post(targetUrl, { sign: JSON.stringify(signatures) }, function (feedback) {
+                        try {
+
+
+                            feedback = JSON.parse(feedback);
+                            if (feedback.status == "ERROR") {
+                                onMessage(feedback.responseMessage, true);
+                                return;
+                            }
+
+                            //$('[name="edsProgressbar"]').attr('hidden', 'true');
+
+                            onFinish();
+
+                            var isExport = $('[name="isEisExport"]').is(':checked');
+                            if (isExport) {
+                                return;
+                            }
+
+                            onMessage("Документ/файлы подписаны успешно", false);
+
+                            isAttachEDS = false;
+                            isSignAllAttachment = false;
+
+                            var url = cleandataUrl.replace("GetAttachmentHashes", "DocumentAttachmentSignConfirmation");
+                            url = url.replace("ContextAction", "Attachment");
+                            url = url.split('?')[0];
+                            url += "?documentId=" + feedback.documentId + '&type=2';
+
+                            if (!hideResultDialog) {
+                                ModalHelper({
+                                    dialog: '#modalInfo',
+                                    url: url,
+                                    isTargetBlank: false,
+                                    beforeSubmit: undefined,
+                                    useDefaultSubmit: false
+                                }).openWindow();
+                            }
+                        }
+                        catch (ex) {
+                            onMessage("Ошибка подписания", true);
+                        }
+                    });
+                } else {
+
+                    onFinish();
+
+                    var isExport = $('[name="isEisExport"]').is(':checked');
+                    if (isExport) {
+                        return;
+                    }
+
+                    var url = cleandataUrl.replace("GetAttachmentHashes", "DocumentAttachmentSignConfirmation");
+                    url = url.replace("ContextAction", "Attachment");
+                    url += '&type=0';
+                    if (!hideResultDialog) {
+                        ModalHelper({
+                            dialog: '#modalInfo',
+                            url: url,
+                            isTargetBlank: false,
+                            beforeSubmit: undefined,
+                            useDefaultSubmit: false
+                        }).openWindow();
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    var SignAttachments = function (callbackFn, messageFn, hideResultDialog, onFinish) {
+
+        if (!onFinish) {
+            var onFinish = function() {
+                if (callbackFn !== undefined) {
+                    callbackFn();
+                }
+            }
+        }
+
+        activitySignUrl = $("[data-name='activitySignature']").val();
+
+        var onMessage = function (message, isError) {
+            if (messageFn !== undefined) {
+                messageFn(message, isError);
+            }
+            else if (isError) {
+                $('[name="signInfo"]').html("<FONT color='red'>" + message + "</FONT>");
+            }
+            else {
+                $('[name="signInfo"]').html("<FONT color='green'>" + message + "</FONT>");
+            }
+        }
+         
+        //$('[name="edsProgressbar"]').removeAttr('hidden');
+        cleandataUrl = $("[data-name='documentHashUrl']").val();
+
+        InitCertHashAlgorithm();
+
+        documentHashUrl = 'GetAttachmentKeys';
+        //n.volosatov: костыля, если есть activitySignUrl, ибо cleandataUrl перезаписывается в Sign методе
+        if (activitySignUrl) {
+            cleandataUrl = $("[data-name='documentHashUrl']").val();
+            InitCertHashAlgorithm();
+            activitySignUrl = undefined;
+            $("[data-name='activitySignature']").remove();
+        }
+
+
+
+        cleandataUrl = cleandataUrl.replace('GetDocumentHashCode', documentHashUrl);
+        isAttachEDS = $('[name="isAttachEDS"]').is(':checked');
+        activitySignUrl = $("[data-name='activitySignature']").val();
+        isSignAllAttachment = $('[data-name="isSignAllAttachment"]').val();
+
+        targetUrl = cleandataUrl.replace(documentHashUrl, "SignDocument");
+        isAttachEDS = $('[name="isAttachEDS"]').is(':checked');
+        var getSignTypeUrl = cleandataUrl.replace(documentHashUrl, 'GetSignType');
+
+
+        if (targetUrl.indexOf('&attachKey=') != -1) {
+            isAttachEDS = true;
+            isSignAllAttachment = true;
+        }
+
+        //$.get(getSignTypeUrl, { edsSend: false }, function (signType) {
+        $.ajax({
+            url: getSignTypeUrl,
+            cache: false,
+            data: { edsSend: false },
+            success: function(signType) {
+                //GetAttachmentKeys
+                $.ajax({
+                    url: cleandataUrl,
+                    cache: false,
+                    success: function(keysAttach) {
+                        if (keysAttach.length == 0) {
+                            onMessage("У подписываемого документа отсутствует документация.", true);
+                            return;
+                        }
+                        cleandataUrl = cleandataUrl.replace(documentHashUrl, 'GetAttachmentHashCode');
+                        $.each(keysAttach,
+                            function(key, keyAttach) {
+                                    try {
+                                            $.ajax({
+                                                url: cleandataUrl.replace('&attachKey=', '&attachKey=' + keyAttach),
+                                                cache: false,
+                                                async: false,
+                                                error: function (error) {
+                                                    onMessage("Ошибка подписания: " + error.statusText, true);
+                                                    return;
+                                                },
+                                                success: function (dataToSign) {
+                                                    console.info("Документ с ключом " + keyAttach + " объем:" + dataToSign.length);
+                                            
+                                                            var sign = {
+                                                                AttachmentKey: keyAttach
+                                                            }
+                                                            signatures.push(sign);
+                                                                Sign(dataToSign,
+                                                                signType,
+                                                                callbackFn,
+                                                                messageFn,
+                                                                null,
+                                                                keyAttach);
+                                                       
+                                          
+                                                }
+                                            });
+                                                                        
+                                    } catch (e) {
+                                        onMessage("Ошибка подписания"+ e.message, true);
+                                        return;
+                                    } 
+                                });
+                        if (signatures.length > 0 && keysAttach.length == signatures.length) {
+                            var targetUrl = cleandataUrl.replace('GetAttachmentHashCode',
+                                "SignAllAttachmentHandler");
+                            targetUrl = targetUrl.replace("ContextAction", "Attachment");
+
+                            $.post(targetUrl,
+                                { sign: JSON.stringify(signatures) },
+                                function (feedback) {
+                                    try {
+                                        //feedback = JSON.parse(feedback);
+                                        //$('[name="edsProgressbar"]').attr('hidden', 'true');
+
+                                        feedback = JSON.parse(feedback);
+                                        if (feedback.status == "ERROR") {
+                                            onMessage(feedback.responseMessage, true);
+                                            return;
+                                        }
+
+                                        //$('[name="signInfo"]').html("<FONT color='green'>" + feedback.message + "</FONT>"); //.append(sSignedMessage);
+                                        onMessage("Документ/файлы подписаны успешно", false);
+                                        onFinish();
+                                        //if (callbackFn !== undefined)
+                                        //    callbackFn();
+                                        isAttachEDS = false;
+                                        isSignAllAttachment = false;
+                                        var url = cleandataUrl.replace("GetAttachmentHashes",
+                                            "DocumentAttachmentSignConfirmation");
+                                        url = url.replace("ContextAction", "Attachment");
+
+                                        url = url.split('?')[0];
+                                        url += "?documentId=" + feedback.documentId + '&type=1';
+                                        if (!hideResultDialog) {
+                                            ModalHelper({
+                                                dialog: '#modalInfo',
+                                                url: url,
+                                                isTargetBlank: false,
+                                                beforeSubmit: undefined,
+                                                useDefaultSubmit: false
+                                            }).openWindow();
+                                        }
+                                    } catch (ex) {
+                                        //$('[name="signInfo"]').html("<FONT color='red'>Ошибка подписания</FONT>"); 
+                                        onMessage("Ошибка подписания", true);
+                                    }
+                                });
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    function AddHashAlgorithmToUrl(url) {
+        var hashAlgorithmParam = "&hashAlgorithm=";
+        if (url && url.indexOf(hashAlgorithmParam) === -1) {
+            url += hashAlgorithmParam + encodeURIComponent(hashAlgorithm);
+        }
+        return url;
+    }
+
+    var SignCreate = function (callbackFn, messageFn, hideResultDialog, container) {
+
+        if (!container || !container.jquery)
+            container = $(document);
+
+
+        cleandataUrl = container.find("[data-name='documentHashUrl']").val();
+
+        isAttachEDS = container.find('[name="isAttachEDS"]').is(':checked');
+        activitySignUrl = container.find("[data-name='activitySignature']").val();
+        if (isAttachEDS) {
+            documentHashUrl = 'GetAttachmentHashCode';
+            cleandataUrl = container.find("[data-name='documentAttachHashUrl']").val();
+        } else {
+            documentHashUrl = 'GetDocumentHashCode';
+        }
+
+        InitCertHashAlgorithm(container);
+
+        isAttachEDS = container.find('[name="isAttachEDS"]').is(':checked');
+        var getSignTypeUrl = cleandataUrl.replace(documentHashUrl, 'GetSignType');
+
+        $.get(getSignTypeUrl, { edsSend: false }, function (signType) {
+            $.ajax({
+                url: cleandataUrl,
+                cache: false,
+                success: function (dataToSign) {
+                    Sign(dataToSign,
+                        signType,
+                        function (data) {
+                            callbackFn();
+
+                            var isExport = container.find('[name="isEisExport"]').is(':checked');
+                            if (isExport) {
+                                return;
+                            }
+
+
+                            var isContext = container.find('[name="isContext"]').is(':checked');
+                            if (isContext) {
+                                return;
+                            }
+
+                            var url = cleandataUrl.replace("GetDocumentHashCode", "DocumentAttachmentSignConfirmation");
+                            url = url.replace("ContextAction", "Attachment");
+                            url += '&type=0';
+
+                            if (!hideResultDialog) {
+
+                                ModalHelper({
+                                    dialog: '#modalInfo',
+                                    url: url,
+                                    isTargetBlank: false,
+                                    beforeSubmit: undefined,
+                                    useDefaultSubmit: false
+                                }).openWindow();
+
+                            }
+
+                        },
+                        messageFn, container);
+                }
+            });
+        });
+    }
+
+    function InitCertHashAlgorithm(container) {
+
+        if (!container || !container.jquery)
+            container = $(document);
+
+        var cerNum = container.find('[name="certificateList"]').find("input:checked").val();
+        if (cerNum != undefined) {
+            var cert = CERTIFICATES.Item(cerNum);
+            //Сопоставление ProviderName/ProviderType -> хэш-алгоритм берем здесь https://www.cryptopro.ru/certsrv/certrqma.asp
+            //Можно использовать ProviderType или ProviderName
+            //var providerType = cert.PrivateKey.ProviderType;
+            var providerName = cert.PrivateKey.ProviderName;
+
+            switch (providerName) {
+                case "Crypto-Pro GOST R 34.10-2001 Cryptographic Service Provider": //"75"
+                    hashAlgorithm = "GOST3411";
+                    hashAlg = CADESCOM_HASH_ALGORITHM_CP_GOST_3411;
+                    break;
+                case "Crypto-Pro GOST R 34.10-2012 Cryptographic Service Provider": //"80":
+                    hashAlgorithm = "Gost3411_2012_256";
+                    hashAlg = CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256;
+                    break;
+                case "Crypto-Pro GOST R 34.10-2012 Strong Cryptographic Service Provider": //"81":
+                    hashAlgorithm = "Gost3411_2012_512";
+                    hashAlg = CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512;
+                    break;
+                case "eToken Base Cryptographic Provider": //"81":
+                    hashAlgorithm = "Base64";
+                    break;
+                default:
+                    var err = "Алгоритм хэширования указанный в сертификате не поддерживается";
+                    alert(err);
+                    throw (err);
+            }
+
+            cleandataUrl = AddHashAlgorithmToUrl(cleandataUrl);
+        }
+    }
+
+    var SignAuthentication = function (callbackFn, messageFn) {
+
+        dataToSign = $("#edsGuid").val();
+        var tspServerUrl = $("#tspServerUrl").val();
+        signType = { SignType: tspServerUrl ? 1 : 0, IsAuthentication: true, EdsAccessGroupTemplate: { TsaAddress: tspServerUrl } };
+
+        Sign(dataToSign, signType, function () {
+            callbackFn();
+            $("#content-login-form").submit();
+            waitingDialog.showWaiting();
+        }, messageFn);
+    }
+
+    var SignForEis = function (callbackFn, messageFn) {
+        var onFinish = function () {
+            if (callbackFn !== undefined) {
+                callbackFn();
+            }
+        }
+
+        var onMessage = function (message, isError) {
+            if (messageFn !== undefined) {
+                messageFn(message, isError);
+            }
+            else if (isError) {
+                $('[name="signInfo"]').html("<FONT color='red'>" + message + "</FONT>");
+            }
+            else {
+                $('[name="signInfo"]').html("<FONT color='green'>" + message + "</FONT>");
+            }
+        }
+
+        //$('[name="edsProgressbar"]').removeAttr('hidden');
+
+        var cerNum = $('[name="certificateList"]').find("input:checked").val();
+        if (cerNum != undefined) {
+            var cert = CERTIFICATES.Item(cerNum);
+            var providerName = cert.PrivateKey.ProviderName;
+            switch (providerName) {
+                case "Crypto-Pro GOST R 34.10-2001 Cryptographic Service Provider": //"75"  
+                    //vipnet
+                    //case "Infotecs Cryptographic Service Provider": //"2":
+                    break;
+                default:
+                    var err = "Алгоритм хэширования указанный в сертификате не поддерживается";
+                    alert(err);
+                    throw (err);
+            }
+
+            try {
+                var oSigner = cadesplugin.CreateObject("CAdESCOM.CPSigner");
+                oSigner.Certificate = cert;
+
+                var hashData = $("[name='signature-hash']").val();
+                var oHashedData = InitializeHashedData(CADESCOM_HASH_ALGORITHM_CP_GOST_3411, hashData);
+                var oSignedData = cadesplugin.CreateObject("CAdESCOM.CadesSignedData");
+                oSigner.Options = 1;
+                var message = oSignedData.SignHash(oHashedData, oSigner, CADESCOM_CADES_BES, true);
+                $("[name='signature']").val(message);
+                onFinish();
+                return true;
+            } catch (err) {
+                //$('[name="edsProgressbar"]').attr('hidden', 'false');
+                onMessage("Ошибка создания подписи. Ошибка: " + cadesplugin.getLastError(err), true);
+                return false;
+            }
+        } else {
+            onMessage("Выберите сертификат для создания подписи", true);
+            return false;
+        }
+    }
+
+    function InitializeHashedData(hashAlg, sHashValue) {
+
+        // Создаем объект CAdESCOM.HashedData
+        var oHashedData = cadesplugin.CreateObject("CAdESCOM.HashedData");
+
+        // Инициализируем объект заранее вычисленным хэш-значением
+        // Алгоритм хэширования нужно указать до того, как будет передано хэш-значение
+        oHashedData.Algorithm = hashAlg;
+        oHashedData.SetHashValue(sHashValue);
+
+        return oHashedData;
+    }
+	
+	 function Sign(dataToSign, signType, callbackFn, messageFn, container) {
+		 Sign(dataToSign, signType, callbackFn, messageFn, container, null)
+	 }
+	 
+    function Sign(dataToSign, signType, callbackFn, messageFn, container, key) {
+
+        if (!container || !container.jquery)
+            container = $("body");
+
+        var onFinish = function () {
+            if (callbackFn !== undefined) {
+                callbackFn();
+            }
+        }
+
+        var onMessage = function (message, isError) {
+            if (messageFn !== undefined) {
+                messageFn(message, isError);
+            }
+            else if (isError) {
+                container.find('[name="signInfo"]').html("<FONT color='red'>" + message + "</FONT>");
+            }
+            else {
+                container.find('[name="signInfo"]').html("<FONT color='green'>" + message + "</FONT>");
+            }
+        }
+        try {
+            var oSigner = cadesplugin.CreateObject("CAdESCOM.CPSigner");
+            var cerNum = container.find('[name="certificateList"]').find("input:checked").val();
+            if (cerNum != undefined) {
+                var cert = CERTIFICATES.Item(cerNum);
+
+                if (window.top.ExpectedEdsCert) {
+                    //TODO: Сделать отдельный метод для получения сертификата в js. Вынести заполнение формы регистрации пользователя в callback.
+                    var subject = cert.SubjectName;
+                    var adjuster = new CertificateAdjuster();
+                    var inn = adjuster.GetInn(subject);
+                    var kpp = adjuster.GetKpp(subject);
+                    var lastName = adjuster.GetLastName(subject);
+                    var name = adjuster.GetName(subject);
+                    var middleName = adjuster.GetMiddleName(subject);
+                    var position = adjuster.GetPosition(subject);
+                    var email = adjuster.GetEmail(subject);
+                    var thumbprint = cert.Thumbprint;
+                    var login = email ? email.split("@")[0] : "";
+
+                    var organizations = register.organizations;
+                    //TODO: Ждем от аналитиков правило, по которому мы получаем организацию
+                    //var orgs = $.grep(organizations, function (e) { return e.Inn === inn && e.Kpp === kpp; });
+                    var orgs = $.grep(organizations, function(e) { return e.Inn === inn; });
+                    var orgInn = "";
+                    var orgKpp = "";
+                    var chief = "";
+                    var orgVal = 0;
+                    if (orgs.length === 1) {
+                        var idx = organizations.indexOf(orgs[0]);
+                        var orgItem = organizations[idx];
+                        orgInn = orgItem.Inn;
+                        orgKpp = orgItem.Kpp;
+                        chief = orgItem.Chief;
+                        orgVal = idx + 1;
+                    }
+
+                    container.find('#Organization option:eq(' + orgVal + ')').prop("selected", true);
+                    container.find('#Organization').trigger("chosen:updated");
+                    container.find('#Organization').trigger("change");
+                    container.find("#Inn").val(orgInn);
+                    container.find("#Kpp").val(orgKpp);
+                    container.find("#Chief").val(chief);
+                    container.find("#LastName").val(lastName);
+                    container.find("#FirstName").val(name);
+                    container.find("#MiddleName").val(middleName);
+                    container.find("#Position").val(position);
+                    container.find("#Email").val(email);
+                    container.find("#EdsThumbprint").val(thumbprint);
+                    container.find("#EdsThumbprintBlock").show();
+                    container.find("#Login").val(login);
+
+                    container.find('#actionDialog').modal('hide');
+                    return false;
+                }
+
+                var isLong = signType.SignType;
+                var tspService = "";
+                var accessGroupTemplate = signType.EdsAccessGroupTemplate;
+
+                if (accessGroupTemplate) {
+                    tspService = accessGroupTemplate.TsaAddress;
+                }
+                oSigner.Certificate = cert;
+
+                var oSignedData = cadesplugin.CreateObject("CAPICOM.SignedData");
+                var oHashedData;
+
+                if (hashAlg) {
+                    oSignedData = cadesplugin.CreateObject("CAdESCOM.CadesSignedData");
+                    oSigner.Options = 1;
+                    oHashedData = InitializeHashedData(hashAlg, dataToSign);
+                } else {
+                    if (hashAlgorithm != "Base64") {
+                        oSignedData.ContentEncoding = CADESCOM_BASE64_TO_BINARY;
+                    }
+                    // Создаем объект CAdESCOM.HashedData
+                    var oHashedData = cadesplugin.CreateObject("CAdESCOM.HashedData");
+
+                    // Алгоритм хэширования нужно указать до того, как будут переданы данные
+                    oHashedData.Algorithm = CADESCOM_HASH_ALGORITHM_CP_GOST_3411;
+
+                    // Указываем кодировку данных
+                    // Кодировка должна быть указана до того, как будут переданы сами данные
+                    oHashedData.DataEncoding = CADESCOM_BASE64_TO_BINARY;
+
+                    // Предварительно закодированные в BASE64 бинарные данные
+                    // В данном случае закодирован файл со строкой "Some Data."
+                    // Передаем данные
+                    //	if(dataToSign.length>1000000){
+
+                    //	var coll = chunkSubstr(dataToSign, 1000000);
+                    //	for (var iColl = 0; iColl < coll.length; iColl++) {
+                    //			oHashedData.Hash(coll[iColl]);
+                    //		}
+                    //	
+                    //}else{
+                    oHashedData.Hash(dataToSign);
+                    //}
+
+
+                    var sHashValue = oHashedData.Value;
+                    oSignedData.Content = sHashValue;
+                }
+
+                var sSignedMessage = "";
+                var timeStamp = "";
+
+                var detached = false;
+
+                if (isLong == 1) {
+                    oSigner.Options = 1;
+                    oSigner.TSAAddress = tspService;
+
+                    if (hashAlg) {
+                        sSignedMessage =
+                            oSignedData.SignHash(oHashedData, oSigner, CADESCOM_CADES_X_LONG_TYPE_1, detached);
+                        timeStamp = GetTimeStamp(oHashedData, sSignedMessage);
+                    } else {
+                        sSignedMessage = oSignedData.SignCades(oSigner, CADESCOM_CADES_X_LONG_TYPE_1, detached, 0);
+                    }
+
+                } else {
+                    //oSigner.Options = 1;
+
+                    if (hashAlg) {
+                        sSignedMessage = oSignedData.SignHash(oHashedData, oSigner, CADESCOM_CADES_BES, detached);
+                    } else {
+                        sSignedMessage = oSignedData.Sign(oSigner, true, 0);
+                    }
+                }
+
+                if (signType.IsAuthentication === true) {
+                    container.find("#edsValue").val(sSignedMessage);
+                    onFinish();
+                    return;
+                }
+
+                //Вынести в функции под созданию конкретныъх типов подписи
+                var targetUrl = cleandataUrl.replace(documentHashUrl, "SignDocument");
+                if (activitySignUrl != undefined) {
+                    cleandataUrl = activitySignUrl;
+                    var targetUrl = cleandataUrl.replace(documentHashUrl, "SignDocumentActivity");
+                }
+
+                if (isAttachEDS) {
+                    if (isSignAllAttachment) { //isSignAllAttachment
+                        signatures = signatures.map(function(signParam) {
+                            if (signParam.AttachmentKey === key) {
+                                signParam.Sign = sSignedMessage;
+                                signParam.TimeStamp = timeStamp;
+                            }
+                            return signParam;
+                        });
+                    } else {
+                        cleandataUrl = container.find("[data-name='documentActionUrl']").val();
+                        cleandataUrl += container.find("[name='uniqueIds']").val();
+                        cleandataUrl = AddHashAlgorithmToUrl(cleandataUrl);
+
+                        container.find('[name="DigitalSignature"]').val(sSignedMessage);
+                        $.post(cleandataUrl,
+                            { DigitalSignature: sSignedMessage, TimeStamp: timeStamp },
+                            function(feedback) {
+                                //$('[name="edsProgressbar"]').attr('hidden', 'true');
+                                try {
+
+                                    feedback = JSON.parse(feedback);
+                                    if (feedback.status == "ERROR") {
+                                        onMessage(feedback.responseMessage, true);
+                                        return;
+                                    }
+
+                                    onMessage("Документ/файлы подписаны успешно", false);
+                                    onFinish();
+
+                                    var isExport = container.find('[name="isEisExport"]').is(':checked');
+                                    if (isExport) {
+                                        return;
+                                    }
+
+                                    var isApprovePlugin = container.find("[name='hfApproveSettings']").length > 0 ||
+                                        container.find("[name='hfCompleteActivityPlugin']").length > 0;
+                                    if (isApprovePlugin)
+                                        return;
+
+                                    //$('[name="signInfo"]').html("<FONT color='green'>" + feedback.message + "</FONT>"); //.append(sSignedMessage);
+                                    //if (callbackFn !== undefined) {
+                                    //    callbackFn();
+                                    //}
+
+                                    var url = cleandataUrl.replace("SignAttachmentHandler",
+                                        "AttachmentSignConfirmation");
+                                    url = url.split('?')[0];
+                                    url += "?documentId=" +
+                                        feedback.documentId +
+                                        "&attachmentKey=" +
+                                        feedback.attachmentKey;
+                                    //openActionUrlAsModal('#modalInfo', url, false, undefined, false);
+                                    ModalHelper({
+                                        dialog: '#modalInfo',
+                                        url: url,
+                                        isTargetBlank: false,
+                                        beforeSubmit: undefined,
+                                        useDefaultSubmit: false
+                                    }).openWindow();
+                                } catch (ex) {
+                                    onMessage("Ошибка подписания", true);
+                                    //$('[name="signInfo"]').html("<FONT color='red'>Ошибка подписания</FONT>");
+                                }
+                            });
+                    }
+                } else {
+                    $.post(targetUrl,
+                        { sign: sSignedMessage, TimeStamp: timeStamp },
+                        function(feedback) {
+                            //$('[name="edsProgressbar"]').attr('hidden', 'true');
+
+                            var jsonExtract = JSON.parse(feedback);
+                            if (jsonExtract.status == "ERROR") {
+                                onMessage(jsonExtract.responseMessage, true);
+                            }
+                            if (jsonExtract.status == "OK") {
+                                onFinish();
+                            }
+                        });
+                }
+            } else {
+                //$('[name="signInfo"]').html("<FONT color='red'>Выберите сертификат для создания подписи!</FONT>");
+                onMessage("Выберите сертификат для создания подписи", true);
+                return false;
+            }
+        } catch (err) {
+            //$('[name="edsProgressbar"]').attr('hidden', 'true');
+            //$('[name="signInfo"]').html("<FONT color='red'>" + "Ошибка создания подписи. Ошибка: " + cadesplugin.getLastError(err) + "</FONT>");
+            onMessage("Ошибка создания подписи. Ошибка: " + cadesplugin.getLastError(err), true);
+
+            return false;
+        }
+
+    }
+
+    var GetCertificates = function (container, certificatesListName) {
+
+        if (!isChromiumBased()) {
+            var infoBlock = $("#actionDialog").find(".modal-info-wrapper");
+            infoBlock.text("При подписании документации в браузере Internet Explorer, максимальный размер файла не должен превышать 20 мб, при необходимости подписания файлов больших размеров, необходимо воспользоваться браузером Google Chrome")
+            infoBlock.show();
+        }
+
+        var defer = jQuery.Deferred();
+
+        var oStore = cadesplugin.CreateObject("CAPICOM.Store");
+        oStore.Open();
+        CERTIFICATES = oStore.Certificates;
+
+        var certificateListWrapper = $('[name="certificateList"]');
+        if (container && container.jquery)
+            certificateListWrapper = container.find('[name="certificateList"]');
+
+        certificateListWrapper.html("");
+        var spinner = "<div class='modal-loading-wrapper' style='background-color:white'><div class='loading-image loading-image-shown'>&nbsp;</div></div>";
+        certificateListWrapper.append(spinner);
+
+        var promises = [];
+
+        var l = CERTIFICATES.count;
+
+        for (var i = 1; i < l + 1; i++) {
+            var current = CERTIFICATES.Item(i);
+            promises.push(tryAddCertificateToList(current, i, certificateListWrapper, certificatesListName));
+        }
+
+        $.when.apply($, promises).then(function () {
+            oStore.Close();
+            certificateListWrapper.find(".modal-loading-wrapper").remove();
+            var elements = arguments;
+            $.each(elements, function (i, element) {
+                if (element != null) {
+                    if ($(element).find("input").length > 0) {
+                       certificateListWrapper.append($(element)); 
+                    }
+                }
+            });
+            //если сертификат один то выбераем его сразу
+            var inputs = certificateListWrapper.find("input");
+            if (inputs.length == 1) {
+                inputs.first().attr("checked", "checked");
+            }
+
+            defer.resolve();
+        }, function (error) {
+            defer.reject(error);
+        });
+        return defer.promise();
+    }
+
+    function tryAddCertificateToList(cert, index, certificateListWrapper, certificatesListName) {
+        var defer = jQuery.Deferred();
+
+        verifySignature(cert).then(function (response) {
+            var element = null;
+            if (response.status === "ERROR") {
+                element = createCertInfoElement(cert, index, certificateListWrapper, certificatesListName, false, function () {
+                    var errors = response.responseMessage.split('\r\n');
+                    errors.pop();
+                    showCommonErrors(errors);
+                });
+            } else {
+                var isValid = true;
+                if (!disableCertificateValidation) {
+                    try {
+                        isValid = cert.IsValid().Result;
+                    } catch (error) {
+                        console.log(error);
+                    }
+                } else isValid = true;
+
+                if (isValid) {
+                    var hasPrivateKey = typeof cert.PrivateKey !== "unknown";
+                    if(hasPrivateKey)
+                        element = createCertInfoElement(cert, index, certificateListWrapper, certificatesListName, true, null);
+                    else
+                        element = createCertInfoElement(cert, index, certificateListWrapper, certificatesListName, false, function(){
+                            showCommonErrors("Ошибка подписи. Не найден закрытый ключ.");
+                        });
+                }       
+                else
+                    element = createCertInfoElement(cert, index, certificateListWrapper, certificatesListName, false, function () {
+                        cert.Display();
+                    });
+
+            }
+
+            defer.resolve(element);
+
+        }, function (error) {
+            showCommonErrors(error);
+            defer.resolve();
+        });
+
+        return defer.promise();
+    }
+
+    var createCertInfoElement = function (cert, count, certificateListWrapper, certificatesListName, isValid, clickHandler) {
+
+        if (cert.SubjectName == "" || cert.SubjectName == null) {
+            isValid = false;
+        }
+
+        var Adjust = new CertificateAdjuster();
+        var CertificateOwner = "<span class=\"search-result-cell-value\"><b>" + "Владелец сертификата" + ": " + "</b>" + Adjust.GetCertName(cert.SubjectName) + "</span><br/>";
+        var CertificateProducer = "<span class=\"search-result-cell-value\"><b>" + "Центр выдачи сертификата" + ": " + "</b>" + Adjust.GetCertName(cert.IssuerName) + "</span><br/>";
+        var CertificateValidFrom = "<span class=\"search-result-cell-value\"><b>" + "Действителен с" + ": " + "</b>" + Adjust.GetCertDate(cert.ValidFromDate) + "</span><br/>";
+        var CertificateValidTo = "<span class=\"search-result-cell-value\"><b>" + "Действителен по" + ": " + "</b>" + Adjust.GetCertDate(cert.ValidToDate) + "</span>";
+        // var CertificateValidTodate = Date.parse(Adjust.GetCertDateUSLocale(cert.ValidToDate));//.replace(/\./g, "/")
+        // var currentDate = new Date();
+
+        var radioInputName = "certificatelist" + certificatesListName ? certificatesListName : "";
+        var input = isValid ? "<input type='radio' name='" + radioInputName + "'  value='" + count + "' />" : "";
+        var errorLable = isValid ? "" : "<span class='certificate-error-text'>Некорректный сертификат</span>";
+        var certElement = $("<li class=\"certificate " + (isValid ? "" : "invalid") + "\">"
+            + input
+            + CertificateOwner
+            + CertificateProducer
+            + CertificateValidFrom
+            + CertificateValidTo
+            + errorLable
+            + "</li>")
+        //certificateListWrapper.append(certElement);
+
+        if (!isValid && clickHandler) {
+            certElement.click(clickHandler);
+        }
+
+        return certElement;
+
+    }
+
+    function verifySignature(cert) {
+
+        var defer = jQuery.Deferred();
+
+        var base = $("base").attr("href") === "/" ? "" : $("base").attr("href");
+        var url = base + "/Eds/VerifySignature";
+
+        var formData = new FormData();
+        formData.append("publicCertificate", cert.Export());
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            mimeType: "multipart/form-data",
+            cache: false,
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false
+        }).then(function (data) {
+            var response = JSON.parse(data);
+            defer.resolve(response);
+        }, function (error) {
+            console.error(error);
+            defer.reject();
+        });
+
+        return defer.promise();
+    }
+
+    var TryToSelectDefaultCertificate = function (container) {
+        var certificateListWrapper = $('[name="certificateList"]');
+        if (container && container.jquery)
+            certificateListWrapper = container.find('[name="certificateList"]');
+
+
+        var inputs = certificateListWrapper.find("input");
+        if (inputs.length > 0) {
+            inputs.first().attr("checked", "checked");
+        }
+
+        return inputs.length > 0;
+    }
+
+    function CertificateAdjuster() {
+    }
+
+    CertificateAdjuster.prototype.extract = function (from, what) {
+        var certName = "";
+
+        var begin = from.indexOf(what);
+
+        if (begin >= 0) {
+            var end = from.indexOf(', ', begin);
+            certName = (end < 0) ? from.substr(begin) : from.substr(begin, end - begin);
+        }
+
+        return certName;
+    }
+
+    CertificateAdjuster.prototype.Print2Digit = function (digit) {
+        return (digit < 10) ? "0" + digit : digit;
+    }
+
+    CertificateAdjuster.prototype.GetCertDate = function (paramDate) {
+        var certDate = new Date(paramDate);
+        return this.Print2Digit(certDate.getUTCDate()) + "." + this.Print2Digit(certDate.getMonth() + 1) + "." + certDate.getFullYear() + " " +
+            this.Print2Digit(certDate.getUTCHours()) + ":" + this.Print2Digit(certDate.getUTCMinutes()) + ":" + this.Print2Digit(certDate.getUTCSeconds());
+    }
+
+    CertificateAdjuster.prototype.GetCertDateUSLocale = function (paramDate) {
+        var certDate = new Date(paramDate);
+        return this.Print2Digit(certDate.getMonth() + 1) + "/" + this.Print2Digit(certDate.getUTCDate()) + "/" + certDate.getFullYear() + " " +
+            this.Print2Digit(certDate.getUTCHours()) + ":" + this.Print2Digit(certDate.getUTCMinutes()) + ":" + this.Print2Digit(certDate.getUTCSeconds());
+    }
+
+    CertificateAdjuster.prototype.GetCertName = function (certSubjectName) {
+        return this.extract(certSubjectName, 'CN=').replace("CN=", "");
+    }
+
+    CertificateAdjuster.prototype.GetPosition = function (certSubjectName) {
+        return this.extract(certSubjectName, ' T=').replace(" T=", "");
+    }
+
+    CertificateAdjuster.prototype.GetOrganization = function (certSubjectName) {
+        return this.extract(certSubjectName, 'O=').replace("O=", "");
+    }
+
+    CertificateAdjuster.prototype.GetInn = function (certSubjectName) {
+        return this.extract(certSubjectName, 'ИНН=').replace("ИНН=", "");
+    }
+
+    CertificateAdjuster.prototype.GetKpp = function (certSubjectName) {
+        var s = this.extract(certSubjectName, 'OID.1.2.840.113549.1.9.2=').replace("OID.1.2.840.113549.1.9.2=", "");
+        var kppToken = "KPP=";
+        s = s.substring(s.indexOf(kppToken) + kppToken.length);
+        if (s.indexOf("/") !== -1) {
+            s = s.split("/")[0];
+        }
+        return s;
+    }
+
+    CertificateAdjuster.prototype.GetEmail = function (certSubjectName) {
+        return this.extract(certSubjectName, 'E=').replace("E=", "");
+    }
+
+    CertificateAdjuster.prototype.GetLastName = function (certSubjectName) {
+        return this.extract(certSubjectName, 'SN=').replace("SN=", "");
+    }
+
+    CertificateAdjuster.prototype.GetName = function (certSubjectName) {
+        return this.extract(certSubjectName, 'G=').replace("G=", "").split(" ")[0];
+    }
+
+    CertificateAdjuster.prototype.GetMiddleName = function (certSubjectName) {
+        return this.extract(certSubjectName, 'G=').replace("G=", "").split(" ")[1];
+    }
+
+    CertificateAdjuster.prototype.GetIssuer = function (certIssuerName) {
+        return this.extract(certIssuerName, 'CN=').replace("CN=", "");
+    }
+
+    CertificateAdjuster.prototype.GetCertInfoString = function (certSubjectName, certFromDate) {
+        return this.extract(certSubjectName, 'CN=') + "; Выдан: " + this.GetCertDate(certFromDate);
+    }
+
+    function VerifyDocumentSign(messageFn) {
+        var cleandataUrl = $("[data-name='documentHashUrl']").val();
+        cleandataUrl = cleandataUrl.replace("GetDocumentHashCode", "GetDocumentSign");
+        $.post(cleandataUrl, function (sign) {
+            Verify(sign, messageFn);
+        });
+    }
+
+    function VerifyAttachmentSign(docKey, attachKey, serialNumber) {
+        var onMessage = function (message, isError) {
+            alert(message);
+            //messageFn(message, isError);
+        }
+        var cleandataUrl = $("[name='documentHashUrl']").val();
+        var url = cleandataUrl + "?documentId=" + docKey + "&attachKey=" + attachKey + "&edsKey=" + serialNumber;
+        var urlLog = cleandataUrl.replace("GetAttachmentHashCodeVerify", "LogVerifySign") + "?documentId=" + docKey + "&attachKey=" + attachKey + "&isValid=";
+        $.get(url, function (dataToVerify) {
+            if (dataToVerify.Sign == "empty") {
+                //$('[name="signInfo"]').html("<FONT color='red'>Документ не имеет подписи.</FONT>");
+                onMessage("Документ не имеет подписи.", true);
+
+            } else {
+
+                var oSignedData = cadesplugin.CreateObject("CAPICOM.SignedData");
+                try {
+                    // Значение свойства ContentEncoding должно быть задано
+                    // до заполнения свойства Content
+                    // Создаем объект CAdESCOM.HashedData
+                    var oHashedData = cadesplugin.CreateObject("CAdESCOM.HashedData");
+
+                    // Алгоритм хэширования нужно указать до того, как будут переданы данные
+                    oHashedData.Algorithm = CADESCOM_HASH_ALGORITHM_CP_GOST_3411;
+
+                    // Указываем кодировку данных
+                    // Кодировка должна быть указана до того, как будут переданы сами данные
+                    oHashedData.DataEncoding = CADESCOM_BASE64_TO_BINARY;
+
+                    // Предварительно закодированные в BASE64 бинарные данные
+                    // В данном случае закодирован файл со строкой "Some Data."
+                    // Передаем данные
+                    oHashedData.Hash(dataToVerify.Data);
+                    var sHashValue = oHashedData.Value;
+
+                    //oSignedData.ContentEncoding = CADESCOM_BASE64_TO_BINARY;
+                    oSignedData.Content = sHashValue;
+                    oSignedData.Verify(dataToVerify.Sign, true, 0);
+
+                    var certOwner;
+                    if (oSignedData.Signers != undefined) {
+                        certOwner = oSignedData.Signers.Item(1).Certificate.SubjectName;
+                    }
+                    var message = "Документ имеет подпись, подпись успешно верифицирована.";
+                    message += " " + "Документ подписал: " + Sign.Person;
+                    if (certOwner != undefined) {
+                        message += " " + "Владелец сертификата:" + certOwner;
+                    }
+                    onMessage(message, false);
+                    urlLog = urlLog + "true";
+                    $.get(urlLog, function (dataToVerify) { });
+
+                } catch (err) {
+                    onMessage("Ошибка проверки подписи." + err.message, true);
+                    urlLog = urlLog + "false";
+                    $.get(urlLog, function (dataToVerify) { });
+                }
+            }
+        });
+        
+
+    }
+
+    function GetTimeStamp(oHashedData, sSignedMessage) {
+        try {
+            var oSignedData = cadesplugin.CreateObject("CAdESCOM.CadesSignedData");
+            oSignedData.VerifyHash(oHashedData, sSignedMessage, CADESCOM_CADES_X_LONG_TYPE_1);
+            var signerItem = oSignedData.Signers.Item(1);
+            var signingTime = signerItem.SigningTime;
+            var signatureTimeStampTime = signerItem.SignatureTimeStampTime;
+            var isoDate = new Date(signatureTimeStampTime).toISOString();
+
+            return isoDate;
+        }
+        catch (err) {
+            throw "Не удалось извлечь штамп времени из подписи. Ошибка: " + cadesplugin.getLastError(err);
+        }
+    }
+
+    var Verify = function (Sign, messageFn) {
+
+        var onMessage = function (message, isError) {
+            if (messageFn !== undefined) {
+                messageFn(message, isError);
+            }
+            else if (isError) {
+                $('[name="signInfo"]').html("<FONT color='red'>" + message + "</FONT>");
+            }
+            else {
+                $('[name="signInfo"]').html("<FONT color='green'>" + message + "</FONT>");
+            }
+        }
+
+        var cleandataUrl = $("[data-name='documentHashUrl']").val();
+        //cleandataUrl = AddHashAlgorithmToUrl(cleandataUrl);
+
+        var getSignTypeUrl = cleandataUrl.replace('GetDocumentHashCode', 'GetSignType');
+        $.get(getSignTypeUrl, function (signType) {
+            $.get(cleandataUrl, function (dataToVerify) {
+                sSignedMessage = Sign.Sign;
+                if (sSignedMessage == "empty") {
+                    //$('[name="signInfo"]').html("<FONT color='red'>Документ не имеет подписи.</FONT>");
+                    onMessage("Документ не имеет подписи.", true);
+
+                } else {
+
+                    var oHashedData = cadesplugin.CreateObject("CAdESCOM.HashedData");
+                    oHashedData.Algorithm = CADESCOM_HASH_ALGORITHM_CP_GOST_3411;
+                    oHashedData.Hash(dataToVerify);
+                    dataToVerify = oHashedData.Value;
+                    var isLong = signType.SignType;
+
+                    var oSignedData = cadesplugin.CreateObject("CAdESCOM.CadesSignedData");
+                    try {
+                        // Значение свойства ContentEncoding должно быть задано
+                        // до заполнения свойства Content
+                        oSignedData.ContentEncoding = CADESCOM_BASE64_TO_BINARY;
+                        oSignedData.Content = dataToVerify;
+                        if (isLong == 1) {
+                            oSignedData.VerifyCades(sSignedMessage, CADESCOM_CADES_X_LONG_TYPE_1);
+                        } else {
+                            oSignedData.VerifyCades(sSignedMessage, CADESCOM_CADES_BES, true);
+                        }
+                        /*$("#signInfo").html("<FONT color='green'>" + feedback + "</FONT>");*/
+                        var certOwner;
+                        if (oSignedData.Signers != undefined) {
+                            certOwner = oSignedData.Signers.Item(1).Certificate.SubjectName;
+                        }
+
+                        //$('[name="signInfo"]').html("<FONT color='green'>Документ имеет подпись, подпись успешно верифицирована. </FONT>");
+                        //$('#getSignFilebutton').prop('disabled', false);//Скачать файл подписи 
+                        //$('[name="signInfo"]').append("<FONT color='green'> Документ подписал:" + Sign.Person + "</FONT>");
+                        //if (certOwner != undefined) {
+                        //    $('[name="signInfo"]').append("<FONT color='green'>Владелец сертификата:" + certOwner + "</FONT>");
+                        //}
+
+                        var message = "Документ имеет подпись, подпись успешно верифицирована.";
+                        message += " " + "Документ подписал: " + Sign.Person;
+                        if (certOwner != undefined) {
+                            message += " " + "Владелец сертификата:" + certOwner;
+                        }
+                        onMessage(message, false);
+
+                    } catch (err) {
+                        //errormes = "<FONT color='red'>Ошибка проверки подписи.</FONT>";// Ошибка: " + cadesplugin.getLastError(err) + "
+                        //$('[name="signInfo"]').html(errormes);
+                        onMessage("Ошибка проверки подписи.", true);
+                    }
+                }
+
+            });
+        });
+    }
+
+    return {
+        SignCreate: SignCreate,
+        SignForEis: SignForEis,
+        SignAuthentication: SignAuthentication,
+        SignAttachments: SignAttachments,
+        SignDocumentWithAtachments: SignDocumentWithAtachments,
+
+        GetCertificates: GetCertificates,
+        VerifyDocumentSign: VerifyDocumentSign,
+        VerifyAttachmentSign: VerifyAttachmentSign,
+        ClearCache: function ClearCache() {
+            signatures = [];
+        },
+        TryToSelectDefaultCertificate: TryToSelectDefaultCertificate
+    }
+})();
+/**
+ * Методы для работы с CAPICOM
+ * 
+ * http://www.microsoft.com/ru-ru/download/details.aspx?id=3207
+ */
+(function($) {
+
+$.capicom = $.capicom || {};
+
+// Cryptography enumerations
+// http://msdn.microsoft.com/en-us/library/aa380250(v=vs.85).aspx
+$.capicom.CAPICOM_CURRENT_USER_STORE = 2; // http://msdn.microsoft.com/en-us/library/aa375743(v=vs.85).aspx
+$.capicom.CAPICOM_STORE_OPEN_READ_ONLY = 0; // http://msdn.microsoft.com/en-us/library/aa375747(v=vs.85).aspx
+$.capicom.CAPICOM_CERTIFICATE_FIND_TIME_VALID = 9; // http://msdn.microsoft.com/en-us/library/aa375642(v=vs.85).aspx
+$.capicom.CAPICOM_CERTIFICATE_FIND_SHA1_HASH = 0; // http://msdn.microsoft.com/en-us/library/aa375642(v=vs.85).aspx
+$.capicom.CAPICOM_CERT_INFO_SUBJECT_SIMPLE_NAME = 0; // http://msdn.microsoft.com/en-us/library/aa375652(v=vs.85).aspx
+$.capicom.CAPICOM_AUTHENTICATED_ATTRIBUTE_SIGNING_TIME = 0; // http://msdn.microsoft.com/en-us/library/windows/desktop/aa375631(v=vs.85).aspx
+$.capicom.CAPICOM_ENCODE_BASE64 = 0; // http://msdn.microsoft.com/en-us/library/aa375673(v=vs.85) 
+$.capicom.CAPICOM_ENCODE_BINARY = 1; // http://msdn.microsoft.com/en-us/library/aa375673(v=vs.85) 
+$.capicom.CAPICOM_VERIFY_SIGNATURE_AND_CERTIFICATE = 1; // http://msdn.microsoft.com/en-us/library/aa375740(v=vs.85).aspx
+$.capicom.CAPICOM_E_CANCELLED = -2138568446;
+$.capicom.CAPICOM_E_NOT_INSTALLED = -2146827859;
+
+/**
+ * Получение списка действительных сертификатов
+ */
+$.capicom.getCertificatesList = function() {
+    try {
+        // инициализация объекта CAPICOM.Store: предоставляет методы для работы с хранилищем сертификатов
+        var myStore = new ActiveXObject("CAPICOM.Store");
+        // открывает хранилище персональных сертификатов
+        myStore.Open($.capicom.CAPICOM_CURRENT_USER_STORE, "My", $.capicom.CAPICOM_STORE_OPEN_READ_ONLY);
+
+        // поиск всех действующих сертификатов (фильтр по дате)
+        // доступные фильтры: http://msdn.microsoft.com/en-us/library/aa375642(v=vs.85).aspx
+        var filteredCertificates = myStore.Certificates;//.Find($.capicom.CAPICOM_CERTIFICATE_FIND_TIME_VALID);
+        var result = [];
+        for ( var i = 1; i <= filteredCertificates.Count; i++) {
+            var cert = filteredCertificates.Item(i);
+            var certInfo = {
+                thumbprint : cert.Thumbprint, // строка, содержащая SHA-1 хеш от сертификата
+                displayName : cert.GetInfo($.capicom.CAPICOM_CERT_INFO_SUBJECT_SIMPLE_NAME)
+            };
+            result.push(certInfo);
+        }
+        return result;
+    } catch (e) {
+        return [];
+    }
+};
+
+/**
+ * Поиск сертификата в хранилище сертификатов
+ * 
+ * @param hash отпечаток сертиката
+ */
+$.capicom.findCertificateByHash = function(hash) {
+    try {
+        // инициализация объекта CAPICOM.Store: предоставляет методы для работы с хранилищем сертификатов
+        var store = new ActiveXObject("CAPICOM.Store");
+        // открывает хранилище персональных сертификатов
+        store.Open($.capicom.CAPICOM_CURRENT_USER_STORE, "My", $.capicom.CAPICOM_STORE_OPEN_READ_ONLY);
+        // поиск сертификатов, хеш которых соответствует заданному отпечатку (thumbprint), в хранилище сертификатов
+        var filteredCertificates = store.Certificates.Find($.capicom.CAPICOM_CERTIFICATE_FIND_SHA1_HASH, hash);
+        // инициализация объекта CAPICOM.Signer: для указания ключа подписи
+        var signer = new ActiveXObject("CAPICOM.Signer");
+        signer.Certificate = filteredCertificates.Item(1);
+        return signer;
+    } catch (e) {
+        if (e.number != CAPICOM_E_CANCELLED) {
+            return new ActiveXObject("CAPICOM.Signer");
+        }
+    }
+};
+
+/**
+ * Подпись данных
+ * 
+ * @param rawData бинарные данные для подписи
+ * @param detached флаг открепленной подписи
+ * @param cert_hash отпечаток сертификата для подписи
+ * @return byteArray
+ */
+$.capicom.sign = function (rawData, detached, cert_hash) {
+    try {
+        // инициализация объекта CAPICOM.SignedData: предоставляет методы для создания и верификации подписи
+        var signedData = new ActiveXObject("CAPICOM.SignedData");
+        // инициализация объекта CAPICOM.Utilities
+        // http://msdn.microsoft.com/en-us/library/windows/desktop/aa388176(v=vs.85).aspx
+
+        signedData.Content = rawData;
+        // подписываемые данные
+       // signedData.Content = "test";
+
+        // поиск сертификата ключа подписи в хранилище сертификатов
+        var signer = $.capicom.findCertificateByHash(cert_hash);
+
+        // время подписи
+        var timeAttribute = new ActiveXObject("CAPICOM.Attribute");
+        var today = new Date();
+        timeAttribute.Name = $.capicom.CAPICOM_AUTHENTICATED_ATTRIBUTE_SIGNING_TIME;
+        timeAttribute.Value = today.getVarDate();
+        today = null;
+        signer.AuthenticatedAttributes.Add(timeAttribute);
+
+        // возов метода SignedData.Sign
+        // signer - сертификат ключа подписи
+        // detached - флаг открепленной подписи (исходное сообщение не включается в итоговый CMS-контейнер)
+        // detached = false - прикрепленная подпись (исходное сообщение вкючено в CMS-контейнер)
+        // CAPICOM_ENCODE_BINARY - подпись будет сформирована в виде бинарной последовательности
+        // http://msdn.microsoft.com/en-us/library/aa387726(v=vs.85)
+        var signature = signedData.Sign(signer, detached, $.capicom.CAPICOM_ENCODE_BASE64);
+        // конвертируем полученную подпись в ByteArray для дальнейшего сохранения в файловой системе
+        return signature; //
+    } catch (e) {
+        return false;
+    }
+};
+
+
+
+
+$.capicom._to_hex = function(c) {
+        var digits = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F');
+
+        return digits[parseInt(c / 16)] + digits[parseInt(c % 16)];
+    };
+
+    // Convert unicode string: s to hex-string
+    $.capicom._to_utf8_hex = function(s) { 
+        var c, d = "";
+        for (var i = 0; i < s.length; i++) {
+            c = s.charCodeAt(i);
+            if (c <= 0x7f) {
+                d += $.capicom._to_hex(c);
+            } else if (c >= 0x80 && c <= 0x7ff) {
+                d += $.capicom._to_hex(((c >> 6) & 0x1f) | 0xc0);
+                d += $.capicom._to_hex((c & 0x3f) | 0x80);
+            } else {
+                d += $.capicom._to_hex((c >> 12) | 0xe0);
+                d += $.capicom._to_hex(((c >> 6) & 0x3f) | 0x80);
+                d += $.capicom._to_hex((c & 0x3f) | 0x80);
+            }
+        }
+        return d;
+    };
+
+/**
+ * Проверка подписи
+ * 
+ * @param signature CMS-контейнер
+ */
+$.capicom.verify = function(signature) {
+    // инициализация объекта CAPICOM.SignedData: предоставляет методы для создания и верификации подписи
+    var signedData = new ActiveXObject("CAPICOM.SignedData");
+    var utils = new ActiveXObject("CAPICOM.Utilities");
+
+    try {
+        // http://msdn.microsoft.com/en-us/library/windows/desktop/aa387728(v=vs.85).aspx
+        // signature - cms-конейнер, содержащий подпись
+        // CAPICOM_VERIFY_SIGNATURE_AND_CERTIFICATE - проверка хеша и сертифката
+        var res = signedData.Verify(signature, false, $.capicom.CAPICOM_VERIFY_SIGNATURE_AND_CERTIFICATE);
+        var result = {
+            rawData: utils.BinaryStringToByteArray(signedData.Content), // извлекаем исходные данные
+            success: true,
+        };
+    } catch(e) {
+       // сообщение об ошибке в случае невалидной подписи
+       var result = {
+           error: e,
+           success: false
+       };
+    }
+
+    return result;
+};
+})(jQuery);

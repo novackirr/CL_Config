@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+ <!--<flows>
+    <flow name="Заявки на закупку"/>
+   </flows>  -->
+  <process name="Рассмотрение заявки"/>
+  <requisities>
+    <requisite path="|Document|Отзыв_заявки" value="1"/>
+    <requisite path="|Document|Статус" value="Отзыв заявки"/>
+  </requisities>
+  
+</root>

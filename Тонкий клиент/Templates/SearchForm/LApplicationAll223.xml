@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>	
+		<column>
+			<field name="Номер извещения в ЕИС" isLabel="true" />
+			<field fieldType="field" key="|Document|Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" isValue="true" edit-name="registerNomberEIS"  />
+        </column>
+		<column>
+			<field name="Внутренний номер" isLabel="true"/>
+			<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний номер" valueType="text" isValue="true"  edit-name="vnutrNumber" />
+		</column>
+        <column>
+			<field name="Дата регистрации" isLabel="true"/>
+			<block id="block1" name="block1" height="300">
+				<rows>
+					<row>
+						<column>
+							<field name="от" isLabel="true"/>
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+						</column>
+						<column>					
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+						</column>						
+					</row>
+				</rows>							
+			</block>
+        </column>		
+    </row> 	
+	<row>
+		<column>
+			<field name="Участник заявки" isLabel="true" />
+			<field fieldType="field" key="Document|Участник_заявки" name="Участник заявки" valueType="text"  dict-column-name="code" isValue="true" edit-name="uchzayav" edit-readonly="true" dictionary-selection-start-level="1" edit-tool = "Контрагенты" dict-edit-name="uchzayav" show-dict-column="false" />
+			<field fieldType="field" key="|Document|Участник_заявки_наименование" name="Участник_заявки_наименование"  dict-column-name="Наименование"  valueType="text" isValue="true" edit-name="uchzayavName"  edit-readonly="true" edit-hidden="true" display-field-part="true" dict-edit-name="uchzayav"  />
+        </column>
+		<column>
+		    <field name="Результат допуска" isLabel="true"/>
+			<field fieldType="field" key="|Document|Результат_допуска_код" name="Результат допуска код" valueType="text"  isValue="true" edit-name="rezDop"   edit-readonly="true"  edit-tool = "Результат допуска" dict-column-name="code" dictionary-selection-start-level="1" dict-edit-name="rezDop" show-dict-column="false" />
+			<field fieldType="field" key="|Document|Результат_допуска" name="Результат допуска" valueType="text" isValue="true" edit-name="rezDopName" edit-hidden="true" edit-readonly="true" dict-column-name="Наименование"  display-field-part="true" dict-edit-name="rezDop" />
+        </column>
+		<column>
+			<field name="Результат" isLabel="true"/>
+			<field fieldType="field" key="|Document|Результат" name="Результат" valueType="text" isValue="true" edit-name="rezName" edit-readonly="true"  edit-tool = "Результат" dict-column-name="code" dictionary-selection-start-level="1" dict-edit-name="rezName" display-field-part="true" />
+			<field fieldType="field" key="|Document|Результат_код" name="Результат код" valueType="text" edit-hidden="true" isValue="true" edit-name="rez"  edit-readonly="true" dict-column-name="Код" dict-edit-name="rezName"/>
+        </column>
+    </row>	
+	 </rows>
+  </edit>	 
+  
+  <extraSearchForm>
+	<rows>
+		<row>
+			<column>
+				<field fieldType="field" name="Дата подачи заявки" isLabel="true" />
+			</column>
+			<column>
+				<field fieldType="field" name="Категория СМП" isLabel="true" />
+			</column>
+		</row>	
+		<row>
+			<column>
+			<block id="block3" name="block3"  height="300">		
+				<rows>
+					<row>
+						<column>				
+							<field name="с" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_подачи_заявки" name="с" valueType="datetime" isValue="true"  edit-name="publicDateFrom" weight="300"/>
+						</column>
+						<column>								
+							<field name="по" isLabel="true" />
+						</column>
+						<column>								
+							<field fieldType="field" key="|Document|Дата_подачи_заявки" name="по" valueType="datetime"  isValue="true" edit-name="publicDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>	
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Категория_СМП" name="Категория СМП" valueType="text"  isValue="true" edit-name="trebSogl" />
+			</column>
+		</row>
+
+
+			
+		<row>
+			<column>
+				<field fieldType="field" name="Сведения о ценовом предложении" isLabel="true" />
+			</column>
+			<column>
+				<field fieldType="field" name="Причина отказа в допуске" isLabel="true" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Сведения_о_ценовом_предложении" name="Сведения о ценовом предложение" valueType="longtext" isValue="true" edit-name="SvedPricePred"  />	
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Причина_отказа_в_допуске" name="Причина_отказа_в_допуске" valueType="longtext" isValue="true" edit-name="PrichPred" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" name="Этап отклонения заявки" isLabel="true" />
+			</column>
+			<column>
+				<field fieldType="field" name="Альтернативное предложение" isLabel="true" />
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Этап_отклонения_заявки" name="Этап отклонения заявки" valueType="text" isValue="true" edit-name="Otclzayv"  />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Альтернативное_предложение" name="Альтернативное предложение" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение"   edit-name="altpred" />
+			</column>	
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" name="Предмет договора" isLabel="true" />
+				<field fieldType="field" key="|Document|Предмет_договора" name="Предмет_договора" valueType="longtext" isValue="true" edit-name="PredDog" />
+			</column>
+			<column>
+				<field fieldType="field" name="Номер закупки" isLabel="true" />
+				<block id="block1" name="block1" height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" key="|Document|Номер_закупки" name="Номер закупки" valueType="text"  isValue="true" edit-name="registerNomberZ" />
+							</column>						
+						</row>
+					</rows>							
+				</block>
+				<block id="block2" name="block2"  height="300">
+					<rows>
+						<row>
+							<column>
+								<field fieldType="field" name="Цена участника с НДС" isLabel="true" />
+							</column>
+							<column>
+								<field fieldType="field" name="Цена участника без НДС" isLabel="true" />
+							</column>						
+						</row>
+					</rows>								
+				</block>
+				<block id="block3" name="block3"  height="300">
+				<rows>
+					<row>
+						<column>
+							<field fieldType="field" key="|Document|Цена_участника_с_НДС" name="Цена участника с НДС" valueType="money" isValue="true" edit-name="price_NDS" />
+						</column>
+						<column>
+							<field fieldType="field" key="|Document|Цена_участника_без_НДС" name="Цена_участника_без_НДС" valueType="money" isValue="true" edit-name="CenaBezNDS"/> 
+						</column>						
+					</row>
+				</rows>								
+			</block>
+			</column>
+		</row>
+	</rows>	
+  </extraSearchForm>
+  
+  
+  <search>
+    <field fieldValue="(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/text_Способ_закупки_положение = @sposzak) and (doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС = @registerNomberEIS) and (doc_RegCard/rc_Index/text_Участник_заявки = @uchzayav ) and (doc_RegCard/rc_Index/text_Результат_допуска_код = @rezDop)   and (doc_RegCard/rc_Index/text_Результат_код = @rez) and ((doc_RegCard/rc_Index/text_Регистрационный_номер = @regNum) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and ((doc_RegCard/rc_Index/datetime_Дата_подачи_заявки &gt;= @publicDateFrom) and (doc_RegCard/rc_Index/datetime_Дата_подачи_заявки &lt;= @publicDateTo)) and (doc_RegCard/rc_Index/text_Категория_СМП = @trebSogl) and (doc_RegCard/rc_Index/integer_Этап_отклонения_заявки = @Otclzayv) and (doc_RegCard/rc_Index/longtext_Причина_отказа_в_допуске = @PrichPred) and (doc_RegCard/rc_Index/money_Цена_участника_с_НДС = @price_NDS) and (doc_RegCard/rc_Index/money_Цена_участника_без_НДС = @CenaBezNDS) and (doc_RegCard/rc_Index/longtext_Сведения_о_ценовом_предложении = @SvedPricePred) and (doc_RegCard/rc_Index/boolean_Альтернативное_предложение = @altpred) and (doc_RegCard/rc_Index/text_Номер_закупки = @registerNomberZ) and (doc_RegCard/rc_Index/text_Предмет_договора = @PredDog) and (doc_RegCard/rc_Index/text_Внутренний_номер = @vnutrNumber)" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

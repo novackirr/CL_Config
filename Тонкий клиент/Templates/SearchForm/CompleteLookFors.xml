@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	<row>	
+		<column>
+		  <field name="Способ закупки" isLabel="true" />
+		  <field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="sposzak" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Способы закупок" dict-edit-name="sposzak" show-dict-column="false"/>
+		  <field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="sposzakName"  edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="sposzak"/>
+        </column>	     
+    </row>
+	 </rows>
+  </edit>	 
+  <search>
+   
+	<!-- Фильтр для отображения элементов на странице "Выполненные"->"Ознакомления"-->
+	<!-- Т.к. выборка идет из activities - то строка ниже дописывается к выборке activities (по сути идет подзапрос к задачам) -->
+	<!-- Значение "doc_Id > 0" добавлено для того, чтобы без костылей работал пустой фильтр -->
+	<field fieldValue="act_context/Documents/S1/Dockey=document[doc_Id >= 0 and (doc_RegCard/rc_Index/text_Способ_закупки_положение = @sposzak)]" />
+  </search>
+  <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+<!-- Поля для просмотра -->
+
+  <view>
+    <rows>
+      <row>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+        </column>
+        <column>
+          <field fieldType="attribute" key="doc_Creator" name="Автор" valueType="addressbook" />
+        </column>
+      </row>
+	  <row>
+		<column>
+          <field fieldType="field" key="|Document|Вид_служебной_записки" name="Вид служебной записки" valueType="text" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Кому|ИД_Кому" name="Кому" valueType="addressbook" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|От_кого|ИД_От_кого" name="От кого" valueType="addressbook" />
+        </column>
+      </row>
+	  <row>
+        <column>
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="longtext" />
+        </column>
+      </row>
+    </rows>
+  </view>
+  
+  <!-- Поля для редактирования -->
+  
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Регистрационный номер" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" isValue="true" edit-name="prefix" edit-autocomplete="Prefix"/>
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" isValue="true" edit-name="regnum" edit-disabled="true" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" isValue="true" edit-name="Suffix" edit-autocomplete="Suffix"/>
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Дата регистрации" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-required="true" edit-default-value="{today}" />
+        </column>
+      </row>
+	  <row>
+	    <column>
+          <field name="Вид служебной записки" isLabel="true" />
+        </column>
+      </row>
+	  <row>
+        <column>
+          <field fieldType="field" key="|Document|Вид_служебной_записки" name="Вид служебной записки" valueType="text" isValue="true" edit-name="SZType2" edit-required="false" edit-autocomplete="Вид служебной записки" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Кому" isLabel="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|Кому|ИД_Кому" name="Кому" valueType="addressbook" isValue="true" edit-name="Who" edit-addressbook-groups="person" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="От кого" isLabel="true" />
+        </column>
+      </row>
+      - <row>
+        - <column>
+          <field fieldType="field" key="|Document|От_кого|ИД_От_кого" name="От кого" valueType="addressbook" isValue="true" edit-name="FromWho" edit-addressbook-groups="person" />
+        </column>
+      </row>
+	  <row>
+        <column>
+          <field name="Краткое содержание" isLabel="true" />
+        </column>
+      </row>
+	  <row>
+        <column>
+          <field fieldType="field" key="|Document|Краткое_содержание" name="Краткое содержание" valueType="longtext" isValue="true" edit-name="description" edit-hidden="false" edit-required="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="document-header" edit-hidden="true" edit-value="Служебная записка" />
+          <field fieldType="field" key="|Links|header" valueType="text" isValue="true" edit-name="links-header" edit-hidden="true" edit-value="Связки" />
+          <field fieldType="field" key="|Control|header" valueType="text" isValue="true" edit-name="control-header" edit-hidden="true" edit-value="Контроль" />
+        </column>
+      </row>
+    </rows>
+    <variables>
+      <variable variable-name="regNumber" variable-format="{prefix}{number}{suffix}">
+        <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" variable-name="prefix" variable-format="{value}-" />
+        <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+        <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" variable-name="suffix" variable-format="-{value}" />
+      </variable>
+    </variables>
+  </edit>
+</root>

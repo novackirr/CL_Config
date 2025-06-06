@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="FProtocolORD" allow-create-excel="true" allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<column fieldType="property" key="ActivityName" name="Название задачи" valueType="text" sortPredicate="act_Name" weight="25" />
+		<column fieldType="attribute" key="act_Creator" name="Назначил задачу" valueType="addressbook" weight="15" sortPredicate="act_Creator" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15"  horizontalAlignment="center" />
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" horizontalAlignment="center" />
+		<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="15" isOptional="true"/>
+
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" valueType="longtext" sortPredicate="document$doc_RegCard/rc_Index/longtext_Краткое_содержание" weight="16" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Статус" name="Статус документа" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Статус" weight="16" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Вид_заседания" name="Вид заседания" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Вид_заседания" weight="20" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Номер_заседания" name="Номер заседания" valueType="integer" sortPredicate="document$doc_RegCard/rc_Index/integer_Номер_заседания" weight="12" isOptional="true" horizontalAlignment="center"/>		
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Форма_проведения" name="Форма проведения" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Форма_проведения" weight="20" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Место_проведения" name="Место проведения" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Место_проведения" weight="20" isOptional="true" horizontalAlignment="center"/>
+		
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/datetime_Дата_проведения" name="Дата проведения" valueType="datetime" sortPredicate="document$doc_RegCard/rc_Index/datetime_Дата_проведения" weight="12" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="document$doc_RegCard/rc_Index/date_Дата_регистрации" weight="12" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<!-- <column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Год_закупки" name="Год закупки" valueType="integer" sortPredicate="document$doc_RegCard/rc_Index/integer_Год_закупки" weight="12" isOptional="true" horizontalAlignment="center" defaultHide="true"/> -->
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/datetime_Дата_голосования" name="Дата голосования" valueType="datetime" sortPredicate="document$doc_RegCard/rc_Index/datetime_Дата_голосования" weight="12" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/datetime_Дата_утверждения" name="Дата утверждения" valueType="datetime" sortPredicate="document$doc_RegCard/rc_Index/datetime_Дата_утверждения" weight="12" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Комментарий" name="Комментарий" valueType="longtext" sortPredicate="document$doc_RegCard/rc_Index/longtext_Комментарий" weight="16" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_ФИО_инициатора" name="ФИО инициатора" valueType="text" weight="20" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Председатель_ФИО" name="ФИО председателя" valueType="text" weight="20" isOptional="true" horizontalAlignment="center" defaultHide="true"/>
+	</columns>
+</root>

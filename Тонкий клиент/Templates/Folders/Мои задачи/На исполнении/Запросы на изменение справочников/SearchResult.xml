@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="FOrder1" allow-create-excel="true" allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">	
+		<column fieldType="property" key="ActivityName" name="Название задачи" valueType="text" sortPredicate="act_Name" weight="25" />
+		<column fieldType="attribute" key="act_Creator" name="Назначил задачу" valueType="addressbook" weight="15" sortPredicate="act_Creator" isOptional="true" />
+		<column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15" />
+		<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="datetime" sortPredicate="act_DueTime" weight="15" isOptional="true" />		
+		<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="15" isOptional="true"/>
+			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Номер_запроса" name="Номер запроса" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Номер_запроса" weight="10" isOptional="true" horizontalAlignment="center"/>			
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Справочник" name="Справочник" valueType="text" sortPredicate="document$doc_RegCard/rc_Index/text_Справочник" weight="32" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Что_менять" name="Описание изменений" valueType="longtext" sortPredicate="document$doc_RegCard/rc_Index/longtext_Что_менять" weight="50" isOptional="true" horizontalAlignment="center"/>	
+	</columns>
+</root>
+
+

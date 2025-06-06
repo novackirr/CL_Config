@@ -1,0 +1,81 @@
+﻿/*
+    Этот файл предназначен для тонкой настройки стилей оформления под конкретную работу с системой
+    Вы можете вносить любые необходимые доработки стилей с помощью данного файла
+*/
+
+.action-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+hr.action-separator {
+  border: 0;
+  clear: both;
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: rgba(1, 15, 30, 0.1);
+  height: 1px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+.action-container--delete {
+    margin-left: 20px;
+}
+
+.action-container--edit {
+    right: 0;
+    position: absolute;
+    margin-right: 15px;
+}
+
+.dictionary-list-item {
+    font-size: 14px;
+}
+
+.search-filter-button--hidden {
+    display: none;
+}
+
+.dialog-text {
+    min-height: 50px;
+    
+   /* white-space: nowrap;*/
+}
+
+.dialog-modal-title {
+    font-size: 20px;
+}
+
+.modal-backdrop, .dialog-modal-backdrop {
+    /* bug fix - no overlay     
+    display: none;   */
+    z-index: 0;
+}
+
+.dialog-modal-reset {
+    z-index: 1504;
+}
+
+.modal {
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-header {
+  padding: 10px 20px;
+}
+
+.form-control__long-text--set-height {
+    -ms-overflow-style: none;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.sync-detail-grid{
+    margin-left: 30px;
+}

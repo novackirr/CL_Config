@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sections>
+  <section name="Приказ МЭР 155">
+    <parameter name="ОКПД2">
+      <patternList operation="equals">
+        01.13.12
+        01.13.51
+        01.21.1
+        03.11.12
+        21.20.23.111
+        03.12.12
+        03.21.12
+      </patternList>
+      <patternList operation="startsWith">
+        08.93.10.11
+        10.11.31.11
+        10.11.32.11
+        10.13.15.11
+        10.20.11.11
+        10.20.11.12
+      </patternList>
+      <patternList operation="notEquals">
+        08.93.10.115
+        10.20.24.112
+        10.20.25.113
+        10.20.25.114
+        10.20.25.115
+        10.20.25.119
+      </patternList>
+    </parameter>
+  </section>
+</sections>

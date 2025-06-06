@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		<row>
+				<column>
+          <field name="Наименование заявки" isLabel="true" />		  
+          <field fieldType="field" key="|Document|Наименование_заявки" name="Наименование заявки" valueType="longtext" isValue="true" edit-name="OrderName" />
+        </column>     
+		</row>
+		<row>
+			<column>
+          <field name="Обоснование необходимости проведения закупки" isLabel="true" />		  
+          <field fieldType="field" key="|Document|Обоснование" name="Обоснование" valueType="longtext" isValue="true" edit-name="OrderRat" />
+        </column>  
+		</row>
+		
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Заявки на закупку') and (doc_RegCard/rc_Index/longtext_Наименование_заявки = @OrderName) and (doc_RegCard/rc_Index/longtext_Обоснование = @OrderRat)" />
+	</search>
+	<scripts>
+    </scripts>
+
+</root>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <field name="LPosition223" />
+  <field name="PlanPrev223" />
+  <field name="PlanNext223" />
+  <field name="PlanCur223" />  
+  <field name="Plan223" />  
+  <field name="Notice223" /> 
+  <field name="Dogovor223" /> 
+  <field name="DopSogl223" /> 
+  <field name="LotsForDogovor223" />
+  <field name="AllLotsForNotice223" />
+  <field name="LotsPublCur223" /> 
+  <field name="LotsPublNext223" />
+  <field name="Protocol223" />
+  <field name="DogPerf223" />
+  <field name="LDogRep223" />
+</root>

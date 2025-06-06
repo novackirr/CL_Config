@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<WhenUserInWorkGroup name="Суперпользователи">
+		<UserInWorkGroups>   
+		    <Group name="Суперпользователи" />
+			<Group name="Департамент закупок"/>
+			<Group name="Департамент закупок ЦХД"/>
+			<Group name="Руководитель ДЗ"/>
+		</UserInWorkGroups>
+	</WhenUserInWorkGroup>
+</root>

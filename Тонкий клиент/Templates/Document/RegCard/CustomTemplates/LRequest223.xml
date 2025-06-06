@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view> <!-- Блок для просмотра-->
+		<rows>	
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные  сведения">
+						<rows>
+						<!-- <row>
+								<column>
+						<table key="|Document|Заказчик_права_таблица"  height="300">
+										<column fieldType="field" key="|Заказчик_код_права"  name="Заказчики" valueType="integer"  width="150"/>
+									</table>
+									</column>								
+								</row> -->
+							<row>
+								<column>		
+										<block id="Общие сведения" name="Общие сведения">
+											<rows>	
+												<row>
+													<!-- <column>
+													  <field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег. номер" valueType="text" />
+													</column> -->
+													<column>
+													 <!--  <field fieldType="field" key="|Document|Дата_создания" name="Дата регистрации" valueType="nosecdatetime"  /> -->
+													  <field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+													 <!--  <field fieldType="field" key="|Document|ИД_запроса_ЕЭТП" name="ИД_запроса_ЕЭТП" valueType="text" />
+													  <field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_черновика_запроса_на_ЭТП" name="|Document|Сбербанк_АСТ|ИД_черновика_запроса_на_ЭТП" valueType="text" /> -->
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Номер_редакции" name="Номер редакции" valueType="text" />
+													</column>
+													<column>
+														 <field fieldType="field" key="|Document|Внесение_изменений" name="Внесение изменений" valueType="boolean" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер извещения" valueType="text" />
+													</column>
+													<column>
+														<!-- <field fieldType="field" key="|Document|Инициатор|ФИО_инициатора" name="Инициатор" valueType="text" /> -->	
+														<!-- <field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель_ФИО" name="Ответственный исполнитель" valueType="text" /> -->	
+														<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель" name="Ответственный исполнитель" valueType="addressbook" />	
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Создана_в_Е1" name="Создана в Е1" valueType="boolean" />
+														<field fieldType="field" key="|Document|Разъяснение_без_запроса" name="Разъяснение без запроса" valueType="boolean" />
+													</column>
+													<column>
+														<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text" />
+													</column>
+												</row>
+											</rows>
+										</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+										<block id="Сведения о поставщике" name="Сведения о поставщике">
+											<rows>	
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Поставщик|Поставщик_наименование" name="Поставщик" valueType="text" />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Поставщик|Поставщик_ИНН" name="ИНН Поставщика" valueType="text" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Поставщик|Поставщик_телефон" name="Телефон Поставщика" valueType="text" />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Поставщик|Поставщик_email" name="Email Поставщика" valueType="text" />
+													</column>
+												</row>
+											</rows>
+										</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+							<row>
+								<column>		
+										<block id="Запрос" name="Запрос">
+											<rows>	
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|ИД_запроса_ЕЭТП" name="Номер запроса" valueType="text" />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Дата_публикации_запроса" name="Дата публикации запроса" valueType="nosecdatetime" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Срок_предоставления_ответа" name="Срок предоставления ответа" valueType="datetime" />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Блокировать_по_истечению_срока" name="Блокировать ответ по истечению срока" valueType="boolean" />
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Сгенерировать_файл_на_площадке" name="Сгенерировать файл на площадке" valueType="boolean" />
+													</column>
+													<column>
+														
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Сбербанк_АСТ|Тема_запроса" name="Тема запроса" valueType="text" />
+													</column>
+													<column>
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Описание_запроса" name="Текст запроса" valueType="longtext" />
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Сбербанк_АСТ|Возможность_внести_корректировки" name="Возможно внесение корректировок в ответ" valueType="text" />
+													</column>
+													<column>
+													    <field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительный_mail" name="Дополнительный e-mail" valueType="longtext" />
+													</column>
+												</row>
+											</rows>
+										</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field" isLabel="true" /> 
+								</column>
+							</row>
+						    <row>
+								<column>		
+										<block id="Разъяснение" name="Разъяснение">
+											<rows>	
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Дата_публикации_разъяснения" name="Дата публикации разъяснения" valueType="nosecdatetime" />
+													</column>
+													<column>													
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Сбербанк_АСТ|Тема_разъяснения" name="Тема разъяснения" valueType="text" />
+													</column>
+													<column>
+														<field fieldType="field" key="|Document|Сбербанк_АСТ|Разместить_файл_запроса_участника" name="Разместить файл запроса участника при ответе?" valueType="boolean" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Описание_разъяснения" name="Текст разъяснения" valueType="longtext" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Дата_отклонения" name="Дата отклонения" valueType="date" />
+													</column>
+													<column>
+													  <field fieldType="field" key="|Document|Причина_отклонения" name="Причина отклонения" valueType="longtext" />
+													</column>
+												</row>
+												
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Отклонение" name="Отклонение" valueType="boolean" />
+													</column>
+												</row>
+												<row>
+													<column>
+													  <field fieldType="field" key="|Document|Сбербанк_АСТ|Основание_внесения_изменений" name="Основания внесения изменений" valueType="longtext" />
+													</column>
+												</row>
+												<row>
+													<column>
+														<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_предмете_запроса" name="Сведения о предмете запроса" valueType="longtext" />
+													</column>
+												</row>
+											</rows>
+										</block>
+								</column>								
+                            </row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		  <variables>
+			<variable variable-name="caption" variable-format="Запрос на разъяснение{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_создания" name="Дата регистрации" valueType="nosecdatetime"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+        </variables>
+	</view>
+	
+	<edit> <!-- Блок для редактирования-->
+		<rows>
+			<row>
+				<column>
+
+					<block id="tlcInfo" name="Запрос">
+						<rows>	
+							<row>
+								<column>
+									<block id="989" name="Сведения о поставщике" view="true" >		 
+										<rows>	
+											<row>
+												<column>
+													<field name="Поставщик" isLabel="true" edit-name="SupplierCode" title="Выберите поставщика, которому хотите отправить запрос на разъяснение"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_код" name="Поставщик_код" valueType="text"  isValue="true" edit-name="SupplierCode" dict-column-name="code" dict-edit-name="SupplierCode"  display-field-part="false"  edit-tool = "Formdata:Поставщики" edit-readonly="true" />
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_наименование" name="Поставщик_наименование" valueType="longtext"  isValue="true" edit-name="SupplierName" dict-column-name="Наименование"   dict-edit-name="SupplierCode"  display-field-part="true"  edit-readonly="true" edit-hidden="true"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_номер_заявки" name="Поставщик_номер_заявки" valueType="text"  isValue="true" edit-name="SupplierApplicNumber" dict-column-name="Номер заявки"   dict-edit-name="SupplierCode"  display-field-part="false" show-dict-column="false"  edit-readonly="true" edit-hidden="true"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_дата_подачи_заявки" name="Дата подачи заявки" valueType="text"  isValue="true" edit-name="SupplierApplicDate" dict-column-name="Дата подачи заявки"   dict-edit-name="SupplierCode"  display-field-part="false" show-dict-column="false"  edit-readonly="true" edit-hidden="true"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_ИД_на_ЭТП" name="Поставщик_ИД_на_ЭТП" valueType="text"  isValue="true" edit-name="SupplierIdOnETP" dict-column-name="ИД на ЭТП"   dict-edit-name="SupplierCode"  display-field-part="false" show-dict-column="false"  edit-readonly="true" edit-hidden="true"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_фирменное_наименование" name="Поставщик_фирменное_наименование" valueType="text"  isValue="true" edit-name="SupplierFullName" dict-column-name="Фирменное наименование"   dict-edit-name="SupplierCode"  display-field-part="false" show-dict-column="false"  edit-readonly="true" edit-hidden="true"/>
+												</column>
+												<column>
+													<field name="ИНН Поставщика" isLabel="true" edit-name="SupplierINN" title="Заполняется автоматически после выбора поставщика"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_ИНН" name="Поставщик_ИНН" valueType="text"  isValue="true" edit-name="SupplierINN" dict-column-name="ИНН"  dict-edit-name="SupplierCode"  display-field-part="true"  edit-readonly="true"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Телефон Поставщика" isLabel="true" edit-name="SupplierMobile" title="Заполняется автоматически после выбора поставщика"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_телефон" name="Поставщик_телефон" valueType="text"  isValue="true" edit-name="SupplierMobile" dict-column-name="Телефон"  dict-edit-name="SupplierCode"  display-field-part="false"  edit-readonly="true" show-dict-column="false"/>									
+												</column>
+												<column>
+													<field name="Email Поставщика" isLabel="true" edit-name="SupplierMail" title="Заполняется автоматически после выбора поставщика"/>
+													<field fieldType="field" key="|Document|Поставщик|Поставщик_email" name="Поставщик_email" valueType="text"  isValue="true" edit-name="SupplierMail" dict-column-name="E-mail"  dict-edit-name="SupplierCode"  display-field-part="false"  edit-readonly="true" show-dict-column="false" />
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="990" name="Запрос" view="true" >		 
+										<rows>
+											<row>
+												<column>
+													<field name="Тема запроса" isLabel="true" edit-name="RequestTitle"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Тема_запроса" name="Тема_запроса" valueType="text"  isValue="true" edit-name="RequestTitle"/>
+												</column>
+												<column>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Номер запроса" isLabel="true" edit-name="NumRequest" />
+												</column>
+												<column>
+													<field name="Дата публикации запроса" isLabel="true" edit-name="DateRequest" />
+												</column>
+											</row>										
+											<row>
+												<column>
+													<field name="Cрок предоставления ответа на запрос" isLabel="true" edit-name="dueData"  title="Выберите крайний срок предоставления ответа на запрос поставщиком"/>
+													<field fieldType="field" key="|Document|Срок_предоставления_ответа" name="Срок_предоставления_ответа" valueType="datetime"  isValue="true" edit-name="dueData"/>
+												</column>
+												<column>
+													<field name="Блокировать ответ участника по истечении срока на ответ" isLabel="true" edit-name="BlockCustomer" />
+													<field fieldType="field" key="|Document|Блокировать_по_истечению_срока" name="Блокировать_по_истечению_срока" valueType="boolean" isValue="true" edit-name="BlockCustomer"/>
+												</column>
+												<column>
+													<field name="Сгенерировать файл на площадке" isLabel="true" edit-name="CreateOnEETP" />
+													<field fieldType="field" key="|Document|Сгенерировать_файл_на_площадке" name="Сгенерировать_файл_на_площадке" valueType="boolean" isValue="true" edit-name="CreateOnEETP"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Номер_запроса" name="Номер запроса" valueType="text"  isValue="true" edit-name="NumRequest" edit-readonly="true"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_публикации_запроса" name="Дата публикации запроса" valueType="nosecdatetime"  isValue="true" edit-name="DateRequest" edit-required="true" edit-readonly="true"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Текст запроса" isLabel="true" edit-name="OpisReq" />
+												</column>
+												<!-- <column>
+													<field name="Инициатор запроса" isLabel="true" edit-name="InicReq" />
+												</column> -->
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Описание_запроса" name="Описание запроса" valueType="longtext"  isValue="true" edit-name="OpisReq" edit-readonly="true"/>
+												</column>
+												<!-- <column>
+													<field fieldType="field" key="|Document|Инициатор_запроса" name="Описание запроса" valueType="longtext"  isValue="true" edit-name="InicReq" />
+												</column> -->
+											</row>
+											<row>
+												<column>
+													<block id="DopInformationlable" name="DopInformationlable" >
+														<rows>
+															<row>
+																<column>
+																	<field name="Возможно внесение корректировок в ответ" isLabel="true" edit-name="RequestDataExplanationIsChangeableName" />
+																</column>
+															</row>
+														</rows>
+													</block>
+												</column>
+												<column>
+													<field name="Дополнительный e-mail" isLabel="true" edit-name="RequestDataExplanationAdditionalEmails" title="Несколько адресов вводить через точку с запятой"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<block id="DopInformation" name="DopInformation" >
+														<rows>
+															<row>
+																<column>
+																	<field fieldType="field" key="|Document|Сбербанк_АСТ|Возможность_внести_корректировки" name="Завершить проведение процедуры и публикацию протоколов" valueType="text"  isValue="true" edit-name="RequestDataExplanationIsChangeableName" dict-column-name="Выбор значения" edit-tool = "Formdata:Выбор значения" dict-edit-name="RequestDataExplanationIsChangeableName"  display-field-part="true" edit-readonly="true" edit-default-value="Нет"/>
+																</column>
+															</row>
+														</rows>
+													</block>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Дополнительный_mail" name="Дополнительный e-mail" valueType="longtext"  isValue="true" edit-name="RequestDataExplanationAdditionalEmails"/>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field name="" isLabel="true" />
+								</column>
+							</row>
+							<row>
+								<column>
+									<block id="tlcOtvet" name="Разъяснение" view="true" >
+										<rows>
+											<row>
+												<column>
+													<field name="Тема разъяснения" isLabel="true" edit-name="ResponseTitle"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Тема_разъяснения" name="Тема_разъяснения" valueType="text"  isValue="true" edit-name="ResponseTitle"/>
+												</column>
+												<column>
+													<field name="Разместить файл запроса участника при ответе?" isLabel="true" edit-name="ShowRequestFile"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Разместить_файл_запроса_участника" name="Разместить_файл_запроса_участника" valueType="boolean"  isValue="true" edit-name="ShowRequestFile"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="" isLabel="true" edit-name="otklonenie"/>
+												</column>
+												<column>
+													<field name="Дата публикации разъяснения" isLabel="true" edit-name="dateRaz"/>
+												</column>
+												<column>
+													<field name="Дата отклонения" isLabel="true" edit-name="dateOtklon"/>
+												</column>
+												<column>
+													<field name="" isLabel="true"  edit-name="EmptyLabel"/>
+												</column>
+											</row> 
+											<row>
+											<column>
+													<field fieldType="field" key="|Document|Отклонение" name="Отклонение" valueType="boolean"  edit-name="otklonenie"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_публикации_разъяснения" name="Дата_публикации_разъяснения" valueType="nosecdatetime" isValue="true" edit-name="dateRaz"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_отклонения" name="Дата_отклонения" valueType="date" isValue="true" edit-name="dateOtklon"/>
+												</column>
+												<column>
+												</column>
+											</row> 
+											<row>
+												<column>
+													<field name="Текст разъяснения" isLabel="true" edit-name="OisanieRaz"/>
+												</column>
+												<column>
+													<field name="Причина отклонения" isLabel="true" edit-name="PrichinaOtklon"/>
+												</column>
+											</row> 
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Описание_разъяснения" name="Описание разъяснения" valueType="longtext" isValue="true" edit-name="OisanieRaz"/>
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Причина_отклонения" name="Причина_отклонения" valueType="longtext" isValue="true" edit-name="PrichinaOtklon"/>
+												</column>
+											</row>
+											<row>
+												<column>
+													<field name="Сведения о предмете запроса" isLabel="true" edit-name="RequestInformation"/>
+													<field fieldType="field" key="|Document|Сбербанк_АСТ|Сведения_о_предмете_запроса" name="Сведения о предмете запроса" valueType="longtext" isValue="true" edit-name="RequestInformation"/>
+												</column>
+												<column>
+												</column>
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row> 
+							
+							
+						</rows>
+					</block>
+				</column>
+			</row> 
+			
+			<row>
+				<column>
+					<block id="Hide" name="Скрытые поля">
+						<rows>
+							<row>
+							   <column>																
+									<field fieldType="field" key="|Document|ИД_запроса_лот" name="ИД запроса лот" valueType="integer" isValue="true"   edit-name="IDZapLot"   edit-isInvisible="true" />
+									<field fieldType="field" key="|Document|ИД_запроса" name="ИД запроса" valueType="integer" isValue="true"   edit-name="IDZap"   edit-isInvisible="true" />															
+									<field fieldType="field" key="|Document|Инициатор|ИД_Инициатора" name="Инициатор" valueType="addressbook" isValue="true" edit-name="Iniciator" edit-addressbook-groups="person"   edit-default-value="{currentUser}" />	
+							        <field fieldType="field" key="|Document|Дата_регистрации" name="Дата_регистрации" isValue="true" edit-name="RegDate" edit-hidden="true" valueType="date" edit-default-value="{today}" />
+									<field fieldType="field" key="|Document|Дата_создания" name="Дата создания" valueType="nosecdatetime" isValue="true"   edit-name="datecreate" edit-default-value="{now}" date-group-id="dateRangeConditional" date-group-index="4" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text"  isValue="true" edit-name="Status" edit-hidden="true" edit-readonly="true" edit-default-value="Черновик" />
+									<field fieldType="field" key="|Document|Номер_извещения" name="Номер извещения" valueType="text"  isValue="true" edit-name="NumNotice" edit-hidden="true" edit-readonly="true" />
+									<field fieldType="field" key="|Document|Номер_лота_в_извещении" name="Номер_лота_в_извещении" valueType="text"  isValue="true" edit-name="lotNumberOnNotice" />
+									<field fieldType="field" key="|Document|ИД_извещения_на_ЭТП" name="ИД извещения на ЭТП" valueType="text" isValue="true"   edit-name="registerIdETP"  />
+									<field fieldType="field" key="|Document|ИД_запроса_ЕЭТП" name="ИД запроса ЕЭТП" valueType="text" isValue="true" edit-hidden="true" edit-name="ID_ReqETP" />
+									<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext"  isValue="true" edit-name="NameObZak" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text"  isValue="true" edit-name="NumZakEis" edit-required="true" edit-hidden="true" />
+									<field fieldType="field" key="|Document|Код_типа_запроса" name="Код_типа_запроса" valueType="text"  isValue="true" edit-name="CodeZapros"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|ИД_процедуры" name="ИД_процедуры" valueType="text"  isValue="true" edit-name="IDProcedure"  edit-hidden="true" />
+									<field fieldType="field" key="|Document|email_Инициатора_запроса" name="email_Инициатора_запроса" valueType="text"  isValue="true" edit-name="InicEmail" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Номер_разъяснения" name="Номер разъяснения" valueType="text"  isValue="true" edit-name="NumRazyasn" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Дата_публикации_разъяснения" name="Дата публикации разъяснения" valueType="datetime"  isValue="true" edit-name="DateRazyasn" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Инициатор_запроса" name="Описание запроса" valueType="longtext"  isValue="true" edit-name="InicReq" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|ИД_ЭТП" name="ИД ЭТП" valueType="text"  isValue="true" edit-name="idetp" />
+									<field fieldType="field" key="|Document|ИД_лота_на_ЭТП" name="ИД_лота_на_ЭТП" valueType="text"  isValue="true" edit-name="idLotetp" />
+									<field fieldType="field" key="|Document|Ответственный_исполнитель|Ответственный_исполнитель" name="Ответственный_исполнитель" valueType="addressbook"  isValue="true" edit-name="OtvIsp" edit-addressbook-groups="person"   edit-default-value="{currentUser}"/>
+									<field fieldType="field" key="|Document|Участник_закупки_СМП" name="Участник_закупки_СМП" valueType="boolean"  isValue="true" edit-name="smp" edit-default-value="0"/>
+									 <table key="|Document|Заказчик_права_таблица" edit-name="CustomerTab" height="300">
+										<column fieldType="field" key="|Заказчик_код_права"  name="Заказчики" valueType="addressbook" isValue="true" edit-addressbook-groups = "Department" edit-name="customertable" address-book-tool ="customertable" width="150"/>
+									</table>
+									<field fieldType="field" key="|Document|Подразделение_инициатор|Подразделение_инициатор" name="Подразделение инициатора" valueType="addressbook" isValue="true" edit-name="IniciatorDep" address-book-tool="IniciatorDep" edit-addressbook-groups = "" edit-default-value="{addressbook,value=Iniciator,attribute=Department}" address-book-tool-selectable = ""/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-readonly="true" edit-default-value="{currentOrganization}" edit-required="false" />
+									<field fieldType="field" key="|Document|Создана_в_Е1" name="Создана в Е1" valueType="boolean"  isValue="true" edit-name="CreateOnE1" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|Поставщик|Поставщик_КПП" name="Поставщик_КПП" valueType="text"  isValue="true" edit-name="SupplierKPP" />																		
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_ЕИС" name="Организатор_закупки_ЕИС" valueType="text"   isValue="true" edit-name="OrgZakupkiEIS"  />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор_закупки_наименование" valueType="text"   isValue="true" edit-name="OrgZakupkiName"  />
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор закупки" valueType="addressbook" isValue="true" edit-name="OrgZakupki"/>
+									<field fieldType="field" key="|Document|Год_закупки" name="Год закупки" valueType="text" isValue="true" edit-name="godzak" edit-readonly="true"  />	
+									<field fieldType="field" key="|Document|Ответсвенный_за_ответ|Ответсвенный_за_ответ" name="Ответсвенный_за_ответ" valueType="addressbook"  isValue="true" edit-name="OtvZaOtv" edit-addressbook-groups="person"   edit-default-value="{currentUser}" />
+									<field fieldType="field" key="|Document|Переназначен_ответственный" name="Переназначен ответственный" valueType="boolean"  isValue="true" edit-name="NewOtv" edit-default-value="0"/>
+									<field fieldType="field" key="|Document|ГРБС|ГРБС" name="ГРБС" valueType="addressbook" isValue="true" edit-name="GRBS" />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_документа_на_ЭТП" isValue="true" name="ИД_документа_на_ЭТП" valueType="integer" edit-name="IdDocumentOnSber"/> <!-- Ид документа до публикации черновика -->
+									<field fieldType="field" key="|Document|Форма_торгов_код" name="Форма торгов" valueType="text"  isValue="true" edit-name="formTorg"  />
+									<field fieldType="field" key="|Document|Форма_торгов" name="Форма торгов имя" valueType="text" isValue="true" edit-name="formTorgName" />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|ИД_черновика_запроса_на_ЭТП" name="ИД_черновика_запроса_на_ЭТП" valueType="text" isValue="true" edit-name="SberIdDraftOnEETP" />
+									<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext"  isValue="true" edit-name="registerNaimDogov"  />
+									<field fieldType="field" key="|Document|Название_закупки" name="Название_закупки" valueType="longtext"  isValue="true" edit-name="ProcedureName"   />
+									<field fieldType="field" key="|Document|Сбербанк_АСТ|Основание_внесения_изменений" name="Основание_внесения_изменений" valueType="longtext"  isValue="true" edit-name="MakingСhanges"   />
+									<field fieldType="field" key="|Document|Разъяснение_без_запроса" name="Разъяснение_без_запроса" valueType="boolean"  isValue="true" edit-name="ClarificationWithoutRequest"   />
+									<field fieldType="field" key="|Document|Актуальность" name="Актуальность" valueType="boolean" isValue="true" edit-name="actual" edit-default-value="1" />
+									<field fieldType="field" key="|Document|Внесение_изменений" name="Внесение_изменений" valueType="boolean" isValue="true" edit-name="requestChange"  />
+									<field fieldType="field" key="|Document|Номер_редакции" name="Номер_редакции" valueType="integer" isValue="true" edit-name="RegNumber"  />
+									<field fieldType="field" key="|Document|Guid_редакции" name="Guid_редакции" valueType="text" isValue="true" edit-name="RegNumberGuid"  />
+									<field fieldType="field" key="|Document|ParentRK" name="ParentRK" valueType="text" isValue="true" edit-name="ParentRK"  />
+							   </column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row> 
+		</rows>  
+
+		<variables>
+			<!-- <variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+			</variable> -->
+			<variable variable-name="caption" variable-format="Запрос на разъяснение{RegDate}">
+				<!-- <field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" /> -->
+				<field fieldType="field" key="|Document|Дата_создания" name="Дата регистрации" valueType="nosecdatetime"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+
+	</edit> 
+	<scripts>
+		<script file="Scripts\Content\Document\RegCard\LRequest223.js" />
+	</scripts>
+</root>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <derivedFields>
+    <field edit-name="Fingod" fieldType="field" key="|Document|Текущий_финансовый_год" isValue="true" valueType="text"/>
+	<field edit-name="Fingod1" fieldType="field" key="|Document|Первый_плановый_год" isValue="true" valueType="text"/>
+	<field edit-name="Fingod2" fieldType="field" key="|Document|Второй_плановый_год" isValue="true" valueType="text"/>
+	<field edit-name="OrgZakup" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" isValue="true" valueType="text"/>
+	
+  </derivedFields>
+  <edit>
+     <rows>
+	       <row>
+		          <column>
+                     <field name="Наименование объекта закупки" isLabel="true" />
+                     <field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext"  isValue="true" edit-name="NameObZak" />
+				  	  </column>
+			  </row>
+	      
+	 </rows>
+  </edit>
+  <search>
+<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок') and ((doc_RegCard/rc_FlowKey = @flowKey)  and (doc_RegCard/rc_Index/text_Организация_заказчик= @OrgZakup ) and ((doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @Fingod) or (doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @Fingod1 ) or (doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @Fingod2 ))  and ((not( doc_RegCard/rc_Index/text_Статус in list ('Черновик', 'На согласовании', 'Неактуальная', 'На доработке')))) and (doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки= @NameObZak ))" /> 
+   </search>
+</root>

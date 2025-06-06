@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns  state-key="PositionsForNotice223" allowAllActions="false" allowSingleActions="false" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" horizontall-scroll="true">
+   <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" valueType="text" weight="30" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_лота" name="Наименование лота" valueType="longtext" weight="30" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="НМЦ (с НДС), руб. от" valueType="money" weight="10" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_размещения" name="Дата размещения" valueType="date" weight="10" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_начала_исполнения" name="Начало исполнения" valueType="date" weight="10" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_окончания_исполнения" name="Окончание исполнения" valueType="date" weight="10" />
+  </columns>
+</root>

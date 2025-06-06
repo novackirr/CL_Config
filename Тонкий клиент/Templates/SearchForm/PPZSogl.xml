@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+		<row>
+			<column>
+				<field name="Наименование объекта закупки" isLabel="true" /> 
+				<field fieldType="field" key="|Document|Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" isValue="true" edit-name="Namezak"  /> 
+			</column> 
+		</row>
+		<row>
+			<column>
+				<field name="Планируемый год размещения" isLabel="true" /> 
+				<field fieldType="field" key="|Document|Планируемый_год_размещения" name="Планируемый год размещения" valueType="integer" isValue="true" edit-name="godzak" /> 
+			</column> 
+		</row>
+			<row>	
+				<column>
+					<field name="ОКПД2" isLabel="true" />	
+					<field fieldType="field" key="|Document|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKDP"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "ОКПД2" edit-required="true"  display-field-part="true" dict-edit-name="registerOKDP" />
+				</column>
+				<column>
+					<field name="ОКПД2 наименование" isLabel="true" />	
+					<field fieldType="field"  key="|Document|ОКПД2_наименование" name="ОКПД2 наименование" valueType="text" isValue="true" edit-name="registerOKDPName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="6"   display-field-part="false" dict-edit-name="registerOKDP" />
+				</column>
+
+			</row>
+		
+		<row>	
+			<column>
+				<field name="ИКЗ" isLabel="true" />	
+				<field fieldType="field" key="|DocumentИКЗ" name="ИКЗ" valueType="text" isValue="true" edit-name="IKZ" />
+			</column>
+		
+		</row>
+		</rows>
+	</edit>	 
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок') and (doc_RegCard/rc_Index/text_Статус = 'Согласована') and (doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки = @Namezak) and (doc_RegCard/rc_Index/integer_Планируемый_год_размещения = @godzak) and (doc_RegCard/rc_Index/integer_ОКПД2 = @registerOKDP)" />
+	</search>
+	<scripts>
+    <script file="Scripts/Content/SearchForm/Positions.js" />
+  </scripts>
+
+</root>

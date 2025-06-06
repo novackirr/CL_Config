@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <edit>
+    <rows>
+      <row>
+        <column>
+          <field name="Регистрационный номер" isLabel="true" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" isValue="true" edit-name="regnum"  />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Регистратор" isLabel="true" />
+          <field fieldType="field" key="|Document|Регистратор" name="Регистратор" valueType="AddressBook" isValue="true" content-addressbook-suggestions="control" edit-name="registrator"  edit-isMultiple ="true" />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Дата регистрации от" isLabel="true"/>
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+        </column>
+        <column>
+          <field name="до" isLabel="true" />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" isValue="true" edit-name="registerDateTo"  />
+        </column>
+      </row>
+      <row>
+        <column>
+          <field name="Поток" isLabel="true"/>
+          <field fieldType="field" key="|Поток" name="Поток" edit-name="flowKey" valueType="text"  isValue="true" edit-dictionary="#Потоки" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-isMultiple ="true" />
+        </column>
+      </row>
+    </rows>
+  </edit>
+  <search>
+    <field fieldValue="doc_RegCard/rc_FlowName" />
+  </search>
+</root>

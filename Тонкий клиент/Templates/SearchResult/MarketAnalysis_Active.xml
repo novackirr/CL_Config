@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="MarketAnalysis_All" allowAllActions="true" allowSingleActions="false" allowSelection="true" allow-grouping="true" grouping-type="client" allow-filters-row="true" allow-create-excel="true" add-document-url-in-excel="true" document-url-column-name-in-excel="Url документа">
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="12" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Номер_запроса" name="Номер запроса" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Номер_запроса" weight="15" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Статус" weight="16" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_публикации_запроса" name="Дата публикации запроса" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_публикации_запроса" weight="12" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок" name="Дата окончания подачи заявок" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Дата_окончания_подачи_заявок" weight="12" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Текст_запроса" name="Текст запроса" valueType="longtext" sortPredicate="doc_RegCard/rc_Index/longtext_Текст_запроса" weight="16" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Плановая_дата_размещения" name="Плановая дата размещения" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Плановая_дата_размещения" weight="12" isOptional="true" horizontalAlignment="center"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ФИО_инициатора" name="ФИО инициатора" valueType="text" weight="20" isOptional="true" horizontalAlignment="center"/>
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

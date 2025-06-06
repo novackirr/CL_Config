@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="addressbook" isValue="true" edit-name="registerOrgZa" edit-hidden="true"  edit-default-value="{currentOrganization}"  />
+					<field name="Предмет договора" isLabel="true" />		  
+					<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext" isValue="true" edit-name="lotName" />
+				</column>
+				<column>
+					<field name="Дата регистрации" isLabel="true"/>
+					<block id="block11" name="block11" height="300">
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true"/>
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+								</column>
+								<column>					
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+								</column>						
+							</row>
+						</rows>							
+					</block>
+					<block id="block0" name="block0"  height="300">
+						<rows>
+							<row>
+								<column>
+									 <field name="Срок исполнения договора" isLabel="true"/>
+								</column>						
+							</row>
+						</rows>								
+					</block>
+					<block id="block4" name="block4"  height="300">
+						<rows>
+							<row>
+								<column>
+									 <field name="от" isLabel="true" />
+								</column>
+								<column>							 
+									 <field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="Плановая дата окончания исполнения" valueType="date" value-db-type="date" isValue="true"  edit-name="finishDateFrom" />
+								</column>
+								<column>							 
+									 <field name="до" isLabel="true" />
+								</column>
+								<column>							 
+									 <field fieldType="field" key="|Document|Плановая_дата_окончания_исполнения" name="по" valueType="date" value-db-type="date" isValue="true" edit-name="finishDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Год планируемого периода" isLabel="true"/>
+					<field fieldType="field" key="|Document|Планируемый_год" name="Год планируемого периода" valueType="integer" isValue="true" edit-name="PlanGod" />
+				</column>
+				<column>
+					<field name="Квартал планируемого периода" isLabel="true"/>
+					<field fieldType="field" key="|Document|Планируемый_квартал" name="Год планируемого периода" valueType="integer" isValue="true" edit-name="QuarterMonth" />
+				</column>
+				<column>
+					<field name="Месяц планируемого периода" isLabel="true"/>
+					<field fieldType="field" key="|Document|Планируемый_месяц" name="Месяц планируемого периода" valueType="text" isValue="true" edit-name="month" dict-column-name="code" edit-tool = "Месяцы" edit-readonly="true" dict-edit-name="month" show-dict-column="true" />
+					<field fieldType="field" key="|Document|Планируемый_месяц_наименование" name="Месяц планируемого периода наименование" valueType="text"  isValue="true" edit-name="PlanMonthName" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="month" dict-column-width-percentage="50" />
+				</column>
+				<column>
+					<field name="Участник закупки СМП" isLabel="true"/>
+					<field fieldType="field" key="|Document|Участник_закупки_СМП" name="Участник закупки СМП" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerUchZakSMP" />
+				</column>
+			</row>
+			<row>							
+				<column>
+					<field name="Способ закупки" isLabel="true"  />
+					<field fieldType="field" key="|Document|Способ_закупки_код" name="Способ закупки" valueType="text"  isValue="true" edit-name="registerSpZakup"  edit-required="true" dict-column-name="code"  edit-tool = "Организации заказчики223" is-select-one-level="2" edit-readonly="true" one-level-parent="OrgZakKodSprav" dict-edit-name="registerSpZakup" show-dict-column="false"/>
+					<field fieldType="field" key="|Document|Способ_закупки" name="Способ закупки наименование" valueType="text" isValue="true" edit-name="registerSpZakupName"  edit-required="true" edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="registerSpZakup" dict-column-width-percentage="50"/>
+				</column>
+				<column>
+					<field name="НМЦ, руб." isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="sumLotFrom" weight="300"/>
+								</column>
+								<column>							
+									<field name="до" isLabel="true" />
+									</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="sumLotTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Номер извещения в ЕИС" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" isValue="true" edit-name="NumEIS" />
+				</column>	         
+				<column>
+					<field name="Номер плана в ЕИС" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_плана_в_ЕИС" name="Номер плана в ЕИС" valueType="text" isValue="true" edit-name="NumPlanEIS" />		
+				</column>
+				<column>
+					<field name="Номер позиции в плане" isLabel="true" />
+					<field fieldType="field" key="|Document|Номер_позиции_план" name="Номер позиции" valueType="text" isValue="true" edit-name="NumPlanPosition" />	
+				</column>
+				<column>			
+				</column>		
+			</row>
+		</rows>
+	</edit>
+	<extraSearchForm>
+		<rows>
+			<row>
+				<column>
+					<block id="block77" name="block77"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="Закупка в электронной форме" isLabel="true" />																								  
+								</column>
+								<column>  
+									<field name="Долгосрочный договор" isLabel="true" />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+				<column>
+					<field name="Закупка не учитывается при расчёте совокупного годового стоимостного объёма договоров" isLabel="true" />
+				</column>
+			</row>
+			<row> 								
+				<column>
+					<block id="block77" name="block77"  height="300">		
+						<rows>
+							<row>
+								<column>								
+									<field fieldType="field" key="|Document|Закупка_в_электронной_форме" name="Закупка в электронной форме" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="registerZakElForm"  />																  
+								</column>
+								<column>  
+									<field fieldType="field" key="|Document|Долгосрочный" name="Долгосрочный договор" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение"  edit-name="longTermcategorie"   /> 
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Закупка_не_учитывается" name="Закупка не учитывается при расчёте совокупного годового стоимостного объёма договоров" valueType="boolean" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение"  edit-name="registerZakNoUch" />
+				</column>
+			</row>		
+			<row>
+				<column>
+					<field name="Условия, сроки поставки и оплаты" isLabel="true" />
+				</column>
+				<column>
+					<field name="Минимально необходимые требования" isLabel="true" />									
+				</column>
+			</row>     
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Условия_поставки" name="Условия поставки" valueType="longtext"  isValue="true" edit-name="registerUslPos"/>
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Минимально_необходимые_требования" name="Минимально необходимые требования" valueType="longtext"  isValue="true" edit-name="registerMNT"/>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Объем поставки" isLabel="true" />									
+				</column>
+				<column>
+					<field name="Порядок поставки" isLabel="true" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Объем_поставки" name="Объем поставки" valueType="longtext"  isValue="true" edit-name="registerOPos"/>							
+				</column>
+				<column>
+					<field fieldType="field" key="|Document|Порядок_поставки" name="Порядок поставки" valueType="longtext"  isValue="true" edit-name="registerPorPost" />
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Место поставки" isLabel="true" />
+				</column>
+				<column>
+					<field name="ОКАТО" isLabel="true" />									
+				</column>
+			</row>
+			<row>
+				<column>
+					<field fieldType="field" key="|Document|Место_поставки" name="Место поставки" valueType="longtext"  isValue="true" edit-name="registerPlasePos" />
+				</column>								
+				<column>
+					<field fieldType="field" key="|Document|ОКАТО" name="ОКАТО" valueType="text" isValue="true" edit-name="registerOKATO"  edit-readonly="true"  edit-tool = "ОКАТО"  dict-column-name="code"  dict-edit-name="registerOKATO"  />
+					<field fieldType="field" key="|Document|Регион" name="Регион" valueType="text" isValue="true" edit-name="registerOKATOName"  edit-readonly="true"  dict-column-name="Наименование"  edit-hidden="true" display-field-part="true" dict-edit-name="registerOKATO"/>
+				</column>
+			</row>
+		</rows>
+	</extraSearchForm>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Заключение договора')"/>
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+
+</root>

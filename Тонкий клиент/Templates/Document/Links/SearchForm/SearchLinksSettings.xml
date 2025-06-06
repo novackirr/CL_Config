@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <searchLinkSettings>
+		<setting mainDocumentFlow="Планы закупок 223ФЗ" searchDocumentFlow="Позиции плана закупок 223ФЗ" searchFormTemplate="LLotPZ223" searchResultTemplate="LLotPZ223" autoSearchEnabled="true" hideGridActions="true" />
+		<setting mainDocumentFlow="Извещения о закупочной процедуре 223ФЗ" searchDocumentFlow="Заявка на размещение закупки 223ФЗ" searchFormTemplate="NoticeLLotOrder223" searchResultTemplate="NoticeLLotOrder223" autoSearchEnabled="true" hideGridActions="true" addQueryFromDoc="true"/>
+	</searchLinkSettings>
+    <additionalSearchConditions>
+		<document flow="Планы закупок 223ФЗ">
+            <condition searchDocumentFlow="Позиции плана закупок 223ФЗ" value="(doc_RegCard/rc_Index/boolean_Включена_в_ПЗ = '0') and not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать = '1') and not(doc_RegCard/rc_Index/boolean_Закупка_не_включена_в_план_закупки = '1') and not(doc_RegCard/rc_Index/boolean_Малая_закупка = '1') and not(doc_RegCard/rc_Index/boolean_Аренда_недвижимости = '1') and not(doc_RegCard/rc_Index/boolean_Закупка_электроэнергии_с_гарантирующим_поставщиком = '1')"/>
+        </document>
+		<document flow="Извещения о закупочной процедуре 223ФЗ">
+            <condition searchDocumentFlow="Заявка на размещение закупки 223ФЗ" value="(doc_RegCard/rc_Index/text_Статус = 'Черновик')"/>
+        </document>
+    </additionalSearchConditions>
+</root>
+

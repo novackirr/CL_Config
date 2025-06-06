@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <derivedFields>
+	<field edit-name="OrgZakName" fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" isValue="true" valueType="text"/>
+	<field edit-name="PlGod" fieldType="field" key="|Document|Планируемый_год" isValue="true" valueType="text"/>
+	<field edit-name="Valuta" fieldType="field" key="|Document|Валюта" isValue="true" valueType="text"/>
+	<field edit-name="SpZak" fieldType="field" key="|Document|Способ_закупки" isValue="true" valueType="text"/>
+  </derivedFields>
+    <edit>
+		<!-- <rows>
+			<row>
+				<column>
+					<field name="Дата регистрации" isLabel="true"/>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации с" valueType="date" isValue="true"  edit-name="DateregFrom" weight="300"/>
+								</column>
+								<column>							
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации до" valueType="date" isValue="true" edit-name="DateregTO" weight="300" />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+				<column>
+					<field name="Начальная(максимальная) цена договора" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="НМЦ" valueType="money" isValue="true"  edit-name="NMCfrom" weight="300"/>
+								</column>
+								<column>							
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|НМЦ_с_НДС" name="до" valueType="money" isValue="true" edit-name="NMCto"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+				</column>
+			</row>
+			<row>
+				<column>
+					<field name="Предмет договора" isLabel="true" />	
+					<field fieldType="field" key="|Document|Предмет_договора" name="Предмет договора" valueType="longtext"  isValue="true" edit-name="PredmDog" />
+				</column>
+			</row>
+		</rows> -->
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Черновик') and (doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование = @OrgZakName) and (doc_RegCard/rc_Index/integer_Планируемый_год = @PlGod) and (doc_RegCard/rc_Index/text_Валюта = @Valuta) and (doc_RegCard/rc_Index/text_Способ_закупки = @SpZak) and ( doc_RegCard/rc_Index/longtext_Предмет_договора = @PredmDog) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @DateregFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @DateregTo) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &gt;= @NMCfrom) and (doc_RegCard/rc_Index/money_НМЦ_с_НДС &lt;= @NMCto)" />
+	</search>
+</root>

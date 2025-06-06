@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+   <columns allowAllActions="true" allowSingleActions="true" allowSelection="true" allow-filters-row="true" horizontall-scroll="true">
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Регистрационный_номер" weight="15" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_FlowKey" name="Поток" valueType="flow" sortPredicate="doc_RegCard/rc_FlowKey" weight="15" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации" weight="15" isOptional="true" />
+    <column fieldType="attribute" key="doc_RegCard/rc_Index/text_КВР" name="КВР" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_КВР" weight="40" />
+	<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ОКПД2" name="ОКПД2" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_ОКПД2" weight="40" />
+	
+  </columns>
+</root>

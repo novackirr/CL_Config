@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Регистрационный номер" valueType="text" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" weight="15" isOptional="true" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Наименование_объекта_закупки" name="Наименование объекта закупки" valueType="longtext" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Планируемый_год_размещения" name="Первый плановый год" valueType="double" weight="40" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/money_Сумма_всего" name="Сумма всего" valueType="money" weight="20" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_ИКЗ" name="ИКЗ" valueType="money" weight="60" />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="40" />
+	</columns>
+	<sort predicate="doc_CreateTime descending"/>
+</root>

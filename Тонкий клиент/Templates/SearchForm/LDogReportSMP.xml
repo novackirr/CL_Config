@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<field name="Отчетный год" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+							<rows>
+								<row>
+									<column>		
+										<field name="от" isLabel="true"/>
+									</column>
+									<column>
+										<field fieldType="field" key="|Document|Год_сведений" name="Отчетный год" valueType="integer" isValue="true" edit-name="yearFrom"   />
+									</column>	
+									<column>		
+										<field name="до" isLabel="true" />
+									</column>
+									<column>
+										<field fieldType="field" key="|Document|Год_сведений" name="Отчетный год" valueType="integer" isValue="true" edit-name="yearTo"   />
+									</column>									
+								</row>
+							</rows>								
+					</block>		
+				</column>
+				<column>
+					<field name="Отчетный месяц" isLabel="true"/>
+					<block id="block1" name="block1"  height="300">		
+							<rows>
+								<row>
+									<column>		
+										<field name="от" isLabel="true"/>
+									</column>
+									<column>
+									<field fieldType="field" key="|Document|Месяц_сведений_код" name="Месяц_сведений_код" valueType="text" isValue="true" edit-name="Month_kod" edit-readonly="true" is-select-one-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="Month_kod" edit-required="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Месяц_сведений" name="Месяц_сведений" valueType="text" isValue="true" edit-name="Month" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="Month_kod"/>
+									</column>	
+									<column>		
+										<field name="до" isLabel="true" />
+									</column>
+									<column>
+									<field fieldType="field" key="|Document|Месяц_сведений_код" name="Месяц_сведений_код" valueType="text" isValue="true" edit-name="Month_kod1" edit-readonly="true" is-select-one-level="1" edit-tool = "Месяцы" dict-column-name="code" dict-edit-name="Month_kod1" edit-required="true" show-dict-column="false" />
+									<field fieldType="field" key="|Document|Месяц_сведений" name="Месяц_сведений" valueType="text" isValue="true" edit-name="Month1" dict-column-name="Наименование" display-field-part="true" edit-hidden="true"  dict-edit-name="Month_kod1"/>
+									</column>									
+								</row>
+							</rows>								
+					</block>		
+				</column>
+				</row>
+				<row>
+				<column>
+					<field name="Организация-заказчик" isLabel="true" />		
+					<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="addressbook" edit-isMultiple ="true" isValue="true" edit-name="registerOrgZaName" address-book-tool= "registerOrgZaName" edit-addressbook-groups = "Department" />
+				</column>												
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Отчетность о договорах 223ФЗ' and doc_RegCard/rc_Index/text_Тип_отчетности_код = '4' and and doc_RegCard/rc_Index/boolean_Актуальность = '1') and (xn-in(doc_RegCard/rc_Index/integer_Организация_заказчик, @registerOrgZaName)) and ((doc_RegCard/rc_Index/integer_Год_сведений &gt;= @yearFrom) and (doc_RegCard/rc_Index/integer_Год_сведений &lt;= @yearTo)) and ((doc_RegCard/rc_Index/text_Месяц_сведений_код &gt;= @Month_kod) and (doc_RegCard/rc_Index/text_Месяц_сведений_код &lt;= @Month_kod1))" />
+	</search>
+	<scripts>
+		<!-- <script file="~/Scripts/Content/SearchForm/LDogReport.js" /> -->
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

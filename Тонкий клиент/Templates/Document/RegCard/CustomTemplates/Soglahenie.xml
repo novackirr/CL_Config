@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows>
+							<row>
+								<column>		
+									<block id="Общие сведения" name="Общие сведения">
+										<rows>
+											<row>
+												<column>
+													<field fieldType="attribute" key="doc_RegCard/rc_Index/text_Регистрационный_номер" name="Рег.номер" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" />
+												</column>	
+												</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Дата_заключения" name="Дата заключения" valueType="text" />
+												</column>													
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+							<row>
+								<column>
+									<field fieldType="field"  isLabel="true"  />
+								</column>
+							</row>
+							<row>
+								<column>		
+									<block id="Организационные данные" name="Организационные данные">
+										<rows>
+																				
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик" valueType="text" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|Предмет_контракта" name="Предмет контракта" valueType="text" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|ФИО" name="ФИО руководителя" valueType="text" />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Должность" name="Должность руководителя" valueType="text" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Адрес" name="Адрес" valueType="longtext" />
+												</column>
+												<column>
+													<field fieldType="field" key="|Document|На_основании" name="Документ основания действия руководителя" valueType="longtext" />
+												</column>
+											</row>	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Телефон" name="Телефон" valueType="text" />
+												</column>
+											</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Дата_подписания" name="Дата подписания" valueType="date" />
+												</column>	
+												<column>
+													<field fieldType="field" key="|Document|Дата_начала_действия" name="Дата начала действия" valueType="date" />
+												</column>	
+												</row>
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Срок_согласования_по" name="Срок согласования" valueType="date" />
+												</column>	
+												<column>
+													
+												</column>													
+											</row>
+										</rows>
+									</block>
+								</column>
+							</row>
+						</rows>
+					</block>
+				</column>
+			</row>
+		</rows>
+		<variables>
+			<variable variable-name="caption" variable-format="Соглашение{number}{RegDate}">
+				<field fieldType="field" key="|Document|Регистрационный_номер" name="Регистрационный номер" valueType="text" variable-name="number" variable-format=", рег.номер - {value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</view>
+	<edit>
+		<rows>
+			<row>
+				<column>
+					<block id="tlcInfo" name="Основные сведения">
+						<rows> 
+
+							<row>
+								<column>
+									<field name="Организация-заказчик" isLabel="true" edit-name="registerPodIn"/>   								
+								</column>	
+								<column>
+									<field name="Предмет контракта" isLabel="true" edit-name="NameObZak" />                  
+								</column>								
+							</row> 
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_наименование" name="Организация-заказчик наименование" valueType="text" isValue="true" edit-name="registerOrgZaName"   edit-required="true" />
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик" name="Организация-заказчик" valueType="text"  isValue="true" edit-name="registerOrgZa"  edit-readonly="true"   edit-hidden="true" />
+
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СПЗ" name="Организация-заказчик СПЗ" valueType="text" isValue="true" edit-name="registerOrgZaSPZ"    edit-readonly="true"  edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_код_по_СР" name="Организация_заказчик_код_по_СР" valueType="text" isValue="true" edit-name="registerOrgZaSr"   edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организация_заказчик|Организация_заказчик_ОКОПФ" name="ОКОПФ_заказчика" valueType="text" isValue="true" edit-name="registerOrgZaOKPF" edit-hidden="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|Предмет_контракта" name="Предмет контракта" valueType="text"  isValue="true" edit-name="PredKontr" edit-required="true" />
+								</column>
+							</row>
+						
+							
+							<row>
+								<column>
+									<field fieldType="field" name="ФИО руководителя в родительном падеже" isLabel="true" edit-name="FIO" />
+								</column>
+									<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+															<field fieldType="field" name="Должность руководителя в родительном падеже" isLabel="true" edit-name="Dolznost"  />
+												</column>
+
+												<column>
+														<field fieldType="field" name="Телефон" isLabel="true" edit-name="TelRuc"  />
+												</column>
+											</row>
+										</rows> 
+									</block>
+								</column>								
+								
+							</row>	
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|ФИО" name="ФИО руководителя" valueType="text" isValue="true"  edit-name="FIO" edit-required="true" />
+								</column>	
+															
+								
+									<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+													<field fieldType="field" key="|Document|Должность" name="Должность руководителя" valueType="text" isValue="true"  edit-name="Dolznost" edit-required="true" />
+												</column>
+												<column>
+												<field fieldType="field" key="|Document|Телефон" name="Телефон" valueType="text" isValue="true"  edit-name="TelRuc" edit-required="true" />
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+								
+							</row>	
+							
+							
+							<row>
+								<column>
+									<field fieldType="field" name="Адрес" isLabel="true" edit-name="Adres"  />
+								</column>
+								<column>
+									<field fieldType="field" name="Документ основания действия руководителя" isLabel="true" edit-name="NaOsnov"  />
+								</column>
+							</row>								
+							<row>
+								<column>
+									<field fieldType="field" key="|Document|Адрес" name="Адрес" valueType="longtext" isValue="true"  edit-name="Adres" edit-required="true" />
+								</column>
+								<column>
+									<field fieldType="field" key="|Document|На_основании" name="На основании" valueType="longtext"  isValue="true"  edit-name="NaOsnov" edit-required="true" />
+								</column>
+							</row>	
+							
+						
+						<row>
+						
+						<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+														<field name="Дата подписания" isLabel="true" edit-name="SrokPodpi" />
+												</column>
+
+												<column>
+														<field name="Дата начала действия" isLabel="true" edit-name="SrokNach" />
+												</column>
+											</row>
+										</rows> 
+									</block>
+								</column>
+								<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+														<field name="Срок согласования" isLabel="true" edit-name="SrokSogl" />
+												</column>
+
+												<column>
+														<field name="" isLabel="true" />
+												</column>
+											</row>
+										</rows> 
+									</block>
+								</column>
+								<column>
+														<field name="" isLabel="true" />
+												</column>
+												<column>
+														<field name="" isLabel="true" />
+												</column>
+						</row>	
+						
+							
+							<row>
+							
+							
+							<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+														<field fieldType="field" key="|Document|Дата_подписания" name="Дата подписания" valueType="date" isValue="true"  edit-name="SrokPodpi" edit-required="true" />
+												</column>
+												<column>
+												<field fieldType="field" key="|Document|Дата_начала_действия" name="Дата начала действия" valueType="date" isValue="true"  edit-name="SrokNach" edit-required="true"  />
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+								<column>
+									<block id="block5" name="block5">
+										<rows> 	
+											<row>
+												<column>
+														<field fieldType="field" key="|Document|Срок_согласования_по" name="Срок согласования по" valueType="date" isValue="true"  edit-name="SrokSogl" edit-required="true" />
+												</column>
+												<column>
+												
+												</column>
+											</row> 
+										</rows> 
+									</block>
+								</column>
+								
+								<column>
+								
+								</column>	
+								<column>
+								</column>
+							</row>	
+							
+		<row>
+	<column>
+		<field fieldType="field" key="|Document|ИД_позиции_ПГ" name="Document|ИД_позиции_ПГ" valueType="text" isValue="true" edit-name="|Document|ИД_позиции_ПГ" edit-hidden="true"/>
+	</column>	
+</row>				
+							<row>
+								<column>									
+									<field fieldType="field" key="|Key" valueType="text" isValue="true" edit-name="Key" edit-hidden="true" edit-default-value="1"  />
+									<field fieldType="field" key="|Document|header" valueType="text" isValue="true" edit-name="Document-header" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Вид_документа" valueType="text" isValue="true" edit-name="vid_doc" edit-hidden="true" />	
+									<field fieldType="field" key="|Document|Имя_потока" name="Имя потока" valueType="text" isValue="true" edit-hidden="true" edit-name="flowName" />
+									<field fieldType="field" key="|Document|Краткое_содержание" valueType="text" isValue="true" edit-name="ktatkoe" edit-hidden="true"  />
+									<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date" isValue="true" edit-name="registerDate" edit-default-value="{today}"  edit-hidden="true" /> 									
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки" name="Организатор_закупки" valueType="text"  isValue="true" edit-name="orgzak2" edit-hidden="true"/>
+									<field fieldType="field" key="|Document|Организатор_закупки|Организатор_закупки_наименование" name="Организатор_закупки_наименование"  valueType="text" isValue="true" edit-name="orgzakName2"   edit-hidden="true" />
+								
+									<field fieldType="field" key="|Document|Статус" name="Статус" valueType="text" isValue="true" edit-name="registerStat"  edit-default-value="Черновик" edit-required="true" edit-readonly="true" edit-hidden="true" />  
+									<field fieldType="field" key="|Document|ИКЗ" name="ИКЗ" valueType="text" isValue="true" edit-name="ikz"  edit-required="true" edit-readonly="true" edit-hidden="true" />  
+								</column>
+							</row>		
+						</rows>
+					</block>
+				</column>
+			</row>	
+		</rows>
+		<variables>
+			<variable variable-name="regNumber" variable-format="{number}">
+				<field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" variable-name="number" variable-format="{value}" />
+				<field fieldType="field" key="|Document|Дата_регистрации" name="Дата регистрации" valueType="date"  variable-name="RegDate" variable-format=", {value}" /> 
+			</variable>
+		</variables>
+	</edit>
+
+</root>

@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Hooks>
+		<FieldsModify>
+			<SetField dst="|Document|Имя_потока" value="Планы закупок 223ФЗ" />
+			<PlanFieldsModify />
+			<!-- <ThrowExceptionIfDocsExists query="(doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ') and not (xn-in(doc_RegCard/rc_Index/text_Статус, 'Опубликовано в ЕИС', 'Опубликован', 'Размещен', 'Загружен', 'Неактуальный')) and (doc_RegCard/rc_Index/integer_Год = {planYear}) and (doc_RegCard/rc_Index/boolean_Инновационная_продукция={planInnovative})" message="Формирование нового плана не доступно при не размещенной версии плана закупок в базе"/> -->
+		</FieldsModify>  
+		<OnDocumentCreated transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and not (xn-in(doc_RegCard/rc_Index/text_Статус, 'Опубликовано в ЕИС', 'Опубликован', 'Размещен', 'Загружен', 'Неактуальный')) and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}']" tag="План_Закупок" />
+				</Select>
+				<Actions>
+					<DocsCountCheck sourceTag="План_Закупок" operation="notEmpty" message="Формирование нового плана не доступно при не размещенной версии плана закупок выбранной организации в базе" />
+				</Actions>
+			</Aggregation>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{currentDocField=|Document|Инновационная_продукция}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС']" tag="План_прошлый" />
+				</Select>
+				<Actions>
+					<CopyField sourceFlow="План_прошлый" targetFlow="{current}" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+					<CopyField sourceFlow="План_прошлый" targetFlow="{current}" sourceField="|Document|Дата_утверждения" targetField="|Document|Дата_утверждения" />
+				</Actions>
+			</Aggregation>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '1' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '0' and doc_RegCard/rc_Index/boolean_Созданна_иновационная_позиция = '0' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирована')) and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗдляИннов" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsNotEquals  tag="{current}" path="|Document|Инновационная_продукция" value="1" />
+							</And>
+						</Conditions>
+						<Actions>
+							<SetField targetFlow="ППЗдляИннов" targetField="|Document|Созданна_иновационная_позиция" value="1" />
+							<CopyDocument source="ППЗдляИннов" outputTag="ППЗ" copyLinks="false"/>
+							<SetField targetFlow="ППЗ" targetField="|Document|Статус" value="Согласована" />
+							<SetField targetFlow="ППЗ" targetField="|Document|Для_инновационного_плана" value="1" />
+							<SetFieldGuid targetFlow="ППЗ" targetField="|Document|ИД_в_ЕИС" />
+							<SetFieldGuid targetFlow="ППЗ" targetField="|Document|ИД_позиции_плана" />
+							<CalculateExpression targetFlow="ППЗ" targetField="|Document|ИД_ППЗ_долгосрочной"> 
+								<Variables>								
+									<Variable name="Долгосрочный" source="ППЗ" path="|Document|Долгосрочный"  sequence="true" />
+									<Variable name="ИД_позиции_плана" source="ППЗ" path="|Document|ИД_позиции_плана"  sequence="true" />									
+								</Variables>
+								<Expression value="iif({Долгосрочный}=1, {ИД_позиции_плана}, &quot;&quot;)"/>
+							</CalculateExpression>	
+							<TableFieldOperations sourceTag="{current}" targetTag="ППЗ" targetTable="|Document|Позиции" >
+								<Action column="ИД_позиции_лота" formula="Guid.NewGuid()"/>
+							</TableFieldOperations> 
+							<SetField targetFlow="ППЗ" targetField="|Document|Номер_позиции_плана" value="" />
+							<SetField targetFlow="ППЗ" targetField="|Document|Номер_плана_в_ЕИС" value="" />
+							<SetField targetFlow="ППЗ" targetField="|Document|Номер_редакции" value="1" />
+							<SetField targetFlow="ППЗ" targetField="|Document|Номер_извещения_в_ЕИС" value="" />
+							<SetField targetFlow="ППЗ" targetField="|Document|Номер_извещения_на_ЭТП" value="" />
+							<CopyField sourceFlow="ППЗдляИннов" targetFlow="ППЗ" sourceField="|Document|Инициатор|Инициатор" targetField="|Document|Инициатор|Инициатор" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+			<ConditionalActions>
+				<Select> 	
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and not(doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and (doc_RegCard/rc_Index/integer_Год_плана &lt; '{currentDocField=|Document|Год}')  and  doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Включена_в_ПЗ ='1' and doc_RegCard/rc_Index/text_Статус_публикации_в_ЕИС = 'Опубликовано в ЕИС' and not(doc_RegCard/rc_Index/boolean_Созданы_копии_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_Долг_новые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗ_связь_Долг_новые}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗ_связь_Долг_новые}/doc_Id])]" tag="План_ППЗ_связь_Долг_новые" /> 
+				</Select>
+				<Actions>
+					<!--Долгосрочки -->
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗ_связь_Долг_новые"/>									
+							</And>
+						</Conditions>
+						<Actions>							
+							<CopyDocument source="ППЗ_связь_Долг_новые" outputTag="ППЗ_Долг_нов" copyLinks="false"/>
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Статус" value="Включена в проект плана закупок" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Включена_в_ПЗ" value="1" />
+							<!-- <CopyField targetFlow="ППЗ_Долг_нов" sourceField="|Document|ИД_позиции_плана" targetField="|Document|ИД_ППЗ_долгосрочной" /> -->
+							<SetFieldGuid targetFlow="ППЗ_Долг_нов" targetField="|Document|ИД_в_ЕИС" />
+							<SetFieldGuid targetFlow="ППЗ_Долг_нов" targetField="|Document|ИД_позиции_плана" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Копия_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Позиция_в_нескольких_планах" value="1" />
+							<SetField targetFlow="ППЗ_связь_Долг_новые" targetField="|Document|Созданы_копии_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Номер_позиции_плана" value="" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Номер_плана_в_ЕИС" value="" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|Год" targetField="|Document|Год_плана" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|ИД_плана_в_ЕИС" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+							<TableFieldOperations sourceTag="{current}" targetTag="ППЗ_Долг_нов" targetTable="|Document|Позиции" >
+								<Action column="ИД_позиции_лота" formula="Guid.NewGuid()"/>
+							</TableFieldOperations>		
+							<!--удаляем линки на План Закупок -->
+							<!-- <LinksRemove sourceFlow="ППЗ_Долг_нов" targetFlow="План_ППЗ_связь_Долг_новые" /> -->
+							<AddLink target="{current}" link="ППЗ_Долг_нов"/>
+							<CopyField sourceFlow="ППЗ_связь_Долг_новые" targetFlow="ППЗ_Долг_нов" sourceField="|Document|Инициатор|Инициатор" targetField="|Document|Инициатор|Инициатор" />							
+							<SetLotSequentialNumbers additionalDocuments="ППЗ_Долг_нов"
+														planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+														planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+														planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+								<MaxLotNumQuery>
+									(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}') and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+								</MaxLotNumQuery>
+								<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+							  and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and (not((doc_RegCard/rc_Index/integer_Номер_позиции_плана)) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1'))) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+								</FirstTimeInPlanQuery>
+							</SetLotSequentialNumbers>		
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+<!-- 			<ConditionalActions>
+				<Select> 	
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Год_плана &gt; '{currentDocField=|Document|Год}' and (doc_RegCard/rc_Index/integer_Год_плана &lt;= '{currentDocField=|Document|Год_окончания_МСП}') and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}'  and  doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and not(doc_RegCard/rc_Index/boolean_Создана_копия_МСП ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_СМП_новые" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗ_связь_СМП_новые"/>									
+							</And>
+						</Conditions>
+						<Actions>							
+							<CopyDocument source="ППЗ_связь_СМП_новые" outputTag="ППЗ_СМП_нов" copyLinks="false"/>
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Статус" value="Включена в проект плана закупок" />
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Включена_в_ПЗ" value="1" />
+							<SetFieldGuid targetFlow="ППЗ_СМП_нов" targetField="|Document|ИД_в_ЕИС" />
+							<SetFieldGuid targetFlow="ППЗ_СМП_нов" targetField="|Document|ИД_позиции_плана" />
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Копия_МСП" value="1" />
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Позиция_в_нескольких_планах" value="1" />
+							<SetField targetFlow="ППЗ_связь_СМП_новые" targetField="|Document|Создана_копия_МСП" value="1" />
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Номер_позиции_плана" value="" />
+							<SetField targetFlow="ППЗ_СМП_нов" targetField="|Document|Номер_плана_в_ЕИС" value="" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_СМП_нов" sourceField="|Document|Год" targetField="|Document|Год_плана" />
+							<TableFieldOperations sourceTag="{current}" targetTag="ППЗ_СМП_нов" targetTable="|Document|Позиции" >
+								<Action column="ИД_позиции_лота" formula="Guid.NewGuid()"/>
+							</TableFieldOperations>		
+							<AddLink target="{current}" link="ППЗ_СМП_нов"/>															
+							<SetLotSequentialNumbers additionalDocuments="ППЗ_СМП_нов"
+														planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+														planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+														planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+								<MaxLotNumQuery>
+									(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}') and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+								</MaxLotNumQuery>
+								<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+							  and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and (not((doc_RegCard/rc_Index/integer_Номер_позиции_плана))) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+								</FirstTimeInPlanQuery>
+							</SetLotSequentialNumbers>		
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions> -->
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{currentDocField=|Document|Инновационная_продукция}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/integer_Номер_редакции = '1']" tag="Первая_Версия_Плана" />
+ 					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'На утверждении аннулирования', 'На доработке аннулирования', 'Предложение об аннулировании')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and xn-in(doc_RegCard/rc_Index/text_Статус,'Согласована') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_без_Изменений" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and (xn-in(doc_RegCard/rc_Index/text_Статус, 'Изменения подготовлены для включения в план')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_Изменения" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and (xn-in(doc_RegCard/rc_Index/text_Статус, 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗАннул" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Актуальность ='1' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'Изменения подготовлены для включения в план')) and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗ_Изменения}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗ_Изменения}/doc_Id]) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗстарые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Актуальность ='1' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'Аннулирование утверждено')) and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗАннул}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗАннул}/doc_Id]) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗстарыеан" />
+				</Select>
+				<Actions>
+				    <AddLink target="{current}" link="ППЗ_связь"/>
+					<SetField targetFlow="ППЗ_связь" targetField="|Document|Включена_в_ПЗ" value="1" />
+					<SetField targetFlow="ППЗстарые" targetField="|Document|Актуальность" value="0" />
+					<SetField targetFlow="ППЗстарые" targetField="|Document|Статус" value="Неактуальная" />
+					<LinksRemove sourceFlow="ППЗстарые" targetFlow="{current}" />
+					<SetField targetFlow="ППЗстарыеан" targetField="|Document|Актуальность" value="0" />
+					<SetField targetFlow="ППЗстарыеан" targetField="|Document|Статус" value="Неактуальная" />
+					<LinksRemove sourceFlow="ППЗстарыеан" targetFlow="{current}" />
+					<SetField targetFlow="ППЗ_без_Изменений" targetField="|Document|Включена_в_ПЗ" value="1" />
+					<SetField targetFlow="ППЗ_без_Изменений" targetField="|Document|Статус" value="Включена в проект плана закупок" />
+					<SetField targetFlow="ППЗ_Изменения" targetField="|Document|Статус" value="Внесение изменений в проект плана закупок" />
+					<SetField targetFlow="ППЗАннул" targetField="|Document|Статус" value="Аннулирование" />
+					<SetField targetFlow="{current}" targetField="|Document|Прошлый_год" value="{{|Document|Год}-1}" /> 
+					<SetLotSequentialNumbers  planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+                                              planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+                                              planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+						<MaxLotNumQuery>
+                            (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}') and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+						</MaxLotNumQuery>
+						<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                      and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and ((not((doc_RegCard/rc_Index/integer_Номер_позиции_плана))) or (doc_RegCard/rc_Index/integer_Номер_позиции_плана = '0')) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+						</FirstTimeInPlanQuery>
+					</SetLotSequentialNumbers>
+				</Actions>
+			</Aggregation>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{currentDocField=|Document|Инновационная_продукция}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/integer_Номер_редакции = '1']" tag="Первая_Версия_Плана" />
+ 					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'На утверждении аннулирования', 'На доработке аннулирования', 'Аннулирование утверждено', 'Предложение об аннулировании')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and xn-in(doc_RegCard/rc_Index/text_Статус,'Согласована') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_без_Изменений" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and (xn-in(doc_RegCard/rc_Index/text_Статус, 'Внесение изменений в проект плана закупок', 'Изменения подготовлены для включения в план')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_Изменения" />
+					
+					<!-- Объеёмы -->
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_исключение_недолг" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_исключение_долг_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_исключение_долг_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_исключение_долг_СМП_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_исключение_долг_СМП_неруб" />
+					<!-- Select для подсчета Объема закупок BEGIN -->
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_СМП_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_СМП_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' or doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1' and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_СМП_долгосроч_неруб" />
+					<!-- Select для подсчета Объема закупок END-->
+				</Select>
+				<Actions>
+					<!-- Объем_закупок и Объем_закупок_СМП BEGIN -->
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок">
+						<Variables>                          
+							<Variable name="СуммаДолгосроч" source="ППЗ_связь_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаДолгосрочнеруб" source="ППЗ_связь_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаБезДолгосроч" source="ППЗ_связь_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаДолгосроч})+$NullToZero({СуммаБезДолгосроч})+$NullToZero({СуммаДолгосрочнеруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_СМП">
+						<Variables>                          
+							<Variable name="СуммаСМПДолгосроч" source="ППЗ_связь_СМП_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПДолгосрочруб" source="ППЗ_связь_СМП_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПБезДолгосроч" source="ППЗ_связь_СМП_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаСМПДолгосроч})+$NullToZero({СуммаСМПБезДолгосроч})+$NullToZero({СуммаСМПДолгосрочруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_исключенные">
+						<Variables>                          
+							<Variable name="ППЗ_связь_исключение_долг_СМП_руб" source="ППЗ_связь_исключение_долг_СМП_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_СМП_неруб" source="ППЗ_связь_исключение_долг_СМП_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_руб" source="ППЗ_связь_исключение_долг_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_неруб" source="ППЗ_связь_исключение_долг_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_недолг" source="ППЗ_связь_исключение_недолг" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({ППЗ_связь_исключение_долг_СМП_руб})+$NullToZero({ППЗ_связь_исключение_долг_СМП_неруб})+$NullToZero({ППЗ_связь_исключение_долг_руб})+$NullToZero({ППЗ_связь_исключение_долг_неруб})+$NullToZero({ППЗ_связь_исключение_недолг})"/>
+					</CalculateExpression>
+					<SetLotSequentialNumbers  planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+                                              planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+                                              planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+						<MaxLotNumQuery>
+                            (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}') and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+						</MaxLotNumQuery>
+						<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                      and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and ((not((doc_RegCard/rc_Index/integer_Номер_позиции_плана))) or (doc_RegCard/rc_Index/integer_Номер_позиции_плана = '0')) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))
+						</FirstTimeInPlanQuery>
+					</SetLotSequentialNumbers>
+				</Actions>
+			</Aggregation>
+			<NamedConstants>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Номер_редакции"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Год}/{|Document|Организация_заказчик|Организация_заказчик}/{|Document|Инновационная_продукция})"/>
+				</Constant>
+				<Constant>
+					<Setting key="IncrementedElementPath" value="|Document|Регистрационный_номер"/>
+					<Setting key="CounterNameFormat" value="({|Document|Имя_потока}/{|Document|Организация_заказчик|Организация_заказчик})"/>
+				</Constant>
+			</NamedConstants>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{currentDocField=|Document|Инновационная_продукция}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС']" tag="План_прошлый" />
+					
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗСовм" />
+					
+					<!--Долгосрочки -->
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' and not(doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and (doc_RegCard/rc_Index/integer_Год_плана &lt; '{currentDocField=|Document|Год}')  and  doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Позиция_в_нескольких_планах ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and not(doc_RegCard/rc_Index/boolean_Созданы_копии_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_Долг_прошлые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗ_связь_Долг_прошлые}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗ_связь_Долг_прошлые}/doc_Id])]" tag="План_ППЗ_связь_Долг_прошлые" /> 	
+
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' and not(doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and (doc_RegCard/rc_Index/integer_Год_плана &lt; '{currentDocField=|Document|Год}')  and  doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and not(doc_RegCard/rc_Index/boolean_Созданы_копии_долгосрочного ='1') and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_Долг_новые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗ_связь_Долг_новые}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗ_связь_Долг_новые}/doc_Id])]" tag="План_ППЗ_связь_Долг_новые" /> 
+					
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_оплата = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/integer_Год_плана &lt; '{currentDocField=|Document|Год}' and  doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование утверждено')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Копия_долгосрочного ='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_связь_Долг_копии" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and (xn-in(doc_RegCard/rc_Index/text_Статус,'Включена в проект плана закупок', 'Аннулирование', 'Внесение изменений в проект плана закупок', 'Согласована', 'Аннулирование утверждено', 'Изменения подготовлены для включения в план')) and xn-in(doc_Id, {currentDocLinkList}) and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1'))]" tag="ППЗ_для_схемы" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="План_прошлый"/>
+							</And>
+						</Conditions>
+						<Actions>
+							<CopyField sourceFlow="План_прошлый" targetFlow="{current}" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+							<CopyField sourceFlow="План_прошлый" targetFlow="{current}" sourceField="|Document|Дата_начала_действия_плана" targetField="|Document|Дата_начала_действия_плана" />
+							<CopyField sourceFlow="План_прошлый" targetFlow="{current}" sourceField="|Document|Дата_окончания_действия_плана" targetField="|Document|Дата_окончания_действия_плана" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenFieldsEquals  tag="{current}" path="|Document|ИД_в_ЕИС" value="" />
+							</And>
+						</Conditions>
+						<Actions>
+								<SetFieldGuid targetFlow="{current}" targetField="|Document|ИД_в_ЕИС" />
+						</Actions>
+					</ConditionalAction>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗСовм"/>
+							</And>
+						</Conditions>
+						<Actions>
+							<CalculateExpression targetFlow="{current}" targetField="|Document|Процент_СМП"> 
+								<Variables>
+									<Variable name="Объемзакупок" source="{current}" path="|Document|Объем_закупок"  />
+									<Variable name="Исключенные" source="{current}" path="|Document|Объем_закупок_исключенные" />
+									<Variable name="СМП" source="{current}" path="|Document|Объем_закупок_СМП"  />
+								</Variables>
+								<Expression value="iif({Объемзакупок} == $NullToZero({Исключенные}) || {СМП}==0, (0.0).ToString(&quot;00.##&quot;) , ((($NullToZero({СМП})+0.0)/($NullToZero({Объемзакупок})-$NullToZero({Исключенные})))*100).ToString(&quot;00.##&quot;))"/>
+							</CalculateExpression>
+						</Actions>
+					</ConditionalAction>
+					<!--Долгосрочки -->
+					<!-- <ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗ_связь_Долг_прошлые"/>									
+							</And>
+						</Conditions>
+						<Actions>							
+							<CopyDocument source="ППЗ_связь_Долг_прошлые" outputTag="ППЗ_Долг" copyLinks="true"/>
+							<SetFieldGuid targetFlow="ППЗ_Долг" targetField="|Document|ИД_в_ЕИС" />
+							<SetFieldGuid targetFlow="ППЗ_Долг" targetField="|Document|ИД_позиции_плана" />
+							<SetField targetFlow="ППЗ_Долг" targetField="|Document|Копия_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг" targetField="|Document|Позиция_в_нескольких_планах" value="1" />
+							<SetField targetFlow="ППЗ_связь_Долг_прошлые" targetField="|Document|Созданы_копии_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг" targetField="|Document|Номер_позиции_плана" value="" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг" sourceField="|Document|Год" targetField="|Document|Год_плана" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|ИД_плана_в_ЕИС" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+							<TableFieldOperations sourceTag="{current}" targetTag="ППЗ_Долг" targetTable="|Document|Позиции" >
+								<Action column="ИД_позиции_лота" formula="Guid.NewGuid()"/>
+							</TableFieldOperations>		
+							<LinksRemove sourceFlow="ППЗ_Долг" targetFlow="План_ППЗ_связь_Долг_прошлые" />
+							<AddLink target="{current}" link="ППЗ_Долг"/>															
+							<SetLotSequentialNumbers additionalDocuments="ППЗ_Долг"
+														planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+														planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+														planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+								<MaxLotNumQuery>
+									(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+								</MaxLotNumQuery>
+								<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+							  and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and (not((doc_RegCard/rc_Index/integer_Номер_позиции_плана)))
+								</FirstTimeInPlanQuery>
+							</SetLotSequentialNumbers>		
+						</Actions>
+					</ConditionalAction> -->
+					<!-- <ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗ_связь_Долг_новые"/>									
+							</And>
+						</Conditions>
+						<Actions>							
+							<CopyDocument source="ППЗ_связь_Долг_новые" outputTag="ППЗ_Долг_нов" copyLinks="true"/>
+							<SetFieldGuid targetFlow="ППЗ_Долг_нов" targetField="|Document|ИД_в_ЕИС" />
+							<SetFieldGuid targetFlow="ППЗ_Долг_нов" targetField="|Document|ИД_позиции_плана" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Копия_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Позиция_в_нескольких_планах" value="1" />
+							<SetField targetFlow="ППЗ_связь_Долг_новые" targetField="|Document|Созданы_копии_долгосрочного" value="1" />
+							<SetField targetFlow="ППЗ_Долг_нов" targetField="|Document|Номер_позиции_плана" value="" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|Год" targetField="|Document|Год_плана" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|ИД_в_ЕИС" targetField="|Document|ИД_плана_в_ЕИС" />
+							<CopyField sourceFlow="{current}" targetFlow="ППЗ_Долг_нов" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+							<TableFieldOperations sourceTag="{current}" targetTag="ППЗ_Долг_нов" targetTable="|Document|Позиции" >
+								<Action column="ИД_позиции_лота" formula="Guid.NewGuid()"/>
+							</TableFieldOperations>		
+							<LinksRemove sourceFlow="ППЗ_Долг_нов" targetFlow="План_ППЗ_связь_Долг_новые" />
+							<AddLink target="{current}" link="ППЗ_Долг_нов"/>															
+							<SetLotSequentialNumbers additionalDocuments="ППЗ_Долг_нов"
+														planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+														planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+														planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+								<MaxLotNumQuery>
+									(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+								</MaxLotNumQuery>
+								<FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+							  and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and (not((doc_RegCard/rc_Index/integer_Номер_позиции_плана)))
+								</FirstTimeInPlanQuery>
+							</SetLotSequentialNumbers>		
+						</Actions>
+					</ConditionalAction> -->
+					
+				</Actions>
+			</ConditionalActions>  
+		</OnDocumentCreated>
+		
+		<!-- <OnRegcardEdited transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь"/>				
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Аннулирована', 'Отменена', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ'and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_недолг" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_СМП_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_СМП_неруб" />
+				</Select>
+				<Actions>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок">
+						<Variables>                          
+							<Variable name="СуммаДолгосроч" source="ППЗ_связь_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаДолгосрочнеруб" source="ППЗ_связь_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаБезДолгосроч" source="ППЗ_связь_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаДолгосроч})+$NullToZero({СуммаБезДолгосроч})+$NullToZero({СуммаДолгосрочнеруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_СМП">
+						<Variables>                          
+							<Variable name="СуммаСМПДолгосроч" source="ППЗ_связь_СМП_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПДолгосрочруб" source="ППЗ_связь_СМП_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПБезДолгосроч" source="ППЗ_связь_СМП_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаСМПДолгосроч})+$NullToZero({СуммаСМПБезДолгосроч})+$NullToZero({СуммаСМПДолгосрочруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_исключенные">
+						<Variables>                          
+							<Variable name="ППЗ_связь_исключение_долг_СМП_руб" source="ППЗ_связь_исключение_долг_СМП_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_СМП_неруб" source="ППЗ_связь_исключение_долг_СМП_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_руб" source="ППЗ_связь_исключение_долг_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_неруб" source="ППЗ_связь_исключение_долг_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_недолг" source="ППЗ_связь_исключение_недолг" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({ППЗ_связь_исключение_долг_СМП_руб})+$NullToZero({ППЗ_связь_исключение_долг_СМП_неруб})+$NullToZero({ППЗ_связь_исключение_долг_руб})+$NullToZero({ППЗ_связь_исключение_долг_неруб})+$NullToZero({ППЗ_связь_исключение_недолг})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Процент_СМП"> 
+						<Variables>
+							<Variable name="Объемзакупок" source="{current}" path="|Document|Объем_закупок"  />
+							<Variable name="Исключенные" source="{current}" path="|Document|Объем_закупок_исключенные" />
+							<Variable name="СМП" source="{current}" path="|Document|Объем_закупок_СМП"  />
+						</Variables>
+						<Expression value="iif({Объемзакупок} == $NullToZero({Исключенные}) || {СМП}==0, (0.0).ToString(&quot;00.##&quot;) , ((($NullToZero({СМП})+0.0)/($NullToZero({Объемзакупок})-$NullToZero({Исключенные})))*100).ToString(&quot;00.##&quot;))"/>
+					</CalculateExpression>
+					<SetLotSequentialNumbers  planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+                                              planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+                                              planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+                     <MaxLotNumQuery>
+                            (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and (doc_RegCard/rc_Index/integer_Год_закупки = '{0}' or doc_RegCard/rc_Index/integer_Год_плана = '{0}') and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                     </MaxLotNumQuery>
+                     <FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and (doc_RegCard/rc_Index/integer_Год_закупки = '{0}' or doc_RegCard/rc_Index/integer_Год_плана = '{0}') and (doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                      and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and (not((doc_RegCard/rc_Index/integer_Номер_позиции_плана)))
+                       </FirstTimeInPlanQuery>
+                  </SetLotSequentialNumbers>
+				</Actions>
+			</Aggregation>
+			
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Планы закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{currentDocField=|Document|Инновационная_продукция}' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС']" tag="Первая_Версия_Плана" />
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="Первая_Версия_Плана"/>
+							</And>
+						</Conditions>
+						<Actions>
+							<CopyField  targetFlow="{current}" sourceFlow="Первая_Версия_Плана" sourceField="|Document|Номер_плана_в_ЕИС" targetField="|Document|Номер_плана_в_ЕИС" />
+							<CopyField  targetFlow="{current}" sourceFlow="Первая_Версия_Плана" sourceField="|Document|Дата_начала_действия_плана" targetField="|Document|Дата_начала_действия_плана" />
+							<CopyField  targetFlow="{current}" sourceFlow="Первая_Версия_Плана" sourceField="|Document|Дата_окончания_действия_плана" targetField="|Document|Дата_окончания_действия_плана" />
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnRegcardEdited>
+		 -->
+		 
+		 <!-- <OnRegcardEdited transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь"/>				
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_Id = '37304' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_одна"/>		
+				</Select>
+				<Actions>
+					<LinksRemove sourceFlow="ППЗ_одна" targetFlow="{current}" />
+					 <AddLink target="{current}" link="ППЗ_одна"/>
+					<LinksRemove sourceFlow="ППЗ_одна" targetFlow="{current}" />
+					<ClearTable source="ППЗ_связь" tablePath="|Document|Позиции"/>
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited> -->
+		
+		<OnRegcardEdited transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_исключение_недолг" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_исключение_долг_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_исключение_долг_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_исключение_долг_СМП_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_исключение_долг_СМП_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}' and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_СМП_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_СМП_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and (doc_RegCard/rc_Index/integer_Год_плана = '{currentDocField=|Document|Год}') and doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{currentDocField=|Document|Инновационная_продукция}' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and (not(doc_RegCard/rc_Index/boolean_Малая_закупка ='1')) and (not(doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать ='1')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь_СМП_долгосроч_неруб" />
+				</Select>
+				<Actions>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок">
+						<Variables>                          
+							<Variable name="СуммаДолгосроч" source="ППЗ_связь_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаДолгосрочнеруб" source="ППЗ_связь_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаБезДолгосроч" source="ППЗ_связь_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаДолгосроч})+$NullToZero({СуммаБезДолгосроч})+$NullToZero({СуммаДолгосрочнеруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_СМП">
+						<Variables>                          
+							<Variable name="СуммаСМПДолгосроч" source="ППЗ_связь_СМП_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПДолгосрочруб" source="ППЗ_связь_СМП_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПБезДолгосроч" source="ППЗ_связь_СМП_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаСМПДолгосроч})+$NullToZero({СуммаСМПБезДолгосроч})+$NullToZero({СуммаСМПДолгосрочруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_исключенные">
+						<Variables>                          
+							<Variable name="ППЗ_связь_исключение_долг_СМП_руб" source="ППЗ_связь_исключение_долг_СМП_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_СМП_неруб" source="ППЗ_связь_исключение_долг_СМП_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_руб" source="ППЗ_связь_исключение_долг_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_неруб" source="ППЗ_связь_исключение_долг_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_недолг" source="ППЗ_связь_исключение_недолг" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({ППЗ_связь_исключение_долг_СМП_руб})+$NullToZero({ППЗ_связь_исключение_долг_СМП_неруб})+$NullToZero({ППЗ_связь_исключение_долг_руб})+$NullToZero({ППЗ_связь_исключение_долг_неруб})+$NullToZero({ППЗ_связь_исключение_недолг})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Процент_СМП"> 
+						<Variables>
+							<Variable name="Объемзакупок" source="{current}" path="|Document|Объем_закупок"  />
+							<Variable name="Исключенные" source="{current}" path="|Document|Объем_закупок_исключенные" />
+							<Variable name="СМП" source="{current}" path="|Document|Объем_закупок_СМП"  />
+						</Variables>
+						<Expression value="iif({Объемзакупок} == $NullToZero({Исключенные}) || {СМП}==0, (0.0).ToString(&quot;00.##&quot;) , ((($NullToZero({СМП})+0.0)/($NullToZero({Объемзакупок})-$NullToZero({Исключенные})))*100).ToString(&quot;00.##&quot;))"/>
+					</CalculateExpression>
+				</Actions>
+			</Aggregation>
+		</OnRegcardEdited>
+		 
+		<OnLinkAdded transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Изменения подготовлены для включения в план' and xn-in(doc_Id, {currentDocLinkList}) and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗизменения" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Актуальность ='0' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'Изменения подготовлены для включения в план', 'Неактуальная')) and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗизменения}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗизменения}/doc_Id])]" tag="ППЗстарые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Аннулирование утверждено' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗАннул" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Актуальность ='0' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'Аннулирование утверждено', 'Неактуальная')) and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗАннул}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗАннул}/doc_Id])]" tag="ППЗстарыеан" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Согласована' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ"/>	
+				</Select>
+				<Actions>
+					<SetField targetFlow="ППЗстарые" targetField="|Document|Актуальность" value="0" />
+					<SetField targetFlow="ППЗстарые" targetField="|Document|Статус" value="Неактуальная" />
+					<LinksRemove sourceFlow="ППЗстарые" targetFlow="{current}" />
+					<SetField targetFlow="ППЗстарыеан" targetField="|Document|Актуальность" value="0" />
+					<SetField targetFlow="ППЗстарыеан" targetField="|Document|Статус" value="Неактуальная" />
+					<LinksRemove sourceFlow="ППЗстарыеан" targetFlow="{current}" />
+                    <SetField targetFlow="{link}" targetField="|Document|Статус" value="Включена в проект плана закупок" />
+					<SetField targetFlow="{link}" targetField="|Document|Включена_в_ПЗ" value="1" />
+					<SetField targetFlow="ППЗизменения" targetField="|Document|Статус" value="Внесение изменений в проект плана закупок" />
+					<SetField targetFlow="ППЗАннул" targetField="|Document|Статус" value="Аннулирование" />						
+				</Actions>
+			</Aggregation>
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Изменения подготовлены для включения в план' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗизменения" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/boolean_Актуальность ='1' and not(xn-in(doc_RegCard/rc_Index/text_Статус, 'Изменения подготовлены для включения в план')) and (doc_Id = document[doc_Links/doc_Link/link_Document={ППЗизменения}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ППЗизменения}/doc_Id])]" tag="ППЗстарые" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Согласована' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ"/>	
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and doc_RegCard/rc_Index/text_Статус = 'Изменения подготовлены для включения в план' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗИзм"/>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь"/>				
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Аннулирована', 'Отменена', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_СМП_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_СМП_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_СМП_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_исключение_недолг" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_исключение_долг_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_исключение_долг_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_исключение_долг_СМП_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/integer_Организация_заказчик = '{currentDocField=|Document|Организация_заказчик|Организация_заказчик}' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены', 'Аннулирование')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_исключение_долг_СМП_неруб" />
+				</Select>
+				<Actions>	
+					<LinksRemove sourceFlow="ППЗстарые" targetFlow="{current}" />
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок">
+						<Variables>                          
+							<Variable name="СуммаДолгосроч" source="ППЗ_связь_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаДолгосрочнеруб" source="ППЗ_связь_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаБезДолгосроч" source="ППЗ_связь_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаДолгосроч})+$NullToZero({СуммаБезДолгосроч})+$NullToZero({СуммаДолгосрочнеруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_СМП">
+						<Variables>                          
+							<Variable name="СуммаСМПДолгосроч" source="ППЗ_связь_СМП_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПДолгосрочруб" source="ППЗ_связь_СМП_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПБезДолгосроч" source="ППЗ_связь_СМП_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаСМПДолгосроч})+$NullToZero({СуммаСМПБезДолгосроч})+$NullToZero({СуммаСМПДолгосрочруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_исключенные">
+						<Variables>                          
+							<Variable name="ППЗ_связь_исключение_долг_СМП_руб" source="ППЗ_связь_исключение_долг_СМП_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_СМП_неруб" source="ППЗ_связь_исключение_долг_СМП_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_руб" source="ППЗ_связь_исключение_долг_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_неруб" source="ППЗ_связь_исключение_долг_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_недолг" source="ППЗ_связь_исключение_недолг" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({ППЗ_связь_исключение_долг_СМП_руб})+$NullToZero({ППЗ_связь_исключение_долг_СМП_неруб})+$NullToZero({ППЗ_связь_исключение_долг_руб})+$NullToZero({ППЗ_связь_исключение_долг_неруб})+$NullToZero({ППЗ_связь_исключение_недолг})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Процент_СМП"> 
+						<Variables>
+							<Variable name="Объемзакупок" source="{current}" path="|Document|Объем_закупок"  />
+							<Variable name="Исключенные" source="{current}" path="|Document|Объем_закупок_исключенные" />
+							<Variable name="СМП" source="{current}" path="|Document|Объем_закупок_СМП"  />
+						</Variables>
+						<Expression value="iif({Объемзакупок} == $NullToZero({Исключенные}) || {СМП}==0, (0.0).ToString(&quot;00.##&quot;) , ((($NullToZero({СМП})+0.0)/($NullToZero({Объемзакупок})-$NullToZero({Исключенные})))*100).ToString(&quot;00.##&quot;))"/>
+					</CalculateExpression>
+					<SetLotSequentialNumbers  planInnoFlagPropertyName="doc_RegCard/rc_Index/boolean_Инновационная_продукция"
+                                              planYearPropertyName="doc_RegCard/rc_Index/integer_Год"
+                                              planOrgZakPropertyName="doc_RegCard/rc_Index/integer_Организация_заказчик">
+                     <MaxLotNumQuery>
+                            (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Для_инновационного_плана = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                     </MaxLotNumQuery>
+                     <FirstTimeInPlanQuery>  (doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ') and doc_RegCard/rc_Index/integer_Год_плана = '{0}' and (doc_RegCard/rc_Index/boolean_Инновационная_продукция = '{1}') and (doc_RegCard/rc_Index/integer_Организация_заказчик = '{2}')
+                      and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and ((not((doc_RegCard/rc_Index/integer_Номер_позиции_плана))) or (doc_RegCard/rc_Index/integer_Номер_позиции_плана = '0'))
+                       </FirstTimeInPlanQuery>
+                  </SetLotSequentialNumbers>
+				</Actions>
+			</Aggregation>
+			
+		</OnLinkAdded>
+		
+		<OnLinkDeleted transaction="single">
+			<Aggregation>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗ_связь"/>	
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Актуальность ='1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1')]" tag="ППЗ_связь_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_без_долгосроч" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_долгосроч_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_СМП_долгосроч_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ'and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный !='1' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_недолг" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП !='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_неруб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты ='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_СМП_руб" />
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and xn-in(doc_Id, {currentDocLinkList}) and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается = '1' and doc_RegCard/rc_Index/boolean_Долгосрочный ='1' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП ='1' and doc_RegCard/rc_Index/text_Код_валюты !='RUB' and not(doc_RegCard/rc_Index/boolean_Закупка_аннулирована ='1') and doc_RegCard/rc_Index/boolean_Актуальность ='1']" tag="ППЗ_связь_исключение_долг_СМП_неруб" />
+				</Select>
+				<Actions>
+					<SetField targetFlow="{link}" targetField="|Document|Включена_в_ПЗ" value="0" />
+					<SetField targetFlow="{link}" targetField="|Document|Номер_позиции_плана" value="" />
+					<!-- Объем_закупок и Объем_закупок_СМП BEGIN -->
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок">
+						<Variables>                          
+							<Variable name="СуммаДолгосроч" source="ППЗ_связь_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаДолгосрочнеруб" source="ППЗ_связь_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаБезДолгосроч" source="ППЗ_связь_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаДолгосроч})+$NullToZero({СуммаБезДолгосроч})+$NullToZero({СуммаДолгосрочнеруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_СМП">
+						<Variables>                          
+							<Variable name="СуммаСМПДолгосроч" source="ППЗ_связь_СМП_долгосроч_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПДолгосрочруб" source="ППЗ_связь_СМП_долгосроч_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="СуммаСМПБезДолгосроч" source="ППЗ_связь_СМП_без_долгосроч" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({СуммаСМПДолгосроч})+$NullToZero({СуммаСМПБезДолгосроч})+$NullToZero({СуммаСМПДолгосрочруб})"/>
+					</CalculateExpression>
+					<CalculateExpression targetFlow="{current}" targetField="|Document|Объем_закупок_исключенные">
+						<Variables>                          
+							<Variable name="ППЗ_связь_исключение_долг_СМП_руб" source="ППЗ_связь_исключение_долг_СМП_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_СМП_неруб" source="ППЗ_связь_исключение_долг_СМП_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_руб" source="ППЗ_связь_исключение_долг_руб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_долг_неруб" source="ППЗ_связь_исключение_долг_неруб" path="|Document|Информация_об_объемах_оплаты_долгосрочного_договора|Планируемые_платежи" isTable="true" tableColumn="Сумма_платежа_в_рублях" rowFilter="{Год_оплата}={fieldTarget=|Document|Год}" aggregation="sum"/>
+							<Variable name="ППЗ_связь_исключение_недолг" source="ППЗ_связь_исключение_недолг" path="|Document|НМЦД_в_рублях" aggregation="sum"/>   		
+						</Variables>
+						<Expression value="$NullToZero({ППЗ_связь_исключение_долг_СМП_руб})+$NullToZero({ППЗ_связь_исключение_долг_СМП_неруб})+$NullToZero({ППЗ_связь_исключение_долг_руб})+$NullToZero({ППЗ_связь_исключение_долг_неруб})+$NullToZero({ППЗ_связь_исключение_недолг})"/>
+					</CalculateExpression>
+				</Actions>
+			</Aggregation>
+			<ConditionalActions>
+				<Select>
+					<Select searchString="document[doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ' and doc_RegCard/rc_Index/boolean_Участник_закупки_СМП = '1' and doc_RegCard/rc_Index/boolean_Закупка_не_учитывается != '1' and not(xn-in(doc_RegCard/rc_Index/text_Статус,'На доработке','На согласовании', 'На утверждении', 'Отклонена', 'Неактуальная', 'Отменена', 'Черновик', 'Утверждена', 'Назначен ответственный исполнитель', 'Аннулирована', 'Внесение изменений', 'На утверждении изменений', 'На доработке изменений', 'Изменения утверждены')) and xn-in(doc_Id, {currentDocLinkList})]" tag="ППЗСовм" />
+					
+				</Select>
+				<Actions>
+					<ConditionalAction>
+						<Conditions>
+							<And>
+								<WhenDocsExist tag="ППЗСовм"/>
+							</And>
+						</Conditions>
+						<Actions>
+							<CalculateExpression targetFlow="{current}" targetField="|Document|Процент_СМП"> 
+								<Variables>
+									<Variable name="Объемзакупок" source="{current}" path="|Document|Объем_закупок"  />
+									<Variable name="Исключенные" source="{current}" path="|Document|Объем_закупок_исключенные" />
+									<Variable name="СМП" source="{current}" path="|Document|Объем_закупок_СМП"  />
+								</Variables>
+								<Expression value="iif({Объемзакупок} == $NullToZero({Исключенные}) || {СМП}==0, (0.0).ToString(&quot;00.##&quot;) , ((($NullToZero({СМП})+0.0)/($NullToZero({Объемзакупок})-$NullToZero({Исключенные})))*100).ToString(&quot;00.##&quot;))"/>
+							</CalculateExpression>
+						</Actions>
+					</ConditionalAction>
+				</Actions>
+			</ConditionalActions>
+		</OnLinkDeleted>
+</Hooks>

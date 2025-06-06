@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<view></view>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Год размещения" isLabel="true" edit-name="Year"  />		  
+				</column>													
+			</row>
+			<row>
+				<column>				
+					<field fieldType="field" key="|Год" name="Год" valueType="text" isValue="true"  edit-name="Year" edit-default-value="2017" edit-required="true"/>
+				</column>
+				<column>
+				</column>	
+				<column>	
+				</column>	
+				<column>	
+				</column>								
+			</row> 
+			<row>			
+				<column>
+					<field name="Организация заказчик" isLabel="true" edit-name="All_Org" />							
+				</column>		
+			</row> 	
+			<row>		
+				<column>
+					<field fieldType="field" key="|Организация_заказчик" name="Организация_заказчик" valueType="text"  isValue="true" edit-name="Org"  edit-readonly="true"    dict-column-name="code" is-select-one-level="1" edit-tool = "Организации заказчики"   dict-edit-name="Org"  />
+					<field fieldType="field" key="|Организация_заказчик_наименование" name="Организация_заказчик_наименование" valueType="text" isValue="true" edit-name="OrgName"   edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Org"  />									
+				</column>
+				<column>
+				</column>					
+			</row> 
+			<row>			
+				<column>
+					<field name="ГРБС" isLabel="true"  />						
+				</column>	
+				<column>
+					<field name="" isLabel="true" />	
+				</column>										
+			</row> 	
+			<row>		
+				<column>
+					<field fieldType="field" key="|ГРБС" name="GRBS" valueType="addressbook" isValue="true" edit-name="GRBS" address-book-tool = "Address"  edit-addressbook-groups = "Department" />									
+					<field fieldType="field" key="|ГРБС_наименование" name="GRBS_Name" valueType="addressbook" isValue="true" edit-name="GRBSName" address-book-tool = "Address" edit-hidden="true" edit-value = "{addressbook,value=GRBS,attribute=Name}" />									
+				</column>
+				<column>					
+				</column>								
+			</row>			
+			<row>						
+				<column>
+					<field name="ОКПД2" isLabel="true"  />
+				</column>	
+				<column>
+					<field name="ОКПД2 наименование" isLabel="true" />
+				</column>	
+				<column>
+					<field name="" isLabel="true"  />
+				</column>	
+				<column>
+					<field name="" isLabel="true"  />
+				</column>					
+			</row>
+			<row>								
+				<column>
+					<field fieldType="field" key="|ОКПД2" name="ОКПД2" valueType="text" isValue="true" edit-name="registerOKPD"  edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "ОКПД2"  display-field-part="true" dict-edit-name="registerOKPD" />
+				</column>
+				<column>
+					<field fieldType="field"  key="|ОКПД2_наименование" name="ОКПД2_наименование" valueType="text" isValue="true" edit-name="registerOKPDName" edit-readonly="true" dict-column-name="Наименование"  dictionary-selection-start-level="6"   display-field-part="false" dict-edit-name="registerOKPD" />
+				</column>	
+				<column>					
+				</column>	
+				<column>	
+				</column>				
+			</row>  
+			<row>			
+				<column>
+					<field name="Организация поставщик" isLabel="true" edit-name="All_orgpost2" />						
+				</column>	
+				<column>
+					<field name="" isLabel="true" />	
+				</column>										
+			</row> 	
+			<row>		
+				<column>
+					<field fieldType="field" key="|Организация_поставщик" name="Организация_поставщик" valueType="text"  isValue="true" edit-name="orgpost2" edit-readonly="true" dict-column-name="code" dictionary-selection-start-level="1" edit-tool = "Контрагенты"  dict-edit-name="orgpost2" />
+					<field fieldType="field" key="|Организация_поставщик_наименование" name="Организация_поставщик_наименование" valueType="text"  isValue="true" edit-name="orgpost2Name" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="orgpost2" />							
+				</column>
+				<column>
+				</column>								
+			</row> 
+
+		</rows>
+	</edit>
+	<scripts>
+		
+	</scripts>
+
+</root>

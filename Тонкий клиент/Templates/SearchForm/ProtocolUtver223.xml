@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>	
+	 <row>			
+		<column>
+			<field name="Дата регистрации" isLabel="true"/>
+			<block id="block1" name="block1"  height="300">		
+				<rows>
+					<row>
+						<column>
+							<field name="от" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_от" name="Дата регистрации от" valueType="date" value-db-type="date" isValue="true"  edit-name="registerDateFrom" weight="300"/>
+						</column>
+						<column>							
+							<field name="до" isLabel="true" />
+						</column>
+						<column>							
+							<field fieldType="field" key="|Document|Дата_регистрации_до" name="до" valueType="date" value-db-type="date" isValue="true" edit-name="registerDateTo"  />
+						</column>						
+					</row>
+				</rows>								
+			</block>
+        </column>
+<column>
+			<field name="Номер протокола в ЕИС" isLabel="true" />		
+			<field fieldType="field" key="|Document|Номер_протокола_в_ЕИС" name="Номер протокола в ЕИС" valueType="text" isValue="true" edit-name="numProtIzEIS" />
+        </column>		
+    </row>
+	<row>
+		
+		<column>
+			<field name="Номер извещения в ЕИС" isLabel="true" />		
+			<field fieldType="field" key="|Document|Номер_извещения_в_ЕИС" name="Номер извещения в ЕИС" valueType="text" isValue="true" edit-name="numIzEIS" />
+        </column>	
+		<column>
+			<field name="Внутренний номер" isLabel="true"/>
+			<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний номер" valueType="text" isValue="true"  edit-name="vnutrNumber" />
+		</column>
+    </row>
+
+	
+	 </rows>
+  </edit>	 
+ 
+
+<extraSearchForm>
+	<rows>
+		<row>
+			<column>
+				<field name="Наименование протокола" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Дата подписания" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Код_протокола" name="Наименование протокола" valueType="text"  isValue="true" edit-name="registerProtocol" dict-column-name="code" edit-tool = "Электронные площадки" is-select-one-level="2" edit-readonly="true" dict-subdictionary= "Протоколы" one-level-parent="ETPName" dict-edit-name="registerProtocol"/>
+									<field fieldType="field" key="|Document|Наименование_протокола" name="Протокол" valueType="text" isValue="true" edit-name="registerProtocolName" edit-readonly="true" dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="registerProtocol"/>
+			</column>
+			<column>
+					<block id="block2" name="block2"  height="300">		
+						<rows>
+							<row>
+								<column>
+									<field name="от" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_подписания_протокола" name="Дата подписания" valueType="date" isValue="true"  edit-name="publicDateFrom" />
+								</column>
+								<column>							
+									<field name="до" isLabel="true" />
+								</column>
+								<column>							
+									<field fieldType="field" key="|Document|Дата_подписания_протокола" name="по" valueType="date" isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение" edit-name="publicDateTo"  />
+								</column>						
+							</row>
+						</rows>								
+					</block>
+			</column>
+		</row>
+		
+		
+		<row>
+			<column>
+				<field name="Основание для решения" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Обоснование внесения изменений" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Основание_для_решения" name="Основание для решения" valueType="longtext"  isValue="true"   edit-name="Osnovanie"  />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Обоснование_внесения_изменений" name="Обоснование внесения изменений" valueType="longtext"   isValue="true"   edit-name="obosnov"  />
+			</column>
+		</row>
+		
+		
+		
+		
+		<row>
+			<column>
+				<field name="Закупка признана несостоявшейся" isLabel="true" />									
+			</column>
+			<column>
+				<field name="Причина признания несостоявшейся" isLabel="true" />									
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Закупка_не_состоялась" name="Закупка признана несостоявшейся" valueType="boolean"  isValue="true" edit-dictionary="Булевы варианты" edit-dictionaryValue="Значение"  edit-name="zak_nesost"  />
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Причина_признания_несостоявшейся" name="Причина_признания_несостоявшейся" isValue="true" valueType="longtext"  edit-name="Prich_nesost"/>
+			</column>
+		</row>
+		
+		
+		
+		<row>
+			<column>
+				<field name="Название комиссии" isLabel="true" />									
+			</column>
+			<column>
+				 <field name="ФИО участника комиссии" isLabel="true" />									 
+			</column>
+			<column>
+				 <field name="Роль участника комиссии" isLabel="true" />						
+			</column>
+		</row>
+		<row>
+			<column>
+				<field fieldType="field" key="|Document|Название_комиссии_код" name="Название комиссии" valueType="text"  isValue="true" edit-name="Namekomissii"  dict-column-name="code"  edit-tool = "Организации заказчики223" is-select-one-level="2" edit-readonly="true" dict-subdictionary= "Комиссия" one-level-parent="OrgZakKodSprav" dict-edit-name="Namekomissii" show-dict-column="false"/>
+				<field fieldType="field" key="|Document|Название_комиссии" name="Название комиссии наименование" valueType="text" isValue="true" edit-name="NamekomissiiName"  edit-readonly="true"  dict-column-name="Наименование" edit-hidden="true" display-field-part="true" dict-edit-name="Namekomissii" dict-column-width-percentage="100"/>
+			</column>
+			<column>
+				<field fieldType="field" key="|Document|Участники_комиссии|ФИО_комиссии|ФИО_комиссии" name="ФИО" isValue="true"  valueType="addressbook" edit-name="FioUch" address-book-tool ="FioUch" edit-addressbook-groups = ""   address-book-tool-selectable = "Person,Person, {currentOrganization}" width="50" title="Выберите участника(ов) комиссии"/>
+			</column>
+			<column>
+				<field fieldType="field" key="|Участники_комиссии_роль_код" valueType="text" name="Роль" isValue="true" edit-name="RoleUch" dict-edit-name="RoleCode"   dict-column-name="Код роли" show-dict-column="false" width="40" /> 	
+				<field fieldType="field" key="|Участники_комиссии_роль" valueType="text" name="Роль наименование" isValue="true" edit-name="RoleUchCode" dict-column-name="Наименование роли" dict-edit-name="RoleCode" display-field-part="true"  dict-column-width-percentage="100" edit-hidden="true"/> 
+			</column>
+		</row>
+		
+		
+	</rows>
+  </extraSearchForm>
+
+ <search>
+   <field fieldValue="(doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Утвержден') and  ((doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and  (doc_RegCard/rc_Index/text_Способ_закупки_положение = @sposzak) and (doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС = @numIzEIS) and (doc_RegCard/rc_Index/text_Номер_извещения_на_ЭТП = @numIzETP) and (doc_RegCard/rc_Index/text_Номер_протокола_в_ЕИС = @numProtIzEIS) and (doc_RegCard/rc_Index/text_Код_протокола = @registerProtocol) and (doc_RegCard/rc_Index/longtext_Основание_для_решения = @Osnovanie) and (doc_RegCard/rc_Index/longtext_Обоснование_внесения_изменений = @obosnov) and (doc_RegCard/rc_Index/boolean_Закупка_не_состоялась = @zak_nesost) and (doc_RegCard/rc_Index/longtext_Причина_признания_несостоявшейся = @Prich_nesost) and (doc_RegCard/rc_Index/text_Название_комиссии_код = @Namekomissii) and (doc_RegCard/rc_Index/text_ФИО_комиссии = @FioUch) and (doc_RegCard/rc_Index/text_Участники_комиссии_роль_код = @RoleUch) and (doc_RegCard/rc_Index/text_Внутренний_номер = @vnutrNumber)" />
+ </search>
+ <scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+</root>

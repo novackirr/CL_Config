@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+	
+	<Settings key="Документы исполнения">
+		<Select>
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<DictColumns sourceTag="current"  tableName="|Document|Позиции_сведений_об_исполнении|{ALL}|Документы_об_исполнении_договора" parentTableKeyAtr="|Номер">
+			<Column fieldName="Номер_строки" visibleName="Номер строки"   /> 
+			<Column fieldName="Номер_документа" isCode="true" />
+			<Column fieldName="Номер_документа" visibleName="Номер документа" />
+			<Column fieldName="Номер" visibleName="Номер" isParentTable="true"/>
+			<Column fieldName="|Document|ИД_в_ЕИС" visibleName="Гуид исполнения"/>
+		</DictColumns> 
+	</Settings>
+	
+	<Settings key="Позиции договора">
+		<Select>
+			<Select searchString="document[doc_Id = '{editName=ID_Dogovor}']" tag="Позиции договора" />
+		</Select>
+		<DictColumns sourceTag="Позиции договора"  tableName="|Document|Позиции"  >
+			<Column fieldName="Наименование_позиции" visibleName="code" isCode="true" /> 
+			<Column fieldName="Наименование_позиции" visibleName="Наименование позиции"   /> 
+			<Column fieldName="ИД_позиции_лота" visibleName="Ид позиции лота" /> 
+			<Column fieldName="ОКПД2" visibleName="ОКПД2" />
+			<Column fieldName="ОКЕИ" />	
+			<Column fieldName="Единица_измерения" visibleName="Единица измерения" />
+			<Column fieldName="Тип_объекта_закупки" visibleName="ТРУ код" />
+			<Column fieldName="Тип_объекта_закупки_наименование" visibleName="Наименование ТРУ" />
+			<Column fieldName="Страна_происхождения_код" visibleName="Страна происхождения код" />
+			<Column fieldName="Страна_происхождения" visibleName="Наименование страны" />
+			<Column fieldName="Количество" visibleName="Количество" />
+			<Column fieldName="Количество" visibleName="Остаток" />
+			<Column fieldName="Страна_регистрации_код" visibleName="Страна регистрации код" />
+			<Column fieldName="Страна_регистрации" visibleName="Страна регистрации" />
+			<Column fieldName="Цена_за_единицу" visibleName="Цена" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_код" visibleName="Валюта позиции код" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_цифровой_код" visibleName="Валюта позиции цифровой код" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_наименование" visibleName="Валюта позиции наименование" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_цена_за_единицу_в_рублях" visibleName="Валюта позиции цена за единицу в рублях" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_курс" visibleName="Валюта позиции курс" />
+			<Column fieldName="Валюта_позиции|Валюта_позиции_дата_курса" visibleName="Валюта позиции дата курса" />
+		</DictColumns> 
+	</Settings>
+	<Settings key="Количество заявок">
+		<Select>
+			<!-- <Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ' and doc_RegCard/rc_Index/text_ИД_лота_на_ЭТП = '{editName=ID_lotETP}' and (xn-in(doc_RegCard/rc_Index/text_Код_протокола, '2' , '4369', '4249', '4270', '161918', '161917', '161908', '200623'))]" tag="Протоколы223" />
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_Id = document[doc_Links/doc_Link/link_Document={Протоколы223}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Протоколы223}/doc_Id]) and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1') and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}']" tag="Все заявки" /> -->
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Запросы RFI'  and doc_RegCard/rc_Index/text_ИД_лота_на_ЭТП = '{editName=ID_lotETP}']" tag="ЗапросыRFI" />
+			<!-- <Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1' or (doc_Id = document[doc_Links/doc_Link/link_Document={ЗапросыRFI}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ЗапросыRFI}/doc_Id])) and ((doc_RegCard/rc_Index/text_Результат_допуска_код = 'T') or not (doc_RegCard/rc_Index/text_Результат_допуска_код)) and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{editName=ID_lotETP}']" tag="Все заявки" /> -->
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1' or (doc_Id = document[doc_Links/doc_Link/link_Document={ЗапросыRFI}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={ЗапросыRFI}/doc_Id])) and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{editName=ID_lotETP}']" tag="Все заявки" />
+		</Select>
+		<CustomSource>
+			<array sourceTag="Все заявки">
+				<field name="Место" value="{index}"/>
+			</array>
+			 <item>
+				<field name="Место" value="Не допущен"/>
+			</item> 
+			<item>
+				<field name="Место" value="Место не присвоено"/>
+			</item>
+		</CustomSource>
+	 
+		<DictColumns>
+			<Column fieldName="Место" isCode="true"/>
+			<Column fieldName="Место" visibleName="Место"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Количество заявок для выбора">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ' and doc_RegCard/rc_Index/text_ИД_лота_на_ЭТП = '{editName=ID_lotETP}' and (xn-in(doc_RegCard/rc_Index/text_Код_протокола, '2' , '4369', '4249', '4270', '161918', '161917', '161908', '200623'))]" tag="Протоколы223" />
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_Id = document[doc_Links/doc_Link/link_Document={Протоколы223}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Протоколы223}/doc_Id]) and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1') and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}']" tag="Все заявки" />
+		</Select>
+		<CustomSource>
+			<array sourceTag="Все заявки">
+				<field name="Место" value="{index}"/>
+			</array>
+			 <item>
+				<field name="Место" value="Допущен"/>
+			</item> 
+			 <item>
+				<field name="Место" value="Не допущен"/>
+			</item> 
+			<item>
+				<field name="Место" value="Место не присвоено"/>
+			</item>
+		</CustomSource>
+	 
+		<DictColumns>
+			<Column fieldName="Место" isCode="true"/>
+			<Column fieldName="Место" visibleName="Место"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Место заявки">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and doc_Id = '{editName=ID_Izv}']" tag="Извещения223ФЗ" />
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_Id = document[doc_Links/doc_Link/link_Document={Извещения223ФЗ}/doc_Id] or doc_Id = document[doc_Links/doc_Link/link_Owner={Извещения223ФЗ}/doc_Id]) and not(doc_RegCard/rc_Index/boolean_Квалификационный_отбор ='1')]" tag="Все заявки" />
+		</Select>
+		<CustomSource>
+			<array sourceTag="Все заявки">
+				<field name="Место" value="{index}"/>
+			</array>
+			 <item>
+				<field name="Место" value="Не допущен"/>
+			</item> 
+		</CustomSource>
+	 
+		<DictColumns>
+			<Column fieldName="Место" isCode="true"/>
+			<Column fieldName="Место" visibleName="Место"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Перечни ТРУ">
+		<Select>
+			<!-- <Select searchString="document[(doc_RegCard/rc_FlowName = 'Перечни ТРУ 223ФЗ')]" tag="Перечни" /> -->
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Перечни ТРУ 223ФЗ') and doc_RegCard/rc_Index/text_Организация_заказчик_ИНН = '{editName=orgzakINN}']" tag="Перечни" />
+		</Select>
+		<DictColumns sourceTag="Перечни"  tableName="|Document|Перечень_ТРУ_у_СМП" >
+			<Column fieldName="Номер_позиции" isCode="true" visibleName="code" /> 
+			<Column fieldName="ОКПД2" visibleName="ОКПД2" /> 
+			<Column fieldName="ОКПД2_наименование" visibleName="Наименование" /> 
+		</DictColumns> 
+	</Settings>		
+	<Settings key="Заявки участников">
+		<Select>
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1') and (doc_RegCard/rc_Index/text_Результат_допуска ='Допущен') and doc_RegCard/rc_Index/integer_ИД_лота = '{editName=ID_lot}']" tag="Заявки участников" />
+		</Select>
+		<DictColumns sourceTag="Заявки участников" >
+			<Column fieldName="|Document|Участник_заявки" visibleName="code" isCode="true" /> 
+			<Column fieldName="|Document|Участник_заявки_наименование" visibleName="Наименование участника" />
+			<Column fieldName="|Document|Участник_заявки_ИНН" visibleName="ИНН" />
+			<Column fieldName="|Document|Участник_заявки_КПП" visibleName="КПП" />
+			<Column fieldName="|Document|Участник_закупки_ОГРН" visibleName="ОГРН" />
+			<Column fieldName="|Document|Участник_заявки_ОКПО" visibleName="ОКПО" />
+			<Column fieldName="|Document|Участник_заявки_ОКОПФ" visibleName="ОКОПФ" />
+			<Column fieldName="|Document|Участник_заявки_нерезидент" visibleName="Нерезидент" />
+			<Column fieldName="|Document|Участник_заявки_СМП" visibleName="СМП" />
+			<Column fieldName="|Document|Участник_заявки_тип" visibleName="Тип контрагента наименование" />
+			<Column fieldName="|Document|Участник_заявки_тип_код" visibleName="Тип контрагента" />
+			<Column fieldName="|Document|Участник_заявки_страна_код" visibleName="Страна код" />
+			<Column fieldName="|Document|Участник_заявки_страна" visibleName="Страна" />
+			<Column fieldName="|Document|Участник_заявки_регион_код" visibleName="Регион код" />
+			<Column fieldName="|Document|Участник_заявки_регион" visibleName="Регион" />
+			<Column fieldName="|Document|Участник_заявки_город" visibleName="Город" />
+			<Column fieldName="|Document|Участник_заявки_населенный_пункт" visibleName="Населенный пункт" />
+			<Column fieldName="|Document|Участник_заявки_индекс" visibleName="Индекс" />
+			<Column fieldName="|Document|Участник_заявки_улица" visibleName="Улица" />
+			<Column fieldName="|Document|Участник_заявки_дом" visibleName="Дом" />
+			<Column fieldName="|Document|Участник_заявки_email" visibleName="Email" />
+			<Column fieldName="|Document|Участник_заявки_телефон" visibleName="Телефон" />
+			<Column fieldName="|Document|Цена_участника_с_НДС" visibleName="Цена" />
+		</DictColumns> 
+	</Settings>
+	<Settings key="Способы закупок">
+		<Select>
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС' or doc_RegCard/rc_Index/text_Статус = 'Черновик' ) and doc_RegCard/rc_Index/text_Организация_заказчик_ИНН = '{editName=orgzakINN}' ]" tag="Способы закупок" /> 
+		</Select>
+		<!-- rowFilterCondition означает, что Если организация = ООО "ЦЕНТР ХРАНЕНИЯ ДАННЫХ"  или  АО "МОСКОВСКАЯ МЕЖДУГОРОДНАЯ ТЕЛЕФОННАЯ СТАНЦИЯ №9" или Даталайн или ЦТВ, то показываем только  способы закупок , указанные в rowFilter -->
+		<DictColumns sourceTag="Способы закупок"  tableName="|Document|Способы_закупок">
+			<Column fieldName="Код_способа_закупки" isCode="true"  /> 
+			<Column fieldName="Наименование_способа_закупки" visibleName="Наименование" /> 
+			<Column fieldName="Закупка_в_электронной_форме" visibleName="Закупка в электронной форме" />
+			<Column fieldName="Количество_этапов_закупки" visibleName="Количество этапов" />
+			<Column fieldName="Закупка_в_электронной_форме_да_нет" visibleName="Электронная форма" />
+		</DictColumns> 
+	</Settings>
+	<Settings key="Категория извещение">
+		<Select>	
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="Вид_документа" value="Проект договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Техническое задание"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Коммерческие предложения"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Расчет начальной (максимальной) цены договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Обоснование потребности в продукции"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Обоснование закупки у ЕП"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Решение о назначении лица, исполняющего функции единоличного исполнительного органа"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Выписка из ЕГРЮЛ/ЕГРИП"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Паспорт физического лица"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Учредительные документы"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Выписка из реестра МСП"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Извещение о закупке"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Документация о закупке"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Прочее"/>
+			</item>
+		</CustomSource>  
+		<DictColumns>
+			<Column fieldName="Вид_документа" visibleName="code" isCode="true" /> 				
+			<Column fieldName="Вид_документа" visibleName="Вид документа" />			
+		</DictColumns> 
+	</Settings>
+	<Settings key="ППЗ типы">
+		<Select>	
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="Вид_документа" value="Обоснование закупки у ЕП"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Техническое задание"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Обоснование НМЦ"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Пояснительная записка"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Заявка на закупку"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Прочее"/>
+			</item>
+		</CustomSource>  
+		<DictColumns>
+			<Column fieldName="Вид_документа" visibleName="code" isCode="true" /> 				
+			<Column fieldName="Вид_документа" visibleName="Вид документа" />			
+		</DictColumns> 
+	</Settings>
+	<Settings key="Договор типы">
+		<Select>	
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="Вид_документа" value="Проект договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Подписанный проект договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Изменение условий договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Печатная форма договора"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Протокол разногласий"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Прочие документы"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Документация для ЕИС-а"/>
+			</item>
+			<item>
+				<field name="Вид_документа" value="Скан-копия договора"/>
+			</item>
+		</CustomSource>  
+		<DictColumns>
+			<Column fieldName="Вид_документа" visibleName="code" isCode="true" /> 				
+			<Column fieldName="Вид_документа" visibleName="Вид документа" />			
+		</DictColumns> 
+	</Settings>
+	<Settings key="Договоры">
+		<Select>	
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="Вид_документа" value="Договор"/>
+			</item>
+		</CustomSource>  
+		<DictColumns>
+			<Column fieldName="Вид_документа" visibleName="code" isCode="true" /> 				
+			<Column fieldName="Вид_документа" visibleName="Вид документа" />			
+		</DictColumns> 
+	</Settings>
+	<Settings key="Количество заявок ПКО">
+		<Select>
+			<!--  <Select searchString="document[doc_RegCard/rc_FlowName = 'Протоколы 223ФЗ' and doc_RegCard/rc_Index/text_ИД_лота_на_ЭТП = '{editName=ID_lotETP}' and (xn-in(doc_RegCard/rc_Index/text_Код_протокола, '2' , '4369', '4249', '4270', '4333'))]" tag="Протоколы223" />
+		<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/boolean_Квалификационный_отбор!='1') and ((doc_RegCard/rc_Index/text_Результат_допуска_код = 'T') or not (doc_RegCard/rc_Index/text_Результат_допуска_код)) and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{currentDocField=|Document|Ид_лота_на_ЭТП}']" tag="Все заявки" /> -->
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников ПКО') and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{editName=ID_lotETP}']" tag="Все заявки" />
+
+		</Select>
+		<CustomSource>
+			<array sourceTag="Все заявки">
+				<field name="Место" value="{index}"/>
+			</array>
+			 <!-- <item>
+				<field name="Место" value="Допущен"/>
+			</item>  -->
+			 <item>
+				<field name="Место" value="Не допущен"/>
+			</item> 
+			<item>
+				<field name="Место" value="Не выбрано"/>
+			</item>
+		</CustomSource>
+
+		<DictColumns>
+			<Column fieldName="Место" isCode="true"/>
+			<Column fieldName="Место" visibleName="Место"/>
+		</DictColumns>
+	</Settings>
+	
+	<Settings key="Доступные перечни контрагентов">
+		<Select> 
+			<Select searchString="document[xn-in(doc_RegCard/rc_FlowName, 'Предквалификационный отбор') and doc_RegCard/rc_Index/date_Дата_истечения_срока_действия &gt;= '{currentDocField=|Document|Дата_регистрации}' ]" tag="ПКО" /> 
+		</Select>
+		<DictColumns sourceTag="ПКО" > 
+			<Column fieldName="|Document|ИД_лота_на_ЭТП" visibleName="code" isCode="true" /> 
+			<Column fieldName="|Document|Номер_на_ЭТП" visibleName="Номер на ЭТП" />
+			<Column fieldName="|Document|Предмет_договора" visibleName="Наименование" />
+
+			<!-- 	<Column fieldName="|Document|Код_ПФМ_родителя" isParentKey="true" />
+			<Column fieldName="|Document|Код_ПФМ" visibleName="Код подразделения" /> 
+			<Column fieldName="|Document|Подразделение_по_умолчанию" visibleName="По умолчанию" /> -->
+		</DictColumns>
+	</Settings>
+	
+	<!-- 	{currentDocField=|Document|Перечень_приглашенных_код} -->
+	<Settings key="Список контрагентов ПКО">
+		<Select> 
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников ПКО')]" tag="ПКО" /> 
+		</Select>
+		<DictColumns sourceTag="ПКО" > 
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="code" isCode="true" /> 
+			<Column fieldName="|Document|Участник_заявки_ИНН" visibleName="ИНН" />
+			<Column fieldName="|Document|Участник_заявки_КПП" visibleName="КПП" />
+			<Column fieldName="|Document|Участник_заявки_наименование" visibleName="Наименование" />
+			<Column fieldName="|Document|Участник_заявки_email" visibleName="Почта" />
+			<Column fieldName="|Document|Ид_лота_на_ЭТП" visibleName="Номер лота" />
+			<!-- 	<Column fieldName="|Document|Код_ПФМ_родителя" isParentKey="true" />
+			<Column fieldName="|Document|Код_ПФМ" visibleName="Код подразделения" /> 
+			<Column fieldName="|Document|Подразделение_по_умолчанию" visibleName="По умолчанию" /> -->
+		</DictColumns>
+	</Settings>	
+	<Settings key="Контрагенты">
+		<Select>
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Контрагенты')]" tag="Контрагенты" /> 
+		</Select>
+		<DictColumns sourceTag="Контрагенты" >
+			<!-- <Column visibleName="code" isCode="true" formula="{|Document|ИНН} + {|Document|КПП}"  /> 	 -->		
+			<Column fieldName="|Document|Код_контрагента" visibleName="code" isCode="true" searchFieldName="text_Код_контрагента"/> 
+			<Column fieldName="%key%" visibleName="ИД_контрагента"  />
+			<Column fieldName="|Document|Фирменное_наименование" visibleName="Фирменное наименование" /> 
+			<Column fieldName="|Document|Наименование" visibleName="Наименование" searchFieldName="longtext_Наименование" isDocumentLink="true" orderByFieldName = "longtext_Наименование"/> 
+			<Column fieldName="|Document|ИНН" visibleName="ИНН" searchFieldName="text_ИНН" orderByFieldName = "text_ИНН" />
+			<Column fieldName="|Document|КПП" visibleName="КПП" searchFieldName="text_КПП" orderByFieldName = "text_КПП"/>
+			<Column fieldName="|Document|ОКПО" visibleName="ОКПО" />
+			<Column fieldName="|Document|ОГРН" visibleName="ОГРН" />			
+			<Column fieldName="|Document|ОКОПФ_наименование" visibleName="ОКОПФ наименование" /> 
+			<Column fieldName="|Document|ОКОПФ" visibleName="ОКОПФ" /> 		
+			<Column fieldName="|Document|Тип_контрагента_код" visibleName="Тип контрагента" />
+			<Column fieldName="|Document|Тип_контрагента" visibleName="Тип контрагента наименование" />                                                                          
+			<Column fieldName="|Document|ИП" visibleName="ИП" />	
+			<Column fieldName="|Document|ВЗЛ" visibleName="ВЗЛ" />
+			<Column fieldName="|Document|ВЗЛ_ПКБ" visibleName="ВЗЛ ПКБ" />			
+			<Column fieldName="|Document|СМП" visibleName="СМП" />			
+			<Column fieldName="|Document|Код_статуса" visibleName="Код статуса" />
+			<Column fieldName="|Document|Категория_СМП" visibleName="Категория СМП" />		
+			<Column fieldName="|Document|Категория_СМП_наименование" visibleName="Категория СМП наименование" />			
+			<Column fieldName="|Document|Нерезидент" visibleName="Нерезидент" />						
+			<!-- 	<Column visibleName="Дата постановки в НО" formula="{|Document|Дата_постановки_в_НО}.ToString(&quot;dd.MM.yyyy tt&quot;)" />  -->
+			<Column fieldName="|Document|Дата_постановки_в_НО" visibleName="Дата постановки в НО" />
+			<Column fieldName="|Document|Идентификационный_номер" visibleName="Идентификационный номер" searchFieldName="text_Идентификационный_номер" orderByFieldName = "text_Идентификационный_номер" />
+			<Column fieldName="|Document|Дополнительный_идентификационный_номер" visibleName="Дополнительный идентификационный номер" />
+			<Column fieldName="|Document|ОКВЭД" visibleName="ОКВЭД" />
+			<Column fieldName="|Document|ОКТМО_код" visibleName="ОКТМО код" />
+			<Column fieldName="|Document|ОКТМО" visibleName="ОКТМО" />
+			<Column fieldName="|Document|Дополнительная_информация" visibleName="Дополнительная информация" searchFieldName="longtext_Дополнительная_информация" orderByFieldName = "longtext_Дополнительная_информация" />
+			<Column fieldName="|Document|Страна" visibleName="Страна" />
+			<Column fieldName="|Document|Страна_код" visibleName="Страна код" />
+			<Column fieldName="|Document|Регион" visibleName="Регион" />
+			<Column fieldName="|Document|Регион_код" visibleName="Регион код" />
+			<Column fieldName="|Document|Email" visibleName="Email" /> 
+			<Column fieldName="|Document|Телефон" visibleName="Телефон" /> 
+			<Column fieldName="|Document|Индекс" visibleName="Индекс" />
+			<Column fieldName="|Document|Город" visibleName="Город" />
+			<Column fieldName="|Document|Район" visibleName="Район" />
+			<Column fieldName="|Document|Улица" visibleName="Улица" />
+			<Column fieldName="|Document|Населенный_пункт" visibleName="Населенный пункт" />
+			<Column fieldName="|Document|Дом" visibleName="Дом" />
+			<Column fieldName="|Document|Корпус" visibleName="Корпус" />
+			<Column fieldName="|Document|Офис" visibleName="Офис" /> 
+			<Column fieldName="|Document|Ссылка_на_контрагента" visibleName="Ссылка на контрагента" /> 			
+			<Column fieldName="|Document|Код_клиента_в_ПКБ" visibleName="Код клиента в ПКБ" /> 	
+			<Column fieldName="|Document|Код_клиента_в_SAP" visibleName="Код клиента в SAP" />
+			<Column fieldName="|Document|Код_клиента_в_СДО" visibleName="Код клиента в СДО" />	
+			<!-- <Column visibleName="Дата регистрации в системе-источнике" formula="{|Document|Дата_регистрации_в_системе_источнике}.ToString(&quot;dd.MM.yyyy tt&quot;)"/>
+			<Column visibleName="Дата последнего изменения" formula="{|Document|Дата_последнего_изменения}.ToString(&quot;dd.MM.yyyy tt&quot;)" />
+			<Column visibleName="Дата последней проверки в ДОБ" formula="{|Document|Дата_последней_проверки_в_ДОБ}.ToString(&quot;dd.MM.yyyy tt&quot;)" />	
+			<Column visibleName="Дата включения в ЕРСМСП" formula="{|Document|Дата_включения_в_ЕРСМСП}.ToString(&quot;dd.MM.yyyy tt&quot;)" /> -->
+			<Column fieldName="|Document|Дата_последнего_изменения" visibleName="Дата последнего изменения" />  
+			<Column fieldName="|Document|Дата_включения_в_ЕРСМСП" visibleName="Дата включения в ЕРСМСП" />			
+			<Column fieldName="|Document|Дата_последней_проверки_в_ДОБ" visibleName="Дата последней проверки в ДОБ" />
+			<Column fieldName="|Document|Дата_регистрации_в_системе_источнике" visibleName="Дата регистрации в системе источнике" /> 
+		</DictColumns> 
+	</Settings>
+	<Settings key="Основание закупки у ЕП">
+		<Select>
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Положение о закупках 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'Опубликовано в ЕИС' or doc_RegCard/rc_Index/text_Статус = 'Черновик' ) and doc_RegCard/rc_Index/text_Организация_заказчик_ИНН = '{editName=orgzakINN}' ]" tag="Положение_организации" />
+		</Select>
+		<DictColumns sourceTag="Положение_организации"  tableName="|Document|Основание_закупки_ед_поставщика" >
+			<Column fieldName="Код_основания" isCode="true" visibleName="code" /> 
+			<Column fieldName="Код_основания" visibleName="Код" /> 
+			<Column fieldName="Наименование_основания" visibleName="Наименование" /> 
+		</DictColumns>
+	</Settings>
+	<Settings key="Победители">
+		<Select>
+			<Select searchString="document[(doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and (doc_RegCard/rc_Index/text_Номер_извещения_в_ЕИС = '{editName=registerNomberEIS}') and (doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{editName=ID_lot_ETP}') and (doc_RegCard/rc_Index/text_Результат_код = 'F')]" tag="Заявки участников" /> 
+		</Select>
+		<DictColumns sourceTag="Заявки участников">
+			<Column fieldName="|Document|Участник_заявки" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|Участник_заявки_наименование" visibleName="Наименование"/> 
+			<Column fieldName="|Document|Участник_заявки_ИНН" visibleName="ИНН" /> 
+			<Column fieldName="|Document|Участник_заявки_КПП" visibleName="КПП" /> 
+			<Column fieldName="|Document|Участник_закупки_ОГРН" visibleName="ОГРН" /> 
+			<Column fieldName="|Document|Участник_заявки_тип" visibleName="Тип контрагента наименование" /> 
+			<Column fieldName="|Document|Участник_заявки_нерезидент" visibleName="Нерезидент" /> 
+			<Column fieldName="|Document|Участник_заявки_email" visibleName="Email" /> 
+			<Column fieldName="|Document|Участник_заявки_телефон" visibleName="Телефон" /> 
+			<Column fieldName="|Document|Участник_заявки_дом" visibleName="Номер дома (офиса)" /> 
+			<Column fieldName="|Document|Участник_заявки_регион" visibleName="Регион" /> 
+			<Column fieldName="|Document|Участник_заявки_город" visibleName="Город" /> 
+			<Column fieldName="|Document|Участник_заявки_улица" visibleName="Улица" /> 
+			<Column fieldName="|Document|Участник_заявки_индекс" visibleName="Индекс" /> 
+			<Column fieldName="|Document|Участник_заявки_страна" visibleName="Страна" />  
+			<Column fieldName="|Document|Участник_заявки_СМП" visibleName="МСП" /> 
+			<Column fieldName="|Document|Участник_заявки_ОКОПФ" visibleName="ОКОПФ" />
+			<Column fieldName="|Document|Участник_заявки_ОКОПФ_наименование" visibleName="ОКОПФ наименование" />
+			<Column fieldName="|Document|Участник_заявки_ОКПО" visibleName="ОКПО" />
+			<Column fieldName="|Document|Участник_заявки_ОКТМО" visibleName="ОКТМО код" />
+			<Column fieldName="|Document|Участник_заявки_состоит_на_учете" visibleName="Состоит на учете в налоговых органах РФ" />
+			<Column fieldName="|Document|Участник_заявки_населенный_пункт" visibleName="Населенный пункт" />
+			<Column fieldName="|Document|Участник_заявки_район" visibleName="Район" />
+			<Column fieldName="|Document|Участник_заявки_корпус" visibleName="Корпус" />
+			<Column fieldName="|Document|Участник_заявки_офис" visibleName="Офис" />
+			<Column fieldName="|Document|Участник_заявки_фирменное_наименование" visibleName="Фирменное наименование" />
+			<Column fieldName="|Document|Участник_заявки_идентификационный_номер" visibleName="Идентификационный номер" />
+			<Column fieldName="|Document|Участник_заявки_доп_идентификационный_номер" visibleName="Дополнительный идентификационный номер" />
+			<Column fieldName="|Document|Участник_заявки_дата_постановки" visibleName="Дата постановки в НО" />
+			<Column fieldName="|Document|Категория_СМП" visibleName="Категория СМП" />
+			<Column fieldName="|Document|Участник_заявки_дополнительная_информация" visibleName="Дополнительная информация" />
+			<Column fieldName="|Document|Цена_участника_с_НДС" visibleName="Цена" />
+		</DictColumns>
+	</Settings>
+	<Settings key="Поставщики">
+		<Select>
+			<Select searchString="document[((doc_RegCard/rc_FlowName = 'Заявки участников ПКО' or doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ') and doc_RegCard/rc_Index/text_Ид_лота_на_ЭТП = '{editName=idLotetp}' and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения'))]" tag="Поставщики_на_лоте" />
+		</Select>
+		<DictColumns sourceTag="Поставщики_на_лоте">
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|Участник_заявки_наименование" visibleName="Наименование"/> 
+			<Column fieldName="|Document|Участник_заявки_фирменное_наименование" visibleName="Фирменное наименование"/> 
+			<Column fieldName="|Document|Участник_заявки_ИНН" visibleName="ИНН" /> 
+			<Column fieldName="|Document|Участник_заявки_КПП" visibleName="КПП" /> 
+			<Column fieldName="|Document|Участник_заявки_телефон" visibleName="Телефон" /> 
+			<Column fieldName="|Document|Участник_заявки_email" visibleName="E-mail" /> 
+			<Column fieldName="|Document|Номер_заявки" visibleName="Номер заявки" /> 
+			<Column fieldName="|Document|Дата_подачи_заявки" visibleName="Дата подачи заявки" /> 
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="ИД на ЭТП" /> 
+		</DictColumns>
+	</Settings>
+	<Settings key="ПопозиционнаяЗУ">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Links/doc_Link/link_Document='{editName=ID_Lot}' or doc_Links/doc_Link/link_Owner='{editName=ID_Lot}') and (doc_RegCard/rc_Index/text_Результат_допуска ='Допущен')]" tag="ЗУ" />
+		</Select>
+		<DictColumns sourceTag="ЗУ" tableName="|Document|Характеристики_товара" >
+			<Column fieldName="ИД_строки" visibleName="code" isCode="true" />
+			<Column fieldName="unit_id" visibleName="unit_id" />
+			<Column fieldName="ХТ_Участник_заявки_наименование" visibleName="Наименование поставщика" />
+			<Column fieldName="Наименование_товара" visibleName="Наименование товара" />
+			<Column fieldName="Производитель" visibleName="Производитель"  />
+			<Column fieldName="Страна_происхождения_товара" visibleName="Страна происхождения товара" />
+			<Column fieldName="Соответствующее_наименование_ТУ" visibleName="Соответствующее наименование Товаров/Услуг" />
+			<Column fieldName="Цена_за_единицу_без_НДС" visibleName="Цена за единицу без НДС" />
+			<Column fieldName="Ставка_НДС_за_единицу" visibleName="Ставка НДС" />
+			<Column fieldName="Цена_за_единицу_с_НДС" visibleName="Цена за единицу с НДС" />
+			<Column fieldName="Комментарий_поставщика" visibleName="Комментарий" />
+			<Column fieldName="ХТ_ИД_на_ЭТП" visibleName="ХТ_ИД_на_ЭТП" />
+			<Column fieldName="ХТ_ид_заявки_участника" visibleName="ХТ_ид_заявки_участника" />
+			<Column fieldName="ХТ_Участник_код_на_ЭТП" visibleName="ХТ_Участник_код_на_ЭТП" />
+		</DictColumns>
+	</Settings>
+	<Settings key="СбербанкАСТ_ЗУ">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявки участников 223ФЗ' and (doc_Links/doc_Link/link_Document='{editName=ID_Izv}' or doc_Links/doc_Link/link_Owner='{editName=ID_Izv}') and not(doc_RegCard/rc_Index/text_Результат_допуска_код = 'F' or doc_RegCard/rc_Index/text_Результат_допуска = 'Предложение в аукционе не подавалось') and not(doc_RegCard/rc_Index/text_Статус = 'Отозвана до рассмотрения') and not(doc_RegCard/rc_Index/boolean_Не_подано_ценовое_предложение = 1) and (doc_RegCard/rc_Index/text_Номер_заявки)]" tag="ЗУ" />
+		</Select>
+		<DictColumns sourceTag="ЗУ">
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|Номер_заявки" visibleName="Номер_заявки"/>
+			<Column fieldName="|Document|Участник_заявки_наименование" visibleName="Участник_заявки_наименование"/>
+			<Column fieldName="|Document|ид_заявки_участника" visibleName="ид_заявки_участника"/>
+			<Column fieldName="|Document|Окончательная_цена_с_НДС" visibleName="Окончательная_цена_с_НДС"/>
+			<Column fieldName="|Document|Окончательная_цена_без_НДС" visibleName="Окончательная_цена_без_НДС"/>
+			<Column fieldName="|Document|ЦП_вне_шага_с_НДС" visibleName="ЦП_вне_шага_с_НДС"/>
+			<Column fieldName="|Document|ЦП_вне_шага_без_НДС" visibleName="ЦП_вне_шага_без_НДС"/>
+			<Column fieldName="|Document|ЦП_с_НДС" visibleName="ЦП_с_НДС"/>
+			<Column fieldName="|Document|ЦП_без_НДС" visibleName="ЦП_без_НДС"/>
+			<Column fieldName="|Document|Цена_участника" visibleName="Цена_участника"/>
+			<Column fieldName="|Document|Процент_снижения_от_НМЦ" visibleName="Процент_снижения_от_НМЦ"/>
+			<Column fieldName="|Document|НДС" visibleName="НДС"/>
+			<Column fieldName="|Document|Коэффициент_снижения_цен_без_НДС" visibleName="Коэффициент_снижения_цен_без_НДС"/>
+			<Column fieldName="|Document|Дата_подачи_ЦП" visibleName="Дата_подачи_ЦП"/>
+			<Column fieldName="|Document|Номер_лота" visibleName="Номер_лота"/>
+			<Column fieldName="|Document|Ид_лота_на_ЭТП" visibleName="Ид_лота_на_ЭТП"/>
+			<Column fieldName="|Document|Дата_подачи_заявки" visibleName="Дата_подачи_заявки"/>
+			<Column fieldName="|Document|Код_валюты" visibleName="Код_валюты"/>
+			<Column fieldName="|Document|Валюта" visibleName="Валюта"/>
+			<Column fieldName="|Document|Цифровой_код_валюты" visibleName="Цифровой_код_валюты"/>
+		</DictColumns>
+	</Settings>
+	<!-- Справочники для Сбер АСТ -->
+	<!-- Начало -->
+	<Settings key="Выбор значения">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			 <item>
+				<field name="Выбор" value="Да"/>
+			</item> 
+			<item>
+				<field name="Выбор" value="Нет"/>
+			</item>
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="Выбор" isCode="true"/>
+			<Column fieldName="Выбор" visibleName="Выбор значения"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="В чей ЛК на ОС ЕИС направить договор">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			 <item>
+				<field name="code" value="org"/>
+				<field name="Наименование" value="в ЛК Организатора договора"/>
+			</item> 
+			<item>
+				<field name="code" value="cust"/>
+				<field name="Наименование" value="в ЛК Заказчика договора"/>
+			</item>
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Конкурентная">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			 <item>
+				<field name="code" value="0"/>
+				<field name="Наименование" value="Неконкурентная"/>
+			</item> 
+			 <item>
+				<field name="code" value="1"/>
+				<field name="Наименование" value="Конкурентная"/>
+			</item>
+			 <item>
+				<field name="code" value="2"/>
+				<field name="Наименование" value="Конкурентная иная"/>
+			</item> 
+			 <item>
+				<field name="code" value="3"/>
+				<field name="Наименование" value="Неконкурентная иная"/>
+			</item> 
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Вариант проведения">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			 <item>
+				<field name="code" value="0"/>
+				<field name="Наименование" value="Открытая"/>
+			</item> 
+			 <item>
+				<field name="code" value="2"/>
+				<field name="Наименование" value="С ограниченным участием"/>
+			</item> 
+			 <item>
+				<field name="code" value="4"/>
+				<field name="Наименование" value="Постановление 301"/>
+			</item> 
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Форма подачи заявки">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="code" value="Electron"/>
+				<field name="Наименование" value="Электронная"/>
+			</item> 
+			<item>
+				<field name="code" value="Mixed"/>
+				<field name="Наименование" value="Бумажная"/>
+			</item> 
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+		</DictColumns>
+	</Settings>
+	<Settings key="Контроль по датам">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="code" value="1"/>
+				<field name="Наименование" value="Да"/>
+			</item> 
+			<item>
+				<field name="code" value="0"/>
+				<field name="Наименование" value="Нет, сроки устанавливаются в соответствии с положением о закупках заказчика (организатора)"/>
+			</item> 
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+		</DictColumns>
+	</Settings>
+	<!-- Конец -->
+	<!-- Получение информации о лотах в протоколах созданных из Процедуры -->
+	<Settings key="LotsPrice">
+		<Select>
+			<Select searchString="document[xn-in(doc_Id, '{editName=lot_Id}')]" tag="Doc" />
+		</Select>
+		<DictColumns sourceTag="Doc">
+			<Column fieldName="|Document|Номер_лота_в_извещении" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|НМЦ_с_НДС" visibleName="НМЦ_с_НДС" />
+			<Column fieldName="|Document|НМЦ_без_НДС" visibleName="НМЦ_без_НДС" />
+			<Column fieldName="|Document|Валюта" visibleName="Валюта" />
+			<Column fieldName="|Document|НМЦД_в_рублях" visibleName="НМЦД_в_рублях" />
+		</DictColumns>
+	</Settings>
+	<!-- Сбер АСТ получение информации о доступных протоколах для формы торгов-->
+	<Settings key="СберАСТ Протоколы по форме торгов">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Тип процедуры' and doc_RegCard/rc_Index/text_Форма_торгов_код = '{editName=formacode}' and doc_RegCard/rc_Index/text_Организатор_закупки_ИНН = '{editName=OrgZakupkiINN}' and doc_RegCard/rc_Index/text_Организатор_закупки_КПП = '{editName=OrgZakupkiKPP}']" tag="Doc" />
+		</Select>
+		<DictColumns sourceTag="Doc" tableName="|Document|Протоколы">
+			<Column fieldName="ИД_протокола_на_ЭТП" visibleName="code" isCode="true" />
+			<Column fieldName="Наименование_протокола_на_ЭТП" visibleName="Наименование_протокола_на_ЭТП" />
+			<Column fieldName="ИД_протокола_в_ЕИС" visibleName="ИД_протокола_в_ЕИС" />
+			<Column fieldName="Наименование_протокола_в_ЕИС" visibleName="Наименование_протокола_в_ЕИС" />
+			<Column fieldName="Активный_протокол" visibleName="Активный_протокол" />
+			<Column fieldName="Направить_протокол_в_ЕИС" visibleName="Направить_протокол_в_ЕИС" />
+		</DictColumns>
+	</Settings>
+	<Settings key="Распределение председателей">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Таблица Председателей']" tag="Распределение_менеджеров" />
+		</Select>
+		<DictColumns sourceTag="Распределение_менеджеров" tableName="|Document|Распределение_менеджеров" >
+			<Column fieldName="NUM" visibleName="code" isCode="true" />
+			<Column fieldName="Макрорегион|Макрорегион_код" visibleName="Макрорегион_код" />
+			<Column fieldName="Макрорегион|Макрорегион_наименование" visibleName="Макрорегион_наименование" />
+			<Column fieldName="Менеджер|Менеджер_код" visibleName="Менеджер_код" />
+			<Column fieldName="Менеджер|Менеджер_наименование" visibleName="Менеджер_наименование" />
+		</DictColumns>
+	</Settings>
+	<!-- Сбер АСТ получение информации о дополнительных этапах-->
+	<Settings key="СберАСТ Дополнительные этапы по процедуре">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, '{editName=ID_Izv}')]" tag="Notice" />
+		</Select>
+		<DictColumns sourceTag="Notice" tableName="|Document|Сбербанк_АСТ|Дополнительные_этапы">
+			<Column fieldName="ДопЭтап_Код_этапа" visibleName="code" isCode="true" />
+			<Column fieldName="ДопЭтап_Наименование_этапа" visibleName="ДопЭтап_Наименование_этапа" />
+			<Column fieldName="ДопЭтап_Дата_начала_этапа" visibleName="ДопЭтап_Дата_начала_этапа" />
+			<Column fieldName="ДопЭтап_Дата_окончания_этапа" visibleName="ДопЭтап_Дата_окончания_этапа" />
+			<Column fieldName="ДопЭтап_Порядок_проведения" visibleName="ДопЭтап_Порядок_проведения" />
+			<Column fieldName="ДопЭтап_Место_проведения" visibleName="ДопЭтап_Место_проведения" />
+			<Column fieldName="ДопЭтап_ИД_строки_на_ЭТП" visibleName="ДопЭтап_ИД_строки_на_ЭТП" />
+		</DictColumns>
+	</Settings>
+	<!-- Сбер АСТ пместа поставок-->
+	<Settings key="СберАСТ Места поставок">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Извещения о закупочной процедуре 223ФЗ' and xn-in(doc_Id, '{editName=ID_Izv}')]" tag="Notice" />
+		</Select>
+		<DictColumns sourceTag="Notice">
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|Порядок_проведения_процедуры|Место_начала_подачи_заявок" visibleName="Место_начала_подачи_заявок" />
+			<Column fieldName="|Document|Порядок_проведения_процедуры|Место_рассмотрения_1х_частей" visibleName="Место_рассмотрения_1х_частей" />
+			<Column fieldName="|Document|Порядок_проведения_процедуры|Место_рассмотрения_2х_частей" visibleName="Место_рассмотрения_2х_частей" />
+			<Column fieldName="|Document|Порядок_проведения_процедуры|Место_рассмотрения_заявок" visibleName="Место_рассмотрения_заявок" />
+			<Column fieldName="|Document|Порядок_проведения_процедуры|Место_подведения_итогов" visibleName="Место_подведения_итогов" />
+		</DictColumns>
+	</Settings>
+	<!-- Лоты находящие в линках у текущего документа-->
+	<Settings key="LotsLink">
+		<Select>
+			<Select searchString="document[doc_RegCard/rc_FlowName = 'Заявка на размещение закупки 223ФЗ' and (doc_Links/doc_Link/link_Document='{editName=CurrentDocId}' or doc_Links/doc_Link/link_Owner='{editName=CurrentDocId}')]" tag="Лоты" />
+		</Select>
+		<DictColumns sourceTag="Лоты">
+			<Column fieldName="|Document|Номер_лота_в_извещении" visibleName="code" isCode="true" />
+			<Column fieldName="|Document|ИД_на_ЭТП" visibleName="Лот_ИД_Лота_на_ЭТП" />
+			<Column fieldName="|Document|Номер_лота_в_извещении" visibleName="Лот_Номер_лота_в_извещении" />
+			<Column fieldName="|Document|Предмет_договора" visibleName="Лот_Предмет_договора" />
+		</DictColumns>
+	</Settings>
+	<!-- Сбер АСТ Орган, выдавший решение об отмене процедуры-->
+	<Settings key="Орган, выдавший решение об отмене процедуры">
+		<Select> 
+			<Select searchString="document[doc_Id = '{current_Id}']" tag="current" />
+		</Select>
+		<CustomSource>
+			<item>
+				<field name="code" value="customer"/>
+				<field name="Наименование" value="по решению Заказчика"/>
+				<field name="ИД на ЭТП" value="179380"/>
+			</item> 
+			<item>
+				<field name="code" value="fas"/>
+				<field name="Наименование" value="по предписанию контролирующего органа (УФАС,ФАС)"/>
+				<field name="ИД на ЭТП" value="179381"/>
+			</item>
+			<item>
+				<field name="code" value="minsvyz"/>
+				<field name="Наименование" value="по решению Минкомсвязи"/>
+				<field name="ИД на ЭТП" value="179382"/>
+			</item> 
+		</CustomSource>
+		<DictColumns>
+			<Column fieldName="code" isCode="true"/>
+			<Column fieldName="Наименование" visibleName="Наименование"/>
+			<Column fieldName="ИД на ЭТП" visibleName="ИД на ЭТП"/>
+		</DictColumns>
+	</Settings>
+</Data>
+
+
+
+
+
+
+
+
+
+

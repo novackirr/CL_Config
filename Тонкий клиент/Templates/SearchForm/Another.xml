@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<edit>
+    <rows>
+	  <row>
+	    <column>
+		  <field name="Регистрационный номер" isLabel="true" />
+		</column>
+	    <column>
+          <field fieldType="field" key="|Document|Префикс_регномера" name="Префикс регномера" valueType="text" isValue="true" edit-name="regNumPrefix"  />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Число_регномера" name="Число регномера" valueType="text" isValue="true" edit-name="regNumValue"  />
+        </column>
+        <column>
+          <field fieldType="field" key="|Document|Суффикс_регномера" name="Суффикс регномера" valueType="text" isValue="true" edit-name="regNumSuffix" />
+        </column>
+      </row>
+	  
+	 <row>
+        <column>
+          <field name="Поток" isLabel="true"/>
+          <field fieldType="field" key="|Поток" name="Поток" edit-name="flowKey" valueType="text"  isValue="true" edit-dictionary="#Потоки" edit-dictionaryDisplay="Название" edit-dictionaryGroup="flow" edit-isMultiple ="true" />
+        </column>
+     </row>
+	 <row>
+		<column>
+		  <field name="Автор" isLabel="true" />
+          <field fieldType="field" key="|Document|Автор" name="Автор" valueType="AddressBook" isValue="true" edit-name="creator"  edit-isMultiple ="true"  list="content-addressbook-suggestions"/>
+        </column>
+      </row>
+      
+      
+      <row>
+        <column>
+		  <field name="Поиск по контексту" isLabel="true" />
+          <field fieldType="field" key="|Document|Поиск_по_контексту" name="Поиск по контексту" valueType="longtext" isValue="true" edit-name="context"  />
+        </column>
+      </row>
+	 </rows>
+  </edit>	 
+  <search>
+    <field fieldValue="(doc_RegCard/rc_Index/text_Префикс_регномера = @prefix and doc_RegCard/rc_Index/integer_Число_регномера = @regnum and doc_RegCard/rc_Index/text_Суффикс_регномера = @Suffix) and (xn-in(doc_RegCard/rc_FlowKey, @flowKey) and (doc_RegCard/rc_Index/date_Дата_регистрации &gt;= @registerDateFrom) and (doc_RegCard/rc_Index/date_Дата_регистрации &lt;= @registerDateTo)) and ((doc_Creator = @creator) and (doc_Registrator = @registrator)) and (xn-contains(doc_RegCard/rc_Index/longtext_Краткое_содержание ,@description)) and (doc_Parts/doc_Part/part_Versions/part_Version/ver_Data = attachment[xn-contains(bptc_Data, @context)]/bptc_Id)" />
+  </search>
+</root>

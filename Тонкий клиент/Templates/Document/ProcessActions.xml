@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+	<Action name="Снять с контроля">
+		<Visibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+					<!-- <WhenUserInWorkGroup name="Суперпользователи"/>	 -->
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+	<Action name="Изменить контролирующего по маршруту">
+		<Visibility>
+			<Rules>
+				<Or> 
+					<WhenProcessNameEquals name="1234"/>
+					<!-- <WhenUserInWorkGroup name="Суперпользователи"/>	 -->
+				</Or>
+			</Rules>
+		</Visibility>
+	</Action>
+</Actions>

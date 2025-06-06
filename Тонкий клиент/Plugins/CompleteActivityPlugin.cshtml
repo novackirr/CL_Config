@@ -1,0 +1,68 @@
+﻿@using LiteClient.Models.Documents
+@using LiteClient.Models.Documents.UploadAttachments
+@using Cognitive.Docflow.Templates.Models.Plugins.CompleteActivity
+@{
+    var view = ViewBag.PluginView != null ? (DocumentFieldTable)ViewBag.PluginView : null;
+    var attachment = ViewBag.PluginAttachment != null ? (UploadAttachmentModel)ViewBag.PluginAttachment : null;
+    var additionalOptions = ViewBag.AdditionalOptions != null ? (AdditionalOptions)ViewBag.AdditionalOptions : null;
+    var pluginScripts = new List<string>()
+{
+        Url.Content(@"~/Scripts/Content/Plugins/completeActivityPluginFormSubmit.js")
+    };
+
+    if (ViewBag.Script != null && !string.IsNullOrEmpty(ViewBag.Script.ToString()))
+    {
+        pluginScripts.Add(Url.Content(ViewBag.Script.ToString()));
+    }
+}
+
+@if (additionalOptions != null && additionalOptions.ShowComment)
+{
+    <div class="form-group clearfix">
+        <label for="comment" class="control-label">Комментарий</label>
+        <textarea id="comment" name="comment" class="form-control"></textarea>
+    </div>
+}
+
+<div class="panel-body row">
+    <!--div class="alert alert-danger hide error-message" role="alert" id="error-message"></div-->
+    @if (view != null)
+    {
+        var viewEditDictionary = (Dictionary<IDocumentViewBlock, IDocumentEditBlockModel>)ViewBag.ViewEditDictionary;
+
+        <div id="registerView" class="tab-content col-sm-12">
+            @Html.Partial("Controls/Edit/DocumentBlockEdit", new DocumentBlockEditModel
+            {
+                View = view,
+                BlocksDictionary = viewEditDictionary,
+                RowWidth = 12,
+                LabelWidth = 4,
+                MinLabelWidth = 4,
+                MinValueWidth = 2
+            })
+        </div>
+    }
+</div>
+
+
+
+
+@if (attachment != null)
+{
+    <div class="create-attachment-action">
+        @Html.Partial("Controls/UploadAttachmentControl", attachment)
+    </div>
+
+    if (ViewBag.DocumentKeys != null)
+    {
+        <input type="hidden" name="documentKeys" value="@ViewBag.DocumentKeys.ToString()">
+    }
+}
+
+<div class="action-page-scripts">
+    @foreach (var script in pluginScripts)
+    {
+        <div class="action-page-script" data-url="@script"></div>
+    }
+</div>
+

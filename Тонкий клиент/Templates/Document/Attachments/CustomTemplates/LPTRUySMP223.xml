@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <table category="Документация">
+    <view>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" name="Название файла" valueType="text" weight="55" />
+		<column fieldType="property" key="AttachmentVersion" name="Версия" valueType="text" weight="15" />
+		<column fieldType="property" key="AttachmentLastModificator" name="Изменен" valueType="addressbook" weight="15" />
+        <column fieldType="property" key="AttachmentLastModify" name="Дата последнего изменения" valueType="datetime" weight="15" />
+      </columns>
+    </view>
+    <edit>
+      <columns>
+        <column fieldType="property" key="AttachmentTitle" edit-name="attachmentTitle" name="Описание файла" isValue="true" valueType="text" edit-required="true"/>
+        <column fieldType="property" key="AttachmentFileName" edit-name="attachmentFileName" name="Название файла" isValue="true" valueType="text"   edit-required="true"/>
+      </columns>
+    </edit>
+  </table>
+ </root>
+ 

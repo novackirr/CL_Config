@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns>
+		<column fieldType="property" key="SignAuthor"           name="Подписант"                    valueType="addressbook" weight="10" />
+		<column fieldType="property" key="SignAction" 			name="Действие при подписании" 		valueType="text" 		weight="15" />
+		<column fieldType="property" key="SignDate" 			name="Дата подписания" 				valueType="datetime" 	weight="15" />
+		<column fieldType="property" key="SignIssuedTo" 		name="Владелец сертификата" 		valueType="text" 		weight="15" />
+		<column fieldType="property" key="SignIssuedBy" 		name="Кем выдан сертификат" 		valueType="text" 		weight="15" />
+        <column fieldType="property" key="SignCertValidFrom" 	name="Сертификат действителен с" 	valueType="datetime" 	weight="15" />
+		<column fieldType="property" key="SignCertValidTo" 		name="Сертификат действителен до" 	valueType="datetime" 	weight="15" />
+		
+	</columns>
+</root>

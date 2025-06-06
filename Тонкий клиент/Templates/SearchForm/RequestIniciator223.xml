@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+					<field name="Номер закупки в ЕИС" isLabel="true" />		  
+					<field fieldType="field" key="|Document|Номер_закупки_в_ЕИС" name="Номер закупки в ЕИС" valueType="text" isValue="true" edit-name="NumberEIS" />
+				</column>
+				<column>
+					<field name="Внутренний номер" isLabel="true" />		  
+					<field fieldType="field" key="|Document|Внутренний_номер" name="Внутренний номер" valueType="text" isValue="true" edit-name="vnutrNumber" />
+				</column>
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Разъяснения положений документации 223ФЗ') and (doc_RegCard/rc_Index/text_Статус = 'В ожидании разъяснения') and (doc_RegCard/rc_Index/boolean_Переназначен_ответственный = '1') and (doc_RegCard/rc_Index/text_Номер_закупки_в_ЕИС = @NumberEIS) and (doc_RegCard/rc_Index/text_Внутренний_номер = @vnutrNumber)" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/Positions.js" />
+	</scripts>
+
+</root>

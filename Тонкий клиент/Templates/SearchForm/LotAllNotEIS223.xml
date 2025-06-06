@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<edit>
+		<rows>	
+			<row>
+				<column>
+				
+				</column>		
+			</row>
+		</rows>
+	</edit>
+	<search>
+		<field fieldValue="(doc_RegCard/rc_FlowName = 'Позиции плана закупок 223ФЗ')  and (doc_RegCard/rc_Index/boolean_Не_включать_не_публиковать = '1' or doc_RegCard/rc_Index/boolean_Малая_закупка = '1' or doc_RegCard/rc_Index/boolean_Аренда_недвижимости = '1' or doc_RegCard/rc_Index/boolean_Закупка_не_включена_в_план_закупки = '1')" />
+	</search>
+	<scripts>
+		<script file="Scripts/Content/SearchForm/PologenieNaZak223.js" />
+	</scripts>
+
+</root>

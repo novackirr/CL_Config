@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<columns state-key="PologenieNaZakProject223" allowSelection="false" allowSingleActions="false" allow-grouping="true" grouping-type="client" allow-filters-row="true" 
+	horizontall-scroll="true" allow-create-excel="true">
+		<column fieldType="attribute" key="doc_Id" name="Идентификатор в Е1" valueType="integer" sortPredicate="doc_Id" weight="10"  />
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/date_Дата_регистрации" name="Дата регистрации" valueType="date" weight="12" isOptional="true" sortPredicate="doc_RegCard/rc_Index/date_Дата_регистрации"/>	
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Реестровый_номер" name="Реестровый номер" valueType="text" sortPredicate="doc_RegCard/rc_Index/text_Реестровый_номер"  weight="15" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/integer_Номер_редакции" name="Номер редакции" valueType="integer" sortPredicate="doc_RegCard/rc_Index/integer_Номер_редакции"  weight="10" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация заказчик" valueType="text" weight="40" isOptional="true" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" name="ИНН" valueType="text" weight="10" isOptional="true" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_ИНН" defaultHide="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Организация_заказчик_КПП" name="КПП" valueType="text" weight="10" isOptional="true" sortPredicate="doc_RegCard/rc_Index/text_Организация_заказчик_КПП" defaultHide="true"/>				
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения" name="Дата размещения" valueType="datetime" sortPredicate="doc_RegCard/rc_Index/datetime_Фактическая_дата_размещения"  weight="15"  isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/boolean_Присоединение_к_положению_другой_организации" name="Используется положение другой организации" valueType="boolean" sortPredicate="doc_RegCard/rc_Index/boolean_Присоединение_к_положению_другой_организации"  weight="10" defaultHide="true" isOptional="true"/>
+		<column fieldType="attribute" key="doc_RegCard/rc_Index/text_Статус" name="Статус" sortPredicate="doc_RegCard/rc_Index/text_Статус" valueType="text" weight="20" isOptional="true"/>	
+	</columns>
+</root>

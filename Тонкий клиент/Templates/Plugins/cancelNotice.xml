@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<workflow name="Отмена процедуры"/>
+	<view>
+		<template>
+			<rows>
+				<row>
+					<column>
+						<field isLabel="true" name="Дата принятия решения" edit-name="datereshenie1"/>
+						<field fieldType="field" key="|Document|Дата_принятия_решения_отмена" name="Дата принятия решения" valueType="datetime" isValue="true" edit-name="datereshenie1" edit-required="true"/>
+						<field fieldType="field" key="|Document|Отмена_закупки" name="Отмена закупки" valueType="boolean" edit-name="otmena1" edit-default-value="1" edit-hidden="true"/>
+					</column> 
+					<column>
+						
+					</column>
+				</row>
+				<row>
+					<column>
+						<field isLabel="true" name="Основание для отказа" edit-name="osnovreshenie1"  />
+						<field fieldType="field" key="|Document|Основание_принятия_решения_отмена" name="Основания для отказа" valueType="longtext" isValue="true" edit-name="osnovreshenie1" edit-required="true"/>
+					</column>
+				</row>
+				<row>
+					<column>
+						<!-- <field isLabel="true" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" edit-name="Emergency1"  /> -->
+						<field fieldType="field" key="|Document|Закупка_отменяется_в_следствии_непреодолимой_силы" name="Закупка отменяется вследствие возникновения обстоятельств непреодолимой силы в соответствии с гражданским законодательством" valueType="boolean" edit-name="Emergency1"/>
+					</column>
+				</row>
+			</rows>									
+		</template>
+	</view>
+	<scripts>
+		<script file="\Scripts\Content\Plugins\cancelNotice.js" />
+	</scripts>
+	<attachment required="true">
+        <categories>
+            <category name="Документы об отказе от проведения процедуры"/>
+        </categories>
+    </attachment>
+</root>

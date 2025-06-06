@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <columns state-key="ControlEmployeeTasks" allow-filters-row="true" horizontall-scroll="true" allowSelection="false" allow-grouping="true" grouping-type="client" >
+    <column fieldType="property" key="ActivityName" name="Название" sortPredicate="act_Name" valueType="text" weight="25" />
+    <column fieldType="attribute" key="act_Creator" name="Автор" sortPredicate="act_Creator" valueType="addressbook" weight="17" />
+    <column fieldType="property" key="activityState" name="Статус" valueType="text" sortPredicate="activityState" weight="15" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Внутренний_номер" name="Внутренний номер" valueType="text" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Приоритет" name="Приоритет" valueType="text" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Предмет_договора" name="Предмет договора" valueType="text" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Название_закупки" name="Название закупки" valueType="text" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Статус" name="Статус" valueType="text" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/money_НМЦ_с_НДС" name="Начальная (максимальная) цена закупки" valueType="money" weight="34" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Ответственный_отдела_планирования" name="Ответственный отдела планирования" sortPredicate="doc_RegCard/rc_Index/integer_Ответственный_отдела_планирования" valueType="addressbook" weight="34" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/integer_Ответственный_отдела_закупки" name="Ответственный за проведение закупки" sortPredicate="doc_RegCard/rc_Index/integer_Ответственный_отдела_закупки"  valueType="addressbook" weight="34" defaultHide="true"/>
+	<column fieldType="attribute" key="act_DueTime" name="Срок исполнения" valueType="date" sortPredicate="act_DueTime" weight="11" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Краткое_содержание" name="Краткое содержание" sortPredicate="doc_RegCard/rc_Index/longtext_Краткое_содержание" valueType="longtext" weight="35" defaultHide="true"/>
+	<column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Способ_закупки" name="Способ закупки" sortPredicate="doc_RegCard/rc_Index/text_Способ_закупки" valueType="longtext" weight="25"/>
+	<column fieldType="attribute" key="act_StartTime" name="Дата назначения задачи" sortPredicate="act_StartTime" valueType="datetime" weight="11" defaultHide="true"/>
+    <column fieldType="attribute" key="document$doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" name="Организация-заказчик" sortPredicate="doc_RegCard/rc_Index/longtext_Организация_заказчик_наименование" valueType="longtext" weight="22" defaultHide="true"/>
+    <column fieldType="attribute" key="document$doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" name="Отдел" sortPredicate="doc_RegCard/rc_Index/text_Подразделение_инициатор_наименование" valueType="longtext" weight="22" />
+	<column fieldType="attribute" key="document$doc_RegCard/rc_FlowTitle" name="Поток" sortPredicate="doc_RegCard/rc_FlowKey" valueType="text" weight="20" />
+  </columns>
+</root>
